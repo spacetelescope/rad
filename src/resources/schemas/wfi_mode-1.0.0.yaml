@@ -1,0 +1,25 @@
+%YAML 1.1
+---
+$schema: "http://stsci.edu/schemas/yaml-schema/draft-01"
+id: "http://stsci.edu/schemas/datamodels/roman/wfi_mode-1.0.0"
+
+
+title: |
+  WFI observing configuration
+type: object
+properties:
+  name:
+    title: Instrument used to acquire the data
+    type: string
+    enum: [WFI]
+  detector:
+    title: Name of detector used to acquire the data
+    type: string
+    enum: [WFI01, WFI02, WFI03, WFI04, WFI05, WFI06, WFI07, WFI08, WFI09,
+           WFI10, WFI11, WFI12, WFI13, WFI14, WFI15, WFI16, WFI17, WFI18]
+  optical_element:
+    title: Name of the filter element used
+    type: string
+    enum: [F062, F087, F106, F129, W146, F158, F184, GRISM, PRISM, DARK, ENGINEERING]
+required: [detector, optical_element, name]
+...
