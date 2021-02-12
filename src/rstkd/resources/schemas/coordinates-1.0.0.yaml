@@ -1,0 +1,15 @@
+%YAML 1.1
+---
+$schema: "http://stsci.edu/schemas/yaml-schema/draft-01"
+id: "http://stsci.edu/schemas/datamodels/roman/coordinates-1.0.0"
+
+title: Information about the coordinates in the file
+type: object
+properties:
+  reference_frame:
+    title: Name of the coordinate reference frame
+    type: string
+    default: ICRS
+    enum: [ ICRS ]
+...
+

@@ -1,0 +1,15 @@
+%YAML 1.1
+---
+$schema: "http://stsci.edu/schemas/yaml-schema/draft-01"
+id: "http://stsci.edu/schemas/datamodels/roman/aperture-1.0.0"
+
+title: Aperture information
+type: object
+properties:
+  name:
+    title: PRD science aperture used
+    type: string
+  position_angle:
+    title: "[deg] Position angle of aperture used"
+    type: number
+...  

@@ -1,0 +1,42 @@
+%YAML 1.1
+---
+$schema: "http://stsci.edu/schemas/yaml-schema/draft-01"
+id: "http://stsci.edu/schemas/datamodels/roman/observation-1.0.0"
+
+title: Ephemeris data information
+type: object
+properties:
+  earth_angle:
+    title: "Earth Angle [radians]"
+    type: number
+  moon_angle:
+    title: "Moon Angle [radians]"
+    type: number
+  sun_angle:
+    title: "Sun Angle [radians]"
+    type: number
+  type:
+    title: Definitive or Predicted
+    type: string
+  time:
+    title: UTC time of position and velocity vectors in ephemeris (MJD)
+    type: number
+  spatial_x:
+    title: "[km] X spatial coordinate of JWST"
+    type: number
+  spatial_y:
+    title: "[km] Y spatial coordinate of JWST"
+    type: number
+  spatial_z:
+    title: "[km] Z spatial coordinate of JWST"
+    type: number
+  velocity_x:
+    title: "[km/s] X component of JWST velocity"
+    type: number
+  velocity_y:
+    title: "[km/s] Y component of JWST velocity"
+    type: number
+  velocity_z:
+    title: "[km/s] Z component of JWST velocity"
+    type: number
+...

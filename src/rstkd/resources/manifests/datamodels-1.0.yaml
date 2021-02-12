@@ -1,0 +1,87 @@
+id: http://stsci.edu/datamodels/manifests/datamodels-1.0
+extension_uri: http://stsci.edu/datamodels/extensions/
+title: Datamodels extension 1.0
+description: |-
+  A set of tags for serializing STScI Roman datamodels.
+asdf_standard_requirement:
+  gte: 1.1.0
+tags:
+- tag_uri: tag:stsci.edu:datamodels/roman/wfi_science_raw-1.0.0
+  schema_uri: http://stsci.edu/schemas/datamodels/roman/wfi_science_raw-1.0.0
+  title: Roman WFI Raw Science Data datamodel
+  description: |-
+    Basic Roman Raw Science
+- tag_uri: tag:stsci.edu:datamodels/roman/wfi_mode-1.0.0
+  schema_uri: http://stsci.edu/schemas/datamodels/roman/wfi_mode-1.0.0
+  title: Roman WFI Instrument Mode
+  description: |-
+    Roman WFI Instrument 
+- tag_uri: tag:stsci.edu:datamodels/roman/exposure-1.0.0
+  schema_uri: http://stsci.edu/schemas/datamodels/roman/exposure-1.0.0
+  description: |-
+    Exposure information
+# - tag_uri: tag:stsci.edu:datamodels/roman/program-1.0.0
+#   schema_uri: http://stsci.edu/schemas/datamodels/roman/program-1.0.0
+#   title: Roman Program information
+#   description: |-
+#     Roman Program information
+- tag_uri: tag:stsci.edu:datamodels/roman/rprogram-1.0.0
+  schema_uri: http://stsci.edu/schemas/datamodels/roman/rprogram-1.0.0
+  title: Xprogram information
+  description: |-
+    Xprogram information
+- tag_uri: tag:stsci.edu:datamodels/roman/observation-1.0.0
+  schema_uri: http://stsci.edu/schemas/datamodels/roman/observation-1.0.0
+  title: Observation information
+  description: |-
+    Observation information
+- tag_uri: tag:stsci.edu:datamodels/roman/ephemeris-1.0.0
+  schema_uri: http://stsci.edu/schemas/datamodels/roman/ephemeris-1.0.0
+  title: Ephemeris information
+  description: |-
+    Ephemeris information
+- tag_uri: tag:stsci.edu:datamodels/roman/visit-1.0.0
+  schema_uri: http://stsci.edu/schemas/datamodels/roman/visit-1.0.0
+  title: Visit information
+  description: |-
+    Visit information
+- tag_uri: tag:stsci.edu:datamodels/roman/photometry-1.0.0
+  schema_uri: http://stsci.edu/schemas/datamodels/roman/photometry-1.0.0
+  title: Photometry information
+  description: |-
+    Photometry information
+- tag_uri: tag:stsci.edu:datamodels/roman/coordinates-1.0.0
+  schema_uri: http://stsci.edu/schemas/datamodels/roman/coordinates-1.0.0
+  title: Coordinate frame information
+  description: |-
+    Coordinate frame information
+- tag_uri: tag:stsci.edu:datamodels/roman/aperture-1.0.0
+  schema_uri: http://stsci.edu/schemas/datamodels/roman/aperture-1.0.0
+  title: Aperture information
+  description: |-
+    Aperture information
+- tag_uri: tag:stsci.edu:datamodels/roman/pointing-1.0.0
+  schema_uri: http://stsci.edu/schemas/datamodels/roman/pointing-1.0.0
+  title: Spacecraft Pointing information
+  description: |-
+    Spacecraft Pointing information
+- tag_uri: tag:stsci.edu:datamodels/roman/target-1.0.0
+  schema_uri: http://stsci.edu/schemas/datamodels/roman/target-1.0.0
+  title: Target information
+  description: |-
+    Target information
+- tag_uri: tag:stsci.edu:datamodels/roman/velocity_aberration-1.0.0
+  schema_uri: http://stsci.edu/schemas/datamodels/roman/velocity_aberration-1.0.0
+  title: Velocity aberration information
+  description: |-
+    Velocity aberration information
+- tag_uri: tag:stsci.edu:datamodels/roman/wcsinfo-1.0.0
+  schema_uri: http://stsci.edu/schemas/datamodels/roman/wcsinfo-1.0.0
+  title: Wcsinfo information
+  description: |-
+    Wcsinfo information
+- tag_uri: tag:stsci.edu:datamodels/roman/guidestar-1.0.0
+  schema_uri: http://stsci.edu/schemas/datamodels/roman/guidestar-1.0.0
+  title: Guidestar information
+  description: |-
+    Guidestar information

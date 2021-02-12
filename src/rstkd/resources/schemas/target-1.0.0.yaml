@@ -1,0 +1,53 @@
+%YAML 1.1
+---
+$schema: "http://stsci.edu/schemas/yaml-schema/draft-01"
+id: "http://stsci.edu/schemas/datamodels/roman/target-1.0.0"
+
+title: Target information
+type: object
+properties:
+  proposer_name:
+    title: Proposer's name for the target
+    type: string
+  catalog_name:
+    title: Standard astronomical catalog name for target
+    type: string
+  type:
+    title: Type of target (fixed, moving, generic)
+    type: string
+  ra:
+    title: Target RA at mid time of exposure
+    type: number
+  dec:
+    title: Target Dec at mid time of exposure
+    type: number
+  ra_uncertainty:
+    title: Target RA uncertainty
+    type: number
+  dec_uncertainty:
+    title: Target Dec uncertainty
+    type: number
+  proper_motion_ra:
+    title: Target proper motion in RA
+    type: number
+  proper_motion_dec:
+    title: Target proper motion in Dec
+    type: number
+  proper_motion_epoch:
+    title: Target proper motion epoch
+    type: string
+  proposer_ra:
+    title: Proposer's target RA
+    type: number
+  proposer_dec:
+    title: Proposer's target Dec
+    type: number
+  source_type_apt:
+    title: Source type from APT (point/extended)
+    type: string
+    enum: [ EXTENDED, POINT, UNKNOWN ]
+  source_type:
+    title: Source type used for calibration
+    type: string
+    enum: [ EXTENDED, POINT, UNKNOWN ]
+...

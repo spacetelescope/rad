@@ -1,0 +1,30 @@
+%YAML 1.1
+---
+$schema: "http://stsci.edu/schemas/yaml-schema/draft-01"
+id: "http://stsci.edu/schemas/datamodels/roman/wcsinfo-1.0.0"
+
+title: WCS parameters
+type: object
+properties:
+  v2_ref:
+    title: "[arcsec] Telescope v2 coordinate of the reference point"
+    type: number
+  v3_ref:
+    title: "[arcsec] Telescope v3 coordinate of the reference point"
+    type: number
+  vparity:
+    title: Relative sense of rotation between Ideal xy and V2V3
+    type: integer
+  v3yangle:
+    title: "[deg] Angle from V3 axis to Ideal y axis"
+    type: number
+  ra_ref:
+    title: "[deg] Right ascension of the reference point"
+    type: number
+  dec_ref:
+    title: "[deg] Declination of the reference point"
+    type: number
+  roll_ref:
+    title: "[deg] V3 roll angle at the ref point (N over E)"
+    type: number
+...

@@ -1,0 +1,18 @@
+%YAML 1.1
+---
+$schema: "http://stsci.edu/schemas/yaml-schema/draft-01"
+id: "http://stsci.edu/schemas/datamodels/roman/velocity_aberration-1.0.0"
+
+title: Velocity aberration correction information
+type: object
+properties:
+  ra_offset:
+    title: Velocity aberration right ascension offset
+    type: number
+  dec_offset:
+    title: Velocity aberration declination offset
+    type: number
+  scale_factor:
+    title: Velocity aberration scale factor
+    type: number
+...

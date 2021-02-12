@@ -1,0 +1,72 @@
+%YAML 1.1
+---
+$schema: "http://stsci.edu/schemas/yaml-schema/draft-01"
+id: "http://stsci.edu/schemas/datamodels/roman/observation-1.0.0"
+
+
+title: |
+  Observation identifiers
+type: object
+properties:
+  date:
+    title: "[yyyy-mm-dd] UTC date at start of exposure"
+    type: string
+  time:
+    title: "[hh:mm:ss.sss] UTC time at start of exposure"
+    type: string
+  date_beg:
+    type: string
+    title: "Date-time start of exposure"
+    # Despite what the title might lead you to believe, this keyword
+    # actually contains a full datetime string.
+  date_end:
+    type: string
+    title: "Date-time end of exposure"
+    # Despite what the title might lead you to believe, this keyword
+    # actually contains a full datetime string.
+  obs_id:
+    title: Programmatic observation identifier
+    type: string
+  visit_id:
+    title: Visit identifier
+    type: string
+  program_number:
+    title: Program number
+    type: string
+  execution_plan_number:
+    title: Execution plan number
+    type: string
+  pass_number:
+    title: Pass number (within execution plan)
+    type: string
+  leg_number:
+    title: Leg Number (within pass)
+    type: string
+  observation_number:
+    title: Observation number
+    type: string
+  visit_number:
+    title: Visit number
+    type: string
+  visit_group:
+    title: Visit group identifier
+    type: string
+  activity_id:
+    title: Activity identifier
+    type: string
+  exposure_number:
+    title: Exposure request number
+    type: string
+  template:
+    title: Observation template used
+    type: string
+  observation_label:
+    title: Proposer label for the observation
+    type: string
+  observation_folder:
+    title: Name of the APT observation folder
+    type: string
+  ma_table_name:
+    title: Identifier for the multi-accumulation table used
+    type: string
+...

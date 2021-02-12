@@ -1,0 +1,18 @@
+%YAML 1.1
+---
+$schema: "http://stsci.edu/schemas/yaml-schema/draft-01"
+id: "http://stsci.edu/schemas/datamodels/roman/pointing-1.0.0"
+
+title: Spacecraft pointing information
+type: object
+properties:
+  ra_v1:
+    title: "[deg] RA of telescope V1 axis"
+    type: number
+  dec_v1:
+    title: "[deg] Dec of telescope V1 axis"
+    type: number
+  pa_v3:
+    title: "[deg] Position angle of telescope V3 axis"
+    type: number
+...

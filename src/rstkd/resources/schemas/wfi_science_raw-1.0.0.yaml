@@ -11,3 +11,4 @@ properties:
   meta:
     allOf:
       - $ref: "http://stsci.edu/schemas/datamodels/roman/common-1.0.0"
+...

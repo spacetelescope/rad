@@ -1,0 +1,52 @@
+%YAML 1.1
+---
+$schema: http://stsci.edu/schemas/asdf/asdf-schema-1.0.0
+id: "http://stsci.edu/schemas/datamodels/roman/common-1.0.0"
+
+type: object
+properties:
+  filename:
+    title: Name of the file
+    type: string
+  date:
+    title: Date this file was created (UTC)
+    tag: tag:stsci.edu:asdf/time/time-1.1.0
+  model_type:
+    title: Type of data model
+    type: string
+  origin:
+    title: Organization responsible for creating file
+    type: string
+  telescope:
+    title: Telescope used to acquire the data
+    type: string
+    enum: [ROMAN]
+  exposure:
+    tag: "tag:stsci.edu:datamodels/roman/exposure-1.0.0"
+  instrument:
+    tag: "tag:stsci.edu:datamodels/roman/wfi_mode-1.0.0"
+  observation:
+    tag: "tag:stsci.edu:datamodels/roman/observation-1.0.0"
+#   program:
+#     tag: "tag:stsci.edu:datamodels/roman/program-1.0.0"
+  ephemeris:
+    tag: "tag:stsci.edu:datamodels/roman/ephemeris-1.0.0"
+  visit:
+    tag: "tag:stsci.edu:datamodels/roman/visit-1.0.0"
+  photometry:
+    tag: "tag:stsci.edu:datamodels/roman/photometry-1.0.0"
+  coordinates:
+    tag: "tag:stsci.edu:datamodels/roman/coordinates-1.0.0"
+  aperture:
+    tag: "tag:stsci.edu:datamodels/roman/aperture-1.0.0"
+  pointing:
+    tag: "tag:stsci.edu:datamodels/roman/pointing-1.0.0"
+  target:
+    tag: "tag:stsci.edu:datamodels/roman/target-1.0.0"
+  velocity_aberration:
+    tag: "tag:stsci.edu:datamodels/roman/velocity_aberration-1.0.0"
+  wcsinfo:
+    tag: "tag:stsci.edu:datamodels/roman/wcsinfo-1.0.0"
+  guidestar:
+    tag: "tag:stsci.edu:datamodels/roman/guidestar-1.0.0"
+...

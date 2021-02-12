@@ -1,0 +1,21 @@
+%YAML 1.1
+---
+$schema: "http://stsci.edu/schemas/yaml-schema/draft-01"
+id: "http://stsci.edu/schemas/datamodels/roman/photometry-1.0.0"
+
+title: Photometry information
+type: object
+properties:
+  conversion_megajanskys:
+    title: Flux density (MJy/steradian) producing 1 cps
+    type: number
+  conversion_microjanskys:
+    title: Flux density (uJy/arcsec2) producing 1 cps
+    type: number
+  pixelarea_steradians:
+    title: Nominal pixel area in steradians
+    type: number
+  pixelarea_arcsecsq:
+    title: Nominal pixel area in arcsec^2
+    type: number
+...

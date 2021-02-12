@@ -1,0 +1,93 @@
+%YAML 1.1
+---
+$schema: "http://stsci.edu/schemas/yaml-schema/draft-01"
+id: "http://stsci.edu/schemas/datamodels/roman/guidestar-1.0.0"
+
+title: Guide star information
+type: object
+properties:
+#            gs_order:
+#              title: index of guide star within list of selected guide stars
+#              type: integer
+  gs_start_time:
+    title: UTC time when guide star activity started
+    type: string
+  gs_stop_time:
+    title: UTC time when guide star activity completed
+    type: string
+  gs_id:
+    title: guide star identifier
+    type: string
+  gs_ra:
+    title: guide star right ascension
+    type: number
+  gs_dec:
+    title: guide star declination
+    type: number
+  gs_ura:
+    title: guide star right ascension uncertainty
+    type: number
+  gs_udec:
+    title: guide star declination uncertainty
+    type: number
+  gs_mag:
+    title: guide star magnitude in FGS detector
+    type: number
+  gs_umag:
+    title: guide star magnitude uncertainty
+    type: number
+  gs_pcs_mode:
+    title: Pointing Control System mode
+    type: string
+  gs_function_start_time:
+    title: Observatory UTC time at guider function start
+    type: string
+  gs_function_end_time:
+    title: Observatory UTC time at guider function end
+    type: string
+  data_start:
+    title: MJD start time of guider data within this file
+    type: number
+  data_end:
+    title: MJD end time of guider data within this file
+    type: number
+  gs_acq_exec_stat:
+    title: Guide star acquisition execution status
+    type: string
+  gs_ctd_x:
+    title: "[arcsec] guide star centroid x position in FGS ideal frame"
+    type: number
+  gs_ctd_y:
+    title: "[arcsec] guide star centroid y position in FGS ideal frame"
+    type: number
+  gs_ctd_ux:
+    title: uncertainty in the x position of the centroid
+    type: number
+  gs_ctd_uy:
+    title: uncertainty in the y position of the centroid
+    type: number
+  gs_epoch:
+    title: Epoch of guide star coordinates
+    type: string
+  gs_mura:
+    title: Guide star IRCS right ascension proper motion
+    type: number
+  gs_mudec:
+    title: Guide star IRCS declination proper motion
+    type: number
+  gs_para:
+    title: Guide star annual parallax
+    type: number
+  gs_window_xstart:
+    title: Guide window x position
+    type: number
+  gs_window_ystart:
+    title: Guide window y position
+    type: number
+  gs_window_xsize:
+    title: Guide star window size in x
+    type: number
+  gs_window_ysize:
+    title: Guide star window size in y
+    type: number
+...

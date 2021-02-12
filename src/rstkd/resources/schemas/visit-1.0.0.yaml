@@ -1,0 +1,35 @@
+%YAML 1.1
+---
+$schema: "http://stsci.edu/schemas/yaml-schema/draft-01"
+id: "http://stsci.edu/schemas/datamodels/roman/visit-1.0.0"
+
+title: Visit information
+type: object
+properties:
+  engineering_quality:
+    title: Engineering data quality indicator from EngDB
+    type: string
+    enum: [OK, SUSPECT]
+  pointing_engdb_quality:
+    title: Quality of pointing information from EngDB
+    type: string
+    enum: [CALCULATED, PLANNED]
+  type:
+    title: Visit type
+    type: string
+  start_time:
+    title: UTC visit start time
+    type: string
+  end_time:
+    title: UTC visit end time
+    type: string
+  status:
+    title: Status of a visit
+    type: string
+  total_exposures:
+    title: Total number of planned exposures in visit
+    type: integer
+  internal_target:
+    title: At least one exposure in visit is internal
+    type: boolean
+...

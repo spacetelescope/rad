@@ -1,0 +1,24 @@
+%YAML 1.1
+---
+$schema: "http://stsci.edu/schemas/yaml-schema/draft-01"
+id: "http://stsci.edu/schemas/datamodels/roman/rprogram-1.0.0"
+
+title: Visit information
+type: object
+properties:
+  title:
+    title: Proposal title
+    type: string
+  pi_name:
+    title: Principle Investigator pi_name
+    type: string
+  category:
+    title: Program category
+    type: string
+  science_category:
+    title: Science category assigned during TAC process
+    type: string
+  continuation_id:
+    title: Continuation of previous Program
+    type: integer
+...
