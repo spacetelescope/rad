@@ -27,4 +27,5 @@ properties:
   roll_ref:
     title: "[deg] V3 roll angle at the ref point (N over E)"
     type: number
+required: [v2_ref, v3_ref, vparity, v3yangle, ra_ref, dec_ref, roll_ref]
 ...

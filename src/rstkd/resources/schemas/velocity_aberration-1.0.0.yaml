@@ -15,4 +15,5 @@ properties:
   scale_factor:
     title: Velocity aberration scale factor
     type: number
+required: [ra_offset, dec_offset, scale_factor]
 ...

@@ -20,11 +20,6 @@ tags:
   schema_uri: http://stsci.edu/schemas/datamodels/roman/exposure-1.0.0
   description: |-
     Exposure information
-# - tag_uri: tag:stsci.edu:datamodels/roman/program-1.0.0
-#   schema_uri: http://stsci.edu/schemas/datamodels/roman/program-1.0.0
-#   title: Roman Program information
-#   description: |-
-#     Roman Program information
 - tag_uri: tag:stsci.edu:datamodels/roman/rprogram-1.0.0
   schema_uri: http://stsci.edu/schemas/datamodels/roman/rprogram-1.0.0
   title: Xprogram information

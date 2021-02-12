@@ -32,4 +32,6 @@ properties:
   internal_target:
     title: At least one exposure in visit is internal
     type: boolean
+required: [engineering_quality, pointing_engdb_quality, type,
+           start_time, end_time, status, total_exposures, internal_target]
 ...

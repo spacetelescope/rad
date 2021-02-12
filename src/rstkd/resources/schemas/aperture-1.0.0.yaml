@@ -12,4 +12,5 @@ properties:
   position_angle:
     title: "[deg] Position angle of aperture used"
     type: number
+required: [name, position_angle]
 ...  

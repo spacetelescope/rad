@@ -27,8 +27,8 @@ properties:
     tag: "tag:stsci.edu:datamodels/roman/wfi_mode-1.0.0"
   observation:
     tag: "tag:stsci.edu:datamodels/roman/observation-1.0.0"
-#   program:
-#     tag: "tag:stsci.edu:datamodels/roman/program-1.0.0"
+  program:
+   tag: "tag:stsci.edu:datamodels/roman/rprogram-1.0.0"
   ephemeris:
     tag: "tag:stsci.edu:datamodels/roman/ephemeris-1.0.0"
   visit:

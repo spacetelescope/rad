@@ -11,5 +11,5 @@ properties:
     type: string
     default: ICRS
     enum: [ ICRS ]
+required: [reference_frame]
 ...
-

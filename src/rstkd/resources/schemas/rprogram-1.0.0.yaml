@@ -21,4 +21,5 @@ properties:
   continuation_id:
     title: Continuation of previous Program
     type: integer
+required: [title, pi_name, category, science_category, continuation_id]
 ...
