@@ -11,4 +11,41 @@ properties:
   meta:
     allOf:
       - $ref: "http://stsci.edu/schemas/datamodels/roman/common-1.0.0"
+  data: 
+    tag: tag:stsci.edu:asdf/core/ndarray-1.0.0 
+    type object:
+    properties:
+      datatype:
+        enum: [uint16]
+      shape:
+        type: array
+        minItems: 4
+        maxItems: 4
+    required: [datatype, shape]
+  zeroframe:
+    tag: tag:stsci.edu:asdf/core/ndarray-1.0.0
+    type object:
+    properties:
+      datatype:
+        enum: [uint16]
+      shape:
+        type: array
+        minItems: 3
+        maxItems: 3
+    required: [datatype, shape]
+  refout:
+    tag: tag:stsci.edu:asdf/core/ndarray-1.0.0
+    type object:
+    properties:
+      datatype:
+        enum: [uint16]
+      shape:
+        type: array
+        minItems: 4
+        maxItems: 4
+    required: [datatype, shape]
+
+propertyOrder: [meta, data, zeroframe, refout]
+flowStyle: block
+required: [meta, data, zeroframe, refout]
 ...
