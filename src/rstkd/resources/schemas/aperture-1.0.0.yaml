@@ -12,5 +12,7 @@ properties:
   position_angle:
     title: "[deg] Position angle of aperture used"
     type: number
+propertyOrder: [name, position_angle]
+flowStyle: block
 required: [name, position_angle]
 ...  

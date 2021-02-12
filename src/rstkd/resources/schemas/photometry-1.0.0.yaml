@@ -18,6 +18,9 @@ properties:
   pixelarea_arcsecsq:
     title: Nominal pixel area in arcsec^2
     type: number
+propertyOrder: [conversion_microjanskys, conversion_megajanskys,
+           pixelarea_steradians, pixelarea_arcsecsq]
+flowStyle: block
 required: [conversion_microjanskys, conversion_megajanskys,
            pixelarea_steradians, pixelarea_arcsecsq]
 ...

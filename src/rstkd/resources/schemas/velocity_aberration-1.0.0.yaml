@@ -15,5 +15,7 @@ properties:
   scale_factor:
     title: Velocity aberration scale factor
     type: number
+flowStyle: block
+propertyOrder: [ra_offset, dec_offset, scale_factor]
 required: [ra_offset, dec_offset, scale_factor]
 ...

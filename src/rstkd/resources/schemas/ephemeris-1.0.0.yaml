@@ -39,6 +39,10 @@ properties:
   velocity_z:
     title: "[km/s] Z component of JWST velocity"
     type: number
+propertyOrder: [earth_angle, moon_angle, sun_angle, type, time,
+           spatial_x, spatial_y, spatial_z,
+           velocity_x, velocity_y, velocity_z]
+flowStyle: block
 required: [earth_angle, moon_angle, sun_angle, type, time,
            spatial_x, spatial_y, spatial_z,
            velocity_x, velocity_y, velocity_z]

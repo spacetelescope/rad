@@ -21,5 +21,7 @@ properties:
   continuation_id:
     title: Continuation of previous Program
     type: integer
+propertyOrder: [title, pi_name, category, science_category, continuation_id]
+flowStyle: block
 required: [title, pi_name, category, science_category, continuation_id]
 ...

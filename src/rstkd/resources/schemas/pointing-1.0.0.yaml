@@ -15,5 +15,7 @@ properties:
   pa_v3:
     title: "[deg] Position angle of telescope V3 axis"
     type: number
+propertyOrder: [ra_v1, dec_v1, pa_v3]
+flowStyle: block
 required: [ra_v1, dec_v1, pa_v3]
 ...

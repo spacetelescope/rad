@@ -50,6 +50,10 @@ properties:
     title: Source type used for calibration
     type: string
     enum: [ EXTENDED, POINT, UNKNOWN ]
+propertyOrder: [proposer_name, catalog_name, type, ra, dec, ra_uncertainty, dec_uncertainty,
+           proper_motion_ra, proper_motion_dec, proper_motion_epoch,
+           proposer_ra, proposer_dec, source_type_apt, source_type]
+flowStyle: block 
 required: [proposer_name, catalog_name, type, ra, dec, ra_uncertainty, dec_uncertainty,
            proper_motion_ra, proper_motion_dec, proper_motion_epoch,
            proposer_ra, proposer_dec, source_type_apt, source_type]

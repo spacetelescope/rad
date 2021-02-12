@@ -116,7 +116,18 @@ properties:
   nresets_at_start:
     title: Number of resets at start of exposure
     type: integer
-
+propertyOrder: [count, type, 
+           start_time, mid_time, end_time,
+           start_time_mjd, mid_time_mjd, end_time_mjd,
+           start_time_tdb, mid_time_tdb, end_time_tdb,
+           start_time_eng,
+           ngroups, nframes, data_problem, gain_factor,
+           integration_time, elapsed_exposure_time,
+           nints, integration_start, integration_end,
+           frame_divisor, groupgap, nsamples, sample_time,
+           frame_time, group_time, exposure_time, 
+           effective_exposure_time, duration, nresets_at_start]
+flowStyle: block
 required: [count, type, 
            start_time, mid_time, end_time,
            start_time_mjd, mid_time_mjd, end_time_mjd,

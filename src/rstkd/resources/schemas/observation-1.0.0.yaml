@@ -69,6 +69,11 @@ properties:
   ma_table_name:
     title: Identifier for the multi-accumulation table used
     type: string
+propertyOrder: [date, time, date_beg, date_end, obs_id, visit_id, program_number,
+           execution_plan_number, pass_number, leg_number, observation_number,
+           visit_number, visit_group, activity_id, exposure_number, template,
+           observation_label, observation_folder, ma_table_name]
+flowStyle: block
 required: [date, time, date_beg, date_end, obs_id, visit_id, program_number,
            execution_plan_number, pass_number, leg_number, observation_number,
            visit_number, visit_group, activity_id, exposure_number, template,
