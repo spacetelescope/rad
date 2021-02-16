@@ -20,8 +20,8 @@ tags:
   schema_uri: http://stsci.edu/schemas/datamodels/roman/exposure-1.0.0
   description: |-
     Exposure information
-- tag_uri: tag:stsci.edu:datamodels/roman/rprogram-1.0.0
-  schema_uri: http://stsci.edu/schemas/datamodels/roman/rprogram-1.0.0
+- tag_uri: tag:stsci.edu:datamodels/roman/program-1.0.0
+  schema_uri: http://stsci.edu/schemas/datamodels/roman/program-1.0.0
   title: Xprogram information
   description: |-
     Xprogram information
