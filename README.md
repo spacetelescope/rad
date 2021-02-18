@@ -1,6 +1,6 @@
 # rstkd
 
 
-This is a play repository for Roman Space Telescope Keyword Dictionary prototyping
+This is a repository for the Roman Data Model Dictionary 
 
 
