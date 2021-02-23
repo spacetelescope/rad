@@ -11,6 +11,11 @@ tags:
   title: Roman WFI Raw Science Data datamodel
   description: |-
     Basic Roman Raw Science
+- tag_uri: tag:stsci.edu:datamodels/roman/wfi_image-1.0.0
+  schema_uri: http://stsci.edu/schemas/datamodels/roman/wfi_image-1.0.0
+  title: Wfi level 2 image information
+  description: |-
+    Wfi level 2 image information
 - tag_uri: tag:stsci.edu:datamodels/roman/wfi_mode-1.0.0
   schema_uri: http://stsci.edu/schemas/datamodels/roman/wfi_mode-1.0.0
   title: Roman WFI Instrument Mode
