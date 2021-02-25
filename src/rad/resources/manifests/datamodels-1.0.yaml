@@ -85,3 +85,8 @@ tags:
   title: Guidestar information
   description: |-
     Guidestar information
+- tag_uri: tag:stsci.edu:datamodels/roman/calstatus-1.0.0
+  schema_uri: http://stsci.edu/schemas/datamodels/roman/calstatus-1.0.0
+  title: Calibration Step status information
+  description: |-
+    Calibration Step status information
