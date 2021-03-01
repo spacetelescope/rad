@@ -1,0 +1,15 @@
+%YAML 1.1
+---
+$schema: "http://stsci.edu/schemas/yaml-schema/draft-01"
+id: "http://stsci.edu/schemas/datamodels/roman/calstatus-1.0.0"
+
+title: Calibration Status
+type: object
+properties:
+  flat_field:
+    title: Flat Field Step
+    type: string
+    enum: ['N/A', 'COMPLETE', 'SKIPPED', 'INCOMPLETE']
+propertyOrder: [flat_field]
+flowStyle: block
+required: [flat_field]
