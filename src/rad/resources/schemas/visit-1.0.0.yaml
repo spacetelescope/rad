@@ -10,6 +10,7 @@ properties:
     title: Engineering data quality indicator from EngDB
     type: string
     enum: [OK, SUSPECT]
+    sdf: something
   pointing_engdb_quality:
     title: Quality of pointing information from EngDB
     type: string
