@@ -90,3 +90,8 @@ tags:
   title: Calibration Step status information
   description: |-
     Calibration Step status information
+- tag_uri: tag:stsci.edu:datamodels/roman/reference_files/flat-1.0.0
+  schema_uri: http://stsci.edu/schemas/datamodels/roman/reference_files/flat-1.0.0
+  title: flat field information
+  description: |-
+    flat field information    

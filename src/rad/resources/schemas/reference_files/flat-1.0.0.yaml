@@ -1,0 +1,47 @@
+%YAML 1.1
+---
+$schema: http://stsci.edu/schemas/asdf/asdf-schema-1.0.0
+id: "http://stsci.edu/schemas/roman/reference_files/flat-1.0.0"
+
+type: object
+properties:
+  meta:
+    allOf:
+      - $ref: "http://stsci.edu/schemas/datamodels/roman/reference_files/ref_common-1.0.0"
+  data: 
+    tag: tag:stsci.edu:asdf/core/ndarray-1.0.0 
+    type object:
+    properties:
+      datatype:
+        enum: [float32]
+      shape:
+        type: array
+        minItems: 2
+        maxItems: 2
+    required: [datatype, shape]
+  dq: 
+    tag: tag:stsci.edu:asdf/core/ndarray-1.0.0 
+    type object:
+    properties:
+      datatype:
+        enum: [uint16]
+      shape:
+        type: array
+        minItems: 2
+        maxItems: 2
+    required: [datatype, shape]
+  err:
+    tag: tag:stsci.edu:asdf/core/ndarray-1.0.0
+    type object:
+    properties:
+      datatype:
+        enum: [float32]
+      shape:
+        type: array
+        minItems: 2
+        maxItems: 2
+    required: [datatype, shape]
+required: [meta]
+flowStyle: block
+propertyOrder: [meta]
+...
