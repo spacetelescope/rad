@@ -76,17 +76,18 @@ properties:
         type: array
         minItems: 2
         maxItems: 2
-    required: [datatype, shape] 
-  area:
-    tag: tag:stsci.edu:asdf/core/ndarray-1.0.0
-    type object:
-    properties:
-      datatype:
-        enum: [float32]
-      shape:
-        type: array
-        minItems: 2
-        maxItems: 2
+    required: [datatype, shape]
+  - $ref: "http://stsci.edu/schemas/datamodels/roman/pixelarea-1.0.0"
+#  area:
+#    tag: tag:stsci.edu:asdf/core/ndarray-1.0.0
+#    type object:
+#    properties:
+#      datatype:
+#        enum: [float32]
+#      shape:
+#        type: array
+#        minItems: 2
+#        maxItems: 2
     required: [datatype, shape]
 propertyOrder: [meta, data, dq, err, var_poisson, var_rnoise, area]
 flowStyle: block
