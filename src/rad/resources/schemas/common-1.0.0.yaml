@@ -47,8 +47,6 @@ properties:
     tag: "tag:stsci.edu:datamodels/roman/velocity_aberration-1.0.0"
   wcsinfo:
     tag: "tag:stsci.edu:datamodels/roman/wcsinfo-1.0.0"
-  guidestar:
-    tag: "tag:stsci.edu:datamodels/roman/guidestar-1.0.0"
-  calstatus:
-    tag: "tag:stsci.edu:datamodels/roman/calstatus-1.0.0"
+  cal_step:
+    tag: "tag:stsci.edu:datamodels/roman/cal_step-1.0.0"
 ...
