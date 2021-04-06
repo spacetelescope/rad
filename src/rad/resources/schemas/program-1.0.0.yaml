@@ -9,18 +9,53 @@ properties:
   title:
     title: Proposal title
     type: string
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: PSS:program.title
+    archive_catalog:
+      datatype: nvarchar(200) 
+      destination: [ScienceCommon.program_title]
   pi_name:
     title: Principle Investigator pi_name
     type: string
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: "= apt('./ProposalInformation/PrincipalInvestigator/InvestigatorAddress/LastName') + ', ' + apt('./ProposalInformation/PrincipalInvestigator/InvestigatorAddress/FirstName')"
+    archive_catalog:
+      datatype: nvarchar(100)
+      destination: [ScienceCommon.pi_name]
   category:
     title: Program category
     type: string
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: PSS:program.category
+    archive_catalog:
+      datatype: nvarchar(6)
+      destination: [ScienceCommon.program_category]
   science_category:
     title: Science category assigned during TAC process
     type: string
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: PSS:program_track.science_category
+    archive_catalog:
+      datatype: nvarchar(50)
+      destination: [ScienceCommon.science_category]
   continuation_id:
     title: Continuation of previous Program
     type: integer
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: PSS:program_track.continuation_id
+    archive_catalog:
+      datatype: int
+      destination: [ScienceCommon.continuation_id]
 propertyOrder: [title, pi_name, category, science_category, continuation_id]
 flowStyle: block
 required: [title, pi_name, category, science_category, continuation_id]

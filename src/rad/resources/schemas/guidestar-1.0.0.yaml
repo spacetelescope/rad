@@ -12,84 +12,273 @@ properties:
   gs_start_time:
     title: UTC time when guide star activity started
     type: string
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    archive_catalog:
+      datatype: datetime2
+      destination: [ScienceCommon.gs_start_time]
   gs_stop_time:
     title: UTC time when guide star activity completed
     type: string
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    archive_catalog:
+      datatype: datetime2
+      destination: [ScienceCommon.gs_stop_time]
   gs_id:
     title: guide star identifier
     type: string
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    archive_catalog:
+      datatype: nvarchar(20)
+      destination: [ScienceCommon.gs_id]
   gs_ra:
     title: guide star right ascension
     type: number
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    archive_catalog:
+      datatype: float
+      destination: [ScienceCommon.gs_ra]
   gs_dec:
     title: guide star declination
     type: number
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    archive_catalog:
+      datatype: float
+      destination: [ScienceCommon.gs_dec]
   gs_ura:
     title: guide star right ascension uncertainty
     type: number
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    archive_catalog:
+      datatype: float
+      destination: [ScienceCommon.gs_ura]
   gs_udec:
     title: guide star declination uncertainty
     type: number
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    archive_catalog:
+      datatype: float
+      destination: [ScienceCommon.gs_udec]
   gs_mag:
     title: guide star magnitude in FGS detector
     type: number
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    archive_catalog:
+      datatype: float
+      destination: [ScienceCommon.gs_mag]
   gs_umag:
     title: guide star magnitude uncertainty
     type: number
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    archive_catalog:
+      datatype: float
+      destination: [ScienceCommon.gs_umag]
   gs_pcs_mode:
     title: Pointing Control System mode
     type: string
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    archive_catalog:
+      datatype: nvarchar(10)
+      destination: [ScienceCommon.gs_pcs_mode]
   gs_function_start_time:
     title: Observatory UTC time at guider function start
     type: string
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    archive_catalog:
+      datatype: datetime2
+      destination: [ScienceCommon.gs_function_start_time]
   gs_function_end_time:
     title: Observatory UTC time at guider function end
     type: string
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    archive_catalog:
+      datatype: datetime2
+      destination: [ScienceCommon.gs_function_end_time]
   data_start:
     title: MJD start time of guider data within this file
     type: number
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    archive_catalog:
+      datatype: float
+      destination: [ScienceCommon.data_start]
   data_end:
     title: MJD end time of guider data within this file
     type: number
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    archive_catalog:
+      datatype: float
+      destination: [ScienceCommon.data_end]
   gs_acq_exec_stat:
     title: Guide star acquisition execution status
     type: string
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    archive_catalog:
+      datatype: nvarchar(15)
+      destination: [ScienceCommon.gs_acq_exec_stat]
   gs_ctd_x:
     title: "[arcsec] guide star centroid x position in FGS ideal frame"
     type: number
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    archive_catalog:
+      datatype: float
+      destination: [ScienceCommon.gs_ctd_x]
   gs_ctd_y:
     title: "[arcsec] guide star centroid y position in FGS ideal frame"
     type: number
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    archive_catalog:
+      datatype: float
+      destination: [ScienceCommon.gs_ctd_y]
   gs_ctd_ux:
     title: uncertainty in the x position of the centroid
     type: number
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    archive_catalog:
+      datatype: float
+      destination: [ScienceCommon.gs_ctd_ux]
   gs_ctd_uy:
     title: uncertainty in the y position of the centroid
     type: number
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    archive_catalog:
+      datatype: float
+      destination: [ScienceCommon.gs_ctd_uy]
   gs_epoch:
     title: Epoch of guide star coordinates
     type: string
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    archive_catalog:
+      datatype: nvarchar(10)
+      destination: [ScienceCommon.gs_epoch]
   gs_mura:
     title: Guide star IRCS right ascension proper motion
     type: number
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    archive_catalog:
+      datatype: float
+      destination: [ScienceCommon.gs_mura]
   gs_mudec:
     title: Guide star IRCS declination proper motion
     type: number
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    archive_catalog:
+      datatype: float
+      destination: [ScienceCommon.gs_mudec]
   gs_para:
     title: Guide star annual parallax
     type: number
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    archive_catalog:
+      datatype: float
+      destination: [ScienceCommon.gs_para]
   gs_window_xstart:
     title: Guide window x position
     type: number
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    archive_catalog:
+      datatype: float
+      destination: [ScienceCommon.gs_window_xstart]
   gs_window_ystart:
     title: Guide window y position
     type: number
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    archive_catalog:
+      datatype: float
+      destination: [ScienceCommon.gs_window_ystart]
   gs_window_xsize:
     title: Guide star window size in x
     type: number
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    archive_catalog:
+      datatype: float
+      destination: [ScienceCommon.gs_window_xsize]
   gs_window_ysize:
     title: Guide star window size in y
     type: number
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    archive_catalog:
+      datatype: float
+      destination: [ScienceCommon.gs_window_ysize]
 propertyOrder: [gs_start_time, gs_stop_time, gs_id, gs_ra, gs_dec, gs_ura, gs_udec,
            gs_mag, gs_umag, gs_pcs_mode, gs_function_start_time, gs_function_end_time,
            data_start, data_end, gs_acq_exec_stat, gs_ctd_x, gs_ctd_y, gs_ctd_ux, gs_ctd_uy,

@@ -10,6 +10,9 @@ properties:
     title: Flat Field Step
     type: string
     enum: ['N/A', 'COMPLETE', 'SKIPPED', 'INCOMPLETE']
+    archive_catalog:
+      datatype: nvarchar(15)
+      destination: [ScienceRefData.flat_field]
 propertyOrder: [flat_field]
 flowStyle: block
 required: [flat_field]
