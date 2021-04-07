@@ -12,7 +12,7 @@ properties:
     sdf:
       special_processing: VALUE_REQUIRED
       source:
-        origin: PSS:spacecraft_parameters.earth_avoidance_angle????
+        origin: TBD
     archive_catalog:
       datatype: float
       destination: [ScienceCommon.earth_angle]
@@ -22,7 +22,7 @@ properties:
     sdf:
       special_processing: VALUE_REQUIRED
       source:
-        origin: PSS:spacecraft_parameters.moon_avoidance_angle????
+        origin: TBD
     archive_catalog:
       datatype: float
       destination: [ScienceCommon.moon_angle]
@@ -57,7 +57,7 @@ properties:
       datatype: float
       destination: [ScienceCommon.ephemeris_time]
   spatial_x:
-    title: "[km] X spatial coordinate of JWST"
+    title: "[km] X spatial coordinate of Roman"
     type: number
     sdf:
       special_processing: VALUE_REQUIRED
@@ -67,7 +67,7 @@ properties:
       datatype: float
       destination: [ScienceCommon.spatial_x]
   spatial_y:
-    title: "[km] Y spatial coordinate of JWST"
+    title: "[km] Y spatial coordinate of Roman"
     type: number
     sdf:
       special_processing: VALUE_REQUIRED
@@ -77,7 +77,7 @@ properties:
       datatype: float
       destination: [ScienceCommon.spatial_y]
   spatial_z:
-    title: "[km] Z spatial coordinate of JWST"
+    title: "[km] Z spatial coordinate of Roman"
     type: number
     sdf:
       special_processing: VALUE_REQUIRED
@@ -87,7 +87,7 @@ properties:
       datatype: float
       destination: [ScienceCommon.spatial_z]
   velocity_x:
-    title: "[km/s] X component of JWST velocity"
+    title: "[km/s] X component of Roman velocity"
     type: number
     sdf:
       special_processing: VALUE_REQUIRED
@@ -97,7 +97,7 @@ properties:
       datatype: float
       destination: [ScienceCommon.velocity_x]
   velocity_y:
-    title: "[km/s] Y component of JWST velocity"
+    title: "[km/s] Y component of Roman velocity"
     type: number
     sdf:
       special_processing: VALUE_REQUIRED
@@ -107,7 +107,7 @@ properties:
       datatype: float
       destination: [ScienceCommon.velocity_y]
   velocity_z:
-    title: "[km/s] Z component of JWST velocity"
+    title: "[km/s] Z component of Roman velocity"
     type: number
     sdf:
       special_processing: VALUE_REQUIRED
