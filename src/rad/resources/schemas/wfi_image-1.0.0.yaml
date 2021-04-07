@@ -77,8 +77,8 @@ properties:
         minItems: 2
         maxItems: 2
     required: [datatype, shape]
-  area:
-    $ref: "http://stsci.edu/schemas/datamodels/roman/pixelarea-1.0.0"
+  # For area object
+  $ref: "http://stsci.edu/schemas/datamodels/roman/pixelarea-1.0.0"
 propertyOrder: [meta, data, dq, err, var_poisson, var_rnoise, area]
 flowStyle: block
 required: [meta, data, dq, err, var_poisson, var_rnoise, area]

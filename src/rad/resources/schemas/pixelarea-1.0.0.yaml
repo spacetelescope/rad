@@ -4,9 +4,14 @@ $schema: http://stsci.edu/schemas/asdf/asdf-schema-1.0.0
 id: "http://stsci.edu/schemas/roman/pixelarea-1.0.0"
 
 title: |
-  The schema for the pixel area array class-like module
+  The schema for the pixel area array object
 
-# Class-like module to be imported as an object in other yaml files
-tag: tag:stsci.edu:asdf/core/ndarray-1.0.0
-datatype: float32
-ndim: 2
+type: object
+properties:
+  area:
+    tag: tag:stsci.edu:asdf/core/ndarray-1.0.0
+    datatype: float32
+    ndim: 2
+propertyOrder: [area]
+flowStyle: block
+required: [area]
