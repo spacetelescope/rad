@@ -22,7 +22,9 @@ properties:
     sdf:
       special_processing: VALUE_REQUIRED
       source:
-        origin: "= apt('./ProposalInformation/PrincipalInvestigator/InvestigatorAddress/LastName') + ', ' + apt('./ProposalInformation/PrincipalInvestigator/InvestigatorAddress/FirstName')"
+        # There are a number of ways to get the pi_name.  Here is one
+        # of them: "= apt('./ProposalInformation/PrincipalInvestigator/InvestigatorAddress/LastName') + ', ' + apt('./ProposalInformation/PrincipalInvestigator/InvestigatorAddress/FirstName')"
+        origin: TBD
     archive_catalog:
       datatype: nvarchar(100)
       destination: [ScienceCommon.pi_name]
