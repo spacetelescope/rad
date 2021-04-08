@@ -9,24 +9,73 @@ properties:
   v2_ref:
     title: "[arcsec] Telescope v2 coordinate of the reference point"
     type: number
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    archive_catalog:
+      datatype: float
+      destination: [ScienceCommon.v2_ref]
   v3_ref:
     title: "[arcsec] Telescope v3 coordinate of the reference point"
     type: number
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    archive_catalog:
+      datatype: float
+      destination: [ScienceCommon.v3_ref]
   vparity:
     title: Relative sense of rotation between Ideal xy and V2V3
     type: integer
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    archive_catalog:
+      datatype: int
+      destination: [ScienceCommon.vparity]
   v3yangle:
     title: "[deg] Angle from V3 axis to Ideal y axis"
     type: number
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    archive_catalog:
+      datatype: float
+      destination: [ScienceCommon.v3yangle]
   ra_ref:
     title: "[deg] Right ascension of the reference point"
     type: number
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    archive_catalog:
+      datatype: float
+      destination: [ScienceCommon.ra_ref]
   dec_ref:
     title: "[deg] Declination of the reference point"
     type: number
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    archive_catalog:
+      datatype: float
+      destination: [ScienceCommon.dec_ref]
   roll_ref:
     title: "[deg] V3 roll angle at the ref point (N over E)"
     type: number
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    archive_catalog:
+      datatype: float
+      destination: [ScienceCommon.roll_ref]
 propertyOrder: [v2_ref, v3_ref, vparity, v3yangle, ra_ref, dec_ref, roll_ref]
 flowStyle: block 
 required: [v2_ref, v3_ref, vparity, v3yangle, ra_ref, dec_ref, roll_ref]
