@@ -9,47 +9,149 @@ properties:
   proposer_name:
     title: Proposer's name for the target
     type: string
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: PSS:target.target_name
+    archive_catalog:
+      datatype: nvarchar(100)
+      destination: [ScienceCommon.proposer_target_name]
   catalog_name:
     title: Standard astronomical catalog name for target
     type: string
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: PSS:target.standard_target_name
+    archive_catalog:
+      datatype: nvarchar(256)
+      destination: [ScienceCommon.catalog_name]
   type:
-    title: Type of target (fixed, moving, generic)
+    title: Type of target
     type: string
+    enum: [ FIXED, MOVING, GENERIC ]
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: PPS:target.target_type
+    archive_catalog:
+      datatype: nvarchar(10)
+      destination: [ScienceCommon.target_type]
   ra:
     title: Target RA at mid time of exposure
     type: number
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: PPS:fixed_target.ra_computed
+    archive_catalog:
+      datatype: float
+      destination: [ScienceCommon.ra]
   dec:
     title: Target Dec at mid time of exposure
     type: number
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: PPS:fixed_target.dec_computed
+    archive_catalog:
+      datatype: float
+      destination: [ScienceCommon.dec]
   ra_uncertainty:
     title: Target RA uncertainty
     type: number
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: PPS:fixed_target.ra_uncertainty_computed
+    archive_catalog:
+      datatype: float
+      destination: [ScienceCommon.ra_uncertainty]
   dec_uncertainty:
     title: Target Dec uncertainty
     type: number
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: PPS:fixed_target.dec_uncertainty_computed
+    archive_catalog:
+      datatype: float
+      destination: [ScienceCommon.dec_uncertainty]
   proper_motion_ra:
     title: Target proper motion in RA
     type: number
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: PPS:fixed_target.ra_proper_motion
+    archive_catalog:
+      datatype: float
+      destination: [ScienceCommon.proper_motion_ra]
   proper_motion_dec:
     title: Target proper motion in Dec
     type: number
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: PPS:fixed_target.dec_proper_motion
+    archive_catalog:
+      datatype: float
+      destination: [ScienceCommon.proper_motion_dec]
   proper_motion_epoch:
     title: Target proper motion epoch
     type: string
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: PSS:fixed_target.epoch
+    archive_catalog:
+      datatype: nvarchar(10)/datetime2 (PSS)
+      destination: [ScienceCommon.proper_motion_epoch]
   proposer_ra:
     title: Proposer's target RA
     type: number
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: PSS:fixed_target.ra_literal
+        function: hms_to_degrees
+    archive_catalog:
+      datatype: float
+      destination: [ScienceCommon.proposer_ra]
   proposer_dec:
     title: Proposer's target Dec
     type: number
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: PSS:fixed_target.dec_literal
+        function: hms_to_degrees
+    archive_catalog:
+      datatype: float
+      destination: [ScienceCommon.proposer_dec]
   source_type_apt:
     title: Source type from APT (point/extended)
     type: string
     enum: [ EXTENDED, POINT, UNKNOWN ]
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: PSS:target.extended
+        function: convert_extended
+    archive_catalog:
+      datatype: nvarchar(8)
+      destination: [ScienceCommon.source_type_apt]
   source_type:
     title: Source type used for calibration
     type: string
     enum: [ EXTENDED, POINT, UNKNOWN ]
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    archive_catalog:
+      datatype: nvarchar(8)
+      destination: [ScienceCommon.source_type]
 propertyOrder: [proposer_name, catalog_name, type, ra, dec, ra_uncertainty, dec_uncertainty,
            proper_motion_ra, proper_motion_dec, proper_motion_epoch,
            proposer_ra, proposer_dec, source_type_apt, source_type]

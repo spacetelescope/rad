@@ -12,6 +12,14 @@ properties:
   count:
     title: Running count of exposures in visit
     type: number
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    archive_catalog:
+      datatype: float
+      destination: [ScienceCommon.exposure_count]
+
   type:
     title: Type of data in the exposure
     type: string
@@ -29,93 +37,304 @@ properties:
         # Relative Calibration System
         WFI_RCS
       ]
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    archive_catalog:
+      datatype: nvarchar(25)
+      destination: [ScienceCommon.exposure_type]
+
   start_time:
     title: UTC exposure start time
     type: number
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    archive_catalog:
+      datatype: float
+      destination: [ScienceCommon.exposure_start_time]
   mid_time:
     title: UTC exposure mid time
     type: number
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    archive_catalog:
+      datatype: float
+      destination: [ScienceCommon.exposure_mid_time]
   end_time:
     title: UTC exposure end time
     type: number
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    archive_catalog:
+      datatype: float
+      destination: [ScienceCommon.exposure_end_time]
   start_time_mjd:
     title: "[d] exposure start time in MJD"
     type: number
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    archive_catalog:
+      datatype: float
+      destination: [ScienceCommon.exposure_start_time_mjd]
   mid_time_mjd:
     title: "[d] exposure mid time in MJD"
     type: number
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    archive_catalog:
+      datatype: float
+      destination: [ScienceCommon.exposure_mid_time_mjd]
   end_time_mjd:
     title: "[d] exposure end time in MJD"
     type: number
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    archive_catalog:
+      datatype: float
+      destination: [ScienceCommon.exposure_end_time_mjd]
   start_time_tdb:
     title: "[d] TDB time of exposure start in MJD"
     type: number
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    archive_catalog:
+      datatype: float
+      destination: [ScienceCommon.exposure_start_time_tdb]
   mid_time_tdb:
     title: "[d] TDB time of exposure mid in MJD"
     type: number
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    archive_catalog:
+      datatype: float
+      destination: [ScienceCommon.exposure_mid_time_tdb]
   end_time_tdb:
     title: "[d] TDB time of exposure end in MJD"
     type: number
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    archive_catalog:
+      datatype: float
+      destination: [ScienceCommon.exposure_end_time_tdb]
   start_time_eng:
     title: UTC exposure start time from engineering data
     type: string
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    archive_catalog:
+      datatype: datetime
+      destination: [ScienceCommon.exposure_start_time_eng]
   ngroups:
     title: Number of groups in integration
     type: integer
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    archive_catalog:
+      datatype: int
+      destination: [ScienceCommon.exposure_ngroups]
   nframes:
     title: Number of frames per group
     type: integer
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    archive_catalog:
+      datatype: int
+      destination: [ScienceCommon.exposure_nframes]
   data_problem:
     title: Science telemetry indicated a problem
     type: boolean
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    archive_catalog:
+      datatype: bit
+      destination: [ScienceCommon.exposure_data_problem]
   gain_factor:
     title: Gain scale factor
     type: number
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    archive_catalog:
+      datatype: float
+      destination: [ScienceCommon.exposure_gain_factor]
   integration_time:
     title: "[s] Effective integration time"
     type: number
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    archive_catalog:
+      datatype: float
+      destination: [ScienceCommon.exposure_integration_time]
   elapsed_exposure_time:
     title: "[s] Total elapsed exposure time"
     type: number
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    archive_catalog:
+      datatype: float
+      destination: [ScienceCommon.elapsed_exposure_time]
   nints:
     title: Number of integrations in exposure
     type: integer
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    archive_catalog:
+      datatype: int
+      destination: [ScienceCommon.exposure_nints]
   integration_start:
     title: Starting integration number in this segment
     type: integer
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    archive_catalog:
+      datatype: int
+      destination: [ScienceCommon.exposure_integration_start]
   integration_end:
     title: Ending integration number in this segment
     type: integer
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    archive_catalog:
+      datatype: int
+      destination: [ScienceCommon.exposure_integration_end]
   frame_divisor:
     title: Divisor applied to frame-averaged groups
     type: integer
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    archive_catalog:
+      datatype: int
+      destination: [ScienceCommon.exposure_frame_divisor]
   groupgap:
     title: Number of frames dropped between groups
     type: integer
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    archive_catalog:
+      datatype: int
+      destination: [ScienceCommon.exposure_groupgap]
   nsamples:
     title: Number of A/D samples per pixel
     type: integer
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    archive_catalog:
+      datatype: int
+      destination: [ScienceCommon.exposure_nsamples]
   sample_time:
     title: "[us] Time between samples"
     type: number
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    archive_catalog:
+      datatype: float
+      destination: [ScienceCommon.exposure_sample_time]
   frame_time:
     title: "[s] Time between frames"
     type: number
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    archive_catalog:
+      datatype: float
+      destination: [ScienceCommon.exposure_frame_time]
   group_time:
     title: "[s] Time between groups"
     type: number
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    archive_catalog:
+      datatype: float
+      destination: [ScienceCommon.exposure_group_time]
   exposure_time:
     title: "[s] Effective exposure time"
     type: number
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    archive_catalog:
+      datatype: float
+      destination: [ScienceCommon.exposure_time]
   effective_exposure_time:
     title: "[s] Effective exposure time"
     type: number
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    archive_catalog:
+      datatype: float
+      destination: [ScienceCommon.effective_exposure_time]
   duration:
     title: "[s] Total duration of exposure"
     type: number
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    archive_catalog:
+      datatype: float
+      destination: [ScienceCommon.exposure_duration]
   nresets_at_start:
     title: Number of resets at start of exposure
     type: integer
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    archive_catalog:
+      datatype: int
+      destination: [ScienceCommon.exposure_nresets_at_start]
 propertyOrder: [count, type, 
            start_time, mid_time, end_time,
            start_time_mjd, mid_time_mjd, end_time_mjd,

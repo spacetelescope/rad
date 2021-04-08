@@ -10,28 +10,84 @@ properties:
     title: Engineering data quality indicator from EngDB
     type: string
     enum: [OK, SUSPECT]
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    archive_catalog:
+      datatype: nvarchar(10)
+      destination: [ScienceCommon.engineering_quality]
   pointing_engdb_quality:
     title: Quality of pointing information from EngDB
     type: string
     enum: [CALCULATED, PLANNED]
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    archive_catalog:
+      datatype: nvarchar(10)
+      destination: [ScienceCommon.pointing_engdb_quality]
   type:
     title: Visit type
     type: string
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: PSS:visit.visit_type
+    archive_catalog:
+      datatype: nvarchar(30)
+      destination: [ScienceCommon.visit_type]
   start_time:
     title: UTC visit start time
     type: string
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    archive_catalog:
+      datatype: datetime2
+      destination: [ScienceCommon.visit_start_time]
   end_time:
     title: UTC visit end time
     type: string
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    archive_catalog:
+      datatype: datetime2
+      destination: [ScienceCommon.visit_end_time]
   status:
     title: Status of a visit
     type: string
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    archive_catalog:
+      datatype: nvarchar(15)
+      destination: [ScienceCommon.visit_status]
   total_exposures:
     title: Total number of planned exposures in visit
     type: integer
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    archive_catalog:
+      datatype: int
+      destination: [ScienceCommon.visit_total_exposures]
   internal_target:
     title: At least one exposure in visit is internal
     type: boolean
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    archive_catalog:
+      datatype: bit
+      destination: [ScienceCommon.visit_internal_target]
 propertyOrder: [engineering_quality, pointing_engdb_quality, type,
            start_time, end_time, status, total_exposures, internal_target]
 flowStyle: block 

@@ -13,70 +13,28 @@ properties:
       - $ref: "http://stsci.edu/schemas/datamodels/roman/common-1.0.0"
   data: 
     tag: tag:stsci.edu:asdf/core/ndarray-1.0.0
-    type object:
-    properties:
-      datatype:
-        enum: [float32]
-      shape:
-        type: array
-        minItems: 2
-        maxItems: 2
-    required: [datatype, shape]
-  dq: 
+    datatype: float32
+    ndim: 2
+  dq:
     tag: tag:stsci.edu:asdf/core/ndarray-1.0.0 
-    type object:
-    properties:
-      datatype:
-        enum: [uint32]
-      shape:
-        type: array
-        minItems: 2
-        maxItems: 2
-    required: [datatype, shape]
+    datatype: uint32
+    ndim: 2
   err:
     tag: tag:stsci.edu:asdf/core/ndarray-1.0.0
-    type object:
-    properties:
-      datatype:
-        enum: [float32]
-      shape:
-        type: array
-        minItems: 2
-        maxItems: 2
-    required: [datatype, shape]
+    datatype: float32
+    ndim: 2
   var_poisson:
     tag: tag:stsci.edu:asdf/core/ndarray-1.0.0
-    type object:
-    properties:
-      datatype:
-        enum: [float32]
-      shape:
-        type: array
-        minItems: 2
-        maxItems: 2
-    required: [datatype, shape]
+    datatype: float32
+    ndim: 2
   var_rnoise:
     tag: tag:stsci.edu:asdf/core/ndarray-1.0.0
-    type object:
-    properties:
-      datatype:
-        enum: [float32]
-      shape:
-        type: array
-        minItems: 2
-        maxItems: 2
-    required: [datatype, shape]
+    datatype: float32
+    ndim: 2
   var_flat:
     tag: tag:stsci.edu:asdf/core/ndarray-1.0.0
-    type object:
-    properties:
-      datatype:
-        enum: [float32]
-      shape:
-        type: array
-        minItems: 2
-        maxItems: 2
-    required: [datatype, shape]
+    datatype: float32
+    ndim: 2
   # For area object
   $ref: "http://stsci.edu/schemas/datamodels/roman/pixelarea-1.0.0"
 propertyOrder: [meta, data, dq, err, var_poisson, var_rnoise, area]

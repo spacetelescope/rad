@@ -8,19 +8,52 @@ properties:
   filename:
     title: Name of the file
     type: string
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    archive_catalog:
+      datatype: nvarchar(120)
+      destination: [ScienceCommon.filename]
   date:
     title: Date this file was created (UTC)
     tag: tag:stsci.edu:asdf/time/time-1.1.0
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    archive_catalog:
+      datatype: datetime2
+      destination: [ScienceCommon.filedate]
   model_type:
     title: Type of data model
     type: string
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    archive_catalog:
+      datatype: nvarchar(50)
+      destination: [ScienceCommon.model_type]
   origin:
     title: Organization responsible for creating file
     type: string
+    enum: [STSCI]
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    archive_catalog:
+      datatype: nvarchar(5)
+      destination: [ScienceCommon.origin]
   telescope:
     title: Telescope used to acquire the data
     type: string
+    default: ROMAN
     enum: [ROMAN]
+    archive_catalog:
+      datatype: nvarchar(5)
+      destination: [ScienceCommon.telescope]
   exposure:
     tag: "tag:stsci.edu:datamodels/roman/exposure-1.0.0"
   instrument:
@@ -47,8 +80,6 @@ properties:
     tag: "tag:stsci.edu:datamodels/roman/velocity_aberration-1.0.0"
   wcsinfo:
     tag: "tag:stsci.edu:datamodels/roman/wcsinfo-1.0.0"
-  guidestar:
-    tag: "tag:stsci.edu:datamodels/roman/guidestar-1.0.0"
-  calstatus:
-    tag: "tag:stsci.edu:datamodels/roman/calstatus-1.0.0"
+  cal_step:
+    tag: "tag:stsci.edu:datamodels/roman/cal_step-1.0.0"
 ...

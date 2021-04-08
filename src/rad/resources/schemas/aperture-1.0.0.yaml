@@ -9,9 +9,23 @@ properties:
   name:
     title: PRD science aperture used
     type: string
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: PSS:aperture.AperName
+    archive_catalog:
+      datatype: nvarchar(40)
+      destination: [ScienceCommon.aperture_name]
   position_angle:
     title: "[deg] Position angle of aperture used"
     type: number
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD #v3_position_angle in baseline_prime_visits or spacecraft_parameters
+    archive_catalog:
+      datatype: float
+      destination: [ScienceCommon.position_angle]
 propertyOrder: [name, position_angle]
 flowStyle: block
 required: [name, position_angle]

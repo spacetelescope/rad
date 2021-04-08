@@ -9,12 +9,33 @@ properties:
   ra_offset:
     title: Velocity aberration right ascension offset
     type: number
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    archive_catalog:
+      datatype: float
+      destination: [ScienceCommon.ra_offset]
   dec_offset:
     title: Velocity aberration declination offset
     type: number
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    archive_catalog:
+      datatype: float
+      destination: [ScienceCommon.dec_offset]
   scale_factor:
     title: Velocity aberration scale factor
     type: number
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    archive_catalog:
+      datatype: float
+      destination: [ScienceCommon.scale_factor]
 flowStyle: block
 propertyOrder: [ra_offset, dec_offset, scale_factor]
 required: [ra_offset, dec_offset, scale_factor]

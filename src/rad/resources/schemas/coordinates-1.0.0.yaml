@@ -11,5 +11,8 @@ properties:
     type: string
     default: ICRS
     enum: [ ICRS ]
+    archive_catalog:
+      datatype: nvarchar(10)
+      destination: [ScienceCommon.reference_frame]
 required: [reference_frame]
 ...
