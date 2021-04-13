@@ -1,0 +1,17 @@
+%YAML 1.1
+---
+$schema: http://stsci.edu/schemas/asdf/asdf-schema-1.0.0
+id: "http://stsci.edu/schemas/roman/pixelarea-1.0.0"
+
+title: |
+  The schema for the pixel area array object
+
+type: object
+properties:
+  area:
+    tag: tag:stsci.edu:asdf/core/ndarray-1.0.0
+    datatype: float32
+    ndim: 2
+propertyOrder: [area]
+flowStyle: block
+required: [area]

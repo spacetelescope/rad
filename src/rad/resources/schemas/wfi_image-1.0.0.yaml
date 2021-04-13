@@ -12,10 +12,10 @@ properties:
     allOf:
       - $ref: "http://stsci.edu/schemas/datamodels/roman/common-1.0.0"
   data: 
-    tag: tag:stsci.edu:asdf/core/ndarray-1.0.0 
+    tag: tag:stsci.edu:asdf/core/ndarray-1.0.0
     datatype: float32
     ndim: 2
-  dq: 
+  dq:
     tag: tag:stsci.edu:asdf/core/ndarray-1.0.0 
     datatype: uint32
     ndim: 2
@@ -34,11 +34,9 @@ properties:
   var_flat:
     tag: tag:stsci.edu:asdf/core/ndarray-1.0.0
     datatype: float32
-    ndim: 2 
-  area:
-    tag: tag:stsci.edu:asdf/core/ndarray-1.0.0
-    datatype: float32
     ndim: 2
+  # For area object
+  $ref: "http://stsci.edu/schemas/datamodels/roman/pixelarea-1.0.0"
 propertyOrder: [meta, data, dq, err, var_poisson, var_rnoise, area]
 flowStyle: block
 required: [meta, data, dq, err, var_poisson, var_rnoise, area]

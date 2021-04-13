@@ -6,6 +6,7 @@ description: |-
 asdf_standard_requirement:
   gte: 1.1.0
 tags:
+# Object Modules
 - tag_uri: tag:stsci.edu:datamodels/roman/wfi_science_raw-1.0.0
   schema_uri: http://stsci.edu/schemas/datamodels/roman/wfi_science_raw-1.0.0
   title: Roman WFI Raw Science Data datamodel
@@ -20,7 +21,13 @@ tags:
   schema_uri: http://stsci.edu/schemas/datamodels/roman/wfi_mode-1.0.0
   title: Roman WFI Instrument Mode
   description: |-
-    Roman WFI Instrument 
+    Roman WFI Instrument
+- tag_uri: tag:stsci.edu:datamodels/roman/pixelarea-1.0.0
+  schema_uri: http://stsci.edu/schemas/datamodels/roman/pixelarea-1.0.0
+  title: Pixel area array
+  description: |-
+    The schema for the pixel area array
+# Metadata Modules
 - tag_uri: tag:stsci.edu:datamodels/roman/exposure-1.0.0
   schema_uri: http://stsci.edu/schemas/datamodels/roman/exposure-1.0.0
   description: |-
@@ -90,8 +97,14 @@ tags:
   title: Calibration Step status information
   description: |-
     Calibration Step status information
+- tag_uri: tag:stsci.edu:datamodels/roman/keyword_pixelarea-1.0.0
+  schema_uri: http://stsci.edu/schemas/datamodels/roman/keyword_pixelarea-1.0.0
+  title: Pixel area keywords
+  description: |-
+    Photometry keywords for pixel area
+# Reference Modules
 - tag_uri: tag:stsci.edu:datamodels/roman/reference_files/flat-1.0.0
   schema_uri: http://stsci.edu/schemas/datamodels/roman/reference_files/flat-1.0.0
   title: flat field information
   description: |-
-    flat field information    
+    flat field information
