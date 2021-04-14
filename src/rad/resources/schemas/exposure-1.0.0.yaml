@@ -335,6 +335,16 @@ properties:
     archive_catalog:
       datatype: int
       destination: [ScienceCommon.exposure_nresets_at_start]
+  datamode:
+    title: post-processing method used in FPAP
+    type: integer
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    archive_catalog:
+      datatype: int
+      destination: [ ScienceCommon.exposure_datamode ]
 propertyOrder: [count, type, 
            start_time, mid_time, end_time,
            start_time_mjd, mid_time_mjd, end_time_mjd,
@@ -345,7 +355,8 @@ propertyOrder: [count, type,
            nints, integration_start, integration_end,
            frame_divisor, groupgap, nsamples, sample_time,
            frame_time, group_time, exposure_time, 
-           effective_exposure_time, duration, nresets_at_start]
+           effective_exposure_time, duration, nresets_at_start,
+           datamode]
 flowStyle: block
 required: [count, type, 
            start_time, mid_time, end_time,
@@ -357,5 +368,6 @@ required: [count, type,
            nints, integration_start, integration_end,
            frame_divisor, groupgap, nsamples, sample_time,
            frame_time, group_time, exposure_time, 
-           effective_exposure_time, duration, nresets_at_start]
+           effective_exposure_time, duration, nresets_at_start,
+           datamode]
 ...

@@ -3,7 +3,7 @@
 $schema: "http://stsci.edu/schemas/yaml-schema/draft-01"
 id: "http://stsci.edu/schemas/datamodels/roman/program-1.0.0"
 
-title: Visit information
+title: Program information
 type: object
 properties:
   title:
@@ -17,7 +17,7 @@ properties:
       datatype: nvarchar(200) 
       destination: [ScienceCommon.program_title]
   pi_name:
-    title: Principle Investigator pi_name
+    title: Principle Investigator name
     type: string
     sdf:
       special_processing: VALUE_REQUIRED

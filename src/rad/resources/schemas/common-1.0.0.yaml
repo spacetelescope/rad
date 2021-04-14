@@ -5,6 +5,17 @@ id: "http://stsci.edu/schemas/datamodels/roman/common-1.0.0"
 
 type: object
 properties:
+  # Meta Variables
+  calibration_software_version:
+    title: Calibration software version number
+    type: string
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    archive_catalog:
+      datatype: nvarchar(120)
+      destination: [ ScienceCommon.calibration_software_version ]
   filename:
     title: Name of the file
     type: string
@@ -46,6 +57,16 @@ properties:
     archive_catalog:
       datatype: nvarchar(5)
       destination: [ScienceCommon.origin]
+  prd_software_version:
+    title: S&OC PRD version number used in data processing
+    type: string
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    archive_catalog:
+      datatype: nvarchar(120)
+      destination: [ ScienceCommon.prd_software_version ]
   telescope:
     title: Telescope used to acquire the data
     type: string
@@ -54,32 +75,34 @@ properties:
     archive_catalog:
       datatype: nvarchar(5)
       destination: [ScienceCommon.telescope]
+  # Meta Objects
+  aperture:
+    tag: "tag:stsci.edu:datamodels/roman/aperture-1.0.0"
+  cal_step:
+    tag: "tag:stsci.edu:datamodels/roman/cal_step-1.0.0"
+  coordinates:
+    tag: "tag:stsci.edu:datamodels/roman/coordinates-1.0.0"
+  ephemeris:
+    tag: "tag:stsci.edu:datamodels/roman/ephemeris-1.0.0"
   exposure:
     tag: "tag:stsci.edu:datamodels/roman/exposure-1.0.0"
   instrument:
     tag: "tag:stsci.edu:datamodels/roman/wfi_mode-1.0.0"
   observation:
     tag: "tag:stsci.edu:datamodels/roman/observation-1.0.0"
-  program:
-   tag: "tag:stsci.edu:datamodels/roman/program-1.0.0"
-  ephemeris:
-    tag: "tag:stsci.edu:datamodels/roman/ephemeris-1.0.0"
-  visit:
-    tag: "tag:stsci.edu:datamodels/roman/visit-1.0.0"
   photometry:
     tag: "tag:stsci.edu:datamodels/roman/photometry-1.0.0"
-  coordinates:
-    tag: "tag:stsci.edu:datamodels/roman/coordinates-1.0.0"
-  aperture:
-    tag: "tag:stsci.edu:datamodels/roman/aperture-1.0.0"
   pointing:
     tag: "tag:stsci.edu:datamodels/roman/pointing-1.0.0"
+  program:
+   tag: "tag:stsci.edu:datamodels/roman/program-1.0.0"
   target:
     tag: "tag:stsci.edu:datamodels/roman/target-1.0.0"
   velocity_aberration:
     tag: "tag:stsci.edu:datamodels/roman/velocity_aberration-1.0.0"
+  visit:
+    tag: "tag:stsci.edu:datamodels/roman/visit-1.0.0"
   wcsinfo:
     tag: "tag:stsci.edu:datamodels/roman/wcsinfo-1.0.0"
-  cal_step:
-    tag: "tag:stsci.edu:datamodels/roman/cal_step-1.0.0"
+  required: [date, instrument, telescope]
 ...
