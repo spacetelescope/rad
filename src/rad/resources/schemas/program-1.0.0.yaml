@@ -38,6 +38,16 @@ properties:
     archive_catalog:
       datatype: nvarchar(6)
       destination: [ScienceCommon.program_category]
+  subcategory:
+    title: Program subcategory
+    type: string
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: PSS:program.subcategory
+    archive_catalog:
+      datatype: nvarchar(15)
+      destination: [ ScienceCommon.program_subcategory ]
   science_category:
     title: Science category assigned during TAC process
     type: string
@@ -58,7 +68,7 @@ properties:
     archive_catalog:
       datatype: int
       destination: [ScienceCommon.continuation_id]
-propertyOrder: [title, pi_name, category, science_category, continuation_id]
+propertyOrder: [title, pi_name, category, subcategory, science_category, continuation_id]
 flowStyle: block
-required: [title, pi_name, category, science_category, continuation_id]
+required: [title, pi_name, category, subcategory, science_category, continuation_id]
 ...

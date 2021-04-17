@@ -8,50 +8,26 @@ title: |
   Observation identifiers
 type: object
 properties:
-  date:
-    title: "[yyyy-mm-dd] UTC date at start of exposure"
-    type: string
-    sdf:
-      special_processing: VALUE_REQUIRED
-      source:
-        origin: TBD
-    archive_catalog:
-      datatype: nvarchar(10)
-      destination: [ScienceCommon.obs_date]
-  time:
-    title: "[hh:mm:ss.sss] UTC time at start of exposure"
-    type: string
-    sdf:
-      special_processing: VALUE_REQUIRED
-      source:
-        origin: TBD
-    archive_catalog:
-      datatype: nvarchar(12)
-      destination: [ScienceCommon.obs_time]
-  date_beg:
-    type: string
+  start_time:
     title: "[yyyy-mm-ddThh:mm:ss.sss] Date-time start of exposure"
+    tag: tag:stsci.edu:asdf/time/time-1.1.0
     sdf:
       special_processing: VALUE_REQUIRED
       source:
         origin: TBD
     archive_catalog:
       datatype: datetime2
-      destination: [ScienceCommon.obs_date_beg]
-    # Despite what the title might lead you to believe, this keyword
-    # actually contains a full datetime string.
-  date_end:
-    type: string
+      destination: [ScienceCommon.obs_start_time]
+  end_time:
     title: "[yyyy-mm-ddThh:mm:ss.sss] Date-time end of exposure"
+    tag: tag:stsci.edu:asdf/time/time-1.1.0
     sdf:
       special_processing: VALUE_REQUIRED
       source:
         origin: TBD
     archive_catalog:
       datatype: datetime2
-      destination: [ScienceCommon.obs_date_end]
-    # Despite what the title might lead you to believe, this keyword
-    # actually contains a full datetime string.
+      destination: [ScienceCommon.obs_end_time]
   obs_id:
     title: Programmatic observation identifier
     type: string
@@ -60,7 +36,7 @@ properties:
       source:
         origin: TBD
     archive_catalog:
-      datatype: nvarchar(26)
+      datatype: nvarchar(30)
       destination: [ScienceCommon.obs_id]
   visit_id:
     title: Visit identifier
@@ -72,68 +48,88 @@ properties:
     archive_catalog:
       datatype: nvarchar(19)
       destination: [ScienceCommon.visit_id]
-  program_number:
+  program:
     title: Program number
-    type: string
+    type: integer
     sdf:
       special_processing: VALUE_REQUIRED
       source:
         origin: TBD
     archive_catalog:
-      datatype: nvarchar(5)
-      destination: [ScienceCommon.program_number]
-  execution_plan_number:
+      datatype: int
+      destination: [ScienceCommon.program]
+  execution_plan:
     title: Execution plan number
-    type: string
+    type: integer
     sdf:
       special_processing: VALUE_REQUIRED
       source:
         origin: TBD
     archive_catalog:
-      datatype: nvarchar(2)
-      destination: [ScienceCommon.execution_plan_number]
-  pass_number:
+      datatype: smallint
+      destination: [ScienceCommon.execution_plan]
+  pass:
     title: Pass number (within execution plan)
-    type: string
+    type: integer
     sdf:
       special_processing: VALUE_REQUIRED
       source:
         origin: TBD
     archive_catalog:
-      datatype: nvarchar(3)
-      destination: [ScienceCommon.pass_number]
-  segment_number:
+      datatype: smallint
+      destination: [ScienceCommon.pass]
+  segment:
     title: Segment Number (within pass)
-    type: string
+    type: integer
     sdf:
       special_processing: VALUE_REQUIRED
       source:
         origin: TBD
     archive_catalog:
-      datatype: nvarchar(3)
-      destination: [ScienceCommon.segment_number]
-  observation_number:
+      datatype: smallint
+      destination: [ScienceCommon.segment]
+  observation:
     title: Observation number
-    type: string
+    type: integer
     sdf:
       special_processing: VALUE_REQUIRED
       source:
         origin: TBD
     archive_catalog:
-      datatype: nvarchar(3)
-      destination: [ScienceCommon.observation_number]
-  visit_number:
+      datatype: smallint
+      destination: [ScienceCommon.observation]
+  visit:
     title: Visit number
-    type: string
+    type: integer
     sdf:
       special_processing: VALUE_REQUIRED
       source:
         origin: TBD
     archive_catalog:
-      datatype: nvarchar(3)
-      destination: [ScienceCommon.visit_number]
-  visit_group:
-    title: Visit group identifier
+      datatype: smallint
+      destination: [ScienceCommon.visit]
+  visit_file_group:
+    title: Visit file group identifier
+    type: integer
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    archive_catalog:
+      datatype: smallint
+      destination: [ScienceCommon.visit_file_group]
+  visit_file_sequence:
+    title: Visit file sequence identifier
+    type: integer
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    archive_catalog:
+      datatype: tinyint
+      destination: [ ScienceCommon.visit_file_sequence ]
+  visit_file_activity:
+    title: Visit file activity identifier
     type: string
     sdf:
       special_processing: VALUE_REQUIRED
@@ -141,27 +137,17 @@ properties:
         origin: TBD
     archive_catalog:
       datatype: nvarchar(2)
-      destination: [ScienceCommon.visit_group]
-  activity_id:
-    title: Activity identifier
-    type: string
-    sdf:
-      special_processing: VALUE_REQUIRED
-      source:
-        origin: TBD
-    archive_catalog:
-      datatype: nvarchar(2)
-      destination: [ScienceCommon.activity_id]
-  exposure_number:
+      destination: [ScienceCommon.visit_file_activity]
+  exposure:
     title: Exposure request number
-    type: string
+    type: integer
     sdf:
       special_processing: VALUE_REQUIRED
       source:
         origin: TBD
     archive_catalog:
-      datatype: nvarchar(4)
-      destination: [ScienceCommon.observation_exposure_number]
+      datatype: int
+      destination: [ScienceCommon.observation_exposure]
   template:
     title: Observation template used
     type: string
@@ -182,16 +168,6 @@ properties:
     archive_catalog:
       datatype: nvarchar(max)
       destination: [ScienceCommon.observation_label]
-  observation_folder:
-    title: Name of the APT observation folder
-    type: string
-    sdf:
-      special_processing: VALUE_REQUIRED
-      source:
-        origin: TBD
-    archive_catalog:
-      datatype: TBD - get from APT.
-      destination: [ScienceCommon.observation_folder]
   ma_table_name:
     title: Identifier for the multi-accumulation table used
     type: string
@@ -200,15 +176,17 @@ properties:
       source:
         origin: TBD
     archive_catalog:
-      datatype: TBD - get from APT.
+      datatype: nvarchar(50)
       destination: [ScienceCommon.ma_table_name]
-propertyOrder: [date, time, date_beg, date_end, obs_id, visit_id, program_number,
-           execution_plan_number, pass_number, leg_number, observation_number,
-           visit_number, visit_group, activity_id, exposure_number, template,
-           observation_label, observation_folder, ma_table_name]
+propertyOrder: [start_time, end_time, obs_id, visit_id, program,
+           execution_plan, pass, observation, segment,
+           visit, visit_file_group, visit_file_sequence,
+           visit_activity_id, group, exposure, template,
+           observation_label, ma_table_name]
 flowStyle: block
-required: [date, time, date_beg, date_end, obs_id, visit_id, program_number,
-           execution_plan_number, pass_number, leg_number, observation_number,
-           visit_number, visit_group, activity_id, exposure_number, template,
-           observation_label, observation_folder, ma_table_name]
+required: [start_time, end_time, obs_id, visit_id, program,
+           execution_plan, pass, observation, segment,
+           visit, visit_file_group, visit_file_sequence,
+           visit_activity_id, group, exposure, template,
+           observation_label, ma_table_name]
 ...

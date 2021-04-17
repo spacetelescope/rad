@@ -26,7 +26,7 @@ properties:
     archive_catalog:
       datatype: nvarchar(120)
       destination: [ScienceCommon.filename]
-  date:
+  file_date:
     title: Date this file was created (UTC)
     tag: tag:stsci.edu:asdf/time/time-1.1.0
     sdf:
@@ -104,5 +104,5 @@ properties:
     tag: "tag:stsci.edu:datamodels/roman/visit-1.0.0"
   wcsinfo:
     tag: "tag:stsci.edu:datamodels/roman/wcsinfo-1.0.0"
-  required: [date, instrument, telescope]
+  required: [file_date, instrument, telescope]
 ...
