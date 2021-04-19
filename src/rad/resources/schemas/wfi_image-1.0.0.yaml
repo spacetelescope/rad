@@ -1,43 +1,43 @@
 %YAML 1.1
 ---
-$schema: http://stsci.edu/schemas/asdf/asdf-schema-1.0.0
-id: "http://stsci.edu/schemas/datamodels/roman/wfi_image-1.0.0"
+$schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.0.0
+id: asdf://stsci.edu/datamodels/roman/schemas/wfi_image-1.0.0
 
 title: |
   The schema for WFI level 2 images
 
-type: object
-properties:
-  meta:
-    allOf:
-      - $ref: "http://stsci.edu/schemas/datamodels/roman/common-1.0.0"
-  data: 
-    tag: tag:stsci.edu:asdf/core/ndarray-1.0.0
-    datatype: float32
-    ndim: 2
-  dq:
-    tag: tag:stsci.edu:asdf/core/ndarray-1.0.0 
-    datatype: uint32
-    ndim: 2
-  err:
-    tag: tag:stsci.edu:asdf/core/ndarray-1.0.0
-    datatype: float32
-    ndim: 2
-  var_poisson:
-    tag: tag:stsci.edu:asdf/core/ndarray-1.0.0
-    datatype: float32
-    ndim: 2
-  var_rnoise:
-    tag: tag:stsci.edu:asdf/core/ndarray-1.0.0
-    datatype: float32
-    ndim: 2
-  var_flat:
-    tag: tag:stsci.edu:asdf/core/ndarray-1.0.0
-    datatype: float32
-    ndim: 2
-  # For area object
-  $ref: "http://stsci.edu/schemas/datamodels/roman/pixelarea-1.0.0"
-propertyOrder: [meta, data, dq, err, var_poisson, var_rnoise, area]
-flowStyle: block
-required: [meta, data, dq, err, var_poisson, var_rnoise, area]
+allOf:
+  - $ref: pixelarea-1.0.0
+  - type: object
+    properties:
+      meta:
+        allOf:
+          - $ref: common-1.0.0
+      data:
+        tag: tag:stsci.edu:asdf/core/ndarray-1.0.0
+        datatype: float32
+        ndim: 2
+      dq:
+        tag: tag:stsci.edu:asdf/core/ndarray-1.0.0
+        datatype: uint32
+        ndim: 2
+      err:
+        tag: tag:stsci.edu:asdf/core/ndarray-1.0.0
+        datatype: float32
+        ndim: 2
+      var_poisson:
+        tag: tag:stsci.edu:asdf/core/ndarray-1.0.0
+        datatype: float32
+        ndim: 2
+      var_rnoise:
+        tag: tag:stsci.edu:asdf/core/ndarray-1.0.0
+        datatype: float32
+        ndim: 2
+      var_flat:
+        tag: tag:stsci.edu:asdf/core/ndarray-1.0.0
+        datatype: float32
+        ndim: 2
+    propertyOrder: [meta, data, dq, err, var_poisson, var_rnoise]
+    flowStyle: block
+    required: [meta, data, dq, err, var_poisson, var_rnoise]
 ...

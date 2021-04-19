@@ -1,10 +1,10 @@
 %YAML 1.1
 ---
-$schema: http://stsci.edu/schemas/asdf/asdf-schema-1.0.0
-id: "http://stsci.edu/schemas/datamodels/roman/pixelarea-1.0.0"
+$schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.0.0
+id: asdf://stsci.edu/datamodels/roman/schemas/pixelarea-1.0.0
 
 title: |
-  The schema for the pixel area array object
+  An object that is required to include a pixel area array.
 
 type: object
 properties:
@@ -15,3 +15,4 @@ properties:
 propertyOrder: [area]
 flowStyle: block
 required: [area]
+...

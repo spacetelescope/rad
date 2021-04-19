@@ -1,7 +1,7 @@
 %YAML 1.1
 ---
-$schema: "http://stsci.edu/schemas/yaml-schema/draft-01"
-id: "http://stsci.edu/schemas/datamodels/roman/wcsinfo-1.0.0"
+$schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.0.0
+id: asdf://stsci.edu/datamodels/roman/schemas/wcsinfo-1.0.0
 
 title: WCS parameters
 type: object
@@ -77,6 +77,6 @@ properties:
       datatype: float
       destination: [ScienceCommon.roll_ref]
 propertyOrder: [v2_ref, v3_ref, vparity, v3yangle, ra_ref, dec_ref, roll_ref]
-flowStyle: block 
+flowStyle: block
 required: [v2_ref, v3_ref, vparity, v3yangle, ra_ref, dec_ref, roll_ref]
 ...

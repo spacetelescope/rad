@@ -1,7 +1,7 @@
 %YAML 1.1
 ---
-$schema: "http://stsci.edu/schemas/yaml-schema/draft-01"
-id: "http://stsci.edu/schemas/datamodels/roman/aperture-1.0.0"
+$schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.0.0
+id: asdf://stsci.edu/datamodels/roman/schemas/aperture-1.0.0
 
 title: Aperture information
 type: object
@@ -29,4 +29,4 @@ properties:
 propertyOrder: [name, position_angle]
 flowStyle: block
 required: [name, position_angle]
-...  
+...

@@ -1,7 +1,7 @@
 %YAML 1.1
 ---
-$schema: "http://stsci.edu/schemas/yaml-schema/draft-01"
-id: "http://stsci.edu/schemas/datamodels/roman/program-1.0.0"
+$schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.0.0
+id: asdf://stsci.edu/datamodels/roman/schemas/program-1.0.0
 
 title: Program information
 type: object
@@ -14,7 +14,7 @@ properties:
       source:
         origin: PSS:program.title
     archive_catalog:
-      datatype: nvarchar(200) 
+      datatype: nvarchar(200)
       destination: [ScienceCommon.program_title]
   pi_name:
     title: Principle Investigator name
