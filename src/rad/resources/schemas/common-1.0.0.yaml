@@ -104,5 +104,6 @@ properties:
     tag: "tag:stsci.edu:datamodels/roman/visit-1.0.0"
   wcsinfo:
     tag: "tag:stsci.edu:datamodels/roman/wcsinfo-1.0.0"
-  required: [file_date, instrument, telescope]
+  required: [calibration_software_version, filename, file_date, instrument,
+             model_type, origin, prd_software_version,telescope]
 ...
