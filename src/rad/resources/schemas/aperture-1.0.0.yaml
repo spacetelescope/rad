@@ -16,6 +16,16 @@ properties:
     archive_catalog:
       datatype: nvarchar(40)
       destination: [ScienceCommon.aperture_name]
+  pss_name:
+    title: Original AperName supplied by PSS
+    type: string
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+      archive_catalog:
+        datatype: nvarchar(40)
+        destination: [ ScienceCommon.aperture_pps_name ]
   position_angle:
     title: "[deg] Position angle of aperture used"
     type: number
@@ -26,7 +36,7 @@ properties:
     archive_catalog:
       datatype: float
       destination: [ScienceCommon.position_angle]
-propertyOrder: [name, position_angle]
+propertyOrder: [name, pss_name, position_angle]
 flowStyle: block
-required: [name, position_angle]
+required: [name, pss_name, position_angle]
 ...  

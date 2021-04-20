@@ -33,7 +33,7 @@ properties:
     sdf:
       special_processing: VALUE_REQUIRED
       source:
-        origin: PPS:target.target_type
+        origin: PSS:target.target_type
     archive_catalog:
       datatype: nvarchar(10)
       destination: [ScienceCommon.target_type]
@@ -43,7 +43,7 @@ properties:
     sdf:
       special_processing: VALUE_REQUIRED
       source:
-        origin: PPS:fixed_target.ra_computed
+        origin: PSS:fixed_target.ra_computed
     archive_catalog:
       datatype: float
       destination: [ScienceCommon.ra]
@@ -53,7 +53,7 @@ properties:
     sdf:
       special_processing: VALUE_REQUIRED
       source:
-        origin: PPS:fixed_target.dec_computed
+        origin: PSS:fixed_target.dec_computed
     archive_catalog:
       datatype: float
       destination: [ScienceCommon.dec]
@@ -63,7 +63,7 @@ properties:
     sdf:
       special_processing: VALUE_REQUIRED
       source:
-        origin: PPS:fixed_target.ra_uncertainty_computed
+        origin: PSS:fixed_target.ra_uncertainty_computed
     archive_catalog:
       datatype: float
       destination: [ScienceCommon.ra_uncertainty]
@@ -73,7 +73,7 @@ properties:
     sdf:
       special_processing: VALUE_REQUIRED
       source:
-        origin: PPS:fixed_target.dec_uncertainty_computed
+        origin: PSS:fixed_target.dec_uncertainty_computed
     archive_catalog:
       datatype: float
       destination: [ScienceCommon.dec_uncertainty]
@@ -83,7 +83,7 @@ properties:
     sdf:
       special_processing: VALUE_REQUIRED
       source:
-        origin: PPS:fixed_target.ra_proper_motion
+        origin: PSS:fixed_target.ra_proper_motion
     archive_catalog:
       datatype: float
       destination: [ScienceCommon.proper_motion_ra]
@@ -93,7 +93,7 @@ properties:
     sdf:
       special_processing: VALUE_REQUIRED
       source:
-        origin: PPS:fixed_target.dec_proper_motion
+        origin: PSS:fixed_target.dec_proper_motion
     archive_catalog:
       datatype: float
       destination: [ScienceCommon.proper_motion_dec]
@@ -105,7 +105,7 @@ properties:
       source:
         origin: PSS:fixed_target.epoch
     archive_catalog:
-      datatype: nvarchar(10)/datetime2 (PSS)
+      datatype: nvarchar(10)
       destination: [ScienceCommon.proper_motion_epoch]
   proposer_ra:
     title: Proposer's target RA
