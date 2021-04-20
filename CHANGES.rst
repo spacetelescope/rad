@@ -1,17 +1,18 @@
 0.2.0 (unreleased)
 ==================
 
-- Updated yaml files to match latest in RomanCAL. [#143]
+- Updated yaml files to match latest in RomanCAL. [JIRA RCAL-143]
 
-- Changed string date/time to astropy time objects. [#153]
+- Changed string date/time to astropy time objects. [JIRA RCAL-153]
 
-- Updated id URIs. [#153]
+- Updated id URIs. [JIRA RCAL-153]
 
-- Updated all integers to proper integer types. [#153]
+- Updated all integers to proper integer types. [JIRA RCAL-153]
   
-- Updated exposure.type. [#153]
+- Updated exposure.type. [JIRA RCAL-153]
   
-- Change gs to gw in guidestar to reflect that they are all windows. [#153]
+- Change gs to gw in guidestar to reflect that they are all windows.
+  [JIRA RCAL-153]
   
 - Corrected Manifest URI. [#5]
   
