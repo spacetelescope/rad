@@ -181,12 +181,12 @@ properties:
 propertyOrder: [start_time, end_time, obs_id, visit_id, program,
            execution_plan, pass, observation, segment,
            visit, visit_file_group, visit_file_sequence,
-           visit_activity_id, exposure, template,
+           visit_file_activity, exposure, template,
            observation_label, ma_table_name]
 flowStyle: block
 required: [start_time, end_time, obs_id, visit_id, program,
            execution_plan, pass, observation, segment,
            visit, visit_file_group, visit_file_sequence,
-           visit_activity_id, exposure, template,
+           visit_file_activity, exposure, template,
            observation_label, ma_table_name]
 ...
