@@ -9,18 +9,30 @@ properties:
   ra_v1:
     title: "[deg] RA of telescope V1 axis"
     type: number
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
     archive_catalog:
       datatype: float
       destination: [ScienceCommon.ra_v1]
   dec_v1:
     title: "[deg] Dec of telescope V1 axis"
     type: number
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
     archive_catalog:
       datatype: float
       destination: [ScienceCommon.dec_v1]
   pa_v3:
     title: "[deg] Position angle of telescope V3 axis"
     type: number
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
     archive_catalog:
       datatype: float
       destination: [ScienceCommon.pa_v3]

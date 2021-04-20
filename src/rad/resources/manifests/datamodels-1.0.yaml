@@ -1,4 +1,4 @@
-id: http://stsci.edu/datamodels/manifests/datamodels-1.0
+id: http://stsci.edu/asdf/datamodels/roman/manifests/datamodels-1.0
 extension_uri: http://stsci.edu/datamodels/extensions/
 title: Datamodels extension 1.0
 description: |-
@@ -97,11 +97,6 @@ tags:
   title: Calibration Step status information
   description: |-
     Calibration Step status information
-- tag_uri: tag:stsci.edu:datamodels/roman/keyword_pixelarea-1.0.0
-  schema_uri: http://stsci.edu/schemas/datamodels/roman/keyword_pixelarea-1.0.0
-  title: Pixel area keywords
-  description: |-
-    Photometry keywords for pixel area
 # Reference Modules
 - tag_uri: tag:stsci.edu:datamodels/roman/reference_files/flat-1.0.0
   schema_uri: http://stsci.edu/schemas/datamodels/roman/reference_files/flat-1.0.0

@@ -40,7 +40,7 @@ properties:
       destination: [ScienceCommon.visit_type]
   start_time:
     title: UTC visit start time
-    type: string
+    tag: tag:stsci.edu:asdf/time/time-1.1.0
     sdf:
       special_processing: VALUE_REQUIRED
       source:
@@ -50,7 +50,7 @@ properties:
       destination: [ScienceCommon.visit_start_time]
   end_time:
     title: UTC visit end time
-    type: string
+    tag: tag:stsci.edu:asdf/time/time-1.1.0
     sdf:
       special_processing: VALUE_REQUIRED
       source:

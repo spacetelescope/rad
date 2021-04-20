@@ -1,7 +1,7 @@
 %YAML 1.1
 ---
 $schema: "http://stsci.edu/schemas/yaml-schema/draft-01"
-id: "http://stsci.edu/schemas/datamodels/roman/observation-1.0.0"
+id: "http://stsci.edu/schemas/datamodels/roman/ephemeris-1.0.0"
 
 title: Ephemeris data information
 type: object
@@ -37,8 +37,9 @@ properties:
       datatype: float
       destination: [ScienceCommon.sun_angle]
   type:
-    title: Definitive or Predicted
+    title: Type of ephemeris
     type: string
+    enum: [ DEFINITIVE, PREDICTED ]
     sdf:
       special_processing: VALUE_REQUIRED
       source:

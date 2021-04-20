@@ -3,7 +3,7 @@
 $schema: "http://stsci.edu/schemas/yaml-schema/draft-01"
 id: "http://stsci.edu/schemas/datamodels/roman/program-1.0.0"
 
-title: Visit information
+title: Program information
 type: object
 properties:
   title:
@@ -17,7 +17,7 @@ properties:
       datatype: nvarchar(200) 
       destination: [ScienceCommon.program_title]
   pi_name:
-    title: Principle Investigator pi_name
+    title: Principle Investigator name
     type: string
     sdf:
       special_processing: VALUE_REQUIRED
@@ -38,6 +38,16 @@ properties:
     archive_catalog:
       datatype: nvarchar(6)
       destination: [ScienceCommon.program_category]
+  subcategory:
+    title: Program subcategory
+    type: string
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: PSS:program.subcategory
+    archive_catalog:
+      datatype: nvarchar(15)
+      destination: [ ScienceCommon.program_subcategory ]
   science_category:
     title: Science category assigned during TAC process
     type: string
@@ -58,7 +68,7 @@ properties:
     archive_catalog:
       datatype: int
       destination: [ScienceCommon.continuation_id]
-propertyOrder: [title, pi_name, category, science_category, continuation_id]
+propertyOrder: [title, pi_name, category, subcategory, science_category, continuation_id]
 flowStyle: block
-required: [title, pi_name, category, science_category, continuation_id]
+required: [title, pi_name, category, subcategory, science_category, continuation_id]
 ...

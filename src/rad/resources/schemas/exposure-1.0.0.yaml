@@ -9,33 +9,23 @@ title: |
 
 type: object
 properties:
-  count:
-    title: Running count of exposures in visit
-    type: number
+  id:
+    title: Exposure id number within visit
+    type: integer
     sdf:
       special_processing: VALUE_REQUIRED
       source:
         origin: TBD
     archive_catalog:
-      datatype: float
-      destination: [ScienceCommon.exposure_count]
+      datatype: int
+      destination: [ScienceCommon.exposure_id]
 
   type:
     title: Type of data in the exposure
     type: string
     enum:
       [ # Wide Field Imager
-        WFI_IMAGE, WFI_GRISM, WFI_PRISM, WFI_DARK, WFI_WSM_ACQ1, WFI_WSM_ACQ2,
-        WFI_WSM_TRACK, WFI_WFSC, DEFOCUS_MODERATE, DEFOCUS_LARGE,
-
-        # Wide Field Imager & Coronagraph Instrument
-        WFI_WIM_ACQ, WFI_WIM_TRACK, WFI_PARALLEL,
-
-        # Wide Field Imager & Relative Calibration System
-        WFI_FLAT_EXTERNAL, WFI_FLAT_INTERNAL,
-
-        # Relative Calibration System
-        WFI_RCS
+        WFI_IMAGE, WFI_GRISM, WFI_PRISM, WFI_DARK, WFI_FLAT, WFI_WFSC
       ]
     sdf:
       special_processing: VALUE_REQUIRED
@@ -47,33 +37,33 @@ properties:
 
   start_time:
     title: UTC exposure start time
-    type: number
+    tag: tag:stsci.edu:asdf/time/time-1.1.0
     sdf:
       special_processing: VALUE_REQUIRED
       source:
         origin: TBD
     archive_catalog:
-      datatype: float
+      datatype: datetime2
       destination: [ScienceCommon.exposure_start_time]
   mid_time:
     title: UTC exposure mid time
-    type: number
+    tag: tag:stsci.edu:asdf/time/time-1.1.0
     sdf:
       special_processing: VALUE_REQUIRED
       source:
         origin: TBD
     archive_catalog:
-      datatype: float
+      datatype: datetime2
       destination: [ScienceCommon.exposure_mid_time]
   end_time:
     title: UTC exposure end time
-    type: number
+    tag: tag:stsci.edu:asdf/time/time-1.1.0
     sdf:
       special_processing: VALUE_REQUIRED
       source:
         origin: TBD
     archive_catalog:
-      datatype: float
+      datatype: datetime2
       destination: [ScienceCommon.exposure_end_time]
   start_time_mjd:
     title: "[d] exposure start time in MJD"
@@ -135,16 +125,6 @@ properties:
     archive_catalog:
       datatype: float
       destination: [ScienceCommon.exposure_end_time_tdb]
-  start_time_eng:
-    title: UTC exposure start time from engineering data
-    type: string
-    sdf:
-      special_processing: VALUE_REQUIRED
-      source:
-        origin: TBD
-    archive_catalog:
-      datatype: datetime
-      destination: [ScienceCommon.exposure_start_time_eng]
   ngroups:
     title: Number of groups in integration
     type: integer
@@ -205,36 +185,6 @@ properties:
     archive_catalog:
       datatype: float
       destination: [ScienceCommon.elapsed_exposure_time]
-  nints:
-    title: Number of integrations in exposure
-    type: integer
-    sdf:
-      special_processing: VALUE_REQUIRED
-      source:
-        origin: TBD
-    archive_catalog:
-      datatype: int
-      destination: [ScienceCommon.exposure_nints]
-  integration_start:
-    title: Starting integration number in this segment
-    type: integer
-    sdf:
-      special_processing: VALUE_REQUIRED
-      source:
-        origin: TBD
-    archive_catalog:
-      datatype: int
-      destination: [ScienceCommon.exposure_integration_start]
-  integration_end:
-    title: Ending integration number in this segment
-    type: integer
-    sdf:
-      special_processing: VALUE_REQUIRED
-      source:
-        origin: TBD
-    archive_catalog:
-      datatype: int
-      destination: [ScienceCommon.exposure_integration_end]
   frame_divisor:
     title: Divisor applied to frame-averaged groups
     type: integer
@@ -255,26 +205,6 @@ properties:
     archive_catalog:
       datatype: int
       destination: [ScienceCommon.exposure_groupgap]
-  nsamples:
-    title: Number of A/D samples per pixel
-    type: integer
-    sdf:
-      special_processing: VALUE_REQUIRED
-      source:
-        origin: TBD
-    archive_catalog:
-      datatype: int
-      destination: [ScienceCommon.exposure_nsamples]
-  sample_time:
-    title: "[us] Time between samples"
-    type: number
-    sdf:
-      special_processing: VALUE_REQUIRED
-      source:
-        origin: TBD
-    archive_catalog:
-      datatype: float
-      destination: [ScienceCommon.exposure_sample_time]
   frame_time:
     title: "[s] Time between frames"
     type: number
@@ -296,7 +226,7 @@ properties:
       datatype: float
       destination: [ScienceCommon.exposure_group_time]
   exposure_time:
-    title: "[s] Effective exposure time"
+    title: "[s] exposure time"
     type: number
     sdf:
       special_processing: VALUE_REQUIRED
@@ -335,27 +265,35 @@ properties:
     archive_catalog:
       datatype: int
       destination: [ScienceCommon.exposure_nresets_at_start]
-propertyOrder: [count, type, 
+  datamode:
+    title: post-processing method used in FPAP
+    type: integer
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    archive_catalog:
+      datatype: int
+      destination: [ ScienceCommon.exposure_datamode ]
+propertyOrder: [id, type,
            start_time, mid_time, end_time,
            start_time_mjd, mid_time_mjd, end_time_mjd,
            start_time_tdb, mid_time_tdb, end_time_tdb,
-           start_time_eng,
            ngroups, nframes, data_problem, gain_factor,
            integration_time, elapsed_exposure_time,
-           nints, integration_start, integration_end,
-           frame_divisor, groupgap, nsamples, sample_time,
+           frame_divisor, groupgap,
            frame_time, group_time, exposure_time, 
-           effective_exposure_time, duration, nresets_at_start]
+           effective_exposure_time, duration, nresets_at_start,
+           datamode]
 flowStyle: block
-required: [count, type, 
+required: [id, type,
            start_time, mid_time, end_time,
            start_time_mjd, mid_time_mjd, end_time_mjd,
            start_time_tdb, mid_time_tdb, end_time_tdb,
-           start_time_eng,
            ngroups, nframes, data_problem, gain_factor,
            integration_time, elapsed_exposure_time,
-           nints, integration_start, integration_end,
-           frame_divisor, groupgap, nsamples, sample_time,
+           frame_divisor, groupgap,
            frame_time, group_time, exposure_time, 
-           effective_exposure_time, duration, nresets_at_start]
+           effective_exposure_time, duration, nresets_at_start,
+           datamode]
 ...
