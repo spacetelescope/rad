@@ -40,7 +40,7 @@ tags:
   title: Xprogram information
   description: |-
     Xprogram information
-- tag_uri: tasdf://stsci.edu/datamodels/roman/tags/observation-1.0.0
+- tag_uri: asdf://stsci.edu/datamodels/roman/tags/observation-1.0.0
   schema_uri: asdf://stsci.edu/datamodels/roman/schemas/observation-1.0.0
   title: Observation information
   description: |-
