@@ -29,3 +29,4 @@ def test_manifest_valid(manifest):
         # to a higher standard:
         assert "title" in tag
         assert "description" in tag
+        assert tag["tag_uri"].startswith("asdf://stsci.edu/datamodels/roman/tags/")
