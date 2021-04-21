@@ -107,6 +107,9 @@ properties:
   wcsinfo:
     tag: "tag:stsci.edu:datamodels/roman/wcsinfo-1.0.0"
 flowStyle: block
-required: [calibration_software_version, filename, file_date, instrument,
-           model_type, origin, prd_software_version, telescope]
+required: [calibration_software_version, filename, file_date,
+           model_type, origin, prd_software_version, telescope,
+           aperture, cal_step, coordinates, ephemeris, exposure,
+           instrument, observation, photometry, pointing, program,
+           target, velocity_aberration, visit, wcsinfo]
 ...
