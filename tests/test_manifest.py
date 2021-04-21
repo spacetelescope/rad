@@ -3,15 +3,6 @@ Test that the manifest file is correctly structured and refers
 to schemas that exist.
 """
 import asdf
-import pytest
-import yaml
-
-
-@pytest.fixture
-def manifest():
-    return yaml.safe_load(
-        asdf.get_config().resource_manager["asdf://stsci.edu/datamodels/roman/manifests/datamodels-1.0"]
-    )
 
 
 def test_manifest_valid(manifest):
