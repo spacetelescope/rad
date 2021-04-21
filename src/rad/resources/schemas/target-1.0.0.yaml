@@ -1,7 +1,7 @@
 %YAML 1.1
 ---
-$schema: "http://stsci.edu/schemas/yaml-schema/draft-01"
-id: "http://stsci.edu/schemas/datamodels/roman/target-1.0.0"
+$schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.0.0
+id: asdf://stsci.edu/datamodels/roman/schemas/target-1.0.0
 
 title: Target information
 type: object
@@ -155,7 +155,7 @@ properties:
 propertyOrder: [proposer_name, catalog_name, type, ra, dec, ra_uncertainty, dec_uncertainty,
            proper_motion_ra, proper_motion_dec, proper_motion_epoch,
            proposer_ra, proposer_dec, source_type_apt, source_type]
-flowStyle: block 
+flowStyle: block
 required: [proposer_name, catalog_name, type, ra, dec, ra_uncertainty, dec_uncertainty,
            proper_motion_ra, proper_motion_dec, proper_motion_epoch,
            proposer_ra, proposer_dec, source_type_apt, source_type]

@@ -22,6 +22,6 @@ def get_resource_mappings():
     resources_root = importlib_resources.files(resources)
 
     return [
-        DirectoryResourceMapping(resources_root / "schemas", "http://stsci.edu/schemas/datamodels/roman", recursive=True),
-        DirectoryResourceMapping(resources_root / "manifests", "http://stsci.edu/asdf/datamodels/roman/manifests"),
+        DirectoryResourceMapping(resources_root / "schemas", "asdf://stsci.edu/datamodels/roman/schemas/", recursive=True),
+        DirectoryResourceMapping(resources_root / "manifests", "asdf://stsci.edu/datamodels/roman/manifests/"),
     ]

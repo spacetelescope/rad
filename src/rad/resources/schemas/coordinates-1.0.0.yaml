@@ -1,7 +1,7 @@
 %YAML 1.1
 ---
-$schema: "http://stsci.edu/schemas/yaml-schema/draft-01"
-id: "http://stsci.edu/schemas/datamodels/roman/coordinates-1.0.0"
+$schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.0.0
+id: asdf://stsci.edu/datamodels/roman/schemas/coordinates-1.0.0
 
 title: Information about the coordinates in the file
 type: object
@@ -14,5 +14,6 @@ properties:
     archive_catalog:
       datatype: nvarchar(10)
       destination: [ScienceCommon.reference_frame]
+flowStyle: block
 required: [reference_frame]
 ...

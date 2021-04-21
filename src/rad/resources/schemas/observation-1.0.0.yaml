@@ -1,7 +1,7 @@
 %YAML 1.1
 ---
-$schema: "http://stsci.edu/schemas/yaml-schema/draft-01"
-id: "http://stsci.edu/schemas/datamodels/roman/observation-1.0.0"
+$schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.0.0
+id: asdf://stsci.edu/datamodels/roman/schemas/observation-1.0.0
 
 
 title: |
@@ -181,12 +181,12 @@ properties:
 propertyOrder: [start_time, end_time, obs_id, visit_id, program,
            execution_plan, pass, observation, segment,
            visit, visit_file_group, visit_file_sequence,
-           visit_activity_id, exposure, template,
+           visit_file_activity, exposure, template,
            observation_label, ma_table_name]
 flowStyle: block
 required: [start_time, end_time, obs_id, visit_id, program,
            execution_plan, pass, observation, segment,
            visit, visit_file_group, visit_file_sequence,
-           visit_activity_id, exposure, template,
+           visit_file_activity, exposure, template,
            observation_label, ma_table_name]
 ...

@@ -1,7 +1,7 @@
 %YAML 1.1
 ---
-$schema: "http://stsci.edu/schemas/yaml-schema/draft-01"
-id: "http://stsci.edu/schemas/datamodels/roman/wfi_mode-1.0.0"
+$schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.0.0
+id: asdf://stsci.edu/datamodels/roman/schemas/wfi_mode-1.0.0
 
 
 title: |
@@ -43,6 +43,6 @@ properties:
       datatype: nvarchar(20)
       destination: [ScienceCommon.optical_element]
 propertyOrder: [detector, optical_element, name]
-flowStyle: block 
+flowStyle: block
 required: [detector, optical_element, name]
 ...

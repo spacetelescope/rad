@@ -8,19 +8,20 @@
 - Updated id URIs. [JIRA RCAL-153]
 
 - Updated all integers to proper integer types. [JIRA RCAL-153]
-  
+
 - Updated exposure.type. [JIRA RCAL-153]
-  
+
 - Change gs to gw in guidestar to reflect that they are all windows.
   [JIRA RCAL-153]
-  
+
 - Corrected Manifest URI. [#5]
-  
+
 - Removed keyword_pixelarea from Manifest. [#11]
-  
+
 - Removed .DS_Store files. [#7]
-  
-  
+
+- Change URI prefix to asdf://, add tests and CI infrastructure. [#14]
+
 0.1.0 (unreleased)
 ==================
 

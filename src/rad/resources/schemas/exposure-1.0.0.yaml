@@ -1,7 +1,7 @@
 %YAML 1.1
 ---
-$schema: "http://stsci.edu/schemas/yaml-schema/draft-01"
-id: "http://stsci.edu/schemas/datamodels/roman/exposure-1.0.0"
+$schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.0.0
+id: asdf://stsci.edu/datamodels/roman/schemas/exposure-1.0.0
 
 
 title: |
@@ -292,7 +292,7 @@ propertyOrder: [id, type,
            ngroups, nframes, data_problem, sca_number,
            gain_factor, integration_time, elapsed_exposure_time,
            frame_divisor, groupgap,
-           frame_time, group_time, exposure_time, 
+           frame_time, group_time, exposure_time,
            effective_exposure_time, duration, nresets_at_start,
            datamode]
 flowStyle: block
@@ -303,7 +303,7 @@ required: [id, type,
            ngroups, nframes, data_problem, sca_number,
            gain_factor, integration_time, elapsed_exposure_time,
            frame_divisor, groupgap,
-           frame_time, group_time, exposure_time, 
+           frame_time, group_time, exposure_time,
            effective_exposure_time, duration, nresets_at_start,
            datamode]
 ...
