@@ -22,6 +22,12 @@
 
 - Change URI prefix to asdf://, add tests and CI infrastructure. [#14]
 
+- Moved common.yaml keywords to basic.yaml, and adjusted tests for
+  basic.yaml. [JIRA RAD-7]
+
+- Added misc. required db keyword attributes. [JIRA RAD-7]
+
+  
 0.1.0 (unreleased)
 ==================
 
