@@ -23,7 +23,7 @@ properties:
     tag: tag:stsci.edu:asdf/core/ndarray-1.0.0
     datatype: float32
     ndim: 2
-required: [meta]
+required: [meta, data, dq, err]
 flowStyle: block
-propertyOrder: [meta]
+propertyOrder: [meta, data, dq, err]
 ...

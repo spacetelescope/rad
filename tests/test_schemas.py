@@ -68,3 +68,14 @@ def test_required(schema_uri):
                 assert False, message
 
     asdf.treeutil.walk(schema, callback)
+
+
+@pytest.mark.parametrize("schema_uri", SCHEMA_URIS)
+def test_flowstyle(schema_uri):
+    schema = yaml.safe_load(asdf.get_config().resource_manager[schema_uri])
+
+    def callback(node):
+        if isinstance(node, Mapping) and node.get("type") == "object":
+            assert node.get("flowStyle") == "block", "all objects require flowStyle: block"
+
+    asdf.treeutil.walk(schema, callback)
