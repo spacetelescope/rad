@@ -1,27 +1,29 @@
 %YAML 1.1
 ---
-$schema: http://stsci.edu/schemas/asdf/asdf-schema-1.0.0
-id: "http://stsci.edu/schemas/datamodels/roman/reference_files/flat-1.0.0"
+$schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.0.0
+id: asdf://stsci.edu/datamodels/roman/schemas/reference_files/flat-1.0.0
+
+title: Flat reference schema
 
 type: object
 properties:
   meta:
     allOf:
-      - $ref: "http://stsci.edu/schemas/datamodels/roman/reference_files/ref_common-1.0.0"
-  data: 
-    tag: tag:stsci.edu:asdf/core/ndarray-1.0.0 
+      - $ref: ref_common-1.0.0
+  data:
+    tag: tag:stsci.edu:asdf/core/ndarray-1.0.0
     datatype: float32
     ndim: 2
     required: [datatype, shape]
-  dq: 
-    tag: tag:stsci.edu:asdf/core/ndarray-1.0.0 
+  dq:
+    tag: tag:stsci.edu:asdf/core/ndarray-1.0.0
     datatype: uint32
     ndim: 2
   err:
     tag: tag:stsci.edu:asdf/core/ndarray-1.0.0
     datatype: float32
     ndim: 2
-required: [meta]
+required: [meta, data, dq, err]
 flowStyle: block
-propertyOrder: [meta]
+propertyOrder: [meta, data, dq, err]
 ...

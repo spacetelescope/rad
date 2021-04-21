@@ -1,7 +1,7 @@
 %YAML 1.1
 ---
-$schema: http://stsci.edu/schemas/asdf/asdf-schema-1.0.0
-id: "http://stsci.edu/schemas/datamodels/roman/wfi_science_raw-1.0.0"
+$schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.0.0
+id: asdf://stsci.edu/datamodels/roman/schemas/wfi_science_raw-1.0.0
 
 title: |
   The schema for WFI science data (both imaging and spectrographic)
@@ -10,9 +10,9 @@ type: object
 properties:
   meta:
     allOf:
-      - $ref: "http://stsci.edu/schemas/datamodels/roman/common-1.0.0"
-  data: 
-    tag: tag:stsci.edu:asdf/core/ndarray-1.0.0 
+      - $ref: common-1.0.0
+  data:
+    tag: tag:stsci.edu:asdf/core/ndarray-1.0.0
     type object:
     properties:
       datatype:

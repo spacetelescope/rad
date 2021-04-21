@@ -1,0 +1,115 @@
+%YAML 1.1
+---
+$schema: http://stsci.edu/schemas/yaml-schema/draft-01
+id: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.0.0
+
+title: Roman Attribute Dictionary metaschema
+description: |-
+  A metaschema extending the ASDF metaschema to add support for
+  sdf and archive_catalog properties.
+
+allOf:
+  - $ref: http://stsci.edu/schemas/asdf/asdf-schema-1.0.0
+  - type: object
+    properties:
+      sdf:
+        description: |-
+          Documents source of this attribute's value when level 1
+          files are created.
+        type: object
+        properties:
+          special_processing:
+            description: |-
+              Indicates whether attribute is required to be present
+              in the ASDF file or optional.
+            type: string
+            enum: [VALUE_REQUIRED, OPTIONAL]
+          source:
+            type: object
+            properties:
+              origin:
+                description: |-
+                  Source of the attribute value.
+                type: string
+              function:
+                description: |-
+                  Optional function that transforms the source value.
+                type: string
+            required: [origin]
+        required: [special_processing, source]
+
+      archive_catalog:
+        description: |-
+          Documents destination table/column and datatype of this attribute
+          in the archive catalog.
+        type: object
+        properties:
+          datatype:
+            description: |-
+              Archive catalog database column type.
+            anyOf:
+              - type: string
+                enum: [bit, datetime2, float, int, nvarchar(max), smallint, tinyint]
+              - type: string
+                pattern: "^nvarchar\\([0-9]+\\)$"
+          destination:
+            description: |-
+              Archive catalog database table and column.
+            type: array
+            items:
+              type: string
+              pattern: "^[A-Za-z0-9]+\\.[a-z0-9_]+$"
+            minItems: 1
+            uniqueItems: true
+        required: [datatype, destination]
+
+      # Needed to cause the validator to check sdf and archive_catalog
+      # in object properties.
+      additionalItems:
+        anyOf:
+          - type: boolean
+          - $ref: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.0.0
+      items:
+        anyOf:
+          - $ref: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.0.0
+          - $ref: "asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.0.0#/definitions/schemaArray"
+      additionalProperties:
+        anyOf:
+          - type: boolean
+          - $ref: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.0.0
+      definitions:
+        type: object
+        additionalProperties:
+          $ref: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.0.0
+      properties:
+        type: object
+        additionalProperties:
+          $ref: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.0.0
+      patternProperties:
+        type: object
+        additionalProperties:
+          $ref: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.0.0
+      dependencies:
+        type: object
+        additionalProperties:
+          anyOf:
+            - $ref: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.0.0
+            - $ref: "http://json-schema.org/draft-04/schema#definitions/stringArray"
+      allOf:
+        $ref: "asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.0.0#/definitions/schemaArray"
+      anyOf:
+        $ref: "asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.0.0#/definitions/schemaArray"
+      oneOf:
+        $ref: "asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.0.0#/definitions/schemaArray"
+      not:
+        $ref: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.0.0
+
+# Needed to cause the validator to check sdf and archive_catalog
+# in object properties.
+definitions:
+  schemaArray:
+    type: array
+    minItems: 1
+    items:
+      $ref: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.0.0
+...
