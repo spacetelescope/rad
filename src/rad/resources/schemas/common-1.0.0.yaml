@@ -79,34 +79,33 @@ properties:
       destination: [ScienceCommon.telescope]
   # Meta Objects
   aperture:
-    tag: "tag:stsci.edu:datamodels/roman/aperture-1.0.0"
+    tag: asdf://stsci.edu/datamodels/roman/tags/aperture-1.0.0
   cal_step:
-    tag: "tag:stsci.edu:datamodels/roman/cal_step-1.0.0"
+    tag: asdf://stsci.edu/datamodels/roman/tags/cal_step-1.0.0
   coordinates:
-    tag: "tag:stsci.edu:datamodels/roman/coordinates-1.0.0"
+    tag: asdf://stsci.edu/datamodels/roman/tags/coordinates-1.0.0
   ephemeris:
-    tag: "tag:stsci.edu:datamodels/roman/ephemeris-1.0.0"
+    tag: asdf://stsci.edu/datamodels/roman/tags/ephemeris-1.0.0
   exposure:
-    tag: "tag:stsci.edu:datamodels/roman/exposure-1.0.0"
+    tag: asdf://stsci.edu/datamodels/roman/tags/exposure-1.0.0
   instrument:
-    tag: "tag:stsci.edu:datamodels/roman/wfi_mode-1.0.0"
+    tag: asdf://stsci.edu/datamodels/roman/tags/wfi_mode-1.0.0
   observation:
-    tag: "tag:stsci.edu:datamodels/roman/observation-1.0.0"
+    tag: asdf://stsci.edu/datamodels/roman/tags/observation-1.0.0
   photometry:
-    tag: "tag:stsci.edu:datamodels/roman/photometry-1.0.0"
+    tag: asdf://stsci.edu/datamodels/roman/tags/photometry-1.0.0
   pointing:
-    tag: "tag:stsci.edu:datamodels/roman/pointing-1.0.0"
+    tag: asdf://stsci.edu/datamodels/roman/tags/pointing-1.0.0
   program:
-   tag: "tag:stsci.edu:datamodels/roman/program-1.0.0"
+   tag: asdf://stsci.edu/datamodels/roman/tags/program-1.0.0
   target:
-    tag: "tag:stsci.edu:datamodels/roman/target-1.0.0"
+    tag: asdf://stsci.edu/datamodels/roman/tags/target-1.0.0
   velocity_aberration:
-    tag: "tag:stsci.edu:datamodels/roman/velocity_aberration-1.0.0"
+    tag: asdf://stsci.edu/datamodels/roman/tags/velocity_aberration-1.0.0
   visit:
-    tag: "tag:stsci.edu:datamodels/roman/visit-1.0.0"
+    tag: asdf://stsci.edu/datamodels/roman/tags/visit-1.0.0
   wcsinfo:
-    tag: "tag:stsci.edu:datamodels/roman/wcsinfo-1.0.0"
-flowStyle: block
+    tag: asdf://stsci.edu/datamodels/roman/tags/wcsinfo-1.0.0
 required: [calibration_software_version, filename, file_date,
            model_type, origin, prd_software_version, telescope,
            aperture, cal_step, coordinates, ephemeris, exposure,
