@@ -96,6 +96,7 @@ def test_flowstyle(schema, manifest):
 
     if is_tag_schema:
         found_flowstyle = False
+
         def callback(node):
             nonlocal found_flowstyle
             if isinstance(node, Mapping) and node.get("flowStyle") == "block":
