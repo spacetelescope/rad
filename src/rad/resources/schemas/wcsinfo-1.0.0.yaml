@@ -76,7 +76,17 @@ properties:
     archive_catalog:
       datatype: float
       destination: [ScienceCommon.roll_ref]
-propertyOrder: [v2_ref, v3_ref, vparity, v3yangle, ra_ref, dec_ref, roll_ref]
+  s_region:
+    title: spatial extent of the observation
+    type: string
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    archive_catalog:
+      datatype: nvarchar(max)
+      destination: [ScienceCommon.s_region]
+propertyOrder: [v2_ref, v3_ref, vparity, v3yangle, ra_ref, dec_ref, roll_ref, s_region]
 flowStyle: block
-required: [v2_ref, v3_ref, vparity, v3yangle, ra_ref, dec_ref, roll_ref]
+required: [v2_ref, v3_ref, vparity, v3yangle, ra_ref, dec_ref, roll_ref, s_region]
 ...

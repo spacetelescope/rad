@@ -24,8 +24,8 @@ properties:
     title: Type of data in the exposure
     type: string
     enum:
-      [ # Wide Field Imager
-        WFI_IMAGE, WFI_GRISM, WFI_PRISM, WFI_DARK, WFI_FLAT, WFI_WFSC
+      [# Wide Field Imager
+       WFI_IMAGE, WFI_GRISM, WFI_PRISM, WFI_DARK, WFI_FLAT, WFI_WFSC
       ]
     sdf:
       special_processing: VALUE_REQUIRED
@@ -155,6 +155,16 @@ properties:
     archive_catalog:
       datatype: bit
       destination: [ScienceCommon.exposure_data_problem]
+  sca_number:
+    title: Sensor Chip Assembly number
+    type: integer
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    archive_catalog:
+      datatype: int
+      destination: [ScienceCommon.exposure_sca_number]
   gain_factor:
     title: Gain scale factor
     type: number
@@ -274,13 +284,13 @@ properties:
         origin: TBD
     archive_catalog:
       datatype: int
-      destination: [ ScienceCommon.exposure_datamode ]
+      destination: [ScienceCommon.exposure_datamode]
 propertyOrder: [id, type,
            start_time, mid_time, end_time,
            start_time_mjd, mid_time_mjd, end_time_mjd,
            start_time_tdb, mid_time_tdb, end_time_tdb,
-           ngroups, nframes, data_problem, gain_factor,
-           integration_time, elapsed_exposure_time,
+           ngroups, nframes, data_problem, sca_number,
+           gain_factor, integration_time, elapsed_exposure_time,
            frame_divisor, groupgap,
            frame_time, group_time, exposure_time,
            effective_exposure_time, duration, nresets_at_start,
@@ -290,8 +300,8 @@ required: [id, type,
            start_time, mid_time, end_time,
            start_time_mjd, mid_time_mjd, end_time_mjd,
            start_time_tdb, mid_time_tdb, end_time_tdb,
-           ngroups, nframes, data_problem, gain_factor,
-           integration_time, elapsed_exposure_time,
+           ngroups, nframes, data_problem, sca_number,
+           gain_factor, integration_time, elapsed_exposure_time,
            frame_divisor, groupgap,
            frame_time, group_time, exposure_time,
            effective_exposure_time, duration, nresets_at_start,

@@ -10,7 +10,7 @@ properties:
     title: Name of the coordinate reference frame
     type: string
     default: ICRS
-    enum: [ ICRS ]
+    enum: [ICRS]
     archive_catalog:
       datatype: nvarchar(10)
       destination: [ScienceCommon.reference_frame]

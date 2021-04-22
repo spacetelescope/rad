@@ -1,0 +1,113 @@
+%YAML 1.1
+---
+$schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.0.0
+id: asdf://stsci.edu/datamodels/roman/schemas/basic-1.0.0
+
+title: Common level metadata keywords
+
+type: object
+properties:
+  # Meta Variables
+  calibration_software_version:
+    title: Calibration software version number
+    type: string
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    archive_catalog:
+      datatype: nvarchar(120)
+      destination: [ScienceCommon.calibration_software_version]
+  crds_software_version:
+    title: Version of CRDS file selection software used
+    type: string
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    archive_catalog:
+      datatype: nvarchar(120)
+      destination: [ScienceCommon.crds_software_version]
+  crds_context_used:
+    title: CRDS context (.pmap) used to select ref files
+    type: string
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    archive_catalog:
+      datatype: nvarchar(120)
+      destination: [ScienceCommon.crds_context_used]
+  filename:
+    title: Name of the file
+    type: string
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    archive_catalog:
+      datatype: nvarchar(120)
+      destination: [ScienceCommon.filename]
+  file_date:
+    title: Date this file was created (UTC)
+    tag: tag:stsci.edu:asdf/time/time-1.1.0
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    archive_catalog:
+      datatype: datetime2
+      destination: [ScienceCommon.filedate]
+  model_type:
+    title: Type of data model
+    type: string
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    archive_catalog:
+      datatype: nvarchar(50)
+      destination: [ScienceCommon.model_type]
+  origin:
+    title: Organization responsible for creating file
+    type: string
+    enum: [STSCI]
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    archive_catalog:
+      datatype: nvarchar(5)
+      destination: [ScienceCommon.origin]
+  prd_software_version:
+    title: S&OC PRD version number used in data processing
+    type: string
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    archive_catalog:
+      datatype: nvarchar(120)
+      destination: [ScienceCommon.prd_software_version]
+  sdf_software_version:
+    title: SDF software version number
+    type: string
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    archive_catalog:
+      datatype: nvarchar(120)
+      destination: [ScienceCommon.sdf_software_version]
+  telescope:
+    title: Telescope used to acquire the data
+    type: string
+    enum: [ROMAN]
+    archive_catalog:
+      datatype: nvarchar(5)
+      destination: [ScienceCommon.telescope]
+required: [calibration_software_version, crds_software_version,
+           crds_context_used, filename, file_date,
+           model_type, origin, prd_software_version,
+           sdf_software_version, telescope]
+...

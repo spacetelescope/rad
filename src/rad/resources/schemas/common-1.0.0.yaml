@@ -5,110 +5,43 @@ id: asdf://stsci.edu/datamodels/roman/schemas/common-1.0.0
 
 title: Common metadata properties
 
-type: object
-properties:
-  # Meta Variables
-  calibration_software_version:
-    title: Calibration software version number
-    type: string
-    sdf:
-      special_processing: VALUE_REQUIRED
-      source:
-        origin: TBD
-    archive_catalog:
-      datatype: nvarchar(120)
-      destination: [ ScienceCommon.calibration_software_version ]
-  filename:
-    title: Name of the file
-    type: string
-    sdf:
-      special_processing: VALUE_REQUIRED
-      source:
-        origin: TBD
-    archive_catalog:
-      datatype: nvarchar(120)
-      destination: [ScienceCommon.filename]
-  file_date:
-    title: Date this file was created (UTC)
-    tag: tag:stsci.edu:asdf/time/time-1.1.0
-    sdf:
-      special_processing: VALUE_REQUIRED
-      source:
-        origin: TBD
-    archive_catalog:
-      datatype: datetime2
-      destination: [ScienceCommon.filedate]
-  model_type:
-    title: Type of data model
-    type: string
-    sdf:
-      special_processing: VALUE_REQUIRED
-      source:
-        origin: TBD
-    archive_catalog:
-      datatype: nvarchar(50)
-      destination: [ScienceCommon.model_type]
-  origin:
-    title: Organization responsible for creating file
-    type: string
-    enum: [STSCI]
-    sdf:
-      special_processing: VALUE_REQUIRED
-      source:
-        origin: TBD
-    archive_catalog:
-      datatype: nvarchar(5)
-      destination: [ScienceCommon.origin]
-  prd_software_version:
-    title: S&OC PRD version number used in data processing
-    type: string
-    sdf:
-      special_processing: VALUE_REQUIRED
-      source:
-        origin: TBD
-    archive_catalog:
-      datatype: nvarchar(120)
-      destination: [ ScienceCommon.prd_software_version ]
-  telescope:
-    title: Telescope used to acquire the data
-    type: string
-    default: ROMAN
-    enum: [ROMAN]
-    archive_catalog:
-      datatype: nvarchar(5)
-      destination: [ScienceCommon.telescope]
-  # Meta Objects
-  aperture:
-    tag: asdf://stsci.edu/datamodels/roman/tags/aperture-1.0.0
-  cal_step:
-    tag: asdf://stsci.edu/datamodels/roman/tags/cal_step-1.0.0
-  coordinates:
-    tag: asdf://stsci.edu/datamodels/roman/tags/coordinates-1.0.0
-  ephemeris:
-    tag: asdf://stsci.edu/datamodels/roman/tags/ephemeris-1.0.0
-  exposure:
-    tag: asdf://stsci.edu/datamodels/roman/tags/exposure-1.0.0
-  instrument:
-    tag: asdf://stsci.edu/datamodels/roman/tags/wfi_mode-1.0.0
-  observation:
-    tag: asdf://stsci.edu/datamodels/roman/tags/observation-1.0.0
-  photometry:
-    tag: asdf://stsci.edu/datamodels/roman/tags/photometry-1.0.0
-  pointing:
-    tag: asdf://stsci.edu/datamodels/roman/tags/pointing-1.0.0
-  program:
-   tag: asdf://stsci.edu/datamodels/roman/tags/program-1.0.0
-  target:
-    tag: asdf://stsci.edu/datamodels/roman/tags/target-1.0.0
-  velocity_aberration:
-    tag: asdf://stsci.edu/datamodels/roman/tags/velocity_aberration-1.0.0
-  visit:
-    tag: asdf://stsci.edu/datamodels/roman/tags/visit-1.0.0
-  wcsinfo:
-    tag: asdf://stsci.edu/datamodels/roman/tags/wcsinfo-1.0.0
-required: [calibration_software_version, filename, file_date,
-           model_type, origin, prd_software_version, telescope,
-           aperture, cal_step, coordinates, ephemeris, exposure,
-           instrument, observation, photometry, pointing, program,
-           target, velocity_aberration, visit, wcsinfo]
+allOf:
+# Meta Variables
+- $ref: asdf://stsci.edu/datamodels/roman/schemas/basic-1.0.0
+- type: object
+  properties:
+    # Meta Objects
+    aperture:
+      tag: asdf://stsci.edu/datamodels/roman/tags/aperture-1.0.0
+    cal_step:
+      tag: asdf://stsci.edu/datamodels/roman/tags/cal_step-1.0.0
+    coordinates:
+      tag: asdf://stsci.edu/datamodels/roman/tags/coordinates-1.0.0
+    ephemeris:
+      tag: asdf://stsci.edu/datamodels/roman/tags/ephemeris-1.0.0
+    exposure:
+      tag: asdf://stsci.edu/datamodels/roman/tags/exposure-1.0.0
+    guidestar:
+      tag: asdf://stsci.edu/datamodels/roman/tags/guidestar-1.0.0
+    instrument:
+      tag: asdf://stsci.edu/datamodels/roman/tags/wfi_mode-1.0.0
+    observation:
+      tag: asdf://stsci.edu/datamodels/roman/tags/observation-1.0.0
+    photometry:
+      tag: asdf://stsci.edu/datamodels/roman/tags/photometry-1.0.0
+    pointing:
+      tag: asdf://stsci.edu/datamodels/roman/tags/pointing-1.0.0
+    program:
+      tag: asdf://stsci.edu/datamodels/roman/tags/program-1.0.0
+    target:
+      tag: asdf://stsci.edu/datamodels/roman/tags/target-1.0.0
+    velocity_aberration:
+      tag: asdf://stsci.edu/datamodels/roman/tags/velocity_aberration-1.0.0
+    visit:
+      tag: asdf://stsci.edu/datamodels/roman/tags/visit-1.0.0
+    wcsinfo:
+      tag: asdf://stsci.edu/datamodels/roman/tags/wcsinfo-1.0.0
+  required: [aperture, cal_step, coordinates, ephemeris, exposure, guidestar,
+             instrument, observation, photometry, pointing, program,
+             target, velocity_aberration, visit, wcsinfo]
 ...

@@ -127,7 +127,7 @@ properties:
         origin: TBD
     archive_catalog:
       datatype: tinyint
-      destination: [ ScienceCommon.visit_file_sequence ]
+      destination: [ScienceCommon.visit_file_sequence]
   visit_file_activity:
     title: Visit file activity identifier
     type: string
