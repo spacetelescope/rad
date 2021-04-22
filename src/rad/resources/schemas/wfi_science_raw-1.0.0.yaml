@@ -13,37 +13,16 @@ properties:
       - $ref: common-1.0.0
   data:
     tag: tag:stsci.edu:asdf/core/ndarray-1.0.0
-    type object:
-    properties:
-      datatype:
-        enum: [uint16]
-      shape:
-        type: array
-        minItems: 4
-        maxItems: 4
-    required: [datatype, shape]
+    datatype: uint16
+    ndim: 4
   zeroframe:
     tag: tag:stsci.edu:asdf/core/ndarray-1.0.0
-    type object:
-    properties:
-      datatype:
-        enum: [uint16]
-      shape:
-        type: array
-        minItems: 3
-        maxItems: 3
-    required: [datatype, shape]
+    datatype: uint16
+    ndim: 3
   refout:
     tag: tag:stsci.edu:asdf/core/ndarray-1.0.0
-    type object:
-    properties:
-      datatype:
-        enum: [uint16]
-      shape:
-        type: array
-        minItems: 4
-        maxItems: 4
-    required: [datatype, shape]
+    datatype: uint16
+    ndim: 4
 
 propertyOrder: [meta, data, zeroframe, refout]
 flowStyle: block

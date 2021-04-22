@@ -26,11 +26,6 @@ def schema(request):
     return yaml.safe_load(asdf.get_config().resource_manager[request.param])
 
 
-@pytest.fixture(scope="session", params=[u for u in SCHEMA_URIS if u.split("/")[-1] not in ["ref_common-1.0.0", "common-1.0.0"]])
-def tag_schema(request):
-    return yaml.safe_load(asdf.get_config().resource_manager[request.param])
-
-
 @pytest.fixture(scope="session")
 def valid_tag_uris(manifest):
     uris = {t["tag_uri"] for t in manifest["tags"]}
@@ -54,27 +49,38 @@ def test_schema_style(schema_content):
     assert not any(l != l.rstrip() for l in schema_content.split(b"\n"))
 
 
-def test_property_order(schema):
-    def callback(node):
-        if isinstance(node, Mapping) and node.get("type") == "object" and "propertyOrder" in node:
-            property_names = set(node.get("properties", {}).keys())
-            property_order_names = set(node["propertyOrder"])
-            if property_order_names != property_names:
-                missing_list = ", ".join(property_order_names - property_names)
-                extra_list = ", ".join(property_names - property_order_names)
-                message = (
-                    "propertyOrder does not match list of properties:\n\n"
-                    "missing properties: " + missing_list + "\n"
-                    "extra properties: " + extra_list
-                )
-                assert False, message
+def test_property_order(schema, manifest):
+    is_tag_schema = schema["id"] in {t["schema_uri"] for t in manifest["tags"]}
 
-    asdf.treeutil.walk(schema, callback)
+    if is_tag_schema:
+        def callback(node):
+            if isinstance(node, Mapping) and "propertyOrder" in node:
+                assert node.get("type") == "object"
+                property_names = set(node.get("properties", {}).keys())
+                property_order_names = set(node["propertyOrder"])
+                if property_order_names != property_names:
+                    missing_list = ", ".join(property_order_names - property_names)
+                    extra_list = ", ".join(property_names - property_order_names)
+                    message = (
+                        "propertyOrder does not match list of properties:\n\n"
+                        "missing properties: " + missing_list + "\n"
+                        "extra properties: " + extra_list
+                    )
+                    assert False, message
+
+        asdf.treeutil.walk(schema, callback)
+    else:
+        def callback(node):
+            if isinstance(node, Mapping):
+                assert "propertyOrder" not in node, "Only schemas associated with a tag may specify propertyOrder"
+
+        asdf.treeutil.walk(schema, callback)
 
 
 def test_required(schema):
     def callback(node):
-        if isinstance(node, Mapping) and node.get("type") == "object" and "required" in node:
+        if isinstance(node, Mapping) and "required" in node:
+            assert node.get("type") == "object"
             property_names = set(node.get("properties", {}).keys())
             required_names = set(node["required"])
             if not required_names.issubset(property_names):
@@ -85,12 +91,25 @@ def test_required(schema):
     asdf.treeutil.walk(schema, callback)
 
 
-def test_flowstyle(tag_schema):
-    def callback(node):
-        if isinstance(node, Mapping) and node.get("type") == "object":
-            assert node.get("flowStyle") == "block", "all objects require flowStyle: block"
+def test_flowstyle(schema, manifest):
+    is_tag_schema = schema["id"] in {t["schema_uri"] for t in manifest["tags"]}
 
-    asdf.treeutil.walk(tag_schema, callback)
+    if is_tag_schema:
+        found_flowstyle = False
+        def callback(node):
+            nonlocal found_flowstyle
+            if isinstance(node, Mapping) and node.get("flowStyle") == "block":
+                found_flowstyle = True
+
+        asdf.treeutil.walk(schema, callback)
+
+        assert found_flowstyle, "Schemas associated with a tag must specify flowStyle: block"
+    else:
+        def callback(node):
+            if isinstance(node, Mapping):
+                assert "flowStyle" not in node, "Only schemas associated with a tag may specify flowStyle"
+
+        asdf.treeutil.walk(schema, callback)
 
 
 def test_tag(schema, valid_tag_uris):
