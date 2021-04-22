@@ -26,7 +26,7 @@ properties:
     archive_catalog:
       datatype: float
       destination: [ScienceCommon.moon_angle]
-  reference_frame:
+  ephemeris_reference_frame:
     title: Ephemeris reference frame
     type: string
     sdf:
@@ -35,7 +35,7 @@ properties:
         origin: TBD
     archive_catalog:
       datatype: nvarchar(10)
-      destination: [ ScienceCommon.reference_frame ]
+      destination: [ScienceCommon.ephemeris_reference_frame]
   sun_angle:
     title: "Sun Angle [radians]"
     type: number
@@ -49,7 +49,7 @@ properties:
   type:
     title: Type of ephemeris
     type: string
-    enum: [ DEFINITIVE, PREDICTED ]
+    enum: [DEFINITIVE, PREDICTED]
     sdf:
       special_processing: VALUE_REQUIRED
       source:
@@ -128,10 +128,10 @@ properties:
       datatype: float
       destination: [ScienceCommon.velocity_z]
 propertyOrder: [earth_angle, moon_angle, sun_angle, type, time,
-           reference_frame, spatial_x, spatial_y, spatial_z,
-           velocity_x, velocity_y, velocity_z]
+                ephemeris_reference_frame, spatial_x, spatial_y,
+                spatial_z, velocity_x, velocity_y, velocity_z]
 flowStyle: block
 required: [earth_angle, moon_angle, sun_angle, type, time,
-           reference_frame, spatial_x, spatial_y, spatial_z,
-           velocity_x, velocity_y, velocity_z]
+           ephemeris_reference_frame, spatial_x, spatial_y,
+           spatial_z, velocity_x, velocity_y, velocity_z]
 ...

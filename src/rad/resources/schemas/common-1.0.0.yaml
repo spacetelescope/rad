@@ -41,13 +41,14 @@ allOf:
       tag: asdf://stsci.edu/datamodels/roman/tags/visit-1.0.0
     wcsinfo:
       tag: asdf://stsci.edu/datamodels/roman/tags/wcsinfo-1.0.0
-propertyOrder: [ calibration_software_version, crds_software_version, crds_context_used,
-                 filename, file_date, guidestar, instrument, model_type, origin,
-                 prd_software_version, sdf_software_version, telescope ]
-flowStyle: block
-required: [calibration_software_version, filename, file_date,
-           model_type, origin, prd_software_version, telescope,
-           aperture, cal_step, coordinates, ephemeris, exposure, guidestar,
-           instrument, observation, photometry, pointing, program,
-           target, velocity_aberration, visit, wcsinfo]
+#  required: [calibration_software_version, crds_software_version,
+#             crds_context_used, filename, file_date,
+#             model_type, origin, prd_software_version,
+#             sdf_software_version, telescope,
+#             aperture, cal_step, coordinates, ephemeris, exposure, guidestar,
+#             instrument, observation, photometry, pointing, program,
+#             target, velocity_aberration, visit, wcsinfo]
+  required: [aperture, cal_step, coordinates, ephemeris, exposure, guidestar,
+             instrument, observation, photometry, pointing, program,
+             target, velocity_aberration, visit, wcsinfo]
 ...
