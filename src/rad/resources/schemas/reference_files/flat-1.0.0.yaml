@@ -14,7 +14,6 @@ properties:
     tag: tag:stsci.edu:asdf/core/ndarray-1.0.0
     datatype: float32
     ndim: 2
-    required: [datatype, shape]
   dq:
     tag: tag:stsci.edu:asdf/core/ndarray-1.0.0
     datatype: uint32
