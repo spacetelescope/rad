@@ -25,6 +25,7 @@ def schema_content(request):
 def schema(request):
     return yaml.safe_load(asdf.get_config().resource_manager[request.param])
 
+
 @pytest.fixture(scope="session")
 def valid_tag_uris(manifest):
     uris = {t["tag_uri"] for t in manifest["tags"]}
