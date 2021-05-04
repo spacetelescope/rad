@@ -9,6 +9,21 @@ asdf_standard_requirement:
   gte: 1.1.0
 tags:
 # Object Modules
+- tag_uri: asdf://stsci.edu/datamodels/roman/tags/gls_rampfit-1.0.0
+  schema_uri: asdf://stsci.edu/datamodels/roman/schemas/gls_rampfit-1.0.0
+  title: Optional output for GLS ramp fitting
+  description: |-
+    Optional output for GLS ramp fitting
+- tag_uri: asdf://stsci.edu/datamodels/roman/tags/ramp-1.0.0
+  schema_uri: asdf://stsci.edu/datamodels/roman/schemas/ramp-1.0.0
+  title: Ramp schema
+  description: |-
+    Ramp schema
+- tag_uri: asdf://stsci.edu/datamodels/roman/tags/rampfitoutput-1.0.0
+  schema_uri: asdf://stsci.edu/datamodels/roman/schemas/rampfitoutput-1.0.0
+  title: Ramp fit output schema
+  description: |-
+    Ramp fit output schema
 - tag_uri: asdf://stsci.edu/datamodels/roman/tags/wfi_science_raw-1.0.0
   schema_uri: asdf://stsci.edu/datamodels/roman/schemas/wfi_science_raw-1.0.0
   title: Roman WFI Raw Science Data datamodel
@@ -24,57 +39,78 @@ tags:
   title: Roman WFI Instrument Mode
   description: |-
     Roman WFI Instrument
+# Helper Object Modules
+- tag_uri: asdf://stsci.edu/datamodels/roman/tags/dq_def-1.0.0
+  schema_uri: asdf://stsci.edu/datamodels/roman/schemas/dq_def-1.0.0
+  title: DQ Flag definition schema
+  description: |-
+    DQ Flag definition schema
+- tag_uri: asdf://stsci.edu/datamodels/roman/tags/group-1.0.0
+  schema_uri: asdf://stsci.edu/datamodels/roman/schemas/group-1.0.0
+  title: Group parameter schema
+  description: |-
+    Group parameter schema
 - tag_uri: asdf://stsci.edu/datamodels/roman/tags/pixelarea-1.0.0
   schema_uri: asdf://stsci.edu/datamodels/roman/schemas/pixelarea-1.0.0
   title: Pixel area array
   description: |-
     The schema for the pixel area array
+- tag_uri: asdf://stsci.edu/datamodels/roman/tags/variance-1.0.0
+  schema_uri: asdf://stsci.edu/datamodels/roman/schemas/variance-1.0.0
+  title: An object that is required to include the variance arrays.
+  description: |-
+    An object that is required to include the variance arrays.
 # Metadata Modules
-- tag_uri: asdf://stsci.edu/datamodels/roman/tags/exposure-1.0.0
-  schema_uri: asdf://stsci.edu/datamodels/roman/schemas/exposure-1.0.0
-  title: Exposure information
-  description: |-
-    Exposure information
-- tag_uri: asdf://stsci.edu/datamodels/roman/tags/program-1.0.0
-  schema_uri: asdf://stsci.edu/datamodels/roman/schemas/program-1.0.0
-  title: Xprogram information
-  description: |-
-    Xprogram information
-- tag_uri: asdf://stsci.edu/datamodels/roman/tags/observation-1.0.0
-  schema_uri: asdf://stsci.edu/datamodels/roman/schemas/observation-1.0.0
-  title: Observation information
-  description: |-
-    Observation information
-- tag_uri: asdf://stsci.edu/datamodels/roman/tags/ephemeris-1.0.0
-  schema_uri: asdf://stsci.edu/datamodels/roman/schemas/ephemeris-1.0.0
-  title: Ephemeris information
-  description: |-
-    Ephemeris information
-- tag_uri: asdf://stsci.edu/datamodels/roman/tags/visit-1.0.0
-  schema_uri: asdf://stsci.edu/datamodels/roman/schemas/visit-1.0.0
-  title: Visit information
-  description: |-
-    Visit information
-- tag_uri: asdf://stsci.edu/datamodels/roman/tags/photometry-1.0.0
-  schema_uri: asdf://stsci.edu/datamodels/roman/schemas/photometry-1.0.0
-  title: Photometry information
-  description: |-
-    Photometry information
-- tag_uri: asdf://stsci.edu/datamodels/roman/tags/coordinates-1.0.0
-  schema_uri: asdf://stsci.edu/datamodels/roman/schemas/coordinates-1.0.0
-  title: Coordinate frame information
-  description: |-
-    Coordinate frame information
 - tag_uri: asdf://stsci.edu/datamodels/roman/tags/aperture-1.0.0
   schema_uri: asdf://stsci.edu/datamodels/roman/schemas/aperture-1.0.0
   title: Aperture information
   description: |-
     Aperture information
+- tag_uri: asdf://stsci.edu/datamodels/roman/tags/cal_step-1.0.0
+  schema_uri: asdf://stsci.edu/datamodels/roman/schemas/cal_step-1.0.0
+  title: Calibration Step status information
+  description: |-
+    Calibration Step status information
+- tag_uri: asdf://stsci.edu/datamodels/roman/tags/coordinates-1.0.0
+  schema_uri: asdf://stsci.edu/datamodels/roman/schemas/coordinates-1.0.0
+  title: Coordinate frame information
+  description: |-
+    Coordinate frame information
+- tag_uri: asdf://stsci.edu/datamodels/roman/tags/ephemeris-1.0.0
+  schema_uri: asdf://stsci.edu/datamodels/roman/schemas/ephemeris-1.0.0
+  title: Ephemeris information
+  description: |-
+    Ephemeris information
+- tag_uri: asdf://stsci.edu/datamodels/roman/tags/exposure-1.0.0
+  schema_uri: asdf://stsci.edu/datamodels/roman/schemas/exposure-1.0.0
+  title: Exposure information
+  description: |-
+    Exposure information
+- tag_uri: asdf://stsci.edu/datamodels/roman/tags/guidestar-1.0.0
+  schema_uri: asdf://stsci.edu/datamodels/roman/schemas/guidestar-1.0.0
+  title: Guidestar information
+  description: |-
+    Guidestar information
+- tag_uri: asdf://stsci.edu/datamodels/roman/tags/observation-1.0.0
+  schema_uri: asdf://stsci.edu/datamodels/roman/schemas/observation-1.0.0
+  title: Observation information
+  description: |-
+    Observation information
+- tag_uri: asdf://stsci.edu/datamodels/roman/tags/photometry-1.0.0
+  schema_uri: asdf://stsci.edu/datamodels/roman/schemas/photometry-1.0.0
+  title: Photometry information
+  description: |-
+    Photometry information
 - tag_uri: asdf://stsci.edu/datamodels/roman/tags/pointing-1.0.0
   schema_uri: asdf://stsci.edu/datamodels/roman/schemas/pointing-1.0.0
   title: Spacecraft Pointing information
   description: |-
     Spacecraft Pointing information
+- tag_uri: asdf://stsci.edu/datamodels/roman/tags/program-1.0.0
+  schema_uri: asdf://stsci.edu/datamodels/roman/schemas/program-1.0.0
+  title: Program information
+  description: |-
+    Program information
 - tag_uri: asdf://stsci.edu/datamodels/roman/tags/target-1.0.0
   schema_uri: asdf://stsci.edu/datamodels/roman/schemas/target-1.0.0
   title: Target information
@@ -85,25 +121,51 @@ tags:
   title: Velocity aberration information
   description: |-
     Velocity aberration information
+- tag_uri: asdf://stsci.edu/datamodels/roman/tags/visit-1.0.0
+  schema_uri: asdf://stsci.edu/datamodels/roman/schemas/visit-1.0.0
+  title: Visit information
+  description: |-
+    Visit information
 - tag_uri: asdf://stsci.edu/datamodels/roman/tags/wcsinfo-1.0.0
   schema_uri: asdf://stsci.edu/datamodels/roman/schemas/wcsinfo-1.0.0
   title: Wcsinfo information
   description: |-
     Wcsinfo information
-- tag_uri: asdf://stsci.edu/datamodels/roman/tags/guidestar-1.0.0
-  schema_uri: asdf://stsci.edu/datamodels/roman/schemas/guidestar-1.0.0
-  title: Guidestar information
+# Reference Metadata Module
+- tag_uri: asdf://stsci.edu/datamodels/roman/tags/reference_files/ref_common-1.0.0
+  schema_uri: asdf://stsci.edu/datamodels/roman/schemas/reference_files/ref_common-1.0.0
+  title: Common reference metadata properties
   description: |-
-    Guidestar information
-- tag_uri: asdf://stsci.edu/datamodels/roman/tags/cal_step-1.0.0
-  schema_uri: asdf://stsci.edu/datamodels/roman/schemas/cal_step-1.0.0
-  title: Calibration Step status information
-  description: |-
-    Calibration Step status information
+    Common reference metadata properties
 # Reference Modules
+- tag_uri: asdf://stsci.edu/datamodels/roman/tags/reference_files/dark-1.0.0
+  schema_uri: asdf://stsci.edu/datamodels/roman/schemas/reference_files/dark-1.0.0
+  title: Dark reference schema
+  description: |-
+    Dark reference schema
 - tag_uri: asdf://stsci.edu/datamodels/roman/tags/reference_files/flat-1.0.0
   schema_uri: asdf://stsci.edu/datamodels/roman/schemas/reference_files/flat-1.0.0
-  title: flat field information
+  title: Flat reference schema
   description: |-
-    flat field information
+    Flat reference schema
+- tag_uri: asdf://stsci.edu/datamodels/roman/tags/reference_files/gain-1.0.0
+  schema_uri: asdf://stsci.edu/datamodels/roman/schemas/reference_files/gain-1.0.0
+  title: Gain reference schema
+  description: |-
+    Gain reference schema
+- tag_uri: asdf://stsci.edu/datamodels/roman/tags/reference_files/mask-1.0.0
+  schema_uri: asdf://stsci.edu/datamodels/roman/schemas/reference_files/mask-1.0.0
+  title: DQ Mask reference schema
+  description: |-
+    DQ Mask reference schema
+- tag_uri: asdf://stsci.edu/datamodels/roman/tags/reference_files/readnoise-1.0.0
+  schema_uri: asdf://stsci.edu/datamodels/roman/schemas/reference_files/readnoise-1.0.0
+  title: Read noise reference schema
+  description: |-
+    Read noise reference schema
+- tag_uri: asdf://stsci.edu/datamodels/roman/tags/reference_files/wfi_img_photom-1.0.0
+  schema_uri: asdf://stsci.edu/datamodels/roman/schemas/reference_files/wfi_img_photom-1.0.0
+  title: WFI imaging photometric flux conversion data model
+  description: |-
+    WFI imaging photometric flux conversion data model
 ...

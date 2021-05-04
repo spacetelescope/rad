@@ -1,0 +1,25 @@
+%YAML 1.1
+---
+$schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.0.0
+id: asdf://stsci.edu/datamodels/roman/schemas/dq_def-1.0.0
+
+title: DQ Flag definition schema
+
+
+type: object
+properties:
+  dq_def:
+    title: DQ flag definitions
+    # Should this be an Astropy Table?
+    datatype:
+      - name: BIT
+        datatype: int32
+      - name: VALUE
+        datatype: uint32
+      - name: NAME
+        datatype: [ascii, 40]
+      - name: DESCRIPTION
+        datatype: [ascii, 80]
+flowStyle: block
+required: [dq_def]
+...
