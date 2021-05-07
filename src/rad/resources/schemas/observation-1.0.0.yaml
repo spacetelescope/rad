@@ -184,7 +184,7 @@ properties:
     enum: [HLS, EMS, SN, N/A]
     archive_catalog:
       datatype: nvarchar(15)
-      destination: [ScienceRefData.survey]
+      destination: [ScienceCommon.survey]
 propertyOrder: [start_time, end_time, obs_id, visit_id, program,
            execution_plan, pass, observation, segment,
            visit, visit_file_group, visit_file_sequence,
