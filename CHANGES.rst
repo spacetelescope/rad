@@ -27,6 +27,12 @@
 
 - Added misc. required db keyword attributes. [JIRA RAD-7]
 
+- Imported all remaining schema files from romancal [JIRA RCAL-144, RCAL-245]
+
+- Updated optical element to add new filter and remove engineering. [#6]
+
+- Removed misc. unneeded keywords and added survey attribute. [JIRA RAD-8]
+
   
 0.1.0 (unreleased)
 ==================
