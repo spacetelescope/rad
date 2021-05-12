@@ -6,7 +6,7 @@ import asdf
 
 
 def test_manifest_valid(manifest):
-    schema = asdf.schema.load_schema("asdf://asdf-format.org/core/schemas/extension_manifest-1.0")
+    schema = asdf.schema.load_schema("asdf://asdf-format.org/core/schemas/extension_manifest-1.0.0")
 
     asdf.schema.validate(manifest, schema=schema)
 
