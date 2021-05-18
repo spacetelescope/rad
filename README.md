@@ -4,8 +4,6 @@
 This is a repository for the Roman Attribute Dictionary 
 
 
-![STScI Logo](docs/_static/stsci_logo.png)
-
 ## Installation
 
 To install the latest `rad` release
