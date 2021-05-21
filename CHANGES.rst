@@ -27,6 +27,7 @@
 
 - Added misc. required db keyword attributes. [JIRA RAD-7]
 
+- Added support for GLS Ramp fitting. [#30]
   
 0.1.0 (unreleased)
 ==================

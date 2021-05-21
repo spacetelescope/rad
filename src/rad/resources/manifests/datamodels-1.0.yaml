@@ -9,6 +9,11 @@ asdf_standard_requirement:
   gte: 1.1.0
 tags:
 # Object Modules
+- tag_uri: asdf://stsci.edu/datamodels/roman/tags/gls_rampfit-1.0.0
+  schema_uri: asdf://stsci.edu/datamodels/roman/schemas/gls_rampfit-1.0.0
+  title: Optional output for GLS ramp fitting
+  description: |-
+    Optional output for GLS ramp fitting
 - tag_uri: asdf://stsci.edu/datamodels/roman/tags/wfi_science_raw-1.0.0
   schema_uri: asdf://stsci.edu/datamodels/roman/schemas/wfi_science_raw-1.0.0
   title: Roman WFI Raw Science Data datamodel

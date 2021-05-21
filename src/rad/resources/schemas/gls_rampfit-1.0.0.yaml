@@ -1,0 +1,41 @@
+%YAML 1.1
+---
+$schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.0.0
+id: asdf://stsci.edu/datamodels/roman/schemas/gls_rampfit-1.0.0
+
+title: Optional output for GLS ramp fitting
+
+type: object
+properties:
+  meta:
+    allOf:
+      - $ref: common-1.0.0
+  yint:
+    title: Y-intercept
+    tag: tag:stsci.edu:asdf/core/ndarray-1.0.0
+    ndim: 2
+    datatype: float32
+  sigyint:
+    title: Sigma for Y-intercept
+    tag: tag:stsci.edu:asdf/core/ndarray-1.0.0
+    ndim: 2
+    datatype: float32
+  pedestal:
+    title: Pedestal
+    tag: tag:stsci.edu:asdf/core/ndarray-1.0.0
+    ndim: 2
+    datatype: float32
+  crmag:
+    title: CR magnitudes
+    tag: tag:stsci.edu:asdf/core/ndarray-1.0.0
+    ndim: 3
+    datatype: float32
+  sigcrmag:
+    title: Sigma for CR magnitudes
+    tag: tag:stsci.edu:asdf/core/ndarray-1.0.0
+    ndim: 3
+    datatype: float32
+required: [meta, yint, sigyint, pedestal, crmag, sigcrmag]
+flowStyle: block
+propertyOrder: [meta, yint, sigyint, pedestal, crmag, sigcrmag]
+...
