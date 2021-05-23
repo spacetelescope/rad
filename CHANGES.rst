@@ -27,7 +27,9 @@
 
 - Added misc. required db keyword attributes. [JIRA RAD-7]
 
+- Added support for ramp fitting schemas. [#36]
   
+
 0.1.0 (unreleased)
 ==================
 
