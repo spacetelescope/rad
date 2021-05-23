@@ -106,4 +106,9 @@ tags:
   title: flat field information
   description: |-
     flat field information
+- tag_uri: asdf://stsci.edu/datamodels/roman/tags/reference_files/wfi_img_photom-1.0.0
+  schema_uri: asdf://stsci.edu/datamodels/roman/schemas/reference_files/wfi_img_photom-1.0.0
+  title: WFI imaging photometric flux conversion data model
+  description: |-
+    WFI imaging photometric flux conversion data model
 ...
