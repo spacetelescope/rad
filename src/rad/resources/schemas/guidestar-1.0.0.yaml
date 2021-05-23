@@ -150,7 +150,7 @@ properties:
       datatype: float
       destination: [ScienceCommon.data_end]
   gw_acq_exec_stat:
-    title: Guide star acquisition execution status
+    title: Guide star window acquisition execution status
     type: string
     sdf:
       special_processing: VALUE_REQUIRED
