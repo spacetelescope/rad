@@ -29,6 +29,12 @@ tags:
   title: Pixel area array
   description: |-
     The schema for the pixel area array
+# Helper Object Modules
+- tag_uri: asdf://stsci.edu/datamodels/roman/tags/group-1.0.0
+  schema_uri: asdf://stsci.edu/datamodels/roman/schemas/group-1.0.0
+  title: Group parameter schema
+  description: |-
+    Group parameter schema
 # Metadata Modules
 - tag_uri: asdf://stsci.edu/datamodels/roman/tags/exposure-1.0.0
   schema_uri: asdf://stsci.edu/datamodels/roman/schemas/exposure-1.0.0

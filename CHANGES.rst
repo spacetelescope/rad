@@ -27,6 +27,8 @@
 
 - Added misc. required db keyword attributes. [JIRA RAD-7]
 
+- Added group schema. [#33]
+  
   
 0.1.0 (unreleased)
 ==================
