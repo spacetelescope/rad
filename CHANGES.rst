@@ -27,6 +27,8 @@
 
 - Added misc. required db keyword attributes. [JIRA RAD-7]
 
+- Added support for variance object schemas. [#38]
+
   
 0.1.0 (unreleased)
 ==================
