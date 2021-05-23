@@ -100,10 +100,31 @@ tags:
   title: Calibration Step status information
   description: |-
     Calibration Step status information
+# Reference Metadata Module
+- tag_uri: asdf://stsci.edu/datamodels/roman/tags/reference_files/ref_common-1.0.0
+  schema_uri: asdf://stsci.edu/datamodels/roman/schemas/reference_files/ref_common-1.0.0
+  title: Common reference metadata properties
+  description: |-
+    Common reference metadata properties
 # Reference Modules
 - tag_uri: asdf://stsci.edu/datamodels/roman/tags/reference_files/flat-1.0.0
   schema_uri: asdf://stsci.edu/datamodels/roman/schemas/reference_files/flat-1.0.0
   title: flat field information
   description: |-
     flat field information
+- tag_uri: asdf://stsci.edu/datamodels/roman/tags/reference_files/gain-1.0.0
+  schema_uri: asdf://stsci.edu/datamodels/roman/schemas/reference_files/gain-1.0.0
+  title: Gain reference schema
+  description: |-
+    Gain reference schema
+- tag_uri: asdf://stsci.edu/datamodels/roman/tags/reference_files/mask-1.0.0
+  schema_uri: asdf://stsci.edu/datamodels/roman/schemas/reference_files/mask-1.0.0
+  title: DQ Mask reference schema
+  description: |-
+    DQ Mask reference schema
+- tag_uri: asdf://stsci.edu/datamodels/roman/tags/reference_files/readnoise-1.0.0
+  schema_uri: asdf://stsci.edu/datamodels/roman/schemas/reference_files/readnoise-1.0.0
+  title: Read noise reference schema
+  description: |-
+    Read noise reference schema
 ...
