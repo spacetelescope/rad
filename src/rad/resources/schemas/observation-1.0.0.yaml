@@ -179,7 +179,7 @@ properties:
       datatype: nvarchar(50)
       destination: [ScienceCommon.ma_table_name]
   survey:
-    title: Flat Field Step
+    title: Observation Survey
     type: string
     enum: [HLS, EMS, SN, N/A]
     archive_catalog:
