@@ -31,6 +31,8 @@
 
 - Added dq schema. [#32]
 
+- Added readnoise, mask, and gain schemas. [#37]
+
   
 0.1.0 (unreleased)
 ==================
