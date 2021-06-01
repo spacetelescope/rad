@@ -15,54 +15,17 @@ allOf:
       type: string
       enum: [AREA, DARK, FLAT, GAIN, LINEARITY, MASK, PERSAT, PHOTOM, READNOISE, REFPIX,
              SATURATION, SUPERBIAS, TRAPDENSITY, TRAPPARS]
-      sdf:
-        special_processing: VALUE_REQUIRED
-        source:
-          origin: TBD
-        archive_catalog:
-          datatype: nvarchar(120)
-          destination: [ScienceRefData.reftype]
     pedigree:
       title: The pedigree of the reference file
       type: string
-      sdf:
-        special_processing: VALUE_REQUIRED
-        source:
-          origin: TBD
-        archive_catalog:
-          datatype: nvarchar(120)
-          destination: [ScienceRefData.pedigree]
     description:
       title: Description of the reference file
       type: string
-      sdf:
-        special_processing: VALUE_REQUIRED
-        source:
-          origin: TBD
-        archive_catalog:
-          datatype: nvarchar(120)
-          destination: [ScienceRefData.description]
     author:
       title: Author of the reference file
       type: string
-      sdf:
-        special_processing: VALUE_REQUIRED
-        source:
-          origin: TBD
-      archive_catalog:
-        datatype: nvarchar(120)
-        destination: [ScienceRefData.author]
     useafter:
       title: Use after date of the reference file
       tag: tag:stsci.edu:asdf/time/time-1.1.0
-      sdf:
-        special_processing: VALUE_REQUIRED
-        source:
-          origin: TBD
-      archive_catalog:
-        datatype: datetime2
-        destination: [ScienceRefData.useafter]
-  propertyOrder: [author, description, pedigree, useafter, reftype]
-  flowStyle: block
   required: [author, description, pedigree, useafter, reftype]
 ...
