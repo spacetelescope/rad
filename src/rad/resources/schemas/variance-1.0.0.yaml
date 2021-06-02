@@ -24,7 +24,5 @@ properties:
     tag: tag:stsci.edu:asdf/core/ndarray-1.0.0
     datatype: float32
     ndim: 3
-propertyOrder: [var_poisson, var_rnoise, var_flat]
-flowStyle: block
 required: [var_poisson, var_rnoise, var_flat]
 ...
