@@ -27,6 +27,12 @@
 
 - Added misc. required db keyword attributes. [JIRA RAD-7]
 
+- Added Dark schema and updated Flat schema. [#35]
+
+- Added dq schema. [#32]
+
+- Added readnoise, mask, and gain schemas. [#37]
+
 - Added support for ramp fitting schemas. [#36]
   
 
