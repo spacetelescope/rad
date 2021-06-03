@@ -10,6 +10,11 @@ properties:
   meta:
     allOf:
       - $ref: ref_common-1.0.0
+      - type: object
+        properties:
+          reftype:
+            type: string
+            enum: [FLAT]
   data:
     title: Flat data array
     tag: tag:stsci.edu:asdf/core/ndarray-1.0.0
