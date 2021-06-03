@@ -9,6 +9,7 @@ title: |
 type: object
 properties:
   area:
+    title: Pixel area array
     tag: tag:stsci.edu:asdf/core/ndarray-1.0.0
     datatype: float32
     ndim: 2
