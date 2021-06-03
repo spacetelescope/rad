@@ -7,7 +7,6 @@ title: Common reference metadata properties
 
 allOf:
 - $ref: ../basic-1.0.0
-- $ref: ../dq_def-1.0.0
 - type: object
   properties:
     reftype:
