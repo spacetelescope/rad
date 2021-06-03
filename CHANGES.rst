@@ -35,7 +35,9 @@
 
 - Updated aperture, basic, ephemeris, exposure, guidestar, observation, pixelarea, and visit schemas. [#46]  
 
-  
+- Added support for variance object schemas. [#38] 
+
+
 0.1.0 (unreleased)
 ==================
 
