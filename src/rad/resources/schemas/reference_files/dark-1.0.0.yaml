@@ -20,12 +20,14 @@ properties:
     tag: tag:stsci.edu:asdf/core/ndarray-1.0.0
     datatype: uint16
     ndim: 2
+  dq_def:
+    $ref: dq_def-1.0.0
   err:
     title: Error array
     tag: tag:stsci.edu:asdf/core/ndarray-1.0.0
     datatype: float32
     ndim: 3
-required: [meta, data, dq, err]
+required: [meta, data, dq, dq_def, err]
 flowStyle: block
-propertyOrder: [meta, data, dq, err]
+propertyOrder: [meta, data, dq, dq_def, err]
 ...
