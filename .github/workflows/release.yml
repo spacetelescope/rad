@@ -25,7 +25,9 @@ jobs:
 
       - name: Set changelog release date
         run: |
-          echo "::set-output name=version::$(scripts/set_release_date)"
+          scripts/set_release_date > version
+          echo "::debug::Release version: $(cat version)"
+          echo "::set-output name=version::$(cat version)"
         id: set_release_date
 
       - name: Commit changelog and tag release
@@ -49,7 +51,9 @@ jobs:
 
       - name: Create next changelog release section
         run: |
-          echo "::set-output name=version::$(scripts/insert_next_release)"
+          scripts/insert_next_release > version
+          echo "::debug::Next version: $(cat version)"
+          echo "::set-output name=version::$(cat version)"
         id: insert_next_release
 
       - name: Commit changelog
