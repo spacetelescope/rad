@@ -265,26 +265,6 @@ properties:
     archive_catalog:
       datatype: float
       destination: [ScienceCommon.exposure_duration]
-  nresets_at_start:
-    title: Number of resets at start of exposure
-    type: integer
-    sdf:
-      special_processing: VALUE_REQUIRED
-      source:
-        origin: TBD
-    archive_catalog:
-      datatype: int
-      destination: [ScienceCommon.exposure_nresets_at_start]
-  datamode:
-    title: post-processing method used in FPAP
-    type: integer
-    sdf:
-      special_processing: VALUE_REQUIRED
-      source:
-        origin: TBD
-    archive_catalog:
-      datatype: int
-      destination: [ScienceCommon.exposure_datamode]
 propertyOrder: [id, type,
            start_time, mid_time, end_time,
            start_time_mjd, mid_time_mjd, end_time_mjd,
@@ -293,8 +273,7 @@ propertyOrder: [id, type,
            gain_factor, integration_time, elapsed_exposure_time,
            frame_divisor, groupgap,
            frame_time, group_time, exposure_time,
-           effective_exposure_time, duration, nresets_at_start,
-           datamode]
+           effective_exposure_time, duration]
 flowStyle: block
 required: [id, type,
            start_time, mid_time, end_time,
@@ -304,6 +283,5 @@ required: [id, type,
            gain_factor, integration_time, elapsed_exposure_time,
            frame_divisor, groupgap,
            frame_time, group_time, exposure_time,
-           effective_exposure_time, duration, nresets_at_start,
-           datamode]
+           effective_exposure_time, duration]
 ...

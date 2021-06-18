@@ -1,0 +1,28 @@
+%YAML 1.1
+---
+$schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.0.0
+id: asdf://stsci.edu/datamodels/roman/schemas/variance-1.0.0
+
+title: |
+  An object that is required to include the variance arrays.
+
+
+type: object
+properties:
+  var_poisson:
+    title: variance due to poisson noise
+    tag: tag:stsci.edu:asdf/core/ndarray-1.0.0
+    datatype: float32
+    ndim: 3
+  var_rnoise:
+    title: variance due to read noise
+    tag: tag:stsci.edu:asdf/core/ndarray-1.0.0
+    datatype: float32
+    ndim: 3
+  var_flat:
+    title: variance due to flat field
+    tag: tag:stsci.edu:asdf/core/ndarray-1.0.0
+    datatype: float32
+    ndim: 3
+required: [var_poisson, var_rnoise, var_flat]
+...

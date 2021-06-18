@@ -11,12 +11,19 @@ properties:
   meta:
     allOf:
       - $ref: ref_common-1.0.0
+      - type: object
+        properties:
+          reftype:
+            type: string
+            enum: [MASK]
   dq:
     title: Data quality mask array
     tag: tag:stsci.edu:asdf/core/ndarray-1.0.0
     datatype: uint16
     ndim: 2
-required: [meta, dq]
+  dq_def:
+    $ref: dq_def-1.0.0
+required: [meta, dq, dq_def]
 flowStyle: block
-propertyOrder: [meta, dq]
+propertyOrder: [meta, dq, dq_def]
 ...

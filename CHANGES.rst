@@ -1,4 +1,7 @@
-0.2.0 (unreleased)
+0.3.0 (unreleased)
+==================
+
+0.2.0 (2021-06-04)
 ==================
 
 - Updated yaml files to match latest in RomanCAL. [JIRA RCAL-143]
@@ -35,6 +38,10 @@
 
 - Added support for ramp fitting schemas. [#36]
   
+- Updated aperture, basic, ephemeris, exposure, guidestar, observation, pixelarea, and visit schemas. [#46]  
+
+- Added support for variance object schemas. [#38] 
+
 
 0.1.0 (unreleased)
 ==================
