@@ -22,12 +22,12 @@ allOf:
       ndim: 2
       datatype: uint32
     groupdq:
-      title: 3-D data quality array for each plane
+      title: 3-D data quality array (plane dq for each group)
       tag: tag:stsci.edu:asdf/core/ndarray-1.0.0
       ndim: 3
       datatype: uint8
     err:
-      title: Error array
+      title: Error array cotinaing the square root of the exposure-level combined variance
       tag: tag:stsci.edu:asdf/core/ndarray-1.0.0
       ndim: 2
       datatype: float32
