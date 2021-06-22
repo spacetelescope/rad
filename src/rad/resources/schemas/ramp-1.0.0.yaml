@@ -38,6 +38,5 @@ allOf:
       datatype: float32
   required: [meta, data, pixeldq, groupdq, err, refout]
   propertyOrder: [meta, data, pixeldq, groupdq, err, refout]
-- $ref: group-1.0.0
 flowStyle: block
 ...
