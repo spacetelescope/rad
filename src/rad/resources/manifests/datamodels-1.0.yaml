@@ -101,11 +101,31 @@ tags:
   description: |-
     Calibration Step status information
 # Reference Modules
+- tag_uri: asdf://stsci.edu/datamodels/roman/tags/reference_files/dark-1.0.0
+  schema_uri: asdf://stsci.edu/datamodels/roman/schemas/reference_files/dark-1.0.0
+  title: Dark reference schema
+  description: |-
+    Dark reference schema
 - tag_uri: asdf://stsci.edu/datamodels/roman/tags/reference_files/flat-1.0.0
   schema_uri: asdf://stsci.edu/datamodels/roman/schemas/reference_files/flat-1.0.0
-  title: flat field information
+  title: Flat reference schema
   description: |-
-    flat field information
+    Flat field information
+- tag_uri: asdf://stsci.edu/datamodels/roman/tags/reference_files/gain-1.0.0
+  schema_uri: asdf://stsci.edu/datamodels/roman/schemas/reference_files/gain-1.0.0
+  title: Gain reference schema
+  description: |-
+    Gain reference schema
+- tag_uri: asdf://stsci.edu/datamodels/roman/tags/reference_files/mask-1.0.0
+  schema_uri: asdf://stsci.edu/datamodels/roman/schemas/reference_files/mask-1.0.0
+  title: DQ Mask reference schema
+  description: |-
+    DQ Mask reference schema
+- tag_uri: asdf://stsci.edu/datamodels/roman/tags/reference_files/readnoise-1.0.0
+  schema_uri: asdf://stsci.edu/datamodels/roman/schemas/reference_files/readnoise-1.0.0
+  title: Read noise reference schema
+  description: |-
+    Read noise reference schema
 - tag_uri: asdf://stsci.edu/datamodels/roman/tags/reference_files/wfi_img_photom-1.0.0
   schema_uri: asdf://stsci.edu/datamodels/roman/schemas/reference_files/wfi_img_photom-1.0.0
   title: WFI imaging photometric flux conversion data model

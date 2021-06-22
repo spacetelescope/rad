@@ -7,7 +7,7 @@ title: Ephemeris data information
 type: object
 properties:
   earth_angle:
-    title: "Earth Angle [radians]"
+    title: "[radians] Earth Angle"
     type: number
     sdf:
       special_processing: VALUE_REQUIRED
@@ -17,7 +17,7 @@ properties:
       datatype: float
       destination: [ScienceCommon.earth_angle]
   moon_angle:
-    title: "Moon Angle [radians]"
+    title: "[radians] Moon Angle"
     type: number
     sdf:
       special_processing: VALUE_REQUIRED
@@ -37,7 +37,7 @@ properties:
       datatype: nvarchar(10)
       destination: [ScienceCommon.ephemeris_reference_frame]
   sun_angle:
-    title: "Sun Angle [radians]"
+    title: "[radians] Sun Angle"
     type: number
     sdf:
       special_processing: VALUE_REQUIRED

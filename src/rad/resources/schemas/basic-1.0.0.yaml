@@ -3,7 +3,7 @@
 $schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.0.0
 id: asdf://stsci.edu/datamodels/roman/schemas/basic-1.0.0
 
-title: Common level metadata keywords
+title: Common metadata keywords
 
 type: object
 properties:
