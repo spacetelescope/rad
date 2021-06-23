@@ -6,6 +6,7 @@ from collections.abc import Mapping
 import asdf
 import pytest
 import yaml
+import re
 
 
 SCHEMA_URI_PREFIX = "asdf://stsci.edu/datamodels/roman/schemas/"
@@ -14,6 +15,9 @@ SCHEMA_URIS = [
     u for u in asdf.get_config().resource_manager
     if u.startswith(SCHEMA_URI_PREFIX) and u != METASCHEMA_URI
 ]
+WFI_OPTICAL_ELEMENTS = list(asdf.schema.load_schema(
+    "asdf://stsci.edu/datamodels/roman/schemas/wfi_mode-1.0.0")
+    ["properties"]["optical_element"]["enum"])
 
 
 @pytest.fixture(scope="session", params=SCHEMA_URIS)
@@ -119,3 +123,13 @@ def test_tag(schema, valid_tag_uris):
             assert node["tag"] in valid_tag_uris
 
     asdf.treeutil.walk(schema, callback)
+
+
+# Confirm that the optical_element filter in wfi_img_photom.yml matches WFI_OPTICAL_ELEMENTS
+def test_matched_optical_element_entries():
+    phot_table_keys = list(asdf.schema.load_schema(
+        "asdf://stsci.edu/datamodels/roman/schemas/reference_files/wfi_img_photom-1.0.0")
+        ["properties"]["phot_table"]["patternProperties"])
+    r = re.compile(phot_table_keys[0])
+    for element_str in WFI_OPTICAL_ELEMENTS:
+        assert r.search(element_str)
