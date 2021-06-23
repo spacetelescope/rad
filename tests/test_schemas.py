@@ -132,4 +132,4 @@ def test_matched_optical_element_entries():
         ["properties"]["phot_table"]["patternProperties"])
     r = re.compile(phot_table_keys[0])
     for element_str in WFI_OPTICAL_ELEMENTS:
-        assert r.search("'" + element_str + "'")
+        assert r.search(element_str)
