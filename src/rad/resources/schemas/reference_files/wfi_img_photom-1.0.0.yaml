@@ -12,16 +12,18 @@ properties:
       - $ref: ref_common-1.0.0
   phot_table:
     title: Photometric flux conversion factors table
-    # Should this be an Astropy Table?
-    datatype:
-      - name: optical_element
-        datatype: [ascii, 12]
-      - name: photmjsr
-        title: surface brightness, in MJy/steradian
-        datatype: float32
-      - name: uncertainty
-        title: uncertainty of surface brightness, in MJy/steradian
-        datatype: float32
+    type: object
+    patternProperties:
+      "^('F062'|'F087'|'F106'|'F129'|'W146'|'F158'|'F184'|'GRISM'|'PRISM'|'DARK'|'ENGINEERING')$":
+        type: object
+        properties:
+          photmjsr:
+            title: surface brightness, in MJy/steradian
+            datatype: float32
+          uncertainty:
+            title: uncertainty of surface brightness, in MJy/steradian
+            datatype: float32
+    additionalProperties: false
 required: [meta, phot_table]
 flowStyle: block
 propertyOrder: [meta, phot_table]

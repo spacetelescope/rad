@@ -30,7 +30,7 @@
 
 - Added misc. required db keyword attributes. [JIRA RAD-7]
 
-- Added wfi photom schema. [#34]
+- Added wfi photom schema and tests. [#34]
   
 - Added Dark schema and updated Flat schema. [#35]
 
