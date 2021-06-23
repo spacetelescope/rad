@@ -15,8 +15,9 @@ SCHEMA_URIS = [
     u for u in asdf.get_config().resource_manager
     if u.startswith(SCHEMA_URI_PREFIX) and u != METASCHEMA_URI
 ]
-WFI_OPTICAL_ELEMENTS = ["F062", "F087", "F106", "F129", "W146", "F158", "F184", "GRISM", "PRISM",
-                        "DARK", "ENGINEERING"]
+WFI_OPTICAL_ELEMENTS = list(asdf.schema.load_schema(
+    "asdf://stsci.edu/datamodels/roman/schemas/wfi_mode-1.0.0")
+    ["properties"]["optical_element"]["enum"])
 
 
 @pytest.fixture(scope="session", params=SCHEMA_URIS)
@@ -124,27 +125,11 @@ def test_tag(schema, valid_tag_uris):
     asdf.treeutil.walk(schema, callback)
 
 
-# Confirm that WFI_OPTICAL_ELEMENTS matches the optical_element keyword attribute in wfi_mode.yaml
-def test_verify_optical_element_list(schema):
-    if (schema['id'].rsplit("/")[-1].split("-")[0] == "wfi_mode"):
-        def callback(node):
-            if isinstance(node, Mapping) and "propertyOrder" in node:
-                assert node.get("type") == "object"
-                wfi_mode_oe_lst = list(node["properties"]["optical_element"]["enum"])
-                assert (set(wfi_mode_oe_lst) == set(WFI_OPTICAL_ELEMENTS))
-
-        asdf.treeutil.walk(schema, callback)
-
-
 # Confirm that the optical_element filter in wfi_img_photom.yml matches WFI_OPTICAL_ELEMENTS
-def test_matched_optical_element_entries(schema):
-    if (schema['id'].rsplit("/")[-1].split("-")[0] == "wfi_img_photom"):
-        def callback(node):
-            if isinstance(node, Mapping) and "propertyOrder" in node:
-                assert node.get("type") == "object"
-                phot_table_keys = list(node["properties"]["phot_table"]["patternProperties"])
-                r = re.compile(phot_table_keys[0])
-                for element_str in WFI_OPTICAL_ELEMENTS:
-                    assert r.search("'" + element_str + "'")
-
-        asdf.treeutil.walk(schema, callback)
+def test_matched_optical_element_entries():
+    phot_table_keys = list(asdf.schema.load_schema(
+        "asdf://stsci.edu/datamodels/roman/schemas/reference_files/wfi_img_photom-1.0.0")
+        ["properties"]["phot_table"]["patternProperties"])
+    r = re.compile(phot_table_keys[0])
+    for element_str in WFI_OPTICAL_ELEMENTS:
+        assert r.search("'" + element_str + "'")

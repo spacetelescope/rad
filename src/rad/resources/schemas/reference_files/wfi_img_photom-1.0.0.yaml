@@ -23,6 +23,7 @@ properties:
           uncertainty:
             title: uncertainty of surface brightness, in MJy/steradian
             datatype: float32
+        required: [photmjsr, uncertainty]
     additionalProperties: false
 required: [meta, phot_table]
 flowStyle: block
