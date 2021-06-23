@@ -36,6 +36,8 @@
 
 - Added readnoise, mask, and gain schemas. [#37]
 
+- Added support for ramp fitting schemas. [#43]
+  
 - Updated aperture, basic, ephemeris, exposure, guidestar, observation, pixelarea, and visit schemas. [#46]  
 
 - Added support for variance object schemas. [#38] 

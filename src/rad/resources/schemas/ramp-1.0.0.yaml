@@ -1,0 +1,42 @@
+%YAML 1.1
+---
+$schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.0.0
+id: asdf://stsci.edu/datamodels/roman/schemas/ramp-1.0.0
+
+title: Ramp schema
+
+allOf:
+- type: object
+  properties:
+    meta:
+      allOf:
+        - $ref: common-1.0.0
+    data:
+      title: The science data
+      tag: tag:stsci.edu:asdf/core/ndarray-1.0.0
+      ndim: 3
+      datatype: float32
+    pixeldq:
+      title: 2-D data quality array for all planes
+      tag: tag:stsci.edu:asdf/core/ndarray-1.0.0
+      ndim: 2
+      datatype: uint32
+    groupdq:
+      title: 3-D data quality array (plane dq for each group)
+      tag: tag:stsci.edu:asdf/core/ndarray-1.0.0
+      ndim: 3
+      datatype: uint8
+    err:
+      title: Error array cotinaing the square root of the exposure-level combined variance
+      tag: tag:stsci.edu:asdf/core/ndarray-1.0.0
+      ndim: 2
+      datatype: float32
+    refout:
+      title: Reference Output
+      tag: tag:stsci.edu:asdf/core/ndarray-1.0.0
+      ndim: 3
+      datatype: float32
+  required: [meta, data, pixeldq, groupdq, err, refout]
+  propertyOrder: [meta, data, pixeldq, groupdq, err, refout]
+flowStyle: block
+...

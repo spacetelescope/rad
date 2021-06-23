@@ -1,0 +1,64 @@
+%YAML 1.1
+---
+$schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.0.0
+id: asdf://stsci.edu/datamodels/roman/schemas/rampfitoutput-1.0.0
+
+title: Ramp fit output schema
+
+allOf:
+- type: object
+  properties:
+    meta:
+      allOf:
+        - $ref: common-1.0.0
+    slope:
+      title: Segment-specific slope
+      tag: tag:stsci.edu:asdf/core/ndarray-1.0.0
+      ndim: 3
+      datatype: float32
+    sigslope:
+      title: Sigma for segment-specific slope
+      tag: tag:stsci.edu:asdf/core/ndarray-1.0.0
+      ndim: 3
+      datatype: float32
+    yint:
+      title: Segment-specific y-intercept
+      tag: tag:stsci.edu:asdf/core/ndarray-1.0.0
+      ndim: 3
+      datatype: float32
+    sigyint:
+      title: Sigma for segment-specific y-intercept
+      tag: tag:stsci.edu:asdf/core/ndarray-1.0.0
+      ndim: 3
+      datatype: float32
+    pedestal:
+      title: Pedestal array
+      tag: tag:stsci.edu:asdf/core/ndarray-1.0.0
+      ndim: 2
+      datatype: float32
+    weights:
+      title: Weights for segment-specific fits
+      tag: tag:stsci.edu:asdf/core/ndarray-1.0.0
+      ndim: 3
+      datatype: float32
+    crmag:
+      title: Approximate CR magnitudes
+      tag: tag:stsci.edu:asdf/core/ndarray-1.0.0
+      ndim: 3
+      datatype: float32
+    var_poisson:
+      title: Variance due to poisson noise for segment-specific slope
+      tag: tag:stsci.edu:asdf/core/ndarray-1.0.0
+      ndim: 3
+      datatype: float32
+    var_rnoise:
+      title: Variance due to read noise for segment-specific slope
+      tag: tag:stsci.edu:asdf/core/ndarray-1.0.0
+      ndim: 3
+      datatype: float32
+  required: [meta, slope, sigslope, yint, sigyint, pedestal, weights, crmag, var_poisson,
+             var_rnoise]
+  propertyOrder: [meta, slope, sigslope, yint, sigyint, pedestal, weights, crmag, var_poisson,
+                  var_rnoise]
+flowStyle: block
+...
