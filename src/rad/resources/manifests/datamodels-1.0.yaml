@@ -14,8 +14,8 @@ tags:
   title: Ramp schema
   description: |-
     Ramp schema
-- tag_uri: asdf://stsci.edu/datamodels/roman/tags/rampfitoutput-1.0.0
-  schema_uri: asdf://stsci.edu/datamodels/roman/schemas/rampfitoutput-1.0.0
+- tag_uri: asdf://stsci.edu/datamodels/roman/tags/ramp_fit_output-1.0.0
+  schema_uri: asdf://stsci.edu/datamodels/roman/schemas/ramp_fit_output-1.0.0
   title: Ramp fit output schema
   description: |-
     Ramp fit output schema

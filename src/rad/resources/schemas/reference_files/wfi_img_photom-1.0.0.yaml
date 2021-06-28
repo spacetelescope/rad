@@ -10,6 +10,11 @@ properties:
   meta:
     allOf:
       - $ref: ref_common-1.0.0
+      - type: object
+        properties:
+          reftype:
+            type: string
+            enum: [PHOTOM]
   phot_table:
     title: Photometric flux conversion factors table
     type: object
@@ -19,10 +24,10 @@ properties:
         properties:
           photmjsr:
             title: surface brightness, in MJy/steradian
-            datatype: float32
+            type: number
           uncertainty:
             title: uncertainty of surface brightness, in MJy/steradian
-            datatype: float32
+            type: number
         required: [photmjsr, uncertainty]
     additionalProperties: false
 required: [meta, phot_table]

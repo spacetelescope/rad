@@ -1,7 +1,7 @@
 %YAML 1.1
 ---
 $schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.0.0
-id: asdf://stsci.edu/datamodels/roman/schemas/rampfitoutput-1.0.0
+id: asdf://stsci.edu/datamodels/roman/schemas/ramp_fit_output-1.0.0
 
 title: Ramp fit output schema
 
@@ -34,7 +34,7 @@ allOf:
     pedestal:
       title: Pedestal array
       tag: tag:stsci.edu:asdf/core/ndarray-1.0.0
-      ndim: 2
+      ndim: 3
       datatype: float32
     weights:
       title: Weights for segment-specific fits
