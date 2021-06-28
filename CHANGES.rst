@@ -1,6 +1,8 @@
 0.3.0 (unreleased)
 ==================
 
+- Updated rampfitoutput model and WFIimgphotom models. Renamed rampfitoutput ramp_fit_output. [#58]
+
 0.2.0 (2021-06-04)
 ==================
 

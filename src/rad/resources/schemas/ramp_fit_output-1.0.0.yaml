@@ -1,7 +1,7 @@
 %YAML 1.1
 ---
 $schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.0.0
-id: asdf://stsci.edu/datamodels/roman/schemas/rampfitoutput-1.0.0
+id: asdf://stsci.edu/datamodels/roman/schemas/ramp_fit_output-1.0.0
 
 title: Ramp fit output schema
 
