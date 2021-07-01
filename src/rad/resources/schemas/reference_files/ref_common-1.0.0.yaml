@@ -20,6 +20,10 @@ allOf:
     useafter:
       title: Use after date of the reference file
       tag: tag:stsci.edu:asdf/time/time-1.1.0
+    telescope:
+      title: Telescope data reference data is used to calibrate
+      type: string
+      enum: [ROMAN]
     filename:
       title: Name of the file
       type: string
