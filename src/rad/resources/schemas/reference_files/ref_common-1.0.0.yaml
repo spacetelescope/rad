@@ -6,14 +6,8 @@ id: asdf://stsci.edu/datamodels/roman/schemas/reference_files/ref_common-1.0.0
 title: Common reference metadata properties
 
 allOf:
-- $ref: ../basic-1.0.0
 - type: object
   properties:
-    reftype:
-      title: Reference file type
-      type: string
-      enum: [AREA, DARK, FLAT, GAIN, LINEARITY, MASK, PERSAT, PHOTOM, READNOISE, REFPIX,
-             SATURATION, SUPERBIAS, TRAPDENSITY, TRAPPARS]
     pedigree:
       title: The pedigree of the reference file
       type: string
@@ -26,5 +20,14 @@ allOf:
     useafter:
       title: Use after date of the reference file
       tag: tag:stsci.edu:asdf/time/time-1.1.0
-  required: [author, description, pedigree, useafter, reftype]
+    filename:
+      title: Name of the file
+      type: string
+    file_date:
+      title: Date this file was created (UTC)
+      tag: tag:stsci.edu:asdf/time/time-1.1.0
+    origin:
+      title: Organization responsible for creating file
+      type: string
+  required: [author, description, pedigree, useafter, filename, file_date, origin]
 ...
