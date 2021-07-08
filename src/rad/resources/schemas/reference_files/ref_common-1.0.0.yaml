@@ -31,5 +31,5 @@ allOf:
     origin:
       title: Organization responsible for creating file
       type: string
-  required: [reftype, author, description, pedigree, useafter, origin]
+  required: [reftype, author, description, pedigree, useafter, telescope, origin]
 ...
