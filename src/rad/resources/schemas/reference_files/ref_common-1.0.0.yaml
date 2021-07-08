@@ -8,6 +8,9 @@ title: Common reference metadata properties
 allOf:
 - type: object
   properties:
+    reftype:
+      title: Reference File type
+      type: string
     pedigree:
       title: The pedigree of the reference file
       type: string
@@ -24,14 +27,9 @@ allOf:
       title: Telescope data reference data is used to calibrate
       type: string
       enum: [ROMAN]
-    filename:
-      title: Name of the file
       type: string
-    file_date:
-      title: Date this file was created (UTC)
-      tag: tag:stsci.edu:asdf/time/time-1.1.0
     origin:
       title: Organization responsible for creating file
       type: string
-  required: [author, description, pedigree, useafter, filename, file_date, origin]
+  required: [reftype, author, description, pedigree, useafter, origin]
 ...
