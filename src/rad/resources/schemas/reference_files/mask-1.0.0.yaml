@@ -19,11 +19,11 @@ properties:
   dq:
     title: Data quality mask array
     tag: tag:stsci.edu:asdf/core/ndarray-1.0.0
-    datatype: uint16
+    datatype: uint32
     ndim: 2
   dq_def:
     $ref: dq_def-1.0.0
-required: [meta, dq, dq_def]
+required: [meta, dq]
 flowStyle: block
 propertyOrder: [meta, dq, dq_def]
 ...
