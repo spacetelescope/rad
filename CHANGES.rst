@@ -1,7 +1,7 @@
 0.4.0 (unreleased)
 ==================
 
-- Updated dq arrays to be of type uint32. Removed zeroframe and refout arrays. [#61]
+- Updated dq arrays to be of type uint32. Removed zeroframe, refout, and dq_def arrays. [#61]
 
 0.3.0 (2021-06-28)
 ==================
