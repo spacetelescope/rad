@@ -23,16 +23,14 @@ properties:
   dq:
     title: 2-D data quality array for all planes
     tag: tag:stsci.edu:asdf/core/ndarray-1.0.0
-    datatype: uint16
+    datatype: uint32
     ndim: 2
-  dq_def:
-    $ref: dq_def-1.0.0
   err:
     title: Error array
     tag: tag:stsci.edu:asdf/core/ndarray-1.0.0
     datatype: float32
     ndim: 3
-required: [meta, data, dq, dq_def, err]
+required: [meta, data, dq, err]
 flowStyle: block
-propertyOrder: [meta, data, dq, dq_def, err]
+propertyOrder: [meta, data, dq, err]
 ...
