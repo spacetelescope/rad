@@ -1,6 +1,8 @@
 0.4.0 (unreleased)
 ==================
 
+- Removed basic from ref_common and moved some of its attributes directly to ref_common [#59]
+
 0.3.0 (2021-06-28)
 ==================
 
