@@ -13,7 +13,14 @@ properties:
     archive_catalog:
       datatype: nvarchar(15)
       destination: [ScienceRefData.flat_field]
-propertyOrder: [flat_field]
+  dq_init:
+    title: Data Quality Mask Step
+    type: string
+    enum: ['N/A', 'COMPLETE', 'SKIPPED', 'INCOMPLETE']
+    archive_catalog:
+      datatype: nvarchar(15)
+      destination: [ScienceRefData.dq_init]
+propertyOrder: [flat_field,dq_init]
 flowStyle: block
-required: [flat_field]
+required: [flat_field,dq_init]
 ...
