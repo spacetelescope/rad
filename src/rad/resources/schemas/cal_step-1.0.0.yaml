@@ -20,7 +20,7 @@ properties:
     archive_catalog:
       datatype: nvarchar(15)
       destination: [ScienceRefData.dq_init]
-propertyOrder: [flat_field,dq_init]
+propertyOrder: [flat_field, dq_init]
 flowStyle: block
-required: [flat_field,dq_init]
+required: [flat_field, dq_init]
 ...
