@@ -14,7 +14,7 @@ properties:
   data:
     tag: tag:stsci.edu:asdf/core/ndarray-1.0.0
     datatype: uint16
-    ndim: 4
+    ndim: 3
 propertyOrder: [meta, data]
 flowStyle: block
 required: [meta, data]
