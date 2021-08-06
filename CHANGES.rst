@@ -1,4 +1,4 @@
-0.5.0 (unreleased)
+0.5.0 (2021-08-06)
 ==================
 
 - Adjust dimensionality of wfi_science_raw data array. [#64]
