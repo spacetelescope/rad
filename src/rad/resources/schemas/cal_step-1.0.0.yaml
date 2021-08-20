@@ -41,7 +41,7 @@ properties:
     archive_catalog:
       datatype: nvarchar(15)
       destination: [ScienceRefData.jump]
-  lilearity:
+  linearity:
     title: Linearity Correction
     type: string
     enum: ['N/A', 'COMPLETE', 'SKIPPED', 'INCOMPLETE']
@@ -62,7 +62,8 @@ properties:
     archive_catalog:
       datatype: nvarchar(15)
       destination: [ScienceRefData.saturation]
-propertyOrder: [flat_field, dq_init]
+propertyOrder: [assign_wcs, flat_field, dark, dq_init, jump, linearity, ramp_fit, saturation]
 flowStyle: block
 required: [flat_field, dq_init]
+additionalProperties: true
 ...
