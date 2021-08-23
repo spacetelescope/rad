@@ -1,6 +1,8 @@
 0.6.0 (unreleased)
 ==================
 
+- Added enumeration for ``meta.pedigree``. [#65]
+
 0.5.0 (2021-08-06)
 ==================
 
@@ -50,7 +52,7 @@
 - Added misc. required db keyword attributes. [JIRA RAD-7]
 
 - Added wfi photom schema and tests. [#34]
-  
+
 - Added Dark schema and updated Flat schema. [#35]
 
 - Added dq schema. [#32]
@@ -58,10 +60,10 @@
 - Added readnoise, mask, and gain schemas. [#37]
 
 - Added support for ramp fitting schemas. [#43]
-  
-- Updated aperture, basic, ephemeris, exposure, guidestar, observation, pixelarea, and visit schemas. [#46]  
 
-- Added support for variance object schemas. [#38] 
+- Updated aperture, basic, ephemeris, exposure, guidestar, observation, pixelarea, and visit schemas. [#46]
+
+- Added support for variance object schemas. [#38]
 
 0.1.0 (unreleased)
 ==================
