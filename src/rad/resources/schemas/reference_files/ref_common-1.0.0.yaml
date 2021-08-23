@@ -14,7 +14,7 @@ allOf:
     pedigree:
       title: The pedigree of the reference file
       type: string
-      enum: [INFLIGHT, GROUND, MODEL, DUMMY, SIMULATION]
+      enum: [GROUND, MODEL, DUMMY, SIMULATION]
     description:
       title: Description of the reference file
       type: string
