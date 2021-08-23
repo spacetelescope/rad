@@ -1,7 +1,9 @@
-0.6.0 (unreleased)
+0.6.0 (2021-08-23)
 ==================
 
-- Added enumeration for ``meta.pedigree``. [#65]
+- Added enumeration for ``meta.pedigree``. [#65, #67]
+
+- Added more steps to the cal_step schema. [#66]
 
 0.5.0 (2021-08-06)
 ==================
