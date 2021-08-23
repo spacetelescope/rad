@@ -6,6 +6,13 @@ id: asdf://stsci.edu/datamodels/roman/schemas/cal_step-1.0.0
 title: Calibration Status
 type: object
 properties:
+  assign_wcs:
+    title: Assign World Coordinate System
+    type: string
+    enum: ['N/A', 'COMPLETE', 'SKIPPED', 'INCOMPLETE']
+    archive_catalog:
+      datatype: nvarchar(15)
+      destination: [ScienceRefData.assign_wcs]
   flat_field:
     title: Flat Field Step
     type: string
@@ -13,6 +20,13 @@ properties:
     archive_catalog:
       datatype: nvarchar(15)
       destination: [ScienceRefData.flat_field]
+  dark:
+    title: Dark Subtraction
+    type: string
+    enum: ['N/A', 'COMPLETE', 'SKIPPED', 'INCOMPLETE']
+    archive_catalog:
+      datatype: nvarchar(15)
+      destination: [ScienceRefData.dark]
   dq_init:
     title: Data Quality Mask Step
     type: string
@@ -20,7 +34,36 @@ properties:
     archive_catalog:
       datatype: nvarchar(15)
       destination: [ScienceRefData.dq_init]
-propertyOrder: [flat_field, dq_init]
+  jump:
+    title: Jump Detection Step
+    type: string
+    enum: ['N/A', 'COMPLETE', 'SKIPPED', 'INCOMPLETE']
+    archive_catalog:
+      datatype: nvarchar(15)
+      destination: [ScienceRefData.jump]
+  linearity:
+    title: Linearity Correction
+    type: string
+    enum: ['N/A', 'COMPLETE', 'SKIPPED', 'INCOMPLETE']
+    archive_catalog:
+      datatype: nvarchar(15)
+      destination: [ScienceRefData.linearity]
+  ramp_fit:
+    title: Ramp Fitting
+    type: string
+    enum: ['N/A', 'COMPLETE', 'SKIPPED', 'INCOMPLETE']
+    archive_catalog:
+      datatype: nvarchar(15)
+      destination: [ScienceRefData.ramp_fit]
+  saturation:
+    title: Saturation Checking
+    type: string
+    enum: ['N/A', 'COMPLETE', 'SKIPPED', 'INCOMPLETE']
+    archive_catalog:
+      datatype: nvarchar(15)
+      destination: [ScienceRefData.saturation]
+propertyOrder: [assign_wcs, flat_field, dark, dq_init, jump, linearity, ramp_fit, saturation]
 flowStyle: block
 required: [flat_field, dq_init]
+additionalProperties: true
 ...
