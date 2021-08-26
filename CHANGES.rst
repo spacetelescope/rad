@@ -1,4 +1,4 @@
-0.6.1 (unreleased)
+0.6.1 (2021-08-26)
 ==================
 
 - Changed ENGINEERING to F213 in optical_element. [#70]
