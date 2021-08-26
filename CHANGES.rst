@@ -1,7 +1,9 @@
-0.7.0 (unreleased)
+0.6.1 (unreleased)
 ==================
 
 - Changed ENGINEERING to F213 in optical_element. [#70]
+
+- Workaround for setuptools_scm issues with recent versions of pip. [#71]
 
 0.6.0 (2021-08-23)
 ==================
