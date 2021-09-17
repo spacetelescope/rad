@@ -1,0 +1,32 @@
+%YAML 1.1
+---
+$schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.0.0
+id: asdf://stsci.edu/datamodels/roman/schemas/reference_files/linearity-1.0.0
+
+title: Linearity correction  reference schema
+
+type: object
+properties:
+  meta:
+    allOf:
+      - $ref: ref_common-1.0.0
+      - type: object
+        properties:
+          reftype:
+            type: string
+            enum: [LINEARITY]
+  coeffs:
+    title: Linearity coefficients
+    tag: tag:stsci.edu:asdf/core/ndarray-1.0.0
+    datatype: float32
+    # Dimensions: numcoeffs, ysize, xsize
+    ndim: 3
+  dq:
+    title: 2-D data quality array for all planes
+    tag: tag:stsci.edu:asdf/core/ndarray-1.0.0
+    datatype: uint32
+    ndim: 2
+required: [meta, coeffs, dq]
+flowStyle: block
+propertyOrder: [meta, coeffs, dq]
+...
