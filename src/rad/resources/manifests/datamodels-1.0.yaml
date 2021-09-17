@@ -141,6 +141,11 @@ tags:
   title: Read noise reference schema
   description: |-
     Read noise reference schema
+- tag_uri: asdf://stsci.edu/datamodels/roman/tags/reference_files/saturation-1.0.0
+  schema_uri: asdf://stsci.edu/datamodels/roman/schemas/reference_files/saturation-1.0.0
+  title: Saturation reference schema
+  description: |-
+    Saturation reference schema
 - tag_uri: asdf://stsci.edu/datamodels/roman/tags/reference_files/wfi_img_photom-1.0.0
   schema_uri: asdf://stsci.edu/datamodels/roman/schemas/reference_files/wfi_img_photom-1.0.0
   title: WFI imaging photometric flux conversion data model

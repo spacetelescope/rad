@@ -3,6 +3,9 @@
 
 - Added nonlinearity support. [#79]
 
+- Added saturation reference file support. [#78]
+
+
 0.6.1 (2021-08-26)
 ==================
 
