@@ -10,6 +10,7 @@ properties:
   meta:
     allOf:
       - $ref: ref_common-1.0.0
+      - $ref: ../photometry-1.0.0
       - type: object
         properties:
           reftype:
