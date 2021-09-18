@@ -3,6 +3,8 @@
 
 - Added saturation reference file support. [#78]
 
+- Added support for super-bias reference files. [#81]
+
 0.6.1 (2021-08-26)
 ==================
 
