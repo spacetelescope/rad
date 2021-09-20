@@ -14,7 +14,7 @@ properties:
         properties:
           reftype:
             type: string
-            enum: [DARK]
+            enum: [BIAS]
   data:
     title: 2-D super-bias array
     tag: tag:stsci.edu:asdf/core/ndarray-1.0.0
@@ -26,7 +26,7 @@ properties:
     datatype: uint32
     ndim: 2
   err:
-    title: Error array
+    title: 2-D data Error array
     tag: tag:stsci.edu:asdf/core/ndarray-1.0.0
     datatype: float32
     ndim: 2
