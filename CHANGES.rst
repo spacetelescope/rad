@@ -3,6 +3,8 @@
 
 - Added saturation reference file support. [#78]
 
+- Added pixel area reference file support. [#80]
+
 0.6.1 (2021-08-26)
 ==================
 
