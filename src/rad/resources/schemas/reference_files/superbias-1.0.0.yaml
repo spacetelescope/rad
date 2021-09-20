@@ -26,7 +26,7 @@ properties:
     datatype: uint32
     ndim: 2
   err:
-    title: 2-D data Error array
+    title: 2-D Error array
     tag: tag:stsci.edu:asdf/core/ndarray-1.0.0
     datatype: float32
     ndim: 2
