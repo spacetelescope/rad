@@ -5,6 +5,9 @@
 
 - Added support for super-bias reference files. [#81]
 
+- Added pixel area reference file support. [#80]
+
+
 0.6.1 (2021-08-26)
 ==================
 
