@@ -1,6 +1,8 @@
 0.7.0 (unreleased)
 ==================
 
+- Added nonlinearity support. [#79]
+
 - Added saturation reference file support. [#78]
 
 - Added pixel area reference file support. [#80]
