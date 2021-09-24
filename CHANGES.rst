@@ -11,6 +11,7 @@
 
 - Removed ``pixelarea`` and ``var_flat`` from the list of required attributes in ``wfi_image``. [#83]
 
+- ``RampFitOutput.pedestal`` needs to be 2-dimensional. [#86]
 
 0.6.1 (2021-08-26)
 ==================
