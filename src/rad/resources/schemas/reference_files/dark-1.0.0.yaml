@@ -15,6 +15,11 @@ properties:
           reftype:
             type: string
             enum: [DARK]
+      - type: object
+        properties:
+          mode:
+            $ref: asdf://stsci.edu/datamodels/roman/schemas/exposure-1.0.0#properties/type
+        required: [mode]
   data:
     title: Dark current array
     tag: tag:stsci.edu:asdf/core/ndarray-1.0.0
