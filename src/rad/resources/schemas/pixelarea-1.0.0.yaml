@@ -15,5 +15,4 @@ properties:
     ndim: 2
 propertyOrder: [area]
 flowStyle: block
-required: [area]
 ...

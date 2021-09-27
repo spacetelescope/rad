@@ -126,6 +126,11 @@ tags:
   title: Gain reference schema
   description: |-
     Gain reference schema
+- tag_uri: asdf://stsci.edu/datamodels/roman/tags/reference_files/linearity-1.0.0
+  schema_uri: asdf://stsci.edu/datamodels/roman/schemas/reference_files/linearity-1.0.0
+  title: Linearity correction reference schema
+  description: |-
+    Linearity correction reference schema
 - tag_uri: asdf://stsci.edu/datamodels/roman/tags/reference_files/mask-1.0.0
   schema_uri: asdf://stsci.edu/datamodels/roman/schemas/reference_files/mask-1.0.0
   title: DQ Mask reference schema

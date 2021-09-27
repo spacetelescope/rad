@@ -39,5 +39,5 @@ allOf:
         ndim: 2
     propertyOrder: [meta, data, dq, err, var_poisson, var_rnoise, var_flat]
     flowStyle: block
-    required: [meta, data, dq, err, var_poisson, var_rnoise, var_flat]
+    required: [meta, data, dq, err, var_poisson, var_rnoise]
 ...
