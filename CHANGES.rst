@@ -9,6 +9,8 @@
 
 - Removed ``pixelarea`` and ``var_flat`` from the list of required attributes in ``wfi_image``. [#83]
 
+- Added mode keyword to dark and readnoise. [#90]
+
 0.6.1 (2021-08-26)
 ==================
 
