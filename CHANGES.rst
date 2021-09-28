@@ -11,6 +11,8 @@
 
 - Removed ``pixelarea`` and ``var_flat`` from the list of required attributes in ``wfi_image``. [#83]
 
+- Changed certain exposure time types to string. Added units to guidestar variables, where appropriate. Removed references to RGS in guidestar. Added examples of observation numbers. [#91]
+
 
 0.6.1 (2021-08-26)
 ==================
