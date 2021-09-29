@@ -13,6 +13,8 @@
 
 - Added mode keyword to dark and readnoise. [#90]
 
+- ``RampFitOutput.pedestal`` needs to be 2-dimensional. [#86]
+
 
 0.6.1 (2021-08-26)
 ==================

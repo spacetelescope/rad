@@ -13,13 +13,8 @@ properties:
       - type: object
         properties:
           reftype:
-            type: string
             enum: [READNOISE]
-      - type: object
-        properties:
-          mode:
-            $ref: asdf://stsci.edu/datamodels/roman/schemas/exposure-1.0.0#properties/type
-        required: [mode]
+      - $ref: ref_exposure_type-1.0.0
   data:
     title: Read noise data array
     tag: tag:stsci.edu:asdf/core/ndarray-1.0.0
