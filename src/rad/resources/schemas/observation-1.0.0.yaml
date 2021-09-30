@@ -29,7 +29,7 @@ properties:
       datatype: datetime2
       destination: [ScienceCommon.obs_end_time]
   obs_id:
-    title: Programmatic observation identifier, 'PPPPPCCAAALLLOOOVVVggsaaeeee'
+    title: Programmatic observation identifier (format 'PPPPPCCAAALLLOOOVVVggsaaeeee')
     type: string
     sdf:
       special_processing: VALUE_REQUIRED
@@ -39,9 +39,9 @@ properties:
       datatype: nvarchar(28)
       destination: [ScienceCommon.obs_id]
   visit_id:
-    title: A unique identifier for a visit. The format is PPPPPCCAAASSSOOOVVV where PPPPP is the
-           Program, CC is the execution plan, AAA is the pass, SSS is the segment number, OOO is
-           the Observation and VVV is the Visit.
+    title: A unique identifier for a visit. The format is 'PPPPPCCAAASSSOOOVVV' where 'PPPPP' is the
+           Program, 'CC' is the execution plan, 'AAA' is the pass, 'SSS' is the segment number,
+           'OOO' is the Observation and 'VVV' is the Visit.
     type: string
     sdf:
       special_processing: VALUE_REQUIRED
@@ -51,7 +51,7 @@ properties:
       datatype: nvarchar(19)
       destination: [ScienceCommon.visit_id]
   program:
-    title: Program number. Defined range is 1..18445.
+    title: Program number, defined range is 1..18445.
     type: integer
     sdf:
       special_processing: VALUE_REQUIRED
@@ -61,7 +61,7 @@ properties:
       datatype: int
       destination: [ScienceCommon.program]
   execution_plan:
-    title: Execution plan number. Defined range is 1..99.
+    title: Execution plan number, defined range is 1..99.
     type: integer
     sdf:
       special_processing: VALUE_REQUIRED
@@ -71,7 +71,7 @@ properties:
       datatype: smallint
       destination: [ScienceCommon.execution_plan]
   pass:
-    title: Pass number (within execution plan). Defined range is 1..999.
+    title: Pass number (within execution plan), defined range is 1..999.
     type: integer
     sdf:
       special_processing: VALUE_REQUIRED
@@ -81,7 +81,7 @@ properties:
       datatype: smallint
       destination: [ScienceCommon.pass]
   segment:
-    title: Segment Number (within pass). Defined range is 1..999.
+    title: Segment Number (within pass), defined range is 1..999.
     type: integer
     sdf:
       special_processing: VALUE_REQUIRED
@@ -91,7 +91,7 @@ properties:
       datatype: smallint
       destination: [ScienceCommon.segment]
   observation:
-    title: Observation number. Defined range is 1..999.
+    title: Observation number, defined range is 1..999.
     type: integer
     sdf:
       special_processing: VALUE_REQUIRED
@@ -101,7 +101,7 @@ properties:
       datatype: smallint
       destination: [ScienceCommon.observation]
   visit:
-    title: Visit number. Expected range of values is 1..999.
+    title: Visit number, defined range of values is 1..999.
     type: integer
     sdf:
       special_processing: VALUE_REQUIRED
@@ -111,7 +111,7 @@ properties:
       datatype: smallint
       destination: [ScienceCommon.visit]
   visit_file_group:
-    title: Visit file group identifier, format is 1..99.
+    title: Visit file group identifier, defined range of values is 1..99.
     type: integer
     sdf:
       special_processing: VALUE_REQUIRED
@@ -121,7 +121,7 @@ properties:
       datatype: smallint
       destination: [ScienceCommon.visit_file_group]
   visit_file_sequence:
-    title: Visit file sequence identifier, format is 1..999.
+    title: Visit file sequence identifier, defined range of values is 1..999.
     type: integer
     sdf:
       special_processing: VALUE_REQUIRED
@@ -131,7 +131,7 @@ properties:
       datatype: tinyint
       destination: [ScienceCommon.visit_file_sequence]
   visit_file_activity:
-    title: Visit file activity identifier, format is AA.
+    title: Visit file activity identifier (format 'AA').
     type: string
     sdf:
       special_processing: VALUE_REQUIRED
@@ -142,7 +142,7 @@ properties:
       destination: [ScienceCommon.visit_file_activity]
   exposure:
     title: Exposure request number. This field identifies an exposure that will be taken on board
-           by the SOSE scripts. It accounts for all implicit and explicit exposures. Expected range
+           by the SOSE scripts. It accounts for all implicit and explicit exposures, defined range
            of values is 1..65536.
     type: integer
     sdf:

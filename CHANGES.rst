@@ -13,6 +13,8 @@
 
 - Changed certain exposure time types to string. Added units to guidestar variables, where appropriate. Removed references to RGS in guidestar. Added examples of observation numbers. [#91]
 
+- ``RampFitOutput.pedestal`` needs to be 2-dimensional. [#86]
+
 
 0.6.1 (2021-08-26)
 ==================
