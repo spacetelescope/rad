@@ -133,7 +133,7 @@ properties:
       datatype: smallint
       destination: [ScienceCommon.visit_file_group]
   visit_file_sequence:
-    title: Visit file sequence within the group, defined range of values is 1..9; included in
+    title: Visit file sequence within the group, defined range of values is 1..5; included in
            obs_id as 's'.
     type: integer
     sdf:
