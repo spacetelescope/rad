@@ -1,0 +1,19 @@
+%YAML 1.1
+---
+$schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.0.0
+id: asdf://stsci.edu/datamodels/roman/schemas/reference_files/ref_exposure_type-1.0.0
+
+title: Type of data in the reference file exposure (viewing mode)
+
+type: object
+properties:
+  exposure:
+    type: object
+    properties:
+      type:
+        allOf:
+          - $ref: ../exposure_type-1.0.0
+          - title: Type of data in the exposure (viewing mode)
+    required: [type]
+required: [exposure]
+...

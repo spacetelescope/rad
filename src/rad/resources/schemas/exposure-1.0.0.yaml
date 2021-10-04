@@ -21,19 +21,15 @@ properties:
       destination: [ScienceCommon.exposure_id]
 
   type:
-    title: Type of data in the exposure
-    type: string
-    enum:
-      [# Wide Field Imager
-       WFI_IMAGE, WFI_GRISM, WFI_PRISM, WFI_DARK, WFI_FLAT, WFI_WFSC
-      ]
-    sdf:
-      special_processing: VALUE_REQUIRED
-      source:
-        origin: TBD
-    archive_catalog:
-      datatype: nvarchar(25)
-      destination: [ScienceCommon.exposure_type]
+    allOf:
+      - $ref: exposure_type-1.0.0
+      - sdf:
+          special_processing: VALUE_REQUIRED
+          source:
+            origin: TBD
+      - archive_catalog:
+          datatype: nvarchar(25)
+          destination: [ScienceCommon.exposure_type]
 
   start_time:
     title: UTC exposure start time
