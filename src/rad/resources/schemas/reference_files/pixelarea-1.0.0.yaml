@@ -10,12 +10,23 @@ properties:
   meta:
     allOf:
       - $ref: ref_common-1.0.0
-      - $ref: ../photometry-1.0.0
       - type: object
         properties:
           reftype:
             type: string
             enum: [AREA]
+          photometry:
+            type: object
+            properties:
+              pixelarea_steradians:
+                title: Nominal pixel area in steradians
+                type: number
+              pixelarea_arcsecsq:
+                title: Nominal pixel area in arcsec^2
+                type: number
+            required: [pixelarea_steradians, pixelarea_arcsecsq]
+        required: [photometry]
+      - $ref: ref_optical_element-1.0.0
   data:
     title: Pixel area array
     tag: tag:stsci.edu:asdf/core/ndarray-1.0.0

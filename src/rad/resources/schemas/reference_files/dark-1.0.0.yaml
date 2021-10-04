@@ -14,7 +14,16 @@ properties:
         properties:
           reftype:
             enum: [DARK]
+          observation:
+            type: object
+            properties:
+              ma_table_name:
+                title: Identifier for the multi-accumulation table used
+                type: string
+            required: [ma_table_name]
+        required: [observation]
       - $ref: ref_exposure_type-1.0.0
+      - $ref: ref_optical_element-1.0.0
   data:
     title: Dark current array
     tag: tag:stsci.edu:asdf/core/ndarray-1.0.0
