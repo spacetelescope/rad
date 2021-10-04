@@ -13,8 +13,8 @@ properties:
       - type: object
         properties:
           reftype:
-            type: string
             enum: [DARK]
+      - $ref: ref_exposure_type-1.0.0
   data:
     title: Dark current array
     tag: tag:stsci.edu:asdf/core/ndarray-1.0.0
