@@ -29,7 +29,13 @@ properties:
       datatype: datetime2
       destination: [ScienceCommon.obs_end_time]
   obs_id:
-    title: Programmatic observation identifier
+    title: Programmatic observation identifier. The format is 'PPPPPCCAAASSSOOOVVVggsaaeeee' where
+           'PPPPP' is the Program, 'CC' is the execution plan, 'AAA' is the pass, 'SSS' is the
+           segment, 'OOO' is the Observation, 'VVV' is the Visit, 'gg' is the visit file group,
+           's' is the visit file sequence, 'aa' is the visit file activity, and 'eeee' is the
+           exposure ID. The observation ID is the complete concatenation of visit_id +
+           visit_file_statement (visit_file_group + visit_file_sequence + visit_file_activity) +
+           exposure.
     type: string
     sdf:
       special_processing: VALUE_REQUIRED
@@ -39,7 +45,9 @@ properties:
       datatype: nvarchar(28)
       destination: [ScienceCommon.obs_id]
   visit_id:
-    title: Visit identifier
+    title: A unique identifier for a visit. The format is 'PPPPPCCAAASSSOOOVVV' where 'PPPPP' is the
+           Program, 'CC' is the execution plan, 'AAA' is the pass, 'SSS' is the segment number,
+           'OOO' is the Observation and 'VVV' is the Visit.
     type: string
     sdf:
       special_processing: VALUE_REQUIRED
@@ -49,7 +57,7 @@ properties:
       datatype: nvarchar(19)
       destination: [ScienceCommon.visit_id]
   program:
-    title: Program number
+    title: Program number, defined range is 1..18445; included in obs_id and visit_id as 'PPPPP'.
     type: integer
     sdf:
       special_processing: VALUE_REQUIRED
@@ -59,7 +67,8 @@ properties:
       datatype: int
       destination: [ScienceCommon.program]
   execution_plan:
-    title: Execution plan number
+    title: Execution plan within the program, defined range is 1..99; included in obs_id and
+           visit_id as 'CC'.
     type: integer
     sdf:
       special_processing: VALUE_REQUIRED
@@ -69,7 +78,8 @@ properties:
       datatype: smallint
       destination: [ScienceCommon.execution_plan]
   pass:
-    title: Pass number (within execution plan)
+    title: Pass number within execution plan, defined range is 1..999; included in obs_id and
+           visit_id as 'AA'.
     type: integer
     sdf:
       special_processing: VALUE_REQUIRED
@@ -79,7 +89,8 @@ properties:
       datatype: smallint
       destination: [ScienceCommon.pass]
   segment:
-    title: Segment Number (within pass)
+    title: Segment Number within pass, defined range is 1..999; included in obs_id and visit_id as
+           'SSS'.
     type: integer
     sdf:
       special_processing: VALUE_REQUIRED
@@ -89,7 +100,8 @@ properties:
       datatype: smallint
       destination: [ScienceCommon.segment]
   observation:
-    title: Observation number
+    title: Observation number within the segment, defined range is 1..999; included in obs_id and
+           visit_id as 'OOO'.
     type: integer
     sdf:
       special_processing: VALUE_REQUIRED
@@ -99,7 +111,8 @@ properties:
       datatype: smallint
       destination: [ScienceCommon.observation]
   visit:
-    title: Visit number
+    title: Visit number within the observation, defined range of values is 1..999; included in
+           obs_id and visit_id as 'VVV'.
     type: integer
     sdf:
       special_processing: VALUE_REQUIRED
@@ -109,7 +122,8 @@ properties:
       datatype: smallint
       destination: [ScienceCommon.visit]
   visit_file_group:
-    title: Visit file group identifier
+    title: Sequence group within the visit file, defined range of values is 1..99; included in
+           obs_id as 'gg'.
     type: integer
     sdf:
       special_processing: VALUE_REQUIRED
@@ -119,7 +133,8 @@ properties:
       datatype: smallint
       destination: [ScienceCommon.visit_file_group]
   visit_file_sequence:
-    title: Visit file sequence identifier
+    title: Visit file sequence within the group, defined range of values is 1..5; included in
+           obs_id as 's'.
     type: integer
     sdf:
       special_processing: VALUE_REQUIRED
@@ -129,7 +144,8 @@ properties:
       datatype: tinyint
       destination: [ScienceCommon.visit_file_sequence]
   visit_file_activity:
-    title: Visit file activity identifier
+    title: Visit file activity within the sequence, defined range of values is 1..99; included in
+           obs_id as 'aa'.
     type: string
     sdf:
       special_processing: VALUE_REQUIRED
@@ -139,7 +155,8 @@ properties:
       datatype: nvarchar(2)
       destination: [ScienceCommon.visit_file_activity]
   exposure:
-    title: Exposure request number
+    title: Exposure within the visit, defined range of values is 1..9999; included in obs_id as
+           'eeee'.
     type: integer
     sdf:
       special_processing: VALUE_REQUIRED

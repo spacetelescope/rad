@@ -11,6 +11,8 @@
 
 - Removed ``pixelarea`` and ``var_flat`` from the list of required attributes in ``wfi_image``. [#83]
 
+- Changed certain exposure time types to string. Added units to guidestar variables, where appropriate. Removed references to RGS in guidestar. Added examples of observation numbers. [#91]
+
 - Added mode keyword to dark and readnoise. [#90]
 
 - ``RampFitOutput.pedestal`` needs to be 2-dimensional. [#86]

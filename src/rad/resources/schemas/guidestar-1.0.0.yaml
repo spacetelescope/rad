@@ -40,7 +40,7 @@ properties:
       datatype: nvarchar(20)
       destination: [ScienceCommon.gw_id]
   gs_ra:
-    title: guide star right ascension
+    title: "[deg] guide star right ascension"
     type: number
     sdf:
       special_processing: VALUE_REQUIRED
@@ -50,7 +50,7 @@ properties:
       datatype: float
       destination: [ScienceCommon.gs_ra]
   gs_dec:
-    title: guide star declination
+    title: "[deg] guide star declination"
     type: number
     sdf:
       special_processing: VALUE_REQUIRED
@@ -60,7 +60,7 @@ properties:
       datatype: float
       destination: [ScienceCommon.gs_dec]
   gs_ura:
-    title: guide star right ascension uncertainty
+    title: "[deg] guide star right ascension uncertainty"
     type: number
     sdf:
       special_processing: VALUE_REQUIRED
@@ -70,7 +70,7 @@ properties:
       datatype: float
       destination: [ScienceCommon.gs_ura]
   gs_udec:
-    title: guide star declination uncertainty
+    title: "[deg] guide star declination uncertainty"
     type: number
     sdf:
       special_processing: VALUE_REQUIRED
@@ -80,7 +80,7 @@ properties:
       datatype: float
       destination: [ScienceCommon.gs_udec]
   gs_mag:
-    title: guide star magnitude in FGS detector
+    title: guide star magnitude in detector
     type: number
     sdf:
       special_processing: VALUE_REQUIRED
@@ -160,7 +160,7 @@ properties:
       datatype: nvarchar(15)
       destination: [ScienceCommon.gw_acq_exec_stat]
   gs_ctd_x:
-    title: "[arcsec] guide star centroid x position in FGS ideal frame"
+    title: "[arcsec] guide star centroid x position in guider ideal frame"
     type: number
     sdf:
       special_processing: VALUE_REQUIRED
@@ -170,7 +170,7 @@ properties:
       datatype: float
       destination: [ScienceCommon.gs_ctd_x]
   gs_ctd_y:
-    title: "[arcsec] guide star centroid y position in FGS ideal frame"
+    title: "[arcsec] guide star centroid y position in guider ideal frame"
     type: number
     sdf:
       special_processing: VALUE_REQUIRED
@@ -210,7 +210,7 @@ properties:
       datatype: nvarchar(10)
       destination: [ScienceCommon.gs_epoch]
   gs_mura:
-    title: Guide star ICRS right ascension proper motion
+    title: "[mas/yr] Guide star ICRS right ascension proper motion"
     type: number
     sdf:
       special_processing: VALUE_REQUIRED
@@ -220,7 +220,7 @@ properties:
       datatype: float
       destination: [ScienceCommon.gs_mura]
   gs_mudec:
-    title: Guide star ICRS declination proper motion
+    title: "[mas/yr] Guide star ICRS declination proper motion"
     type: number
     sdf:
       special_processing: VALUE_REQUIRED
