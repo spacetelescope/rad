@@ -1,0 +1,18 @@
+%YAML 1.1
+---
+$schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.0.0
+id: asdf://stsci.edu/datamodels/roman/schemas/reference_files/ref_optical_element-1.0.0
+
+title: Name of the filter element used
+
+type: object
+properties:
+  instrument:
+    type: object
+    properties:
+      optical_element:
+        allOf:
+          - $ref: ../wfi_optical_element-1.0.0
+    required: [optical_element]
+required: [instrument]
+...

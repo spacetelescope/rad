@@ -16,8 +16,8 @@ SCHEMA_URIS = [
     if u.startswith(SCHEMA_URI_PREFIX) and u != METASCHEMA_URI
 ]
 WFI_OPTICAL_ELEMENTS = list(asdf.schema.load_schema(
-    "asdf://stsci.edu/datamodels/roman/schemas/wfi_mode-1.0.0")
-    ["properties"]["optical_element"]["enum"])
+    "asdf://stsci.edu/datamodels/roman/schemas/wfi_optical_element-1.0.0")
+    ["enum"])
 
 
 @pytest.fixture(scope="session", params=SCHEMA_URIS)
