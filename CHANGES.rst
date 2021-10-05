@@ -15,6 +15,8 @@
 
 - ``RampFitOutput.pedestal`` needs to be 2-dimensional. [#86]
 
+- Added optical_element to appropriate reference file schemas. Added ma_table_name to dark schema. Adjusted pixelarea schema imports. [#92]
+
 
 0.6.1 (2021-08-26)
 ==================

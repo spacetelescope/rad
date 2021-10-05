@@ -15,6 +15,7 @@ properties:
           reftype:
             type: string
             enum: [FLAT]
+      - $ref: ref_optical_element-1.0.0
   data:
     title: Flat data array
     tag: tag:stsci.edu:asdf/core/ndarray-1.0.0
