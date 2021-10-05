@@ -13,7 +13,6 @@ properties:
       optical_element:
         allOf:
           - $ref: ../wfi_optical_element-1.0.0
-          - title: Name of the filter element used
     required: [optical_element]
 required: [instrument]
 ...
