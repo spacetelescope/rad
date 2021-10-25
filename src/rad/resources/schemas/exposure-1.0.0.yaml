@@ -33,7 +33,7 @@ properties:
 
   start_time:
     title: UTC exposure start time
-    type: string
+    tag: tag:stsci.edu:asdf/time/time-1.1.0
     sdf:
       special_processing: VALUE_REQUIRED
       source:
@@ -43,7 +43,7 @@ properties:
       destination: [ScienceCommon.exposure_start_time]
   mid_time:
     title: UTC exposure mid time
-    type: string
+    tag: tag:stsci.edu:asdf/time/time-1.1.0
     sdf:
       special_processing: VALUE_REQUIRED
       source:
@@ -53,7 +53,7 @@ properties:
       destination: [ScienceCommon.exposure_mid_time]
   end_time:
     title: UTC exposure end time
-    type: string
+    tag: tag:stsci.edu:asdf/time/time-1.1.0
     sdf:
       special_processing: VALUE_REQUIRED
       source:
