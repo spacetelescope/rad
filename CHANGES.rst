@@ -1,4 +1,4 @@
-0.7.1 (unreleased)
+0.7.1 (2021-10-26)
 ==================
 
 - Reverted exposure time types from string back to astropy Time. [#94]
