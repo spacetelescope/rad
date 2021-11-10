@@ -1,0 +1,25 @@
+%YAML 1.1
+---
+$schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.0.0
+id: asdf://stsci.edu/datamodels/roman/schemas/log_message-1.0.0
+
+title: Log message
+type: object
+properties:
+  time:
+    title: Time that message was emitted
+    tag: tag:stsci.edu:asdf/time/time-1.1.0
+  name:
+    title: Logger name
+    type: string
+  level:
+    title: Severity level
+    type: string
+    enum: [DEBUG, INFO, WARNING, ERROR, CRITICAL]
+  message:
+    title: Message
+    type: string
+required: [time, name, level, message]
+propertyOrder: [time, name, level, message]
+flowStyle: block
+...

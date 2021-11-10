@@ -161,4 +161,10 @@ tags:
   title: WFI imaging photometric flux conversion data model
   description: |-
     WFI imaging photometric flux conversion data model
+# Misc
+- tag_uri: asdf://stsci.edu/datamodels/roman/tags/log_message-1.0.0
+  schema_uri: asdf://stsci.edu/datamodels/roman/schemas/log_message-1.0.0
+  title: Log message
+  description: |-
+    Log message
 ...
