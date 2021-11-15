@@ -149,7 +149,7 @@ properties:
       source:
         origin: TBD
     archive_catalog:
-      datatype: bit
+      datatype: nchar(1)
       destination: [ScienceCommon.exposure_data_problem]
   sca_number:
     title: Sensor Chip Assembly number
