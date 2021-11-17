@@ -38,9 +38,7 @@ allOf:
         datatype: float32
         ndim: 2
       cal_logs:
-        type: array
-        items:
-          tag: asdf://stsci.edu/datamodels/roman/tags/log_message-1.0.0
+        tag: asdf://stsci.edu/datamodels/roman/tags/cal_logs-1.0.0
     propertyOrder: [meta, data, dq, err, var_poisson, var_rnoise, var_flat, cal_logs]
     flowStyle: block
     required: [meta, data, dq, err, var_poisson, var_rnoise, cal_logs]

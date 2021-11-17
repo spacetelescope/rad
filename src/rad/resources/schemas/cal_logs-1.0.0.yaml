@@ -1,0 +1,11 @@
+%YAML 1.1
+---
+$schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.0.0
+id: asdf://stsci.edu/datamodels/roman/schemas/cal_logs-1.0.0
+
+title: Calibration log messages
+type: array
+items:
+  type: string
+flowStyle: block
+...
