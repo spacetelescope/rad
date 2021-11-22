@@ -1,6 +1,8 @@
 0.8.0 (unreleased)
 ==================
 
+- Add ``cal_logs`` to wfi_image-1.0.0 to retain log messages from romancal. [#96]
+
 0.7.1 (2021-10-26)
 ==================
 

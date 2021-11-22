@@ -37,7 +37,9 @@ allOf:
         tag: tag:stsci.edu:asdf/core/ndarray-1.0.0
         datatype: float32
         ndim: 2
-    propertyOrder: [meta, data, dq, err, var_poisson, var_rnoise, var_flat]
+      cal_logs:
+        tag: asdf://stsci.edu/datamodels/roman/tags/cal_logs-1.0.0
+    propertyOrder: [meta, data, dq, err, var_poisson, var_rnoise, var_flat, cal_logs]
     flowStyle: block
-    required: [meta, data, dq, err, var_poisson, var_rnoise]
+    required: [meta, data, dq, err, var_poisson, var_rnoise, cal_logs]
 ...
