@@ -1,6 +1,8 @@
 0.9.0 (unreleased)
 ==================
 
+- Set all calsteps to required in ``cal_logs``. [#102]
+
 0.8.0 (2021-11-22)
 ==================
 
