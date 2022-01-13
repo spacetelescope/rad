@@ -64,6 +64,6 @@ properties:
       destination: [ScienceRefData.saturation]
 propertyOrder: [assign_wcs, flat_field, dark, dq_init, jump, linearity, ramp_fit, saturation]
 flowStyle: block
-required: [flat_field, dq_init]
+required: [assign_wcs, flat_field, dark, dq_init, jump, linearity, ramp_fit, saturation]
 additionalProperties: true
 ...
