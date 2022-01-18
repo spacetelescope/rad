@@ -1,6 +1,8 @@
 0.9.0 (unreleased)
 ==================
 
+- Add FGS (Fine Guidance System) modes to guidestar schema. [#103]
+
 - Set all calsteps to required. [#102]
 
 0.8.0 (2021-11-22)
