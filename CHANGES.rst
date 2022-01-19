@@ -3,6 +3,8 @@
 
 - Set all calsteps to required. [#102]
 
+- Added p_exptype to exposure group for reference files (dark & readnoise) to enable automatic rmap generation. Added test to ensure that the p_exptype expression matched the exposure/type enum list. [#105]
+
 0.8.0 (2021-11-22)
 ==================
 
