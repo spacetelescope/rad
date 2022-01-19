@@ -3,6 +3,8 @@
 
 - Set all calsteps to required. [#102]
 
+- Added boolean level0_compressed attribute keyword to exposure group to indicate if the level 0 data was compressed. [#104]
+
 0.8.0 (2021-11-22)
 ==================
 
