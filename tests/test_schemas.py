@@ -139,9 +139,9 @@ def test_matched_optical_element_entries():
 
 # Confirm that the p_keyword version of exposure type match the enum version
 def test_matched_p_exptype_entries():
-    p_exptype = list(asdf.schema.load_schema(
-        "asdf://stsci.edu/datamodels/roman/schemas/reference_files/ref_exposure_type-1.0.0")
-        ["properties"]["exposure"]["p_exptype"])
-    r = re.compile(p_exptype[0])
+    p_exptype = asdf.schema.load_schema(
+        "asdf://stsci.edu/datamodels/roman/schemas/reference_files/ref_exposure_type-1.0.0"
+        )["properties"]["exposure"]["properties"]["p_exptype"]["pattern"]
+    r = re.compile(p_exptype)
     for element_str in EXPOSURE_TYPE_ELEMENTS:
-        assert r.search(element_str)
+        assert r.search(element_str+'|')
