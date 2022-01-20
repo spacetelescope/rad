@@ -18,6 +18,9 @@ SCHEMA_URIS = [
 WFI_OPTICAL_ELEMENTS = list(asdf.schema.load_schema(
     "asdf://stsci.edu/datamodels/roman/schemas/wfi_optical_element-1.0.0")
     ["enum"])
+EXPOSURE_TYPE_ELEMENTS = list(asdf.schema.load_schema(
+    "asdf://stsci.edu/datamodels/roman/schemas/exposure_type-1.0.0")
+    ["enum"])
 
 
 @pytest.fixture(scope="session", params=SCHEMA_URIS)
@@ -133,3 +136,13 @@ def test_matched_optical_element_entries():
     r = re.compile(phot_table_keys[0])
     for element_str in WFI_OPTICAL_ELEMENTS:
         assert r.search(element_str)
+
+
+# Confirm that the p_keyword version of exposure type match the enum version
+def test_matched_p_exptype_entries():
+    p_exptype = asdf.schema.load_schema(
+        "asdf://stsci.edu/datamodels/roman/schemas/reference_files/ref_exposure_type-1.0.0")[
+        "properties"]["exposure"]["properties"]["p_exptype"]["pattern"]
+    r = re.compile(p_exptype)
+    for element_str in EXPOSURE_TYPE_ELEMENTS:
+        assert r.search(element_str + '|')
