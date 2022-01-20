@@ -261,6 +261,16 @@ properties:
     archive_catalog:
       datatype: float
       destination: [ScienceCommon.exposure_duration]
+  level0_compressed:
+    title: Level 0 data was compressed
+    type: boolean
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    archive_catalog:
+      datatype: nchar(1)
+      destination: [ScienceCommon.exposure_level0_compressed]
 propertyOrder: [id, type,
            start_time, mid_time, end_time,
            start_time_mjd, mid_time_mjd, end_time_mjd,
@@ -269,7 +279,7 @@ propertyOrder: [id, type,
            gain_factor, integration_time, elapsed_exposure_time,
            frame_divisor, groupgap,
            frame_time, group_time, exposure_time,
-           effective_exposure_time, duration]
+           effective_exposure_time, duration, level0_compressed]
 flowStyle: block
 required: [id, type,
            start_time, mid_time, end_time,
@@ -279,5 +289,5 @@ required: [id, type,
            gain_factor, integration_time, elapsed_exposure_time,
            frame_divisor, groupgap,
            frame_time, group_time, exposure_time,
-           effective_exposure_time, duration]
+           effective_exposure_time, duration, level0_compressed]
 ...
