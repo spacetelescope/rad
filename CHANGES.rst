@@ -1,6 +1,8 @@
 0.9.0 (unreleased)
 ==================
 
+- Add FGS (Fine Guidance System) modes to guidestar schema. [#103]
+
 - Set all calsteps to required. [#102]
 
 - Added boolean level0_compressed attribute keyword to exposure group to indicate if the level 0 data was compressed. [#104]

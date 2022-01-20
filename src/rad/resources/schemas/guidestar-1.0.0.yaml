@@ -99,16 +99,18 @@ properties:
     archive_catalog:
       datatype: float
       destination: [ScienceCommon.gs_umag]
-  gw_pcs_mode:
-    title: Pointing Control System mode
+  gw_fgs_mode:
+    title: Fine Guidance System mode
     type: string
+    enum: [WIM-ACQ, WIM-TRACK, WSM-ACQ-1, WSM-ACQ-2, WSM-TRACK,
+           DEFOCUSED-MODERATE, DEFOCUSED-LARGE]
     sdf:
       special_processing: VALUE_REQUIRED
       source:
         origin: TBD
     archive_catalog:
       datatype: nvarchar(10)
-      destination: [ScienceCommon.gw_pcs_mode]
+      destination: [ScienceCommon.gw_fgs_mode]
   gw_function_start_time:
     title: Observatory UTC time at guider function start
     tag: tag:stsci.edu:asdf/time/time-1.1.0
@@ -280,13 +282,13 @@ properties:
       datatype: float
       destination: [ScienceCommon.gw_window_ysize]
 propertyOrder: [gw_start_time, gw_stop_time, gw_id, gs_ra, gs_dec, gs_ura, gs_udec,
-           gs_mag, gs_umag, gw_pcs_mode, gw_function_start_time, gw_function_end_time,
+           gs_mag, gs_umag, gw_fgs_mode, gw_function_start_time, gw_function_end_time,
            data_start, data_end, gw_acq_exec_stat, gs_ctd_x, gs_ctd_y, gs_ctd_ux, gs_ctd_uy,
            gs_epoch, gs_mura, gs_mudec, gs_para,
            gw_window_xstart, gw_window_ystart, gw_window_xsize, gw_window_ysize]
 flowStyle: block
 required: [gw_start_time, gw_stop_time, gw_id, gs_ra, gs_dec, gs_ura, gs_udec,
-           gs_mag, gs_umag, gw_pcs_mode, gw_function_start_time, gw_function_end_time,
+           gs_mag, gs_umag, gw_fgs_mode, gw_function_start_time, gw_function_end_time,
            data_start, data_end, gw_acq_exec_stat, gs_ctd_x, gs_ctd_y, gs_ctd_ux, gs_ctd_uy,
            gs_epoch, gs_mura, gs_mudec, gs_para,
            gw_window_xstart, gw_window_ystart, gw_window_xsize, gw_window_ysize]
