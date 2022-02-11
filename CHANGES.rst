@@ -26,6 +26,8 @@
 - Added ``uncertainty`` attributes to ``photometry`` and ``pixelareasr``
   to the photometry reference file schema. [#114]
 
+- Removed ``Photometry`` from required properties in ``common``. [#115]
+
 0.8.0 (2021-11-22)
 ==================
 
