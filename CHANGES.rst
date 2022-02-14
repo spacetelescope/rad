@@ -28,6 +28,8 @@
 
 - Removed ``Photometry`` from required properties in ``common``. [#115]
 
+- Updated dark schema to include group keywords from exposure. [#117]
+
 0.8.0 (2021-11-22)
 ==================
 
