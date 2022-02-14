@@ -21,7 +21,20 @@ properties:
                 title: Identifier for the multi-accumulation table used
                 type: string
             required: [ma_table_name]
-        required: [observation]
+          exposure:
+            type: object
+            properties:
+              ngroups:
+                title: Number of groups in integration
+                type: integer
+              nframes:
+                title: Number of frames per group
+                type: integer
+              groupgap:
+                title: Number of frames dropped between groups
+                type: integer
+            required: [ngroups, nframes, groupgap]
+        required: [observation, exposure]
       - $ref: ref_exposure_type-1.0.0
       - $ref: ref_optical_element-1.0.0
   data:
