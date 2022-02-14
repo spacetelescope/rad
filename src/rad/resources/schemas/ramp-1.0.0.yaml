@@ -14,7 +14,7 @@ allOf:
     data:
       title: Science data, including the border reference pixels.
       tag: tag:stsci.edu:asdf/core/ndarray-1.0.0
-      datatype: uint16
+      datatype: float32
       ndim: 3
     pixeldq:
       title: 2-D data quality array for all planes

@@ -54,9 +54,6 @@ properties:
     archive_catalog:
       datatype: float
       destination: [ScienceCommon.conversion_microjanskys_uncertainty]
-propertyOrder: [conversion_microjanskys, conversion_megajanskys,
-                pixelarea_steradians, pixelarea_arcsecsq,
-                conversion_megajanskys_uncertainty, conversion_microjanskys_uncertainty]
 flowStyle: block
 required: [conversion_microjanskys, conversion_megajanskys,
            pixelarea_steradians, pixelarea_arcsecsq,

@@ -7,12 +7,12 @@ title: |
   The schema for WFI Level 2 images.
 
 allOf:
-  - $ref: pixelarea-1.0.0
   - type: object
     properties:
       meta:
         allOf:
           - $ref: common-1.0.0
+          - $ref: photometry-1.0.0
       data:
         title: Science data, excluding border reference pixels.
         tag: tag:stsci.edu:asdf/core/ndarray-1.0.0
