@@ -1,0 +1,295 @@
+%YAML 1.1
+---
+$schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.0.0
+id: asdf://stsci.edu/datamodels/roman/schemas/guidestar-1.0.0
+
+title: Guide star window information
+type: object
+properties:
+#            gs_order:
+#              title: index of guide star within list of selected guide stars
+#              type: integer
+  gw_start_time:
+    title: UTC time when guide star window activity started
+    tag: tag:stsci.edu:asdf/time/time-1.1.0
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    archive_catalog:
+      datatype: datetime2
+      destination: [ScienceCommon.gw_start_time]
+  gw_stop_time:
+    title: UTC time when guide star window activity completed
+    tag: tag:stsci.edu:asdf/time/time-1.1.0
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    archive_catalog:
+      datatype: datetime2
+      destination: [ScienceCommon.gw_stop_time]
+  gw_id:
+    title: guide star window identifier
+    type: string
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    archive_catalog:
+      datatype: nvarchar(20)
+      destination: [ScienceCommon.gw_id]
+  gs_ra:
+    title: "[deg] guide star right ascension"
+    type: number
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    archive_catalog:
+      datatype: float
+      destination: [ScienceCommon.gs_ra]
+  gs_dec:
+    title: "[deg] guide star declination"
+    type: number
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    archive_catalog:
+      datatype: float
+      destination: [ScienceCommon.gs_dec]
+  gs_ura:
+    title: "[deg] guide star right ascension uncertainty"
+    type: number
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    archive_catalog:
+      datatype: float
+      destination: [ScienceCommon.gs_ura]
+  gs_udec:
+    title: "[deg] guide star declination uncertainty"
+    type: number
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    archive_catalog:
+      datatype: float
+      destination: [ScienceCommon.gs_udec]
+  gs_mag:
+    title: guide star magnitude in detector
+    type: number
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    archive_catalog:
+      datatype: float
+      destination: [ScienceCommon.gs_mag]
+  gs_umag:
+    title: guide star magnitude uncertainty
+    type: number
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    archive_catalog:
+      datatype: float
+      destination: [ScienceCommon.gs_umag]
+  gw_fgs_mode:
+    title: Fine Guidance System mode
+    type: string
+    enum: [WIM-ACQ, WIM-TRACK, WSM-ACQ-1, WSM-ACQ-2, WSM-TRACK,
+           DEFOCUSED-MODERATE, DEFOCUSED-LARGE]
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    archive_catalog:
+      datatype: nvarchar(10)
+      destination: [ScienceCommon.gw_fgs_mode]
+  gw_function_start_time:
+    title: Observatory UTC time at guider function start
+    tag: tag:stsci.edu:asdf/time/time-1.1.0
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    archive_catalog:
+      datatype: datetime2
+      destination: [ScienceCommon.gw_function_start_time]
+  gw_function_end_time:
+    title: Observatory UTC time at guider function end
+    tag: tag:stsci.edu:asdf/time/time-1.1.0
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    archive_catalog:
+      datatype: datetime2
+      destination: [ScienceCommon.gw_function_end_time]
+  data_start:
+    title: MJD start time of guider data within this file
+    type: number
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    archive_catalog:
+      datatype: float
+      destination: [ScienceCommon.data_start]
+  data_end:
+    title: MJD end time of guider data within this file
+    type: number
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    archive_catalog:
+      datatype: float
+      destination: [ScienceCommon.data_end]
+  gw_acq_exec_stat:
+    title: Guide star window acquisition execution status
+    type: string
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    archive_catalog:
+      datatype: nvarchar(15)
+      destination: [ScienceCommon.gw_acq_exec_stat]
+  gs_ctd_x:
+    title: "[arcsec] guide star centroid x position in guider ideal frame"
+    type: number
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    archive_catalog:
+      datatype: float
+      destination: [ScienceCommon.gs_ctd_x]
+  gs_ctd_y:
+    title: "[arcsec] guide star centroid y position in guider ideal frame"
+    type: number
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    archive_catalog:
+      datatype: float
+      destination: [ScienceCommon.gs_ctd_y]
+  gs_ctd_ux:
+    title: uncertainty in the x position of the centroid
+    type: number
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    archive_catalog:
+      datatype: float
+      destination: [ScienceCommon.gs_ctd_ux]
+  gs_ctd_uy:
+    title: uncertainty in the y position of the centroid
+    type: number
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    archive_catalog:
+      datatype: float
+      destination: [ScienceCommon.gs_ctd_uy]
+  gs_epoch:
+    title: Epoch of guide star coordinates
+    type: string
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    archive_catalog:
+      datatype: nvarchar(10)
+      destination: [ScienceCommon.gs_epoch]
+  gs_mura:
+    title: "[mas/yr] Guide star ICRS right ascension proper motion"
+    type: number
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    archive_catalog:
+      datatype: float
+      destination: [ScienceCommon.gs_mura]
+  gs_mudec:
+    title: "[mas/yr] Guide star ICRS declination proper motion"
+    type: number
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    archive_catalog:
+      datatype: float
+      destination: [ScienceCommon.gs_mudec]
+  gs_para:
+    title: Guide star annual parallax
+    type: number
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    archive_catalog:
+      datatype: float
+      destination: [ScienceCommon.gs_para]
+  gw_window_xstart:
+    title: Guide window x position
+    type: number
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    archive_catalog:
+      datatype: float
+      destination: [ScienceCommon.gw_window_xstart]
+  gw_window_ystart:
+    title: Guide window y position
+    type: number
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    archive_catalog:
+      datatype: float
+      destination: [ScienceCommon.gw_window_ystart]
+  gw_window_xsize:
+    title: Guide star window size in x
+    type: number
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    archive_catalog:
+      datatype: float
+      destination: [ScienceCommon.gw_window_xsize]
+  gw_window_ysize:
+    title: Guide star window size in y
+    type: number
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    archive_catalog:
+      datatype: float
+      destination: [ScienceCommon.gw_window_ysize]
+propertyOrder: [gw_start_time, gw_stop_time, gw_id, gs_ra, gs_dec, gs_ura, gs_udec,
+           gs_mag, gs_umag, gw_fgs_mode, gw_function_start_time, gw_function_end_time,
+           data_start, data_end, gw_acq_exec_stat, gs_ctd_x, gs_ctd_y, gs_ctd_ux, gs_ctd_uy,
+           gs_epoch, gs_mura, gs_mudec, gs_para,
+           gw_window_xstart, gw_window_ystart, gw_window_xsize, gw_window_ysize]
+flowStyle: block
+required: [gw_start_time, gw_stop_time, gw_id, gs_ra, gs_dec, gs_ura, gs_udec,
+           gs_mag, gs_umag, gw_fgs_mode, gw_function_start_time, gw_function_end_time,
+           data_start, data_end, gw_acq_exec_stat, gs_ctd_x, gs_ctd_y, gs_ctd_ux, gs_ctd_uy,
+           gs_epoch, gs_mura, gs_mudec, gs_para,
+           gw_window_xstart, gw_window_ystart, gw_window_xsize, gw_window_ysize]
+...
