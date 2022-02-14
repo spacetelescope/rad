@@ -39,6 +39,7 @@ def valid_tag_uris(manifest):
     uris.update([
         "tag:stsci.edu:asdf/time/time-1.1.0",
         "tag:stsci.edu:asdf/core/ndarray-1.0.0",
+        "tag:stsci.edu:asdf/unit/quantity-1.1.0",
     ])
     return uris
 
