@@ -21,12 +21,12 @@ properties:
               pixelarea_steradians:
                 title: Nominal pixel area in steradians
                 anyOf:
-                  - $ref: tag:stsci.edu:asdf/unit/quantity-1.1.0
+                  - tag: tag:stsci.edu:asdf/unit/quantity-1.1.0
                   - type: "null"
               pixelarea_arcsecsq:
                 title: Nominal pixel area in arcsec^2
                 anyOf:
-                  - $ref: tag:stsci.edu:asdf/unit/quantity-1.1.0
+                  - tag: tag:stsci.edu:asdf/unit/quantity-1.1.0
                   - type: "null"
             required: [pixelarea_steradians, pixelarea_arcsecsq]
         required: [photometry]
