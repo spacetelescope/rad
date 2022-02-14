@@ -11,8 +11,11 @@ properties:
   meta:
     allOf:
       - $ref: common-1.0.0
-      - photometry:
-          tag: asdf://stsci.edu/datamodels/roman/tags/photometry-1.0.0
+      - type: object
+        properties:
+          photometry:
+            tag: asdf://stsci.edu/datamodels/roman/tags/photometry-1.0.0
+        required: [photometry]
   data:
     title: Science data, excluding border reference pixels.
     tag: tag:stsci.edu:asdf/core/ndarray-1.0.0
