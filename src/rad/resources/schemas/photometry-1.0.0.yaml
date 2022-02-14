@@ -9,7 +9,7 @@ properties:
   conversion_megajanskys:
     title: Flux density (MJy/steradian) producing 1 cps
     anyOf:
-      - $ref: tag:stsci.edu:asdf/unit/quantity-1.1.0
+      - tag: tag:stsci.edu:asdf/unit/quantity-1.1.0
       - type: "null"
     archive_catalog:
       datatype: float
@@ -17,7 +17,7 @@ properties:
   conversion_microjanskys:
     title: Flux density (uJy/arcsec2) producing 1 cps
     anyOf:
-      - $ref: tag:stsci.edu:asdf/unit/quantity-1.1.0
+      - tag: tag:stsci.edu:asdf/unit/quantity-1.1.0
       - type: "null"
     archive_catalog:
       datatype: float
@@ -25,7 +25,7 @@ properties:
   pixelarea_steradians:
     title: Nominal pixel area in steradians
     anyOf:
-      - $ref: tag:stsci.edu:asdf/unit/quantity-1.1.0
+      - tag: tag:stsci.edu:asdf/unit/quantity-1.1.0
       - type: "null"
     archive_catalog:
       datatype: float
@@ -33,7 +33,7 @@ properties:
   pixelarea_arcsecsq:
     title: Nominal pixel area in arcsec^2
     anyOf:
-      - $ref: tag:stsci.edu:asdf/unit/quantity-1.1.0
+      - tag: tag:stsci.edu:asdf/unit/quantity-1.1.0
       - type: "null"
     archive_catalog:
       datatype: float
@@ -41,7 +41,7 @@ properties:
   conversion_megajanskys_uncertainty:
     title: Uncertainty in flux density conversion to MJy/steradians
     anyOf:
-      - $ref: tag:stsci.edu:asdf/unit/quantity-1.1.0
+      - tag: tag:stsci.edu:asdf/unit/quantity-1.1.0
       - type: "null"
     archive_catalog:
       datatype: float
@@ -49,7 +49,7 @@ properties:
   conversion_microjanskys_uncertainty:
     title: Uncertainty in flux density conversion to uJy/steradians
     anyOf:
-      - $ref: tag:stsci.edu:asdf/unit/quantity-1.1.0
+      - tag: tag:stsci.edu:asdf/unit/quantity-1.1.0
       - type: "null"
     archive_catalog:
       datatype: float
