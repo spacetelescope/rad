@@ -34,17 +34,12 @@ allOf:
     instrument:
       type: object
       properties:
-        telescope:
-          type: object
-          properties:
-            name:
-              title: Instrument used to acquire the data
-              type: string
-              enum: [WFI]
-            detector:
-              allOf:
-                - $ref: ../wfi_detector-1.0.0
-          required: [name, detector]
-      required: [telescope]
+        name:
+          title: Instrument used to acquire the data
+          type: string
+          enum: [WFI]
+        detector:
+          $ref: ../wfi_detector-1.0.0
+      required: [name, detector]
   required: [reftype, author, description, pedigree, useafter, telescope, origin, instrument]
 ...
