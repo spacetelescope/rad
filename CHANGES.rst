@@ -30,6 +30,8 @@
 
 - Updated dark schema to include group keywords from exposure. [#117]
 
+- Moved detector list to new file for importing to both data and reference schemas. [#119]
+
 0.8.0 (2021-11-22)
 ==================
 
