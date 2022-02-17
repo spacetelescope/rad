@@ -23,12 +23,21 @@ properties:
         type: object
         properties:
           photmjsr:
-            title: surface brightness, in MJy/steradian
-            type: number
+            title: Surface brightness, in MJy/steradian
+            anyOf:
+              - tag: tag:stsci.edu:asdf/unit/quantity-1.1.0
+              - type: "null"
           uncertainty:
-            title: uncertainty of surface brightness, in MJy/steradian
-            type: number
-        required: [photmjsr, uncertainty]
+            title: Uncertainty of surface brightness, in MJy/steradian
+            anyOf:
+              - tag: tag:stsci.edu:asdf/unit/quantity-1.1.0
+              - type: "null"
+          pixelareasr:
+            title: Nominal pixel area, in steradian
+            anyOf:
+              - tag: tag:stsci.edu:asdf/unit/quantity-1.1.0
+              - type: "null"
+        required: [photmjsr, uncertainty, pixelareasr]
     additionalProperties: false
 required: [meta, phot_table]
 flowStyle: block

@@ -27,8 +27,6 @@ allOf:
       tag: asdf://stsci.edu/datamodels/roman/tags/wfi_mode-1.0.0
     observation:
       tag: asdf://stsci.edu/datamodels/roman/tags/observation-1.0.0
-    photometry:
-      tag: asdf://stsci.edu/datamodels/roman/tags/photometry-1.0.0
     pointing:
       tag: asdf://stsci.edu/datamodels/roman/tags/pointing-1.0.0
     program:
@@ -42,6 +40,6 @@ allOf:
     wcsinfo:
       tag: asdf://stsci.edu/datamodels/roman/tags/wcsinfo-1.0.0
   required: [aperture, cal_step, coordinates, ephemeris, exposure, guidestar,
-             instrument, observation, photometry, pointing, program,
+             instrument, observation, pointing, program,
              target, velocity_aberration, visit, wcsinfo]
 ...

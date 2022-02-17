@@ -1,14 +1,37 @@
-0.9.0 (unreleased)
+0.10.0 (unreleased)
+===================
+
+0.9.0 (2022-02-15)
 ==================
 
 - Add FGS (Fine Guidance System) modes to guidestar schema. [#103]
 
 - Set all calsteps to required. [#102]
 
-- Added p_exptype to exposure group for reference files (dark & readnoise) to enable automatic rmap generation. Added test to ensure that the p_exptype expression matched the exposure/type enum list. [#105]
+- Added p_exptype to exposure group for reference files (dark & readnoise)
+  to enable automatic rmap generation. Added test to ensure that the p_exptype
+  expression matched the exposure/type enum list. [#105]
 
-- Added boolean level0_compressed attribute keyword to exposure group to indicate if the level 0 data was compressed. [#104]
+- Added boolean level0_compressed attribute keyword to exposure group to
+  indicate if the level 0 data was compressed. [#104]
 
+- Update schemas for ramp, level 1, and 2 files to contain accurate representation of
+  reference pixels. The level 1 file has an array that contains both the science and
+  the border reference pixels, and another array containing the amp33 reference pixels.
+  Ramp models also have an array that contains the science data and the border reference
+  pixels and another array for the amp33 reference pixels, and they also contain four
+  seperate arrays that contain the original border reference pixels copied during
+  the dq_init step (and four additional arrays for their DQ). The level 2 file data
+  array only contains the science pixels (the border pixels are trimmed during ramp fit),
+  and contains seperate arrays for the original border pixels and their dq arrays, and
+  the amp33 reference pixels. [#112]
+
+- Added ``uncertainty`` attributes to ``photometry`` and ``pixelareasr``
+  to the photometry reference file schema. [#114]
+
+- Removed ``Photometry`` from required properties in ``common``. [#115]
+
+- Updated dark schema to include group keywords from exposure. [#117]
 
 0.8.0 (2021-11-22)
 ==================

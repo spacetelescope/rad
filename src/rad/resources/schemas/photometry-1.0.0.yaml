@@ -8,31 +8,57 @@ type: object
 properties:
   conversion_megajanskys:
     title: Flux density (MJy/steradian) producing 1 cps
-    type: number
+    anyOf:
+      - tag: tag:stsci.edu:asdf/unit/quantity-1.1.0
+      - type: "null"
     archive_catalog:
       datatype: float
       destination: [ScienceCommon.conversion_megajanskys]
   conversion_microjanskys:
     title: Flux density (uJy/arcsec2) producing 1 cps
-    type: number
+    anyOf:
+      - tag: tag:stsci.edu:asdf/unit/quantity-1.1.0
+      - type: "null"
     archive_catalog:
       datatype: float
       destination: [ScienceCommon.conversion_microjanskys]
   pixelarea_steradians:
     title: Nominal pixel area in steradians
-    type: number
+    anyOf:
+      - tag: tag:stsci.edu:asdf/unit/quantity-1.1.0
+      - type: "null"
     archive_catalog:
       datatype: float
       destination: [ScienceCommon.pixelarea_steradians]
   pixelarea_arcsecsq:
     title: Nominal pixel area in arcsec^2
-    type: number
+    anyOf:
+      - tag: tag:stsci.edu:asdf/unit/quantity-1.1.0
+      - type: "null"
     archive_catalog:
       datatype: float
       destination: [ScienceCommon.pixelarea_arcsecsq]
+  conversion_megajanskys_uncertainty:
+    title: Uncertainty in flux density conversion to MJy/steradians
+    anyOf:
+      - tag: tag:stsci.edu:asdf/unit/quantity-1.1.0
+      - type: "null"
+    archive_catalog:
+      datatype: float
+      destination: [ScienceCommon.conversion_megajanskys_uncertainty]
+  conversion_microjanskys_uncertainty:
+    title: Uncertainty in flux density conversion to uJy/steradians
+    anyOf:
+      - tag: tag:stsci.edu:asdf/unit/quantity-1.1.0
+      - type: "null"
+    archive_catalog:
+      datatype: float
+      destination: [ScienceCommon.conversion_microjanskys_uncertainty]
 propertyOrder: [conversion_microjanskys, conversion_megajanskys,
-           pixelarea_steradians, pixelarea_arcsecsq]
+                pixelarea_steradians, pixelarea_arcsecsq,
+                conversion_megajanskys_uncertainty, conversion_microjanskys_uncertainty]
 flowStyle: block
 required: [conversion_microjanskys, conversion_megajanskys,
-           pixelarea_steradians, pixelarea_arcsecsq]
+           pixelarea_steradians, pixelarea_arcsecsq,
+           conversion_megajanskys_uncertainty, conversion_microjanskys_uncertainty]
 ...
