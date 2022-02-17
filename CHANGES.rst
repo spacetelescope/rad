@@ -1,4 +1,7 @@
-0.9.0 (unreleased)
+0.10.0 (unreleased)
+===================
+
+0.9.0 (2022-02-15)
 ==================
 
 - Add FGS (Fine Guidance System) modes to guidestar schema. [#103]
