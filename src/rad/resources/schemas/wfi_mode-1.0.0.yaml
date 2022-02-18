@@ -22,21 +22,21 @@ properties:
   detector:
     allOf:
       - $ref: wfi_detector-1.0.0
-      - sdf:
+        sdf:
           special_processing: VALUE_REQUIRED
           source:
             origin: TBD
-      - archive_catalog:
+        archive_catalog:
           datatype: nvarchar(10)
           destination: [ScienceCommon.detector]
   optical_element:
     allOf:
       - $ref: wfi_optical_element-1.0.0
-      - sdf:
+        sdf:
           special_processing: VALUE_REQUIRED
           source:
             origin: TBD
-      - archive_catalog:
+        archive_catalog:
           datatype: nvarchar(20)
           destination: [ScienceCommon.optical_element]
 propertyOrder: [detector, optical_element, name]

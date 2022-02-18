@@ -23,11 +23,11 @@ properties:
   type:
     allOf:
       - $ref: exposure_type-1.0.0
-      - sdf:
+        sdf:
           special_processing: VALUE_REQUIRED
           source:
             origin: TBD
-      - archive_catalog:
+        archive_catalog:
           datatype: nvarchar(25)
           destination: [ScienceCommon.exposure_type]
 
