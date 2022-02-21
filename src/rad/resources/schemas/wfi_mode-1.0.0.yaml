@@ -20,10 +20,7 @@ properties:
       datatype: nvarchar(5)
       destination: [ScienceCommon.instrument_name]
   detector:
-    title: Name of detector used to acquire the data
-    type: string
-    enum: [WFI01, WFI02, WFI03, WFI04, WFI05, WFI06, WFI07, WFI08, WFI09,
-           WFI10, WFI11, WFI12, WFI13, WFI14, WFI15, WFI16, WFI17, WFI18]
+    $ref: wfi_detector-1.0.0
     sdf:
       special_processing: VALUE_REQUIRED
       source:
@@ -32,15 +29,14 @@ properties:
       datatype: nvarchar(10)
       destination: [ScienceCommon.detector]
   optical_element:
-    allOf:
-      - $ref: wfi_optical_element-1.0.0
-      - sdf:
-          special_processing: VALUE_REQUIRED
-          source:
-            origin: TBD
-      - archive_catalog:
-          datatype: nvarchar(20)
-          destination: [ScienceCommon.optical_element]
+    $ref: wfi_optical_element-1.0.0
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    archive_catalog:
+      datatype: nvarchar(20)
+      destination: [ScienceCommon.optical_element]
 propertyOrder: [detector, optical_element, name]
 flowStyle: block
 required: [detector, optical_element, name]

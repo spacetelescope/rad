@@ -1,6 +1,9 @@
 0.10.0 (unreleased)
 ===================
 
+- Moved detector list to new file for importing to both data and reference schemas. [#119]
+
+
 0.9.0 (2022-02-15)
 ==================
 

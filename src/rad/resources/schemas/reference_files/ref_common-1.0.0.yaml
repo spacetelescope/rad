@@ -28,9 +28,18 @@ allOf:
       title: Telescope data reference data is used to calibrate
       type: string
       enum: [ROMAN]
-      type: string
     origin:
       title: Organization responsible for creating file
       type: string
-  required: [reftype, author, description, pedigree, useafter, telescope, origin]
+    instrument:
+      type: object
+      properties:
+        name:
+          title: Instrument used to acquire the data
+          type: string
+          enum: [WFI]
+        detector:
+          $ref: ../wfi_detector-1.0.0
+      required: [name, detector]
+  required: [reftype, author, description, pedigree, useafter, telescope, origin, instrument]
 ...
