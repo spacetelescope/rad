@@ -261,6 +261,26 @@ properties:
     archive_catalog:
       datatype: float
       destination: [ScienceCommon.gw_window_ystart]
+  gw_window_xstop:
+    title: Guide window x stop position
+    type: number
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    archive_catalog:
+      datatype: float
+      destination: [ScienceCommon.gw_window_xstop]
+  gw_window_ystop:
+    title: Guide window y stop position
+    type: number
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    archive_catalog:
+      datatype: float
+      destination: [ScienceCommon.gw_window_ystart]
   gw_window_xsize:
     title: Guide star window size in x
     type: number
@@ -281,6 +301,17 @@ properties:
     archive_catalog:
       datatype: float
       destination: [ScienceCommon.gw_window_ysize]
+  gs_pattern_error:
+    title: RMS of guide star position in guide window from pattern matching (error on centroid not explicitly calculated, the FACE information takes all the centroids and calculates the error across the guiding pattern)
+    type: number
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    archive_catalog:
+      datatype: float
+      destination: [ScienceCommon.gs_pattern_error]
+
 propertyOrder: [gw_start_time, gw_stop_time, gw_id, gs_ra, gs_dec, gs_ura, gs_udec,
            gs_mag, gs_umag, gw_fgs_mode, gw_function_start_time, gw_function_end_time,
            data_start, data_end, gw_acq_exec_stat, gs_ctd_x, gs_ctd_y, gs_ctd_ux, gs_ctd_uy,
