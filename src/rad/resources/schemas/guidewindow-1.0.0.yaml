@@ -79,13 +79,13 @@ properties:
               destination: [ScienceCommon.gw_signal_resultant_exp_time]
           gw_acq_number:
             title: Guide Window ID "Q"
-            type: string
+            type: number
             sdf:
               special_processing: VALUE_REQUIRED
               source:
                 origin: TBD
             archive_catalog:
-              datatype: nvarchar(15)
+              datatype: integer
               destination: [ScienceCommon.gw_acq_number]
           gw_mode:
             title: Guide window mode
