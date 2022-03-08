@@ -116,6 +116,11 @@ tags:
   title: Dark reference schema
   description: |-
     Dark reference schema
+- tag_uri: asdf://stsci.edu/datamodels/roman/tags/reference_files/distortion-1.0.0
+  schema_uri: asdf://stsci.edu/datamodels/roman/schemas/reference_files/distortion-1.0.0
+  title: Distortion reference schema
+  description: |-
+    Distortion reference schema
 - tag_uri: asdf://stsci.edu/datamodels/roman/tags/reference_files/flat-1.0.0
   schema_uri: asdf://stsci.edu/datamodels/roman/schemas/reference_files/flat-1.0.0
   title: Flat reference schema
