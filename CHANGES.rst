@@ -3,6 +3,8 @@
 
 - Moved detector list to new file for importing to both data and reference schemas. [#119]
 
+- Added support for Distortion reference files. Tweaked schema for WFI detector list. [#122]
+
 
 0.9.0 (2022-02-15)
 ==================
