@@ -90,7 +90,8 @@ properties:
           gw_mode:
             title: Guide window mode
             type: string
-            enum: [WIM-ACQ, DEFOCUS]
+            enum: [WIM-ACQ, WIM-TRACK, WSM-ACQ-1, WSM-ACQ-2, WSM-TRACK,
+                   DEFOCUSED-MODERATE, DEFOCUSED-LARGE]
             sdf:
               special_processing: VALUE_REQUIRED
               source:
