@@ -1,0 +1,29 @@
+%YAML 1.1
+---
+$schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.0.0
+id: asdf://stsci.edu/datamodels/roman/schemas/wfi_detector-1.0.0
+
+# Helper file to enumerate detectors for wfi_mode and ref_detector
+
+title: Name of detector used to acquire the data
+type: string
+enum:
+  - WFI01
+  - WFI02
+  - WFI03
+  - WFI04
+  - WFI05
+  - WFI06
+  - WFI07
+  - WFI08
+  - WFI09
+  - WFI10
+  - WFI11
+  - WFI12
+  - WFI13
+  - WFI14
+  - WFI15
+  - WFI16
+  - WFI17
+  - WFI18
+...
