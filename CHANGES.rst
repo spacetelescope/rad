@@ -5,7 +5,7 @@
 
 - Added support for Distortion reference files. Tweaked schema for WFI detector list. [#122]
 
-- Changed input_unit and output_unit keyword types, titles, and tests. [#58]
+- Changed input_unit and output_unit keyword types, titles, and tests. [#126]
 
 
 0.9.0 (2022-02-15)
