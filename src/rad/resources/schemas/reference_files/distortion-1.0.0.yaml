@@ -15,15 +15,11 @@ properties:
           reftype:
             enum: [DISTORTION]
           output_units:
-            description: Output units of coordinates after the model is applied.
-            anyOf:
-              - type: string
-              - tag: tag:stsci.edu:asdf/unit/quantity-1.1.0
+            title: Output units of coordinates after the model is applied.
+            tag: tag:stsci.edu:asdf/unit/unit-1.0.0
           input_units:
-            description: Units of the inputs to this model.
-            anyOf:
-              - type: string
-              - tag: tag:stsci.edu:asdf/unit/quantity-1.1.0
+            title: Units of the inputs to this model.
+            ref: stsci.edu:asdf/unit/unit-1.0.0
         required: [output_units, input_units]
       - $ref: ref_exposure_type-1.0.0
       - $ref: ref_optical_element-1.0.0
