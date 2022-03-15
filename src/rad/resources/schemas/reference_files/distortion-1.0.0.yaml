@@ -19,7 +19,7 @@ properties:
             tag: tag:stsci.edu:asdf/unit/unit-1.0.0
           input_units:
             title: Units of the inputs to this model.
-            ref: stsci.edu:asdf/unit/unit-1.0.0
+            tag: tag:stsci.edu:asdf/unit/unit-1.0.0
         required: [output_units, input_units]
       - $ref: ref_exposure_type-1.0.0
       - $ref: ref_optical_element-1.0.0
