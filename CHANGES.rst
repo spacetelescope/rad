@@ -7,6 +7,8 @@
 
 - Changed input_unit and output_unit keyword types, titles, and tests. [#126]
 
+- Removed exptype and p_keywords from Distortion schema. [#128]
+
 
 0.9.0 (2022-02-15)
 ==================
