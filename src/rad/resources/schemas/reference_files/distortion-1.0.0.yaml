@@ -21,7 +21,6 @@ properties:
             title: Units of the inputs to this model.
             tag: tag:stsci.edu:asdf/unit/unit-1.0.0
         required: [output_units, input_units]
-      - $ref: ref_exposure_type-1.0.0
       - $ref: ref_optical_element-1.0.0
   coordinate_distortion_transform:
     title: Distortion transform as an instance of astropy.modeling.Model.
