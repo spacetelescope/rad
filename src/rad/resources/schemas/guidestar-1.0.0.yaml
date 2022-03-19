@@ -100,10 +100,7 @@ properties:
       datatype: float
       destination: [ScienceCommon.gs_umag]
   gw_fgs_mode:
-    title: Fine Guidance System mode
-    type: string
-    enum: [WIM-ACQ, WIM-TRACK, WSM-ACQ-1, WSM-ACQ-2, WSM-TRACK,
-           DEFOCUSED-MODERATE, DEFOCUSED-LARGE]
+    $ref: guidewindow_modes-1.0.0
     sdf:
       special_processing: VALUE_REQUIRED
       source:
