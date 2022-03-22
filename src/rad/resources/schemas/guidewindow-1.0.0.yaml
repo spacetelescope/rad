@@ -11,16 +11,6 @@ properties:
       - $ref: common-1.0.0
       - type: object
         properties:
-          file_creation_time:
-            title: UTC time the file was created
-            tag: tag:stsci.edu:asdf/time/time-1.1.0
-            sdf:
-              special_processing: VALUE_REQUIRED
-              source:
-                origin: TBD
-            archive_catalog:
-              datatype: datetime2
-              destination: [ScienceCommon.gw_file_creation_time]
           gw_start_time:
             title: UTC time at the start of the guide window exposure
             tag: tag:stsci.edu:asdf/time/time-1.1.0
@@ -150,8 +140,8 @@ properties:
             archive_catalog:
               datatype: float
               destination: [ScienceCommon.gw_window_ysize]
-        required: [file_creation_time, gw_start_time, gw_end_time, gw_frame_readout_time,
-                   pedestal_resultant_exp_time, signal_resultant_exp_time, gw_acq_number, gw_mode,
+        required: [gw_start_time, gw_end_time, gw_frame_readout_time, pedestal_resultant_exp_time,
+                   signal_resultant_exp_time, gw_acq_number, gw_mode,
                    gw_window_xstart, gw_window_ystart,
                    gw_window_xstop, gw_window_ystop,
                    gw_window_xsize, gw_window_ysize,]
