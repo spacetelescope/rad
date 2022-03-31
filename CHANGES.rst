@@ -9,6 +9,8 @@
 
 - Removed exptype and p_keywords from Distortion schema. [#128]
 
+- Added photom keyword attribute to cal_step schema. [#132]
+
 
 0.9.0 (2022-02-15)
 ==================
