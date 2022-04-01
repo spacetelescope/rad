@@ -9,6 +9,13 @@ properties:
   name:
     title: PRD science aperture used
     type: string
+    enum: ['WFI_01_FULL', 'WFI_02_FULL', 'WFI_03_FULL', 'WFI_04_FULL',
+           'WFI_05_FULL', 'WFI_06_FULL', 'WFI_07_FULL', 'WFI_08_FULL',
+           'WFI_09_FULL', 'WFI_10_FULL', 'WFI_11_FULL', 'WFI_12_FULL',
+           'WFI_13_FULL', 'WFI_14_FULL', 'WFI_15_FULL', 'WFI_16_FULL',
+           'WFI_17_FULL', 'WFI_18_FULL',
+           'BORESIGHT',
+           'CGI_CEN', 'WFI_CEN']
     sdf:
       special_processing: VALUE_REQUIRED
       source:
