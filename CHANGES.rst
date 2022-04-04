@@ -11,6 +11,8 @@
 
 - Added photom keyword attribute to cal_step schema. [#132]
 
+- Added ma_table_number to observation and dark schemas. [#134]
+
 
 0.9.0 (2022-02-15)
 ==================

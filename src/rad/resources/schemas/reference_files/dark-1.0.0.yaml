@@ -20,7 +20,10 @@ properties:
               ma_table_name:
                 title: Identifier for the multi-accumulation table used
                 type: string
-            required: [ma_table_name]
+              ma_table_number:
+                title: Number of the multi-accumulation table used
+                type: integer
+            required: [ma_table_name, ma_table_number]
           exposure:
             type: object
             properties:
