@@ -1,0 +1,169 @@
+%YAML 1.1
+---
+$schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.0.0
+id: asdf://stsci.edu/datamodels/roman/schemas/guidewindow-1.0.0
+
+title: Guide window information
+type: object
+properties:
+  meta:
+    allOf:
+      - $ref: common-1.0.0
+      - type: object
+        properties:
+          gw_start_time:
+            title: UTC time at the start of the guide window exposure
+            tag: tag:stsci.edu:asdf/time/time-1.1.0
+            sdf:
+              special_processing: VALUE_REQUIRED
+              source:
+                origin: TBD
+            archive_catalog:
+              datatype: datetime2
+              destination: [ScienceCommon.gw_start_time]
+          gw_end_time:
+            title: UTC time at the end of the guide window exposure
+            tag: tag:stsci.edu:asdf/time/time-1.1.0
+            sdf:
+              special_processing: VALUE_REQUIRED
+              source:
+                origin: TBD
+            archive_catalog:
+              datatype: datetime2
+              destination: [ScienceCommon.gw_end_time]
+          gw_frame_readout_time:
+            title: The readout time for the guide window frame
+            type: number
+            sdf:
+              special_processing: VALUE_REQUIRED
+              source:
+                origin: TBD
+            archive_catalog:
+              datatype: float
+              destination: [ScienceCommon.gw_frame_readout_time]
+          pedestal_resultant_exp_time:
+            title: Total exposure time for the resultant guide window frame
+            type: number
+            sdf:
+              special_processing: VALUE_REQUIRED
+              source:
+                origin: TBD
+            archive_catalog:
+              datatype: float
+              destination: [ScienceCommon.gw_pedestal_resultant_exp_time]
+          signal_resultant_exp_time:
+            title: Total exposure time for the resultant guide window frame
+            type: number
+            sdf:
+              special_processing: VALUE_REQUIRED
+              source:
+                origin: TBD
+            archive_catalog:
+              datatype: float
+              destination: [ScienceCommon.gw_signal_resultant_exp_time]
+          gw_acq_number:
+            title: Guide Window ID "Q"
+            type: number
+            sdf:
+              special_processing: VALUE_REQUIRED
+              source:
+                origin: TBD
+            archive_catalog:
+              datatype: int
+              destination: [ScienceCommon.gw_acq_number]
+          gw_mode:
+            $ref: guidewindow_modes-1.0.0
+            sdf:
+              special_processing: VALUE_REQUIRED
+              source:
+                origin: TBD
+            archive_catalog:
+              datatype: nvarchar(10)
+              destination: [ScienceCommon.gw_mode]
+          gw_window_xstart:
+            title: Guide window x position
+            type: number
+            sdf:
+              special_processing: VALUE_REQUIRED
+              source:
+                origin: TBD
+            archive_catalog:
+              datatype: float
+              destination: [ScienceCommon.gw_window_xstart]
+          gw_window_ystart:
+            title: Guide window y position
+            type: number
+            sdf:
+              special_processing: VALUE_REQUIRED
+              source:
+                origin: TBD
+            archive_catalog:
+              datatype: float
+              destination: [ScienceCommon.gw_window_ystart]
+          gw_window_xstop:
+            title: Guide window x stop position
+            type: number
+            sdf:
+              special_processing: VALUE_REQUIRED
+              source:
+                origin: TBD
+            archive_catalog:
+              datatype: float
+              destination: [ScienceCommon.gw_window_xstop]
+          gw_window_ystop:
+            title: Guide window y stop position
+            type: number
+            sdf:
+              special_processing: VALUE_REQUIRED
+              source:
+                origin: TBD
+            archive_catalog:
+              datatype: float
+              destination: [ScienceCommon.gw_window_ystart]
+          gw_window_xsize:
+            title: Guide star window size in x
+            type: number
+            sdf:
+              special_processing: VALUE_REQUIRED
+              source:
+                origin: TBD
+            archive_catalog:
+              datatype: float
+              destination: [ScienceCommon.gw_window_xsize]
+          gw_window_ysize:
+            title: Guide star window size in y
+            type: number
+            sdf:
+              special_processing: VALUE_REQUIRED
+              source:
+                origin: TBD
+            archive_catalog:
+              datatype: float
+              destination: [ScienceCommon.gw_window_ysize]
+        required: [gw_start_time, gw_end_time, gw_frame_readout_time, pedestal_resultant_exp_time,
+                   signal_resultant_exp_time, gw_acq_number, gw_mode,
+                   gw_window_xstart, gw_window_ystart,
+                   gw_window_xstop, gw_window_ystop,
+                   gw_window_xsize, gw_window_ysize,]
+  pedestal_frames:
+    title: "Reconstituted and oriented pedestal frame GW images. Dimensions: num_frames,
+            num_combined_resultants (or num_uncombined_resultants), num_reads, x, y"
+    tag: tag:stsci.edu:asdf/core/ndarray-1.0.0
+    datatype: uint16
+    ndim: 5
+  signal_frames:
+    title: "Reconstituted and oriented signal frames. Dimensions: num_frames,
+            num_combined_resultants (or num_uncombined_resultants), num_reads, x, y"
+    tag: tag:stsci.edu:asdf/core/ndarray-1.0.0
+    datatype: uint16
+    ndim: 5
+  amp33:
+    title: "Amp 33 reference pixel data. Dimensions: num_frames,
+            num_combined_resultants (or num_uncombined_resultants), num_reads, x, y"
+    tag: tag:stsci.edu:asdf/core/ndarray-1.0.0
+    datatype: uint16
+    ndim: 5
+propertyOrder: [meta, pedestal_frames, signal_frames, amp33]
+flowStyle: block
+required: [meta,pedestal_frames, signal_frames, amp33]
+...

@@ -196,8 +196,8 @@ properties:
       datatype: nvarchar(50)
       destination: [ScienceCommon.ma_table_name]
   ma_table_number:
-    title: Number of the multi-accumulation table used
-    type: integer
+    title: Numerical identifier for the multi-accumulation table used
+    type: number
     sdf:
       special_processing: VALUE_REQUIRED
       source:

@@ -9,6 +9,11 @@ asdf_standard_requirement:
   gte: 1.1.0
 tags:
 # Object Modules
+- tag_uri: asdf://stsci.edu/datamodels/roman/tags/guidewindow-1.0.0
+  schema_uri: asdf://stsci.edu/datamodels/roman/schemas/guidewindow-1.0.0
+  title: Guide window schema
+  description: |-
+    Guide window schema
 - tag_uri: asdf://stsci.edu/datamodels/roman/tags/ramp-1.0.0
   schema_uri: asdf://stsci.edu/datamodels/roman/schemas/ramp-1.0.0
   title: Ramp schema
