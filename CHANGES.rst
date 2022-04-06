@@ -1,4 +1,19 @@
-0.10.0 (unreleased)
+0.11.0 (2022-04-06)
+===================
+
+- Initial Guide Window Schema [#120]
+
+- Enumerate aperture_name in the aperture schema [#129]
+
+- Remove exptype and p_keywords from Distortion Model [#127]
+
+- Added photom keyword attribute to cal_step schema. [#132]
+
+- Added ma_table_number to observation and dark schemas. [#134]
+
+- Create distortion schema [#122]
+
+0.10.0 (2022-02-22)
 ===================
 
 - Moved detector list to new file for importing to both data and reference schemas. [#119]
@@ -8,10 +23,6 @@
 - Changed input_unit and output_unit keyword types, titles, and tests. [#126]
 
 - Removed exptype and p_keywords from Distortion schema. [#128]
-
-- Added photom keyword attribute to cal_step schema. [#132]
-
-- Added ma_table_number to observation and dark schemas. [#134]
 
 
 0.9.0 (2022-02-15)
