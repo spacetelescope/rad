@@ -31,6 +31,8 @@ allOf:
       tag: asdf://stsci.edu/datamodels/roman/tags/pointing-1.0.0
     program:
       tag: asdf://stsci.edu/datamodels/roman/tags/program-1.0.0
+    ref_file:
+      tag: asdf://stsci.edu/datamodels/roman/tags/ref_file-1.0.0
     target:
       tag: asdf://stsci.edu/datamodels/roman/tags/target-1.0.0
     velocity_aberration:
@@ -40,6 +42,6 @@ allOf:
     wcsinfo:
       tag: asdf://stsci.edu/datamodels/roman/tags/wcsinfo-1.0.0
   required: [aperture, cal_step, coordinates, ephemeris, exposure, guidestar,
-             instrument, observation, pointing, program,
+             instrument, observation, photometry, pointing, program, ref_file,
              target, velocity_aberration, visit, wcsinfo]
 ...
