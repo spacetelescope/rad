@@ -42,6 +42,6 @@ allOf:
     wcsinfo:
       tag: asdf://stsci.edu/datamodels/roman/tags/wcsinfo-1.0.0
   required: [aperture, cal_step, coordinates, ephemeris, exposure, guidestar,
-             instrument, observation, photometry, pointing, program, ref_file,
+             instrument, observation, pointing, program, ref_file,
              target, velocity_aberration, visit, wcsinfo]
 ...
