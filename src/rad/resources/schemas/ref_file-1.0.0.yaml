@@ -1,0 +1,86 @@
+%YAML 1.1
+---
+$schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.0.0
+id: asdf://stsci.edu/datamodels/roman/schemas/ref_file-1.0.0
+
+title: Reference file information
+
+allOf:
+- type: object
+  properties:
+    crds:
+      title: CRDS parameters
+      type: object
+      properties:
+        sw_version:
+          title: Version of CRDS file selection software used
+          type: string
+        context used:
+          title: CRDS context (.pmap) used to select ref files
+          type: string
+      dark:
+        title: Dark reference file information
+        type: object
+        properties:
+          name:
+            title: Dark reference file name
+            type: string
+      mask:
+        title: Mask reference file information
+        type: object
+        properties:
+          name:
+            title: Mask reference file name
+            type: string
+      flat:
+        title: Flat reference file information
+        type: object
+        properties:
+          name:
+            title: Flat reference file name
+            type: string
+      gain:
+        title: Gain reference file information
+        type: object
+        properties:
+          name:
+            title: Gain file name
+            type: string
+      readnoise:
+        title: Read noise reference file information
+        type: object
+        properties:
+          name:
+            title: Read noise file name
+            type: string
+      linearity:
+        title: Linearity reference file information
+        type: object
+        properties:
+          name:
+            title: Linearity file name
+            type: string
+      photom:
+        title: Photometry reference file information
+        type: object
+        properties:
+          name:
+            title: Photometry file name
+            type: string
+      area:
+        title: Area reference file information
+        type: object
+        properties:
+          name:
+            title: Area file name
+            type: string
+      saturation:
+        title: Saturation reference file information
+        type: object
+        properties:
+          name:
+            title: Saturation file name
+            type: string
+
+flowStyle: block
+...
