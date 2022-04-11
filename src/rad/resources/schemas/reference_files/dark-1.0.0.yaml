@@ -14,16 +14,6 @@ properties:
         properties:
           reftype:
             enum: [DARK]
-          observation:
-            type: object
-            properties:
-              ma_table_name:
-                title: Identifier for the multi-accumulation table used
-                type: string
-              ma_table_number:
-                title: Number of the multi-accumulation table used
-                type: integer
-            required: [ma_table_name, ma_table_number]
           exposure:
             type: object
             properties:
@@ -36,8 +26,14 @@ properties:
               groupgap:
                 title: Number of frames dropped between groups
                 type: integer
-            required: [ngroups, nframes, groupgap]
-        required: [observation, exposure]
+              ma_table_name:
+                title: Identifier for the multi-accumulation table used
+                type: string
+              ma_table_number:
+                title: Number of the multi-accumulation table used
+                type: integer
+            required: [ngroups, nframes, groupgap, ma_table_name, ma_table_number]
+        required: [exposure]
       - $ref: ref_exposure_type-1.0.0
       - $ref: ref_optical_element-1.0.0
   data:
