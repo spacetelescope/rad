@@ -1,6 +1,8 @@
 0.12.0 (unreleased)
 ===================
 
+- Moved ma_table_name and ma_table_number from observation to exposure schemas. [#138]
+
 
 0.11.0 (2022-04-06)
 ===================
