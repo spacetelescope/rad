@@ -67,7 +67,6 @@ allOf:
           name:
             title: Photometry file name
             type: string
-            blend_table: True
       area:
         title: Area reference file information
         type: object
