@@ -260,6 +260,26 @@ properties:
     archive_catalog:
       datatype: float
       destination: [ScienceCommon.exposure_duration]
+  ma_table_name:
+    title: Identifier for the multi-accumulation table used
+    type: string
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    archive_catalog:
+      datatype: nvarchar(50)
+      destination: [ScienceCommon.ma_table_name]
+  ma_table_number:
+    title: Numerical identifier for the multi-accumulation table used
+    type: number
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    archive_catalog:
+      datatype: smallint
+      destination: [ScienceCommon.ma_table_number]
   level0_compressed:
     title: Level 0 data was compressed
     type: boolean
@@ -278,7 +298,8 @@ propertyOrder: [id, type,
            gain_factor, integration_time, elapsed_exposure_time,
            frame_divisor, groupgap,
            frame_time, group_time, exposure_time,
-           effective_exposure_time, duration, level0_compressed]
+           effective_exposure_time, duration,
+           ma_table_name, ma_table_number, level0_compressed]
 flowStyle: block
 required: [id, type,
            start_time, mid_time, end_time,
@@ -288,5 +309,6 @@ required: [id, type,
            gain_factor, integration_time, elapsed_exposure_time,
            frame_divisor, groupgap,
            frame_time, group_time, exposure_time,
-           effective_exposure_time, duration, level0_compressed]
+           effective_exposure_time, duration,
+           ma_table_name, ma_table_number, level0_compressed]
 ...
