@@ -185,26 +185,6 @@ properties:
     archive_catalog:
       datatype: nvarchar(max)
       destination: [ScienceCommon.observation_label]
-  ma_table_name:
-    title: Identifier for the multi-accumulation table used
-    type: string
-    sdf:
-      special_processing: VALUE_REQUIRED
-      source:
-        origin: TBD
-    archive_catalog:
-      datatype: nvarchar(50)
-      destination: [ScienceCommon.ma_table_name]
-  ma_table_number:
-    title: Numerical identifier for the multi-accumulation table used
-    type: number
-    sdf:
-      special_processing: VALUE_REQUIRED
-      source:
-        origin: TBD
-    archive_catalog:
-      datatype: smallint
-      destination: [ScienceCommon.ma_table_number]
   survey:
     title: Observation Survey
     type: string
@@ -216,11 +196,11 @@ propertyOrder: [start_time, end_time, obs_id, visit_id, program,
            execution_plan, pass, observation, segment,
            visit, visit_file_group, visit_file_sequence,
            visit_file_activity, exposure, template,
-           observation_label, ma_table_name, ma_table_number, survey]
+           observation_label, survey]
 flowStyle: block
 required: [start_time, end_time, obs_id, visit_id, program,
            execution_plan, pass, observation, segment,
            visit, visit_file_group, visit_file_sequence,
            visit_file_activity, exposure, template,
-           observation_label, ma_table_name, ma_table_number, survey]
+           observation_label, survey]
 ...
