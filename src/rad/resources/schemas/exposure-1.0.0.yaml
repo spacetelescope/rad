@@ -70,7 +70,7 @@ properties:
   start_time_mjd:
     title: "[d] exposure start time in MJD"
     description: This records the time at the start of the exposure using the
-         Modified Julian Date. This is used in the archive catalog for
+         Modified Julian Date (MJD). This is used in the archive catalog for
          multi-mission matching.
     type: number
     sdf:
@@ -83,7 +83,7 @@ properties:
   mid_time_mjd:
     title: "[d] exposure mid time in MJD"
     description: This records the time at the midpoint of the exposure using the
-         Modified Julian Date. This is used in the archive catalog for
+         Modified Julian Date  (MJD). This is used in the archive catalog for
          multi-mission matching.
     type: number
     sdf:
@@ -96,7 +96,7 @@ properties:
   end_time_mjd:
     title: "[d] exposure end time in MJD"
     description: This records the time at the end of the exposure using the
-         Modified Julian Date. This is used in the archive catalog for
+         Modified Julian Date  (MJD). This is used in the archive catalog for
          multi-mission matching.
     type: number
     sdf:
