@@ -283,7 +283,7 @@ properties:
     description: |
         The time that is the sum of the reads that are used to construct a resultant.
         This will depend on the MA table being used.
-   type: number
+    type: number
     sdf:
       special_processing: VALUE_REQUIRED
       source:
