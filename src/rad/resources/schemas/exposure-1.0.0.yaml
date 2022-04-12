@@ -33,8 +33,9 @@ properties:
 
   start_time:
     title: UTC exposure start time
-    description: This is a python date-time object that records the
-         time at the start of the exposure in UTC.
+    description: |
+        This is a python date-time object that records the
+        time at the start of the exposure in UTC.
     tag: tag:stsci.edu:asdf/time/time-1.1.0
     sdf:
       special_processing: VALUE_REQUIRED
@@ -45,8 +46,9 @@ properties:
       destination: [ScienceCommon.exposure_start_time]
   mid_time:
     title: UTC exposure mid time
-    description: This is a python date-time object that records the
-         time at the middle of the exposure in UTC.
+    description: |
+        This is a python date-time object that records the
+        time at the middle of the exposure in UTC.
     tag: tag:stsci.edu:asdf/time/time-1.1.0
     sdf:
       special_processing: VALUE_REQUIRED
@@ -57,8 +59,9 @@ properties:
       destination: [ScienceCommon.exposure_mid_time]
   end_time:
     title: UTC exposure end time
-    description: This is a python date-time object that records the
-         time at the end of the exposure in UTC.
+    description: |
+        This is a python date-time object that records the
+        time at the end of the exposure in UTC.
     tag: tag:stsci.edu:asdf/time/time-1.1.0
     sdf:
       special_processing: VALUE_REQUIRED
@@ -69,7 +72,8 @@ properties:
       destination: [ScienceCommon.exposure_end_time]
   start_time_mjd:
     title: "[d] exposure start time in MJD"
-    description: This records the time at the start of the exposure using the
+    description: |
+         This records the time at the start of the exposure using the
          Modified Julian Date (MJD). This is used in the archive catalog for
          multi-mission matching.
     type: number
@@ -82,9 +86,10 @@ properties:
       destination: [ScienceCommon.exposure_start_time_mjd]
   mid_time_mjd:
     title: "[d] exposure mid time in MJD"
-    description: This records the time at the midpoint of the exposure using the
-         Modified Julian Date  (MJD). This is used in the archive catalog for
-         multi-mission matching.
+    description: |
+        This records the time at the midpoint of the exposure using the
+        Modified Julian Date  (MJD). This is used in the archive catalog for
+        multi-mission matching.
     type: number
     sdf:
       special_processing: VALUE_REQUIRED
@@ -95,9 +100,10 @@ properties:
       destination: [ScienceCommon.exposure_mid_time_mjd]
   end_time_mjd:
     title: "[d] exposure end time in MJD"
-    description: This records the time at the end of the exposure using the
-         Modified Julian Date  (MJD). This is used in the archive catalog for
-         multi-mission matching.
+    description: |
+        This records the time at the end of the exposure using the
+        Modified Julian Date  (MJD). This is used in the archive catalog for
+        multi-mission matching.
     type: number
     sdf:
       special_processing: VALUE_REQUIRED
@@ -108,10 +114,11 @@ properties:
       destination: [ScienceCommon.exposure_end_time_mjd]
   start_time_tdb:
     title: "[d] TDB time of exposure start in MJD"
-    description: This records the time at the start of the exposure using
-         the Modified Julian Date for the Barycentric Dynamical Time system
-         (TDB, Temps Dynamique Barycentrique), a relativistic coordinate
-         time scale.
+    description: |
+        This records the time at the start of the exposure using
+        the Modified Julian Date for the Barycentric Dynamical Time system
+        (TDB, Temps Dynamique Barycentrique), a relativistic coordinate
+        time scale.
     type: number
     sdf:
       special_processing: VALUE_REQUIRED
@@ -122,10 +129,11 @@ properties:
       destination: [ScienceCommon.exposure_start_time_tdb]
   mid_time_tdb:
     title: "[d] TDB time of exposure mid in MJD"
-    description: This records the time at the midpoint of the exposure using
-         the Modified Julian Date for the Barycentric Dynamical Time system
-         (TDB, Temps Dynamique Barycentrique), a relativistic coordinate
-         time scale. 
+    description: |
+        This records the time at the midpoint of the exposure using
+        the Modified Julian Date for the Barycentric Dynamical Time system
+        (TDB, Temps Dynamique Barycentrique), a relativistic coordinate
+        time scale.
     type: number
     sdf:
       special_processing: VALUE_REQUIRED
@@ -136,10 +144,11 @@ properties:
       destination: [ScienceCommon.exposure_mid_time_tdb]
   end_time_tdb:
     title: "[d] TDB time of exposure end in MJD"
-    description: This records the time at the end of the exposure using
-         the Modified Julian Date for the Barycentric Dynamical Time system
-         (TDB, Temps Dynamique Barycentrique), a relativistic coordinate
-         time scale. 
+    description: |
+        This records the time at the end of the exposure using
+        the Modified Julian Date for the Barycentric Dynamical Time system
+        (TDB, Temps Dynamique Barycentrique), a relativistic coordinate
+        time scale.
     type: number
     sdf:
       special_processing: VALUE_REQUIRED
@@ -150,9 +159,10 @@ properties:
       destination: [ScienceCommon.exposure_end_time_tdb]
   ngroups:
     title: Number of groups in integration
-    description: This is the number of resultant frames in the exposure
-         that are transmitted to the ground. The WFI data always has the
-         number on integrations=1.
+    description: |
+        This is the number of resultant frames in the exposure
+        that are transmitted to the ground. The WFI data always has the
+        number of integrations=1.
     type: integer
     sdf:
       special_processing: VALUE_REQUIRED
@@ -163,8 +173,9 @@ properties:
       destination: [ScienceCommon.exposure_ngroups]
   nframes:
     title: Number of frames per group
-    description: This is the number of science frames that are combined to
-         produce a resultant frame.
+    description: |
+        This is the number of science frames that are combined to
+        produce a resultant frame.
     type: integer
     sdf:
       special_processing: VALUE_REQUIRED
@@ -175,8 +186,9 @@ properties:
       destination: [ScienceCommon.exposure_nframes]
   data_problem:
     title: Science telemetry indicated a problem
-    description: This is a flag to indicate that the science telemetry
-         experienced a problem.
+    description: |
+        This is a flag to indicate that the science telemetry
+        experienced a problem.
     type: boolean
     sdf:
       special_processing: VALUE_REQUIRED
@@ -207,7 +219,7 @@ properties:
       destination: [ScienceCommon.exposure_gain_factor]
   integration_time:
     title: "[s] Effective integration time"
-    description: The effective time that the sensor has been exposed to the sky. 
+    description: The effective time that the sensor has been exposed to the sky.
      type: number
     sdf:
       special_processing: VALUE_REQUIRED
@@ -218,8 +230,9 @@ properties:
       destination: [ScienceCommon.exposure_integration_time]
   elapsed_exposure_time:
     title: "[s] Total elapsed exposure time"
-    description:  The time between the start of the first Reset/Read Science Frame of an Exposure
-            and the completion of the final Read Only Science Frame of that Exposure.
+    description: |
+        The time between the start of the first Reset/Read Science Frame of an Exposure
+        and the completion of the final Read Only Science Frame of that Exposure.
      type: number
     sdf:
       special_processing: VALUE_REQUIRED
@@ -230,8 +243,9 @@ properties:
       destination: [ScienceCommon.elapsed_exposure_time]
   frame_divisor:
     title: Divisor applied to frame-averaged groups
-    description: This is the number of reads per resultant. Its use depends upon the definition
-            in the MA table. 
+    description: |
+        This is the number of reads per resultant. Its use depends upon the definition
+        in the MA table.
     type: integer
     sdf:
       special_processing: VALUE_REQUIRED
@@ -242,7 +256,7 @@ properties:
       destination: [ScienceCommon.exposure_frame_divisor]
   groupgap:
     title: Number of frames dropped between groups
-    description: This is the number of reads that are "dropped" and not used in the resultant. 
+    description: This is the number of reads that are "dropped" and not used in the resultant.
     type: integer
     sdf:
       special_processing: VALUE_REQUIRED
@@ -253,8 +267,9 @@ properties:
       destination: [ScienceCommon.exposure_groupgap]
   frame_time:
     title: "[s] Time between frames"
-    description: The time between the end of one read and the start of the next read. This
-            depends on the MA table being used. 
+    description: |
+        The time between the end of one read and the start of the next read. This
+        depends on the MA table being used.
     type: number
     sdf:
       special_processing: VALUE_REQUIRED
@@ -265,8 +280,9 @@ properties:
       destination: [ScienceCommon.exposure_frame_time]
   group_time:
     title: "[s] Time between groups"
-     description: The time that is the sum of the reads that are used to construct a resultant.
-             This will depend on the MA table being used. 
+     description: |
+        The time that is the sum of the reads that are used to construct a resultant.
+        This will depend on the MA table being used.
    type: number
     sdf:
       special_processing: VALUE_REQUIRED
@@ -277,8 +293,9 @@ properties:
       destination: [ScienceCommon.exposure_group_time]
   exposure_time:
     title: "[s] exposure time"
-    description: The time between the start of the first Reset/Read Science Frame of an Exposure
-            and the completion of the final Read Only Science Frame of that Exposure.
+    description: |
+        The time between the start of the first Reset/Read Science Frame of an Exposure
+        and the completion of the final Read Only Science Frame of that Exposure.
     type: number
     sdf:
       special_processing: VALUE_REQUIRED
@@ -300,8 +317,9 @@ properties:
       destination: [ScienceCommon.effective_exposure_time]
   duration:
     title: "[s] Total duration of exposure"
-    description: The time that the detector is dedicated to an exposure. This includes any overhead
-            and times for dropped frames etc. 
+    description: |
+        The time that the detector is dedicated to an exposure. This includes any overhead
+        and times for dropped frames etc.
     type: number
     sdf:
       special_processing: VALUE_REQUIRED
@@ -312,6 +330,9 @@ properties:
       destination: [ScienceCommon.exposure_duration]
   ma_table_name:
     title: Identifier for the multi-accumulation table used
+    description: |
+        The name of the MA table used for the exposure as defined by the
+        PRD (Project Reference Database)
     type: string
     sdf:
       special_processing: VALUE_REQUIRED
@@ -322,6 +343,10 @@ properties:
       destination: [ScienceCommon.ma_table_name]
   ma_table_number:
     title: Numerical identifier for the multi-accumulation table used
+    description: |
+        The number of the MA table used for the exposure as defined by the
+        PRD (Project Reference Database). This is used for matching the exposure
+        to the appropriate calibration data. 
     type: number
     sdf:
       special_processing: VALUE_REQUIRED
@@ -332,8 +357,9 @@ properties:
       destination: [ScienceCommon.ma_table_number]
   level0_compressed:
     title: Level 0 data was compressed
-    description: A flag to indicate that the exposure has data that needed to be decompressed by
-            the ground system. 
+    description: |
+        A flag to indicate that the exposure has data that needed to be decompressed by
+        the ground system.
     type: boolean
     sdf:
       special_processing: VALUE_REQUIRED
