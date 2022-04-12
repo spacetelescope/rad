@@ -220,7 +220,7 @@ properties:
   integration_time:
     title: "[s] Effective integration time"
     description: The effective time that the sensor has been exposed to the sky.
-     type: number
+    type: number
     sdf:
       special_processing: VALUE_REQUIRED
       source:
@@ -346,7 +346,7 @@ properties:
     description: |
         The number of the MA table used for the exposure as defined by the
         PRD (Project Reference Database). This is used for matching the exposure
-        to the appropriate calibration data. 
+        to the appropriate calibration data.
     type: number
     sdf:
       special_processing: VALUE_REQUIRED
