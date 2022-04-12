@@ -233,7 +233,7 @@ properties:
     description: |
         The time between the start of the first Reset/Read Science Frame of an Exposure
         and the completion of the final Read Only Science Frame of that Exposure.
-     type: number
+    type: number
     sdf:
       special_processing: VALUE_REQUIRED
       source:
