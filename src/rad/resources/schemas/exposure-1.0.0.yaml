@@ -280,7 +280,7 @@ properties:
       destination: [ScienceCommon.exposure_frame_time]
   group_time:
     title: "[s] Time between groups"
-     description: |
+    description: |
         The time that is the sum of the reads that are used to construct a resultant.
         This will depend on the MA table being used.
    type: number
