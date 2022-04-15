@@ -8,7 +8,7 @@ This is a repository for the Roman Attribute Dictionary
 
 To install the latest `rad` release
 
-    pip install romanad
+    pip install rad
 
 To install the latest code from the repository
 
