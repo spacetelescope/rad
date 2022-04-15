@@ -1,4 +1,4 @@
-0.12.0 (unreleased)
+0.12.0 (2022-04-15)
 ===================
 
 - exposure schema update in include descriptions [#139]
