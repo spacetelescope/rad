@@ -8,6 +8,22 @@ title: |
   Observation identifiers
 type: object
 properties:
+  obs_id:
+    title: Programmatic observation identifier. The format is 'PPPPPCCAAASSSOOOVVVggsaaeeee' where
+           'PPPPP' is the Program, 'CC' is the execution plan, 'AAA' is the pass, 'SSS' is the
+           segment, 'OOO' is the Observation, 'VVV' is the Visit, 'gg' is the visit file group,
+           's' is the visit file sequence, 'aa' is the visit file activity, and 'eeee' is the
+           exposure ID. The observation ID is the complete concatenation of visit_id +
+           visit_file_statement (visit_file_group + visit_file_sequence + visit_file_activity) +
+           exposure.
+    type: string
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    archive_catalog:
+      datatype: nvarchar(28)
+      destination: [ScienceCommon.obs_id]    
   visit_id:
     title: A unique identifier for a visit. The format is 'PPPPPCCAAASSSOOOVVV' where 'PPPPP' is the
            Program, 'CC' is the execution plan, 'AAA' is the pass, 'SSS' is the segment number,
