@@ -1,6 +1,7 @@
 0.13.0 (unreleased)
 ===================
 
+- remove start_time and end_time from the observation schema [#142]
 
 0.12.0 (2022-04-15)
 ===================
