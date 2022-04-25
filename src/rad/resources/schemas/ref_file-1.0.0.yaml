@@ -15,7 +15,7 @@ allOf:
         sw_version:
           title: Version of CRDS file selection software used
           type: string
-        context used:
+        context_used:
           title: CRDS context (.pmap) used to select ref files
           type: string
       dark:
