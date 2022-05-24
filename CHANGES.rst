@@ -1,6 +1,8 @@
 0.13.1 (unreleased)
 ===================
 
+- Removed CRDS version information from basic schema. [#146]
+
 0.13.0 (2022-04-25)
 ===================
 

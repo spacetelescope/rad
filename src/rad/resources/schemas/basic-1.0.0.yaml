@@ -18,26 +18,6 @@ properties:
     archive_catalog:
       datatype: nvarchar(120)
       destination: [ScienceCommon.calibration_software_version]
-  crds_software_version:
-    title: Version of CRDS file selection software used
-    type: string
-    sdf:
-      special_processing: VALUE_REQUIRED
-      source:
-        origin: TBD
-    archive_catalog:
-      datatype: nvarchar(120)
-      destination: [ScienceCommon.crds_software_version]
-  crds_context_used:
-    title: CRDS context (.pmap) used to select ref files
-    type: string
-    sdf:
-      special_processing: VALUE_REQUIRED
-      source:
-        origin: TBD
-    archive_catalog:
-      datatype: nvarchar(120)
-      destination: [ScienceCommon.crds_context_used]
   filename:
     title: Name of the file
     type: string
@@ -106,8 +86,7 @@ properties:
     archive_catalog:
       datatype: nvarchar(5)
       destination: [ScienceCommon.telescope]
-required: [calibration_software_version, crds_software_version,
-           crds_context_used, filename, file_date,
+required: [calibration_software_version, filename, file_date,
            model_type, origin, prd_software_version,
            sdf_software_version, telescope]
 ...
