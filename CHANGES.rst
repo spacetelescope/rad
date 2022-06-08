@@ -3,6 +3,8 @@
 
 - Removed CRDS version information from basic schema. [#146]
 
+- Changed the dimensionality of the err variable in ramp. [149#]
+
 0.13.0 (2022-04-25)
 ===================
 

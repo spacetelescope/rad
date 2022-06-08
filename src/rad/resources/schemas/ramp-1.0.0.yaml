@@ -29,7 +29,7 @@ allOf:
     err:
       title: Error array containing the square root of the exposure-level combined variance
       tag: tag:stsci.edu:asdf/core/ndarray-1.0.0
-      ndim: 2
+      ndim: 3
       datatype: float32
     amp33:
       title: Amp 33 reference pixel data
