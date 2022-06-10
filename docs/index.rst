@@ -24,6 +24,7 @@ The following are listings of all the schemas provided by this package for ASDF.
 
   schemas.rst
   reference_files.rst
+  manifests.rst
 
 Developer Resources
 ===================
