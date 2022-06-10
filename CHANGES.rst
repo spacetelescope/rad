@@ -5,6 +5,8 @@
 
 - Changed the dimensionality of the err variable in ramp. [149#]
 
+- Create docs for RTD. [#151]
+
 0.13.0 (2022-04-25)
 -------------------
 
