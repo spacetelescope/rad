@@ -23,6 +23,7 @@ The following are listings of all the schemas provided by this package for ASDF.
   :maxdepth: 1
 
   schemas.rst
+  reference_files.rst
 
 Developer Resources
 ===================
