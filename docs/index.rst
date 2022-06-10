@@ -22,6 +22,8 @@ The following are listings of all the schemas provided by this package for ASDF.
 .. toctree::
   :maxdepth: 1
 
+  schemas.rst
+
 Developer Resources
 ===================
 
