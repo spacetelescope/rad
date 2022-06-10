@@ -1,25 +1,25 @@
 0.13.1 (unreleased)
-===================
+-------------------
 
 - Removed CRDS version information from basic schema. [#146]
 
 - Changed the dimensionality of the err variable in ramp. [149#]
 
 0.13.0 (2022-04-25)
-===================
+-------------------
 
 - Remove start_time and end_time from the observation schema [#142]
 
 
 0.12.0 (2022-04-15)
-===================
+-------------------
 
 - exposure schema update in include descriptions [#139]
 
 - Moved ma_table_name and ma_table_number from observation to exposure schemas. [#138]
 
 0.11.0 (2022-04-06)
-===================
+-------------------
 
 - Initial Guide Window Schema [#120]
 
@@ -34,7 +34,7 @@
 - Create distortion schema [#122]
 
 0.10.0 (2022-02-22)
-===================
+-------------------
 
 - Moved detector list to new file for importing to both data and reference schemas. [#119]
 
@@ -46,7 +46,7 @@
 
 
 0.9.0 (2022-02-15)
-==================
+------------------
 
 - Add FGS (Fine Guidance System) modes to guidestar schema. [#103]
 
@@ -78,17 +78,17 @@
 - Updated dark schema to include group keywords from exposure. [#117]
 
 0.8.0 (2021-11-22)
-==================
+------------------
 
 - Add ``cal_logs`` to wfi_image-1.0.0 to retain log messages from romancal. [#96]
 
 0.7.1 (2021-10-26)
-==================
+------------------
 
 - Reverted exposure time types from string back to astropy Time. [#94]
 
 0.7.0 (2021-10-11)
-==================
+------------------
 
 - Added nonlinearity support. [#79]
 
@@ -110,40 +110,40 @@
 
 
 0.6.1 (2021-08-26)
-==================
+------------------
 
 - Changed ENGINEERING to F213 in optical_element. [#70]
 
 - Workaround for setuptools_scm issues with recent versions of pip. [#71]
 
 0.6.0 (2021-08-23)
-==================
+------------------
 
 - Added enumeration for ``meta.pedigree``. [#65, #67]
 
 - Added more steps to the cal_step schema. [#66]
 
 0.5.0 (2021-08-06)
-==================
+------------------
 
 - Adjust dimensionality of wfi_science_raw data array. [#64]
 
 - Added dq_init step to cal_step. [#63]
 
 0.4.0 (2021-07-23)
-==================
+------------------
 
 - Removed basic from ref_common and moved some of its attributes directly to ref_common [#59]
 
 - Updated dq arrays to be of type uint32. Removed zeroframe, refout, and dq_def arrays. [#61]
 
 0.3.0 (2021-06-28)
-==================
+------------------
 
 - Updated rampfitoutput model and WFIimgphotom models. Renamed rampfitoutput ramp_fit_output. [#58]
 
 0.2.0 (2021-06-04)
-==================
+------------------
 
 - Updated yaml files to match latest in RomanCAL. [JIRA RCAL-143]
 
@@ -186,6 +186,6 @@
 - Added support for variance object schemas. [#38]
 
 0.1.0 (unreleased)
-==================
+------------------
 
 - Initial Schemas for Roman Calibration Pipeline and SDP file generation
