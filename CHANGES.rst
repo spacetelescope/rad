@@ -7,6 +7,8 @@
 
 - Create docs for RTD. [#151]
 
+- Moved gw_function_start_time, gw_function_end_time, and gw_acq_exec_stat from GuideStar to GuideWindow. Removed duplicate gw time entries. [#154]
+
 0.13.0 (2022-04-25)
 -------------------
 
