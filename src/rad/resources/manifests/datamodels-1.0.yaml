@@ -197,4 +197,9 @@ tags:
   title: Date this file was created (UTC)
   description: |-
     Date this file was created (UTC)
+- tag_uri: asdf://stsci.edu/datamodels/roman/tags/model_type-1.0.0
+  schema_uri: asdf://stsci.edu/datamodels/roman/schemas/model_type-1.0.0
+  title: Type of data model
+  description: |-
+    Type of data model
 ...

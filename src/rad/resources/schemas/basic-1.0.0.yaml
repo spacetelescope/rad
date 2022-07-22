@@ -15,15 +15,7 @@ properties:
   file_date:
     tag: asdf://stsci.edu/datamodels/roman/tags/file_date-1.0.0
   model_type:
-    title: Type of data model
-    type: string
-    sdf:
-      special_processing: VALUE_REQUIRED
-      source:
-        origin: TBD
-    archive_catalog:
-      datatype: nvarchar(50)
-      destination: [ScienceCommon.model_type]
+    tag: asdf://stsci.edu/datamodels/roman/tags/model_type-1.0.0
   origin:
     title: Organization responsible for creating file
     type: string
