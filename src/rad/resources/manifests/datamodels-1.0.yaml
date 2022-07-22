@@ -202,4 +202,9 @@ tags:
   title: Type of data model
   description: |-
     Type of data model
+- tag_uri: asdf://stsci.edu/datamodels/roman/tags/origin-1.0.0
+  schema_uri: asdf://stsci.edu/datamodels/roman/schemas/origin-1.0.0
+  title: Organization responsible for creating file
+  description: |-
+    Organization responsible for creating file
 ...
