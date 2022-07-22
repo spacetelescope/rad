@@ -23,12 +23,7 @@ properties:
   sdf_software_version:
     tag: asdf://stsci.edu/datamodels/roman/tags/sdf_software_version-1.0.0
   telescope:
-    title: Telescope used to acquire the data
-    type: string
-    enum: [ROMAN]
-    archive_catalog:
-      datatype: nvarchar(5)
-      destination: [ScienceCommon.telescope]
+    tag: asdf://stsci.edu/datamodels/roman/tags/telescope-1.0.0
 required: [calibration_software_version, filename, file_date,
            model_type, origin, prd_software_version,
            sdf_software_version, telescope]
