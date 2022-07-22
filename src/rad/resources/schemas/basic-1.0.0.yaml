@@ -13,15 +13,7 @@ properties:
   filename:
     tag: asdf://stsci.edu/datamodels/roman/tags/filename-1.0.0
   file_date:
-    title: Date this file was created (UTC)
-    tag: tag:stsci.edu:asdf/time/time-1.1.0
-    sdf:
-      special_processing: VALUE_REQUIRED
-      source:
-        origin: TBD
-    archive_catalog:
-      datatype: datetime2
-      destination: [ScienceCommon.filedate]
+    tag: asdf://stsci.edu/datamodels/roman/tags/file_date-1.0.0
   model_type:
     title: Type of data model
     type: string

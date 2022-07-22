@@ -192,4 +192,9 @@ tags:
   title: Name of the file
   description: |-
     Name of the file
+- tag_uri: asdf://stsci.edu/datamodels/roman/tags/file_date-1.0.0
+  schema_uri: asdf://stsci.edu/datamodels/roman/schemas/file_date-1.0.0
+  title: Date this file was created (UTC)
+  description: |-
+    Date this file was created (UTC)
 ...
