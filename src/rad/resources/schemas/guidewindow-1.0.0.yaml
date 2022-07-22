@@ -41,6 +41,36 @@ properties:
             archive_catalog:
               datatype: float
               destination: [ScienceCommon.gw_frame_readout_time]
+          gw_function_start_time:
+            title: Observatory UTC time at guider function start
+            tag: tag:stsci.edu:asdf/time/time-1.1.0
+            sdf:
+              special_processing: VALUE_REQUIRED
+              source:
+                origin: TBD
+            archive_catalog:
+              datatype: datetime2
+              destination: [ScienceCommon.gw_function_start_time]
+          gw_function_end_time:
+            title: Observatory UTC time at guider function end
+            tag: tag:stsci.edu:asdf/time/time-1.1.0
+            sdf:
+              special_processing: VALUE_REQUIRED
+              source:
+                origin: TBD
+            archive_catalog:
+              datatype: datetime2
+              destination: [ScienceCommon.gw_function_end_time]
+          gw_acq_exec_stat:
+            title: Guide star window acquisition execution status
+            type: string
+            sdf:
+              special_processing: VALUE_REQUIRED
+              source:
+                origin: TBD
+            archive_catalog:
+              datatype: nvarchar(15)
+              destination: [ScienceCommon.gw_acq_exec_stat]
           pedestal_resultant_exp_time:
             title: Total exposure time for the resultant guide window frame
             type: number
@@ -140,9 +170,10 @@ properties:
             archive_catalog:
               datatype: float
               destination: [ScienceCommon.gw_window_ysize]
-        required: [gw_start_time, gw_end_time, gw_frame_readout_time, pedestal_resultant_exp_time,
-                   signal_resultant_exp_time, gw_acq_number, gw_mode,
-                   gw_window_xstart, gw_window_ystart,
+        required: [gw_start_time, gw_end_time, gw_frame_readout_time,
+                   gw_function_start_time, gw_function_end_time, gw_acq_exec_stat,
+                   pedestal_resultant_exp_time, signal_resultant_exp_time, gw_acq_number,
+                   gw_mode, gw_window_xstart, gw_window_ystart,
                    gw_window_xstop, gw_window_ystop,
                    gw_window_xsize, gw_window_ysize,]
   pedestal_frames:
@@ -165,5 +196,5 @@ properties:
     ndim: 5
 propertyOrder: [meta, pedestal_frames, signal_frames, amp33]
 flowStyle: block
-required: [meta,pedestal_frames, signal_frames, amp33]
+required: [meta, pedestal_frames, signal_frames, amp33]
 ...
