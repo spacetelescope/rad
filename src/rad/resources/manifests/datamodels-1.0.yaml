@@ -187,4 +187,9 @@ tags:
   title: Calibration software version
   description: |-
     Calibration software version number
+- tag_uri: asdf://stsci.edu/datamodels/roman/tags/filename-1.0.0
+  schema_uri: asdf://stsci.edu/datamodels/roman/schemas/filename-1.0.0
+  title: Name of the file
+  description: |-
+    Name of the file
 ...

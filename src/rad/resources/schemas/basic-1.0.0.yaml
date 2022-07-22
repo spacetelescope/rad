@@ -11,15 +11,7 @@ properties:
   calibration_software_version:
     tag: asdf://stsci.edu/datamodels/roman/tags/calibration_software_version-1.0.0
   filename:
-    title: Name of the file
-    type: string
-    sdf:
-      special_processing: VALUE_REQUIRED
-      source:
-        origin: TBD
-    archive_catalog:
-      datatype: nvarchar(120)
-      destination: [ScienceCommon.filename]
+    tag: asdf://stsci.edu/datamodels/roman/tags/filename-1.0.0
   file_date:
     title: Date this file was created (UTC)
     tag: tag:stsci.edu:asdf/time/time-1.1.0
