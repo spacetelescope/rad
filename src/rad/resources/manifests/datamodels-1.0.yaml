@@ -207,4 +207,9 @@ tags:
   title: Organization responsible for creating file
   description: |-
     Organization responsible for creating file
+- tag_uri: asdf://stsci.edu/datamodels/roman/tags/prd_software_version-1.0.0
+  schema_uri: asdf://stsci.edu/datamodels/roman/schemas/prd_software_version-1.0.0
+  title: S&OC PRD version number used in data processing
+  description: |-
+    S&OC PRD version number used in data processing
 ...
