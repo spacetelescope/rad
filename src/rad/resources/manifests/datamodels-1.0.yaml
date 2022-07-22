@@ -212,4 +212,9 @@ tags:
   title: S&OC PRD version number used in data processing
   description: |-
     S&OC PRD version number used in data processing
+- tag_uri: asdf://stsci.edu/datamodels/roman/tags/sdf_software_version-1.0.0
+  schema_uri: asdf://stsci.edu/datamodels/roman/schemas/sdf_software_version-1.0.0
+  title: SDF software version number
+  description: |-
+    SDF software version number
 ...

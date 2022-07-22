@@ -21,15 +21,7 @@ properties:
   prd_software_version:
     tag: asdf://stsci.edu/datamodels/roman/tags/prd_software_version-1.0.0
   sdf_software_version:
-    title: SDF software version number
-    type: string
-    sdf:
-      special_processing: VALUE_REQUIRED
-      source:
-        origin: TBD
-    archive_catalog:
-      datatype: nvarchar(120)
-      destination: [ScienceCommon.sdf_software_version]
+    tag: asdf://stsci.edu/datamodels/roman/tags/sdf_software_version-1.0.0
   telescope:
     title: Telescope used to acquire the data
     type: string
