@@ -1,0 +1,15 @@
+%YAML 1.1
+---
+$schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.0.0
+id: asdf://stsci.edu/datamodels/roman/schemas/tagged_scalars/telescope-1.0.0
+
+title: Telescope used to acquire the data
+type: string
+# There is a bug in enum validation, currently being enforced by the converter, see issue #155 for details.
+# enum: [ROMAN]
+archive_catalog:
+  datatype: nvarchar(5)
+  destination: [ScienceCommon.telescope]
+
+flowStyle: block
+...

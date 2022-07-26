@@ -1,0 +1,17 @@
+%YAML 1.1
+---
+$schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.0.0
+id: asdf://stsci.edu/datamodels/roman/schemas/tagged_scalars/calibration_software_version-1.0.0
+
+title: Calibration software version number
+type: string
+sdf:
+  special_processing: VALUE_REQUIRED
+  source:
+    origin: TBD
+archive_catalog:
+  datatype: nvarchar(120)
+  destination: [ScienceCommon.calibration_software_version]
+
+flowStyle: block
+...

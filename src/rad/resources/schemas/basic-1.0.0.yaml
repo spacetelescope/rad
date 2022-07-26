@@ -9,83 +9,21 @@ type: object
 properties:
   # Meta Variables
   calibration_software_version:
-    title: Calibration software version number
-    type: string
-    sdf:
-      special_processing: VALUE_REQUIRED
-      source:
-        origin: TBD
-    archive_catalog:
-      datatype: nvarchar(120)
-      destination: [ScienceCommon.calibration_software_version]
+    tag: asdf://stsci.edu/datamodels/roman/tags/calibration_software_version-1.0.0
   filename:
-    title: Name of the file
-    type: string
-    sdf:
-      special_processing: VALUE_REQUIRED
-      source:
-        origin: TBD
-    archive_catalog:
-      datatype: nvarchar(120)
-      destination: [ScienceCommon.filename]
+    tag: asdf://stsci.edu/datamodels/roman/tags/filename-1.0.0
   file_date:
-    title: Date this file was created (UTC)
-    tag: tag:stsci.edu:asdf/time/time-1.1.0
-    sdf:
-      special_processing: VALUE_REQUIRED
-      source:
-        origin: TBD
-    archive_catalog:
-      datatype: datetime2
-      destination: [ScienceCommon.filedate]
+    tag: asdf://stsci.edu/datamodels/roman/tags/file_date-1.0.0
   model_type:
-    title: Type of data model
-    type: string
-    sdf:
-      special_processing: VALUE_REQUIRED
-      source:
-        origin: TBD
-    archive_catalog:
-      datatype: nvarchar(50)
-      destination: [ScienceCommon.model_type]
+    tag: asdf://stsci.edu/datamodels/roman/tags/model_type-1.0.0
   origin:
-    title: Organization responsible for creating file
-    type: string
-    enum: [STSCI]
-    sdf:
-      special_processing: VALUE_REQUIRED
-      source:
-        origin: TBD
-    archive_catalog:
-      datatype: nvarchar(5)
-      destination: [ScienceCommon.origin]
+    tag: asdf://stsci.edu/datamodels/roman/tags/origin-1.0.0
   prd_software_version:
-    title: S&OC PRD version number used in data processing
-    type: string
-    sdf:
-      special_processing: VALUE_REQUIRED
-      source:
-        origin: TBD
-    archive_catalog:
-      datatype: nvarchar(120)
-      destination: [ScienceCommon.prd_software_version]
+    tag: asdf://stsci.edu/datamodels/roman/tags/prd_software_version-1.0.0
   sdf_software_version:
-    title: SDF software version number
-    type: string
-    sdf:
-      special_processing: VALUE_REQUIRED
-      source:
-        origin: TBD
-    archive_catalog:
-      datatype: nvarchar(120)
-      destination: [ScienceCommon.sdf_software_version]
+    tag: asdf://stsci.edu/datamodels/roman/tags/sdf_software_version-1.0.0
   telescope:
-    title: Telescope used to acquire the data
-    type: string
-    enum: [ROMAN]
-    archive_catalog:
-      datatype: nvarchar(5)
-      destination: [ScienceCommon.telescope]
+    tag: asdf://stsci.edu/datamodels/roman/tags/telescope-1.0.0
 required: [calibration_software_version, filename, file_date,
            model_type, origin, prd_software_version,
            sdf_software_version, telescope]

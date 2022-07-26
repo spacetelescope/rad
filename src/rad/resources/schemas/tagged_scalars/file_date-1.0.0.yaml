@@ -1,0 +1,17 @@
+%YAML 1.1
+---
+$schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.0.0
+id: asdf://stsci.edu/datamodels/roman/schemas/tagged_scalars/file_date-1.0.0
+
+title: Date this file was created (UTC)
+$ref: http://stsci.edu/schemas/asdf/time/time-1.1.0
+sdf:
+  special_processing: VALUE_REQUIRED
+  source:
+    origin: TBD
+archive_catalog:
+  datatype: datetime2
+  destination: [ScienceCommon.filedate]
+
+flowStyle: block
+...
