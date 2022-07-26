@@ -108,7 +108,7 @@ properties:
               source:
                 origin: TBD
             archive_catalog:
-              datatype: nvarchar(10)
+              datatype: nvarchar(18)
               destination: [ScienceCommon.gw_mode]
           gw_window_xstart:
             title: Guide window x position

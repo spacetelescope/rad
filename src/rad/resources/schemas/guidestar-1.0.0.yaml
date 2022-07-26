@@ -23,7 +23,7 @@ properties:
       source:
         origin: TBD
     archive_catalog:
-      datatype: nvarchar(10)
+      datatype: nvarchar(18)
       destination: [ScienceCommon.gw_fgs_mode]
   gs_ra:
     title: "[deg] guide star right ascension"
