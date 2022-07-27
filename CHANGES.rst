@@ -7,6 +7,8 @@
 
 - Create docs for RTD. [#151]
 
+- Changed optical filter name W146 to F146. [#156]
+
 0.13.0 (2022-04-25)
 -------------------
 
