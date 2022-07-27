@@ -1,0 +1,17 @@
+%YAML 1.1
+---
+$schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.0.0
+id: asdf://stsci.edu/datamodels/roman/schemas/tagged_scalars/model_type-1.0.0
+
+title: Type of data model
+type: string
+sdf:
+  special_processing: VALUE_REQUIRED
+  source:
+    origin: TBD
+archive_catalog:
+  datatype: nvarchar(50)
+  destination: [ScienceCommon.model_type]
+
+flowStyle: block
+...
