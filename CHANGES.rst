@@ -7,9 +7,14 @@
 
 - Create docs for RTD. [#151]
 
-- Moved gw_function_start_time, gw_function_end_time, and gw_acq_exec_stat from GuideStar to GuideWindow. Removed duplicate gw time entries. [#154]
+- Moved gw_function_start_time, gw_function_end_time, and
+  gw_acq_exec_stat from GuideStar to GuideWindow. Removed duplicate
+  gw time entries. [#154]
 
 - Changed optical filter name W146 to F146. [#156]
+
+- Moved archive related information in the ``basic`` schema directly
+  into a tagged object for easier retrieval by ASDF. [#153, #158]
 
 
 0.13.0 (2022-04-25)
