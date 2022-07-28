@@ -26,7 +26,8 @@ allOf:
       tag: tag:stsci.edu:asdf/time/time-1.1.0
     telescope:
       title: Telescope data reference data is used to calibrate
-      tag: asdf://stsci.edu/datamodels/roman/tags/telescope-1.0.0
+      type: string
+      enum: [ROMAN]
     origin:
       title: Organization responsible for creating file
       type: string
