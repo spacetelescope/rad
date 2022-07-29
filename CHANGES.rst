@@ -14,7 +14,7 @@
 - Changed optical filter name W146 to F146. [#156]
 
 - Moved archive related information in the ``basic`` schema directly
-  into a tagged object for easier retrieval by ASDF. [#153, #158]
+  into a tagged object for easier retrieval by ASDF. [#153, #158, #159]
 
 
 0.13.0 (2022-04-25)
