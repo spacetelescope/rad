@@ -16,6 +16,7 @@
 - Moved archive related information in the ``basic`` schema directly
   into a tagged object for easier retrieval by ASDF. [#153, #158, #159]
 
+- Fix ref_file schema. [#157]
 
 0.13.0 (2022-04-25)
 -------------------
