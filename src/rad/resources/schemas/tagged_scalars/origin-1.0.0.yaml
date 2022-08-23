@@ -5,7 +5,7 @@ id: asdf://stsci.edu/datamodels/roman/schemas/tagged_scalars/origin-1.0.0
 
 title: Organization responsible for creating file
 # There is a bug in enum validation, currently being enforced by the converter, see issue #155 for details.
-# enum: [STSCI]
+# enum: ["STSCI", "IPAC/SSC"]
 sdf:
   special_processing: VALUE_REQUIRED
   source:
