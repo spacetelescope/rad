@@ -3,6 +3,8 @@
 
 - Add ``IPAC/SSC`` to ``origin`` enum. [#160]
 
+- Add archive information to ``ref_file`` and fix indentation there. [#161]
+
 0.13.1 (2022-07-29)
 -------------------
 
