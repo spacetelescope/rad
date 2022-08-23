@@ -18,33 +18,34 @@ properties:
       context_used:
         title: CRDS context (.pmap) used to select ref files
         type: string
-    dark:
-      title: Dark reference file information
-      type: string
-    mask:
-      title: Mask reference file information
-      type: string
-    flat:
-      title: Flat reference file information
-      type: string
-    gain:
-      title: Gain reference file information
-      type: string
-    readnoise:
-      title: Read noise reference file information
-      type: string
-    linearity:
-      title: Linearity reference file information
-      type: string
-    photom:
-      title: Photometry reference file information
-      type: string
-    area:
-      title: Area reference file information
-      type: string
-    saturation:
-      title: Saturation reference file information
-      type: string
+
+  dark:
+    title: Dark reference file information
+    type: string
+  mask:
+    title: Mask reference file information
+    type: string
+  flat:
+    title: Flat reference file information
+    type: string
+  gain:
+    title: Gain reference file information
+    type: string
+  readnoise:
+    title: Read noise reference file information
+    type: string
+  linearity:
+    title: Linearity reference file information
+    type: string
+  photom:
+    title: Photometry reference file information
+    type: string
+  area:
+    title: Area reference file information
+    type: string
+  saturation:
+    title: Saturation reference file information
+    type: string
 
 flowStyle: block
 ...
