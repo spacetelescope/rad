@@ -15,36 +15,52 @@ properties:
       sw_version:
         title: Version of CRDS file selection software used
         type: string
+        sdf:
+          special_processing: VALUE_REQUIRED
+          source:
+            origin: TBD
+        archive_catalog:
+          datatype: nvarchar(120)
+          destination: [ScienceCommon.crds_software_version]
+
       context_used:
         title: CRDS context (.pmap) used to select ref files
         type: string
-    dark:
-      title: Dark reference file information
-      type: string
-    mask:
-      title: Mask reference file information
-      type: string
-    flat:
-      title: Flat reference file information
-      type: string
-    gain:
-      title: Gain reference file information
-      type: string
-    readnoise:
-      title: Read noise reference file information
-      type: string
-    linearity:
-      title: Linearity reference file information
-      type: string
-    photom:
-      title: Photometry reference file information
-      type: string
-    area:
-      title: Area reference file information
-      type: string
-    saturation:
-      title: Saturation reference file information
-      type: string
+        sdf:
+          special_processing: VALUE_REQUIRED
+          source:
+            origin: TBD
+        archive_catalog:
+          datatype: nvarchar(120)
+          destination: [ScienceCommon.crds_context_used]
+
+  dark:
+    title: Dark reference file information
+    type: string
+  mask:
+    title: Mask reference file information
+    type: string
+  flat:
+    title: Flat reference file information
+    type: string
+  gain:
+    title: Gain reference file information
+    type: string
+  readnoise:
+    title: Read noise reference file information
+    type: string
+  linearity:
+    title: Linearity reference file information
+    type: string
+  photom:
+    title: Photometry reference file information
+    type: string
+  area:
+    title: Area reference file information
+    type: string
+  saturation:
+    title: Saturation reference file information
+    type: string
 
 flowStyle: block
 ...
