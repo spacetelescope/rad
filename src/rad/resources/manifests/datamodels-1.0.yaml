@@ -172,6 +172,11 @@ tags:
   description: |-
     WFI imaging photometric flux conversion data model
 # Misc
+- tag_uri: asdf://stsci.edu/datamodels/roman/tags/associations-1.0.0
+  schema_uri: asdf://stsci.edu/datamodels/roman/schemas/associations-1.0.0
+  title: Association table
+  description: |-
+    Association table
 - tag_uri: asdf://stsci.edu/datamodels/roman/tags/cal_logs-1.0.0
   schema_uri: asdf://stsci.edu/datamodels/roman/schemas/cal_logs-1.0.0
   title: Calibration log messages
