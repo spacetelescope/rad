@@ -1,0 +1,121 @@
+%YAML 1.1
+---
+$schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.0.0
+id: asdf://stsci.edu/datamodels/roman/schemas/model_container-1.0.0
+
+title: Data model to contain models
+
+
+type: object
+properties:
+  asn_exptypes:
+    type: string
+  asn_n_members:
+    type: integer
+#  iscopy:
+#    type: boolean
+  asn_table_name:
+    type: string
+  asn_pool_name:
+    type: string
+  asn_table:
+    tag: asdf://stsci.edu/datamodels/roman/tags/associations-1.0.0
+#  degraded_status:
+#    type: string
+#  program:
+#    type: integer
+#  target:
+#    type: integer
+#  constraints:
+#    type: string
+  models:
+    type: array
+    items:
+      allOf:
+        - name:
+            type: string
+        - datamodel:
+            type: object
+
+#required: [asn_id, asn_pool, asn_type, asn_rule, version_id, code_version, degraded_status,
+#           program, target, constraints, products]
+required: [asn_exptypes, asn_n_members]
+flowStyle: block
+#propertyOrder: [asn_id, asn_pool, asn_type, asn_rule, version_id, code_version, degraded_status,
+#           program, target, constraints, products]
+propertyOrder: [asn_exptypes, asn_n_members, asn_table_name, asn_pool_name, asn_table, models]
+
+
+
+#type: object
+#properties:
+#  meta:
+#    allOf:
+#      - $ref: common-1.0.0
+#  associations:
+#    allOf:
+#    - type: object
+#      properties:
+#        members:
+#          title: Association table
+#          datatype:
+#          - name: expname
+#            datatype: [ascii, 80]
+#            #type: str
+#          - name: exposerr
+#            datatype: [ascii, 80]
+#          - name: exptype
+#            #datatype: [ascii, 15]
+#            #datatype: $ref: exposure_type-1.0.0
+#            datatype: [ascii, 15]
+#            #enum: ['WFI_IMAGE', 'WFI_GRISM', 'WFI_PRISM', 'WFI_DARK', 'WFI_FLAT', 'WFI_WFSC']
+#            #$tag: exposure_type-1.0.0
+#            #enum: ['SCIENCE', 'CALIBRATION', 'ENGINEERING']
+#      required: [members]
+#required: [meta, associations]
+#flowStyle: block
+#propertyOrder: [meta, associations]
+
+#Works
+#allOf:
+#- $ref: common-1.0.0
+#- type: object
+#  properties:
+#    asn_table:
+#      title: Association table
+#      fits_hdu: ASN
+#      datatype:
+#      - name: expname
+#        datatype: [ascii, 80]
+#      - name: exptype
+#        datatype: [ascii, 15]
+#flowStyle: block
+
+#type: object
+#properties:
+##  meta:
+##    allOf:
+##      - $ref: common-1.0.0
+#  type: object
+#  properties:
+#    association_table:
+#      title: Association table
+#      #type: object
+#      #properties:
+#      datatype:
+#      - expname:
+#          title: Name of the exposure
+#          #type: string
+#          datatype: [ascii, 80]
+#      - exptype:
+#          title: Name of the exposure
+#          #type: string
+#          datatype: [ascii, 80]
+##      - exptype:
+##          $ref: exposure_type-1.0.0
+##    required: [expname, exptype]
+##required: [meta, association_table]
+#flowStyle: block
+##propertyOrder: [meta, association_table]
+
+...
