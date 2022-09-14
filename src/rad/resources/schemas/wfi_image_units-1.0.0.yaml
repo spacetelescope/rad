@@ -8,7 +8,9 @@ type: object
 properties:
   data:
     title: Units for the variable data.
-    type: string
+    anyOf:
+      - tag: tag:stsci.edu:asdf/unit/quantity-1.1.0
+      - type: "null"
     sdf:
       special_processing: VALUE_REQUIRED
       source:
@@ -18,7 +20,9 @@ properties:
       destination: [ScienceCommon.unit_data]
   dq:
     title: Units for the variable dq.
-    type: string
+    anyOf:
+      - tag: tag:stsci.edu:asdf/unit/quantity-1.1.0
+      - type: "null"
     sdf:
       special_processing: VALUE_REQUIRED
       source:
@@ -28,7 +32,9 @@ properties:
       destination: [ScienceCommon.unit_dq]
   amp33:
     title: Units for the variable amp33.
-    type: string
+    anyOf:
+      - tag: tag:stsci.edu:asdf/unit/quantity-1.1.0
+      - type: "null"
     sdf:
       special_processing: VALUE_REQUIRED
       source:
