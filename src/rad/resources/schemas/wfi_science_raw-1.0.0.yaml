@@ -11,6 +11,10 @@ properties:
   meta:
     allOf:
       - $ref: common-1.0.0
+      - type: object
+        properties:
+          units:
+            tag: asdf://stsci.edu/datamodels/roman/tags/wfi_science_raw_units-1.0.0
   data:
     title: Science data, including the border reference pixels.
     tag: tag:stsci.edu:asdf/core/ndarray-1.0.0

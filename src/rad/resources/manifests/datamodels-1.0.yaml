@@ -75,6 +75,11 @@ tags:
   title: Photometry information
   description: |-
     Photometry information
+- tag_uri: asdf://stsci.edu/datamodels/roman/tags/wfi_science_raw_units-1.0.0
+  schema_uri: asdf://stsci.edu/datamodels/roman/schemas/wfi_science_raw_units-1.0.0
+  title: WFI Level 1 Science Data Variable Units
+  description: |-
+    WFI Level 1 Science Data Variable Units
 - tag_uri: asdf://stsci.edu/datamodels/roman/tags/wfi_image_units-1.0.0
   schema_uri: asdf://stsci.edu/datamodels/roman/schemas/wfi_image_units-1.0.0
   title: WFI Level 2 Image Data Variable Units

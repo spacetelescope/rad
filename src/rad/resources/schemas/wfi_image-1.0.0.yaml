@@ -17,7 +17,7 @@ properties:
             tag: asdf://stsci.edu/datamodels/roman/tags/photometry-1.0.0
           units:
             tag: asdf://stsci.edu/datamodels/roman/tags/wfi_image_units-1.0.0
-        required: [photometry, units]
+        required: [photometry]
   data:
     title: Science data, excluding border reference pixels.
     tag: tag:stsci.edu:asdf/core/ndarray-1.0.0
