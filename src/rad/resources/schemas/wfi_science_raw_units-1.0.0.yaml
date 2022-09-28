@@ -15,7 +15,7 @@ properties:
         origin: TBD
     archive_catalog:
       datatype: nvarchar(10)
-      destination: [ScienceCommon.level_1_unit_data]
+      destination: [ScienceCommon.unit_level_1_data]
   amp33:
     title: Units for the variable amp33.
     type: string
@@ -25,7 +25,7 @@ properties:
         origin: TBD
     archive_catalog:
       datatype: nvarchar(10)
-      destination: [ScienceCommon.level_1_unit_amp33]
+      destination: [ScienceCommon.unit_level_1_amp33]
 propertyOrder: [data, amp33]
 flowStyle: block
 required: [data, amp33]

@@ -15,7 +15,7 @@ properties:
         origin: TBD
     archive_catalog:
       datatype: nvarchar(10)
-      destination: [ScienceCommon.level_2_unit_data]
+      destination: [ScienceCommon.unit_level_2_data]
   dq:
     title: Units for the variable dq.
     type: string
@@ -25,7 +25,7 @@ properties:
         origin: TBD
     archive_catalog:
       datatype: nvarchar(10)
-      destination: [ScienceCommon.level_2_unit_dq]
+      destination: [ScienceCommon.unit_level_2_dq]
   err:
     title: Units for the variable err.
     type: string
@@ -35,7 +35,7 @@ properties:
         origin: TBD
     archive_catalog:
       datatype: nvarchar(10)
-      destination: [ScienceCommon.level_2_unit_err]
+      destination: [ScienceCommon.unit_level_2_err]
   var_poisson:
     title: Units for the variable var_poisson.
     type: string
@@ -45,7 +45,7 @@ properties:
         origin: TBD
     archive_catalog:
       datatype: nvarchar(10)
-      destination: [ScienceCommon.level_2_unit_var_poisson]
+      destination: [ScienceCommon.unit_level_2_var_poisson]
   var_rnoise:
     title: Units for the variable var_rnoise.
     type: string
@@ -55,7 +55,7 @@ properties:
         origin: TBD
     archive_catalog:
       datatype: nvarchar(10)
-      destination: [ScienceCommon.level_2_unit_var_rnoise]
+      destination: [ScienceCommon.unit_level_2_var_rnoise]
   amp33:
     title: Units for the variable amp33.
     type: string
@@ -65,7 +65,7 @@ properties:
         origin: TBD
     archive_catalog:
       datatype: nvarchar(10)
-      destination: [ScienceCommon.level_2_unit_amp33]
+      destination: [ScienceCommon.unit_level_2_amp33]
   border_ref_pix_left:
     title: Units for the variable border_ref_pix_left.
     type: string
@@ -75,7 +75,7 @@ properties:
         origin: TBD
     archive_catalog:
       datatype: nvarchar(10)
-      destination: [ScienceCommon.level_2_unit_border_ref_pix_left]
+      destination: [ScienceCommon.unit_level_2_border_ref_pix_left]
   border_ref_pix_right:
     title: Units for the variable border_ref_pix_right.
     type: string
@@ -85,7 +85,7 @@ properties:
         origin: TBD
     archive_catalog:
       datatype: nvarchar(10)
-      destination: [ScienceCommon.level_2_unit_border_ref_pix_right]
+      destination: [ScienceCommon.unit_level_2_border_ref_pix_right]
   border_ref_pix_top:
     title: Units for the variable border_ref_pix_top.
     type: string
@@ -95,7 +95,7 @@ properties:
         origin: TBD
     archive_catalog:
       datatype: nvarchar(10)
-      destination: [ScienceCommon.level_2_unit_border_ref_pix_top]
+      destination: [ScienceCommon.unit_level_2_border_ref_pix_top]
   border_ref_pix_bottom:
     title: Units for the variable border_ref_pix_bottom.
     type: string
@@ -105,7 +105,7 @@ properties:
         origin: TBD
     archive_catalog:
       datatype: nvarchar(10)
-      destination: [ScienceCommon.level_2_unit_border_ref_pix_bottom]
+      destination: [ScienceCommon.unit_level_2_border_ref_pix_bottom]
   dq_border_ref_pix_left:
     title: Units for the variable dq_border_ref_pix_left.
     type: string
@@ -115,7 +115,7 @@ properties:
         origin: TBD
     archive_catalog:
       datatype: nvarchar(10)
-      destination: [ScienceCommon.level_2_unit_dq_border_ref_pix_left]
+      destination: [ScienceCommon.unit_level_2_dq_border_ref_pix_left]
   dq_border_ref_pix_right:
     title: Units for the variable dq_border_ref_pix_right.
     type: string
@@ -125,7 +125,7 @@ properties:
         origin: TBD
     archive_catalog:
       datatype: nvarchar(10)
-      destination: [ScienceCommon.level_2_unit_dq_border_ref_pix_right]
+      destination: [ScienceCommon.unit_level_2_dq_border_ref_pix_right]
   dq_border_ref_pix_top:
     title: Units for the variable dq_border_ref_pix_top.
     type: string
@@ -135,7 +135,7 @@ properties:
         origin: TBD
     archive_catalog:
       datatype: nvarchar(10)
-      destination: [ScienceCommon.level_2_unit_dq_border_ref_pix_top]
+      destination: [ScienceCommon.unit_level_2_dq_border_ref_pix_top]
   dq_border_ref_pix_bottom:
     title: Units for the variable dq_border_ref_pix_bottom.
     type: string
@@ -145,7 +145,7 @@ properties:
         origin: TBD
     archive_catalog:
       datatype: nvarchar(10)
-      destination: [ScienceCommon.level_2_unit_dq_border_ref_pix_bottom]
+      destination: [ScienceCommon.unit_level_2_dq_border_ref_pix_bottom]
 propertyOrder: [data, dq, err, var_poisson, var_rnoise, amp33,
            border_ref_pix_left, border_ref_pix_right, border_ref_pix_top,
            border_ref_pix_bottom, dq_border_ref_pix_left,
