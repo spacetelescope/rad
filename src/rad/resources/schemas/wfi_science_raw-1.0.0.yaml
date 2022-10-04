@@ -15,6 +15,7 @@ properties:
         properties:
           units:
             tag: asdf://stsci.edu/datamodels/roman/tags/wfi_science_raw_units-1.0.0
+        required: [units]
   data:
     title: Science data, including the border reference pixels.
     tag: tag:stsci.edu:asdf/core/ndarray-1.0.0
