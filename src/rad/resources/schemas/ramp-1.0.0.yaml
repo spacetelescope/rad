@@ -13,9 +13,10 @@ allOf:
         - $ref: common-1.0.0
     data:
       title: Science data, including the border reference pixels.
-      tag: tag:stsci.edu:asdf/core/ndarray-1.0.0
-      datatype: float32
-      ndim: 3
+      tag: tag:stsci.edu:asdf/unit/quantity-1.1.0
+      #tag: tag:stsci.edu:asdf/core/ndarray-1.0.0
+      #datatype: float32
+      #ndim: 3
     pixeldq:
       title: 2-D data quality array for all planes
       tag: tag:stsci.edu:asdf/core/ndarray-1.0.0
@@ -28,9 +29,10 @@ allOf:
       datatype: uint8
     err:
       title: Error array containing the square root of the exposure-level combined variance
-      tag: tag:stsci.edu:asdf/core/ndarray-1.0.0
-      ndim: 3
-      datatype: float32
+      tag: tag:stsci.edu:asdf/unit/quantity-1.1.0
+      #tag: tag:stsci.edu:asdf/core/ndarray-1.0.0
+      #dim: 3
+      #datatype: float32
     amp33:
       title: Amp 33 reference pixel data
       tag: tag:stsci.edu:asdf/core/ndarray-1.0.0
@@ -38,24 +40,28 @@ allOf:
       ndim: 3
     border_ref_pix_left:
       title: Original border reference pixels, on left (from viewers perspective).
-      tag: tag:stsci.edu:asdf/core/ndarray-1.0.0
-      datatype: float32
-      ndim: 3
+      tag: tag:stsci.edu:asdf/unit/quantity-1.1.0
+      #tag: tag:stsci.edu:asdf/core/ndarray-1.0.0
+      #datatype: float32
+      #ndim: 3
     border_ref_pix_right:
       title: Original border reference pixels, on right (from viewers perspective).
-      tag: tag:stsci.edu:asdf/core/ndarray-1.0.0
-      datatype: float32
-      ndim: 3
+      tag: tag:stsci.edu:asdf/unit/quantity-1.1.0
+      #tag: tag:stsci.edu:asdf/core/ndarray-1.0.0
+      #datatype: float32
+      #ndim: 3
     border_ref_pix_top:
       title: Original border reference pixels, on top.
-      tag: tag:stsci.edu:asdf/core/ndarray-1.0.0
-      datatype: float32
-      ndim: 3
+      tag: tag:stsci.edu:asdf/unit/quantity-1.1.0
+      #tag: tag:stsci.edu:asdf/core/ndarray-1.0.0
+      #datatype: float32
+      #ndim: 3
     border_ref_pix_bottom:
       title: Original border reference pixels, on bottom.
-      tag: tag:stsci.edu:asdf/core/ndarray-1.0.0
-      datatype: float32
-      ndim: 3
+      tag: tag:stsci.edu:asdf/unit/quantity-1.1.0
+      #tag: tag:stsci.edu:asdf/core/ndarray-1.0.0
+      #datatype: float32
+      #ndim: 3
     dq_border_ref_pix_left:
       title: DQ for border reference pixels, on left (from viewers perspective).
       tag: tag:stsci.edu:asdf/core/ndarray-1.0.0
