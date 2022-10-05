@@ -34,7 +34,7 @@ properties:
     sdf:
       special_processing: VALUE_REQUIRED
       source:
-        origin: PSS:visit.visit_type
+        origin: PSS:dms_visit.visit_type
     archive_catalog:
       datatype: nvarchar(30)
       destination: [ScienceCommon.visit_type]

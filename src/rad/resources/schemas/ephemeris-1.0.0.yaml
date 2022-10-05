@@ -63,7 +63,7 @@ properties:
     sdf:
       special_processing: VALUE_REQUIRED
       source:
-        origin: PSS:ephemeris_state.ingest_time????
+        origin: PSS:ephemeris_state.ingest_time
     archive_catalog:
       datatype: float
       destination: [ScienceCommon.ephemeris_time]
@@ -73,7 +73,7 @@ properties:
     sdf:
       special_processing: VALUE_REQUIRED
       source:
-        origin: PSS:ephemeris_status.x
+        origin: PSS:sts_ephemeris_state.x
     archive_catalog:
       datatype: float
       destination: [ScienceCommon.spatial_x]
@@ -83,7 +83,7 @@ properties:
     sdf:
       special_processing: VALUE_REQUIRED
       source:
-        origin: PSS:ephemeris_status.y
+        origin: PSS:sts_ephemeris_state.y
     archive_catalog:
       datatype: float
       destination: [ScienceCommon.spatial_y]
@@ -93,7 +93,7 @@ properties:
     sdf:
       special_processing: VALUE_REQUIRED
       source:
-        origin: PSS:ephemeris_status.z
+        origin: PSS:sts_ephemeris_state.z
     archive_catalog:
       datatype: float
       destination: [ScienceCommon.spatial_z]
@@ -103,7 +103,7 @@ properties:
     sdf:
       special_processing: VALUE_REQUIRED
       source:
-        origin: PSS:ephemeris_status.dx
+        origin: PSS:sts_ephemeris_state.dx
     archive_catalog:
       datatype: float
       destination: [ScienceCommon.velocity_x]
@@ -113,7 +113,7 @@ properties:
     sdf:
       special_processing: VALUE_REQUIRED
       source:
-        origin: PSS:ephemeris_status.dy
+        origin: PSS:sts_ephemeris_state.dy
     archive_catalog:
       datatype: float
       destination: [ScienceCommon.velocity_y]
@@ -123,7 +123,7 @@ properties:
     sdf:
       special_processing: VALUE_REQUIRED
       source:
-        origin: PSS:ephemeris_status.dz
+        origin: PSS:sts_ephemeris_state.dz
     archive_catalog:
       datatype: float
       destination: [ScienceCommon.velocity_z]
