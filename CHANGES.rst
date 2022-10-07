@@ -1,7 +1,7 @@
 0.14.0 (unreleased)
 -------------------
 
--
+- Use PSS views in SDF origin attribute. [#167]
 
 0.13.2 (2022-08-23)
 -------------------
