@@ -2,6 +2,7 @@
 -------------------
 
 - Use PSS views in SDF origin attribute. [#167]
+- Add support for specific non-VOUnit units used by Roman. [#168]
 
 0.13.2 (2022-08-23)
 -------------------
