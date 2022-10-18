@@ -30,7 +30,7 @@ properties:
     sdf:
       special_processing: VALUE_REQUIRED
       source:
-        origin: PSS:visit_track.visit_id
+        origin: TBD
     archive_catalog:
       datatype: nvarchar(19)
       destination: [ScienceCommon.visit_id]
@@ -149,7 +149,7 @@ properties:
     sdf:
       special_processing: VALUE_REQUIRED
       source:
-        origin: PSS:visit.template
+        origin: PSS:dms_visit.template
     archive_catalog:
       datatype: nvarchar(50)
       destination: [ScienceCommon.template]

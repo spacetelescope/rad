@@ -223,4 +223,13 @@ tags:
   title: Telescope used to acquire the data
   description: |-
     Telescope used to acquire the data
+- tag_uri: asdf://stsci.edu/datamodels/roman/tags/unit-1.0.0
+  schema_uri: asdf://stsci.edu/datamodels/roman/schemas/unit/unit-1.0.0
+  title: Special Units used by Roman
+  description: |-
+    This represents the units used by Roman which are not part of
+    [VOUnit syntax, Version 1.0](http://www.ivoa.net/documents/VOUnits/index.html).
+
+    The specific non-VOUnit units used by Roman will be checked/enforced by the
+    converter.
 ...
