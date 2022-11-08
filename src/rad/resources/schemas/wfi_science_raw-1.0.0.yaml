@@ -18,9 +18,9 @@ properties:
     #ndim: 3
   amp33:
     title: Amp 33 reference pixel data.
-    tag: tag:stsci.edu:asdf/core/ndarray-1.0.0
-    datatype: uint16
-    ndim: 3
+    tag: tag:stsci.edu:asdf/unit/quantity-1.1.0
+    #datatype: uint16
+    #ndim: 3
     units:
       title: Units for the variable amp33.
       type: string

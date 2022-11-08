@@ -33,9 +33,9 @@ allOf:
       datatype: float32
     pedestal:
       title: Pedestal array
-      tag: tag:stsci.edu:asdf/core/ndarray-1.0.0
-      ndim: 2
-      datatype: float32
+      tag: tag:stsci.edu:asdf/unit/quantity-1.1.0
+      #ndim: 2
+      #datatype: float32
     weights:
       title: Weights for segment-specific fits
       tag: tag:stsci.edu:asdf/core/ndarray-1.0.0
@@ -43,19 +43,19 @@ allOf:
       datatype: float32
     crmag:
       title: Approximate CR magnitudes
-      tag: tag:stsci.edu:asdf/core/ndarray-1.0.0
-      ndim: 3
-      datatype: float32
+      tag: tag:stsci.edu:asdf/unit/quantity-1.1.0
+      #ndim: 3
+      #datatype: float32
     var_poisson:
       title: Variance due to poisson noise for segment-specific slope
-      tag: tag:stsci.edu:asdf/core/ndarray-1.0.0
-      ndim: 3
-      datatype: float32
+      tag: tag:stsci.edu:asdf/unit/quantity-1.1.0
+      #ndim: 3
+      #datatype: float32
     var_rnoise:
       title: Variance due to read noise for segment-specific slope
-      tag: tag:stsci.edu:asdf/core/ndarray-1.0.0
-      ndim: 3
-      datatype: float32
+      tag: tag:stsci.edu:asdf/unit/quantity-1.1.0
+      #ndim: 3
+      #datatype: float32
   required: [meta, slope, sigslope, yint, sigyint, pedestal, weights, crmag, var_poisson,
              var_rnoise]
   propertyOrder: [meta, slope, sigslope, yint, sigyint, pedestal, weights, crmag, var_poisson,

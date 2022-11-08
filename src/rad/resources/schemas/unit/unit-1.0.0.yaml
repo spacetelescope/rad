@@ -12,7 +12,7 @@ description: >
   converter.
 
 $ref: http://stsci.edu/schemas/asdf/unit/unit-1.0.0
-# enum: [DN, electron]
+#enum: [DN, electron]
 
 flowStyle: block
 ...
