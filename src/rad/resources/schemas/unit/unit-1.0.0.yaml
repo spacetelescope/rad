@@ -1,3 +1,4 @@
+/Users/phuwe/src/roman/array_quantities/rad
 %YAML 1.1
 ---
 $schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.0.0
@@ -12,7 +13,6 @@ description: >
   converter.
 
 $ref: http://stsci.edu/schemas/asdf/unit/unit-1.0.0
-#enum: [DN, electron]
 
 flowStyle: block
 ...
