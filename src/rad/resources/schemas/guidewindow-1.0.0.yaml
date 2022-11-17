@@ -62,7 +62,7 @@ properties:
               datatype: datetime2
               destination: [ScienceCommon.gw_function_end_time]
           gw_acq_exec_stat:
-            title: Guide star window acquisition execution status
+            title: Guide star window acquisition status
             type: string
             sdf:
               special_processing: VALUE_REQUIRED
@@ -73,6 +73,9 @@ properties:
               destination: [ScienceCommon.gw_acq_exec_stat]
           pedestal_resultant_exp_time:
             title: Total exposure time for the guide window pedestal frames
+            description: |
+               THe cummulative exposure time for all the guide window
+               pedestal frames
             type: number
             sdf:
               special_processing: VALUE_REQUIRED
@@ -83,6 +86,9 @@ properties:
               destination: [ScienceCommon.gw_pedestal_resultant_exp_time]
           signal_resultant_exp_time:
             title: Total exposure time for the guide window resultant frames
+            description: |
+              The cummulative exposure time for all the guide window
+              resultant frames
             type: number
             sdf:
               special_processing: VALUE_REQUIRED
@@ -92,7 +98,10 @@ properties:
               datatype: float
               destination: [ScienceCommon.gw_signal_resultant_exp_time]
           gw_acq_number:
-            title: Guide Window ID "Q", single digit representing the guide star acquisition number within the visit
+            title: Guide Window ID "Q"
+            description: |
+              A single digit representing the guide star acquisition
+              number within the visit
             type: number
             sdf:
               special_processing: VALUE_REQUIRED
