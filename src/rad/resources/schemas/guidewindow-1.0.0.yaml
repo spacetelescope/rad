@@ -102,7 +102,7 @@ properties:
             description: |
               A single digit representing the guide star acquisition
               number within the visit
-            type: number
+            type: integer
             sdf:
               special_processing: VALUE_REQUIRED
               source:
