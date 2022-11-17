@@ -74,7 +74,7 @@ properties:
           pedestal_resultant_exp_time:
             title: Total exposure time for the guide window pedestal frames
             description: |
-               THe cummulative exposure time for all the guide window
+               The cummulative exposure time for all the guide window
                pedestal frames
             type: number
             sdf:
