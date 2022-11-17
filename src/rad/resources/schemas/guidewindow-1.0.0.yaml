@@ -160,7 +160,7 @@ properties:
               datatype: float
               destination: [ScienceCommon.gw_window_ystop]
           gw_window_xsize:
-            title: Guide star window size in the x direction in detector coordinates
+            title: Guide window size in the x direction in detector coordinates
             type: number
             sdf:
               special_processing: VALUE_REQUIRED
@@ -170,7 +170,7 @@ properties:
               datatype: float
               destination: [ScienceCommon.gw_window_xsize]
           gw_window_ysize:
-            title: Guide star window size in the y direction in detector coordinates
+            title: Guide window size in the y direction in detector coordinates
             type: number
             sdf:
               special_processing: VALUE_REQUIRED
