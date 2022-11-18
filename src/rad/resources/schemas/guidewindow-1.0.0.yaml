@@ -180,20 +180,29 @@ properties:
     title: "Reconstituted and oriented pedestal frame GW images. Dimensions: num_frames,
             num_combined_resultants (or num_uncombined_resultants), num_reads, x, y"
     tag: tag:stsci.edu:asdf/unit/quantity-1.1.0
-    #datatype: uint16
-    #ndim: 5
+    properties:
+      value:
+        tag: tag:stsci.edu:asdf/core/ndarray-1.0.0
+        datatype: uint16
+        ndim: 5
   signal_frames:
     title: "Reconstituted and oriented signal frames. Dimensions: num_frames,
             num_combined_resultants (or num_uncombined_resultants), num_reads, x, y"
     tag: tag:stsci.edu:asdf/unit/quantity-1.1.0
-    #datatype: uint16
-    #ndim: 5
+    properties:
+      value:
+        tag: tag:stsci.edu:asdf/core/ndarray-1.0.0
+        datatype: uint16
+        ndim: 5
   amp33:
     title: "Amp 33 reference pixel data. Dimensions: num_frames,
             num_combined_resultants (or num_uncombined_resultants), num_reads, x, y"
     tag: tag:stsci.edu:asdf/unit/quantity-1.1.0
-    #datatype: uint16
-    #ndim: 5
+    properties:
+      value:
+        tag: tag:stsci.edu:asdf/core/ndarray-1.0.0
+        datatype: uint16
+        ndim: 5
 propertyOrder: [meta, pedestal_frames, signal_frames, amp33]
 flowStyle: block
 required: [meta, pedestal_frames, signal_frames, amp33]
