@@ -17,7 +17,7 @@ properties:
             sdf:
               special_processing: VALUE_REQUIRED
               source:
-                origin: TBD
+                origin: Science Data Formatting
             archive_catalog:
               datatype: datetime2
               destination: [ScienceCommon.gw_start_time]
@@ -27,7 +27,7 @@ properties:
             sdf:
               special_processing: VALUE_REQUIRED
               source:
-                origin: TBD
+                origin: Science Data Formatting
             archive_catalog:
               datatype: datetime2
               destination: [ScienceCommon.gw_end_time]
@@ -37,7 +37,7 @@ properties:
             sdf:
               special_processing: VALUE_REQUIRED
               source:
-                origin: TBD
+                origin: Science Data Formatting
             archive_catalog:
               datatype: float
               destination: [ScienceCommon.gw_frame_readout_time]
@@ -47,7 +47,7 @@ properties:
             sdf:
               special_processing: VALUE_REQUIRED
               source:
-                origin: TBD
+                origin: Science Data Formatting
             archive_catalog:
               datatype: datetime2
               destination: [ScienceCommon.gw_function_start_time]
@@ -57,47 +57,56 @@ properties:
             sdf:
               special_processing: VALUE_REQUIRED
               source:
-                origin: TBD
+                origin: Science Data Formatting
             archive_catalog:
               datatype: datetime2
               destination: [ScienceCommon.gw_function_end_time]
           gw_acq_exec_stat:
-            title: Guide star window acquisition execution status
+            title: Guide star window acquisition status
             type: string
             sdf:
               special_processing: VALUE_REQUIRED
               source:
-                origin: TBD
+                origin: Science Data Formatting
             archive_catalog:
               datatype: nvarchar(15)
               destination: [ScienceCommon.gw_acq_exec_stat]
           pedestal_resultant_exp_time:
-            title: Total exposure time for the resultant guide window frame
+            title: Total exposure time for the guide window pedestal frames
+            description: |
+               The cummulative exposure time for all the guide window
+               pedestal frames
             type: number
             sdf:
               special_processing: VALUE_REQUIRED
               source:
-                origin: TBD
+                origin: Science Data Formatting
             archive_catalog:
               datatype: float
               destination: [ScienceCommon.gw_pedestal_resultant_exp_time]
           signal_resultant_exp_time:
-            title: Total exposure time for the resultant guide window frame
+            title: Total exposure time for the guide window resultant frames
+            description: |
+              The cummulative exposure time for all the guide window
+              resultant frames
             type: number
             sdf:
               special_processing: VALUE_REQUIRED
               source:
-                origin: TBD
+                origin: Science Data Formatting
             archive_catalog:
               datatype: float
               destination: [ScienceCommon.gw_signal_resultant_exp_time]
           gw_acq_number:
             title: Guide Window ID "Q"
-            type: number
+            description: |
+              A single digit representing the guide star acquisition
+              number within the visit
+            type: integer
             sdf:
               special_processing: VALUE_REQUIRED
               source:
-                origin: TBD
+                origin: Science Data Formatting
             archive_catalog:
               datatype: int
               destination: [ScienceCommon.gw_acq_number]
@@ -106,67 +115,67 @@ properties:
             sdf:
               special_processing: VALUE_REQUIRED
               source:
-                origin: TBD
+                origin: Science Data Formatting
             archive_catalog:
               datatype: nvarchar(18)
               destination: [ScienceCommon.gw_mode]
           gw_window_xstart:
-            title: Guide window x position
+            title: Guide window x start position on the detector
             type: number
             sdf:
               special_processing: VALUE_REQUIRED
               source:
-                origin: TBD
+                origin: Science Data Formatting
             archive_catalog:
               datatype: float
               destination: [ScienceCommon.gw_window_xstart]
           gw_window_ystart:
-            title: Guide window y position
+            title: Guide window y start position on the detector
             type: number
             sdf:
               special_processing: VALUE_REQUIRED
               source:
-                origin: TBD
+                origin: Science Data Formatting
             archive_catalog:
               datatype: float
               destination: [ScienceCommon.gw_window_ystart]
           gw_window_xstop:
-            title: Guide window x stop position
+            title: Guide window x stop position on the detector
             type: number
             sdf:
               special_processing: VALUE_REQUIRED
               source:
-                origin: TBD
+                origin: Science Data Formatting
             archive_catalog:
               datatype: float
               destination: [ScienceCommon.gw_window_xstop]
           gw_window_ystop:
-            title: Guide window y stop position
+            title: Guide window y stop position on the detector
             type: number
             sdf:
               special_processing: VALUE_REQUIRED
               source:
-                origin: TBD
+                origin: Science Data Formatting
             archive_catalog:
               datatype: float
               destination: [ScienceCommon.gw_window_ystop]
           gw_window_xsize:
-            title: Guide star window size in x
+            title: Guide window size in the x direction in detector coordinates
             type: number
             sdf:
               special_processing: VALUE_REQUIRED
               source:
-                origin: TBD
+                origin: Science Data Formatting
             archive_catalog:
               datatype: float
               destination: [ScienceCommon.gw_window_xsize]
           gw_window_ysize:
-            title: Guide star window size in y
+            title: Guide window size in the y direction in detector coordinates
             type: number
             sdf:
               special_processing: VALUE_REQUIRED
               source:
-                origin: TBD
+                origin: Science Data Formatting
             archive_catalog:
               datatype: float
               destination: [ScienceCommon.gw_window_ysize]
