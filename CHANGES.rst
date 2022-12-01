@@ -1,10 +1,13 @@
-0.5.0 (unreleased)
+0.15.0 (unreleased)
 ==================
+
+- Update guidwindow titles and descriptions. [#193]
 
 0.14.0 (2022-11-04)
 -------------------
 
 - Use PSS views in SDF origin attribute. [#167]
+
 - Add support for specific non-VOUnit units used by Roman. [#168]
 
 0.13.2 (2022-08-23)
