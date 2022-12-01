@@ -3,6 +3,8 @@
 
 - Update guidwindow titles and descriptions. [#193]
 
+- Changed science arrays to quantities. [#192]
+
 0.14.0 (2022-11-04)
 -------------------
 
