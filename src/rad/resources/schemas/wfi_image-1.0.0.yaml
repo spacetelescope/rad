@@ -26,7 +26,7 @@ properties:
         ndim: 2
       unit:
         tag: asdf://stsci.edu/datamodels/roman/tags/unit-1.0.0
-        enum: ["electron / s"]	
+        enum: ["electron / s"]
   dq:
     tag: tag:stsci.edu:asdf/core/ndarray-1.0.0
     datatype: uint32
@@ -40,7 +40,7 @@ properties:
         ndim: 2
       unit:
         tag: asdf://stsci.edu/datamodels/roman/tags/unit-1.0.0
-        enum: ["electron / s"]	
+        enum: ["electron / s"]
   var_poisson:
     tag: tag:stsci.edu:asdf/unit/quantity-1.1.0
     properties:
@@ -50,7 +50,7 @@ properties:
         ndim: 2
       unit:
         tag: asdf://stsci.edu/datamodels/roman/tags/unit-1.0.0
-        enum: ["electron2 / s2"]	
+        enum: ["electron2 / s2"]
   var_rnoise:
     tag: tag:stsci.edu:asdf/unit/quantity-1.1.0
     properties:
@@ -60,7 +60,7 @@ properties:
         ndim: 2
       unit:
         tag: asdf://stsci.edu/datamodels/roman/tags/unit-1.0.0
-        enum: ["electron2 / s2"]	
+        enum: ["electron2 / s2"]
   var_flat:
     tag: tag:stsci.edu:asdf/unit/quantity-1.1.0
     properties:
@@ -70,7 +70,7 @@ properties:
         ndim: 2
       unit:
         tag: asdf://stsci.edu/datamodels/roman/tags/unit-1.0.0
-        enum: ["electron2 / s2"]	
+        enum: ["electron2 / s2"]
   amp33:
     title: Amp 33 reference pixel data
     tag: tag:stsci.edu:asdf/unit/quantity-1.1.0
@@ -81,7 +81,7 @@ properties:
         ndim: 3
       unit:
         tag: asdf://stsci.edu/datamodels/roman/tags/unit-1.0.0
-        enum: ["DN"]	
+        enum: ["DN"]
   border_ref_pix_left:
     title: Original border reference pixels, on left (from viewers perspective).
     tag: tag:stsci.edu:asdf/unit/quantity-1.1.0
@@ -92,7 +92,7 @@ properties:
         ndim: 3
       unit:
         tag: asdf://stsci.edu/datamodels/roman/tags/unit-1.0.0
-        enum: ["DN"]	
+        enum: ["DN"]
   border_ref_pix_right:
     title: Original border reference pixels, on right (from viewers perspective).
     tag: tag:stsci.edu:asdf/unit/quantity-1.1.0
@@ -103,7 +103,7 @@ properties:
         ndim: 3
       unit:
         tag: asdf://stsci.edu/datamodels/roman/tags/unit-1.0.0
-        enum: ["DN"]	
+        enum: ["DN"]
   border_ref_pix_top:
     title: Original border reference pixels, on top.
     tag: tag:stsci.edu:asdf/unit/quantity-1.1.0
@@ -114,7 +114,7 @@ properties:
         ndim: 3
       unit:
         tag: asdf://stsci.edu/datamodels/roman/tags/unit-1.0.0
-        enum: ["DN"]	
+        enum: ["DN"]
   border_ref_pix_bottom:
     title: Original border reference pixels, on bottom.
     tag: tag:stsci.edu:asdf/unit/quantity-1.1.0
@@ -125,7 +125,7 @@ properties:
         ndim: 3
       unit:
         tag: asdf://stsci.edu/datamodels/roman/tags/unit-1.0.0
-        enum: ["DN"]	
+        enum: ["DN"]
   dq_border_ref_pix_left:
     title: DQ for border reference pixels, on left (from viewers perspective).
     tag: tag:stsci.edu:asdf/core/ndarray-1.0.0
