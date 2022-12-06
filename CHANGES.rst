@@ -5,6 +5,8 @@
 
 - Changed science arrays to quantities. [#192]
 
+- Add units to the schemas for science data quantities to specify allowed values. [#195]
+
 0.14.0 (2022-11-04)
 -------------------
 
