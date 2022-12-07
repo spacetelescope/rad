@@ -21,7 +21,7 @@ allOf:
           ndim: 3
         unit:
           tag: asdf://stsci.edu/datamodels/roman/tags/unit-1.0.0
-          enum: ["DN", "electron / s"]
+          enum: ["electron / s"]
     sigslope:
       title: Sigma for segment-specific slope
       tag: tag:stsci.edu:asdf/unit/quantity-1.1.0
@@ -32,7 +32,7 @@ allOf:
           ndim: 3
         unit:
           tag: asdf://stsci.edu/datamodels/roman/tags/unit-1.0.0
-          enum: ["DN", "electron / s"]
+          enum: ["electron / s"]
     yint:
       title: Segment-specific y-intercept
       tag: tag:stsci.edu:asdf/unit/quantity-1.1.0
@@ -43,7 +43,7 @@ allOf:
           ndim: 3
         unit:
           tag: asdf://stsci.edu/datamodels/roman/tags/unit-1.0.0
-          enum: ["DN", "electron / s"]
+          enum: ["electron"]
     sigyint:
       title: Sigma for segment-specific y-intercept
       tag: tag:stsci.edu:asdf/unit/quantity-1.1.0
@@ -54,7 +54,7 @@ allOf:
           ndim: 3
         unit:
           tag: asdf://stsci.edu/datamodels/roman/tags/unit-1.0.0
-          enum: ["DN", "electron / s"]
+          enum: ["electron"]
     pedestal:
       title: Pedestal array
       tag: tag:stsci.edu:asdf/unit/quantity-1.1.0
@@ -65,7 +65,7 @@ allOf:
           ndim: 2
         unit:
           tag: asdf://stsci.edu/datamodels/roman/tags/unit-1.0.0
-          enum: ["DN", "electron / s"]
+          enum: ["electron"]
     weights:
       title: Weights for segment-specific fits
       tag: tag:stsci.edu:asdf/core/ndarray-1.0.0
@@ -83,7 +83,7 @@ allOf:
           ndim: 3
         unit:
           tag: asdf://stsci.edu/datamodels/roman/tags/unit-1.0.0
-          enum: ["count / s"]
+          enum: ["DN"]
     var_poisson:
       title: Variance due to poisson noise for segment-specific slope
       tag: tag:stsci.edu:asdf/unit/quantity-1.1.0
