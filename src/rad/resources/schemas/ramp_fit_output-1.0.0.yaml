@@ -13,24 +13,48 @@ allOf:
         - $ref: common-1.0.0
     slope:
       title: Segment-specific slope
-      tag: tag:stsci.edu:asdf/core/ndarray-1.0.0
-      ndim: 3
-      datatype: float32
+      tag: tag:stsci.edu:asdf/unit/quantity-1.1.0
+      properties:
+        value:
+          tag: tag:stsci.edu:asdf/core/ndarray-1.0.0
+          datatype: float32
+          ndim: 3
+        unit:
+          tag: asdf://stsci.edu/datamodels/roman/tags/unit-1.0.0
+          enum: ["electron / s"]
     sigslope:
       title: Sigma for segment-specific slope
-      tag: tag:stsci.edu:asdf/core/ndarray-1.0.0
-      ndim: 3
-      datatype: float32
+      tag: tag:stsci.edu:asdf/unit/quantity-1.1.0
+      properties:
+        value:
+          tag: tag:stsci.edu:asdf/core/ndarray-1.0.0
+          datatype: float32
+          ndim: 3
+        unit:
+          tag: asdf://stsci.edu/datamodels/roman/tags/unit-1.0.0
+          enum: ["electron / s"]
     yint:
       title: Segment-specific y-intercept
-      tag: tag:stsci.edu:asdf/core/ndarray-1.0.0
-      ndim: 3
-      datatype: float32
+      tag: tag:stsci.edu:asdf/unit/quantity-1.1.0
+      properties:
+        value:
+          tag: tag:stsci.edu:asdf/core/ndarray-1.0.0
+          datatype: float32
+          ndim: 3
+        unit:
+          tag: asdf://stsci.edu/datamodels/roman/tags/unit-1.0.0
+          enum: ["electron"]
     sigyint:
       title: Sigma for segment-specific y-intercept
-      tag: tag:stsci.edu:asdf/core/ndarray-1.0.0
-      ndim: 3
-      datatype: float32
+      tag: tag:stsci.edu:asdf/unit/quantity-1.1.0
+      properties:
+        value:
+          tag: tag:stsci.edu:asdf/core/ndarray-1.0.0
+          datatype: float32
+          ndim: 3
+        unit:
+          tag: asdf://stsci.edu/datamodels/roman/tags/unit-1.0.0
+          enum: ["electron"]
     pedestal:
       title: Pedestal array
       tag: tag:stsci.edu:asdf/unit/quantity-1.1.0
@@ -39,6 +63,9 @@ allOf:
           tag: tag:stsci.edu:asdf/core/ndarray-1.0.0
           datatype: float32
           ndim: 2
+        unit:
+          tag: asdf://stsci.edu/datamodels/roman/tags/unit-1.0.0
+          enum: ["electron"]
     weights:
       title: Weights for segment-specific fits
       tag: tag:stsci.edu:asdf/core/ndarray-1.0.0
@@ -52,6 +79,9 @@ allOf:
           tag: tag:stsci.edu:asdf/core/ndarray-1.0.0
           datatype: float32
           ndim: 3
+        unit:
+          tag: asdf://stsci.edu/datamodels/roman/tags/unit-1.0.0
+          enum: ["electron"]
     var_poisson:
       title: Variance due to poisson noise for segment-specific slope
       tag: tag:stsci.edu:asdf/unit/quantity-1.1.0
@@ -60,6 +90,9 @@ allOf:
           tag: tag:stsci.edu:asdf/core/ndarray-1.0.0
           datatype: float32
           ndim: 3
+        unit:
+          tag: asdf://stsci.edu/datamodels/roman/tags/unit-1.0.0
+          enum: ["electron2 / s2"]
     var_rnoise:
       title: Variance due to read noise for segment-specific slope
       tag: tag:stsci.edu:asdf/unit/quantity-1.1.0
@@ -68,6 +101,9 @@ allOf:
           tag: tag:stsci.edu:asdf/core/ndarray-1.0.0
           datatype: float32
           ndim: 3
+        unit:
+          tag: asdf://stsci.edu/datamodels/roman/tags/unit-1.0.0
+          enum: ["electron2 / s2"]
   required: [meta, slope, sigslope, yint, sigyint, pedestal, weights, crmag, var_poisson,
              var_rnoise]
   propertyOrder: [meta, slope, sigslope, yint, sigyint, pedestal, weights, crmag, var_poisson,
