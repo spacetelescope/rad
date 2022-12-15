@@ -74,8 +74,6 @@ allOf:
     crmag:
       title: Approximate CR magnitudes
       tag: tag:stsci.edu:asdf/unit/quantity-1.1.0
-      # Possibly use u.Magnitude instead?
-      # https://docs.astropy.org/en/stable/units/logarithmic_units.html
       properties:
         value:
           tag: tag:stsci.edu:asdf/core/ndarray-1.0.0
