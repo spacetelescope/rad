@@ -42,13 +42,13 @@ except ImportError:
     print("ERROR: the documentation requires the sphinx-astropy package to be installed")
     sys.exit(1)
 
-# Get configuration information from setup.cfg
+# Get configuration information from .flake8
 try:
     from ConfigParser import ConfigParser
 except ImportError:
     from configparser import ConfigParser
 conf = ConfigParser()
-conf.read([os.path.join(os.path.dirname(__file__), "..", "setup.cfg")])
+conf.read([os.path.join(os.path.dirname(__file__), "..", ".flake8")])
 setup_cfg = dict(conf.items("metadata"))
 
 # -- General configuration ----------------------------------------------------
