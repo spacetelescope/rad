@@ -5,6 +5,8 @@
 
 - Switch linting from ``flake8`` to ``ruff``. [#201]
 
+- Start using ``codespell`` to check and correct spelling mistakes. [#202]
+
 0.14.1 (2023-01-31)
 -------------------
 
