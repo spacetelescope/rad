@@ -25,12 +25,12 @@ repos:
     - id: rst-inline-touching-normal
     - id: text-unicode-replacement-char
 
-# - repo: https://github.com/asottile/pyupgrade
-#   rev: 'v3.3.1'
-#   hooks:
-#     - id: pyupgrade
-#       args: ["--py38-plus"]
-#       exclude: "asdf/extern/.*"
+- repo: https://github.com/asottile/pyupgrade
+  rev: 'v3.3.1'
+  hooks:
+    - id: pyupgrade
+      args: ["--py38-plus"]
+      exclude: "asdf/extern/.*"
 
 # - repo: https://github.com/PyCQA/bandit
 #   rev: 1.7.4
