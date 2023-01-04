@@ -77,3 +77,16 @@ asdf_schema_root = 'src/rad/resources/schemas'
 profile = "black"
 filter_files = true
 line_length = 130
+
+[tool.black]
+line-length = 130
+force-exclude = '''
+^/(
+  (
+      \.eggs
+    | \.git
+    | \.pytest_cache
+    | \.tox
+  )/
+)
+'''
