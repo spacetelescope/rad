@@ -1,5 +1,7 @@
-0.5.0 (unreleased)
-==================
+0.15.0 (unreleased)
+-------------------
+
+- Format the code with ``isort`` and ``black``. [#200]
 
 0.14.1 (2023-01-31)
 -------------------
@@ -30,8 +32,7 @@
 
 - Add reftype to IPC Schema. [#214]
 
-
-  0.14.0 (2022-11-04)
+0.14.0 (2022-11-04)
 -------------------
 
 - Use PSS views in SDF origin attribute. [#167]
