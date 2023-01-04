@@ -11,6 +11,8 @@
 
 - move metadata to ``pyproject.toml`` in accordance with PEP621 [#196]
 
+- Add ``pre-commit`` support. [#199]
+
 0.14.0 (2022-11-04)
 -------------------
 
