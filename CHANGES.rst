@@ -7,6 +7,8 @@
 
 - Add units to the schemas for science data quantities to specify allowed values. [#195]
 
+- Update Reference file schemas to utilize quantities for all relevant arrays. [#198]
+
 0.14.0 (2022-11-04)
 -------------------
 
