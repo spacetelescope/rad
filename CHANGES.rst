@@ -7,6 +7,8 @@
 
 - Add units to the schemas for science data quantities to specify allowed values. [#195]
 
+- Fix ``enum`` bug in schemas. [#194]
+
 0.14.0 (2022-11-04)
 -------------------
 
