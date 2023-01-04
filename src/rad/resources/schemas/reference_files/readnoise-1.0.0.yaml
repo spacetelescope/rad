@@ -17,9 +17,15 @@ properties:
       - $ref: ref_exposure_type-1.0.0
   data:
     title: Read noise data array
-    tag: tag:stsci.edu:asdf/core/ndarray-1.0.0
-    datatype: float32
-    ndim: 2
+    tag: tag:stsci.edu:asdf/unit/quantity-1.1.0
+    properties:
+      value:
+        tag: tag:stsci.edu:asdf/core/ndarray-1.0.0
+        datatype: float32
+        ndim: 2
+      unit:
+        tag: asdf://stsci.edu/datamodels/roman/tags/unit-1.0.0
+        enum: ["DN"]
 required: [meta, data]
 flowStyle: block
 propertyOrder: [meta, data]
