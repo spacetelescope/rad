@@ -1,13 +1,12 @@
 """
 Test features of the schemas not covered by the metaschema.
 """
+import re
 from collections.abc import Mapping
 
 import asdf
 import pytest
 import yaml
-import re
-
 
 SCHEMA_URI_PREFIX = "asdf://stsci.edu/datamodels/roman/schemas/"
 METASCHEMA_URI = "asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.0.0"

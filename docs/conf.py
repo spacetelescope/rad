@@ -25,15 +25,13 @@
 import datetime
 import os
 import sys
-
-import stsci_rtd_theme
-
 from pathlib import Path
-from importlib_metadata import distribution
-import tomli
 
 # Ensure documentation examples are determinstically random.
 import numpy
+import stsci_rtd_theme
+import tomli
+from importlib_metadata import distribution
 
 try:
     numpy.random.seed(int(os.environ["SOURCE_DATE_EPOCH"]))
