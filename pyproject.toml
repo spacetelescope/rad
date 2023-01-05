@@ -31,7 +31,7 @@ docs = [
     'matplotlib',
     'docutils',
     'stsci-rtd-theme',
-    'tomli',
+    'tomli; python_version <"3.11"',
     'importlib-metadata',
 ]
 
