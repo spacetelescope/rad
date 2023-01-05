@@ -31,6 +31,8 @@ docs = [
     'matplotlib',
     'docutils',
     'stsci-rtd-theme',
+    'tomli',
+    'importlib-metadata',
 ]
 
 [project.urls]

@@ -1,5 +1,5 @@
 0.15.0 (unreleased)
-==================
+-------------------
 
 - Update guidwindow titles and descriptions. [#193]
 
