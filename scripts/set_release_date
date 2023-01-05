@@ -29,5 +29,6 @@ def main():
 
     print(version, end=None)
 
+
 if __name__ == "__main__":
     main()

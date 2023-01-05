@@ -28,6 +28,10 @@ import sys
 
 import stsci_rtd_theme
 
+from pathlib import Path
+from importlib_metadata import distribution
+import tomli
+
 # Ensure documentation examples are determinstically random.
 import numpy
 
@@ -37,30 +41,27 @@ except KeyError:
     pass
 
 try:
-    from sphinx_astropy.conf.v1 import *  # noqa
+    from sphinx_astropy.conf.v1 import *  # noqa: F403
 except ImportError:
     print("ERROR: the documentation requires the sphinx-astropy package to be installed")
     sys.exit(1)
 
-# Get configuration information from setup.cfg
-try:
-    from ConfigParser import ConfigParser
-except ImportError:
-    from configparser import ConfigParser
-conf = ConfigParser()
-conf.read([os.path.join(os.path.dirname(__file__), "..", "setup.cfg")])
-setup_cfg = dict(conf.items("metadata"))
+# Get configuration information from pyproject.toml
+with open(Path(__file__).parent.parent / "pyproject.toml", "rb") as configuration_file:
+    conf = tomli.load(configuration_file)
+configuration = conf["project"]
+
 
 # -- General configuration ----------------------------------------------------
 
 # If your documentation needs a minimal Sphinx version, state it here.
 # needs_sphinx = '1.2'
 
-intersphinx_mapping["pypa-packaging"] = ("https://packaging.python.org/en/latest/", None)  # noqa
-intersphinx_mapping["asdf"] = ("https://asdf.readthedocs.io/en/latest/", None)  # noqa
-intersphinx_mapping["asdf-standard"] = ("https://asdf-standard.readthedocs.io/en/latest/", None)  # noqa
-intersphinx_mapping["asdf-astropy"] = ("https://asdf-astropy.readthedocs.io/en/latest/", None)  # noqa
-intersphinx_mapping["pytest"] = ("https://docs.pytest.org/en/latest/", None)  # noqa
+intersphinx_mapping["pypa-packaging"] = ("https://packaging.python.org/en/latest/", None)  # noqa: E501, F405
+intersphinx_mapping["asdf"] = ("https://asdf.readthedocs.io/en/latest/", None)  # noqa: E501, F405
+intersphinx_mapping["asdf-standard"] = ("https://asdf-standard.readthedocs.io/en/latest/", None)  # noqa: E501, F405
+intersphinx_mapping["asdf-astropy"] = ("https://asdf-astropy.readthedocs.io/en/latest/", None)  # noqa: E501, F405
+intersphinx_mapping["pytest"] = ("https://docs.pytest.org/en/latest/", None)  # noqa: E501, F405
 
 # To perform a Sphinx version check that needs to be more specific than
 # major.minor, call `check_sphinx_version("x.y.z")` here.
@@ -68,25 +69,20 @@ intersphinx_mapping["pytest"] = ("https://docs.pytest.org/en/latest/", None)  # 
 
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
-exclude_patterns.append("_templates")  # noqa
+exclude_patterns.append("_templates")  # noqa: F405
 
 # This is added to the end of RST files - a good place to put substitutions to
 # be used globally.
-rst_epilog += """"""  # noqa
+rst_epilog += """"""  # noqa: F405
 
 # -- Project information ------------------------------------------------------
 
 # This does not *have* to match the package name, but typically does
-project = setup_cfg["name"]
-author = setup_cfg["author"]
-copyright = "{0}, {1}".format(datetime.datetime.now().year, setup_cfg["author"])
+project = configuration["name"]
+author = f"{configuration['authors'][0]['name']} <{configuration['authors'][0]['email']}>"
+copyright = f"{datetime.datetime.now().year}, {configuration['authors'][0]['name']}"
 
-# The version info for the project you're documenting, acts as replacement for
-# |version| and |release|, also used in various other places throughout the
-# built documents.
-from pkg_resources import get_distribution  # noqa
-
-release = get_distribution(setup_cfg["name"]).version
+release = distribution(configuration["name"]).version
 # for example take major/minor
 version = ".".join(release.split(".")[:2])
 
@@ -126,7 +122,7 @@ html_logo = "_static/stsci_logo.png"
 
 # The name for this set of Sphinx documents.  If None, it defaults to
 # "<project> v<release> documentation".
-html_title = "{0} v{1}".format(project, release)
+html_title = f"{project} v{release}"
 
 # Output file base name for HTML help builder.
 htmlhelp_basename = project + "doc"
@@ -148,7 +144,7 @@ latex_logo = "_static/stsci_logo.png"
 man_pages = [("index", project.lower(), project + " Documentation", [author], 1)]
 
 sys.path.insert(0, os.path.join(os.path.abspath(os.path.dirname("__file__")), "sphinxext"))
-extensions += ["sphinx_asdf"]  # noqa
+extensions += ["sphinx_asdf"]  # noqa: F405
 
 
 def setup(app):

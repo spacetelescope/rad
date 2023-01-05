@@ -40,11 +40,6 @@ jobs:
             python-version: 3.8
             toxenv: style
 
-          - name: Bandit security audit
-            runs-on: ubuntu-latest
-            python-version: 3.8
-            toxenv: bandit
-
           - name: macOS
             runs-on: macos-latest
             python-version: 3.8
