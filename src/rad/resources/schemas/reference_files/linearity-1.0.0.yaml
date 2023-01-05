@@ -17,6 +17,10 @@ properties:
             enum: [LINEARITY]
   coeffs:
     title: Linearity coefficients
+    description: |
+      These coefficients describe a polynomial taking DN to DN,
+      the coefficients themselves do not have units of DN, the
+      units are here for the transformation.
     tag: tag:stsci.edu:asdf/unit/quantity-1.1.0
     properties:
       value:
