@@ -10,16 +10,11 @@ import yaml
 
 SCHEMA_URI_PREFIX = "asdf://stsci.edu/datamodels/roman/schemas/"
 METASCHEMA_URI = "asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.0.0"
-SCHEMA_URIS = [
-    u for u in asdf.get_config().resource_manager
-    if u.startswith(SCHEMA_URI_PREFIX) and u != METASCHEMA_URI
-]
-WFI_OPTICAL_ELEMENTS = list(asdf.schema.load_schema(
-    "asdf://stsci.edu/datamodels/roman/schemas/wfi_optical_element-1.0.0")
-    ["enum"])
-EXPOSURE_TYPE_ELEMENTS = list(asdf.schema.load_schema(
-    "asdf://stsci.edu/datamodels/roman/schemas/exposure_type-1.0.0")
-    ["enum"])
+SCHEMA_URIS = [u for u in asdf.get_config().resource_manager if u.startswith(SCHEMA_URI_PREFIX) and u != METASCHEMA_URI]
+WFI_OPTICAL_ELEMENTS = list(
+    asdf.schema.load_schema("asdf://stsci.edu/datamodels/roman/schemas/wfi_optical_element-1.0.0")["enum"]
+)
+EXPOSURE_TYPE_ELEMENTS = list(asdf.schema.load_schema("asdf://stsci.edu/datamodels/roman/schemas/exposure_type-1.0.0")["enum"])
 
 
 @pytest.fixture(scope="session", params=SCHEMA_URIS)
@@ -35,12 +30,14 @@ def schema(request):
 @pytest.fixture(scope="session")
 def valid_tag_uris(manifest):
     uris = {t["tag_uri"] for t in manifest["tags"]}
-    uris.update([
-        "tag:stsci.edu:asdf/time/time-1.1.0",
-        "tag:stsci.edu:asdf/core/ndarray-1.0.0",
-        "tag:stsci.edu:asdf/unit/quantity-1.1.0",
-        "tag:stsci.edu:asdf/unit/unit-1.0.0",
-    ])
+    uris.update(
+        [
+            "tag:stsci.edu:asdf/time/time-1.1.0",
+            "tag:stsci.edu:asdf/core/ndarray-1.0.0",
+            "tag:stsci.edu:asdf/unit/quantity-1.1.0",
+            "tag:stsci.edu:asdf/unit/unit-1.0.0",
+        ]
+    )
     return uris
 
 
@@ -61,6 +58,7 @@ def test_property_order(schema, manifest):
     is_tag_schema = schema["id"] in {t["schema_uri"] for t in manifest["tags"]}
 
     if is_tag_schema:
+
         def callback(node):
             if isinstance(node, Mapping) and "propertyOrder" in node:
                 assert node.get("type") == "object"
@@ -78,6 +76,7 @@ def test_property_order(schema, manifest):
 
         asdf.treeutil.walk(schema, callback)
     else:
+
         def callback(node):
             if isinstance(node, Mapping):
                 assert "propertyOrder" not in node, "Only schemas associated with a tag may specify propertyOrder"
@@ -114,6 +113,7 @@ def test_flowstyle(schema, manifest):
 
         assert found_flowstyle, "Schemas associated with a tag must specify flowStyle: block"
     else:
+
         def callback(node):
             if isinstance(node, Mapping):
                 assert "flowStyle" not in node, "Only schemas associated with a tag may specify flowStyle"
@@ -131,9 +131,11 @@ def test_tag(schema, valid_tag_uris):
 
 # Confirm that the optical_element filter in wfi_img_photom.yml matches WFI_OPTICAL_ELEMENTS
 def test_matched_optical_element_entries():
-    phot_table_keys = list(asdf.schema.load_schema(
-        "asdf://stsci.edu/datamodels/roman/schemas/reference_files/wfi_img_photom-1.0.0")
-        ["properties"]["phot_table"]["patternProperties"])
+    phot_table_keys = list(
+        asdf.schema.load_schema("asdf://stsci.edu/datamodels/roman/schemas/reference_files/wfi_img_photom-1.0.0")["properties"][
+            "phot_table"
+        ]["patternProperties"]
+    )
     r = re.compile(phot_table_keys[0])
     for element_str in WFI_OPTICAL_ELEMENTS:
         assert r.search(element_str)
@@ -141,9 +143,9 @@ def test_matched_optical_element_entries():
 
 # Confirm that the p_keyword version of exposure type match the enum version
 def test_matched_p_exptype_entries():
-    p_exptype = asdf.schema.load_schema(
-        "asdf://stsci.edu/datamodels/roman/schemas/reference_files/ref_exposure_type-1.0.0")[
-        "properties"]["exposure"]["properties"]["p_exptype"]["pattern"]
+    p_exptype = asdf.schema.load_schema("asdf://stsci.edu/datamodels/roman/schemas/reference_files/ref_exposure_type-1.0.0")[
+        "properties"
+    ]["exposure"]["properties"]["p_exptype"]["pattern"]
     r = re.compile(p_exptype)
     for element_str in EXPOSURE_TYPE_ELEMENTS:
-        assert r.search(element_str + '|')
+        assert r.search(element_str + "|")
