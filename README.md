@@ -1,7 +1,7 @@
 # Roman Attribute Dictionary
 
 
-This is a repository for the Roman Attribute Dictionary 
+This is a repository for the Roman Attribute Dictionary
 
 
 ## Installation
@@ -17,4 +17,3 @@ To install the latest code from the repository
 To use the library
 
     >>> import rad
-
