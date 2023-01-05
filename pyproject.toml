@@ -1,6 +1,74 @@
+[project]
+name = 'rad'
+description = 'Roman Attribute Dictionary'
+readme = { file = 'README.md', content-type = 'text/x-markdown' }
+requires-python = '>=3.6'
+license = { file = 'LICENSE' }
+authors = [{ name = 'STScI', email = 'help@stsci.edu' }]
+classifiers = [
+    'Intended Audience :: Science/Research',
+    'Topic :: Scientific/Engineering :: Astronomy',
+    'License :: OSI Approved :: BSD License',
+    'Programming Language :: Python :: 3',
+]
+dependencies = [
+    'asdf >=2.14.2',
+]
+dynamic = ['version']
+
+[project.optional-dependencies]
+test = [
+    'pytest>=4.6.0',
+    'pytest-openfiles>=0.5.0',
+    'pytest-doctestplus>=0.11.1',
+]
+docs = [
+    'sphinx',
+    'sphinx-asdf>=0.1.3',
+    'sphinx-astropy',
+    'astropy>=5.0.4',
+    'graphviz',
+    'matplotlib',
+    'docutils',
+    'stsci-rtd-theme',
+    'tomli; python_version <"3.11"',
+    'importlib-metadata',
+]
+
+[project.urls]
+'Bug Tracker' = 'https://github.com/spacetelescope/rad/issues'
+'Source Code' = 'https://github.com/spacetelescope/rad'
+
+[project.entry-points]
+'asdf.resource_mappings' = { 'rad' = 'rad.integration:get_resource_mappings' }
+
 [build-system]
-requires = ["setuptools>=42", "setuptools_scm[toml]>=3.4", "wheel"]
+requires = ["setuptools >=61", "setuptools_scm[toml] >=3.4", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [tool.setuptools_scm]
 write_to = "src/rad/_version.py"
+
+[tool.setuptools.packages.find]
+where = ['src']
+
+[tool.package-data]
+'rad.resources' = [
+    'manifests/*.yaml',
+    'schemas/*.yaml',
+    'schemas/**/*.yaml',
+]
+
+[tool.pytest.ini_options]
+minversion = 4.6
+doctest_plus = true
+doctest_rst = true
+text_file_format = 'rst'
+addopts = '--show-capture=no --open-files'
+testpaths = [
+    'tests',
+    'src/rad/resources/schemas',
+]
+asdf_schema_tests_enabled = 'true'
+asdf_schema_skip_tests = 'src/rad/resources/schemas/rad_schema-1.0.0.yaml'
+asdf_schema_root = 'src/rad/resources/schemas'

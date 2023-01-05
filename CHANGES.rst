@@ -1,5 +1,5 @@
 0.15.0 (unreleased)
-==================
+-------------------
 
 - Update guidwindow titles and descriptions. [#193]
 
@@ -8,6 +8,8 @@
 - Add units to the schemas for science data quantities to specify allowed values. [#195]
 
 - Fix ``enum`` bug in schemas. [#194]
+
+- move metadata to ``pyproject.toml`` in accordance with PEP621 [#196]
 
 0.14.0 (2022-11-04)
 -------------------
