@@ -17,11 +17,11 @@ properties:
             enum: [LINEARITY]
           input_units:
             title: Units of the input to the linearity polynomial.
-            tag: tag:stsci.edu:asdf/unit/unit-1.0.0
+            tag: asdf://stsci.edu/datamodels/roman/tags/unit-1.0.0
             enum: ["DN"]
           output_units:
             title: Units of the input to the linearity polynomial.
-            tag: tag:stsci.edu:asdf/unit/unit-1.0.0
+            tag: asdf://stsci.edu/datamodels/roman/tags/unit-1.0.0
             enum: ["DN"]
         required: [output_units, input_units]
   coeffs:
