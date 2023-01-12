@@ -38,19 +38,34 @@ properties:
       - $ref: ref_optical_element-1.0.0
   data:
     title: Dark current array
-    tag: tag:stsci.edu:asdf/core/ndarray-1.0.0
-    datatype: float32
-    ndim: 3
+    description: |
+       The dark current array represents the integrated number of counts
+       due to the accumulation of dark current electrons in the pixels.
+    tag: tag:stsci.edu:asdf/unit/quantity-1.1.0
+    properties:
+      value:
+        tag: tag:stsci.edu:asdf/core/ndarray-1.0.0
+        datatype: float32
+        ndim: 3
+      unit:
+        tag: asdf://stsci.edu/datamodels/roman/tags/unit-1.0.0
+        enum: ["DN"]
   dq:
     title: 2-D data quality array for all planes
     tag: tag:stsci.edu:asdf/core/ndarray-1.0.0
     datatype: uint32
     ndim: 2
   err:
-    title: Error array
-    tag: tag:stsci.edu:asdf/core/ndarray-1.0.0
-    datatype: float32
-    ndim: 3
+    title: Uncertainty in dark current array
+    tag: tag:stsci.edu:asdf/unit/quantity-1.1.0
+    properties:
+      value:
+        tag: tag:stsci.edu:asdf/core/ndarray-1.0.0
+        datatype: float32
+        ndim: 3
+      unit:
+        tag: asdf://stsci.edu/datamodels/roman/tags/unit-1.0.0
+        enum: ["DN"]
 required: [meta, data, dq, err]
 flowStyle: block
 propertyOrder: [meta, data, dq, err]

@@ -7,11 +7,14 @@
 
 - Add units to the schemas for science data quantities to specify allowed values. [#195]
 
+- Update Reference file schemas to utilize quantities for all relevant arrays. [#198]
+
 - Fix ``enum`` bug in schemas. [#194]
 
 - move metadata to ``pyproject.toml`` in accordance with PEP621 [#196]
 
 - Add ``pre-commit`` support. [#199]
+
 
 0.14.0 (2022-11-04)
 -------------------
