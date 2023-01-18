@@ -15,6 +15,8 @@
 
 - Add ``pre-commit`` support. [#199]
 
+- Add IPC reference schema. [#203]
+
 
 0.14.0 (2022-11-04)
 -------------------
