@@ -15,6 +15,7 @@
 
 - Add ``pre-commit`` support. [#199]
 
+- Adjust activity identifier in observation schema to better reflect potential values. [#204]
 
 0.14.0 (2022-11-04)
 -------------------
