@@ -15,6 +15,8 @@
 
 - Add ``pre-commit`` support. [#199]
 
+- Created inverse non-linearity schema. [#213]
+
 
 0.14.0 (2022-11-04)
 -------------------
