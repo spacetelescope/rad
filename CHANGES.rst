@@ -15,6 +15,7 @@
 
 - Add ``pre-commit`` support. [#199]
 
+- Changed SDF "origin" in ephemeris-1.0.0.yaml to use definitve/predicted ephemeris. [#207]
 
 0.14.0 (2022-11-04)
 -------------------
