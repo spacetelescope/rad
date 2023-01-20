@@ -129,18 +129,6 @@ properties:
     archive_catalog:
       datatype: float
       destination: [ScienceCommon.proposer_dec]
-  source_type_apt:
-    title: Source type from APT (point/extended)
-    type: string
-    enum: [EXTENDED, POINT, UNKNOWN]
-    sdf:
-      special_processing: VALUE_REQUIRED
-      source:
-        origin: PSS:target.extended
-        function: convert_extended
-    archive_catalog:
-      datatype: nvarchar(8)
-      destination: [ScienceCommon.source_type_apt]
   source_type:
     title: Source type used for calibration
     type: string
@@ -154,9 +142,9 @@ properties:
       destination: [ScienceCommon.source_type]
 propertyOrder: [proposer_name, catalog_name, type, ra, dec, ra_uncertainty, dec_uncertainty,
            proper_motion_ra, proper_motion_dec, proper_motion_epoch,
-           proposer_ra, proposer_dec, source_type_apt, source_type]
+           proposer_ra, proposer_dec, source_type]
 flowStyle: block
 required: [proposer_name, catalog_name, type, ra, dec, ra_uncertainty, dec_uncertainty,
            proper_motion_ra, proper_motion_dec, proper_motion_epoch,
-           proposer_ra, proposer_dec, source_type_apt, source_type]
+           proposer_ra, proposer_dec, source_type]
 ...
