@@ -15,6 +15,8 @@
 
 - Add ``pre-commit`` support. [#199]
 
+- Updated  the variable type of x/y start/stop/size in guidewindow and guidestar schemas. [#205]
+
 
 0.14.0 (2022-11-04)
 -------------------
