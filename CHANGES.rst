@@ -15,6 +15,7 @@
 
 - Add ``pre-commit`` support. [#199]
 
+- Deleted source_type_apt from target-1.0.0.yaml [#206]
 
 0.14.0 (2022-11-04)
 -------------------
