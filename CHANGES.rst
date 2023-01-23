@@ -15,6 +15,8 @@
 
 - Add ``pre-commit`` support. [#199]
 
+- Add IPC reference schema. [#203]
+
 - Updated  the variable type of x/y start/stop/size in guidewindow and guidestar schemas. [#205]
 
 - Changed SDF "origin" in ephemeris-1.0.0.yaml to use definitve/predicted ephemeris. [#207]
