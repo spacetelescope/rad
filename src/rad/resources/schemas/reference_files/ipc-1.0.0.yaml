@@ -1,0 +1,25 @@
+%YAML 1.1
+---
+$schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.0.0
+id: asdf://stsci.edu/datamodels/roman/schemas/reference_files/ipc-1.0.0
+
+title: IPC kernel reference schema
+
+type: object
+properties:
+  meta:
+    allOf:
+      - $ref: ref_common-1.0.0
+      - $ref: ref_optical_element-1.0.0
+  data:
+    title: Interpixel capacitance correction kernel array
+    description: |
+      Reference kernel used for convolving with data in order to correct
+      for interpixel capacitance
+    tag: tag:stsci.edu:asdf/core/ndarray-1.0.0
+    datatype: float32
+    ndim: 2
+required: [meta, data]
+flowStyle: block
+propertyOrder: [meta, data]
+...
