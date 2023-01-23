@@ -122,7 +122,7 @@ properties:
       datatype: tinyint
       destination: [ScienceCommon.visit_file_sequence]
   visit_file_activity:
-    title: Visit file activity within the sequence, defined range of values is 1..99; included in
+    title: Visit file activity within the sequence, defined range of values is 1..ZZ; included in
            obs_id as 'aa'.
     type: string
     sdf:
