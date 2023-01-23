@@ -198,11 +198,33 @@ properties:
     archive_catalog:
       datatype: float
       destination: [ScienceCommon.gs_pattern_error]
+  gw_window_xstart:
+    title: Guide window x start position on the detector
+    type: integer
+  gw_window_ystart:
+    title: Guide window y start position on the detector
+    type: integer
+  gw_window_xstop:
+    title: Guide window x stop position on the detector
+    type: integer
+  gw_window_ystop:
+    title: Guide window y stop position on the detector
+    type: integer
+  gw_window_xsize:
+    title: Guide window size in the x direction in detector coordinates
+    type: integer
+  gw_window_ysize:
+    title: Guide window size in the y direction in detector coordinates
+    type: integer
 propertyOrder: [gw_id, gs_ra, gs_dec, gs_ura, gs_udec, gs_mag, gs_umag, gw_fgs_mode,
-           data_start, data_end, gs_ctd_x, gs_ctd_y, gs_ctd_ux, gs_ctd_uy,
-           gs_epoch, gs_mura, gs_mudec, gs_para, gs_pattern_error]
+                data_start, data_end, gs_ctd_x, gs_ctd_y, gs_ctd_ux, gs_ctd_uy,
+                gs_epoch, gs_mura, gs_mudec, gs_para, gs_pattern_error, gw_window_xstart,
+                gw_window_ystart, gw_window_xstop, gw_window_ystop, gw_window_xsize,
+                gw_window_ysize]
 flowStyle: block
 required: [gw_id, gs_ra, gs_dec, gs_ura, gs_udec, gs_mag, gs_umag, gw_fgs_mode,
            data_start, data_end, gs_ctd_x, gs_ctd_y, gs_ctd_ux, gs_ctd_uy,
-           gs_epoch, gs_mura, gs_mudec, gs_para, gs_pattern_error]
+           gs_epoch, gs_mura, gs_mudec, gs_para, gs_pattern_error, gw_window_xstart,
+           gw_window_ystart, gw_window_xstop, gw_window_ystop, gw_window_xsize,
+           gw_window_ysize]
 ...
