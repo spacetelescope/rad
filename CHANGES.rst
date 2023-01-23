@@ -15,12 +15,14 @@
 
 - Add ``pre-commit`` support. [#199]
 
+- Changed SDF "origin" in ephemeris-1.0.0.yaml to use definitve/predicted ephemeris. [#207]
+
 - Adjust activity identifier in observation schema to better reflect potential values. [#204]
 
 - Deleted source_type_apt from target-1.0.0.yaml [#206]
 
 
-0.14.0 (2022-11-04)
+  0.14.0 (2022-11-04)
 -------------------
 
 - Use PSS views in SDF origin attribute. [#167]

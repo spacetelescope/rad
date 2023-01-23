@@ -63,7 +63,7 @@ properties:
     sdf:
       special_processing: VALUE_REQUIRED
       source:
-        origin: PSS:ephemeris_state.ingest_time
+        origin: Roman Science Data Processing (RSDP)
     archive_catalog:
       datatype: float
       destination: [ScienceCommon.ephemeris_time]
@@ -73,7 +73,7 @@ properties:
     sdf:
       special_processing: VALUE_REQUIRED
       source:
-        origin: PSS:sts_ephemeris_state.x
+        origin: Roman Science Data Processing (RSDP)
     archive_catalog:
       datatype: float
       destination: [ScienceCommon.spatial_x]
@@ -83,7 +83,7 @@ properties:
     sdf:
       special_processing: VALUE_REQUIRED
       source:
-        origin: PSS:sts_ephemeris_state.y
+        origin: Roman Science Data Processing (RSDP)
     archive_catalog:
       datatype: float
       destination: [ScienceCommon.spatial_y]
@@ -93,7 +93,7 @@ properties:
     sdf:
       special_processing: VALUE_REQUIRED
       source:
-        origin: PSS:sts_ephemeris_state.z
+        origin: Roman Science Data Processing (RSDP)
     archive_catalog:
       datatype: float
       destination: [ScienceCommon.spatial_z]
@@ -103,7 +103,7 @@ properties:
     sdf:
       special_processing: VALUE_REQUIRED
       source:
-        origin: PSS:sts_ephemeris_state.dx
+        origin: Roman Science Data Processing (RSDP)
     archive_catalog:
       datatype: float
       destination: [ScienceCommon.velocity_x]
@@ -113,7 +113,7 @@ properties:
     sdf:
       special_processing: VALUE_REQUIRED
       source:
-        origin: PSS:sts_ephemeris_state.dy
+        origin: Roman Science Data Processing (RSDP)
     archive_catalog:
       datatype: float
       destination: [ScienceCommon.velocity_y]
@@ -123,7 +123,7 @@ properties:
     sdf:
       special_processing: VALUE_REQUIRED
       source:
-        origin: PSS:sts_ephemeris_state.dz
+        origin: Roman Science Data Processing (RSDP)
     archive_catalog:
       datatype: float
       destination: [ScienceCommon.velocity_z]
