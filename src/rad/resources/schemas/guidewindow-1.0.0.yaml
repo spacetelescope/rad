@@ -121,63 +121,63 @@ properties:
               destination: [ScienceCommon.gw_mode]
           gw_window_xstart:
             title: Guide window x start position on the detector
-            type: number
+            type: integer
             sdf:
               special_processing: VALUE_REQUIRED
               source:
                 origin: Science Data Formatting
             archive_catalog:
-              datatype: float
+              datatype: int
               destination: [ScienceCommon.gw_window_xstart]
           gw_window_ystart:
             title: Guide window y start position on the detector
-            type: number
+            type: integer
             sdf:
               special_processing: VALUE_REQUIRED
               source:
                 origin: Science Data Formatting
             archive_catalog:
-              datatype: float
+              datatype: int
               destination: [ScienceCommon.gw_window_ystart]
           gw_window_xstop:
             title: Guide window x stop position on the detector
-            type: number
+            type: integer
             sdf:
               special_processing: VALUE_REQUIRED
               source:
                 origin: Science Data Formatting
             archive_catalog:
-              datatype: float
+              datatype: int
               destination: [ScienceCommon.gw_window_xstop]
           gw_window_ystop:
             title: Guide window y stop position on the detector
-            type: number
+            type: integer
             sdf:
               special_processing: VALUE_REQUIRED
               source:
                 origin: Science Data Formatting
             archive_catalog:
-              datatype: float
+              datatype: int
               destination: [ScienceCommon.gw_window_ystop]
           gw_window_xsize:
             title: Guide window size in the x direction in detector coordinates
-            type: number
+            type: integer
             sdf:
               special_processing: VALUE_REQUIRED
               source:
                 origin: Science Data Formatting
             archive_catalog:
-              datatype: float
+              datatype: int
               destination: [ScienceCommon.gw_window_xsize]
           gw_window_ysize:
             title: Guide window size in the y direction in detector coordinates
-            type: number
+            type: integer
             sdf:
               special_processing: VALUE_REQUIRED
               source:
                 origin: Science Data Formatting
             archive_catalog:
-              datatype: float
+              datatype: int
               destination: [ScienceCommon.gw_window_ysize]
         required: [gw_start_time, gw_end_time, gw_frame_readout_time,
                    gw_function_start_time, gw_function_end_time, gw_acq_exec_stat,

@@ -15,6 +15,8 @@
 
 - Add ``pre-commit`` support. [#199]
 
+- Updated  the variable type of x/y start/stop/size in guidewindow and guidestar schemas. [#205]
+
 - Changed SDF "origin" in ephemeris-1.0.0.yaml to use definitve/predicted ephemeris. [#207]
 
 - Adjust activity identifier in observation schema to better reflect potential values. [#204]
