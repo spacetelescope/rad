@@ -25,6 +25,8 @@
 
 - Deleted source_type_apt from target-1.0.0.yaml [#206]
 
+- Add reftype to IPC Schema. [#214]
+
 
   0.14.0 (2022-11-04)
 -------------------
