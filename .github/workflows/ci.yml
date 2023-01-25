@@ -40,7 +40,7 @@ jobs:
         with:
           python-version: ${{ matrix.python-version }}
           cache: 'pip'
-          cache-dependency-path: 'setup.cfg'
+          cache-dependency-path: 'pyproject.toml'
       - run: pip install "tox>=4.0"
       - run: tox -e ${{ matrix.toxenv }}
       - if: ${{ contains(matrix.toxenv, '-cov') }}
