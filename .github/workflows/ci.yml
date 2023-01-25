@@ -13,26 +13,6 @@ on:
     - cron: '0 9 * * 1'
 
 jobs:
-  check:
-    name: ${{ matrix.toxenv }}
-    runs-on: ${{ matrix.os }}
-    strategy:
-      fail-fast: false
-      matrix:
-        toxenv: [ check-style, check-security, check-build ]
-        python-version: [ '3.11' ]
-        os: [ ubuntu-latest ]
-    steps:
-      - uses: actions/checkout@v3
-        with:
-          fetch-depth: 0
-      - uses: actions/setup-python@v4
-        with:
-          python-version: ${{ matrix.python-version }}
-          cache: 'pip'
-          cache-dependency-path: 'setup.cfg'
-      - run: pip install "tox>=4.0"
-      - run: tox -e ${{ matrix.toxenv }}
   test:
     name: ${{ matrix.toxenv }} (Python ${{ matrix.python-version }}, ${{ matrix.os }})
     runs-on: ${{ matrix.os }}
@@ -43,35 +23,15 @@ jobs:
         python-version: [ '3.8', '3.9', '3.10', '3.11' ]
         os: [ ubuntu-latest, macos-latest ]
         include:
-          - name: Python 3.10
-            runs-on: ubuntu-latest
-            python-version: "3.10"
-            toxenv: py310
-
-          - name: Python 3.8
-            runs-on: ubuntu-latest
-            python-version: 3.8
-            toxenv: py38
-
-          - name: Python 3.9
-            runs-on: ubuntu-latest
-            python-version: 3.9
-            toxenv: py39
-
-          - name: Code style checks
-            runs-on: ubuntu-latest
-            python-version: 3.8
-            toxenv: style
-
-          - name: Bandit security audit
-            runs-on: ubuntu-latest
-            python-version: 3.8
-            toxenv: bandit
-
-          - name: macOS
-            runs-on: macos-latest
-            python-version: 3.8
-            toxenv: py38
+          - toxenv: check-style
+            os: ubuntu-latest
+            python-version: "3.11"
+          - toxenv: build-dist
+            os: ubuntu-latest
+            python-version: "3.11"
+          - toxenv: test-cov-xdist
+            os: ubuntu-latest
+            python-version: "3.11"
     steps:
       - uses: actions/checkout@v3
         with:
@@ -83,7 +43,7 @@ jobs:
           cache-dependency-path: 'setup.cfg'
       - run: pip install "tox>=4.0"
       - run: tox -e ${{ matrix.toxenv }}
-      - if: ${{ contains(matrix.toxenv,'-cov') }}
+      - if: ${{ contains(matrix.toxenv, '-cov') }}
         uses: codecov/codecov-action@v3
         with:
           file: ./coverage.xml
