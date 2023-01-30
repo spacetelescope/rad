@@ -11,6 +11,11 @@ properties:
     allOf:
       - $ref: ref_common-1.0.0
       - $ref: ref_optical_element-1.0.0
+      - type: object
+        properties:
+          reftype:
+            type: string
+            enum: [IPC]
   data:
     title: Interpixel capacitance correction kernel array
     description: |
