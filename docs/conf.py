@@ -25,15 +25,13 @@
 import datetime
 import os
 import sys
-
-import stsci_rtd_theme
-
 from pathlib import Path
-from importlib_metadata import distribution
-import tomli
 
 # Ensure documentation examples are determinstically random.
 import numpy
+import stsci_rtd_theme
+import tomli
+from importlib_metadata import distribution
 
 try:
     numpy.random.seed(int(os.environ["SOURCE_DATE_EPOCH"]))
@@ -102,7 +100,7 @@ version = ".".join(release.split(".")[:2])
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes. To override the custom theme, set this to the
 # name of a builtin theme or the name of a custom theme in html_theme_path.
-html_theme = 'stsci_rtd_theme'
+html_theme = "stsci_rtd_theme"
 html_theme_path = [stsci_rtd_theme.get_html_theme_path()]
 
 html_static_path = ["_static"]

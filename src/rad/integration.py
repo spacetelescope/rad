@@ -19,6 +19,7 @@ def get_resource_mappings():
     list of collections.abc.Mapping
     """
     from . import resources
+
     resources_root = importlib_resources.files(resources)
 
     return [
