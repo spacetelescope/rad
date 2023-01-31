@@ -3,6 +3,8 @@
 
 - Format the code with ``isort`` and ``black``. [#200]
 
+- Switch linting from ``flake8`` to ``ruff``. [#201]
+
 0.14.1 (2023-01-31)
 -------------------
 
