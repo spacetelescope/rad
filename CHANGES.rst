@@ -127,10 +127,10 @@
   the border reference pixels, and another array containing the amp33 reference pixels.
   Ramp models also have an array that contains the science data and the border reference
   pixels and another array for the amp33 reference pixels, and they also contain four
-  seperate arrays that contain the original border reference pixels copied during
+  separate arrays that contain the original border reference pixels copied during
   the dq_init step (and four additional arrays for their DQ). The level 2 file data
   array only contains the science pixels (the border pixels are trimmed during ramp fit),
-  and contains seperate arrays for the original border pixels and their dq arrays, and
+  and contains separate arrays for the original border pixels and their dq arrays, and
   the amp33 reference pixels. [#112]
 
 - Added ``uncertainty`` attributes to ``photometry`` and ``pixelareasr``
