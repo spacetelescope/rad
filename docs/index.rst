@@ -9,7 +9,7 @@ Roman Space Telescope shared attributes for processing and archive.
 
 .. note::
   These schemas are schemas for the :ref:`ASDF file <asdf-standard:asdf-standard>` file format, which
-  are used by ASDF to serialize and deserialze data for the Nancy Grace Roman Space Telescope.
+  are used by ASDF to serialize and deserialize data for the Nancy Grace Roman Space Telescope.
 
 Included Resources
 ==================

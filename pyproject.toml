@@ -93,3 +93,8 @@ force-exclude = '''
 
 [tool.ruff]
 line-length = 130
+
+[tool.codespell]
+skip="*.pdf,*.fits,*.asdf,.tox,build,./tags,.git,docs/_build"
+# ignore-words-list="""
+# """
