@@ -1,4 +1,4 @@
-0.14.1 (unreleased)
+0.14.1 (2023-01-31)
 -------------------
 
 - Update guidwindow titles and descriptions. [#193]
