@@ -3,9 +3,8 @@
 Insert the next release's changelog header.  Prints the version, which
 our GitHub Actions workflow uses to generate a commit message.
 """
-from pathlib import Path
 import re
-
+from pathlib import Path
 
 RELEASED_VERSION_RE = re.compile(r"\A(?P<major>[0-9]+)\.(?P<minor>[0-9])+\.[0-9]+ \([0-9]{4}-[0-9]{2}-[0-9]{2}\)$", re.MULTILINE)
 
