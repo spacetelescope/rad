@@ -4,10 +4,9 @@ Set the (latest and unreleased) changelog header release date to today.
 Prints the version, which our GitHub Actions workflow uses to
 generate a commit message and release tag.
 """
+import re
 from datetime import date
 from pathlib import Path
-import re
-
 
 UNRELEASED_VERSION_RE = re.compile(r"\A(?P<version>[0-9]+\.[0-9]+\.[0-9]+) \(unreleased\)$", re.MULTILINE)
 

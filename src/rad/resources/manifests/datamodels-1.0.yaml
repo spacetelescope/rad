@@ -136,6 +136,11 @@ tags:
   title: Gain reference schema
   description: |-
     Gain reference schema
+- tag_uri: asdf://stsci.edu/datamodels/roman/tags/reference_files/inverse_linearity-1.0.0
+  schema_uri: asdf://stsci.edu/datamodels/roman/schemas/reference_files/inverse_linearity-1.0.0
+  title: Inverse linearity correction reference schema
+  description: |-
+    Inverse linearity correction reference schema
 - tag_uri: asdf://stsci.edu/datamodels/roman/tags/reference_files/ipc-1.0.0
   schema_uri: asdf://stsci.edu/datamodels/roman/schemas/reference_files/ipc-1.0.0
   title: IPC kernel reference schema
@@ -177,6 +182,11 @@ tags:
   description: |-
     WFI imaging photometric flux conversion data model
 # Misc
+- tag_uri: asdf://stsci.edu/datamodels/roman/tags/associations-1.0.0
+  schema_uri: asdf://stsci.edu/datamodels/roman/schemas/associations-1.0.0
+  title: Association table
+  description: |-
+    Association table
 - tag_uri: asdf://stsci.edu/datamodels/roman/tags/cal_logs-1.0.0
   schema_uri: asdf://stsci.edu/datamodels/roman/schemas/cal_logs-1.0.0
   title: Calibration log messages

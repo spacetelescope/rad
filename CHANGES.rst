@@ -1,6 +1,18 @@
 0.15.0 (unreleased)
 -------------------
 
+- Format the code with ``isort`` and ``black``. [#200]
+
+- Switch linting from ``flake8`` to ``ruff``. [#201]
+
+- Start using ``codespell`` to check and correct spelling mistakes. [#202]
+
+- Created inverse non-linearity schema. [#213]
+
+
+0.14.1 (2023-01-31)
+-------------------
+
 - Update guidwindow titles and descriptions. [#193]
 
 - Changed science arrays to quantities. [#192]
@@ -28,7 +40,7 @@
 - Add reftype to IPC Schema. [#214]
 
 
-  0.14.0 (2022-11-04)
+0.14.0 (2022-11-04)
 -------------------
 
 - Use PSS views in SDF origin attribute. [#167]
@@ -121,10 +133,10 @@
   the border reference pixels, and another array containing the amp33 reference pixels.
   Ramp models also have an array that contains the science data and the border reference
   pixels and another array for the amp33 reference pixels, and they also contain four
-  seperate arrays that contain the original border reference pixels copied during
+  separate arrays that contain the original border reference pixels copied during
   the dq_init step (and four additional arrays for their DQ). The level 2 file data
   array only contains the science pixels (the border pixels are trimmed during ramp fit),
-  and contains seperate arrays for the original border pixels and their dq arrays, and
+  and contains separate arrays for the original border pixels and their dq arrays, and
   the amp33 reference pixels. [#112]
 
 - Added ``uncertainty`` attributes to ``photometry`` and ``pixelareasr``

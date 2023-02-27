@@ -1,7 +1,7 @@
 [project]
 name = 'rad'
 description = 'Roman Attribute Dictionary'
-readme = { file = 'README.md', content-type = 'text/x-markdown' }
+readme = { file = 'README.md', content-type = 'text/markdown' }
 requires-python = '>=3.6'
 license = { file = 'LICENSE' }
 authors = [{ name = 'STScI', email = 'help@stsci.edu' }]
@@ -72,3 +72,29 @@ testpaths = [
 asdf_schema_tests_enabled = 'true'
 asdf_schema_skip_tests = 'src/rad/resources/schemas/rad_schema-1.0.0.yaml'
 asdf_schema_root = 'src/rad/resources/schemas'
+
+[tool.isort]
+profile = "black"
+filter_files = true
+line_length = 130
+
+[tool.black]
+line-length = 130
+force-exclude = '''
+^/(
+  (
+      \.eggs
+    | \.git
+    | \.pytest_cache
+    | \.tox
+  )/
+)
+'''
+
+[tool.ruff]
+line-length = 130
+
+[tool.codespell]
+skip="*.pdf,*.fits,*.asdf,.tox,build,./tags,.git,docs/_build"
+# ignore-words-list="""
+# """
