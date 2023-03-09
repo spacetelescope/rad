@@ -12,6 +12,7 @@ from flatten_dict import flatten
 from rad import resources
 
 SCHEMAS = (importlib_resources.files(resources) / "schemas").glob("**/*.yaml")
+IGNORED_SCHEMAS = list((importlib_resources.files(resources) / "schemas").glob("**/rad_schema*.yaml"))
 ARCHIVE_KEYS = ["archive_catalog", "destination"]
 
 
@@ -32,4 +33,8 @@ def destinations() -> list:
     Returns a list of all archive destinations available in the schemas.
     """
 
-    return list(chain.from_iterable(_search_keys(_load_schema(schema), ARCHIVE_KEYS).values() for schema in SCHEMAS))
+    return list(
+        chain.from_iterable(
+            _search_keys(_load_schema(schema), ARCHIVE_KEYS).values() for schema in SCHEMAS if schema not in IGNORED_SCHEMAS
+        )
+    )
