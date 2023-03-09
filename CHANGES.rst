@@ -9,6 +9,9 @@
 
 - Created inverse non-linearity schema. [#213]
 
+- Add ``archive.destinations`` introspection function to collect all 
+  ``archive_catalog.destination`` values. [#218]
+
 
 0.14.1 (2023-01-31)
 -------------------
