@@ -26,6 +26,13 @@ The following are listings of all the schemas provided by this package for ASDF.
   reference_files.rst
   manifests.rst
 
+RAD also includes a few introspective tools for inspecting the schemas:
+
+.. toctree::
+  :maxdepth: 1
+
+  archive.rst
+
 Developer Resources
 ===================
 
