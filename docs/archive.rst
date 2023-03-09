@@ -16,5 +16,5 @@ The output of the method ``rad.archive.destinations`` is a listing of all the
 .. code-block:: python
 
     >>> from rad import archive
-    >>> archive.destinations()
-    ['ScienceCommon.earth_angle', 'ScienceCommon.moon_angle', ...]
+    >>> archive.destinations()  # doctest: +ELLIPSIS
+    ['ScienceCommon.aperture_name', 'ScienceCommon.calibration_software_version', ...]

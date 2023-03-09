@@ -11,6 +11,7 @@ else:
 import rad.archive._destinations as destinations
 from rad import resources
 
+NUM_DESTINATIONS = 163
 DESTINATIONS = [
     "ScienceCommon",
     "ScienceRefData",
@@ -53,3 +54,9 @@ def test_destinations():
     for destination in result:
         assert isinstance(destination, str)
         assert _DESTINATION_REGEX.match(destination)
+
+    assert len(result) == len(set(result)) == NUM_DESTINATIONS
+
+    # Re-run the function to make sure the result doesn't change
+    # It was because the original generator was exhausted, now the generator is fixed
+    assert result == destinations.destinations()
