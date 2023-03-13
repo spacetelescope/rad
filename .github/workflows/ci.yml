@@ -13,40 +13,31 @@ on:
     - cron: '0 9 * * 1'
 
 jobs:
+  check:
+    uses: OpenAstronomy/github-actions-workflows/.github/workflows/tox.yml@v1
+    with:
+      envs: |
+        - linux: check-style
+        - linux: build-dist
   test:
-    name: ${{ matrix.toxenv }} (Python ${{ matrix.python-version }}, ${{ matrix.os }})
-    runs-on: ${{ matrix.os }}
-    strategy:
-      fail-fast: false
-      matrix:
-        toxenv: [ test-xdist ]
-        python-version: [ '3.8', '3.9', '3.10', '3.11' ]
-        os: [ ubuntu-latest, macos-latest ]
-        include:
-          - toxenv: check-style
-            os: ubuntu-latest
-            python-version: "3.11"
-          - toxenv: build-dist
-            os: ubuntu-latest
-            python-version: "3.11"
-          - toxenv: test-cov-xdist
-            os: ubuntu-latest
-            python-version: "3.11"
-    steps:
-      - uses: actions/checkout@v3
-        with:
-          fetch-depth: 0
-      - uses: actions/setup-python@v4
-        with:
-          python-version: ${{ matrix.python-version }}
-          cache: 'pip'
-          cache-dependency-path: 'pyproject.toml'
-      - run: pip install "tox>=4.0"
-      - run: tox -e ${{ matrix.toxenv }}
-      - if: ${{ contains(matrix.toxenv, '-cov') }}
-        uses: codecov/codecov-action@v3
-        with:
-          file: ./coverage.xml
-          flags: unit
-          fail_ci_if_error: true
-          token: ${{ secrets.CODECOV_TOKEN }}
+    uses: OpenAstronomy/github-actions-workflows/.github/workflows/tox.yml@v1
+    with:
+      envs: |
+        - linux: test-xdist
+          python-version: 3.8
+        - macos: test-xdist
+          python-version: 3.8
+        - linux: test-xdist
+          python-version: 3.9
+        - macos: test-xdist
+          python-version: 3.9
+        - linux: test-xdist
+          python-version: 3.10
+        - macos: test-xdist
+          python-version: 3.10
+        - linux: test-xdist
+          python-version: 3.11
+        - macos: test-xdist
+          python-version: 3.11
+        - linux: test-xdist-cov
+          coverage: codecov
