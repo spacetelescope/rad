@@ -11,6 +11,8 @@
 
 - Added PR Template. [#221]
 
+- Fix schemas with $ref at root level. [#222]
+
 
 0.14.1 (2023-01-31)
 -------------------

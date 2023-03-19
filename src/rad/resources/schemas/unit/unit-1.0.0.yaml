@@ -11,7 +11,8 @@ description: >
   The specific non-VOUnit units used by Roman will be checked/enforced by the
   converter.
 
-$ref: http://stsci.edu/schemas/asdf/unit/unit-1.0.0
+allOf:
+  - $ref: http://stsci.edu/schemas/asdf/unit/unit-1.0.0
 
 flowStyle: block
 ...
