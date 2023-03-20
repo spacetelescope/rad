@@ -20,7 +20,9 @@ properties:
         datatype: uint16
         ndim: 3
       unit:
-        tag: asdf://stsci.edu/datamodels/roman/tags/unit-1.0.0
+        oneOf:
+          - tag: asdf://stsci.edu/datamodels/roman/tags/unit-1.0.0
+          - tag: tag:astropy.org:astropy/units/unit-1.0.0
         enum: ["DN"]
   amp33:
     title: Amp 33 reference pixel data.
@@ -31,7 +33,9 @@ properties:
         datatype: uint16
         ndim: 3
       unit:
-        tag: asdf://stsci.edu/datamodels/roman/tags/unit-1.0.0
+        oneOf:
+          - tag: asdf://stsci.edu/datamodels/roman/tags/unit-1.0.0
+          - tag: tag:astropy.org:astropy/units/unit-1.0.0
         enum: ["DN"]
 propertyOrder: [meta, data, amp33]
 flowStyle: block

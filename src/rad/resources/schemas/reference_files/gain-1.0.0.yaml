@@ -24,7 +24,9 @@ properties:
         datatype: float32
         ndim: 2
       unit:
-        tag: asdf://stsci.edu/datamodels/roman/tags/unit-1.0.0
+        oneOf:
+          - tag: asdf://stsci.edu/datamodels/roman/tags/unit-1.0.0
+          - tag: tag:astropy.org:astropy/units/unit-1.0.0
         enum: ["electron / DN"]
 required: [meta, data]
 flowStyle: block

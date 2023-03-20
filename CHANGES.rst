@@ -11,6 +11,8 @@
 
 - Added PR Template. [#221]
 
+- Begin process of decommissioning the Roman specific, non-VOunits. [#220]
+
 - Fix schemas with $ref at root level. [#222]
 
 
