@@ -48,7 +48,9 @@ properties:
         datatype: float32
         ndim: 3
       unit:
-        tag: asdf://stsci.edu/datamodels/roman/tags/unit-1.0.0
+        oneOf:
+          - tag: asdf://stsci.edu/datamodels/roman/tags/unit-1.0.0
+          - tag: tag:astropy.org:astropy/units/unit-1.0.0
         enum: ["DN"]
   dq:
     title: 2-D data quality array for all planes
@@ -64,7 +66,9 @@ properties:
         datatype: float32
         ndim: 3
       unit:
-        tag: asdf://stsci.edu/datamodels/roman/tags/unit-1.0.0
+        oneOf:
+          - tag: asdf://stsci.edu/datamodels/roman/tags/unit-1.0.0
+          - tag: tag:astropy.org:astropy/units/unit-1.0.0
         enum: ["DN"]
 required: [meta, data, dq, err]
 flowStyle: block

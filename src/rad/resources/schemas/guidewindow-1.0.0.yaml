@@ -195,7 +195,9 @@ properties:
         datatype: uint16
         ndim: 5
       unit:
-        tag: asdf://stsci.edu/datamodels/roman/tags/unit-1.0.0
+        oneOf:
+          - tag: asdf://stsci.edu/datamodels/roman/tags/unit-1.0.0
+          - tag: tag:astropy.org:astropy/units/unit-1.0.0
         enum: ["DN"]
   signal_frames:
     title: "Reconstituted and oriented signal frames. Dimensions: num_frames,
@@ -207,7 +209,9 @@ properties:
         datatype: uint16
         ndim: 5
       unit:
-        tag: asdf://stsci.edu/datamodels/roman/tags/unit-1.0.0
+        oneOf:
+          - tag: asdf://stsci.edu/datamodels/roman/tags/unit-1.0.0
+          - tag: tag:astropy.org:astropy/units/unit-1.0.0
         enum: ["DN"]
   amp33:
     title: "Amp 33 reference pixel data. Dimensions: num_frames,
@@ -219,7 +223,9 @@ properties:
         datatype: uint16
         ndim: 5
       unit:
-        tag: asdf://stsci.edu/datamodels/roman/tags/unit-1.0.0
+        oneOf:
+          - tag: asdf://stsci.edu/datamodels/roman/tags/unit-1.0.0
+          - tag: tag:astropy.org:astropy/units/unit-1.0.0
         enum: ["DN"]
 propertyOrder: [meta, pedestal_frames, signal_frames, amp33]
 flowStyle: block

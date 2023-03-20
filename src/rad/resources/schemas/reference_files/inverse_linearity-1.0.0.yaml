@@ -17,11 +17,15 @@ properties:
             enum: [INVERSE_LINEARITY]
           input_units:
             title: Units of the input to the inverse linearity polynomial.
-            tag: asdf://stsci.edu/datamodels/roman/tags/unit-1.0.0
+            oneOf:
+              - tag: asdf://stsci.edu/datamodels/roman/tags/unit-1.0.0
+              - tag: tag:astropy.org:astropy/units/unit-1.0.0
             enum: ["DN"]
           output_units:
             title: Units of the output of the inverse linearity polynomial.
-            tag: asdf://stsci.edu/datamodels/roman/tags/unit-1.0.0
+            oneOf:
+              - tag: asdf://stsci.edu/datamodels/roman/tags/unit-1.0.0
+              - tag: tag:astropy.org:astropy/units/unit-1.0.0
             enum: ["DN"]
         required: [output_units, input_units]
   coeffs:
