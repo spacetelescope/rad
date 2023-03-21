@@ -13,6 +13,8 @@
 
 - Begin process of decommissioning the Roman specific, non-VOunits. [#220]
 
+- Fix schemas with $ref at root level. [#222]
+
 
 0.14.1 (2023-01-31)
 -------------------
