@@ -15,6 +15,9 @@
 
 - Fix schemas with $ref at root level. [#222]
 
+- Add schema for source detection. [#215]
+
+
 
 0.14.1 (2023-01-31)
 -------------------
