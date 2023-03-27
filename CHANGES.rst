@@ -17,6 +17,8 @@
 
 - Add schema for source detection. [#215]
 
+- Temporarily make source detection optional in cal_logs. [#224]
+
 
 
 0.14.1 (2023-01-31)
