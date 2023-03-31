@@ -2,4 +2,4 @@
 
 *       @spacetelescope/rad-maintainers @WilliamJamieson
 # Add Kim, Kimberly DuPrie <kduprie@stsci.edu>
-src/rad/resources/schemas/*.yaml @kdupriestsci
+src/rad/resources/schemas/*.yaml  @kdupriestsci
