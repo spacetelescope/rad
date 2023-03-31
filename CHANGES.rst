@@ -19,6 +19,8 @@
 
 - Temporarily make source detection optional in cal_logs. [#224]
 
+- Add database team to Code Owners file [#227]
+
 
 
 0.14.1 (2023-01-31)
