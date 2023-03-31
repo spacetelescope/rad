@@ -1,3 +1,5 @@
 # automatically requests pull request reviews for files matching the given pattern; the last match takes precendence
 
-*       @spacetelescope/rad-maintainers @WilliamJamieson
+*       @spacetelescope/rad-maintainers @WilliamJamieson @PaulHuwe
+# Add Kim & Brett to reviewers, Jason Brookens <jbrookens@stsci.edu>,,Kimberly DuPrie <kduprie@stsci.edu>
+src/rad/resources/schemas/*.yaml jbrookens@stsci.edu kduprie@stsci.edu
