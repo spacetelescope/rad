@@ -21,7 +21,8 @@
 
 - Add database team to Code Owners file [#227]
 
-
+- update CodeOwners file [#230]
+  
 
 0.14.1 (2023-01-31)
 -------------------
