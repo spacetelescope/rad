@@ -10,6 +10,11 @@ properties:
   meta:
     allOf:
       - $ref: ref_common-1.0.0
+      - type: object
+        properties:
+          reftype:
+            type: string
+            enum: [REFPIX]
 
   gamma:
     title: Left column correction coefficients
