@@ -34,17 +34,7 @@ properties:
     datatype: complex128
     ndim: 2
 
-  scale_factor:
-    title: Scale factor for output data
-    type: number
-
-  frequencies:
-    title: Frequencies used to compute the coefficients
-    tag: tag:stsci.edu:asdf/core/ndarray-1.0.0
-    datatype: float64
-    ndim: 1
-
 required: [meta, gamma, zeta, alpha]
 flowStyle: block
-propertyOrder: [meta, gamma, zeta, alpha, scale_factor, frequencies]
+propertyOrder: [meta, gamma, zeta, alpha]
 ...
