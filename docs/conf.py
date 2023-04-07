@@ -30,7 +30,12 @@ from pathlib import Path
 # Ensure documentation examples are deterministically random.
 import numpy
 import stsci_rtd_theme
-import tomli
+
+if sys.version_info < (3, 11):
+    import tomli as tomllib
+else:
+    import tomllib
+
 from importlib_metadata import distribution
 
 try:
@@ -46,7 +51,7 @@ except ImportError:
 
 # Get configuration information from pyproject.toml
 with open(Path(__file__).parent.parent / "pyproject.toml", "rb") as configuration_file:
-    conf = tomli.load(configuration_file)
+    conf = tomllib.load(configuration_file)
 configuration = conf["project"]
 
 
