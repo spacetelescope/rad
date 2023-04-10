@@ -15,6 +15,8 @@ properties:
         properties:
           photometry:
             tag: asdf://stsci.edu/datamodels/roman/tags/photometry-1.0.0
+          source_detection:
+            tag: asdf://stsci.edu/datamodels/roman/tags/source_detection-1.0.0
         required: [photometry]
   data:
     title: Science data, excluding border reference pixels.
@@ -25,7 +27,9 @@ properties:
         datatype: float32
         ndim: 2
       unit:
-        tag: asdf://stsci.edu/datamodels/roman/tags/unit-1.0.0
+        oneOf:
+          - tag: asdf://stsci.edu/datamodels/roman/tags/unit-1.0.0
+          - tag: tag:astropy.org:astropy/units/unit-1.0.0
         enum: ["electron / s"]
   dq:
     tag: tag:stsci.edu:asdf/core/ndarray-1.0.0
@@ -39,7 +43,9 @@ properties:
         datatype: float32
         ndim: 2
       unit:
-        tag: asdf://stsci.edu/datamodels/roman/tags/unit-1.0.0
+        oneOf:
+          - tag: asdf://stsci.edu/datamodels/roman/tags/unit-1.0.0
+          - tag: tag:astropy.org:astropy/units/unit-1.0.0
         enum: ["electron / s"]
   var_poisson:
     tag: tag:stsci.edu:asdf/unit/quantity-1.1.0
@@ -49,7 +55,9 @@ properties:
         datatype: float32
         ndim: 2
       unit:
-        tag: asdf://stsci.edu/datamodels/roman/tags/unit-1.0.0
+        oneOf:
+          - tag: asdf://stsci.edu/datamodels/roman/tags/unit-1.0.0
+          - tag: tag:astropy.org:astropy/units/unit-1.0.0
         enum: ["electron2 / s2"]
   var_rnoise:
     tag: tag:stsci.edu:asdf/unit/quantity-1.1.0
@@ -59,7 +67,9 @@ properties:
         datatype: float32
         ndim: 2
       unit:
-        tag: asdf://stsci.edu/datamodels/roman/tags/unit-1.0.0
+        oneOf:
+          - tag: asdf://stsci.edu/datamodels/roman/tags/unit-1.0.0
+          - tag: tag:astropy.org:astropy/units/unit-1.0.0
         enum: ["electron2 / s2"]
   var_flat:
     tag: tag:stsci.edu:asdf/unit/quantity-1.1.0
@@ -69,7 +79,9 @@ properties:
         datatype: float32
         ndim: 2
       unit:
-        tag: asdf://stsci.edu/datamodels/roman/tags/unit-1.0.0
+        oneOf:
+          - tag: asdf://stsci.edu/datamodels/roman/tags/unit-1.0.0
+          - tag: tag:astropy.org:astropy/units/unit-1.0.0
         enum: ["electron2 / s2"]
   amp33:
     title: Amp 33 reference pixel data
@@ -80,7 +92,9 @@ properties:
         datatype: uint16
         ndim: 3
       unit:
-        tag: asdf://stsci.edu/datamodels/roman/tags/unit-1.0.0
+        oneOf:
+          - tag: asdf://stsci.edu/datamodels/roman/tags/unit-1.0.0
+          - tag: tag:astropy.org:astropy/units/unit-1.0.0
         enum: ["DN"]
   border_ref_pix_left:
     title: Original border reference pixels, on left (from viewers perspective).
@@ -91,7 +105,9 @@ properties:
         datatype: float32
         ndim: 3
       unit:
-        tag: asdf://stsci.edu/datamodels/roman/tags/unit-1.0.0
+        oneOf:
+          - tag: asdf://stsci.edu/datamodels/roman/tags/unit-1.0.0
+          - tag: tag:astropy.org:astropy/units/unit-1.0.0
         enum: ["DN"]
   border_ref_pix_right:
     title: Original border reference pixels, on right (from viewers perspective).
@@ -102,7 +118,9 @@ properties:
         datatype: float32
         ndim: 3
       unit:
-        tag: asdf://stsci.edu/datamodels/roman/tags/unit-1.0.0
+        oneOf:
+          - tag: asdf://stsci.edu/datamodels/roman/tags/unit-1.0.0
+          - tag: tag:astropy.org:astropy/units/unit-1.0.0
         enum: ["DN"]
   border_ref_pix_top:
     title: Original border reference pixels, on top.
@@ -113,7 +131,9 @@ properties:
         datatype: float32
         ndim: 3
       unit:
-        tag: asdf://stsci.edu/datamodels/roman/tags/unit-1.0.0
+        oneOf:
+          - tag: asdf://stsci.edu/datamodels/roman/tags/unit-1.0.0
+          - tag: tag:astropy.org:astropy/units/unit-1.0.0
         enum: ["DN"]
   border_ref_pix_bottom:
     title: Original border reference pixels, on bottom.
@@ -124,7 +144,9 @@ properties:
         datatype: float32
         ndim: 3
       unit:
-        tag: asdf://stsci.edu/datamodels/roman/tags/unit-1.0.0
+        oneOf:
+          - tag: asdf://stsci.edu/datamodels/roman/tags/unit-1.0.0
+          - tag: tag:astropy.org:astropy/units/unit-1.0.0
         enum: ["DN"]
   dq_border_ref_pix_left:
     title: DQ for border reference pixels, on left (from viewers perspective).

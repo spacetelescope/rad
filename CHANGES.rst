@@ -1,4 +1,4 @@
-0.15.0 (unreleased)
+0.14.2 (2023-03-31)
 -------------------
 
 - Format the code with ``isort`` and ``black``. [#200]
@@ -11,6 +11,18 @@
 
 - Added PR Template. [#221]
 
+- Begin process of decommissioning the Roman specific, non-VOunits. [#220]
+
+- Fix schemas with $ref at root level. [#222]
+
+- Add schema for source detection. [#215]
+
+- Temporarily make source detection optional in cal_logs. [#224]
+
+- Add database team to Code Owners file [#227]
+
+- update CodeOwners file [#230]
+  
 
 0.14.1 (2023-01-31)
 -------------------

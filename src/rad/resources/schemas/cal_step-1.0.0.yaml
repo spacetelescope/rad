@@ -55,6 +55,13 @@ properties:
     archive_catalog:
       datatype: nvarchar(15)
       destination: [ScienceRefData.photom]
+  source_detection:
+    title: Source Detection Step
+    type: string
+    enum: ['N/A', 'COMPLETE', 'SKIPPED', 'INCOMPLETE']
+    archive_catalog:
+      datatype: nvarchar(15)
+      destination: [ScienceRefData.source_detection]
   ramp_fit:
     title: Ramp Fitting
     type: string
@@ -69,7 +76,7 @@ properties:
     archive_catalog:
       datatype: nvarchar(15)
       destination: [ScienceRefData.saturation]
-propertyOrder: [assign_wcs, flat_field, dark, dq_init, jump, linearity, photom, ramp_fit, saturation]
+propertyOrder: [assign_wcs, flat_field, dark, dq_init, jump, linearity, photom, source_detection, ramp_fit, saturation]
 flowStyle: block
 required: [assign_wcs, flat_field, dark, dq_init, jump, linearity, photom, ramp_fit, saturation]
 additionalProperties: true
