@@ -12,4 +12,4 @@ This PR addresses ...
 - [ ] Schema changes discussed at RAD Review Board meeting
 - [ ] Added entry in `CHANGES.rst` under the corresponding subsection
 - [ ] Updated relevant roman_datamodels utilities and tests
-- [ ] Passed regression testing on Jenkins / PLWishMaster. Link: https://plwishmaster.stsci.edu:8081/job/RT/job/romancal/XXX/
+- [ ] Passed romancal regression testing on Jenkins / PLWishMaster. Link: https://plwishmaster.stsci.edu:8081/job/RT/job/romancal/XXX/
