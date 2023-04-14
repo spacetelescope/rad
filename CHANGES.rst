@@ -4,6 +4,8 @@
 - Remove use of deprecated ``pytest-openfiles`` ``pytest`` plugin. This has been replaced by
   catching ``ResourceWarning`` s. [#231]
 
+- Add ``distortion`` keyword to ``ref_file-1.0.0`` schema. [#234]
+
 0.14.2 (2023-03-31)
 -------------------
 
