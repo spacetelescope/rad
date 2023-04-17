@@ -1,3 +1,9 @@
+0.14.3 (unreleased)
+-------------------
+
+- Add read pattern to the exposure group. [#233]
+
+
 0.14.2 (2023-03-31)
 -------------------
 
@@ -22,8 +28,6 @@
 - Add database team to Code Owners file [#227]
 
 - Update CodeOwners file [#230]
-
-- Add read pattern to the exposure group. [#233]
 
 
 0.14.1 (2023-01-31)
