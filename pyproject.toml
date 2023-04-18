@@ -20,7 +20,6 @@ dynamic = ['version']
 [project.optional-dependencies]
 test = [
     'pytest>=4.6.0',
-    'pytest-openfiles>=0.5.0',
     'pytest-doctestplus>=0.11.1',
 ]
 docs = [
@@ -65,10 +64,13 @@ minversion = 4.6
 doctest_plus = true
 doctest_rst = true
 text_file_format = 'rst'
-addopts = '--show-capture=no --open-files'
+addopts = '--show-capture=no'
 testpaths = [
     'tests',
     'src/rad/resources/schemas',
+]
+filterwarnings = [
+    "error::ResourceWarning",
 ]
 asdf_schema_tests_enabled = 'true'
 asdf_schema_skip_tests = 'src/rad/resources/schemas/rad_schema-1.0.0.yaml'

@@ -1,5 +1,8 @@
-0.14.3 (unreleased)
+0.15.0 (unreleased)
 -------------------
+
+- Remove use of deprecated ``pytest-openfiles`` ``pytest`` plugin. This has been replaced by
+  catching ``ResourceWarning`` s. [#231]
 
 - Add read pattern to the exposure group. [#233]
 
