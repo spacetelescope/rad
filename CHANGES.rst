@@ -7,6 +7,8 @@
 - Add ``distortion`` keyword option to the list of reference files, so that the ``distortion``
   reference file can be properly allowed in by the ``ref_file-1.0.0`` schema. [#237]
 
+- Changelog CI workflow has been added. [#240]
+
 0.14.2 (2023-03-31)
 -------------------
 

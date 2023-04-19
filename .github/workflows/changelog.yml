@@ -21,4 +21,5 @@ jobs:
       uses: pllim/action-check_astropy_changelog@main
       env:
         CHANGELOG_FILENAME: CHANGES.rst
+        CHECK_MILESTONE: false
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
