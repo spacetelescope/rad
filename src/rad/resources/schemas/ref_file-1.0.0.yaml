@@ -37,6 +37,9 @@ properties:
   dark:
     title: Dark reference file information
     type: string
+  distortion:
+    title: Distortion reference file information
+    type: string
   mask:
     title: Mask reference file information
     type: string
