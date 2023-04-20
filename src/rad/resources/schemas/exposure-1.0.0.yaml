@@ -368,6 +368,23 @@ properties:
     archive_catalog:
       datatype: nchar(1)
       destination: [ScienceCommon.exposure_level0_compressed]
+  read_pattern:
+    title: Pattern of reads
+    description: |
+      Enumeration of detector reads to resultants making up the L1 data downlinked
+      from the observatory
+    type: array
+    items:
+      type: array
+      items:
+        type: integer
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    archive_catalog:
+      datatype: nvarchar(3500)
+      destination: [ScienceCommon.read_pattern]
 propertyOrder: [id, type,
            start_time, mid_time, end_time,
            start_time_mjd, mid_time_mjd, end_time_mjd,
@@ -377,7 +394,8 @@ propertyOrder: [id, type,
            frame_divisor, groupgap,
            frame_time, group_time, exposure_time,
            effective_exposure_time, duration,
-           ma_table_name, ma_table_number, level0_compressed]
+           ma_table_name, ma_table_number, level0_compressed,
+           read_pattern]
 flowStyle: block
 required: [id, type,
            start_time, mid_time, end_time,
