@@ -47,7 +47,7 @@ properties:
         enum: ["electron / s"]
   context:
     tag: tag:stsci.edu:asdf/core/ndarray-1.0.0
-    datatype: int32
+    datatype: uint32
     ndim: 3
   weight:
     tag: tag:stsci.edu:asdf/core/ndarray-1.0.0
