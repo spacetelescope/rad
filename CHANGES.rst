@@ -11,6 +11,8 @@
 
 - Changelog CI workflow has been added. [#240]
 
+- Remove the ``unit-1.0.0`` schema, because it is no-longer needed. [#248]
+
 
 0.14.2 (2023-03-31)
 -------------------
