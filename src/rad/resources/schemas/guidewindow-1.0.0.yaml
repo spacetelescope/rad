@@ -20,7 +20,7 @@ properties:
                 origin: Science Data Formatting
             archive_catalog:
               datatype: datetime2
-              destination: [ScienceCommon.gw_start_time]
+              destination: [GuideWindowCommon.gw_start_time]
           gw_end_time:
             title: UTC time at the end of the guide window exposure
             tag: tag:stsci.edu:asdf/time/time-1.1.0
@@ -30,7 +30,7 @@ properties:
                 origin: Science Data Formatting
             archive_catalog:
               datatype: datetime2
-              destination: [ScienceCommon.gw_end_time]
+              destination: [GuideWindowCommon.gw_end_time]
           gw_frame_readout_time:
             title: The readout time for the guide window frame
             type: number
@@ -40,7 +40,7 @@ properties:
                 origin: Science Data Formatting
             archive_catalog:
               datatype: float
-              destination: [ScienceCommon.gw_frame_readout_time]
+              destination: [GuideWindowCommon.gw_frame_readout_time]
           gw_function_start_time:
             title: Observatory UTC time at guider function start
             tag: tag:stsci.edu:asdf/time/time-1.1.0
@@ -50,7 +50,7 @@ properties:
                 origin: Science Data Formatting
             archive_catalog:
               datatype: datetime2
-              destination: [ScienceCommon.gw_function_start_time]
+              destination: [GuideWindowCommon.gw_function_start_time]
           gw_function_end_time:
             title: Observatory UTC time at guider function end
             tag: tag:stsci.edu:asdf/time/time-1.1.0
@@ -60,7 +60,7 @@ properties:
                 origin: Science Data Formatting
             archive_catalog:
               datatype: datetime2
-              destination: [ScienceCommon.gw_function_end_time]
+              destination: [GuideWindowCommon.gw_function_end_time]
           gw_acq_exec_stat:
             title: Guide star window acquisition status
             type: string
@@ -70,7 +70,7 @@ properties:
                 origin: Science Data Formatting
             archive_catalog:
               datatype: nvarchar(15)
-              destination: [ScienceCommon.gw_acq_exec_stat]
+              destination: [GuideWindowCommon.gw_acq_exec_stat]
           pedestal_resultant_exp_time:
             title: Total exposure time for the guide window pedestal frames
             description: |
@@ -83,7 +83,7 @@ properties:
                 origin: Science Data Formatting
             archive_catalog:
               datatype: float
-              destination: [ScienceCommon.gw_pedestal_resultant_exp_time]
+              destination: [GuideWindowCommon.gw_pedestal_resultant_exp_time]
           signal_resultant_exp_time:
             title: Total exposure time for the guide window resultant frames
             description: |
@@ -96,7 +96,7 @@ properties:
                 origin: Science Data Formatting
             archive_catalog:
               datatype: float
-              destination: [ScienceCommon.gw_signal_resultant_exp_time]
+              destination: [GuideWindowCommon.gw_signal_resultant_exp_time]
           gw_acq_number:
             title: Guide Window ID "Q"
             description: |
@@ -109,7 +109,7 @@ properties:
                 origin: Science Data Formatting
             archive_catalog:
               datatype: int
-              destination: [ScienceCommon.gw_acq_number]
+              destination: [GuideWindowCommon.gw_acq_number]
           gw_mode:
             $ref: guidewindow_modes-1.0.0
             sdf:
@@ -118,7 +118,7 @@ properties:
                 origin: Science Data Formatting
             archive_catalog:
               datatype: nvarchar(18)
-              destination: [ScienceCommon.gw_mode]
+              destination: [GuideWindowCommon.gw_mode]
           gw_window_xstart:
             title: Guide window x start position on the detector
             type: integer
@@ -128,7 +128,7 @@ properties:
                 origin: Science Data Formatting
             archive_catalog:
               datatype: int
-              destination: [ScienceCommon.gw_window_xstart]
+              destination: [GuideWindowCommon.gw_window_xstart]
           gw_window_ystart:
             title: Guide window y start position on the detector
             type: integer
@@ -138,7 +138,7 @@ properties:
                 origin: Science Data Formatting
             archive_catalog:
               datatype: int
-              destination: [ScienceCommon.gw_window_ystart]
+              destination: [GuideWindowCommon.gw_window_ystart]
           gw_window_xstop:
             title: Guide window x stop position on the detector
             type: integer
@@ -148,7 +148,7 @@ properties:
                 origin: Science Data Formatting
             archive_catalog:
               datatype: int
-              destination: [ScienceCommon.gw_window_xstop]
+              destination: [GuideWindowCommon.gw_window_xstop]
           gw_window_ystop:
             title: Guide window y stop position on the detector
             type: integer
@@ -158,7 +158,7 @@ properties:
                 origin: Science Data Formatting
             archive_catalog:
               datatype: int
-              destination: [ScienceCommon.gw_window_ystop]
+              destination: [GuideWindowCommon.gw_window_ystop]
           gw_window_xsize:
             title: Guide window size in the x direction in detector coordinates
             type: integer
@@ -168,7 +168,7 @@ properties:
                 origin: Science Data Formatting
             archive_catalog:
               datatype: int
-              destination: [ScienceCommon.gw_window_xsize]
+              destination: [GuideWindowCommon.gw_window_xsize]
           gw_window_ysize:
             title: Guide window size in the y direction in detector coordinates
             type: integer
@@ -178,7 +178,7 @@ properties:
                 origin: Science Data Formatting
             archive_catalog:
               datatype: int
-              destination: [ScienceCommon.gw_window_ysize]
+              destination: [GuideWindowCommon.gw_window_ysize]
         required: [gw_start_time, gw_end_time, gw_frame_readout_time,
                    gw_function_start_time, gw_function_end_time, gw_acq_exec_stat,
                    pedestal_resultant_exp_time, signal_resultant_exp_time, gw_acq_number,
