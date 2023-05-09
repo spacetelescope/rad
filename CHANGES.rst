@@ -11,6 +11,8 @@
 
 - Changelog CI workflow has been added. [#240]
 
+- Clarifying database tables for guidewindows and guidestar." [#250]
+
 
 0.14.2 (2023-03-31)
 -------------------
