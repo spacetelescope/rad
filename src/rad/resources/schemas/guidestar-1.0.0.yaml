@@ -25,6 +25,40 @@ properties:
     archive_catalog:
       datatype: nvarchar(18)
       destination: [ScienceCommon.gw_fgs_mode, GuideWindow.gw_fgs_mode]
+  gw_science_file_source:
+    title: The science data associated with this guide window
+    description: The science data file that is associated with this guide window, e.g. "r0000101001001001001_01101_0001_WFI01_uncal.asdf"
+    type: string
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    archive_catalog:
+      datatype: nvarchar(50)
+      destination: [ScienceCommon.gw_science_file_source]
+  gs_id:
+    title: guide star identifier from the GSC2 catalog
+    description: guide star catalog id from the GSC2, field gsc2ID
+    type: string
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    archive_catalog:
+      datatype: nvarchar(20)
+      destination: [ScienceCommon.gs_id]
+  gs_catalog_version:
+    title: The version of the Guide Star Catalog
+    description: The version of the catalog that the guide stars are selected, currently  "GSC 2.4.2", SDF should populate
+        this from the return value of CAT e.g. CAT=GSC242
+    type: string
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    archive_catalog:
+      datatype: nvarchar(20)
+      destination: [ScienceCommon.gs_catalog_version]
   gs_ra:
     title: "[deg] guide star right ascension"
     type: number
@@ -258,13 +292,15 @@ properties:
     archive_catalog:
       datatype: int
       destination: [  ScienceCommon.gw_window_ysize]
-propertyOrder: [gw_id, gs_ra, gs_dec, gs_ura, gs_udec, gs_mag, gs_umag, gw_fgs_mode,
+propertyOrder: [gw_id, gw_science_file_source, gs_id, gs_catalog_version, gs_ra, gs_dec,
+	        gs_ura, gs_udec, gs_mag, gs_umag, gw_fgs_mode,
                 data_start, data_end, gs_ctd_x, gs_ctd_y, gs_ctd_ux, gs_ctd_uy,
                 gs_epoch, gs_mura, gs_mudec, gs_para, gs_pattern_error, gw_window_xstart,
                 gw_window_ystart, gw_window_xstop, gw_window_ystop, gw_window_xsize,
                 gw_window_ysize]
 flowStyle: block
-required: [gw_id, gs_ra, gs_dec, gs_ura, gs_udec, gs_mag, gs_umag, gw_fgs_mode,
+required: [gw_id, gw_science_file_source, gs_id, gs_catalog_version, gs_ra, gs_dec,
+	   gs_ura, gs_udec, gs_mag, gs_umag, gw_fgs_mode,
            data_start, data_end, gs_ctd_x, gs_ctd_y, gs_ctd_ux, gs_ctd_uy,
            gs_epoch, gs_mura, gs_mudec, gs_para, gs_pattern_error, gw_window_xstart,
            gw_window_ystart, gw_window_xstop, gw_window_ystop, gw_window_xsize,
