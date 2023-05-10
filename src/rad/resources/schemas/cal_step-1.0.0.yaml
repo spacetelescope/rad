@@ -12,72 +12,72 @@ properties:
     enum: ['N/A', 'COMPLETE', 'SKIPPED', 'INCOMPLETE']
     archive_catalog:
       datatype: nvarchar(15)
-      destination: [ScienceRefData.assign_wcs]
+      destination: [ScienceRefData.assign_wcs, GuideWindow.assign_wcs]
   flat_field:
     title: Flat Field Step
     type: string
     enum: ['N/A', 'COMPLETE', 'SKIPPED', 'INCOMPLETE']
     archive_catalog:
       datatype: nvarchar(15)
-      destination: [ScienceRefData.flat_field]
+      destination: [ScienceRefData.flat_field, GuideWindow.flat_field]
   dark:
     title: Dark Subtraction
     type: string
     enum: ['N/A', 'COMPLETE', 'SKIPPED', 'INCOMPLETE']
     archive_catalog:
       datatype: nvarchar(15)
-      destination: [ScienceRefData.dark]
+      destination: [ScienceRefData.dark, GuideWindow.dark]
   dq_init:
     title: Data Quality Mask Step
     type: string
     enum: ['N/A', 'COMPLETE', 'SKIPPED', 'INCOMPLETE']
     archive_catalog:
       datatype: nvarchar(15)
-      destination: [ScienceRefData.dq_init]
+      destination: [ScienceRefData.dq_init, GuideWindow.dq_init]
   jump:
     title: Jump Detection Step
     type: string
     enum: ['N/A', 'COMPLETE', 'SKIPPED', 'INCOMPLETE']
     archive_catalog:
       datatype: nvarchar(15)
-      destination: [ScienceRefData.jump]
+      destination: [ScienceRefData.jump, GuideWindow.jump]
   linearity:
     title: Linearity Correction
     type: string
     enum: ['N/A', 'COMPLETE', 'SKIPPED', 'INCOMPLETE']
     archive_catalog:
       datatype: nvarchar(15)
-      destination: [ScienceRefData.linearity]
+      destination: [ScienceRefData.linearity, GuideWindow.linearity]
   photom:
     title: Photometry Step
     type: string
     enum: ['N/A', 'COMPLETE', 'SKIPPED', 'INCOMPLETE']
     archive_catalog:
       datatype: nvarchar(15)
-      destination: [ScienceRefData.photom]
+      destination: [ScienceRefData.photom, GuideWindow.photom]
   source_detection:
     title: Source Detection Step
     type: string
     enum: ['N/A', 'COMPLETE', 'SKIPPED', 'INCOMPLETE']
     archive_catalog:
       datatype: nvarchar(15)
-      destination: [ScienceRefData.source_detection]
+      destination: [ScienceRefData.source_detection, GuideWindow.source_detection]
   ramp_fit:
     title: Ramp Fitting
     type: string
     enum: ['N/A', 'COMPLETE', 'SKIPPED', 'INCOMPLETE']
     archive_catalog:
       datatype: nvarchar(15)
-      destination: [ScienceRefData.ramp_fit]
+      destination: [ScienceRefData.ramp_fit, GuideWindow.ramp_fit]
   saturation:
     title: Saturation Checking
     type: string
     enum: ['N/A', 'COMPLETE', 'SKIPPED', 'INCOMPLETE']
     archive_catalog:
       datatype: nvarchar(15)
-      destination: [ScienceRefData.saturation]
+      destination: [ScienceRefData.saturation, GuideWindow.saturation]
 propertyOrder: [assign_wcs, flat_field, dark, dq_init, jump, linearity, photom, source_detection, ramp_fit, saturation]
 flowStyle: block
-required: [assign_wcs, flat_field, dark, dq_init, jump, linearity, photom, ramp_fit, saturation]
+required: [assign_wcs, flat_field, dark, dq_init, jump, linearity, photom, source_detection, ramp_fit, saturation]
 additionalProperties: true
 ...

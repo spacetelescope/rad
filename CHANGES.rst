@@ -11,6 +11,8 @@
 
 - Changelog CI workflow has been added. [#240]
 
+- Clarifying database tables for guidewindows and guidestar." [#250]
+
 - Remove the ``unit-1.0.0`` schema, because it is no-longer needed. [#248]
 
 - Remove the unused ``pixelarea-1.0.0`` schema, which was replaced by the
