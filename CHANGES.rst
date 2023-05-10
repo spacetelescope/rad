@@ -13,6 +13,11 @@
 
 - Clarifying database tables for guidewindows and guidestar." [#250]
 
+- Remove the ``unit-1.0.0`` schema, because it is no-longer needed. [#248]
+
+- Remove the unused ``pixelarea-1.0.0`` schema, which was replaced by the
+  ``reference_files/pixelarea-1.0.0`` schema. [#245]
+
 
 0.14.2 (2023-03-31)
 -------------------

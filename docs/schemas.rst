@@ -21,7 +21,6 @@ The RAD schemas:
     guidewindow-1.0.0
     observation-1.0.0
     photometry-1.0.0
-    pixelarea-1.0.0
     pointing-1.0.0
     program-1.0.0
     rad_schema-1.0.0

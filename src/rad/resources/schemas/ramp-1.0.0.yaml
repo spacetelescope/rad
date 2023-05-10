@@ -20,9 +20,7 @@ allOf:
           datatype: float32
           ndim: 3
         unit:
-          oneOf:
-            - tag: asdf://stsci.edu/datamodels/roman/tags/unit-1.0.0
-            - tag: tag:astropy.org:astropy/units/unit-1.0.0
+          tag: tag:astropy.org:astropy/units/unit-1.0.0
           enum: ["DN", "electron"]
     pixeldq:
       title: 2-D data quality array for all planes
@@ -43,9 +41,7 @@ allOf:
           datatype: float32
           ndim: 3
         unit:
-          oneOf:
-            - tag: asdf://stsci.edu/datamodels/roman/tags/unit-1.0.0
-            - tag: tag:astropy.org:astropy/units/unit-1.0.0
+          tag: tag:astropy.org:astropy/units/unit-1.0.0
           enum: ["DN", "electron"]
     amp33:
       title: Amp 33 reference pixel data
@@ -56,9 +52,7 @@ allOf:
           datatype: uint16
           ndim: 3
         unit:
-          oneOf:
-            - tag: asdf://stsci.edu/datamodels/roman/tags/unit-1.0.0
-            - tag: tag:astropy.org:astropy/units/unit-1.0.0
+          tag: tag:astropy.org:astropy/units/unit-1.0.0
           enum: ["DN"]
     border_ref_pix_left:
       title: Original border reference pixels, on left (from viewers perspective).
@@ -68,9 +62,7 @@ allOf:
         datatype: float32
         ndim: 3
       unit:
-        oneOf:
-          - tag: asdf://stsci.edu/datamodels/roman/tags/unit-1.0.0
-          - tag: tag:astropy.org:astropy/units/unit-1.0.0
+        tag: tag:astropy.org:astropy/units/unit-1.0.0
         enum: ["DN"]
     border_ref_pix_right:
       title: Original border reference pixels, on right (from viewers perspective).
@@ -81,9 +73,7 @@ allOf:
           datatype: float32
           ndim: 3
         unit:
-          oneOf:
-            - tag: asdf://stsci.edu/datamodels/roman/tags/unit-1.0.0
-            - tag: tag:astropy.org:astropy/units/unit-1.0.0
+          tag: tag:astropy.org:astropy/units/unit-1.0.0
           enum: ["DN"]
     border_ref_pix_top:
       title: Original border reference pixels, on top.
@@ -94,9 +84,7 @@ allOf:
           datatype: float32
           ndim: 3
         unit:
-          oneOf:
-            - tag: asdf://stsci.edu/datamodels/roman/tags/unit-1.0.0
-            - tag: tag:astropy.org:astropy/units/unit-1.0.0
+          tag: tag:astropy.org:astropy/units/unit-1.0.0
           enum: ["DN"]
     border_ref_pix_bottom:
       title: Original border reference pixels, on bottom.
@@ -107,9 +95,7 @@ allOf:
           datatype: float32
           ndim: 3
         unit:
-          oneOf:
-            - tag: asdf://stsci.edu/datamodels/roman/tags/unit-1.0.0
-            - tag: tag:astropy.org:astropy/units/unit-1.0.0
+          tag: tag:astropy.org:astropy/units/unit-1.0.0
           enum: ["DN"]
     dq_border_ref_pix_left:
       title: DQ for border reference pixels, on left (from viewers perspective).
