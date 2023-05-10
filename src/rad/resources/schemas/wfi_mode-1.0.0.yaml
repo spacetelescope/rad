@@ -18,7 +18,7 @@ properties:
         origin: TBD
     archive_catalog:
       datatype: nvarchar(5)
-      destination: [ScienceCommon.instrument_name]
+      destination: [ScienceCommon.instrument_name, GuideWindow.instrument_name]
   detector:
     $ref: wfi_detector-1.0.0
     sdf:
@@ -27,7 +27,7 @@ properties:
         origin: TBD
     archive_catalog:
       datatype: nvarchar(10)
-      destination: [ScienceCommon.detector]
+      destination: [ScienceCommon.detector, GuideWindow.detector]
   optical_element:
     $ref: wfi_optical_element-1.0.0
     sdf:
@@ -36,7 +36,7 @@ properties:
         origin: TBD
     archive_catalog:
       datatype: nvarchar(20)
-      destination: [ScienceCommon.optical_element]
+      destination: [ScienceCommon.optical_element, GuideWindow.optical_element]
 propertyOrder: [detector, optical_element, name]
 flowStyle: block
 required: [detector, optical_element, name]

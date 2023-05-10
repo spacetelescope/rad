@@ -15,7 +15,7 @@ properties:
         origin: TBD
     archive_catalog:
       datatype: nvarchar(20)
-      destination: [ScienceCommon.gw_id]
+      destination: [ScienceCommon.gw_id, GuideWindow.gw_id]
   gw_fgs_mode:
     $ref: guidewindow_modes-1.0.0
     sdf:
@@ -24,7 +24,7 @@ properties:
         origin: TBD
     archive_catalog:
       datatype: nvarchar(18)
-      destination: [ScienceCommon.gw_fgs_mode]
+      destination: [ScienceCommon.gw_fgs_mode, GuideWindow.gw_fgs_mode]
   gs_ra:
     title: "[deg] guide star right ascension"
     type: number
@@ -34,7 +34,7 @@ properties:
         origin: TBD
     archive_catalog:
       datatype: float
-      destination: [ScienceCommon.gs_ra]
+      destination: [ScienceCommon.gs_ra, GuideWindow.gs_ra]
   gs_dec:
     title: "[deg] guide star declination"
     type: number
@@ -44,7 +44,7 @@ properties:
         origin: TBD
     archive_catalog:
       datatype: float
-      destination: [ScienceCommon.gs_dec]
+      destination: [ScienceCommon.gs_dec, GuideWindow.gs_dec]
   gs_ura:
     title: "[deg] guide star right ascension uncertainty"
     type: number
@@ -54,7 +54,7 @@ properties:
         origin: TBD
     archive_catalog:
       datatype: float
-      destination: [ScienceCommon.gs_ura]
+      destination: [ScienceCommon.gs_ura, GuideWindow.gs_ura]
   gs_udec:
     title: "[deg] guide star declination uncertainty"
     type: number
@@ -64,7 +64,7 @@ properties:
         origin: TBD
     archive_catalog:
       datatype: float
-      destination: [ScienceCommon.gs_udec]
+      destination: [ScienceCommon.gs_udec, GuideWindow.gs_udec]
   gs_mag:
     title: guide star magnitude in detector
     type: number
@@ -74,7 +74,7 @@ properties:
         origin: TBD
     archive_catalog:
       datatype: float
-      destination: [ScienceCommon.gs_mag]
+      destination: [ScienceCommon.gs_mag, GuideWindow.gs_mag]
   gs_umag:
     title: guide star magnitude uncertainty
     type: number
@@ -84,7 +84,7 @@ properties:
         origin: TBD
     archive_catalog:
       datatype: float
-      destination: [ScienceCommon.gs_umag]
+      destination: [ScienceCommon.gs_umag, GuideWindow.gs_umag]
   data_start:
     title: MJD start time of guider data within this file
     type: number
@@ -94,7 +94,7 @@ properties:
         origin: TBD
     archive_catalog:
       datatype: float
-      destination: [ScienceCommon.data_start]
+      destination: [ScienceCommon.data_start, GuideWindow.data_start]
   data_end:
     title: MJD end time of guider data within this file
     type: number
@@ -104,7 +104,7 @@ properties:
         origin: TBD
     archive_catalog:
       datatype: float
-      destination: [ScienceCommon.data_end]
+      destination: [ScienceCommon.data_end, GuideWindow.data_end]
   gs_ctd_x:
     title: "[arcsec] guide star centroid x position in guider ideal frame"
     type: number
@@ -114,7 +114,7 @@ properties:
         origin: TBD
     archive_catalog:
       datatype: float
-      destination: [ScienceCommon.gs_ctd_x]
+      destination: [ScienceCommon.gs_ctd_x, GuideWindow.gs_ctd_x]
   gs_ctd_y:
     title: "[arcsec] guide star centroid y position in guider ideal frame"
     type: number
@@ -124,7 +124,7 @@ properties:
         origin: TBD
     archive_catalog:
       datatype: float
-      destination: [ScienceCommon.gs_ctd_y]
+      destination: [ScienceCommon.gs_ctd_y, GuideWindow.gs_ctd_y]
   gs_ctd_ux:
     title: uncertainty in the x position of the centroid
     type: number
@@ -134,7 +134,7 @@ properties:
         origin: TBD
     archive_catalog:
       datatype: float
-      destination: [ScienceCommon.gs_ctd_ux]
+      destination: [ScienceCommon.gs_ctd_ux, GuideWindow.gs_ctd_ux]
   gs_ctd_uy:
     title: uncertainty in the y position of the centroid
     type: number
@@ -144,7 +144,7 @@ properties:
         origin: TBD
     archive_catalog:
       datatype: float
-      destination: [ScienceCommon.gs_ctd_uy]
+      destination: [ScienceCommon.gs_ctd_uy, GuideWindow.gs_ctd_uy]
   gs_epoch:
     title: Epoch of guide star coordinates
     type: string
@@ -154,7 +154,7 @@ properties:
         origin: TBD
     archive_catalog:
       datatype: nvarchar(10)
-      destination: [ScienceCommon.gs_epoch]
+      destination: [ScienceCommon.gs_epoch, GuideWindow.gs_epoch]
   gs_mura:
     title: "[mas/yr] Guide star ICRS right ascension proper motion"
     type: number
@@ -164,7 +164,7 @@ properties:
         origin: TBD
     archive_catalog:
       datatype: float
-      destination: [ScienceCommon.gs_mura]
+      destination: [ScienceCommon.gs_mura, GuideWindow.gs_mura]
   gs_mudec:
     title: "[mas/yr] Guide star ICRS declination proper motion"
     type: number
@@ -174,7 +174,7 @@ properties:
         origin: TBD
     archive_catalog:
       datatype: float
-      destination: [ScienceCommon.gs_mudec]
+      destination: [ScienceCommon.gs_mudec, GuideWindow.gs_mudec]
   gs_para:
     title: Guide star annual parallax
     type: number
@@ -184,7 +184,7 @@ properties:
         origin: TBD
     archive_catalog:
       datatype: float
-      destination: [ScienceCommon.gs_para]
+      destination: [ScienceCommon.gs_para, GuideWindow.gs_para]
   gs_pattern_error:
     title: RMS of guide star position
     description: RMS of guide star position in guide window from pattern matching (error on
@@ -197,7 +197,7 @@ properties:
         origin: TBD
     archive_catalog:
       datatype: float
-      destination: [ScienceCommon.gs_pattern_error]
+      destination: [ScienceCommon.gs_pattern_error, GuideWindow.gs_pattern_error]
   gw_window_xstart:
     title: Guide window x start position on the detector
     type: integer
@@ -257,7 +257,7 @@ properties:
         origin: Science Data Formatting
     archive_catalog:
       datatype: int
-      destination: [ScienceCommon.gw_window_ysize]
+      destination: [  ScienceCommon.gw_window_ysize]
 propertyOrder: [gw_id, gs_ra, gs_dec, gs_ura, gs_udec, gs_mag, gs_umag, gw_fgs_mode,
                 data_start, data_end, gs_ctd_x, gs_ctd_y, gs_ctd_ux, gs_ctd_uy,
                 gs_epoch, gs_mura, gs_mudec, gs_para, gs_pattern_error, gw_window_xstart,

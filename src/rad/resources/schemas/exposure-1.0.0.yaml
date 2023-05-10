@@ -19,7 +19,7 @@ properties:
         origin: TBD
     archive_catalog:
       datatype: int
-      destination: [ScienceCommon.exposure_id]
+      destination: [ScienceCommon.exposure_id, GuideWindow.exposure_id]
 
   type:
     $ref: exposure_type-1.0.0
@@ -29,7 +29,7 @@ properties:
         origin: TBD
     archive_catalog:
       datatype: nvarchar(25)
-      destination: [ScienceCommon.exposure_type]
+      destination: [ScienceCommon.exposure_type, GuideWindow.exposure_type]
 
   start_time:
     title: UTC exposure start time
@@ -43,7 +43,7 @@ properties:
         origin: TBD
     archive_catalog:
       datatype: datetime2
-      destination: [ScienceCommon.exposure_start_time]
+      destination: [ScienceCommon.exposure_start_time, GuideWindow.exposure_start_time]
   mid_time:
     title: UTC exposure mid time
     description: |
@@ -56,7 +56,7 @@ properties:
         origin: TBD
     archive_catalog:
       datatype: datetime2
-      destination: [ScienceCommon.exposure_mid_time]
+      destination: [ScienceCommon.exposure_mid_time, GuideWindow.exposure_mid_time]
   end_time:
     title: UTC exposure end time
     description: |
@@ -69,7 +69,7 @@ properties:
         origin: TBD
     archive_catalog:
       datatype: datetime2
-      destination: [ScienceCommon.exposure_end_time]
+      destination: [ScienceCommon.exposure_end_time, GuideWindow.exposure_end_time]
   start_time_mjd:
     title: "[d] exposure start time in MJD"
     description: |
@@ -83,7 +83,7 @@ properties:
         origin: TBD
     archive_catalog:
       datatype: float
-      destination: [ScienceCommon.exposure_start_time_mjd]
+      destination: [ScienceCommon.exposure_start_time_mjd, GuideWindow.exposure_start_time_mjd]
   mid_time_mjd:
     title: "[d] exposure mid time in MJD"
     description: |
@@ -97,7 +97,7 @@ properties:
         origin: TBD
     archive_catalog:
       datatype: float
-      destination: [ScienceCommon.exposure_mid_time_mjd]
+      destination: [ScienceCommon.exposure_mid_time_mjd, GuideWindow.exposure_mid_time_mjd]
   end_time_mjd:
     title: "[d] exposure end time in MJD"
     description: |
@@ -111,7 +111,7 @@ properties:
         origin: TBD
     archive_catalog:
       datatype: float
-      destination: [ScienceCommon.exposure_end_time_mjd]
+      destination: [ScienceCommon.exposure_end_time_mjd, GuideWindow.exposure_end_time_mjd]
   start_time_tdb:
     title: "[d] TDB time of exposure start in MJD"
     description: |
@@ -126,7 +126,7 @@ properties:
         origin: TBD
     archive_catalog:
       datatype: float
-      destination: [ScienceCommon.exposure_start_time_tdb]
+      destination: [ScienceCommon.exposure_start_time_tdb, GuideWindow.exposure_start_time_tdb]
   mid_time_tdb:
     title: "[d] TDB time of exposure mid in MJD"
     description: |
@@ -141,7 +141,7 @@ properties:
         origin: TBD
     archive_catalog:
       datatype: float
-      destination: [ScienceCommon.exposure_mid_time_tdb]
+      destination: [ScienceCommon.exposure_mid_time_tdb, GuideWindow.exposure_mid_time_tdb]
   end_time_tdb:
     title: "[d] TDB time of exposure end in MJD"
     description: |
@@ -156,7 +156,7 @@ properties:
         origin: TBD
     archive_catalog:
       datatype: float
-      destination: [ScienceCommon.exposure_end_time_tdb]
+      destination: [ScienceCommon.exposure_end_time_tdb, GuideWindow.exposure_end_time_tdb]
   ngroups:
     title: Number of groups in integration
     description: |
@@ -170,7 +170,7 @@ properties:
         origin: TBD
     archive_catalog:
       datatype: int
-      destination: [ScienceCommon.exposure_ngroups]
+      destination: [ScienceCommon.exposure_ngroups, GuideWindow.exposure_ngroups]
   nframes:
     title: Number of frames per group
     description: |
@@ -183,7 +183,7 @@ properties:
         origin: TBD
     archive_catalog:
       datatype: int
-      destination: [ScienceCommon.exposure_nframes]
+      destination: [ScienceCommon.exposure_nframes, GuideWindow.exposure_nframes]
   data_problem:
     title: Science telemetry indicated a problem
     description: |
@@ -196,7 +196,7 @@ properties:
         origin: TBD
     archive_catalog:
       datatype: nchar(1)
-      destination: [ScienceCommon.exposure_data_problem]
+      destination: [ScienceCommon.exposure_data_problem, GuideWindow.exposure_data_problem]
   sca_number:
     title: Sensor Chip Assembly number
     type: integer
@@ -206,7 +206,7 @@ properties:
         origin: TBD
     archive_catalog:
       datatype: int
-      destination: [ScienceCommon.exposure_sca_number]
+      destination: [ScienceCommon.exposure_sca_number, GuideWindow.exposure_sca_number]
   gain_factor:
     title: Gain scale factor
     type: number
@@ -216,7 +216,7 @@ properties:
         origin: TBD
     archive_catalog:
       datatype: float
-      destination: [ScienceCommon.exposure_gain_factor]
+      destination: [ScienceCommon.exposure_gain_factor, GuideWindow.exposure_gain_factor]
   integration_time:
     title: "[s] Effective integration time"
     description: The effective time that the sensor has been exposed to the sky.
@@ -227,7 +227,7 @@ properties:
         origin: TBD
     archive_catalog:
       datatype: float
-      destination: [ScienceCommon.exposure_integration_time]
+      destination: [ScienceCommon.exposure_integration_time, GuideWindow.exposure_integration_time]
   elapsed_exposure_time:
     title: "[s] Total elapsed exposure time"
     description: |
@@ -240,7 +240,7 @@ properties:
         origin: TBD
     archive_catalog:
       datatype: float
-      destination: [ScienceCommon.elapsed_exposure_time]
+      destination: [ScienceCommon.elapsed_exposure_time, GuideWindow.elapsed_exposure_time]
   frame_divisor:
     title: Divisor applied to frame-averaged groups
     description: |
@@ -253,7 +253,7 @@ properties:
         origin: TBD
     archive_catalog:
       datatype: int
-      destination: [ScienceCommon.exposure_frame_divisor]
+      destination: [ScienceCommon.exposure_frame_divisor, GuideWindow.exposure_frame_divisor]
   groupgap:
     title: Number of frames dropped between groups
     description: This is the number of reads that are "dropped" and not used in the resultant.
@@ -264,7 +264,7 @@ properties:
         origin: TBD
     archive_catalog:
       datatype: int
-      destination: [ScienceCommon.exposure_groupgap]
+      destination: [ScienceCommon.exposure_groupgap, GuideWindow.exposure_groupgap]
   frame_time:
     title: "[s] Time between frames"
     description: |
@@ -277,7 +277,7 @@ properties:
         origin: TBD
     archive_catalog:
       datatype: float
-      destination: [ScienceCommon.exposure_frame_time]
+      destination: [ScienceCommon.exposure_frame_time, GuideWindow.exposure_frame_time]
   group_time:
     title: "[s] Time between groups"
     description: |
@@ -290,7 +290,7 @@ properties:
         origin: TBD
     archive_catalog:
       datatype: float
-      destination: [ScienceCommon.exposure_group_time]
+      destination: [ScienceCommon.exposure_group_time, GuideWindow.exposure_group_time]
   exposure_time:
     title: "[s] exposure time"
     description: |
@@ -303,7 +303,7 @@ properties:
         origin: TBD
     archive_catalog:
       datatype: float
-      destination: [ScienceCommon.exposure_time]
+      destination: [ScienceCommon.exposure_time, GuideWindow.exposure_time]
   effective_exposure_time:
     title: "[s] Effective exposure time"
     description: The time that the detector is collecting photons that are used in the resultants.
@@ -314,7 +314,7 @@ properties:
         origin: TBD
     archive_catalog:
       datatype: float
-      destination: [ScienceCommon.effective_exposure_time]
+      destination: [ScienceCommon.effective_exposure_time, GuideWindow.effective_exposure_time]
   duration:
     title: "[s] Total duration of exposure"
     description: |
@@ -327,7 +327,7 @@ properties:
         origin: TBD
     archive_catalog:
       datatype: float
-      destination: [ScienceCommon.exposure_duration]
+      destination: [ScienceCommon.exposure_duration, GuideWindow.exposure_duration]
   ma_table_name:
     title: Identifier for the multi-accumulation table used
     description: |
@@ -340,7 +340,7 @@ properties:
         origin: TBD
     archive_catalog:
       datatype: nvarchar(50)
-      destination: [ScienceCommon.ma_table_name]
+      destination: [ScienceCommon.ma_table_name, GuideWindow.ma_table_name]
   ma_table_number:
     title: Numerical identifier for the multi-accumulation table used
     description: |
@@ -354,7 +354,7 @@ properties:
         origin: TBD
     archive_catalog:
       datatype: smallint
-      destination: [ScienceCommon.ma_table_number]
+      destination: [ScienceCommon.ma_table_number, GuideWindow.ma_table_number]
   level0_compressed:
     title: Level 0 data was compressed
     description: |
@@ -367,7 +367,7 @@ properties:
         origin: TBD
     archive_catalog:
       datatype: nchar(1)
-      destination: [ScienceCommon.exposure_level0_compressed]
+      destination: [ScienceCommon.exposure_level0_compressed, GuideWindow.exposure_level0_compressed]
   read_pattern:
     title: Pattern of reads
     description: |
@@ -384,7 +384,7 @@ properties:
         origin: TBD
     archive_catalog:
       datatype: nvarchar(3500)
-      destination: [ScienceCommon.read_pattern]
+      destination: [ScienceCommon.read_pattern, GuideWindow.read_pattern]
 propertyOrder: [id, type,
            start_time, mid_time, end_time,
            start_time_mjd, mid_time_mjd, end_time_mjd,
@@ -406,5 +406,6 @@ required: [id, type,
            frame_divisor, groupgap,
            frame_time, group_time, exposure_time,
            effective_exposure_time, duration,
-           ma_table_name, ma_table_number, level0_compressed]
+           ma_table_name, ma_table_number, level0_compressed,
+           read_pattern]
 ...
