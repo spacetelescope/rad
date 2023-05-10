@@ -29,9 +29,7 @@ properties:
         datatype: float32
         ndim: 2
       unit:
-        oneOf:
-          - tag: asdf://stsci.edu/datamodels/roman/tags/unit-1.0.0
-          - tag: tag:astropy.org:astropy/units/unit-1.0.0
+        tag: tag:astropy.org:astropy/units/unit-1.0.0
         enum: ["electron / s"]
   err:
     tag: tag:stsci.edu:asdf/unit/quantity-1.1.0
@@ -41,9 +39,7 @@ properties:
         datatype: float32
         ndim: 2
       unit:
-        oneOf:
-          - tag: asdf://stsci.edu/datamodels/roman/tags/unit-1.0.0
-          - tag: tag:astropy.org:astropy/units/unit-1.0.0
+        tag: tag:astropy.org:astropy/units/unit-1.0.0
         enum: ["electron / s"]
   context:
     tag: tag:stsci.edu:asdf/core/ndarray-1.0.0
@@ -61,9 +57,7 @@ properties:
         datatype: float32
         ndim: 2
       unit:
-        oneOf:
-          - tag: asdf://stsci.edu/datamodels/roman/tags/unit-1.0.0
-          - tag: tag:astropy.org:astropy/units/unit-1.0.0
+        tag: tag:astropy.org:astropy/units/unit-1.0.0
         enum: ["electron2 / s2"]
   var_rnoise:
     tag: tag:stsci.edu:asdf/unit/quantity-1.1.0
@@ -73,9 +67,7 @@ properties:
         datatype: float32
         ndim: 2
       unit:
-        oneOf:
-          - tag: asdf://stsci.edu/datamodels/roman/tags/unit-1.0.0
-          - tag: tag:astropy.org:astropy/units/unit-1.0.0
+        tag: tag:astropy.org:astropy/units/unit-1.0.0
         enum: ["electron2 / s2"]
   var_flat:
     tag: tag:stsci.edu:asdf/unit/quantity-1.1.0
@@ -85,9 +77,7 @@ properties:
         datatype: float32
         ndim: 2
       unit:
-        oneOf:
-          - tag: asdf://stsci.edu/datamodels/roman/tags/unit-1.0.0
-          - tag: tag:astropy.org:astropy/units/unit-1.0.0
+        tag: tag:astropy.org:astropy/units/unit-1.0.0
         enum: ["electron2 / s2"]
   cal_logs:
     tag: asdf://stsci.edu/datamodels/roman/tags/cal_logs-1.0.0
