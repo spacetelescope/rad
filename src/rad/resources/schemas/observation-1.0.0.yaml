@@ -41,8 +41,9 @@ properties:
       special_processing: VALUE_REQUIRED
       source:
         origin: TBD
-      datatype: nvarchar(5)
-      destination: [ScienceCommon.program, GuideWondow.program]
+    archive_catalog:
+      datatype: smallint
+      destination: [ScienceCommon.program, GuideWindow.program]
   execution_plan:
     title: Execution plan within the program, defined range is 1..99; included in obs_id and
            visit_id as 'CC'.
