@@ -1,7 +1,7 @@
 0.15.0 (unreleased)
 -------------------
 
-- Update guide star information, add catalog version, and add science file name [#177]
+- Update guide star id, add catalog version, and add science file name [#177]
 
 - Remove use of deprecated ``pytest-openfiles`` ``pytest`` plugin. This has been replaced by
   catching ``ResourceWarning`` s. [#231]
