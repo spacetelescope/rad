@@ -293,14 +293,14 @@ properties:
       datatype: int
       destination: [  ScienceCommon.gw_window_ysize]
 propertyOrder: [gw_id, gw_science_file_source, gs_id, gs_catalog_version, gs_ra, gs_dec,
-	        gs_ura, gs_udec, gs_mag, gs_umag, gw_fgs_mode,
-                data_start, data_end, gs_ctd_x, gs_ctd_y, gs_ctd_ux, gs_ctd_uy,
-                gs_epoch, gs_mura, gs_mudec, gs_para, gs_pattern_error, gw_window_xstart,
-                gw_window_ystart, gw_window_xstop, gw_window_ystop, gw_window_xsize,
-                gw_window_ysize]
+               gs_ura, gs_udec, gs_mag, gs_umag, gw_fgs_mode,
+               data_start, data_end, gs_ctd_x, gs_ctd_y, gs_ctd_ux, gs_ctd_uy,
+               gs_epoch, gs_mura, gs_mudec, gs_para, gs_pattern_error, gw_window_xstart,
+               gw_window_ystart, gw_window_xstop, gw_window_ystop, gw_window_xsize,
+               gw_window_ysize]
 flowStyle: block
 required: [gw_id, gw_science_file_source, gs_id, gs_catalog_version, gs_ra, gs_dec,
-	   gs_ura, gs_udec, gs_mag, gs_umag, gw_fgs_mode,
+           gs_ura, gs_udec, gs_mag, gs_umag, gw_fgs_mode,
            data_start, data_end, gs_ctd_x, gs_ctd_y, gs_ctd_ux, gs_ctd_uy,
            gs_epoch, gs_mura, gs_mudec, gs_para, gs_pattern_error, gw_window_xstart,
            gw_window_ystart, gw_window_xstop, gw_window_ystop, gw_window_xsize,
