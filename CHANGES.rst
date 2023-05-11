@@ -22,6 +22,8 @@
 - Remove the unused ``pixelarea-1.0.0`` schema, which was replaced by the
   ``reference_files/pixelarea-1.0.0`` schema. [#245]
 
+- Add further restrictions to the ``patternProperties`` keywords in the
+  ``wfi_img_photom`` schema. [#254]
 
 0.14.2 (2023-03-31)
 -------------------
