@@ -5,7 +5,11 @@
 
 - Add gw_science_file_source to GW file, update size of the filename [#258]
 
- - Update program to be a string to match association code [#255]
+- Update program to be a string to match association code [#255]
+
+- Update guide star id, add catalog version, and add science file name [#258]
+
+- Add gw_science_file_source to GW file, update size of the filename [#258]
 
 - Remove use of deprecated ``pytest-openfiles`` ``pytest`` plugin. This has been replaced by
   catching ``ResourceWarning`` s. [#231]
