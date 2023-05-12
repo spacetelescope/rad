@@ -110,6 +110,17 @@ properties:
             archive_catalog:
               datatype: int
               destination: [GuideWindow.gw_acq_number]
+          gw_science_file_source:
+            title: The science data associated with this guide window
+            description: The science data file that is associated with this guide window, e.g. "r0000101001001001001_01101_0001_WFI01_uncal.asdf"
+            type: string
+            sdf:
+            special_processing: VALUE_REQUIRED
+            source:
+              origin: TBD
+            archive_catalog:
+              datatype: nvarchar(120)
+              destination: [ScienceCommon.gw_science_file_source]
           gw_mode:
             $ref: guidewindow_modes-1.0.0
             sdf:
@@ -184,7 +195,7 @@ properties:
                    pedestal_resultant_exp_time, signal_resultant_exp_time, gw_acq_number,
                    gw_mode, gw_window_xstart, gw_window_ystart,
                    gw_window_xstop, gw_window_ystop,
-                   gw_window_xsize, gw_window_ysize,]
+                   gw_window_xsize, gw_window_ysize, gw_science_file_source]
   pedestal_frames:
     title: "Reconstituted and oriented pedestal frame GW images. Dimensions: num_frames,
             num_combined_resultants (or num_uncombined_resultants), num_reads, x, y"
