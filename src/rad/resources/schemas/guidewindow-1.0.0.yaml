@@ -188,7 +188,7 @@ properties:
           source:
              origin: TBD
           archive_catalog:
-            datatype: nvarchar(120)
+            datatype: nvarchar(max)
             destination: [ScienceCommon.gw_science_file_source]
 required: [gw_start_time, gw_end_time, gw_frame_readout_time,
            gw_function_start_time, gw_function_end_time, gw_acq_exec_stat,
