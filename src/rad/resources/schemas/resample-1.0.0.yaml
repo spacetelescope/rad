@@ -1,0 +1,28 @@
+%YAML 1.1
+---
+$schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.0.0
+id: asdf://stsci.edu/datamodels/roman/schemas/resample-1.0.0
+
+title: Resample information
+type: object
+properties:
+  pixel_scale_ratio:
+    title: Pixel Scale Ratio of resample to input scale
+    type: number
+  pixfrac:
+    title: Fraction of pixel to use for pixel convolution
+    type: number
+  pointings:
+    title: Number of pointings in the resample
+    type: integer
+  product_exposure_time:
+    title: Total exposure time for resample product
+    type: number
+  weight_type:
+    title: Drizzle weight type for resample
+    type: string
+    enum: ["exptime", "ivm"]
+propertyOrder: [pixel_scale_ratio, pixfrac, pointings, product_exposure_time, weight_type]
+flowStyle: block
+required: [pixel_scale_ratio, pixfrac, pointings, product_exposure_time, weight_type]
+...
