@@ -190,12 +190,12 @@ properties:
             archive_catalog:
               datatype: int
               destination: [GuideWindow.gw_window_ysize]
-required: [gw_start_time, gw_end_time, gw_frame_readout_time,
-           gw_function_start_time, gw_function_end_time, gw_acq_exec_stat,
-           pedestal_resultant_exp_time, signal_resultant_exp_time, gw_acq_number,
-           gw_mode, gw_window_xstart, gw_window_ystart,
-           gw_window_xstop, gw_window_ystop,
-           gw_window_xsize, gw_window_ysize, gw_science_file_source]
+     required: [gw_start_time, gw_end_time, gw_frame_readout_time,
+                    gw_function_start_time, gw_function_end_time, gw_acq_exec_stat,
+                    pedestal_resultant_exp_time, signal_resultant_exp_time, gw_acq_number,
+                    gw_mode, gw_window_xstart, gw_window_ystart,
+                    gw_window_xstop, gw_window_ystop,
+                    gw_window_xsize, gw_window_ysize, gw_science_file_source]
    pedestal_frames:
        title: "Reconstituted and oriented pedestal frame GW images. Dimensions: num_frames,
                num_combined_resultants (or num_uncombined_resultants), num_reads, x, y"
