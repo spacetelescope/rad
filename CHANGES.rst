@@ -1,4 +1,4 @@
-0.15.0 (unreleased)
+0.15.0 (2023-05-12)
 -------------------
 
 - Update program to be a string to match association code [#255]
