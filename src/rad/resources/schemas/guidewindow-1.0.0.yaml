@@ -117,9 +117,9 @@ properties:
                 e.g. "r0000101001001001001_01101_0001_WFI01_uncal.asdf"
             type: string
             sdf:
-            special_processing: VALUE_REQUIRED
-            source:
-              origin: TBD
+              special_processing: VALUE_REQUIRED
+              source:
+                origin: Science Data Formatting
             archive_catalog:
               datatype: nvarchar(120)
               destination: [ScienceCommon.gw_science_file_source]
