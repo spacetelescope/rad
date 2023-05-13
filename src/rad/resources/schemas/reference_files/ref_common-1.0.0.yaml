@@ -5,43 +5,42 @@ id: asdf://stsci.edu/datamodels/roman/schemas/reference_files/ref_common-1.0.0
 
 title: Common reference metadata properties
 
-allOf:
-- type: object
-  properties:
-    reftype:
-      title: Reference File type
-      type: string
-    pedigree:
-      title: The pedigree of the reference file
-      type: string
-      enum: [GROUND, MODEL, DUMMY, SIMULATION]
-    description:
-      title: Description of the reference file
-      type: string
-    author:
-      title: Author of the reference file
-      type: string
-    useafter:
-      title: Use after date of the reference file
-      tag: tag:stsci.edu:asdf/time/time-1.1.0
-    telescope:
-      title: Telescope data reference data is used to calibrate
-      anyOf:
-        - tag: asdf://stsci.edu/datamodels/roman/tags/telescope-1.0.0
-        - type: string
-          enum: [ROMAN]
-    origin:
-      title: Organization responsible for creating file
-      type: string
-    instrument:
-      type: object
-      properties:
-        name:
-          title: Instrument used to acquire the data
-          type: string
-          enum: [WFI]
-        detector:
-          $ref: ../wfi_detector-1.0.0
-      required: [name, detector]
-  required: [reftype, author, description, pedigree, useafter, telescope, origin, instrument]
+type: object
+properties:
+  reftype:
+    title: Reference File type
+    type: string
+  pedigree:
+    title: The pedigree of the reference file
+    type: string
+    enum: [GROUND, MODEL, DUMMY, SIMULATION]
+  description:
+    title: Description of the reference file
+    type: string
+  author:
+    title: Author of the reference file
+    type: string
+  useafter:
+    title: Use after date of the reference file
+    tag: tag:stsci.edu:asdf/time/time-1.1.0
+  telescope:
+    title: Telescope data reference data is used to calibrate
+    anyOf:
+      - tag: asdf://stsci.edu/datamodels/roman/tags/telescope-1.0.0
+      - type: string
+        enum: [ROMAN]
+  origin:
+    title: Organization responsible for creating file
+    type: string
+  instrument:
+    type: object
+    properties:
+      name:
+        title: Instrument used to acquire the data
+        type: string
+        enum: [WFI]
+      detector:
+        $ref: ../wfi_detector-1.0.0
+    required: [name, detector]
+required: [reftype, author, description, pedigree, useafter, telescope, origin, instrument]
 ...
