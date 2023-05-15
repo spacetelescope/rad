@@ -1,5 +1,15 @@
-0.15.0 (unreleased)
+0.15.0 (2023-05-12)
 -------------------
+
+- Update program to be a string to match association code [#255]
+
+- Add gw_science_file_source to GW file, update size of the filename [#258]
+
+- Update program to be a string to match association code [#255]
+
+- Update guide star id, add catalog version, and add science file name [#258]
+
+- Add gw_science_file_source to GW file, update size of the filename [#258]
 
 - Remove use of deprecated ``pytest-openfiles`` ``pytest`` plugin. This has been replaced by
   catching ``ResourceWarning`` s. [#231]
@@ -17,6 +27,11 @@
 
 - Remove the unused ``pixelarea-1.0.0`` schema, which was replaced by the
   ``reference_files/pixelarea-1.0.0`` schema. [#245]
+
+- Added support for level 3 mosaic model. [#241]
+
+- Add further restrictions to the ``patternProperties`` keywords in the
+  ``wfi_img_photom`` schema. [#254]
 
 
 0.14.2 (2023-03-31)
