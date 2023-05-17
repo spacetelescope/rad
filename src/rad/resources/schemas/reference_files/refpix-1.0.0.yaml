@@ -17,15 +17,11 @@ properties:
             enum: [REFPIX]
           input_units:
             title: Units of the input to the linearity polynomial.
-            oneOf:
-              - tag: asdf://stsci.edu/datamodels/roman/tags/unit-1.0.0
-              - tag: tag:astropy.org:astropy/units/unit-1.0.0
+            tag: tag:astropy.org:astropy/units/unit-1.0.0
             enum: ["DN"]
           output_units:
             title: Units of the output of the linearity polynomial.
-            oneOf:
-              - tag: asdf://stsci.edu/datamodels/roman/tags/unit-1.0.0
-              - tag: tag:astropy.org:astropy/units/unit-1.0.0
+            tag: tag:astropy.org:astropy/units/unit-1.0.0
             enum: ["DN"]
         required: [output_units, input_units]
 
