@@ -13,6 +13,7 @@ properties:
       - type: object
         properties:
           reftype:
+            type: string
             enum: [DISTORTION]
           input_units:
             title: Units of the detector coordinate inputs to this model.

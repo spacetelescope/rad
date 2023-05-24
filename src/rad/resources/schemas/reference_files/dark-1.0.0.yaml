@@ -13,6 +13,7 @@ properties:
       - type: object
         properties:
           reftype:
+            type: string
             enum: [DARK]
           exposure:
             type: object

@@ -347,7 +347,7 @@ properties:
         The number of the MA table used for the exposure as defined by the
         PRD (Project Reference Database). This is used for matching the exposure
         to the appropriate calibration data.
-    type: number
+    type: integer
     sdf:
       special_processing: VALUE_REQUIRED
       source:
