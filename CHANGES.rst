@@ -7,6 +7,9 @@
 - Bugfix for ``inverse_linearity-1.0.0``'s ``reftype`` so that it is CRDS
   compatible. [#272]
 
+- Add schema ``refpix-1.0.0`` as a schema for the reference pixel correction's
+  reference file. [#270]
+
 0.15.0 (2023-05-12)
 -------------------
 
