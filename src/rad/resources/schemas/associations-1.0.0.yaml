@@ -31,20 +31,24 @@ properties:
   products:
     type: array
     items:
-      allOf:
-        - name:
-            type: string
-        - members:
-            type: array
-            items:
-              allOf:
-              - expname:
-                  type: string
-              - exposerr:
-                  type: string
-              - exptype:
-                  type: string
-                  enum: ['SCIENCE', 'CALIBRATION', 'ENGINEERING']
+      type: object
+      properties:
+        name:
+          type: string
+        members:
+          type: array
+          items:
+            type: object
+            properties:
+              expname:
+                type: string
+              exposerr:
+                type: string
+              exptype:
+                type: string
+                enum: ['SCIENCE', 'CALIBRATION', 'ENGINEERING']
+            required: [expname, exposerr, exptype]
+      required: [name, members]
 
 required: [asn_id, asn_pool, asn_type, asn_rule, products]
 flowStyle: block
