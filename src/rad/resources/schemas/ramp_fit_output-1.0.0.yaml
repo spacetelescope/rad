@@ -8,8 +8,7 @@ title: Ramp fit output schema
 type: object
 properties:
   meta:
-    allOf:
-      - $ref: common-1.0.0
+    $ref: common-1.0.0
   slope:
     title: Segment-specific slope
     tag: tag:stsci.edu:asdf/unit/quantity-1.1.0

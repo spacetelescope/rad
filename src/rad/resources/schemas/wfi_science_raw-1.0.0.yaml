@@ -9,8 +9,7 @@ title: |
 type: object
 properties:
   meta:
-    allOf:
-      - $ref: common-1.0.0
+    $ref: common-1.0.0
   data:
     title: Science data, including the border reference pixels.
     tag: tag:stsci.edu:asdf/unit/quantity-1.1.0
