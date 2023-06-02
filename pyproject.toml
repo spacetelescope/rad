@@ -21,6 +21,7 @@ dynamic = ['version']
 test = [
     'pytest>=4.6.0',
     'pytest-doctestplus>=0.11.1',
+    'crds>=11.16.16',
 ]
 docs = [
     'sphinx',

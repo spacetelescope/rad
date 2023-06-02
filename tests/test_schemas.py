@@ -7,10 +7,14 @@ from collections.abc import Mapping
 import asdf
 import pytest
 import yaml
+from crds.config import is_crds_name
+
+from .conftest import MANIFEST
 
 SCHEMA_URI_PREFIX = "asdf://stsci.edu/datamodels/roman/schemas/"
 METASCHEMA_URI = "asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.0.0"
 SCHEMA_URIS = [u for u in asdf.get_config().resource_manager if u.startswith(SCHEMA_URI_PREFIX) and u != METASCHEMA_URI]
+REF_FILE_SCHEMA_URIS = [u["schema_uri"] for u in MANIFEST["tags"] if "/reference_files/" in u["schema_uri"]]
 WFI_OPTICAL_ELEMENTS = list(
     asdf.schema.load_schema("asdf://stsci.edu/datamodels/roman/schemas/wfi_optical_element-1.0.0")["enum"]
 )
@@ -24,6 +28,11 @@ def schema_content(request):
 
 @pytest.fixture(scope="session", params=SCHEMA_URIS)
 def schema(request):
+    return yaml.safe_load(asdf.get_config().resource_manager[request.param])
+
+
+@pytest.fixture(scope="session", params=REF_FILE_SCHEMA_URIS)
+def ref_file_schema(request):
     return yaml.safe_load(asdf.get_config().resource_manager[request.param])
 
 
@@ -150,3 +159,22 @@ def test_matched_p_exptype_entries():
     r = re.compile(p_exptype)
     for element_str in EXPOSURE_TYPE_ELEMENTS:
         assert r.search(element_str + "|")
+
+
+def _get_reftype(schema):
+    """
+    Extract the reftype from the schema
+    """
+    all_of = schema["properties"]["meta"]["allOf"]
+
+    for sub_schema in all_of:
+        if "properties" in sub_schema:
+            return sub_schema["properties"]["reftype"]["enum"][0]
+
+
+def test_reftype(ref_file_schema):
+    """
+    Check that the reftype is valid for CRDS
+    """
+    reftype = _get_reftype(ref_file_schema)
+    assert is_crds_name(f"roman_wfi_{reftype.lower()}_0000.asdf")
