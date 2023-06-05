@@ -11,8 +11,7 @@ properties:
     type: object
     properties:
       optical_element:
-        allOf:
-          - $ref: ../wfi_optical_element-1.0.0
+        $ref: ../wfi_optical_element-1.0.0
     required: [optical_element]
 required: [instrument]
 ...

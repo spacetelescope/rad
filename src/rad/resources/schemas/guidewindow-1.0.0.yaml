@@ -122,7 +122,7 @@ properties:
                 origin: Science Data Formatting
             archive_catalog:
               datatype: nvarchar(120)
-              destination: [ScienceCommon.gw_science_file_source]
+              destination: [GuideWindow.gw_science_file_source]
           gw_mode:
             $ref: guidewindow_modes-1.0.0
             sdf:

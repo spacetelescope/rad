@@ -11,9 +11,7 @@ properties:
     type: object
     properties:
       type:
-        allOf:
-          - $ref: ../exposure_type-1.0.0
-          - title: Type of data in the exposure (viewing mode)
+          $ref: ../exposure_type-1.0.0
       p_exptype:
         title: Applicable exposure type.
         type: string
