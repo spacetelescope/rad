@@ -14,7 +14,7 @@ properties:
         properties:
           reftype:
             type: string
-            enum: [INVERSE-LINEARITY]
+            enum: [INVERSELINEARITY]
           input_units:
             title: Units of the input to the inverse linearity polynomial.
             tag: tag:astropy.org:astropy/units/unit-1.0.0
