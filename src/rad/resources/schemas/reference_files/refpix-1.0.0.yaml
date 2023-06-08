@@ -1,0 +1,49 @@
+%YAML 1.1
+---
+$schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.0.0
+id: asdf://stsci.edu/datamodels/roman/schemas/reference_files/refpix-1.0.0
+
+title: Reference Pixel Correction Reference Schema
+
+type: object
+properties:
+  meta:
+    allOf:
+      - $ref: ref_common-1.0.0
+      - type: object
+        properties:
+          reftype:
+            type: string
+            enum: [REFPIX]
+          input_units:
+            title: Units of the input to the linearity polynomial.
+            tag: tag:astropy.org:astropy/units/unit-1.0.0
+            enum: ["DN"]
+          output_units:
+            title: Units of the output of the linearity polynomial.
+            tag: tag:astropy.org:astropy/units/unit-1.0.0
+            enum: ["DN"]
+        required: [output_units, input_units]
+
+  gamma:
+    title: Left column correction coefficients
+    tag: tag:stsci.edu:asdf/core/ndarray-1.0.0
+    datatype: complex128
+    ndim: 2
+
+  zeta:
+    title: Right column correction coefficients
+    tag: tag:stsci.edu:asdf/core/ndarray-1.0.0
+    datatype: complex128
+    ndim: 2
+
+  alpha:
+    title: Reference output correction coefficients
+    tag: tag:stsci.edu:asdf/core/ndarray-1.0.0
+    datatype: complex128
+    ndim: 2
+
+required: [meta, gamma, zeta, alpha]
+flowStyle: block
+propertyOrder: [meta, gamma, zeta, alpha]
+...

@@ -176,6 +176,11 @@ tags:
   title: Read noise reference schema
   description: |-
     Read noise reference schema
+- tag_uri: asdf://stsci.edu/datamodels/roman/tags/reference_files/refpix-1.0.0
+  schema_uri: asdf://stsci.edu/datamodels/roman/schemas/reference_files/refpix-1.0.0
+  title: Reference pixel correction reference schema
+  description: |-
+    Reference pixel correction reference schema
 - tag_uri: asdf://stsci.edu/datamodels/roman/tags/reference_files/saturation-1.0.0
   schema_uri: asdf://stsci.edu/datamodels/roman/schemas/reference_files/saturation-1.0.0
   title: Saturation reference schema
