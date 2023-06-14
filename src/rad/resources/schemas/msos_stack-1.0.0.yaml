@@ -1,0 +1,45 @@
+%YAML 1.1
+---
+$schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.0.0
+id: asdf://stsci.edu/datamodels/roman/schemas/msos_stack-1.0.0
+
+title: |
+  MSOS Stack Level 3 Schema
+
+datamodel_name: MsosStackModel
+
+type: object
+properties:
+  meta:
+    allOf:
+      - $ref: common-1.0.0
+      - image_list:
+          type: string
+  data:
+    title: Flux data
+    value:
+      tag: tag:stsci.edu:asdf/core/ndarray-1.0.0
+      datatype: float64
+      ndim: 2
+  uncertainty:
+    title: uncertainty data
+    value:
+      tag: tag:stsci.edu:asdf/core/ndarray-1.0.0
+      datatype: float64
+      ndim: 2
+  mask:
+    title: mask data
+    value:
+      tag: tag:stsci.edu:asdf/core/ndarray-1.0.0
+      datatype: uint8
+      ndim: 2
+  coverage:
+    title: coverage data
+    value:
+      tag: tag:stsci.edu:asdf/core/ndarray-1.0.0
+      datatype: uint8
+      ndim: 2
+propertyOrder: [meta, data, uncertainty, mask, coverage]
+flowStyle: block
+required: [meta, data, uncertainty, mask, coverage]
+...
