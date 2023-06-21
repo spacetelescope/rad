@@ -5,6 +5,8 @@ id: asdf://stsci.edu/datamodels/roman/schemas/reference_files/saturation-1.0.0
 
 title: Saturation reference schema
 
+datamodel_name: SaturationRefModel
+
 type: object
 properties:
   meta:

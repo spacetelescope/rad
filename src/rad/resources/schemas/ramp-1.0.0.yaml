@@ -5,6 +5,8 @@ id: asdf://stsci.edu/datamodels/roman/schemas/ramp-1.0.0
 
 title: Ramp schema
 
+datamodel_name: RampModel
+
 type: object
 properties:
   meta:

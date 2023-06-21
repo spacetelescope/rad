@@ -5,6 +5,8 @@ id: asdf://stsci.edu/datamodels/roman/schemas/reference_files/distortion-1.0.0
 
 title: Distortion reference schema
 
+datamodel_name: DistortionRefModel
+
 type: object
 properties:
   meta:

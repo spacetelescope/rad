@@ -5,6 +5,8 @@ id: asdf://stsci.edu/datamodels/roman/schemas/reference_files/flat-1.0.0
 
 title: Flat reference schema
 
+datamodel_name: FlatRefModel
+
 type: object
 properties:
   meta:

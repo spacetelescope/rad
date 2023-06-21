@@ -5,6 +5,8 @@ id: asdf://stsci.edu/datamodels/roman/schemas/reference_files/pixelarea-1.0.0
 
 title: Pixel area reference schema
 
+datamodel_name: PixelareaRefModel
+
 type: object
 properties:
   meta:

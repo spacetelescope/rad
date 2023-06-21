@@ -5,6 +5,8 @@ id: asdf://stsci.edu/datamodels/roman/schemas/reference_files/refpix-1.0.0
 
 title: Reference Pixel Correction Reference Schema
 
+datamodel_name: RefpixRefModel
+
 type: object
 properties:
   meta:

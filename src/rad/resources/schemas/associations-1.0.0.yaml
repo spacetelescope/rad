@@ -5,6 +5,7 @@ id: asdf://stsci.edu/datamodels/roman/schemas/associations-1.0.0
 
 title: Association table data model
 
+datamodel_name: AssociationsModel
 
 type: object
 properties:
