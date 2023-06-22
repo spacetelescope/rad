@@ -5,6 +5,8 @@ id: asdf://stsci.edu/datamodels/roman/schemas/reference_files/linearity-1.0.0
 
 title: Linearity correction  reference schema
 
+datamodel_name: LinearityRefModel
+
 type: object
 properties:
   meta:

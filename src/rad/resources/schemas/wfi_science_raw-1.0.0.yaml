@@ -6,6 +6,8 @@ id: asdf://stsci.edu/datamodels/roman/schemas/wfi_science_raw-1.0.0
 title: |
   The schema for Level 1 WFI science data (both imaging and spectrographic).
 
+datamodel_name: ScienceRawModel
+
 type: object
 properties:
   meta:

@@ -5,6 +5,8 @@ id: asdf://stsci.edu/datamodels/roman/schemas/ramp_fit_output-1.0.0
 
 title: Ramp fit output schema
 
+datamodel_name: RampFitOutputModel
+
 type: object
 properties:
   meta:

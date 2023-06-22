@@ -12,6 +12,11 @@ allOf:
   - $ref: http://stsci.edu/schemas/asdf/asdf-schema-1.0.0
   - type: object
     properties:
+      datamodel_name:
+        description: |-
+          The name of the datamodel that this schema describes.
+        type: string
+
       sdf:
         description: |-
           Documents source of this attribute's value when level 1

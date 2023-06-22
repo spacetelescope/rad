@@ -5,6 +5,8 @@ id: asdf://stsci.edu/datamodels/roman/schemas/reference_files/superbias-1.0.0
 
 title: Super-bias reference schema
 
+datamodel_name: SuperbiasRefModel
+
 type: object
 properties:
   meta:

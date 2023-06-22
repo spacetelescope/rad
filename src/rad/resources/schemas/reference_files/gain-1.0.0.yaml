@@ -5,6 +5,8 @@ id: asdf://stsci.edu/datamodels/roman/schemas/reference_files/gain-1.0.0
 
 title: Gain reference schema
 
+datamodel_name: GainRefModel
+
 type: object
 properties:
   meta:

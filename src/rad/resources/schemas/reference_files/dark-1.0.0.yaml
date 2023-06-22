@@ -5,6 +5,8 @@ id: asdf://stsci.edu/datamodels/roman/schemas/reference_files/dark-1.0.0
 
 title: Dark reference schema
 
+datamodel_name: DarkRefModel
+
 type: object
 properties:
   meta:

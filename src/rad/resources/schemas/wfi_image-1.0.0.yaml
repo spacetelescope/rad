@@ -6,6 +6,8 @@ id: asdf://stsci.edu/datamodels/roman/schemas/wfi_image-1.0.0
 title: |
   The schema for WFI Level 2 images.
 
+datamodel_name: ImageModel
+
 type: object
 properties:
   meta:

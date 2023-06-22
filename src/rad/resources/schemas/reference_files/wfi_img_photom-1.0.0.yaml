@@ -5,6 +5,8 @@ id: asdf://stsci.edu/datamodels/roman/schemas/reference_files/wfi_img_photom-1.0
 
 title: WFI imaging photometric flux conversion data model
 
+datamodel_name: WfiImgPhotomRefModel
+
 type: object
 properties:
   meta:

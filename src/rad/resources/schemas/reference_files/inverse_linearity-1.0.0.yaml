@@ -5,6 +5,8 @@ id: asdf://stsci.edu/datamodels/roman/schemas/reference_files/inverse_linearity-
 
 title: Inverse linearity correction reference schema
 
+datamodel_name: InverseLinearityRefModel
+
 type: object
 properties:
   meta:
