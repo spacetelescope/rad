@@ -3,7 +3,6 @@
 
 - Fix minor discrepancies found when looking over the schemas. [#267]
 
-
 - Bugfix for ``inverse_linearity-1.0.0``'s ``reftype`` so that it is CRDS
   compatible. [#272]
 
@@ -11,6 +10,8 @@
   reference file. [#270]
 
 - Add keyword to indicate if and which datamodel the schema describes. [#278]
+
+- Add schema ``msos_stack-1.0.0`` as a level 3 schema for SSC. [#276]
 
 0.15.0 (2023-05-12)
 -------------------
