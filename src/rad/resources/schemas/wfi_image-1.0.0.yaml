@@ -7,6 +7,7 @@ title: |
   The schema for WFI Level 2 images.
 
 datamodel_name: ImageModel
+archive_meta: None
 
 type: object
 properties:

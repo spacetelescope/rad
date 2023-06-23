@@ -7,6 +7,8 @@ title: Guide window information
 
 datamodel_name: GuidewindowModel
 
+archive_meta: None
+
 type: object
 properties:
   meta:
