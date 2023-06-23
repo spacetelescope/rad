@@ -23,6 +23,11 @@ properties:
             tag: asdf://stsci.edu/datamodels/roman/tags/photometry-1.0.0
           resample:
             tag: asdf://stsci.edu/datamodels/roman/tags/resample-1.0.0
+          wcs:
+            title: WCS object
+            anyOf:
+              - tag: tag:stsci.edu:asdf/wcs/wcs-1.2.0
+              - type: "null"
         required: [photometry]
   data:
     title: Science data, excluding border reference pixels.
