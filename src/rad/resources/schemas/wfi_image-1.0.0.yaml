@@ -19,7 +19,7 @@ properties:
           wcs:
             title: WCS object
             anyOf:
-              - tag: tag:stsci.edu:asdf/wcs/wcs-1.2.0
+              - tag: tag:stsci.edu:gwcs/wcs-1.1.0
               - type: "null"
           photometry:
             tag: asdf://stsci.edu/datamodels/roman/tags/photometry-1.0.0
