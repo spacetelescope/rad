@@ -1,4 +1,4 @@
-0.16.0 (unreleased)
+0.16.0 (2023-06-26)
 -------------------
 
 - Fix minor discrepancies found when looking over the schemas. [#267]
