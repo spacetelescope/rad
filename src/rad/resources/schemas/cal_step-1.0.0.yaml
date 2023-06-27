@@ -69,6 +69,13 @@ properties:
     archive_catalog:
       datatype: nvarchar(15)
       destination: [ScienceRefData.ramp_fit, GuideWindow.ramp_fit]
+  refpix:
+    title: Reference Pixel Correction
+    type: string
+    enum: ['N/A', 'COMPLETE', 'SKIPPED', 'INCOMPLETE']
+    archive_catalog:
+      datatype: nvarchar(15)
+      destination: [ScienceRefData.refpix, GuideWindow.refpix]
   saturation:
     title: Saturation Checking
     type: string
@@ -76,8 +83,8 @@ properties:
     archive_catalog:
       datatype: nvarchar(15)
       destination: [ScienceRefData.saturation, GuideWindow.saturation]
-propertyOrder: [assign_wcs, flat_field, dark, dq_init, jump, linearity, photom, source_detection, ramp_fit, saturation]
+propertyOrder: [assign_wcs, flat_field, dark, dq_init, jump, linearity, photom, source_detection, ramp_fit, refpix, saturation]
 flowStyle: block
-required: [assign_wcs, flat_field, dark, dq_init, jump, linearity, photom, source_detection, ramp_fit, saturation]
+required: [assign_wcs, flat_field, dark, dq_init, jump, linearity, photom, source_detection, ramp_fit, refpix, saturation]
 additionalProperties: true
 ...
