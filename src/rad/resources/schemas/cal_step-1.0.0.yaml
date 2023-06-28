@@ -83,8 +83,29 @@ properties:
     archive_catalog:
       datatype: nvarchar(15)
       destination: [ScienceRefData.saturation, GuideWindow.saturation]
-propertyOrder: [assign_wcs, flat_field, dark, dq_init, jump, linearity, photom, source_detection, ramp_fit, refpix, saturation]
+  outlier_detection:
+    title: outlier_detection
+    type: string
+    enum: ['N/A', 'COMPLETE', 'SKIPPED', 'INCOMPLETE']
+    archive_catalog:
+      datatype: nvarchar(15)
+      destination: [ScienceRefData.outlier_detection, GuideWindow.outlier_detection]
+  tweak_reg:
+    title: Tweakreg step
+    type: string
+    enum: ['N/A', 'COMPLETE', 'SKIPPED', 'INCOMPLETE']
+    archive_catalog:
+      datatype: nvarchar(15)
+      destination: [ScienceRefData.tweak_reg, GuideWindow.tweak_reg]
+  sky_match:
+    title: Sky Match step
+    type: string
+    enum: ['N/A', 'COMPLETE', 'SKIPPED', 'INCOMPLETE']
+    archive_catalog:
+      datatype: nvarchar(15)
+      destination: [ScienceRefData.sky_match, GuideWindow.sky_match]
+propertyOrder: [assign_wcs, flat_field, dark, dq_init, jump, linearity, photom, source_detection, outlier_detection, ramp_fit, refpix, saturation, sky_match, tweak_reg]
 flowStyle: block
-required: [assign_wcs, flat_field, dark, dq_init, jump, linearity, photom, source_detection, ramp_fit, refpix, saturation]
+required: [assign_wcs, flat_field, dark, dq_init, jump, linearity, photom, source_detection, outlier_detection, ramp_fit, refpix, saturation, sky_match, tweak_reg]
 additionalProperties: true
 ...
