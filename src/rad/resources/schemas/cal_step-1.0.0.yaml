@@ -106,6 +106,6 @@ properties:
       destination: [ScienceRefData.sky_match, GuideWindow.sky_match]
 propertyOrder: [assign_wcs, flat_field, dark, dq_init, jump, linearity, photom, source_detection, outlier_detection, ramp_fit, refpix, saturation, sky_match, tweak_reg]
 flowStyle: block
-required: [assign_wcs, flat_field, dark, dq_init, jump, linearity, photom, source_detection, outlier_detection, ramp_fit, refpix, saturation, sky_match, tweak_reg]
+required: [assign_wcs, flat_field, dark, dq_init, jump, linearity, photom, source_detection, ramp_fit, saturation]
 additionalProperties: true
 ...
