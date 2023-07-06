@@ -1,3 +1,8 @@
+0.17.0 (unreleased)
+-------------------
+
+- Fix invalid uri fragment in rad_schema. [#286]
+
 0.16.0 (2023-06-26)
 -------------------
 
