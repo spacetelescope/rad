@@ -90,21 +90,21 @@ properties:
     archive_catalog:
       datatype: nvarchar(15)
       destination: [ScienceRefData.outlier_detection, GuideWindow.outlier_detection]
-  tweak_reg:
+  tweakreg:
     title: Tweakreg step
     type: string
     enum: ['N/A', 'COMPLETE', 'SKIPPED', 'INCOMPLETE']
     archive_catalog:
       datatype: nvarchar(15)
-      destination: [ScienceRefData.tweak_reg, GuideWindow.tweak_reg]
-  sky_match:
+      destination: [ScienceRefData.tweakreg, GuideWindow.tweak_reg]
+  skymatch:
     title: Sky Match step
     type: string
     enum: ['N/A', 'COMPLETE', 'SKIPPED', 'INCOMPLETE']
     archive_catalog:
       datatype: nvarchar(15)
-      destination: [ScienceRefData.sky_match, GuideWindow.sky_match]
-propertyOrder: [assign_wcs, flat_field, dark, dq_init, jump, linearity, photom, source_detection, outlier_detection, ramp_fit, refpix, saturation, sky_match, tweak_reg]
+      destination: [ScienceRefData.skymatch, GuideWindow.skymatch]
+propertyOrder: [assign_wcs, flat_field, dark, dq_init, jump, linearity, photom, source_detection, outlier_detection, ramp_fit, refpix, saturation, skymatch, tweakreg]
 flowStyle: block
 required: [assign_wcs, flat_field, dark, dq_init, jump, linearity, photom, source_detection, ramp_fit, saturation]
 additionalProperties: true
