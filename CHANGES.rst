@@ -3,8 +3,10 @@
 
 - Fix invalid uri fragment in rad_schema. [#286]
 
-- Update the steps listed in ``cal_steps`` to reflect the currently implemented steps.
+- Update the steps listed in ``cal_step`` to reflect the currently implemented steps.
   The new additions are ``outlier_detection``, ``refpix``, ``sky_match``, and ``tweak_reg``. [#282]
+
+- Update the steps listed in ``cal_step`` with the ``resample`` step. [#295]
 
 0.16.0 (2023-06-26)
 -------------------
