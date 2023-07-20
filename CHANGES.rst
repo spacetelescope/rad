@@ -8,6 +8,8 @@
 
 - Update the steps listed in ``cal_step`` with the ``resample`` step. [#295]
 
+- Fix the URIs for ``inverselinearity`` and add consistency checks for names/uris. [#296]
+
 0.16.0 (2023-06-26)
 -------------------
 
