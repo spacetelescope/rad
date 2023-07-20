@@ -144,6 +144,23 @@ def test_tag(schema, valid_tag_uris):
     asdf.treeutil.walk(schema, callback)
 
 
+def _model_name_from_schema_uri(schema_uri):
+    schema_name = schema_uri.split("/")[-1].split("-")[0]
+    class_name = "".join([p.capitalize() for p in schema_name.split("_")])
+    if schema_uri.startswith("asdf://stsci.edu/datamodels/roman/schemas/reference_files/"):
+        class_name += "Ref"
+
+    if class_name.startswith("Wfi") and "Ref" not in class_name:
+        class_name = class_name.split("Wfi")[-1]
+
+    return f"{class_name}Model"
+
+
+def test_datamodel_name(schema):
+    if "datamodel_name" in schema:
+        assert _model_name_from_schema_uri(schema["id"]) == schema["datamodel_name"]
+
+
 # Confirm that the optical_element filter in wfi_img_photom.yml matches WFI_OPTICAL_ELEMENTS
 def test_matched_optical_element_entries():
     phot_table_keys = list(
