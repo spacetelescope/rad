@@ -36,6 +36,11 @@ def ref_file_schema(request):
     return yaml.safe_load(asdf.get_config().resource_manager[request.param])
 
 
+@pytest.fixture(scope="session", params=[entry for entry in MANIFEST["tags"] if "/reference_files/" in entry["schema_uri"]])
+def ref_file_uris(request):
+    return request.param["tag_uri"], request.param["schema_uri"]
+
+
 @pytest.fixture(scope="session")
 def valid_tag_uris(manifest):
     uris = {t["tag_uri"] for t in manifest["tags"]}
@@ -139,6 +144,23 @@ def test_tag(schema, valid_tag_uris):
     asdf.treeutil.walk(schema, callback)
 
 
+def _model_name_from_schema_uri(schema_uri):
+    schema_name = schema_uri.split("/")[-1].split("-")[0]
+    class_name = "".join([p.capitalize() for p in schema_name.split("_")])
+    if schema_uri.startswith("asdf://stsci.edu/datamodels/roman/schemas/reference_files/"):
+        class_name += "Ref"
+
+    if class_name.startswith("Wfi") and "Ref" not in class_name:
+        class_name = class_name.split("Wfi")[-1]
+
+    return f"{class_name}Model"
+
+
+def test_datamodel_name(schema):
+    if "datamodel_name" in schema:
+        assert _model_name_from_schema_uri(schema["id"]) == schema["datamodel_name"]
+
+
 # Confirm that the optical_element filter in wfi_img_photom.yml matches WFI_OPTICAL_ELEMENTS
 def test_matched_optical_element_entries():
     phot_table_keys = list(
@@ -178,3 +200,17 @@ def test_reftype(ref_file_schema):
     """
     reftype = _get_reftype(ref_file_schema)
     assert is_crds_name(f"roman_wfi_{reftype.lower()}_0000.asdf")
+
+
+def test_reftype_tag(ref_file_uris):
+    """
+    Check that the URIs match the reftype for a valid CRDS check
+    """
+    tag_uri = ref_file_uris[0]
+    schema_uri = ref_file_uris[1]
+
+    schema = yaml.safe_load(asdf.get_config().resource_manager[schema_uri])
+    reftype = _get_reftype(schema).lower()
+
+    assert asdf.util.uri_match(f"asdf://stsci.edu/datamodels/roman/tags/reference_files/*{reftype}-*", tag_uri)
+    assert asdf.util.uri_match(f"asdf://stsci.edu/datamodels/roman/schemas/reference_files/*{reftype}-*", schema_uri)

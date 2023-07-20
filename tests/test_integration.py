@@ -29,3 +29,13 @@ def test_schema_integration(schema_path):
     schema = yaml.safe_load(content)
     asdf_content = asdf.get_config().resource_manager[schema["id"]]
     assert asdf_content == content
+
+
+@pytest.mark.parametrize("schema_path", (importlib_resources.files(resources) / "schemas").glob("**/*.yaml"))
+def test_schema_filename(schema_path):
+    """
+    Check the filename pattern aligns with the schema ID.
+    """
+    schema = yaml.safe_load(schema_path.read_bytes())
+    id_suffix = str(schema_path.with_suffix("")).split(str(importlib_resources.files(resources)))[-1]
+    assert schema["id"].endswith(id_suffix)
