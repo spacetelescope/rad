@@ -92,4 +92,3 @@ installed too:
 Need other useful packages in your development environment?
 
     pip install ipython pytest-xdist
-
