@@ -11,6 +11,8 @@ properties:
     anyOf:
       - tag: tag:stsci.edu:asdf/unit/quantity-1.1.0
         properties:
+          datatype:
+            enum: ["float64"]
           unit:
             tag: tag:stsci.edu:asdf/unit/unit-1.0.0
             enum: ["MJy.sr**-1"]
@@ -23,6 +25,8 @@ properties:
     anyOf:
       - tag: tag:stsci.edu:asdf/unit/quantity-1.1.0
         properties:
+          datatype:
+            enum: ["float64"]
           unit:
             tag: tag:stsci.edu:asdf/unit/unit-1.0.0
             enum: ["uJy.arcsec**-2"]
@@ -35,6 +39,8 @@ properties:
     anyOf:
       - tag: tag:stsci.edu:asdf/unit/quantity-1.1.0
         properties:
+          datatype:
+            enum: ["float64"]
           unit:
             tag: tag:stsci.edu:asdf/unit/unit-1.0.0
             enum: ["sr"]
@@ -47,6 +53,8 @@ properties:
     anyOf:
       - tag: tag:stsci.edu:asdf/unit/quantity-1.1.0
         properties:
+          datatype:
+            enum: ["float64"]
           unit:
             tag: tag:stsci.edu:asdf/unit/unit-1.0.0
             enum: ["arcsec**2"]
@@ -59,6 +67,8 @@ properties:
     anyOf:
       - tag: tag:stsci.edu:asdf/unit/quantity-1.1.0
         properties:
+          datatype:
+            enum: ["float64"]
           unit:
             tag: tag:stsci.edu:asdf/unit/unit-1.0.0
             enum: ["MJy.sr**-1"]
@@ -71,6 +81,8 @@ properties:
     anyOf:
       - tag: tag:stsci.edu:asdf/unit/quantity-1.1.0
         properties:
+          datatype:
+            enum: ["float64"]
           unit:
             tag: tag:stsci.edu:asdf/unit/unit-1.0.0
             enum: ["uJy.arcsec**-2"]
