@@ -5,6 +5,8 @@
 
 - Added a prefix "s_" to the archive destination in "cal_step". [#303]
 
+- Require all the new ``cal_step`` steps to be present in the ``cal_step`` schema. [#301]
+
 0.17.0 (2023-07-27)
 -------------------
 
