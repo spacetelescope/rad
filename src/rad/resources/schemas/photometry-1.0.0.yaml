@@ -10,6 +10,10 @@ properties:
     title: Flux density (MJy/steradian) producing 1 cps
     anyOf:
       - tag: tag:stsci.edu:asdf/unit/quantity-1.1.0
+        properties:
+          unit:
+            tag: tag:stsci.edu:asdf/unit/unit-1.0.0
+            enum: ["MJy.sr**-1"]
       - type: "null"
     archive_catalog:
       datatype: float
@@ -18,6 +22,10 @@ properties:
     title: Flux density (uJy/arcsec2) producing 1 cps
     anyOf:
       - tag: tag:stsci.edu:asdf/unit/quantity-1.1.0
+        properties:
+          unit:
+            tag: tag:stsci.edu:asdf/unit/unit-1.0.0
+            enum: ["uJy.arcsec**-2"]
       - type: "null"
     archive_catalog:
       datatype: float
@@ -26,6 +34,10 @@ properties:
     title: Nominal pixel area in steradians
     anyOf:
       - tag: tag:stsci.edu:asdf/unit/quantity-1.1.0
+        properties:
+          unit:
+            tag: tag:stsci.edu:asdf/unit/unit-1.0.0
+            enum: ["sr"]
       - type: "null"
     archive_catalog:
       datatype: float
@@ -34,6 +46,10 @@ properties:
     title: Nominal pixel area in arcsec^2
     anyOf:
       - tag: tag:stsci.edu:asdf/unit/quantity-1.1.0
+        properties:
+          unit:
+            tag: tag:stsci.edu:asdf/unit/unit-1.0.0
+            enum: ["arcsec**2"]
       - type: "null"
     archive_catalog:
       datatype: float
@@ -42,14 +58,22 @@ properties:
     title: Uncertainty in flux density conversion to MJy/steradians
     anyOf:
       - tag: tag:stsci.edu:asdf/unit/quantity-1.1.0
+        properties:
+          unit:
+            tag: tag:stsci.edu:asdf/unit/unit-1.0.0
+            enum: ["MJy.sr**-1"]
       - type: "null"
     archive_catalog:
       datatype: float
       destination: [ScienceCommon.conversion_megajanskys_uncertainty]
   conversion_microjanskys_uncertainty:
-    title: Uncertainty in flux density conversion to uJy/steradians
+    title: Uncertainty in flux density conversion to uJy/arcsec2
     anyOf:
       - tag: tag:stsci.edu:asdf/unit/quantity-1.1.0
+        properties:
+          unit:
+            tag: tag:stsci.edu:asdf/unit/unit-1.0.0
+            enum: ["uJy.arcsec**-2"]
       - type: "null"
     archive_catalog:
       datatype: float
