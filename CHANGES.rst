@@ -15,6 +15,9 @@
 
 - Fix the URIs for ``inverselinearity`` and add consistency checks for names/uris. [#296]
 
+- Add ``archive_meta`` keyword for the MAST archive to encode information specific
+  to the archive's needs. [#279]
+
 0.16.0 (2023-06-26)
 -------------------
 
