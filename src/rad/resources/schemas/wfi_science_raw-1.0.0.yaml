@@ -8,6 +8,8 @@ title: |
 
 datamodel_name: ScienceRawModel
 
+archive_meta: None
+
 type: object
 properties:
   meta:

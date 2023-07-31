@@ -17,6 +17,12 @@ allOf:
           The name of the datamodel that this schema describes.
         type: string
 
+      archive_meta:
+        description: |-
+          Metadata to aide the archive in determining how to handle
+          a given file.
+        type: string
+
       sdf:
         description: |-
           Documents source of this attribute's value when level 1
