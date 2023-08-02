@@ -12,105 +12,105 @@ properties:
     enum: ['N/A', 'COMPLETE', 'SKIPPED', 'INCOMPLETE']
     archive_catalog:
       datatype: nvarchar(15)
-      destination: [ScienceRefData.assign_wcs, GuideWindow.assign_wcs]
+      destination: [ScienceRefData.s_assign_wcs, GuideWindow.s_assign_wcs]
   flat_field:
     title: Flat Field Step
     type: string
     enum: ['N/A', 'COMPLETE', 'SKIPPED', 'INCOMPLETE']
     archive_catalog:
       datatype: nvarchar(15)
-      destination: [ScienceRefData.flat_field, GuideWindow.flat_field]
+      destination: [ScienceRefData.s_flat_field, GuideWindow.s_flat_field]
   dark:
     title: Dark Subtraction
     type: string
     enum: ['N/A', 'COMPLETE', 'SKIPPED', 'INCOMPLETE']
     archive_catalog:
       datatype: nvarchar(15)
-      destination: [ScienceRefData.dark, GuideWindow.dark]
+      destination: [ScienceRefData.s_dark, GuideWindow.s_dark]
   dq_init:
     title: Data Quality Mask Step
     type: string
     enum: ['N/A', 'COMPLETE', 'SKIPPED', 'INCOMPLETE']
     archive_catalog:
       datatype: nvarchar(15)
-      destination: [ScienceRefData.dq_init, GuideWindow.dq_init]
+      destination: [ScienceRefData.s_dq_init, GuideWindow.s_dq_init]
   jump:
     title: Jump Detection Step
     type: string
     enum: ['N/A', 'COMPLETE', 'SKIPPED', 'INCOMPLETE']
     archive_catalog:
       datatype: nvarchar(15)
-      destination: [ScienceRefData.jump, GuideWindow.jump]
+      destination: [ScienceRefData.s_jump, GuideWindow.s_jump]
   linearity:
     title: Linearity Correction
     type: string
     enum: ['N/A', 'COMPLETE', 'SKIPPED', 'INCOMPLETE']
     archive_catalog:
       datatype: nvarchar(15)
-      destination: [ScienceRefData.linearity, GuideWindow.linearity]
+      destination: [ScienceRefData.s_linearity, GuideWindow.s_linearity]
   photom:
     title: Photometry Step
     type: string
     enum: ['N/A', 'COMPLETE', 'SKIPPED', 'INCOMPLETE']
     archive_catalog:
       datatype: nvarchar(15)
-      destination: [ScienceRefData.photom, GuideWindow.photom]
+      destination: [ScienceRefData.s_photom, GuideWindow.s_photom]
   source_detection:
     title: Source Detection Step
     type: string
     enum: ['N/A', 'COMPLETE', 'SKIPPED', 'INCOMPLETE']
     archive_catalog:
       datatype: nvarchar(15)
-      destination: [ScienceRefData.source_detection, GuideWindow.source_detection]
+      destination: [ScienceRefData.s_source_detection, GuideWindow.s_source_detection]
   ramp_fit:
     title: Ramp Fitting
     type: string
     enum: ['N/A', 'COMPLETE', 'SKIPPED', 'INCOMPLETE']
     archive_catalog:
       datatype: nvarchar(15)
-      destination: [ScienceRefData.ramp_fit, GuideWindow.ramp_fit]
+      destination: [ScienceRefData.s_ramp_fit, GuideWindow.s_ramp_fit]
   refpix:
     title: Reference Pixel Correction
     type: string
     enum: ['N/A', 'COMPLETE', 'SKIPPED', 'INCOMPLETE']
     archive_catalog:
       datatype: nvarchar(15)
-      destination: [ScienceRefData.refpix, GuideWindow.refpix]
+      destination: [ScienceRefData.s_refpix, GuideWindow.s_refpix]
   saturation:
     title: Saturation Checking
     type: string
     enum: ['N/A', 'COMPLETE', 'SKIPPED', 'INCOMPLETE']
     archive_catalog:
       datatype: nvarchar(15)
-      destination: [ScienceRefData.saturation, GuideWindow.saturation]
+      destination: [ScienceRefData.s_saturation, GuideWindow.s_saturation]
   outlier_detection:
     title: outlier_detection
     type: string
     enum: ['N/A', 'COMPLETE', 'SKIPPED', 'INCOMPLETE']
     archive_catalog:
       datatype: nvarchar(15)
-      destination: [ScienceRefData.outlier_detection, GuideWindow.outlier_detection]
+      destination: [ScienceRefData.s_outlier_detection, GuideWindow.s_outlier_detection]
   tweakreg:
     title: Tweakreg step
     type: string
     enum: ['N/A', 'COMPLETE', 'SKIPPED', 'INCOMPLETE']
     archive_catalog:
       datatype: nvarchar(15)
-      destination: [ScienceRefData.tweakreg, GuideWindow.tweak_reg]
+      destination: [ScienceRefData.s_tweakreg, GuideWindow.s_tweakreg]
   skymatch:
     title: Sky Match step
     type: string
     enum: ['N/A', 'COMPLETE', 'SKIPPED', 'INCOMPLETE']
     archive_catalog:
       datatype: nvarchar(15)
-      destination: [ScienceRefData.skymatch, GuideWindow.skymatch]
+      destination: [ScienceRefData.s_skymatch, GuideWindow.s_skymatch]
   resample:
     title: Resample Step
     type: string
     enum: ['N/A', 'COMPLETE', 'SKIPPED', 'INCOMPLETE']
     archive_catalog:
       datatype: nvarchar(15)
-      destination: [ScienceRefData.resample, GuideWindow.skymatch]
+      destination: [ScienceRefData.s_resample, GuideWindow.s_resample]
 propertyOrder: [assign_wcs, flat_field, dark, dq_init, jump, linearity, photom, source_detection, outlier_detection, ramp_fit, refpix, saturation, skymatch, tweakreg, resample]
 flowStyle: block
 required: [assign_wcs, flat_field, dark, dq_init, jump, linearity, photom, source_detection, ramp_fit, saturation]
