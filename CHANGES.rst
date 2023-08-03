@@ -1,9 +1,9 @@
-0.18.1 (unreleased)
+0.17.2 (unreleased)
 -------------------
 
 -
 
-0.18.0 (2023-08-03)
+0.17.1 (2023-08-03)
 -------------------
 
 - Added "archive_catalog" field to ref_file. [#303]
