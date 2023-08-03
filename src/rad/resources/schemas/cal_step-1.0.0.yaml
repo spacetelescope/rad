@@ -113,6 +113,6 @@ properties:
       destination: [ScienceRefData.s_resample, GuideWindow.s_resample]
 propertyOrder: [assign_wcs, flat_field, dark, dq_init, jump, linearity, photom, source_detection, outlier_detection, ramp_fit, refpix, saturation, skymatch, tweakreg, resample]
 flowStyle: block
-required: [assign_wcs, flat_field, dark, dq_init, jump, linearity, photom, source_detection, ramp_fit, saturation]
+required: [assign_wcs, flat_field, dark, dq_init, jump, linearity, outlier_detection, photom, source_detection, ramp_fit, refpix, resample, saturation, skymatch, tweakreg]
 additionalProperties: true
 ...
