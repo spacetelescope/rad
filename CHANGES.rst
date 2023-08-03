@@ -1,7 +1,9 @@
 0.18.0 (unreleased)
 -------------------
 
--
+- Added "archive_catalog" field to ref_file. [#303]
+
+- Added a prefix "s_" to the archive destination in "cal_step". [#303]
 
 0.17.0 (2023-07-27)
 -------------------
