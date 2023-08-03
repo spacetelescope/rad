@@ -24,11 +24,23 @@ properties:
                 title: Nominal pixel area in steradians
                 anyOf:
                   - tag: tag:stsci.edu:asdf/unit/quantity-1.1.0
+                    properties:
+                      datatype:
+                        enum: ["float64"]
+                      unit:
+                        tag: tag:stsci.edu:asdf/unit/unit-1.0.0
+                        enum: ["sr"]
                   - type: "null"
               pixelarea_arcsecsq:
                 title: Nominal pixel area in arcsec^2
                 anyOf:
                   - tag: tag:stsci.edu:asdf/unit/quantity-1.1.0
+                    properties:
+                      datatype:
+                        enum: ["float64"]
+                      unit:
+                        tag: tag:stsci.edu:asdf/unit/unit-1.0.0
+                        enum: ["arcsec**2"]
                   - type: "null"
             required: [pixelarea_steradians, pixelarea_arcsecsq]
         required: [photometry]

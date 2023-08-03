@@ -7,6 +7,8 @@
 
 - Require all the new ``cal_step`` steps to be present in the ``cal_step`` schema. [#301]
 
+- Add missing unit enforcements to various schemas. [#300]
+
 0.17.0 (2023-07-27)
 -------------------
 
