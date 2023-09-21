@@ -20,10 +20,7 @@ jobs:
     if: (github.repository == 'spacetelescope/rad' && (github.event_name == 'schedule' || github.event_name == 'push' || github.event_name == 'workflow_dispatch' || contains(github.event.pull_request.labels.*.name, 'Weekly CI')))
     with:
       envs: |
-        - macos: test-xdist
-          python-version: 3.8
-        - macos: test-xdist
-          python-version: 3.9
-        - macos: test-xdist
-          python-version: 3.10
-        - linux: test-xdist-devdeps
+        - macos: py39-xdist
+        - macos: py310-xdist
+        - linux: py312-xdist-devdeps
+          python-version: "3.12-dev"
