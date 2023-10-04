@@ -23,4 +23,3 @@ jobs:
         - macos: py39-xdist
         - macos: py310-xdist
         - linux: py312-xdist-devdeps
-          python-version: "3.12-dev"
