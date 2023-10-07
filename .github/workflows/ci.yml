@@ -23,3 +23,8 @@ jobs:
         - macos: py311-xdist
         - linux: py311-xdist-cov
           coverage: codecov
+  test_downstream:
+    uses: OpenAstronomy/github-actions-workflows/.github/workflows/tox.yml@v1
+    with:
+      envs: |
+        - linux: test-roman_datamodels-xdist
