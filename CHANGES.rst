@@ -3,6 +3,8 @@
 
 - Added Slope and Error to Dark reference schema. [#323]
 
+- Removed ``err`` array from dark schema. [#324]
+
 0.17.1 (2023-08-03)
 -------------------
 
