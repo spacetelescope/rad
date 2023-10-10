@@ -58,17 +58,6 @@ properties:
     tag: tag:stsci.edu:asdf/core/ndarray-1.0.0
     datatype: uint32
     ndim: 2
-  err:
-    title: Uncertainty in dark current array
-    tag: tag:stsci.edu:asdf/unit/quantity-1.1.0
-    properties:
-      value:
-        tag: tag:stsci.edu:asdf/core/ndarray-1.0.0
-        datatype: float32
-        ndim: 3
-      unit:
-        tag: tag:astropy.org:astropy/units/unit-1.0.0
-        enum: ["DN"]
   dark_slope:
     title: Dark current slope array
     description: |
@@ -95,7 +84,7 @@ properties:
       unit:
         tag: tag:astropy.org:astropy/units/unit-1.0.0
         enum: ["DN / s"]
-required: [meta, data, dq, err]
+required: [meta, data, dq]
 flowStyle: block
-propertyOrder: [meta, data, dq, err, dark_slope, dark_slope_error]
+propertyOrder: [meta, data, dq, dark_slope, dark_slope_error]
 ...
