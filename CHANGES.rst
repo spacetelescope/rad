@@ -5,6 +5,8 @@
 
 - Removed ``err`` array from dark schema. [#324]
 
+- Updated minimum python version to 3.9. [#325]
+
 0.17.1 (2023-08-03)
 -------------------
 
