@@ -13,7 +13,7 @@ sdf:
   source:
     origin: TBD
 archive_catalog:
-  datatype: nvarchar(5)
+  datatype: nvarchar(15)
   destination: [ScienceCommon.origin]
 
 flowStyle: block
