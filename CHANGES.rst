@@ -9,6 +9,8 @@
 
 - Updated minimum python version to 3.9. [#325]
 
+- Added GuideWindow db table to Basic tagged scalars. [#327]
+
 0.17.1 (2023-08-03)
 -------------------
 
