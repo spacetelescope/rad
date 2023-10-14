@@ -9,6 +9,8 @@
 
 - Updated minimum python version to 3.9. [#325]
 
+- Added truncated keyword. [#330]
+
 0.17.1 (2023-08-03)
 -------------------
 
