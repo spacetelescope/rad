@@ -385,6 +385,18 @@ properties:
     archive_catalog:
       datatype: nvarchar(3500)
       destination: [ScienceCommon.read_pattern, GuideWindow.read_pattern]
+  truncated:
+    title: MA Tables were truncated
+    description: |
+        This is a flag to indicate that the the MA table was truncated.
+    type: boolean
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    archive_catalog:
+      datatype: nchar(1)
+      destination: [ScienceCommon.truncated, GuideWindow.truncated]
 propertyOrder: [id, type,
            start_time, mid_time, end_time,
            start_time_mjd, mid_time_mjd, end_time_mjd,
@@ -395,7 +407,7 @@ propertyOrder: [id, type,
            frame_time, group_time, exposure_time,
            effective_exposure_time, duration,
            ma_table_name, ma_table_number, level0_compressed,
-           read_pattern]
+           read_pattern, truncated]
 flowStyle: block
 required: [id, type,
            start_time, mid_time, end_time,
