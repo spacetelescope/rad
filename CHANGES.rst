@@ -11,6 +11,9 @@
 
 - Added GuideWindow db table to Basic tagged scalars. [#327]
 
+- Added optional dq array. [#328]
+
+
 0.17.1 (2023-08-03)
 -------------------
 
