@@ -9,6 +9,8 @@
 
 - Updated minimum python version to 3.9. [#325]
 
+- Added truncated keyword. [#330]
+
 - Added GuideWindow db table to Basic tagged scalars. [#327]
 
 - Added optional dq array. [#328]
