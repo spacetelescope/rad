@@ -14,7 +14,7 @@ sdf:
     origin: TBD
 archive_catalog:
   datatype: datetime2
-  destination: [ScienceCommon.filedate]
+  destination: [ScienceCommon.filedate, GuideWindow.filedate]
 
 flowStyle: block
 ...

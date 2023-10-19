@@ -11,7 +11,7 @@ sdf:
     origin: TBD
 archive_catalog:
   datatype: nvarchar(120)
-  destination: [ScienceCommon.calibration_software_version]
+  destination: [ScienceCommon.calibration_software_version, GuideWindow.calibration_software_version]
 
 flowStyle: block
 ...

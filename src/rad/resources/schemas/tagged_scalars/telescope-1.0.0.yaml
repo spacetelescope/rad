@@ -10,7 +10,7 @@ enum: [ROMAN]
 
 archive_catalog:
   datatype: nvarchar(5)
-  destination: [ScienceCommon.telescope]
+  destination: [ScienceCommon.telescope, GuideWindow.telescope]
 
 flowStyle: block
 ...

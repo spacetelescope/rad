@@ -1,7 +1,18 @@
 0.17.2 (unreleased)
 -------------------
 
--
+- Added Slope and Error to Dark reference schema. [#323]
+
+- Removed ``err`` array from dark schema. [#324]
+
+- Expanded origin db string length. [#326]
+
+- Updated minimum python version to 3.9. [#325]
+
+- Added GuideWindow db table to Basic tagged scalars. [#327]
+
+- Added optional dq array. [#328]
+
 
 0.17.1 (2023-08-03)
 -------------------
