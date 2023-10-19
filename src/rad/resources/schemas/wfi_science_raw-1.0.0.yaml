@@ -25,6 +25,7 @@ properties:
       unit:
         tag: tag:astropy.org:astropy/units/unit-1.0.0
         enum: ["DN"]
+
   amp33:
     title: Amp 33 reference pixel data.
     tag: tag:stsci.edu:asdf/unit/quantity-1.1.0
@@ -36,7 +37,13 @@ properties:
       unit:
         tag: tag:astropy.org:astropy/units/unit-1.0.0
         enum: ["DN"]
-propertyOrder: [meta, data, amp33]
+
+  resultantdq:
+    title: Optional 3-D data quality array (plane dq for each resultant)
+    tag: tag:stsci.edu:asdf/core/ndarray-1.0.0
+    ndim: 3
+    datatype: uint8
+propertyOrder: [meta, data, amp33, resultantdq]
 flowStyle: block
 required: [meta, data, amp33]
 ...
