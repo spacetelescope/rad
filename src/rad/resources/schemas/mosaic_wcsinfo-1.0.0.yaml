@@ -1,9 +1,9 @@
 %YAML 1.1
 ---
 $schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.0.0
-id: asdf://stsci.edu/datamodels/roman/schemas/wcsinfo-1.0.0
+id: asdf://stsci.edu/datamodels/roman/schemas/mosiac_wcsinfo-1.0.0
 
-title: WCS parameters
+title: Mosiac WCS parameters
 type: object
 properties:
   ra_center:

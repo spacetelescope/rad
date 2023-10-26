@@ -13,11 +13,12 @@ type: object
 properties:
   meta:
     allOf:
-      - $ref: hlpp_basic-1.0.0
       - type: object
         properties:
           # Placeholder for 'asn' schema tag
           # Placeholder for 'dither' schema tag
+          basic:
+            tag: asdf://stsci.edu/datamodels/roman/tags/mosiac_basic-1.0.0
           individual_image_meta:
             tag: asdf://stsci.edu/datamodels/roman/tags/individual_image_meta-1.0.0
           program:
@@ -25,7 +26,7 @@ properties:
           resample:
             tag: asdf://stsci.edu/datamodels/roman/tags/resample-1.0.0
           wcsinfo:
-            tag: asdf://stsci.edu/datamodels/roman/tags/hlpp_wcsinfo-1.0.0
+            tag: asdf://stsci.edu/datamodels/roman/tags/mosaic_wcsinfo-1.0.0
         required: [individual_image_meta, program, resample, wcsinfo]
   data:
     title: Science data, excluding border reference pixels.

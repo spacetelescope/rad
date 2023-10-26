@@ -125,6 +125,16 @@ tags:
   title: Resample information
   description: |-
     Resample information
+- tag_uri: asdf://stsci.edu/datamodels/roman/tags/individual_image_meta-1.0.0
+  schema_uri: asdf://stsci.edu/datamodels/roman/schemas/individual_image_meta-1.0.0
+  title: Combined level 2 metadata
+  description: |-
+    Combined level 2 metadata
+- tag_uri: asdf://stsci.edu/datamodels/roman/tags/mosaic_wcsinfo-1.0.0
+  schema_uri: asdf://stsci.edu/datamodels/roman/schemas/mocais_wcsinfo-1.0.0
+  title: Mosaic WCS parameters
+  description: |-
+    Mosaic WCS parameters
 # Reference Modules
 - tag_uri: asdf://stsci.edu/datamodels/roman/tags/reference_files/dark-1.0.0
   schema_uri: asdf://stsci.edu/datamodels/roman/schemas/reference_files/dark-1.0.0
