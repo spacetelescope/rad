@@ -5,15 +5,11 @@ id: asdf://stsci.edu/datamodels/roman/schemas/individual_image_meta-1.0.0
 
 title: Combined level 2 metadata
 
-datamodel_name: IndividualImageMetaModel
-
 type: object
 properties:
   all_meta:
     description: |
-      Table of level 2 metadata.
-    type: array
-required: [all_meta]
+      Table of level 2 metadata. Placeholder object.
 flowStyle: block
 propertyOrder: [all_meta]
 ...
