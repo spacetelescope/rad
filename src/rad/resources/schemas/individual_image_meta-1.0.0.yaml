@@ -1,0 +1,21 @@
+%YAML 1.1
+---
+$schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.0.0
+id: asdf://stsci.edu/datamodels/roman/schemas/individual_image_meta-1.0.0
+
+title: <DUMMY>
+
+datamodel_name: individual_image_meta
+
+type: object
+properties:
+  all_meta:
+    description: |
+      A list of columns in the table.
+    type: array
+    items:
+      $ref: column-1.1.0
+required: [all_meta]
+flowStyle: block
+propertyOrder: [all_meta]
+...

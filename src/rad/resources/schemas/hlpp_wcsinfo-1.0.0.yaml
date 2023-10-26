@@ -1,0 +1,240 @@
+%YAML 1.1
+---
+$schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.0.0
+id: asdf://stsci.edu/datamodels/roman/schemas/wcsinfo-1.0.0
+
+title: WCS parameters
+type: object
+properties:
+  ra_center:
+    title: <DUMMY>
+    type: number
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    archive_catalog:
+      datatype: float
+      destination: [ScienceCommon.ra_center]
+  dec_center:
+    title: <DUMMY>
+    type: number
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    archive_catalog:
+      datatype: float
+      destination: [ScienceCommon.dec_center]
+  x_center:
+    title: <DUMMY>
+    type: integer
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    archive_catalog:
+      datatype: int
+      destination: [ScienceCommon.x_center]
+  y_center:
+    title: <DUMMY>
+    type: integer
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    archive_catalog:
+      datatype: int
+      destination: [ScienceCommon.y_center]
+  orientat:
+    title: <DUMMY>
+    type: number
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    archive_catalog:
+      datatype: float
+      destination: [ScienceCommon.orientat]
+  nx:
+    title: <DUMMY>
+    type: integer
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    archive_catalog:
+      datatype: int
+      destination: [ScienceCommon.nx]
+  ny:
+    title: <DUMMY>
+    type: integer
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    archive_catalog:
+      datatype: int
+      destination: [ScienceCommon.ny]
+  x0_projection:
+    title: <DUMMY>
+    type: integer
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    archive_catalog:
+      datatype: int
+      destination: [ScienceCommon.x0_projection]
+  y0_projection:
+    title: <DUMMY>
+    type: integer
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    archive_catalog:
+      datatype: int
+      destination: [ScienceCommon.y0_projection]
+  ra_corn1:
+    title: <DUMMY>
+    type: number
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    archive_catalog:
+      datatype: float
+      destination: [ScienceCommon.ra_corn1]
+  dec_corn1:
+    title: <DUMMY>
+    type: number
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    archive_catalog:
+      datatype: float
+      destination: [ScienceCommon.dec_corn1]
+  ra_corn2:
+    title: <DUMMY>
+    type: number
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    archive_catalog:
+      datatype: float
+      destination: [ScienceCommon.ra_corn2]
+  dec_corn2:
+    title: <DUMMY>
+    type: number
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    archive_catalog:
+      datatype: float
+      destination: [ScienceCommon.dec_corn2]
+  ra_corn3:
+    title: <DUMMY>
+    type: number
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    archive_catalog:
+      datatype: float
+      destination: [ScienceCommon.ra_corn3]
+  dec_corn3:
+    title: <DUMMY>
+    type: number
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    archive_catalog:
+      datatype: float
+      destination: [ScienceCommon.dec_corn3]
+  ra_corn4:
+    title: <DUMMY>
+    type: number
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    archive_catalog:
+      datatype: float
+      destination: [ScienceCommon.ra_corn4]
+  dec_corn4:
+    title: <DUMMY>
+    type: number
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    archive_catalog:
+      datatype: float
+      destination: [ScienceCommon.dec_corn4]
+  pixel_scale:
+    title: <DUMMY>
+    type: number
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    archive_catalog:
+      datatype: float
+      destination: [ScienceCommon.pixel_scale]
+  ra_projection_center:
+    title: <DUMMY>
+    type: number
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    archive_catalog:
+      datatype: float
+      destination: [ScienceCommon.ra_projection_center]
+  dec_projection_center:
+    title: <DUMMY>
+    type: number
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    archive_catalog:
+      datatype: float
+      destination: [ScienceCommon.dec_projection_center]
+  orientat_projection_center:
+    title: <DUMMY>
+    type: number
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    archive_catalog:
+      datatype: float
+      destination: [ScienceCommon.orientat_projection_center]
+  s_region:
+    title: <DUMMY>
+    type: number
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    archive_catalog:
+      datatype: float
+      destination: [ScienceCommon.s_region]
+propertyOrder: [ ra_center, dec_center, x_center, y_center, orientat, nx, ny, 
+                 x0_projection, y0_projection, ra_corn1, dec_corn1, ra_corn2,
+                 dec_corn2, ra_corn3, dec_corn3, ra_corn4, dec_corn4, pixel_scale,
+                 ra_projection_center, dec_projection_center, 
+                 orientat_projection_center, s_region ]
+flowStyle: block
+required: [ ra_center, dec_center, x_center, y_center, orientat, nx, ny, 
+            x0_projection, y0_projection, ra_corn1, dec_corn1, ra_corn2,
+            dec_corn2, ra_corn3, dec_corn3, ra_corn4, dec_corn4, pixel_scale,
+            ra_projection_center, dec_projection_center, 
+            orientat_projection_center, s_region ]
+...

@@ -7,23 +7,26 @@ title: |
   The schema for WFI Level 3 mosaics.
 
 datamodel_name: MosaicModel
-
 archive_meta: None
 
 type: object
 properties:
   meta:
     allOf:
-      - $ref: common-1.0.0
+      - $ref: hlpp_basic-1.0.0
       - type: object
         properties:
           # Placeholder for 'asn' schema tag
           # Placeholder for 'dither' schema tag
-          photometry:
-            tag: asdf://stsci.edu/datamodels/roman/tags/photometry-1.0.0
+          individual_image_meta:
+            tag: asdf://stsci.edu/datamodels/roman/tags/individual_image_meta-1.0.0
+          program:
+            tag: asdf://stsci.edu/datamodels/roman/tags/program-1.0.0
           resample:
             tag: asdf://stsci.edu/datamodels/roman/tags/resample-1.0.0
-        required: [photometry]
+          wcsinfo:
+            tag: asdf://stsci.edu/datamodels/roman/tags/hlpp_wcsinfo-1.0.0
+        required: [individual_image_meta, program, resample, wcsinfo]
   data:
     title: Science data, excluding border reference pixels.
     tag: tag:stsci.edu:asdf/unit/quantity-1.1.0
