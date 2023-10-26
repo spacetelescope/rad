@@ -226,15 +226,15 @@ properties:
     archive_catalog:
       datatype: float
       destination: [ScienceCommon.s_region]
-propertyOrder: [ ra_center, dec_center, x_center, y_center, orientat, nx, ny, 
+propertyOrder: [ ra_center, dec_center, x_center, y_center, orientat, nx, ny,
                  x0_projection, y0_projection, ra_corn1, dec_corn1, ra_corn2,
                  dec_corn2, ra_corn3, dec_corn3, ra_corn4, dec_corn4, pixel_scale,
-                 ra_projection_center, dec_projection_center, 
+                 ra_projection_center, dec_projection_center,
                  orientat_projection_center, s_region ]
 flowStyle: block
-required: [ ra_center, dec_center, x_center, y_center, orientat, nx, ny, 
+required: [ ra_center, dec_center, x_center, y_center, orientat, nx, ny,
             x0_projection, y0_projection, ra_corn1, dec_corn1, ra_corn2,
             dec_corn2, ra_corn3, dec_corn3, ra_corn4, dec_corn4, pixel_scale,
-            ra_projection_center, dec_projection_center, 
+            ra_projection_center, dec_projection_center,
             orientat_projection_center, s_region ]
 ...
