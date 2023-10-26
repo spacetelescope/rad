@@ -11,10 +11,8 @@ type: object
 properties:
   all_meta:
     description: |
-      A list of columns in the table.
+      Table of level 2 metadata.
     type: array
-    items:
-      $ref: column-1.1.0
 required: [all_meta]
 flowStyle: block
 propertyOrder: [all_meta]
