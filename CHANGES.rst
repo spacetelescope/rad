@@ -15,6 +15,8 @@
 
 - Added optional dq array. [#328]
 
+- Added streamlined Level 3 Mosaic metadata schemas. [#334]
+
 
 0.17.1 (2023-08-03)
 -------------------
