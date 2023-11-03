@@ -1,4 +1,4 @@
-0.17.2 (unreleased)
+0.18.0 (2023-11-03)
 -------------------
 
 - Added Slope and Error to Dark reference schema. [#323]
