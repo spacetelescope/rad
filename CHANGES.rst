@@ -1,4 +1,9 @@
-0.17.2 (unreleased)
+A0.18.1 (unreleased)
+-------------------
+
+- Added streamlined Level 3 Mosaic metadata schemas. [#334]
+
+0.18.0 (2023-11-06)
 -------------------
 
 - Added Slope and Error to Dark reference schema. [#323]
@@ -15,7 +20,7 @@
 
 - Added optional dq array. [#328]
 
-- Added streamlined Level 3 Mosaic metadata schemas. [#334]
+- Update required elements for release. [#337]
 
 
 0.17.1 (2023-08-03)
