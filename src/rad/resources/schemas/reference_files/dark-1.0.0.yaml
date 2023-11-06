@@ -84,7 +84,7 @@ properties:
       unit:
         tag: tag:astropy.org:astropy/units/unit-1.0.0
         enum: ["DN / s"]
-required: [meta, data, dq]
+required: [meta, data, dq, dark_slope, dark_slope_error]
 flowStyle: block
 propertyOrder: [meta, data, dq, dark_slope, dark_slope_error]
 ...

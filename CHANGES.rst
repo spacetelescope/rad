@@ -15,6 +15,8 @@
 
 - Added optional dq array. [#328]
 
+- Update required elements for release. [#337]
+
 
 0.17.1 (2023-08-03)
 -------------------
