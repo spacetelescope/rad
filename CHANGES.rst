@@ -1,4 +1,4 @@
-0.18.0 (2023-11-03)
+0.17.2 (unreleased)
 -------------------
 
 - Added Slope and Error to Dark reference schema. [#323]
@@ -14,6 +14,8 @@
 - Added GuideWindow db table to Basic tagged scalars. [#327]
 
 - Added optional dq array. [#328]
+
+- Update required elements for release. [#337]
 
 
 0.17.1 (2023-08-03)
