@@ -29,23 +29,23 @@ properties:
       destination: [ScienceCommon.dec_ref]
   x_ref:
     title: Pixel number in mosaic corresponding to projection center ra/dec
-    type: integer
+    type: number
     sdf:
       special_processing: VALUE_REQUIRED
       source:
         origin: TBD
     archive_catalog:
-      datatype: int
+      datatype: float
       destination: [ScienceCommon.x_ref]
   y_ref:
     title: Pixel number in mosaic corresponding to projection center ra/dec
-    type: integer
+    type: number
     sdf:
       special_processing: VALUE_REQUIRED
       source:
         origin: TBD
     archive_catalog:
-      datatype: int
+      datatype: float
       destination: [ScienceCommon.y_ref]
   rotation_matrix:
     title: 2x2 rotation matrix
@@ -83,10 +83,8 @@ properties:
       destination: [ScienceCommon.pixel_scale_local]
   projection:
     title: Projection type and order
-    type: array
-    items:
-      type: string
-      enum: ["RA---TAN", "DEC--TAN"]
+    type: string
+    enum: ["TAN"]
     sdf:
       special_processing: VALUE_REQUIRED
       source:
@@ -217,7 +215,8 @@ properties:
       datatype: float
       destination: [ScienceCommon.dec_corn4]
   orientat_local:
-    title: Orientation at mosaic center
+    title: Angle between north and the y axis of the projection at the mosaic
+      center, turning positive in the direction of increasing right ascenscion.
     type: number
     sdf:
       special_processing: VALUE_REQUIRED
@@ -227,7 +226,8 @@ properties:
       datatype: float
       destination: [ScienceCommon.orientat_local]
   orientat:
-    title: Orientation at projection center
+    title: Angle between north and the y axis of the projection at the projection
+      center, turning positive in the direction of increasing right ascenscion.
     type: number
     sdf:
       special_processing: VALUE_REQUIRED
