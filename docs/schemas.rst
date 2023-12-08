@@ -28,7 +28,6 @@ The RAD schemas:
     ramp-1.0.0
     ref_file-1.0.0
     target-1.0.0
-    variance-1.0.0
     velocity_aberration-1.0.0
     visit-1.0.0
     wfi_detector-1.0.0
