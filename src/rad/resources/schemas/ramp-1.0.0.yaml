@@ -1,6 +1,6 @@
 %YAML 1.1
 ---
-$schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.0.0
+$schema: asdf://stsci.edu/datamodels/roman/meta_schemas/rad_schema-1.0.0
 id: asdf://stsci.edu/datamodels/roman/schemas/ramp-1.0.0
 
 title: Ramp schema
@@ -10,7 +10,7 @@ datamodel_name: RampModel
 type: object
 properties:
   meta:
-    $ref: common-1.0.0
+    $ref: asdf://stsci.edu/datamodels/roman/schemas/common-1.0.0
   data:
     title: Science data, including the border reference pixels.
     tag: tag:stsci.edu:asdf/unit/quantity-1.1.0
@@ -57,13 +57,14 @@ properties:
   border_ref_pix_left:
     title: Original border reference pixels, on left (from viewers perspective).
     tag: tag:stsci.edu:asdf/unit/quantity-1.1.0
-    value:
-      tag: tag:stsci.edu:asdf/core/ndarray-1.0.0
-      datatype: float32
-      ndim: 3
-    unit:
-      tag: tag:astropy.org:astropy/units/unit-1.0.0
-      enum: ["DN"]
+    properties:
+      value:
+        tag: tag:stsci.edu:asdf/core/ndarray-1.0.0
+        datatype: float32
+        ndim: 3
+      unit:
+        tag: tag:astropy.org:astropy/units/unit-1.0.0
+        enum: ["DN"]
   border_ref_pix_right:
     title: Original border reference pixels, on right (from viewers perspective).
     tag: tag:stsci.edu:asdf/unit/quantity-1.1.0

@@ -12,7 +12,7 @@ from crds.config import is_crds_name
 from .conftest import MANIFEST
 
 SCHEMA_URI_PREFIX = "asdf://stsci.edu/datamodels/roman/schemas/"
-METASCHEMA_URI = "asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.0.0"
+METASCHEMA_URI = "asdf://stsci.edu/datamodels/roman/meta_schemas/rad_schema-1.0.0"
 SCHEMA_URIS = [u for u in asdf.get_config().resource_manager if u.startswith(SCHEMA_URI_PREFIX) and u != METASCHEMA_URI]
 REF_FILE_SCHEMA_URIS = [u["schema_uri"] for u in MANIFEST["tags"] if "/reference_files/" in u["schema_uri"]]
 WFI_OPTICAL_ELEMENTS = list(

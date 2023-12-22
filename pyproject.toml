@@ -74,7 +74,6 @@ filterwarnings = [
     "error::ResourceWarning",
 ]
 asdf_schema_tests_enabled = 'true'
-asdf_schema_skip_tests = 'src/rad/resources/schemas/rad_schema-1.0.0.yaml'
 asdf_schema_root = 'src/rad/resources/schemas'
 
 [tool.isort]

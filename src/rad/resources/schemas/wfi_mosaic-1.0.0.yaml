@@ -1,6 +1,6 @@
 %YAML 1.1
 ---
-$schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.0.0
+$schema: asdf://stsci.edu/datamodels/roman/meta_schemas/rad_schema-1.0.0
 id: asdf://stsci.edu/datamodels/roman/schemas/wfi_mosaic-1.0.0
 
 title: |
@@ -14,7 +14,7 @@ type: object
 properties:
   meta:
     allOf:
-      - $ref: common-1.0.0
+      - $ref: asdf://stsci.edu/datamodels/roman/schemas/common-1.0.0
       - type: object
         properties:
           # Placeholder for 'asn' schema tag
@@ -22,7 +22,7 @@ properties:
           photometry:
             tag: asdf://stsci.edu/datamodels/roman/tags/photometry-1.0.0
           resample:
-            tag: asdf://stsci.edu/datamodels/roman/tags/resample-1.0.0
+            tag: asdf://stsci.edu/datamodels/roman/tags/resample_information-1.0.0
         required: [photometry]
   data:
     title: Science data, excluding border reference pixels.
