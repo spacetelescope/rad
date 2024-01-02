@@ -9,33 +9,33 @@ asdf_standard_requirement:
   gte: 1.1.0
 tags:
 # Object Modules
-- tag_uri: asdf://stsci.edu/datamodels/roman/tags/guidewindow-1.0.0
-  schema_uri: asdf://stsci.edu/datamodels/roman/schemas/guidewindow-1.0.0
+- tag_uri: asdf://stsci.edu/datamodels/roman/tags/data_products/guidewindow-1.0.0
+  schema_uri: asdf://stsci.edu/datamodels/roman/schemas/data_products/guidewindow-1.0.0
   title: Guide window schema
   description: |-
     Guide window schema
-- tag_uri: asdf://stsci.edu/datamodels/roman/tags/ramp-1.0.0
-  schema_uri: asdf://stsci.edu/datamodels/roman/schemas/ramp-1.0.0
+- tag_uri: asdf://stsci.edu/datamodels/roman/tags/data_products/ramp-1.0.0
+  schema_uri: asdf://stsci.edu/datamodels/roman/schemas/data_products/ramp-1.0.0
   title: Ramp schema
   description: |-
     Ramp schema
-- tag_uri: asdf://stsci.edu/datamodels/roman/tags/ramp_fit_output-1.0.0
-  schema_uri: asdf://stsci.edu/datamodels/roman/schemas/ramp_fit_output-1.0.0
+- tag_uri: asdf://stsci.edu/datamodels/roman/tags/data_products/ramp_fit_output-1.0.0
+  schema_uri: asdf://stsci.edu/datamodels/roman/schemas/data_products/ramp_fit_output-1.0.0
   title: Ramp fit output schema
   description: |-
     Ramp fit output schema
-- tag_uri: asdf://stsci.edu/datamodels/roman/tags/wfi_science_raw-1.0.0
-  schema_uri: asdf://stsci.edu/datamodels/roman/schemas/wfi_science_raw-1.0.0
+- tag_uri: asdf://stsci.edu/datamodels/roman/tags/data_products/wfi_science_raw-1.0.0
+  schema_uri: asdf://stsci.edu/datamodels/roman/schemas/data_products/wfi_science_raw-1.0.0
   title: Roman WFI Raw Science Data datamodel
   description: |-
     Basic Roman Raw Science
-- tag_uri: asdf://stsci.edu/datamodels/roman/tags/wfi_image-1.0.0
-  schema_uri: asdf://stsci.edu/datamodels/roman/schemas/wfi_image-1.0.0
+- tag_uri: asdf://stsci.edu/datamodels/roman/tags/data_products/wfi_image-1.0.0
+  schema_uri: asdf://stsci.edu/datamodels/roman/schemas/data_products/wfi_image-1.0.0
   title: Wfi level 2 image information
   description: |-
     Wfi level 2 image information
-- tag_uri: asdf://stsci.edu/datamodels/roman/tags/wfi_mosaic-1.0.0
-  schema_uri: asdf://stsci.edu/datamodels/roman/schemas/wfi_mosaic-1.0.0
+- tag_uri: asdf://stsci.edu/datamodels/roman/tags/data_products/wfi_mosaic-1.0.0
+  schema_uri: asdf://stsci.edu/datamodels/roman/schemas/data_products/wfi_mosaic-1.0.0
   title: Wfi level 3 mosiac information
   description: |-
     Wfi level 3 mosaic information
@@ -187,8 +187,8 @@ tags:
   description: |-
     WFI imaging photometric flux conversion data model
 # Misc
-- tag_uri: asdf://stsci.edu/datamodels/roman/tags/associations-1.0.0
-  schema_uri: asdf://stsci.edu/datamodels/roman/schemas/associations-1.0.0
+- tag_uri: asdf://stsci.edu/datamodels/roman/tags/data_products/associations-1.0.0
+  schema_uri: asdf://stsci.edu/datamodels/roman/schemas/data_products/associations-1.0.0
   title: Association table
   description: |-
     Association table
@@ -203,8 +203,8 @@ tags:
   description: |-
     Calibration reference file names.
 # SSC data models
-- tag_uri: asdf://stsci.edu/datamodels/roman/tags/msos_stack-1.0.0
-  schema_uri: asdf://stsci.edu/datamodels/roman/schemas/msos_stack-1.0.0
+- tag_uri: asdf://stsci.edu/datamodels/roman/tags/data_products/msos_stack-1.0.0
+  schema_uri: asdf://stsci.edu/datamodels/roman/schemas/data_products/msos_stack-1.0.0
   title: MSOS Stack Level 3 Schema
   description: |-
     Level 3 schema for SSC's MSOS stack products
