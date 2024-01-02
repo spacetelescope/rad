@@ -212,47 +212,6 @@ tags:
   title: Calibration reference file names.
   description: |-
     Calibration reference file names.
-# Tagged Scalars
-- tag_uri: asdf://stsci.edu/datamodels/roman/tags/calibration_software_version-1.0.0
-  schema_uri: asdf://stsci.edu/datamodels/roman/schemas/tagged_scalars/calibration_software_version-1.0.0
-  title: Calibration software version
-  description: |-
-    Calibration software version number
-- tag_uri: asdf://stsci.edu/datamodels/roman/tags/filename-1.0.0
-  schema_uri: asdf://stsci.edu/datamodels/roman/schemas/tagged_scalars/filename-1.0.0
-  title: Name of the file
-  description: |-
-    Name of the file
-- tag_uri: asdf://stsci.edu/datamodels/roman/tags/file_date-1.0.0
-  schema_uri: asdf://stsci.edu/datamodels/roman/schemas/tagged_scalars/file_date-1.0.0
-  title: Date this file was created (UTC)
-  description: |-
-    Date this file was created (UTC)
-- tag_uri: asdf://stsci.edu/datamodels/roman/tags/model_type-1.0.0
-  schema_uri: asdf://stsci.edu/datamodels/roman/schemas/tagged_scalars/model_type-1.0.0
-  title: Type of data model
-  description: |-
-    Type of data model
-- tag_uri: asdf://stsci.edu/datamodels/roman/tags/origin-1.0.0
-  schema_uri: asdf://stsci.edu/datamodels/roman/schemas/tagged_scalars/origin-1.0.0
-  title: Organization responsible for creating file
-  description: |-
-    Organization responsible for creating file
-- tag_uri: asdf://stsci.edu/datamodels/roman/tags/prd_software_version-1.0.0
-  schema_uri: asdf://stsci.edu/datamodels/roman/schemas/tagged_scalars/prd_software_version-1.0.0
-  title: S&OC PRD version number used in data processing
-  description: |-
-    S&OC PRD version number used in data processing
-- tag_uri: asdf://stsci.edu/datamodels/roman/tags/sdf_software_version-1.0.0
-  schema_uri: asdf://stsci.edu/datamodels/roman/schemas/tagged_scalars/sdf_software_version-1.0.0
-  title: SDF software version number
-  description: |-
-    SDF software version number
-- tag_uri: asdf://stsci.edu/datamodels/roman/tags/telescope-1.0.0
-  schema_uri: asdf://stsci.edu/datamodels/roman/schemas/tagged_scalars/telescope-1.0.0
-  title: Telescope used to acquire the data
-  description: |-
-    Telescope used to acquire the data
 # SSC data models
 - tag_uri: asdf://stsci.edu/datamodels/roman/tags/msos_stack-1.0.0
   schema_uri: asdf://stsci.edu/datamodels/roman/schemas/msos_stack-1.0.0
