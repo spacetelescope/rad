@@ -75,11 +75,6 @@ tags:
   title: Photometry information
   description: |-
     Photometry information
-- tag_uri: asdf://stsci.edu/datamodels/roman/tags/source_detection-1.0.0
-  schema_uri: asdf://stsci.edu/datamodels/roman/schemas/source_detection-1.0.0
-  title: Source catalog for TweakReg
-  description: |-
-    Source catalog for TweakReg
 - tag_uri: asdf://stsci.edu/datamodels/roman/tags/coordinates-1.0.0
   schema_uri: asdf://stsci.edu/datamodels/roman/schemas/coordinates-1.0.0
   title: Coordinate frame information
@@ -120,11 +115,6 @@ tags:
   title: Calibration Step status information
   description: |-
     Calibration Step status information
-- tag_uri: asdf://stsci.edu/datamodels/roman/tags/resample-1.0.0
-  schema_uri: asdf://stsci.edu/datamodels/roman/schemas/resample-1.0.0
-  title: Resample information
-  description: |-
-    Resample information
 # Reference Modules
 - tag_uri: asdf://stsci.edu/datamodels/roman/tags/reference_files/dark-1.0.0
   schema_uri: asdf://stsci.edu/datamodels/roman/schemas/reference_files/dark-1.0.0

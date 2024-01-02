@@ -22,10 +22,28 @@ properties:
           photometry:
             tag: asdf://stsci.edu/datamodels/roman/tags/photometry-1.0.0
           resample:
-            anyOf:
-              - tag: asdf://stsci.edu/datamodels/roman/tags/resample-1.0.0
-              - type: "null"
-        required: [photometry, resample]
+            title: Resample information
+            type: object
+            properties:
+              pixel_scale_ratio:
+                title: Pixel Scale Ratio of resample to input scale
+                type: number
+              pixfrac:
+                title: Fraction of pixel to use for pixel convolution
+                type: number
+              pointings:
+                title: Number of pointings in the resample
+                type: integer
+              product_exposure_time:
+                title: Total exposure time for resample product
+                type: number
+              weight_type:
+                title: Drizzle weight type for resample
+                type: string
+                enum: ["exptime", "ivm"]
+            propertyOrder: [pixel_scale_ratio, pixfrac, pointings, product_exposure_time, weight_type]
+            required: [pixel_scale_ratio, pixfrac, pointings, product_exposure_time, weight_type]
+        required: [photometry]
   data:
     title: Science data, excluding border reference pixels.
     tag: tag:stsci.edu:asdf/unit/quantity-1.1.0
