@@ -19,8 +19,10 @@ properties:
           photometry:
             tag: asdf://stsci.edu/datamodels/roman/tags/photometry-1.0.0
           source_detection:
-            tag: asdf://stsci.edu/datamodels/roman/tags/source_detection_catalog-1.0.0
-        required: [photometry]
+            anyOf:
+              - tag: asdf://stsci.edu/datamodels/roman/tags/source_detection_catalog-1.0.0
+              - type: "null"
+        required: [photometry, source_detection]
   data:
     title: Science data, excluding border reference pixels.
     tag: tag:stsci.edu:asdf/unit/quantity-1.1.0
