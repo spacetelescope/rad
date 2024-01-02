@@ -11,14 +11,14 @@ type: object
 properties:
   meta:
     allOf:
-      - $ref: asdf://stsci.edu/datamodels/roman/schemas/reference_files/ref_common-1.0.0
+      - $ref: asdf://stsci.edu/datamodels/roman/schemas/ref_common-1.0.0
       - type: object
         properties:
           reftype:
             type: string
             enum: [FLAT]
         required: [reftype]
-      - $ref: asdf://stsci.edu/datamodels/roman/schemas/reference_files/ref_optical_element-1.0.0
+      - $ref: asdf://stsci.edu/datamodels/roman/schemas/ref_optical_element-1.0.0
   data:
     title: Flat data array
     tag: tag:stsci.edu:asdf/core/ndarray-1.0.0
