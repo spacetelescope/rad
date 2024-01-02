@@ -43,7 +43,7 @@ properties:
                         enum: ["arcsec**2"]
                   - type: "null"
             required: [pixelarea_steradians, pixelarea_arcsecsq]
-        required: [photometry]
+        required: [reftype, photometry]
       - $ref: asdf://stsci.edu/datamodels/roman/schemas/reference_files/ref_optical_element-1.0.0
   data:
     title: Pixel area array

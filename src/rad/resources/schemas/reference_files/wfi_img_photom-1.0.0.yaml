@@ -17,6 +17,7 @@ properties:
           reftype:
             type: string
             enum: [PHOTOM]
+        required: [reftype]
   phot_table:
     title: Photometric flux conversion factors table
     type: object

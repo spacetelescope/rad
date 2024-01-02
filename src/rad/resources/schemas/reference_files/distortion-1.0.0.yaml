@@ -25,11 +25,10 @@ properties:
             title: Output units of V2/V3 coordinates after the model is applied.
             tag: tag:stsci.edu:asdf/unit/unit-1.0.0
             enum: ["arcsec"]
-        required: [output_units, input_units]
+        required: [reftype, output_units, input_units]
       - $ref: asdf://stsci.edu/datamodels/roman/schemas/reference_files/ref_optical_element-1.0.0
   coordinate_distortion_transform:
     title: Distortion transform as an instance of astropy.modeling.Model.
-    type: object
 required: [meta, coordinate_distortion_transform]
 flowStyle: block
 propertyOrder: [meta, coordinate_distortion_transform]

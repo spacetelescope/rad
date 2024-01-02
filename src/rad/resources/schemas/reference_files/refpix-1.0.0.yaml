@@ -25,7 +25,7 @@ properties:
             title: Units of the output of the linearity polynomial.
             tag: tag:astropy.org:astropy/units/unit-1.0.0
             enum: ["DN"]
-        required: [output_units, input_units]
+        required: [reftype, output_units, input_units]
 
   gamma:
     title: Left column correction coefficients

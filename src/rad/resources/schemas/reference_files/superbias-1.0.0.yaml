@@ -17,6 +17,7 @@ properties:
           reftype:
             type: string
             enum: [BIAS]
+        required: [reftype]
   data:
     title: 2-D super-bias array
     tag: tag:stsci.edu:asdf/core/ndarray-1.0.0

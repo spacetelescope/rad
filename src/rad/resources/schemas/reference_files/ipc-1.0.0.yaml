@@ -18,6 +18,7 @@ properties:
           reftype:
             type: string
             enum: [IPC]
+        required: [reftype]
   data:
     title: Interpixel capacitance correction kernel array
     description: |

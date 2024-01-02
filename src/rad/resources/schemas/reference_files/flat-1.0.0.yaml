@@ -17,6 +17,7 @@ properties:
           reftype:
             type: string
             enum: [FLAT]
+        required: [reftype]
       - $ref: asdf://stsci.edu/datamodels/roman/schemas/reference_files/ref_optical_element-1.0.0
   data:
     title: Flat data array

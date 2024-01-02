@@ -17,6 +17,7 @@ properties:
           reftype:
             type: string
             enum: [MASK]
+        required: [reftype]
   dq:
     title: Data quality mask array
     tag: tag:stsci.edu:asdf/core/ndarray-1.0.0

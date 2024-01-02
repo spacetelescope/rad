@@ -17,6 +17,7 @@ properties:
           reftype:
             type: string
             enum: [SATURATION]
+        required: [reftype]
   data:
     title: Saturation threshold
     tag: tag:stsci.edu:asdf/unit/quantity-1.1.0
