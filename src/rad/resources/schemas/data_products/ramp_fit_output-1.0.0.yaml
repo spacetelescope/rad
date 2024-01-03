@@ -19,6 +19,7 @@ properties:
         tag: tag:stsci.edu:asdf/core/ndarray-1.0.0
         datatype: float32
         ndim: 3
+        default_shape: [8, 4096, 4096]
       unit:
         tag: tag:astropy.org:astropy/units/unit-1.0.0
         enum: ["electron / s"]
@@ -30,6 +31,7 @@ properties:
         tag: tag:stsci.edu:asdf/core/ndarray-1.0.0
         datatype: float32
         ndim: 3
+        default_shape: [8, 4096, 4096]
       unit:
         tag: tag:astropy.org:astropy/units/unit-1.0.0
         enum: ["electron / s"]
@@ -41,6 +43,7 @@ properties:
         tag: tag:stsci.edu:asdf/core/ndarray-1.0.0
         datatype: float32
         ndim: 3
+        default_shape: [8, 4096, 4096]
       unit:
         tag: tag:astropy.org:astropy/units/unit-1.0.0
         enum: ["electron"]
@@ -52,6 +55,7 @@ properties:
         tag: tag:stsci.edu:asdf/core/ndarray-1.0.0
         datatype: float32
         ndim: 3
+        default_shape: [8, 4096, 4096]
       unit:
         tag: tag:astropy.org:astropy/units/unit-1.0.0
         enum: ["electron"]
@@ -63,14 +67,16 @@ properties:
         tag: tag:stsci.edu:asdf/core/ndarray-1.0.0
         datatype: float32
         ndim: 2
+        default_shape: [4096, 4096]
       unit:
         tag: tag:astropy.org:astropy/units/unit-1.0.0
         enum: ["electron"]
   weights:
     title: Weights for segment-specific fits
     tag: tag:stsci.edu:asdf/core/ndarray-1.0.0
-    ndim: 3
     datatype: float32
+    ndim: 3
+    default_shape: [8, 4096, 4096]
   crmag:
     title: Approximate CR magnitudes
     tag: tag:stsci.edu:asdf/unit/quantity-1.1.0
@@ -79,6 +85,7 @@ properties:
         tag: tag:stsci.edu:asdf/core/ndarray-1.0.0
         datatype: float32
         ndim: 3
+        default_shape: [8, 4096, 4096]
       unit:
         tag: tag:astropy.org:astropy/units/unit-1.0.0
         enum: ["electron"]
@@ -90,6 +97,7 @@ properties:
         tag: tag:stsci.edu:asdf/core/ndarray-1.0.0
         datatype: float32
         ndim: 3
+        default_shape: [8, 4096, 4096]
       unit:
         tag: tag:astropy.org:astropy/units/unit-1.0.0
         enum: ["electron2 / s2"]
@@ -101,6 +109,7 @@ properties:
         tag: tag:stsci.edu:asdf/core/ndarray-1.0.0
         datatype: float32
         ndim: 3
+        default_shape: [8, 4096, 4096]
       unit:
         tag: tag:astropy.org:astropy/units/unit-1.0.0
         enum: ["electron2 / s2"]

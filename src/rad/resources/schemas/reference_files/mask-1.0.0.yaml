@@ -23,6 +23,7 @@ properties:
     tag: tag:stsci.edu:asdf/core/ndarray-1.0.0
     datatype: uint32
     ndim: 2
+    default_shape: [4096, 4096]
 required: [meta, dq]
 flowStyle: block
 propertyOrder: [meta, dq]

@@ -214,6 +214,7 @@ properties:
         tag: tag:stsci.edu:asdf/core/ndarray-1.0.0
         datatype: uint16
         ndim: 5
+        default_shape: [2, 8, 16, 32, 32]
       unit:
         tag: tag:astropy.org:astropy/units/unit-1.0.0
         enum: ["DN"]
@@ -227,6 +228,7 @@ properties:
         tag: tag:stsci.edu:asdf/core/ndarray-1.0.0
         datatype: uint16
         ndim: 5
+        default_shape: [2, 8, 16, 32, 32]
       unit:
         tag: tag:astropy.org:astropy/units/unit-1.0.0
         enum: ["DN"]
@@ -240,6 +242,7 @@ properties:
         tag: tag:stsci.edu:asdf/core/ndarray-1.0.0
         datatype: uint16
         ndim: 5
+        default_shape: [2, 8, 16, 32, 32]
       unit:
         tag: tag:astropy.org:astropy/units/unit-1.0.0
         enum: ["DN"]

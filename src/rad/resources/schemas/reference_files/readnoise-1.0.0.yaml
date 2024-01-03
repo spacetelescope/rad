@@ -26,6 +26,7 @@ properties:
         tag: tag:stsci.edu:asdf/core/ndarray-1.0.0
         datatype: float32
         ndim: 2
+        default_shape: [4096, 4096]
       unit:
         tag: tag:astropy.org:astropy/units/unit-1.0.0
         enum: ["DN"]

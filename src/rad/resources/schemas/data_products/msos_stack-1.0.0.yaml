@@ -20,24 +20,28 @@ properties:
     tag: tag:stsci.edu:asdf/core/ndarray-1.0.0
     datatype: float64
     ndim: 2
+    default_shape: [4096, 4096]
 
   uncertainty:
     title: uncertainty data
     tag: tag:stsci.edu:asdf/core/ndarray-1.0.0
     datatype: float64
     ndim: 2
+    default_shape: [4096, 4096]
 
   mask:
     title: mask data
     tag: tag:stsci.edu:asdf/core/ndarray-1.0.0
     datatype: uint8
     ndim: 2
+    default_shape: [4096, 4096]
 
   coverage:
     title: coverage data
     tag: tag:stsci.edu:asdf/core/ndarray-1.0.0
     datatype: uint8
     ndim: 2
+    default_shape: [4096, 4096]
 
 propertyOrder: [meta, data, uncertainty, mask, coverage]
 flowStyle: block

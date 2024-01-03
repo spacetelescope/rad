@@ -34,6 +34,7 @@ properties:
       of DN. The coefficients have units that contain various powers of DN.
     tag: tag:stsci.edu:asdf/core/ndarray-1.0.0
     datatype: float32
+    default_shape: [8, 4096, 4096]
     # Dimensions: numcoeffs, ysize, xsize
     ndim: 3
   dq:
@@ -41,6 +42,7 @@ properties:
     tag: tag:stsci.edu:asdf/core/ndarray-1.0.0
     datatype: uint32
     ndim: 2
+    default_shape: [4096, 4096]
 required: [meta, coeffs, dq]
 flowStyle: block
 propertyOrder: [meta, coeffs, dq]

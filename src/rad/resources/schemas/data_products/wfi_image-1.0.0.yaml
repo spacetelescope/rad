@@ -34,6 +34,7 @@ properties:
         tag: tag:stsci.edu:asdf/core/ndarray-1.0.0
         datatype: float32
         ndim: 2
+        default_shape: [4088, 4088]
       unit:
         tag: tag:astropy.org:astropy/units/unit-1.0.0
         enum: ["electron / s"]
@@ -41,6 +42,7 @@ properties:
     tag: tag:stsci.edu:asdf/core/ndarray-1.0.0
     datatype: uint32
     ndim: 2
+    default_shape: [4088, 4088]
   err:
     tag: tag:stsci.edu:asdf/unit/quantity-1.1.0
     properties:
@@ -48,6 +50,7 @@ properties:
         tag: tag:stsci.edu:asdf/core/ndarray-1.0.0
         datatype: float32
         ndim: 2
+        default_shape: [4088, 4088]
       unit:
         tag: tag:astropy.org:astropy/units/unit-1.0.0
         enum: ["electron / s"]
@@ -58,6 +61,7 @@ properties:
         tag: tag:stsci.edu:asdf/core/ndarray-1.0.0
         datatype: float32
         ndim: 2
+        default_shape: [4088, 4088]
       unit:
         tag: tag:astropy.org:astropy/units/unit-1.0.0
         enum: ["electron2 / s2"]
@@ -68,6 +72,7 @@ properties:
         tag: tag:stsci.edu:asdf/core/ndarray-1.0.0
         datatype: float32
         ndim: 2
+        default_shape: [4088, 4088]
       unit:
         tag: tag:astropy.org:astropy/units/unit-1.0.0
         enum: ["electron2 / s2"]
@@ -78,6 +83,7 @@ properties:
         tag: tag:stsci.edu:asdf/core/ndarray-1.0.0
         datatype: float32
         ndim: 2
+        default_shape: [4088, 4088]
       unit:
         tag: tag:astropy.org:astropy/units/unit-1.0.0
         enum: ["electron2 / s2"]
@@ -89,6 +95,7 @@ properties:
         tag: tag:stsci.edu:asdf/core/ndarray-1.0.0
         datatype: uint16
         ndim: 3
+        default_shape: [8, 4096, 128]
       unit:
         tag: tag:astropy.org:astropy/units/unit-1.0.0
         enum: ["DN"]
@@ -100,6 +107,7 @@ properties:
         tag: tag:stsci.edu:asdf/core/ndarray-1.0.0
         datatype: float32
         ndim: 3
+        default_shape: [8, 4096, 4]
       unit:
         tag: tag:astropy.org:astropy/units/unit-1.0.0
         enum: ["DN"]
@@ -111,6 +119,7 @@ properties:
         tag: tag:stsci.edu:asdf/core/ndarray-1.0.0
         datatype: float32
         ndim: 3
+        default_shape: [8, 4096, 4]
       unit:
         tag: tag:astropy.org:astropy/units/unit-1.0.0
         enum: ["DN"]
@@ -122,6 +131,7 @@ properties:
         tag: tag:stsci.edu:asdf/core/ndarray-1.0.0
         datatype: float32
         ndim: 3
+        default_shape: [8, 4, 4096]
       unit:
         tag: tag:astropy.org:astropy/units/unit-1.0.0
         enum: ["DN"]
@@ -133,6 +143,7 @@ properties:
         tag: tag:stsci.edu:asdf/core/ndarray-1.0.0
         datatype: float32
         ndim: 3
+        default_shape: [8, 4, 4096]
       unit:
         tag: tag:astropy.org:astropy/units/unit-1.0.0
         enum: ["DN"]
@@ -141,21 +152,25 @@ properties:
     tag: tag:stsci.edu:asdf/core/ndarray-1.0.0
     datatype: uint32
     ndim: 2
+    default_shape: [4096, 4]
   dq_border_ref_pix_right:
     title: DQ for border reference pixels, on right (from viewers perspective).
     tag: tag:stsci.edu:asdf/core/ndarray-1.0.0
     datatype: uint32
     ndim: 2
+    default_shape: [4096, 4]
   dq_border_ref_pix_top:
     title: DQ for border reference pixels, on top.
     tag: tag:stsci.edu:asdf/core/ndarray-1.0.0
     datatype: uint32
     ndim: 2
+    default_shape: [4, 4096]
   dq_border_ref_pix_bottom:
     title: DQ for border reference pixels, on bottom.
     tag: tag:stsci.edu:asdf/core/ndarray-1.0.0
     datatype: uint32
     ndim: 2
+    default_shape: [4, 4096]
   cal_logs:
     tag: asdf://stsci.edu/datamodels/roman/tags/cal_logs-1.0.0
 propertyOrder: [meta, data, dq, err, var_poisson, var_rnoise, var_flat,

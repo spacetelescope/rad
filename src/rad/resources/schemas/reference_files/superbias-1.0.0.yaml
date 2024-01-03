@@ -23,16 +23,19 @@ properties:
     tag: tag:stsci.edu:asdf/core/ndarray-1.0.0
     datatype: float32
     ndim: 2
+    default_shape: [4096, 4096]
   dq:
     title: 2-D data quality array for all planes
     tag: tag:stsci.edu:asdf/core/ndarray-1.0.0
     datatype: uint32
     ndim: 2
+    default_shape: [4096, 4096]
   err:
     title: 2-D Error array
     tag: tag:stsci.edu:asdf/core/ndarray-1.0.0
     datatype: float32
     ndim: 2
+    default_shape: [4096, 4096]
 required: [meta, data, dq, err]
 flowStyle: block
 propertyOrder: [meta, data, dq, err]

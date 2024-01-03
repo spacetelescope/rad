@@ -50,6 +50,7 @@ properties:
         tag: tag:stsci.edu:asdf/core/ndarray-1.0.0
         datatype: float32
         ndim: 3
+        default_shape: [2, 4096, 4096]
       unit:
         tag: tag:astropy.org:astropy/units/unit-1.0.0
         enum: ["DN"]
@@ -58,6 +59,7 @@ properties:
     tag: tag:stsci.edu:asdf/core/ndarray-1.0.0
     datatype: uint32
     ndim: 2
+    default_shape: [4096, 4096]
   dark_slope:
     title: Dark current slope array
     description: |
@@ -70,6 +72,7 @@ properties:
         tag: tag:stsci.edu:asdf/core/ndarray-1.0.0
         datatype: float32
         ndim: 2
+        default_shape: [4096, 4096]
       unit:
         tag: tag:astropy.org:astropy/units/unit-1.0.0
         enum: ["DN / s"]
@@ -81,6 +84,7 @@ properties:
         tag: tag:stsci.edu:asdf/core/ndarray-1.0.0
         datatype: float32
         ndim: 2
+        default_shape: [4096, 4096]
       unit:
         tag: tag:astropy.org:astropy/units/unit-1.0.0
         enum: ["DN / s"]

@@ -22,6 +22,7 @@ properties:
         tag: tag:stsci.edu:asdf/core/ndarray-1.0.0
         datatype: uint16
         ndim: 3
+        default_shape: [8, 4096, 4096]
       unit:
         tag: tag:astropy.org:astropy/units/unit-1.0.0
         enum: ["DN"]
@@ -34,6 +35,7 @@ properties:
         tag: tag:stsci.edu:asdf/core/ndarray-1.0.0
         datatype: uint16
         ndim: 3
+        default_shape: [8, 4096, 128]
       unit:
         tag: tag:astropy.org:astropy/units/unit-1.0.0
         enum: ["DN"]
@@ -42,6 +44,7 @@ properties:
     title: Optional 3-D data quality array (plane dq for each resultant)
     tag: tag:stsci.edu:asdf/core/ndarray-1.0.0
     ndim: 3
+    default_shape: [8, 4096, 4096]
     datatype: uint8
 propertyOrder: [meta, data, amp33, resultantdq]
 flowStyle: block

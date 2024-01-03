@@ -32,18 +32,21 @@ properties:
     tag: tag:stsci.edu:asdf/core/ndarray-1.0.0
     datatype: complex128
     ndim: 2
+    default_shape: [32, 286721]
 
   zeta:
     title: Right column correction coefficients
     tag: tag:stsci.edu:asdf/core/ndarray-1.0.0
     datatype: complex128
     ndim: 2
+    default_shape: [32, 286721]
 
   alpha:
     title: Reference output correction coefficients
     tag: tag:stsci.edu:asdf/core/ndarray-1.0.0
     datatype: complex128
     ndim: 2
+    default_shape: [32, 286721]
 
 required: [meta, gamma, zeta, alpha]
 flowStyle: block

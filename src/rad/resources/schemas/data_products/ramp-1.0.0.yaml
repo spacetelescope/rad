@@ -19,19 +19,22 @@ properties:
         tag: tag:stsci.edu:asdf/core/ndarray-1.0.0
         datatype: float32
         ndim: 3
+        default_shape: [8, 4096, 4096]
       unit:
         tag: tag:astropy.org:astropy/units/unit-1.0.0
         enum: ["DN", "electron"]
   pixeldq:
     title: 2-D data quality array for all planes
     tag: tag:stsci.edu:asdf/core/ndarray-1.0.0
-    ndim: 2
     datatype: uint32
+    ndim: 2
+    default_shape: [4096, 4096]
   groupdq:
     title: 3-D data quality array (plane dq for each group)
     tag: tag:stsci.edu:asdf/core/ndarray-1.0.0
-    ndim: 3
     datatype: uint8
+    ndim: 3
+    default_shape: [8, 4096, 4096]
   err:
     title: Error array containing the square root of the exposure-level combined variance
     tag: tag:stsci.edu:asdf/unit/quantity-1.1.0
@@ -40,6 +43,7 @@ properties:
         tag: tag:stsci.edu:asdf/core/ndarray-1.0.0
         datatype: float32
         ndim: 3
+        default_shape: [8, 4096, 4096]
       unit:
         tag: tag:astropy.org:astropy/units/unit-1.0.0
         enum: ["DN", "electron"]
@@ -51,6 +55,7 @@ properties:
         tag: tag:stsci.edu:asdf/core/ndarray-1.0.0
         datatype: uint16
         ndim: 3
+        default_shape: [8, 4096, 128]
       unit:
         tag: tag:astropy.org:astropy/units/unit-1.0.0
         enum: ["DN"]
@@ -62,6 +67,7 @@ properties:
         tag: tag:stsci.edu:asdf/core/ndarray-1.0.0
         datatype: float32
         ndim: 3
+        default_shape: [8, 4096, 4]
       unit:
         tag: tag:astropy.org:astropy/units/unit-1.0.0
         enum: ["DN"]
@@ -73,6 +79,7 @@ properties:
         tag: tag:stsci.edu:asdf/core/ndarray-1.0.0
         datatype: float32
         ndim: 3
+        default_shape: [8, 4096, 4]
       unit:
         tag: tag:astropy.org:astropy/units/unit-1.0.0
         enum: ["DN"]
@@ -84,6 +91,7 @@ properties:
         tag: tag:stsci.edu:asdf/core/ndarray-1.0.0
         datatype: float32
         ndim: 3
+        default_shape: [8, 4, 4096]
       unit:
         tag: tag:astropy.org:astropy/units/unit-1.0.0
         enum: ["DN"]
@@ -95,6 +103,7 @@ properties:
         tag: tag:stsci.edu:asdf/core/ndarray-1.0.0
         datatype: float32
         ndim: 3
+        default_shape: [8, 4, 4096]
       unit:
         tag: tag:astropy.org:astropy/units/unit-1.0.0
         enum: ["DN"]
@@ -103,21 +112,25 @@ properties:
     tag: tag:stsci.edu:asdf/core/ndarray-1.0.0
     datatype: uint32
     ndim: 2
+    default_shape: [4096, 4]
   dq_border_ref_pix_right:
     title: DQ for border reference pixels, on right (from viewers perspective).
     tag: tag:stsci.edu:asdf/core/ndarray-1.0.0
     datatype: uint32
     ndim: 2
+    default_shape: [4096, 4]
   dq_border_ref_pix_top:
     title: DQ for border reference pixels, on top.
     tag: tag:stsci.edu:asdf/core/ndarray-1.0.0
     datatype: uint32
     ndim: 2
+    default_shape: [4, 4096]
   dq_border_ref_pix_bottom:
     title: DQ for border reference pixels, on bottom.
     tag: tag:stsci.edu:asdf/core/ndarray-1.0.0
     datatype: uint32
     ndim: 2
+    default_shape: [4, 4096]
 propertyOrder: [meta, data, pixeldq, groupdq, err, amp33, border_ref_pix_left,
                 border_ref_pix_right, border_ref_pix_top,
                 border_ref_pix_bottom, dq_border_ref_pix_left,

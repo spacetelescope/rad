@@ -52,6 +52,7 @@ properties:
         tag: tag:stsci.edu:asdf/core/ndarray-1.0.0
         datatype: float32
         ndim: 2
+        default_shape: [4088, 4088]
       unit:
         tag: tag:astropy.org:astropy/units/unit-1.0.0
         enum: ["electron / s"]
@@ -62,6 +63,7 @@ properties:
         tag: tag:stsci.edu:asdf/core/ndarray-1.0.0
         datatype: float32
         ndim: 2
+        default_shape: [4088, 4088]
       unit:
         tag: tag:astropy.org:astropy/units/unit-1.0.0
         enum: ["electron / s"]
@@ -69,10 +71,12 @@ properties:
     tag: tag:stsci.edu:asdf/core/ndarray-1.0.0
     datatype: uint32
     ndim: 3
+    default_shape: [2, 4088, 4088]
   weight:
     tag: tag:stsci.edu:asdf/core/ndarray-1.0.0
     datatype: float32
     ndim: 2
+    default_shape: [4088, 4088]
   var_poisson:
     tag: tag:stsci.edu:asdf/unit/quantity-1.1.0
     properties:
@@ -80,6 +84,7 @@ properties:
         tag: tag:stsci.edu:asdf/core/ndarray-1.0.0
         datatype: float32
         ndim: 2
+        default_shape: [4088, 4088]
       unit:
         tag: tag:astropy.org:astropy/units/unit-1.0.0
         enum: ["electron2 / s2"]
@@ -90,6 +95,7 @@ properties:
         tag: tag:stsci.edu:asdf/core/ndarray-1.0.0
         datatype: float32
         ndim: 2
+        default_shape: [4088, 4088]
       unit:
         tag: tag:astropy.org:astropy/units/unit-1.0.0
         enum: ["electron2 / s2"]
@@ -100,6 +106,7 @@ properties:
         tag: tag:stsci.edu:asdf/core/ndarray-1.0.0
         datatype: float32
         ndim: 2
+        default_shape: [4088, 4088]
       unit:
         tag: tag:astropy.org:astropy/units/unit-1.0.0
         enum: ["electron2 / s2"]
