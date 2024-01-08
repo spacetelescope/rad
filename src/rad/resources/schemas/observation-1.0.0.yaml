@@ -55,7 +55,7 @@ properties:
     archive_catalog:
       datatype: smallint
       destination: [ScienceCommon.execution_plan, GuideWindow.execution_plan]
-  pass:
+  pass_number:
     title: Pass number within execution plan, defined range is 1..999; included in obs_id and
            visit_id as 'AA'.
     type: integer
