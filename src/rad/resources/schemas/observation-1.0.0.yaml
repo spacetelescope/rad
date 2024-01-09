@@ -171,13 +171,13 @@ properties:
       datatype: nvarchar(15)
       destination: [ScienceCommon.survey, GuideWindow.survey]
 propertyOrder: [obs_id, visit_id, program,
-           execution_plan, pass, observation, segment,
+           execution_plan, pass_number, observation, segment,
            visit, visit_file_group, visit_file_sequence,
            visit_file_activity, exposure, template,
            observation_label, survey]
 flowStyle: block
 required: [obs_id, visit_id, program,
-           execution_plan, pass, observation, segment,
+           execution_plan, pass_number, observation, segment,
            visit, visit_file_group, visit_file_sequence,
            visit_file_activity, exposure, template,
            observation_label, survey]

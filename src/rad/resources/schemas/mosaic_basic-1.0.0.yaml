@@ -150,10 +150,10 @@ properties:
       datatype: nvarchar(25)
       destination: [ScienceCommon.product_type]
 propertyOrder: [ time_first_mjd, time_last_mjd, time_mean_mjd, max_exposure_time,
-                 mean_exposure_time, visit, segment, pass, program, survey, optical_element,
+                 mean_exposure_time, visit, segment, pass_number, program, survey, optical_element,
                  instrument, telescope, location_name, product_type ]
 flowStyle: block
 required: [ time_first_mjd, time_last_mjd, time_mean_mjd, max_exposure_time,
-            mean_exposure_time, visit, segment, pass, program, survey, optical_element,
+            mean_exposure_time, visit, segment, pass_number, program, survey, optical_element,
             instrument, telescope, location_name, product_type ]
 ...
