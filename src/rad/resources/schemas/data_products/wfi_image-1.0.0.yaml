@@ -172,7 +172,10 @@ properties:
     ndim: 2
     default_shape: [4, 4096]
   cal_logs:
-    tag: asdf://stsci.edu/datamodels/roman/tags/cal_logs-1.0.0
+    title: Calibration log messages
+    type: array
+    items:
+      type: string
 propertyOrder: [meta, data, dq, err, var_poisson, var_rnoise, var_flat,
                 amp33, border_ref_pix_left, border_ref_pix_right,
                 border_ref_pix_top, border_ref_pix_bottom,
