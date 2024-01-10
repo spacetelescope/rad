@@ -67,9 +67,10 @@ properties:
       unit:
         tag: tag:astropy.org:astropy/units/unit-1.0.0
         enum: ["electron / s"]
+  # TODO: We might need to make contexte an allOf selector for the updated dtype
   context:
     tag: tag:stsci.edu:asdf/core/ndarray-1.0.0
-    datatype: uint32
+    datatype: int32
     ndim: 3
     default_shape: [2, 4088, 4088]
   weight:
