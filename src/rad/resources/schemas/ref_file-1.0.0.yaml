@@ -33,6 +33,8 @@ properties:
         archive_catalog:
           datatype: nvarchar(120)
           destination: [ScienceCommon.crds_context_used, GuideWindow.crds_context_used]
+    required: [sw_version, context_used]
+
   dark:
     title: Dark reference file information
     type: string
@@ -94,5 +96,6 @@ properties:
       datatype: nvarchar(120)
       destination: [ScienceRefData.r_saturation, GuideWindow.r_saturation]
 
+required: [crds]
 flowStyle: block
 ...
