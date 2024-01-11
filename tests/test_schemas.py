@@ -53,6 +53,7 @@ def valid_tag_uris(manifest):
             "tag:astropy.org:astropy/units/unit-1.0.0",
             "tag:stsci.edu:gwcs/wcs-1.0.0",
             "tag:stsci.edu:gwcs/wcs-1.1.0",
+            "tag:stsci.edu:gwcs/wcs-1.2.0",
         ]
     )
     return uris
