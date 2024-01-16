@@ -25,7 +25,7 @@ test = [
 ]
 docs = [
     'sphinx',
-    "sphinx-asdf @ git+https://github.com/braingram/sphinx-asdf.git@no_bootstrap", 
+    "sphinx-asdf @ git+https://github.com/braingram/sphinx-asdf.git@no_bootstrap",
     'sphinx-astropy',
     'astropy>=5.0.4',
     'graphviz',
