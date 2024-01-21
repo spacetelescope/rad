@@ -1,8 +1,8 @@
 %YAML 1.1
 ---
-id: asdf://stsci.edu/datamodels/roman/manifests/datamodels-1.0
-extension_uri: asdf://stsci.edu/datamodels/roman/extensions/datamodels-1.0
-title: Datamodels extension 1.0
+id: asdf://stsci.edu/datamodels/roman/manifests/datamodels-1.0.0
+extension_uri: asdf://stsci.edu/datamodels/roman/extensions/datamodels-1.0.0
+title: Datamodels extension 1.0.0
 description: |-
   A set of tags for serializing STScI Roman datamodels.
 asdf_standard_requirement:

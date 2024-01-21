@@ -10,12 +10,13 @@ import pytest
 import yaml
 from crds.config import is_crds_name
 
-from .conftest import MANIFEST
+from .conftest import MANIFESTS
 
 SCHEMA_URI_PREFIX = "asdf://stsci.edu/datamodels/roman/schemas/"
 METASCHEMA_URI = "asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.0.0"
 SCHEMA_URIS = [u for u in asdf.get_config().resource_manager if u.startswith(SCHEMA_URI_PREFIX) and u != METASCHEMA_URI]
-REF_FILE_SCHEMA_URIS = [u["schema_uri"] for u in MANIFEST["tags"] if "/reference_files/" in u["schema_uri"]]
+TAG_DEFS = [tag_def for manifest in MANIFESTS for tag_def in manifest["tags"]]
+REF_FILE_TAG_DEFS = [tag_def for tag_def in TAG_DEFS if "/reference_files" in tag_def["schema_uri"]]
 WFI_OPTICAL_ELEMENTS = list(
     asdf.schema.load_schema("asdf://stsci.edu/datamodels/roman/schemas/wfi_optical_element-1.0.0")["enum"]
 )
@@ -32,12 +33,12 @@ def schema(request):
     return yaml.safe_load(asdf.get_config().resource_manager[request.param])
 
 
-@pytest.fixture(scope="session", params=REF_FILE_SCHEMA_URIS)
+@pytest.fixture(scope="session", params=REF_FILE_TAG_DEFS)
 def ref_file_schema(request):
-    return yaml.safe_load(asdf.get_config().resource_manager[request.param])
+    return yaml.safe_load(asdf.get_config().resource_manager[request.param["schema_uri"]])
 
 
-@pytest.fixture(scope="session", params=[entry for entry in MANIFEST["tags"] if "/reference_files/" in entry["schema_uri"]])
+@pytest.fixture(scope="session", params=REF_FILE_TAG_DEFS)
 def ref_file_uris(request):
     return request.param["tag_uri"], request.param["schema_uri"]
 
