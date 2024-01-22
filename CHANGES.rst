@@ -7,6 +7,8 @@ A0.18.1 (unreleased)
 - Remove the unused ``variance-1.0.0`` schema. [#344]
 >>>>>>> 274a10bbc4c95d8835d926192f3da032c079883c
 
+- Add wcs tag to wfi_image and wfi_mosaic schemas. [#351]
+
 0.18.0 (2023-11-06)
 -------------------
 

@@ -25,9 +25,12 @@ properties:
             tag: asdf://stsci.edu/datamodels/roman/tags/program-1.0.0
           resample:
             tag: asdf://stsci.edu/datamodels/roman/tags/resample-1.0.0
-          wcsinfo:
-            tag: asdf://stsci.edu/datamodels/roman/tags/mosaic_wcsinfo-1.0.0
-        required: [basic, individual_image_meta, program, resample, wcsinfo]
+          wcs:
+            title: WCS object
+            anyOf:
+              - tag: tag:stsci.edu:gwcs/wcs-*
+              - type: "null"
+        required: [basic, individual_image_meta, program, resample, wcs]
   data:
     title: Science data, excluding border reference pixels.
     tag: tag:stsci.edu:asdf/unit/quantity-1.1.0
