@@ -16,11 +16,16 @@ properties:
       - $ref: common-1.0.0
       - type: object
         properties:
+          wcs:
+            title: WCS object
+            anyOf:
+              - tag: tag:stsci.edu:gwcs/wcs-*
+              - type: "null"
           photometry:
             tag: asdf://stsci.edu/datamodels/roman/tags/photometry-1.0.0
           source_detection:
             tag: asdf://stsci.edu/datamodels/roman/tags/source_detection-1.0.0
-        required: [photometry]
+        required: [photometry, wcs]
   data:
     title: Science data, excluding border reference pixels.
     tag: tag:stsci.edu:asdf/unit/quantity-1.1.0
