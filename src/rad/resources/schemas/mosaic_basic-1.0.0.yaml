@@ -89,7 +89,7 @@ properties:
     archive_catalog:
       datatype: smallint
       destination: [ScienceCommon.segment]
-  pass:
+  pass_number:
     title: Pass number within execution plan, defined range is 1..999;
            included in obs_id and visit_id as 'AA'.
     type: integer
@@ -99,7 +99,7 @@ properties:
         origin: TBD
     archive_catalog:
       datatype: smallint
-      destination: [ScienceCommon.pass]
+      destination: [ScienceCommon.pass_number]
   program:
     title: Program number, defined range is 1..18445;
            included in obs_id and visit_id as 'PPPPP'.
@@ -162,12 +162,12 @@ properties:
   filename:
     tag: asdf://stsci.edu/datamodels/roman/tags/filename-1.0.0
 propertyOrder: [ time_first_mjd, time_last_mjd, time_mean_mjd, max_exposure_time,
-                 mean_exposure_time, model_type, visit, segment, pass, program,
+                 mean_exposure_time, model_type, visit, segment, pass_number, program,
                  survey, optical_element, instrument, telescope, location_name, product_type,
                  filename ]
 flowStyle: block
 required: [ time_first_mjd, time_last_mjd, time_mean_mjd, max_exposure_time,
-            mean_exposure_time, model_type, visit, segment, pass, program,
+            mean_exposure_time, model_type, visit, segment, pass_number, program,
             survey, optical_element, instrument, telescope, location_name, product_type,
             filename ]
 ...
