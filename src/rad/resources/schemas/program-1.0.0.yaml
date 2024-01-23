@@ -3,11 +3,13 @@
 $schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.0.0
 id: asdf://stsci.edu/datamodels/roman/schemas/program-1.0.0
 
-title: Program information
+title: Program Information
 type: object
 properties:
   title:
-    title: Proposal title
+    title: Proposal Title
+    description: |
+      The submitted proposal title of the program.
     type: string
     sdf:
       special_processing: VALUE_REQUIRED
@@ -17,7 +19,9 @@ properties:
       datatype: nvarchar(200)
       destination: [ScienceCommon.program_title, GuideWindow.program_title]
   pi_name:
-    title: Principle Investigator name
+    title: Principal Investigator Name
+    description: |
+      The name of the Principal Investigator (PI) of the program.
     type: string
     sdf:
       special_processing: VALUE_REQUIRED
@@ -29,7 +33,9 @@ properties:
       datatype: nvarchar(100)
       destination: [ScienceCommon.pi_name, GuideWindow.pi_name]
   category:
-    title: Program category
+    title: Program Category
+    description: |
+      The category of the program.
     type: string
     sdf:
       special_processing: VALUE_REQUIRED
@@ -39,7 +45,9 @@ properties:
       datatype: nvarchar(6)
       destination: [ScienceCommon.program_category, GuideWindow.program_category]
   subcategory:
-    title: Program subcategory
+    title: Program Subcategory
+    description: |
+      The subcategory of the program.
     type: string
     sdf:
       special_processing: VALUE_REQUIRED
@@ -49,7 +57,10 @@ properties:
       datatype: nvarchar(15)
       destination: [ScienceCommon.program_subcategory, GuideWindow.program_subcategory]
   science_category:
-    title: Science category assigned during TAC process
+    title: Science Category
+    description: |
+      The science category assigned during the Telescope Allocation Committee
+      (TAC) process.
     type: string
     sdf:
       special_processing: VALUE_REQUIRED
@@ -59,7 +70,10 @@ properties:
       datatype: nvarchar(50)
       destination: [ScienceCommon.science_category, GuideWindow.science_category]
   continuation_id:
-    title: Continuation of previous Program
+    title: Continuation ID
+    description: |
+      The identifier that marks the program as a continuation of a previous
+      program.
     type: integer
     sdf:
       special_processing: VALUE_REQUIRED

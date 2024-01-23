@@ -3,17 +3,20 @@
 $schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.0.0
 id: asdf://stsci.edu/datamodels/roman/schemas/observation-1.0.0
 
-title: Observation identifiers
+title: Observation Identifiers
 type: object
 properties:
   obs_id:
-    title: Programmatic observation identifier. The format is 'PPPPPCCAAASSSOOOVVVggsaaeeee' where
-           'PPPPP' is the Program, 'CC' is the execution plan, 'AAA' is the pass, 'SSS' is the
-           segment, 'OOO' is the Observation, 'VVV' is the Visit, 'gg' is the visit file group,
-           's' is the visit file sequence, 'aa' is the visit file activity, and 'eeee' is the
-           exposure ID. The observation ID is the complete concatenation of visit_id +
-           visit_file_statement (visit_file_group + visit_file_sequence + visit_file_activity) +
-           exposure.
+    title: Programmatic Observation Identifier
+    description: |
+      The format of the programmatic observation identifier is
+      'PPPPPCCAAASSSOOOVVVggsaaeeee' where 'PPPPP' is the program, 'CC' is the
+      execution plan, 'AAA' is the pass, 'SSS' is the segment number, 'OOO' is
+      the observation, 'VVV' is the visit, 'gg' is the visit file group, 's' is
+      the visit file sequence, 'aa' is the visit file activity, and 'eeee' is
+      the exposure ID. The observation ID is the complete concatenation of
+      visit_id + visit_file_statement (visit_file_group + visit_file_sequence +
+      visit_file_activity) + exposure.
     type: string
     sdf:
       special_processing: VALUE_REQUIRED
@@ -23,9 +26,12 @@ properties:
       datatype: nvarchar(28)
       destination: [ScienceCommon.obs_id, GuideWindow.obs_id]
   visit_id:
-    title: A unique identifier for a visit. The format is 'PPPPPCCAAASSSOOOVVV' where 'PPPPP' is the
-           Program, 'CC' is the execution plan, 'AAA' is the pass, 'SSS' is the segment number,
-           'OOO' is the Observation and 'VVV' is the Visit.
+    title: Visit Identifier
+    description: |
+      A unique identifier for a visit. The format is 'PPPPPCCAAASSSOOOVVV' where
+      'PPPPP' is the program, 'CC' is the execution plan, 'AAA' is the pass,
+      'SSS' is the segment number, 'OOO' is the observation and 'VVV' is the
+      visit.
     type: string
     sdf:
       special_processing: VALUE_REQUIRED
@@ -35,7 +41,10 @@ properties:
       datatype: nvarchar(19)
       destination: [ScienceCommon.visit_id, GuideWindow.visit_id]
   program:
-    title: Program number, defined range is 1..18445; included in obs_id and visit_id as 'PPPPP'.
+    title: Program Number
+    description: |
+      The defined range of the program number is 00001 to 18445; included in
+      obs_id and visit_id as 'PPPPP'.
     type: string
     sdf:
       special_processing: VALUE_REQUIRED
@@ -45,8 +54,10 @@ properties:
       datatype: int
       destination: [ScienceCommon.program, GuideWindow.program]
   execution_plan:
-    title: Execution plan within the program, defined range is 1..99; included in obs_id and
-           visit_id as 'CC'.
+    title: Execution Plan
+    description: |
+      The defined range of the execution plan within the program is 01 to 99;
+      included in obs_id and visit_id as 'CC'.
     type: integer
     sdf:
       special_processing: VALUE_REQUIRED
@@ -56,8 +67,10 @@ properties:
       datatype: smallint
       destination: [ScienceCommon.execution_plan, GuideWindow.execution_plan]
   pass:
-    title: Pass number within execution plan, defined range is 1..999; included in obs_id and
-           visit_id as 'AA'.
+    title: Pass Number
+    description: |
+      The defined range of the pass number within the execution plan is 001 to
+      999; included in obs_id and visit_id as 'AAA'.
     type: integer
     sdf:
       special_processing: VALUE_REQUIRED
@@ -67,8 +80,10 @@ properties:
       datatype: smallint
       destination: [ScienceCommon.pass, GuideWindow.pass]
   segment:
-    title: Segment Number within pass, defined range is 1..999; included in obs_id and visit_id as
-           'SSS'.
+    title: Segment Number
+    description: |
+      The defined range of the segment number within the pass is 001 to 999;
+      included in obs_id and visit_id as 'SSS'.
     type: integer
     sdf:
       special_processing: VALUE_REQUIRED
@@ -78,8 +93,10 @@ properties:
       datatype: smallint
       destination: [ScienceCommon.segment, GuideWindow.segment]
   observation:
-    title: Observation number within the segment, defined range is 1..999; included in obs_id and
-           visit_id as 'OOO'.
+    title: Observation Number
+    description: |
+      The defined range of the observation number within the segment is 001 to
+      999; included in obs_id and visit_id as 'OOO'.
     type: integer
     sdf:
       special_processing: VALUE_REQUIRED
@@ -89,8 +106,10 @@ properties:
       datatype: smallint
       destination: [ScienceCommon.observation, GuideWindow.observation]
   visit:
-    title: Visit number within the observation, defined range of values is 1..999; included in
-           obs_id and visit_id as 'VVV'.
+    title: Visit Number
+    description: |
+      The defined range of the visit number within the observation is 001 to
+      999; included in obs_id and visit_id as 'VVV'.
     type: integer
     sdf:
       special_processing: VALUE_REQUIRED
@@ -100,8 +119,10 @@ properties:
       datatype: smallint
       destination: [ScienceCommon.visit, GuideWindow.visit]
   visit_file_group:
-    title: Sequence group within the visit file, defined range of values is 1..99; included in
-           obs_id as 'gg'.
+    title: Visit File Group
+    description: |
+      The visit file group describes the sequence group within the visit file
+      and has a defined range of 01 to 99; included in obs_id as 'gg'.
     type: integer
     sdf:
       special_processing: VALUE_REQUIRED
@@ -111,8 +132,10 @@ properties:
       datatype: smallint
       destination: [ScienceCommon.visit_file_group, GuideWindow.visit_file_group]
   visit_file_sequence:
-    title: Visit file sequence within the group, defined range of values is 1..5; included in
-           obs_id as 's'.
+    title: Visit File Sequence
+    description: |
+      The defined range of the visit file sequence within the group 1 to 5;
+      included in obs_id as 's'.
     type: integer
     sdf:
       special_processing: VALUE_REQUIRED
@@ -122,8 +145,10 @@ properties:
       datatype: tinyint
       destination: [ScienceCommon.visit_file_sequence, GuideWindow.visit_file_sequence]
   visit_file_activity:
-    title: Visit file activity within the sequence, defined range of values is 1..ZZ; included in
-           obs_id as 'aa'.
+    title: Visit File Activity
+    description: |
+      The defined range of the visit file activity within the sequence is 01 to
+      ZZ; included in obs_id as 'aa'.
     type: string
     sdf:
       special_processing: VALUE_REQUIRED
@@ -133,8 +158,10 @@ properties:
       datatype: nvarchar(2)
       destination: [ScienceCommon.visit_file_activity, GuideWindow.visit_file_activity]
   exposure:
-    title: Exposure within the visit, defined range of values is 1..9999; included in obs_id as
-           'eeee'.
+    title: Exposure Number
+    description: |
+      The defined range of the assigned exposure number within the visit is 0001
+      to 9999; included in obs_id as 'eeee'.
     type: integer
     sdf:
       special_processing: VALUE_REQUIRED
@@ -144,7 +171,9 @@ properties:
       datatype: int
       destination: [ScienceCommon.observation_exposure, GuideWindow.observation_exposure]
   template:
-    title: Observation template used
+    title: Observation Template
+    description: |
+      The template used to design this observation.
     type: string
     sdf:
       special_processing: VALUE_REQUIRED
@@ -154,7 +183,9 @@ properties:
       datatype: nvarchar(50)
       destination: [ScienceCommon.template, GuideWindow.template]
   observation_label:
-    title: Proposer label for the observation
+    title: Observation Label
+    description: |
+      The label given by the proposer to describe the observation.
     type: string
     sdf:
       special_processing: VALUE_REQUIRED
@@ -165,6 +196,11 @@ properties:
       destination: [ScienceCommon.observation_label, GuideWindow.observation_label]
   survey:
     title: Observation Survey
+    description: |
+      The available survey options for observations are: HLS = High Latitude
+      Wide Area Survey, EMS = Galactic Bulge Time Domain Survey, SN = High
+      Latitude Time Domain Survey, N/A = General Astrophysics Surveys or other
+      survey not otherwise defined here.
     type: string
     enum: [HLS, EMS, SN, N/A]
     archive_catalog:

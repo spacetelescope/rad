@@ -5,8 +5,11 @@ id: asdf://stsci.edu/datamodels/roman/schemas/wfi_optical_element-1.0.0
 
 # Helper file to enumerate filters for wfi_mode and ref_optical_element
 
+title: Optical Element
+description: |
+  Name of the filter element used. See the RDox Optical Element page for more
+  details on available optical elements and their properties.
 type: string
-title: Name of the filter element used
 enum:
   - F062
   - F087

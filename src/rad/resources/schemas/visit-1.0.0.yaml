@@ -3,11 +3,15 @@
 $schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.0.0
 id: asdf://stsci.edu/datamodels/roman/schemas/visit-1.0.0
 
-title: Visit information
+title: Visit Information
 type: object
 properties:
   engineering_quality:
-    title: Engineering data quality indicator from EngDB
+    title: Engineering Quality
+    description: |
+      The engineering data quality indicator from the Engineering Database
+      (EngDB). The options available are "OK" and "SUSPECT", where "SUSPECT"
+      identifies data with indications of poor data quality.
     type: string
     enum: [OK, SUSPECT]
     sdf:
@@ -18,7 +22,10 @@ properties:
       datatype: nvarchar(10)
       destination: [ScienceCommon.engineering_quality, GuideWindow.engineering_quality]
   pointing_engdb_quality:
-    title: Quality of pointing information from EngDB
+    title: Engineering Quality of Pointing
+    description: |
+      The quality of the pointing information from the Engineering Database
+      (EngDB). The options available are "CALCULATED" and "PLANNED".
     type: string
     enum: [CALCULATED, PLANNED]
     sdf:
@@ -29,7 +36,9 @@ properties:
       datatype: nvarchar(10)
       destination: [ScienceCommon.pointing_engdb_quality, GuideWindow.pointing_engdb_quality]
   type:
-    title: Visit type
+    title: Visit Type
+    description: |
+      The type of visit.
     type: string
     sdf:
       special_processing: VALUE_REQUIRED
@@ -39,7 +48,9 @@ properties:
       datatype: nvarchar(30)
       destination: [ScienceCommon.visit_type, GuideWindow.visit_type]
   start_time:
-    title: UTC visit start time
+    title: Visit Start Time (UTC)
+    description: |
+      The start time of the visit in coordinated universal time (UTC).
     tag: tag:stsci.edu:asdf/time/time-1.*
     sdf:
       special_processing: VALUE_REQUIRED
@@ -49,7 +60,9 @@ properties:
       datatype: datetime2
       destination: [ScienceCommon.visit_start_time, GuideWindow.visit_start_time]
   end_time:
-    title: UTC visit end time
+    title: Visit End Time (UTC)
+    description: |
+      The end time of the visit in coordinated universal time (UTC).
     tag: tag:stsci.edu:asdf/time/time-1.*
     sdf:
       special_processing: VALUE_REQUIRED
@@ -59,7 +72,9 @@ properties:
       datatype: datetime2
       destination: [ScienceCommon.visit_end_time, GuideWindow.visit_end_time]
   status:
-    title: Status of a visit
+    title: Visit Status
+    description: |
+      The status of a visit.
     type: string
     sdf:
       special_processing: VALUE_REQUIRED
@@ -69,7 +84,9 @@ properties:
       datatype: nvarchar(15)
       destination: [ScienceCommon.visit_status, GuideWindow.visit_status]
   total_exposures:
-    title: Total number of planned exposures in visit
+    title: Total Number of Exposures
+    description: |
+      The total number of exposures planned in a visit.
     type: integer
     sdf:
       special_processing: VALUE_REQUIRED
@@ -79,7 +96,11 @@ properties:
       datatype: int
       destination: [ScienceCommon.visit_total_exposures, GuideWindow.visit_total_exposures]
   internal_target:
-    title: At least one exposure in visit is internal
+    title: Internal Target
+    description: |
+      A boolean value which indicates whether at least one exposure in a visit
+      is internal. Internal targets refer to calibration data where the
+      telescope observes without external sources by closing the shudder.
     type: boolean
     sdf:
       special_processing: VALUE_REQUIRED
@@ -89,7 +110,11 @@ properties:
       datatype: nchar(1)
       destination: [ScienceCommon.visit_internal_target, GuideWindow.visit_internal_target]
   target_of_opportunity:
-    title: Visit scheduled as target of opportunity
+    title: Target of Opportunity
+    description: |
+      A boolean value which indicates whether the visit is defined as a target
+      of opportunity (ToO). Targets of opportunity react to temporal phenomena,
+      such as supernova, which cannot be planned in advance.
     type: boolean
     sdf:
       special_processing: VALUE_REQUIRED

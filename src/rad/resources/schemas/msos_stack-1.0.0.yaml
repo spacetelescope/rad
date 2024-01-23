@@ -16,28 +16,36 @@ properties:
       - image_list:
           type: string
   data:
-    title: Flux data
+    title: Flux Data
+    description: |
+      Flux array of stacked image data.
     value:
       tag: tag:stsci.edu:asdf/core/ndarray-1.*
       datatype: float64
       exact_datatype: true
       ndim: 2
   uncertainty:
-    title: uncertainty data
+    title: Uncertainty Data
+    description: |
+      Uncertainty array of stacked image data.
     value:
       tag: tag:stsci.edu:asdf/core/ndarray-1.*
       datatype: float64
       exact_datatype: true
       ndim: 2
   mask:
-    title: mask data
+    title: Mask Data
+    description: |
+      Mask array of stacked image data.
     value:
       tag: tag:stsci.edu:asdf/core/ndarray-1.*
       datatype: uint8
       exact_datatype: true
       ndim: 2
   coverage:
-    title: coverage data
+    title: Coverage Data
+    description: |
+      Coverage array of stacked image data.
     value:
       tag: tag:stsci.edu:asdf/core/ndarray-1.*
       datatype: uint8

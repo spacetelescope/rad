@@ -3,11 +3,13 @@
 $schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.0.0
 id: asdf://stsci.edu/datamodels/roman/schemas/guidestar-1.0.0
 
-title: Guide star window information
+title: Guide Star Window Information
 type: object
 properties:
   gw_id:
-    title: guide star window identifier
+    title: Guide Star Window Identifier
+    description: |
+      Identification of the Guide Star Window.
     type: string
     sdf:
       special_processing: VALUE_REQUIRED
@@ -26,8 +28,9 @@ properties:
       datatype: nvarchar(18)
       destination: [ScienceCommon.gw_fgs_mode, GuideWindow.gw_fgs_mode]
   gs_id:
-    title: guide star identifier from the GSC2 catalog
-    description: guide star catalog id from the GSC2, field gsc2ID
+    title: Guide Star Identifier from Guide Star Catalog
+    description: |
+      Identification of the guide star from the guide star catalog.
     type: string
     sdf:
       special_processing: VALUE_REQUIRED
@@ -37,9 +40,9 @@ properties:
       datatype: nvarchar(20)
       destination: [ScienceCommon.gs_id, GuideWindow.gs_id]
   gs_catalog_version:
-    title: The version of the Guide Star Catalog
-    description: The version of the catalog that the guide stars are selected, currently  "GSC 2.4.2", SDF should populate
-        this from the return value of CAT e.g. CAT=GSC242
+    title: Version of the Guide Star Catalog
+    description: |
+      Version identifier of the guide star catalog used for the observation.
     type: string
     sdf:
       special_processing: VALUE_REQUIRED
@@ -49,7 +52,10 @@ properties:
       datatype: nvarchar(20)
       destination: [ScienceCommon.gs_catalog_version]
   gs_ra:
-    title: "[deg] guide star right ascension"
+    title: Guide Star Right Ascension (deg)
+    description: |
+      Right ascension of the guide star from the guide star catalog in units of
+      degrees.
     type: number
     sdf:
       special_processing: VALUE_REQUIRED
@@ -59,7 +65,10 @@ properties:
       datatype: float
       destination: [ScienceCommon.gs_ra, GuideWindow.gs_ra]
   gs_dec:
-    title: "[deg] guide star declination"
+    title: Guide Star Declination (deg)
+    description: |
+      Declination of the guide star from the guide star catalog in units of
+      degrees.
     type: number
     sdf:
       special_processing: VALUE_REQUIRED
@@ -69,7 +78,10 @@ properties:
       datatype: float
       destination: [ScienceCommon.gs_dec, GuideWindow.gs_dec]
   gs_ura:
-    title: "[deg] guide star right ascension uncertainty"
+    title: Guide Star Right Ascension Uncertainty (deg)
+    description: |
+      Uncertainty in the guide star right ascension from the guide star catalog
+      in units of degrees.
     type: number
     sdf:
       special_processing: VALUE_REQUIRED
@@ -79,7 +91,10 @@ properties:
       datatype: float
       destination: [ScienceCommon.gs_ura, GuideWindow.gs_ura]
   gs_udec:
-    title: "[deg] guide star declination uncertainty"
+    title: Guide Star Declination Uncertainty (deg)
+    description: |
+      Uncertainty in the guide star declination from the guide star catalog in
+      units of degrees.
     type: number
     sdf:
       special_processing: VALUE_REQUIRED
@@ -89,7 +104,10 @@ properties:
       datatype: float
       destination: [ScienceCommon.gs_udec, GuideWindow.gs_udec]
   gs_mag:
-    title: guide star magnitude in detector
+    title: Guide Star Instrumental Magnitude
+    description: |
+      Predicted instrumental magnitude of the guide star from the guide star
+      catalog.
     type: number
     sdf:
       special_processing: VALUE_REQUIRED
@@ -99,7 +117,10 @@ properties:
       datatype: float
       destination: [ScienceCommon.gs_mag, GuideWindow.gs_mag]
   gs_umag:
-    title: guide star magnitude uncertainty
+    title: Guide Star instrument Magnitude Uncertainty
+    description: |
+      Uncertainty in the predicted instrumental magnitude of the guide star from
+      the guide star catalog.
     type: number
     sdf:
       special_processing: VALUE_REQUIRED
@@ -109,7 +130,10 @@ properties:
       datatype: float
       destination: [ScienceCommon.gs_umag, GuideWindow.gs_umag]
   data_start:
-    title: MJD start time of guider data within this file
+    title: Guide Data Start Time (MJD)
+    description: |
+      Start time of the guide window data taken for this exposure as a Modified
+      Julian Date.
     type: number
     sdf:
       special_processing: VALUE_REQUIRED
@@ -119,7 +143,10 @@ properties:
       datatype: float
       destination: [ScienceCommon.data_start, GuideWindow.data_start]
   data_end:
-    title: MJD end time of guider data within this file
+    title: Guide Data End Time (MJD)
+    description: |
+      End time of the guide window data taken for this exposure as a Modified
+      Julian Date.
     type: number
     sdf:
       special_processing: VALUE_REQUIRED
@@ -129,7 +156,10 @@ properties:
       datatype: float
       destination: [ScienceCommon.data_end, GuideWindow.data_end]
   gs_ctd_x:
-    title: "[arcsec] guide star centroid x position in guider ideal frame"
+    title: Guide Star Centroid X Position (arcsec)
+    description: |
+      Centroid of the guide star position longa the X axis of the guider ideal
+      frame measured in units of arcseconds.
     type: number
     sdf:
       special_processing: VALUE_REQUIRED
@@ -139,7 +169,10 @@ properties:
       datatype: float
       destination: [ScienceCommon.gs_ctd_x, GuideWindow.gs_ctd_x]
   gs_ctd_y:
-    title: "[arcsec] guide star centroid y position in guider ideal frame"
+    title: Guide Star Centroid Y Position (arcsec)
+    description: |
+      Centroid of the guide star position along the Y axis of the guider ideal
+      frame measured in units of arcseconds.
     type: number
     sdf:
       special_processing: VALUE_REQUIRED
@@ -149,7 +182,10 @@ properties:
       datatype: float
       destination: [ScienceCommon.gs_ctd_y, GuideWindow.gs_ctd_y]
   gs_ctd_ux:
-    title: uncertainty in the x position of the centroid
+    title: Guide Star Centroid X Position Uncertainty (arcsec)
+    description: |
+      Uncertainty in the centroid of the guide star position along the X axis of
+      the guider ideal frame measured in units of arcseconds
     type: number
     sdf:
       special_processing: VALUE_REQUIRED
@@ -159,7 +195,10 @@ properties:
       datatype: float
       destination: [ScienceCommon.gs_ctd_ux, GuideWindow.gs_ctd_ux]
   gs_ctd_uy:
-    title: uncertainty in the y position of the centroid
+    title: Guide Star Centroid Y Position Uncertainty (arcsec)
+    description: |
+      Uncertainty in the centroid of the guide star position along the Y axis of
+      the guider ideal frame measured in units of arcseconds.
     type: number
     sdf:
       special_processing: VALUE_REQUIRED
@@ -169,7 +208,9 @@ properties:
       datatype: float
       destination: [ScienceCommon.gs_ctd_uy, GuideWindow.gs_ctd_uy]
   gs_epoch:
-    title: Epoch of guide star coordinates
+    title: Guide Star Coordinates Epoch
+    description: |
+      Epoch of the celestial coordinates of the guide star.
     type: string
     sdf:
       special_processing: VALUE_REQUIRED
@@ -179,7 +220,10 @@ properties:
       datatype: nvarchar(10)
       destination: [ScienceCommon.gs_epoch, GuideWindow.gs_epoch]
   gs_mura:
-    title: "[mas/yr] Guide star ICRS right ascension proper motion"
+    title: Proper Motion of the Guide Star Right Ascension (mas / yr)
+    description: |
+      Proper motion of the guide star in right ascension from the guide star
+      catalog measured in units of milli-arcseconds per year.
     type: number
     sdf:
       special_processing: VALUE_REQUIRED
@@ -189,7 +233,10 @@ properties:
       datatype: float
       destination: [ScienceCommon.gs_mura, GuideWindow.gs_mura]
   gs_mudec:
-    title: "[mas/yr] Guide star ICRS declination proper motion"
+    title: Proper Motion of the Guide Star Declination (mas / yr)
+    description: |
+      Proper motion of the guide star in declination from the guide star catalog
+      measured in units of milli-arcseconds per year.
     type: number
     sdf:
       special_processing: VALUE_REQUIRED
@@ -199,7 +246,9 @@ properties:
       datatype: float
       destination: [ScienceCommon.gs_mudec, GuideWindow.gs_mudec]
   gs_para:
-    title: Guide star annual parallax
+    title: Guide Star Annual Parallax
+    description: |
+      Annual parallax of the guide star from the guide star catalog.
     type: number
     sdf:
       special_processing: VALUE_REQUIRED
@@ -209,10 +258,12 @@ properties:
       datatype: float
       destination: [ScienceCommon.gs_para, GuideWindow.gs_para]
   gs_pattern_error:
-    title: RMS of guide star position
-    description: RMS of guide star position in guide window from pattern matching (error on
-      centroid not explicitly calculated, the FACE information takes all the centroids and
-      calculates the error across the guiding pattern)
+    title: Guide Star Centroid RMS
+    description: |
+      RMS of the guide star position in the tracking guide windows from the Fine
+      Attitude Correction Estimate (FACE) information. The FACE information
+      determines the error across the guiding pattern using all centroid
+      measurements.
     type: number
     sdf:
       special_processing: VALUE_REQUIRED
@@ -222,7 +273,10 @@ properties:
       datatype: float
       destination: [ScienceCommon.gs_pattern_error, GuideWindow.gs_pattern_error]
   gw_window_xstart:
-    title: Guide window x start position on the detector
+    title: Guide Window X Start Position (pixels)
+    description: |
+      Minimum X position in the science coordinate frame of all tracking guide
+      windows in this exposure measured in pixels.
     type: integer
     sdf:
       special_processing: VALUE_REQUIRED
@@ -232,7 +286,10 @@ properties:
       datatype: int
       destination: [ScienceCommon.gw_window_xstart]
   gw_window_ystart:
-    title: Guide window y start position on the detector
+    title: Guide Window Y Start Position (pixels)
+    description: |
+      Minimum Y position in the science coordinate frame of all tracking guide
+      windows in this exposure measured in pixels.
     type: integer
     sdf:
       special_processing: VALUE_REQUIRED
@@ -242,7 +299,10 @@ properties:
       datatype: int
       destination: [ScienceCommon.gw_window_ystart]
   gw_window_xstop:
-    title: Guide window x stop position on the detector
+    title: Guide Window X Stop Position (pixels)
+    description: |
+      Maximum X position in the science coordinate frame of all tracking guide
+      windows in this exposure measured in pixels.
     type: integer
     sdf:
       special_processing: VALUE_REQUIRED
@@ -252,7 +312,10 @@ properties:
       datatype: int
       destination: [ScienceCommon.gw_window_xstop]
   gw_window_ystop:
-    title: Guide window y stop position on the detector
+    title: Guide Window Y Stop Position (pixels)
+    description: |
+      Maximum Y position in the science coordinate frame of all tracking guide
+      windows in this exposure measured in pixels
     type: integer
     sdf:
       special_processing: VALUE_REQUIRED
@@ -262,7 +325,10 @@ properties:
       datatype: int
       destination: [ScienceCommon.gw_window_ystop]
   gw_window_xsize:
-    title: Guide window size in the x direction in detector coordinates
+    title: Guide Window Size in the X Direction (pixels)
+    description: |
+      Size of a single tracking guide window in this exposure measured along the
+      X axis in units of pixels.
     type: integer
     sdf:
       special_processing: VALUE_REQUIRED
@@ -272,7 +338,10 @@ properties:
       datatype: int
       destination: [ScienceCommon.gw_window_xsize]
   gw_window_ysize:
-    title: Guide window size in the y direction in detector coordinates
+    title: Guide Window Size in the Y Direction (pixels)
+    description: |
+      Size of a single tracking guide window in this exposure measured along the
+      Y axis in units of pixels.
     type: integer
     sdf:
       special_processing: VALUE_REQUIRED
