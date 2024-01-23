@@ -3,7 +3,7 @@
 $schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.0.0
 id: asdf://stsci.edu/datamodels/roman/schemas/reference_files/mask-1.0.0
 
-title: DQ Mask reference schema
+title: Mask Reference File Schema
 
 datamodel_name: MaskRefModel
 
@@ -18,7 +18,10 @@ properties:
             type: string
             enum: [MASK]
   dq:
-    title: Data quality mask array
+    title: Mask Data Quality Array
+    description: |
+      The Mask Data Quality Array is the pixel value of the sum of bit integer
+      dq flags.
     tag: tag:stsci.edu:asdf/core/ndarray-1.*
     datatype: uint32
     exact_datatype: true

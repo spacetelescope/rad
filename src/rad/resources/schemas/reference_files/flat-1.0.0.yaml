@@ -3,7 +3,7 @@
 $schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.0.0
 id: asdf://stsci.edu/datamodels/roman/schemas/reference_files/flat-1.0.0
 
-title: Flat reference schema
+title: Flat Reference File Schema
 
 datamodel_name: FlatRefModel
 
@@ -19,19 +19,27 @@ properties:
             enum: [FLAT]
       - $ref: ref_optical_element-1.0.0
   data:
-    title: Flat data array
+    title: Flat Data Array
+    description: |
+      The Flat Data Array represents the small and large pixel-to-pixel
+      mitigations necessary to account for wavelength dependent detector
+      sensitivity and distortions in the optical path.
     tag: tag:stsci.edu:asdf/core/ndarray-1.*
     datatype: float32
     exact_datatype: true
     ndim: 2
   dq:
-    title: Data quality array
+    title: 2-D Data Quality Array
+    description: |
+      The 2-D data quality array for the Flat Data Array.
     tag: tag:stsci.edu:asdf/core/ndarray-1.*
     datatype: uint32
     exact_datatype: true
     ndim: 2
   err:
-    title: Error array
+    title: Flat Data Uncertainty Array
+    description: |
+      The uncertainty in the Flat Data Array.
     tag: tag:stsci.edu:asdf/core/ndarray-1.*
     datatype: float32
     exact_datatype: true

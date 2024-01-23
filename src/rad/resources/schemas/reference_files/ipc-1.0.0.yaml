@@ -3,7 +3,7 @@
 $schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.0.0
 id: asdf://stsci.edu/datamodels/roman/schemas/reference_files/ipc-1.0.0
 
-title: IPC kernel reference schema
+title:  Interpixel Capacitance Reference File Schema
 
 datamodel_name: IpcRefModel
 
@@ -19,10 +19,10 @@ properties:
             type: string
             enum: [IPC]
   data:
-    title: Interpixel capacitance correction kernel array
+    title: Interpixel Capacitance Kernel Array
     description: |
-      Reference kernel used for convolving with data in order to correct
-      for interpixel capacitance
+      The kernel array used for convolving data to correct for interpixel
+      capacitance of neighboring pixels.
     tag: tag:stsci.edu:asdf/core/ndarray-1.*
     datatype: float32
     exact_datatype: true

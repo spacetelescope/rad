@@ -3,7 +3,7 @@
 $schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.0.0
 id: asdf://stsci.edu/datamodels/roman/schemas/reference_files/inverselinearity-1.0.0
 
-title: Inverse linearity correction reference schema
+title: Inverse Linearity Correction Reference Schema
 
 datamodel_name: InverselinearityRefModel
 
@@ -18,27 +18,34 @@ properties:
             type: string
             enum: [INVERSELINEARITY]
           input_units:
-            title: Units of the input to the inverse linearity polynomial.
+            title: Inverse Linearity Input Units
+            description: |
+              Units of the input to the inverse linearity polynomial.
             tag: tag:astropy.org:astropy/units/unit-1.*
             enum: ["DN"]
           output_units:
-            title: Units of the output of the inverse linearity polynomial.
+            title: Inverse Linearity Output Units
+            description: |
+              Units of the output of the inverse linearity polynomial.
             tag: tag:astropy.org:astropy/units/unit-1.*
             enum: ["DN"]
         required: [output_units, input_units]
   coeffs:
-    title: Inverse linearity coefficients
+    title: Inverse Linearity Coefficients
     description: |
-      Contains the coefficients of a polynomial to add classic non-linearity
-      to pixels. Both the input to and output from the polynomial are in units
-      of DN. The coefficients have units that contain various powers of DN.
+      Contains the coefficients of a polynomial which describe the non-linear
+      response of each pixel to a linear signal. Both the input to and output
+      from the polynomial are in units of DN. The coefficients have units that
+      contain various powers of DN.
     tag: tag:stsci.edu:asdf/core/ndarray-1.*
     datatype: float32
     exact_datatype: true
     # Dimensions: numcoeffs, ysize, xsize
     ndim: 3
   dq:
-    title: 2-D data quality array for all planes
+    title: Two Dimensional Data Quality Array for All Resultants
+    description: |
+      Two Dimensional data Quality Array for all Resultants
     tag: tag:stsci.edu:asdf/core/ndarray-1.*
     datatype: uint32
     exact_datatype: true
