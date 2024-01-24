@@ -1,4 +1,4 @@
-A0.18.1 (unreleased)
+0.18.1 (unreleased)
 -------------------
 
 - Added streamlined Level 3 Mosaic metadata schemas. [#334]
