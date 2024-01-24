@@ -1,11 +1,9 @@
 A0.18.1 (unreleased)
 -------------------
 
-<<<<<<< HEAD
 - Added streamlined Level 3 Mosaic metadata schemas. [#334]
-=======
+
 - Remove the unused ``variance-1.0.0`` schema. [#344]
->>>>>>> 274a10bbc4c95d8835d926192f3da032c079883c
 
 - Add wcs tag to wfi_image and wfi_mosaic schemas. [#351]
 
