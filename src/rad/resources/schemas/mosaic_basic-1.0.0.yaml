@@ -89,7 +89,7 @@ properties:
     archive_catalog:
       datatype: smallint
       destination: [ScienceCommon.segment]
-  pass_number:
+  pass:
     title: Pass number within execution plan, defined range is 1..999;
            included in obs_id and visit_id as 'AA'.
     type: integer
@@ -160,10 +160,10 @@ properties:
       datatype: nvarchar(25)
       destination: [ScienceCommon.product_type]
 propertyOrder: [ time_first_mjd, time_last_mjd, time_mean_mjd, max_exposure_time,
-                 mean_exposure_time, model_type, visit, segment, pass_number, program,
+                 mean_exposure_time, model_type, visit, segment, pass, program,
                  survey, optical_element, instrument, telescope, location_name, product_type ]
 flowStyle: block
 required: [ time_first_mjd, time_last_mjd, time_mean_mjd, max_exposure_time,
-            mean_exposure_time, model_type, visit, segment, pass_number, program,
+            mean_exposure_time, model_type, visit, segment, pass, program,
             survey, optical_element, instrument, telescope, location_name, product_type ]
 ...

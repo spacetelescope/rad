@@ -55,7 +55,7 @@ properties:
     archive_catalog:
       datatype: smallint
       destination: [ScienceCommon.execution_plan, GuideWindow.execution_plan]
-  pass_number:
+  pass:
     title: Pass number within execution plan, defined range is 1..999; included in obs_id and
            visit_id as 'AA'.
     type: integer
@@ -171,13 +171,13 @@ properties:
       datatype: nvarchar(15)
       destination: [ScienceCommon.survey, GuideWindow.survey]
 propertyOrder: [obs_id, visit_id, program,
-           execution_plan, pass_number, observation, segment,
+           execution_plan, pass, observation, segment,
            visit, visit_file_group, visit_file_sequence,
            visit_file_activity, exposure, template,
            observation_label, survey]
 flowStyle: block
 required: [obs_id, visit_id, program,
-           execution_plan, pass_number, observation, segment,
+           execution_plan, pass, observation, segment,
            visit, visit_file_group, visit_file_sequence,
            visit_file_activity, exposure, template,
            observation_label, survey]
