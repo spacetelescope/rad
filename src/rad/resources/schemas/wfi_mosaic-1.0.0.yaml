@@ -30,7 +30,7 @@ properties:
             anyOf:
               - tag: tag:stsci.edu:gwcs/wcs-*
               - type: "null"
-        required: [basic, individual_image_meta, program, resample, wcs]
+        required: [basic, program, resample, wcs]
   data:
     title: Science data, excluding border reference pixels.
     tag: tag:stsci.edu:asdf/unit/quantity-1.1.0
