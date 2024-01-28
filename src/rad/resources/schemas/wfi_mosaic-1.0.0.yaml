@@ -15,8 +15,6 @@ properties:
     allOf:
       - type: object
         properties:
-          filename:
-            tag: asdf://stsci.edu/datamodels/roman/tags/filename-1.0.0
           # Placeholder for 'asn' schema tag
           # Placeholder for 'dither' schema tag
           basic:
