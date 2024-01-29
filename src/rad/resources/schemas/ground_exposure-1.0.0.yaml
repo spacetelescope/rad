@@ -1,0 +1,190 @@
+%YAML 1.1
+---
+$schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.0.0
+id: asdf://stsci.edu/datamodels/roman/schemas/ground_exposure-1.0.0
+
+
+title: |
+  Ground Exposure Information
+
+type: object
+properties:
+  type:
+    $ref: asdf://stsci.edu/datamodels/roman/schemas/exposure_type-1.0.0
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    archive_catalog:
+      datatype: nvarchar(25)
+      destination: [ScienceCommon.exposure_type, GuideWindow.exposure_type]
+  start_time:
+    title: UTC exposure start time
+    description: |
+        This is a python date-time object that records the
+        time at the start of the exposure in UTC.
+    tag: tag:stsci.edu:asdf/time/time-1.*
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    archive_catalog:
+      datatype: datetime2
+      destination: [ScienceCommon.exposure_start_time, GuideWindow.exposure_start_time]
+  ngroups:
+    title: Number of groups in integration
+    description: |
+        This is the number of resultant frames in the exposure
+        that are transmitted to the ground. The WFI data always has the
+        number of integrations=1.
+    type: integer
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    archive_catalog:
+      datatype: int
+      destination: [ScienceCommon.exposure_ngroups, GuideWindow.exposure_ngroups]
+  nframes:
+    title: Number of frames per group
+    description: |
+        This is the number of science frames that are combined to
+        produce a resultant frame.
+    type: integer
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    archive_catalog:
+      datatype: int
+      destination: [ScienceCommon.exposure_nframes, GuideWindow.exposure_nframes]
+  data_problem:
+    title: Science telemetry indicated a problem
+    description: |
+        This is a flag to indicate that the science telemetry
+        experienced a problem.
+    type: boolean
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    archive_catalog:
+      datatype: nchar(1)
+      destination: [ScienceCommon.exposure_data_problem, GuideWindow.exposure_data_problem]
+  frame_divisor:
+    title: Divisor applied to frame-averaged groups
+    description: |
+        This is the number of reads per resultant. Its use depends upon the definition
+        in the MA table.
+    type: integer
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    archive_catalog:
+      datatype: int
+      destination: [ScienceCommon.exposure_frame_divisor, GuideWindow.exposure_frame_divisor]
+  groupgap:
+    title: Number of frames dropped between groups
+    description: This is the number of reads that are "dropped" and not used in the resultant.
+    type: integer
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    archive_catalog:
+      datatype: int
+      destination: [ScienceCommon.exposure_groupgap, GuideWindow.exposure_groupgap]
+  frame_time:
+    title: "[s] Time between frames"
+    description: |
+        The time between the end of one read and the start of the next read. This
+        depends on the MA table being used.
+    type: number
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    archive_catalog:
+      datatype: float
+      destination: [ScienceCommon.exposure_frame_time, GuideWindow.exposure_frame_time]
+  group_time:
+    title: "[s] Time between groups"
+    description: |
+        The time that is the sum of the reads that are used to construct a resultant.
+        This will depend on the MA table being used.
+    type: number
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    archive_catalog:
+      datatype: float
+      destination: [ScienceCommon.exposure_group_time, GuideWindow.exposure_group_time]
+  exposure_time:
+    title: "[s] exposure time"
+    description: |
+        The time between the start of the first Reset/Read Science Frame of an Exposure
+        and the completion of the final Read Only Science Frame of that Exposure.
+    type: number
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    archive_catalog:
+      datatype: float
+      destination: [ScienceCommon.exposure_time, GuideWindow.exposure_time]
+  ma_table_name:
+    title: Identifier for the multi-accumulation table used
+    description: |
+        The name of the MA table used for the exposure as defined by the
+        PRD (Project Reference Database)
+    type: string
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    archive_catalog:
+      datatype: nvarchar(50)
+      destination: [ScienceCommon.ma_table_name, GuideWindow.ma_table_name]
+  ma_table_number:
+    title: Numerical identifier for the multi-accumulation table used
+    description: |
+        The number of the MA table used for the exposure as defined by the
+        PRD (Project Reference Database). This is used for matching the exposure
+        to the appropriate calibration data.
+    type: integer
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    archive_catalog:
+      datatype: smallint
+      destination: [ScienceCommon.ma_table_number, GuideWindow.ma_table_number]
+  read_pattern:
+    title: Pattern of reads
+    description: |
+      Enumeration of detector reads to resultants making up the L1 data downlinked
+      from the observatory
+    type: array
+    items:
+      type: array
+      items:
+        type: integer
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    archive_catalog:
+      datatype: nvarchar(3500)
+      destination: [ScienceCommon.read_pattern, GuideWindow.read_pattern]
+propertyOrder: [type, start_time,
+           ngroups, nframes, data_problem,
+           frame_divisor, groupgap, frame_time, group_time, exposure_time,
+           ma_table_name, ma_table_number, read_pattern]
+flowStyle: block
+required: [type, start_time,
+           ngroups, nframes, data_problem,
+           frame_divisor, groupgap, frame_time, group_time, exposure_time,
+           ma_table_name, ma_table_number, read_pattern]
+...
