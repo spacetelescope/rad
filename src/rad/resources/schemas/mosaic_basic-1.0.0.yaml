@@ -168,5 +168,6 @@ propertyOrder: [ time_first_mjd, time_last_mjd, time_mean_mjd, max_exposure_time
 flowStyle: block
 required: [ time_first_mjd, time_last_mjd, time_mean_mjd, max_exposure_time,
             mean_exposure_time, model_type, visit, segment, pass, program,
-            survey, optical_element, instrument, telescope, location_name, product_type ]
+            survey, optical_element, instrument, telescope, location_name, product_type,
+            filename ]
 ...
