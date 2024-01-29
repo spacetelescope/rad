@@ -161,6 +161,11 @@ tags:
   title: Ground Test Information
   description: |-
     Ground test description.
+- tag_uri: asdf://stsci.edu/datamodels/roman/tags/fps-1.0.0
+  schema_uri: asdf://stsci.edu/datamodels/roman/schemas/fps-1.0.0
+  title: FPS schema
+  description: |-
+    FPS test data
 # Reference Modules
 - tag_uri: asdf://stsci.edu/datamodels/roman/tags/reference_files/dark-1.0.0
   schema_uri: asdf://stsci.edu/datamodels/roman/schemas/reference_files/dark-1.0.0
