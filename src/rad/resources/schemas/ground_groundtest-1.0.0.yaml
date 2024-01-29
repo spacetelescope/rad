@@ -62,6 +62,9 @@ properties:
     title: Pixel Size (cm)
     tag: tag:stsci.edu:asdf/unit/quantity-1.*
     properties:
+      value:
+        tag: tag:stsci.edu:asdf/core/ndarray-1.*
+        # needs a datatype and ndim
       unit:
         tag: tag:stsci.edu:asdf/unit/unit-1.*
         enum: ["cm"]

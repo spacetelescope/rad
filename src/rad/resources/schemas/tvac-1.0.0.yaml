@@ -1,0 +1,334 @@
+%YAML 1.1
+---
+$schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.0.0
+id: asdf://stsci.edu/datamodels/roman/schemas/tvac-1.0.0
+
+title: |
+  Schema for the TVAC Test Data
+
+datamodel_name: TvacModel
+
+archive_meta: None
+
+type: object
+properties:
+  meta:
+    allOf:
+      - $ref: asdf://stsci.edu/datamodels/roman/schemas/ground_common-1.0.0
+      - type: object
+        properties:
+          groundtest:
+            type: object
+            properties:
+              activity_number:
+                title: TVAC Activity Number
+                type: integer
+              led_bank1_band_number_on:
+                title: Band number of LED illuminating in the sRCS in bank 1
+                type: array
+                items:
+                  type: integer
+              led_bank2_band_number_on:
+                title: Band number of LED illuminating in the sRCS in bank 2
+                type: array
+                items:
+                  type: integer
+              led_bank1_approx_wlen:
+                title: Approximate wavelength of LED illuminating in the sRCS in bank 1
+                tag: tag:stsci.edu:asdf/unit/quantity-1.*
+                properties:
+                  value:
+                    tag: tag:stsci.edu:asdf/core/ndarray-1.*
+                    # needs a datatype and ndim
+                  unit:
+                    tag: tag:stsci.edu:asdf/unit/unit-1.*
+                    enum: ["nm"]
+              led_bank2_approx_wlen:
+                title: Approximate wavelength of LED illuminating in the sRCS in bank 2
+                tag: tag:stsci.edu:asdf/unit/quantity-1.*
+                properties:
+                  value:
+                    tag: tag:stsci.edu:asdf/core/ndarray-1.*
+                    # needs a datatype and ndim
+                  unit:
+                    tag: tag:stsci.edu:asdf/unit/unit-1.*
+                    enum: ["nm"]
+              srcs_pd_voltage:
+                title: sRCS Photodiode Voltage
+                type: number
+              srcs_led_flux:
+                title: Target flux for the sRCS LEDs
+                type: number
+              wfi_mce_srcs_bank1_led_i:
+                title: |
+                  Commanded current for the SRCS -> GSFC will send us the flux
+                  in target e-/s/px in the center of the sca
+                tag: tag:stsci.edu:asdf/unit/quantity-1.*
+                properties:
+                  # needs a datatype
+                  unit:
+                    tag: tag:stsci.edu:asdf/unit/unit-1.*
+                    # enum: [] # needs a list of units
+              wfi_mce_srcs_bank1_led_range:
+                title: |
+                  Commanded range for the SRCS -> GSFC will send us the flux in
+                  target e-/s/px in the center of the sca
+                type: string
+                # enum: [] add enum values
+              wfi_mce_srcs_bank2_led_i:
+                title: |
+                  Commanded current for the SRCS -> GSFC will send us the flux
+                  in target e-/s/px in the center of the sca
+                tag: tag:stsci.edu:asdf/unit/quantity-1.*
+                properties:
+                  # needs a datatype
+                  unit:
+                    tag: tag:stsci.edu:asdf/unit/unit-1.*
+                    # enum: [] # needs a list of units
+              wfi_mce_srcs_bank2_led_range:
+                title: |
+                  Commanded range for the SRCS -> GSFC will send us the flux in
+                  target e-/s/px in the center of the sca
+                type: string
+                # enum: [] add enum values
+              srcs_led_current:
+                title: Input LED current set point
+                type: number
+              wfi_opt_targettype:
+                title: WFI-team defined target types
+                type: string
+                enum: [NONE, FLAT-sRCS, FLAT-SORC, POINT SOURCE, SPECTRUM, DARK,
+                       DARK-DARKEL, DARK-W146, PHARET-GW, PHARET-FF, PHARET-FF-F158,
+                       PHARET-FF-M3MM, PHARET-FF-M6MM, PHARET-FF-P3MM, PHARET-FF-P6MM,
+                       PHARET-FF-PRISM, PHARET-FF-W146, POINT-SOURCE-GW, STRAY LIGHT]
+              analysis_tag:
+                title: WFI-team defined tags for data aggregation/analysis
+                type: string
+              gsorc_pose_mode:
+                title: SORC pose mode
+                type: string
+                # enum: [] add enum values
+              gsorc_pose_target:
+                title: SORC pose target
+                type: string
+                # enum: [] add enum values
+              gsorc_sds_active_atten:
+                title: Attenuation from SDS
+                type: number
+              gsorc_sds_lltfir_wave:
+                title: Commanded wavelength for the LLTF
+              gsorc_sds_sorc_on:
+                title: SORC on/off
+                type: boolean
+              gsorc_sds_sorc_wlen:
+                title: SORC wavelength
+                type: number
+              gsorc_sds_active_source:
+                title: Laser name
+                type: string
+              gsorc_sds_dq_pulse:
+                title: whether the source is pulsing or not
+                type: string
+                enum: [pulse, cw]
+              gsorc_sds_daq_pw:
+                title: pulse width – originally in HDF5 file is in units of 0.1 ms
+                tag: tag:stsci.edu:asdf/unit/quantity-1.*
+                properties:
+                  # needs a datatype
+                  unit:
+                    tag: tag:stsci.edu:asdf/unit/unit-1.*
+                    enum: [ms]
+              gsorc_heater1_setpt:
+                title: SORC temperature set point
+                type: number
+              wfi_otp_wfi_ewa:
+                title: Element Wheel position
+                type: string
+                # enum: [] add enum values
+              sca_temp:
+                title: SCE temperature
+                tag: tag:stsci.edu:asdf/unit/quantity-1.*
+                properties:
+                  # needs a datatype
+                  unit:
+                    tag: tag:stsci.edu:asdf/unit/unit-1.*
+                    enum: [K]
+              mpa_temp:
+                title: MPA temperature
+                tag: tag:stsci.edu:asdf/unit/quantity-1.*
+                properties:
+                  # needs a datatype
+                  unit:
+                    tag: tag:stsci.edu:asdf/unit/unit-1.*
+                    enum: [K]
+              ewa_temp:
+                title: ewa temp ish (there's no actual temperature sensor inside)
+                tag: tag:stsci.edu:asdf/unit/quantity-1.*
+                properties:
+                  # needs a datatype
+                  unit:
+                    tag: tag:stsci.edu:asdf/unit/unit-1.*
+                    enum: [K]
+              ewta_outer_heater_temp:
+                title: ewa_outer temperature sensor
+                tag: tag:stsci.edu:asdf/unit/quantity-1.*
+                properties:
+                  # needs a datatype
+                  unit:
+                    tag: tag:stsci.edu:asdf/unit/unit-1.*
+                    enum: [K]
+              ewta_inner_heater_temp:
+                title: ewa_inner temperature sensor
+                tag: tag:stsci.edu:asdf/unit/quantity-1.*
+                properties:
+                  # needs a datatype
+                  unit:
+                    tag: tag:stsci.edu:asdf/unit/unit-1.*
+                    enum: [K]
+              coba_temp_near_ewta:
+                tag: tag:stsci.edu:asdf/unit/quantity-1.*
+                properties:
+                  # needs a datatype
+                  unit:
+                    tag: tag:stsci.edu:asdf/unit/unit-1.*
+                    enum: [K]
+              scea_temp:
+                tag: tag:stsci.edu:asdf/unit/quantity-1.*
+                properties:
+                  # needs a datatype
+                  unit:
+                    tag: tag:stsci.edu:asdf/unit/unit-1.*
+                    enum: [K]
+              wfi_sce_1_vbiasgate_v:
+                tag: tag:stsci.edu:asdf/unit/quantity-1.*
+                properties:
+                  # needs a datatype
+                  unit:
+                    tag: tag:stsci.edu:asdf/unit/unit-1.*
+                    enum: [V]
+              wfi_sce_1_vbiaspwr_i:
+                tag: tag:stsci.edu:asdf/unit/quantity-1.*
+                properties:
+                  # needs a datatype
+                  unit:
+                    tag: tag:stsci.edu:asdf/unit/unit-1.*
+                    enum: [A]
+              wfi_sce_1_vbiaspwr_v:
+                tag: tag:stsci.edu:asdf/unit/quantity-1.*
+                properties:
+                  # needs a datatype
+                  unit:
+                    tag: tag:stsci.edu:asdf/unit/unit-1.*
+                    enum: [V]
+              wfi_sce_1_vreset_v:
+                tag: tag:stsci.edu:asdf/unit/quantity-1.*
+                properties:
+                  # needs a datatype
+                  unit:
+                    tag: tag:stsci.edu:asdf/unit/unit-1.*
+                    enum: [V]
+              wfi_sce_1_vreset_i:
+                tag: tag:stsci.edu:asdf/unit/quantity-1.*
+                properties:
+                  # needs a datatype
+                  unit:
+                    tag: tag:stsci.edu:asdf/unit/unit-1.*
+                    enum: [A]
+              wfi_mcu_a_offs_csense_fpssen:
+                title: temperature in eng units -> will change for TVAC2.
+                tag: tag:stsci.edu:asdf/unit/quantity-1.*
+                properties:
+                  # needs a datatype
+                  unit:
+                    tag: tag:stsci.edu:asdf/unit/unit-1.*
+                    enum: [K]
+
+  data:
+    title: Science data, including the border reference pixels.
+    tag: tag:stsci.edu:asdf/unit/quantity-1.*
+    properties:
+      value:
+        tag: tag:stsci.edu:asdf/core/ndarray-1.*
+        datatype: uint16
+        ndim: 3
+      unit:
+        tag: tag:astropy.org:astropy/units/unit-1.*
+        enum: ["DN"]
+
+  amp33:
+    title: Amp 33 reference pixel data.
+    tag: tag:stsci.edu:asdf/unit/quantity-1.*
+    properties:
+      value:
+        tag: tag:stsci.edu:asdf/core/ndarray-1.*
+        datatype: uint16
+        ndim: 3
+      unit:
+        tag: tag:astropy.org:astropy/units/unit-1.*
+        enum: ["DN"]
+
+  amp33_reset_reads:
+    title: Amp 33 reset reads performed before integration data.
+    tag: tag:stsci.edu:asdf/unit/quantity-1.*
+    properties:
+      value:
+        tag: tag:stsci.edu:asdf/core/ndarray-1.*
+        datatype: uint16
+        ndim: 3
+      unit:
+        tag: tag:astropy.org:astropy/units/unit-1.*
+        enum: ["DN"]
+
+  amp33_reference_read:
+    title: Amp 33 reference reads that can be subtracted from the amp33 ramp data, if present.
+    tag: tag:stsci.edu:asdf/unit/quantity-1.*
+    properties:
+      value:
+        tag: tag:stsci.edu:asdf/core/ndarray-1.*
+        datatype: uint16
+        ndim: 3
+      unit:
+        tag: tag:astropy.org:astropy/units/unit-1.*
+        enum: ["DN"]
+
+  guidewindow:
+    title: Guide window data.
+    tag: tag:stsci.edu:asdf/unit/quantity-1.*
+    properties:
+      value:
+        tag: tag:stsci.edu:asdf/core/ndarray-1.*
+        datatype: uint16
+        ndim: 3
+      unit:
+        tag: tag:astropy.org:astropy/units/unit-1.*
+        enum: ["DN"]
+
+  reference_read:
+    title: Reference read that can be subtracted from ramp, if present.
+    tag: tag:stsci.edu:asdf/unit/quantity-1.*
+    properties:
+      value:
+        tag: tag:stsci.edu:asdf/core/ndarray-1.*
+        datatype: uint16
+        ndim: 3
+      unit:
+        tag: tag:astropy.org:astropy/units/unit-1.*
+        enum: ["DN"]
+
+  reset_reads:
+    title: Reset reads performed before the ramp integration, if present.
+    tag: tag:stsci.edu:asdf/unit/quantity-1.*
+    properties:
+      value:
+        tag: tag:stsci.edu:asdf/core/ndarray-1.*
+        datatype: uint16
+        ndim: 3
+      unit:
+        tag: tag:astropy.org:astropy/units/unit-1.*
+        enum: ["DN"]
+
+propertyOrder: [meta, data, amp33, amp33_reset_reads, amp33_reference_read,
+                guidewindow, reference_read, reset_reads]
+flowStyle: block
+required: [meta, data, amp33, guidewindow]
+...

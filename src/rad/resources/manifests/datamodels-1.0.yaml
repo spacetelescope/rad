@@ -166,6 +166,11 @@ tags:
   title: FPS schema
   description: |-
     FPS test data
+- tag_uri: asdf://stsci.edu/datamodels/roman/tags/tvac-1.0.0
+  schema_uri: asdf://stsci.edu/datamodels/roman/schemas/tvac-1.0.0
+  title: TVAC schema
+  description: |-
+    TVAC test data
 # Reference Modules
 - tag_uri: asdf://stsci.edu/datamodels/roman/tags/reference_files/dark-1.0.0
   schema_uri: asdf://stsci.edu/datamodels/roman/schemas/reference_files/dark-1.0.0
