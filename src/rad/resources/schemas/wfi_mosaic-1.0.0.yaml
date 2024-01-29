@@ -17,6 +17,8 @@ properties:
         properties:
           # Placeholder for 'asn' schema tag
           # Placeholder for 'dither' schema tag
+          asn:
+            tag: asdf://stsci.edu/datamodels/roman/tags/associations-1.0.0
           basic:
             tag: asdf://stsci.edu/datamodels/roman/tags/mosaic_basic-1.0.0
           cal_step:
