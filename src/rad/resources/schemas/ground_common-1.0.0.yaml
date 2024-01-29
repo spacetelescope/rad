@@ -16,7 +16,7 @@ allOf:
     exposure:
       tag: asdf://stsci.edu/datamodels/roman/tags/ground_exposure-1.0.0
     guidestar:
-      tag: asdf://stsci.edu/datamodels/roman/tags/guidestar-1.0.0
+      tag: asdf://stsci.edu/datamodels/roman/tags/ground_guidestar-1.0.0
     instrument:
       tag: asdf://stsci.edu/datamodels/roman/tags/wfi_mode-1.0.0
     ref_file:
