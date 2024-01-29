@@ -1,6 +1,7 @@
 """
 Test features of the schemas not covered by the metaschema.
 """
+
 import re
 from collections.abc import Mapping
 

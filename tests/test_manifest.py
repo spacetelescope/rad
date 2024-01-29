@@ -2,6 +2,7 @@
 Test that the manifest file is correctly structured and refers
 to schemas that exist.
 """
+
 import asdf
 import pytest
 

@@ -1,6 +1,7 @@
 """
 Test that the asdf library integration is working properly.
 """
+
 import sys
 
 if sys.version_info < (3, 9):
