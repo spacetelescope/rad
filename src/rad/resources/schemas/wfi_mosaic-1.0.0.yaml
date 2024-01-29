@@ -30,7 +30,9 @@ properties:
             anyOf:
               - tag: tag:stsci.edu:gwcs/wcs-*
               - type: "null"
-        required: [basic, program, resample, wcs]
+          wcsinfo:
+            tag: asdf://stsci.edu/datamodels/roman/tags/mosaic_wcsinfo-1.0.0
+        required: [basic, program, resample, wcs, wcsinfo]
   data:
     title: Science data, excluding border reference pixels.
     tag: tag:stsci.edu:asdf/unit/quantity-1.1.0
