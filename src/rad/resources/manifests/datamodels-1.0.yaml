@@ -135,6 +135,11 @@ tags:
   title: Basic mosaic metadata keywords
   description: |-
     Basic mosaic metadata keywords
+- tag_uri: asdf://stsci.edu/datamodels/roman/tags/mosaic_associations-1.0.0
+  schema_uri: asdf://stsci.edu/datamodels/roman/schemas/mosaic_associations-1.0.0
+  title: Mosaic associations metadata keywords
+  description: |-
+    Mosaic associations metadata keywords
 - tag_uri: asdf://stsci.edu/datamodels/roman/tags/mosaic_wcsinfo-1.0.0
   schema_uri: asdf://stsci.edu/datamodels/roman/schemas/mosaic_wcsinfo-1.0.0
   title: Mosaic WCS parameters
