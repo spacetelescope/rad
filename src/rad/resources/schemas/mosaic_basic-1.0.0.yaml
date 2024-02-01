@@ -1,0 +1,173 @@
+%YAML 1.1
+---
+$schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.0.0
+id: asdf://stsci.edu/datamodels/roman/schemas/mosaic_basic-1.0.0
+
+title: Basic mosaic metadata keywords
+type: object
+
+properties:
+  time_first_mjd:
+    title: Earliest component image start time in the mosaic in MJD
+    type: number
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    archive_catalog:
+      datatype: float
+      destination: [ScienceCommon.time_first_mjd]
+  time_last_mjd:
+    title: Latest component image end time in the mosaic in MJD
+    type: number
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    archive_catalog:
+      datatype: float
+      destination: [ScienceCommon.time_last_mjd]
+  time_mean_mjd:
+    title: Mean of mid-times of component images in MJD
+    type: number
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    archive_catalog:
+      datatype: float
+      destination: [ScienceCommon.time_mean_mjd]
+  max_exposure_time:
+    title: Maximum component image exposure time in MJD
+    type: number
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    archive_catalog:
+      datatype: float
+      destination: [ScienceCommon.max_exposure_time]
+  mean_exposure_time:
+    title: Mean of component image exposure times in MJD
+    type: number
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    archive_catalog:
+      datatype: float
+      destination: [ScienceCommon.mean_exposure_time]
+  model_type:
+    title: Type of data model
+    type: string
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    archive_catalog:
+      datatype: nvarchar(50)
+      destination: [ScienceCommon.model_type, GuideWindow.model_type]
+  visit:
+    title: Visit number within the observation, defined range of
+           values is 1..999; included in obs_id and visit_id as 'VVV'.
+    type: integer
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    archive_catalog:
+      datatype: smallint
+      destination: [ScienceCommon.visit]
+  segment:
+    title: Segment Number within pass, defined range is 1..999;
+           included in obs_id and visit_id as 'SSS'.
+    type: integer
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    archive_catalog:
+      datatype: smallint
+      destination: [ScienceCommon.segment]
+  pass:
+    title: Pass number within execution plan, defined range is 1..999;
+           included in obs_id and visit_id as 'AA'.
+    type: integer
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    archive_catalog:
+      datatype: smallint
+      destination: [ScienceCommon.pass]
+  program:
+    title: Program number, defined range is 1..18445;
+           included in obs_id and visit_id as 'PPPPP'.
+    type: string
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    archive_catalog:
+      datatype: int
+      destination: [ScienceCommon.program]
+  survey:
+    title: Observation Survey
+    type: string
+    archive_catalog:
+      datatype: nvarchar(15)
+      destination: [ScienceCommon.survey]
+  optical_element:
+    $ref: wfi_optical_element-1.0.0
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    archive_catalog:
+      datatype: nvarchar(20)
+      destination: [ScienceCommon.optical_element]
+  instrument:
+    title: Instrument used to acquire the data
+    type: string
+    enum: [WFI]
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    archive_catalog:
+      datatype: nvarchar(5)
+      destination: [ScienceCommon.instrument_name]
+  telescope:
+    tag: asdf://stsci.edu/datamodels/roman/tags/telescope-1.0.0
+  location_name:
+    title: Name of the skycell containing the mosaic
+    type: string
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    archive_catalog:
+      datatype: nvarchar(25)
+      destination: [ScienceCommon.location_name]
+  product_type:
+    title: Association product type
+    type: string
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    archive_catalog:
+      datatype: nvarchar(25)
+      destination: [ScienceCommon.product_type]
+  filename:
+    tag: asdf://stsci.edu/datamodels/roman/tags/filename-1.0.0
+propertyOrder: [ time_first_mjd, time_last_mjd, time_mean_mjd, max_exposure_time,
+                 mean_exposure_time, model_type, visit, segment, pass, program,
+                 survey, optical_element, instrument, telescope, location_name, product_type,
+                 filename ]
+flowStyle: block
+required: [ time_first_mjd, time_last_mjd, time_mean_mjd, max_exposure_time,
+            mean_exposure_time, model_type, visit, segment, pass, program,
+            survey, optical_element, instrument, telescope, location_name, product_type,
+            filename ]
+...

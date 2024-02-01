@@ -1,0 +1,20 @@
+%YAML 1.1
+---
+$schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.0.0
+id: asdf://stsci.edu/datamodels/roman/schemas/mosaic_associations-1.0.0
+
+title: Association information for mosaic
+type: object
+
+properties:
+  pool_name:
+    title: Pool name
+    type: string
+  table_name:
+    title: Table name
+    type: string
+
+propertyOrder: [ pool_name, table_name ]
+flowStyle: block
+required: [ pool_name, table_name ]
+...
