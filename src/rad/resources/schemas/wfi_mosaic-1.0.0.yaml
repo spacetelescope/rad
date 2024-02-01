@@ -24,6 +24,8 @@ properties:
             tag: asdf://stsci.edu/datamodels/roman/tags/cal_step-1.0.0
           individual_image_meta:
             tag: asdf://stsci.edu/datamodels/roman/tags/individual_image_meta-1.0.0
+          photometry:
+            tag: asdf://stsci.edu/datamodels/roman/tags/photometry-1.0.0
           program:
             tag: asdf://stsci.edu/datamodels/roman/tags/program-1.0.0
           resample:
@@ -35,7 +37,7 @@ properties:
               - type: "null"
           wcsinfo:
             tag: asdf://stsci.edu/datamodels/roman/tags/mosaic_wcsinfo-1.0.0
-        required: [basic, cal_step, program, resample, wcs, wcsinfo]
+        required: [asn, basic, cal_step, photometry, program, resample, wcs, wcsinfo]
   data:
     title: Science data, excluding border reference pixels.
     tag: tag:stsci.edu:asdf/unit/quantity-1.1.0
