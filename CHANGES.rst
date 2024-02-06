@@ -8,6 +8,8 @@
 
 - Add documentation on how to create a new schema. [#375]
 
+- Add ``FPS`` and ``TVAC`` schemas. [#364]
+
 0.19.0 (2024-02-09)
 -------------------
 
