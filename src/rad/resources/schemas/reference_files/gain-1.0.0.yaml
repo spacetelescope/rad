@@ -24,6 +24,7 @@ properties:
       value:
         tag: tag:stsci.edu:asdf/core/ndarray-1.*
         datatype: float32
+        exact_datatype: true
         ndim: 2
       unit:
         tag: tag:astropy.org:astropy/units/unit-1.*

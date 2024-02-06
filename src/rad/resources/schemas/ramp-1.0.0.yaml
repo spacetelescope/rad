@@ -18,6 +18,7 @@ properties:
       value:
         tag: tag:stsci.edu:asdf/core/ndarray-1.*
         datatype: float32
+        exact_datatype: true
         ndim: 3
       unit:
         tag: tag:astropy.org:astropy/units/unit-1.*
@@ -27,11 +28,13 @@ properties:
     tag: tag:stsci.edu:asdf/core/ndarray-1.*
     ndim: 2
     datatype: uint32
+    exact_datatype: true
   groupdq:
     title: 3-D data quality array (plane dq for each group)
     tag: tag:stsci.edu:asdf/core/ndarray-1.*
     ndim: 3
     datatype: uint8
+    exact_datatype: true
   err:
     title: Error array containing the square root of the exposure-level combined variance
     tag: tag:stsci.edu:asdf/unit/quantity-1.*
@@ -39,6 +42,7 @@ properties:
       value:
         tag: tag:stsci.edu:asdf/core/ndarray-1.*
         datatype: float32
+        exact_datatype: true
         ndim: 3
       unit:
         tag: tag:astropy.org:astropy/units/unit-1.*
@@ -50,6 +54,7 @@ properties:
       value:
         tag: tag:stsci.edu:asdf/core/ndarray-1.*
         datatype: uint16
+        exact_datatype: true
         ndim: 3
       unit:
         tag: tag:astropy.org:astropy/units/unit-1.*
@@ -60,6 +65,7 @@ properties:
     value:
       tag: tag:stsci.edu:asdf/core/ndarray-1.*
       datatype: float32
+      exact_datatype: true
       ndim: 3
     unit:
       tag: tag:astropy.org:astropy/units/unit-1.*
@@ -71,6 +77,7 @@ properties:
       value:
         tag: tag:stsci.edu:asdf/core/ndarray-1.*
         datatype: float32
+        exact_datatype: true
         ndim: 3
       unit:
         tag: tag:astropy.org:astropy/units/unit-1.*
@@ -82,6 +89,7 @@ properties:
       value:
         tag: tag:stsci.edu:asdf/core/ndarray-1.*
         datatype: float32
+        exact_datatype: true
         ndim: 3
       unit:
         tag: tag:astropy.org:astropy/units/unit-1.*
@@ -93,6 +101,7 @@ properties:
       value:
         tag: tag:stsci.edu:asdf/core/ndarray-1.*
         datatype: float32
+        exact_datatype: true
         ndim: 3
       unit:
         tag: tag:astropy.org:astropy/units/unit-1.*
@@ -101,21 +110,25 @@ properties:
     title: DQ for border reference pixels, on left (from viewers perspective).
     tag: tag:stsci.edu:asdf/core/ndarray-1.*
     datatype: uint32
+    exact_datatype: true
     ndim: 2
   dq_border_ref_pix_right:
     title: DQ for border reference pixels, on right (from viewers perspective).
     tag: tag:stsci.edu:asdf/core/ndarray-1.*
     datatype: uint32
+    exact_datatype: true
     ndim: 2
   dq_border_ref_pix_top:
     title: DQ for border reference pixels, on top.
     tag: tag:stsci.edu:asdf/core/ndarray-1.*
     datatype: uint32
+    exact_datatype: true
     ndim: 2
   dq_border_ref_pix_bottom:
     title: DQ for border reference pixels, on bottom.
     tag: tag:stsci.edu:asdf/core/ndarray-1.*
     datatype: uint32
+    exact_datatype: true
     ndim: 2
 propertyOrder: [meta, data, pixeldq, groupdq, err, amp33, border_ref_pix_left,
                 border_ref_pix_right, border_ref_pix_top,

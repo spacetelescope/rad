@@ -49,6 +49,7 @@ properties:
       value:
         tag: tag:stsci.edu:asdf/core/ndarray-1.*
         datatype: float32
+        exact_datatype: true
         ndim: 2
       unit:
         tag: tag:stsci.edu:asdf/unit/unit-1.*
@@ -59,6 +60,7 @@ properties:
       value:
         tag: tag:stsci.edu:asdf/core/ndarray-1.*
         datatype: float32
+        exact_datatype: true
         ndim: 2
       unit:
         tag: tag:stsci.edu:asdf/unit/unit-1.*
@@ -66,10 +68,12 @@ properties:
   context:
     tag: tag:stsci.edu:asdf/core/ndarray-1.*
     datatype: uint32
+    exact_datatype: true
     ndim: 3
   weight:
     tag: tag:stsci.edu:asdf/core/ndarray-1.*
     datatype: float32
+    exact_datatype: true
     ndim: 2
   var_poisson:
     tag: tag:stsci.edu:asdf/unit/quantity-1.*
@@ -77,6 +81,7 @@ properties:
       value:
         tag: tag:stsci.edu:asdf/core/ndarray-1.*
         datatype: float32
+        exact_datatype: true
         ndim: 2
       unit:
         tag: tag:stsci.edu:asdf/unit/unit-1.*
@@ -87,6 +92,7 @@ properties:
       value:
         tag: tag:stsci.edu:asdf/core/ndarray-1.*
         datatype: float32
+        exact_datatype: true
         ndim: 2
       unit:
         tag: tag:stsci.edu:asdf/unit/unit-1.*
@@ -97,6 +103,7 @@ properties:
       value:
         tag: tag:stsci.edu:asdf/core/ndarray-1.*
         datatype: float32
+        exact_datatype: true
         ndim: 2
       unit:
         tag: tag:stsci.edu:asdf/unit/unit-1.*

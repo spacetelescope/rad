@@ -21,16 +21,19 @@ properties:
     title: 2-D super-bias array
     tag: tag:stsci.edu:asdf/core/ndarray-1.*
     datatype: float32
+    exact_datatype: true
     ndim: 2
   dq:
     title: 2-D data quality array for all planes
     tag: tag:stsci.edu:asdf/core/ndarray-1.*
     datatype: uint32
+    exact_datatype: true
     ndim: 2
   err:
     title: 2-D Error array
     tag: tag:stsci.edu:asdf/core/ndarray-1.*
     datatype: float32
+    exact_datatype: true
     ndim: 2
 required: [meta, data, dq, err]
 flowStyle: block

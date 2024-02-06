@@ -18,6 +18,7 @@ properties:
       value:
         tag: tag:stsci.edu:asdf/core/ndarray-1.*
         datatype: float32
+        exact_datatype: true
         ndim: 3
       unit:
         tag: tag:astropy.org:astropy/units/unit-1.*
@@ -29,6 +30,7 @@ properties:
       value:
         tag: tag:stsci.edu:asdf/core/ndarray-1.*
         datatype: float32
+        exact_datatype: true
         ndim: 3
       unit:
         tag: tag:astropy.org:astropy/units/unit-1.*
@@ -40,6 +42,7 @@ properties:
       value:
         tag: tag:stsci.edu:asdf/core/ndarray-1.*
         datatype: float32
+        exact_datatype: true
         ndim: 3
       unit:
         tag: tag:astropy.org:astropy/units/unit-1.*
@@ -51,6 +54,7 @@ properties:
       value:
         tag: tag:stsci.edu:asdf/core/ndarray-1.*
         datatype: float32
+        exact_datatype: true
         ndim: 3
       unit:
         tag: tag:astropy.org:astropy/units/unit-1.*
@@ -62,6 +66,7 @@ properties:
       value:
         tag: tag:stsci.edu:asdf/core/ndarray-1.*
         datatype: float32
+        exact_datatype: true
         ndim: 2
       unit:
         tag: tag:astropy.org:astropy/units/unit-1.*
@@ -71,6 +76,7 @@ properties:
     tag: tag:stsci.edu:asdf/core/ndarray-1.*
     ndim: 3
     datatype: float32
+    exact_datatype: true
   crmag:
     title: Approximate CR magnitudes
     tag: tag:stsci.edu:asdf/unit/quantity-1.*
@@ -78,6 +84,7 @@ properties:
       value:
         tag: tag:stsci.edu:asdf/core/ndarray-1.*
         datatype: float32
+        exact_datatype: true
         ndim: 3
       unit:
         tag: tag:astropy.org:astropy/units/unit-1.*
@@ -89,6 +96,7 @@ properties:
       value:
         tag: tag:stsci.edu:asdf/core/ndarray-1.*
         datatype: float32
+        exact_datatype: true
         ndim: 3
       unit:
         tag: tag:astropy.org:astropy/units/unit-1.*
@@ -100,6 +108,7 @@ properties:
       value:
         tag: tag:stsci.edu:asdf/core/ndarray-1.*
         datatype: float32
+        exact_datatype: true
         ndim: 3
       unit:
         tag: tag:astropy.org:astropy/units/unit-1.*

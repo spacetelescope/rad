@@ -49,6 +49,7 @@ properties:
       value:
         tag: tag:stsci.edu:asdf/core/ndarray-1.*
         datatype: float32
+        exact_datatype: true
         ndim: 3
       unit:
         tag: tag:astropy.org:astropy/units/unit-1.*
@@ -57,6 +58,7 @@ properties:
     title: 2-D data quality array for all planes
     tag: tag:stsci.edu:asdf/core/ndarray-1.*
     datatype: uint32
+    exact_datatype: true
     ndim: 2
   dark_slope:
     title: Dark current slope array
@@ -69,6 +71,7 @@ properties:
       value:
         tag: tag:stsci.edu:asdf/core/ndarray-1.*
         datatype: float32
+        exact_datatype: true
         ndim: 2
       unit:
         tag: tag:astropy.org:astropy/units/unit-1.*
@@ -80,6 +83,7 @@ properties:
       value:
         tag: tag:stsci.edu:asdf/core/ndarray-1.*
         datatype: float32
+        exact_datatype: true
         ndim: 2
       unit:
         tag: tag:astropy.org:astropy/units/unit-1.*
