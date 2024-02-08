@@ -47,15 +47,12 @@ def valid_tag_uris(manifest):
     uris = {t["tag_uri"] for t in manifest["tags"]}
     uris.update(
         [
-            "tag:stsci.edu:asdf/time/time-1.1.0",
-            "tag:stsci.edu:asdf/core/ndarray-1.0.0",
-            "tag:stsci.edu:asdf/unit/quantity-1.1.0",
-            "tag:stsci.edu:asdf/unit/unit-1.0.0",
-            "tag:astropy.org:astropy/units/unit-1.0.0",
-            "tag:astropy.org:astropy/table/table-1.1.0",
-            "tag:stsci.edu:gwcs/wcs-1.0.0",
-            "tag:stsci.edu:gwcs/wcs-1.1.0",
-            "tag:stsci.edu:gwcs/wcs-1.2.0",
+            "tag:stsci.edu:asdf/time/time-1.*",
+            "tag:stsci.edu:asdf/core/ndarray-1.*",
+            "tag:stsci.edu:asdf/unit/quantity-1.*",
+            "tag:stsci.edu:asdf/unit/unit-1.*",
+            "tag:astropy.org:astropy/units/unit-1.*",
+            "tag:astropy.org:astropy/table/table-1.*",
             "tag:stsci.edu:gwcs/wcs-*",
         ]
     )

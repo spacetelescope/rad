@@ -20,17 +20,17 @@ properties:
       - $ref: ref_optical_element-1.0.0
   data:
     title: Flat data array
-    tag: tag:stsci.edu:asdf/core/ndarray-1.0.0
+    tag: tag:stsci.edu:asdf/core/ndarray-1.*
     datatype: float32
     ndim: 2
   dq:
     title: Data quality array
-    tag: tag:stsci.edu:asdf/core/ndarray-1.0.0
+    tag: tag:stsci.edu:asdf/core/ndarray-1.*
     datatype: uint32
     ndim: 2
   err:
     title: Error array
-    tag: tag:stsci.edu:asdf/core/ndarray-1.0.0
+    tag: tag:stsci.edu:asdf/core/ndarray-1.*
     datatype: float32
     ndim: 2
 required: [meta, data, dq, err]

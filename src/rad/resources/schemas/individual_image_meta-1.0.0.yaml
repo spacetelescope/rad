@@ -10,71 +10,71 @@ properties:
   basic:
     description: |
       Table of basic level 2 metadata.
-    tag: tag:astropy.org:astropy/table/table-1.1.0
+    tag: tag:astropy.org:astropy/table/table-1.*
   aperture:
     description: |
       Table of aperture level 2 metadata.
-    tag: tag:astropy.org:astropy/table/table-1.1.0
+    tag: tag:astropy.org:astropy/table/table-1.*
   cal_step:
     description: |
       Table of cal_step level 2 metadata.
-    tag: tag:astropy.org:astropy/table/table-1.1.0
+    tag: tag:astropy.org:astropy/table/table-1.*
   coordinates:
     description: |
       Table of coordinates level 2 metadata.
-    tag: tag:astropy.org:astropy/table/table-1.1.0
+    tag: tag:astropy.org:astropy/table/table-1.*
   ephemeris:
     description: |
       Table of ephemeris level 2 metadata.
-    tag: tag:astropy.org:astropy/table/table-1.1.0
+    tag: tag:astropy.org:astropy/table/table-1.*
   exposure:
     description: |
       Table of exposure level 2 metadata.
-    tag: tag:astropy.org:astropy/table/table-1.1.0
+    tag: tag:astropy.org:astropy/table/table-1.*
   guidestar:
     description: |
       Table of guidestar level 2 metadata.
-    tag: tag:astropy.org:astropy/table/table-1.1.0
+    tag: tag:astropy.org:astropy/table/table-1.*
   instrument:
     description: |
       Table of instrument level 2 metadata.
-    tag: tag:astropy.org:astropy/table/table-1.1.0
+    tag: tag:astropy.org:astropy/table/table-1.*
   observation:
     description: |
       Table of observation level 2 metadata.
-    tag: tag:astropy.org:astropy/table/table-1.1.0
+    tag: tag:astropy.org:astropy/table/table-1.*
   photometry:
     description: |
       Table of photometry level 2 metadata.
-    tag: tag:astropy.org:astropy/table/table-1.1.0
+    tag: tag:astropy.org:astropy/table/table-1.*
   pointing:
     description: |
       Table of pointing level 2 metadata.
-    tag: tag:astropy.org:astropy/table/table-1.1.0
+    tag: tag:astropy.org:astropy/table/table-1.*
   program:
     description: |
       Table of program level 2 metadata.
-    tag: tag:astropy.org:astropy/table/table-1.1.0
+    tag: tag:astropy.org:astropy/table/table-1.*
   ref_file:
     description: |
       Table of ref_file level 2 metadata.
-    tag: tag:astropy.org:astropy/table/table-1.1.0
+    tag: tag:astropy.org:astropy/table/table-1.*
   target:
     description: |
       Table of target level 2 metadata.
-    tag: tag:astropy.org:astropy/table/table-1.1.0
+    tag: tag:astropy.org:astropy/table/table-1.*
   velocity_aberration:
     description: |
       Table of velocity_aberration level 2 metadata.
-    tag: tag:astropy.org:astropy/table/table-1.1.0
+    tag: tag:astropy.org:astropy/table/table-1.*
   visit:
     description: |
       Table of visit level 2 metadata.
-    tag: tag:astropy.org:astropy/table/table-1.1.0
+    tag: tag:astropy.org:astropy/table/table-1.*
   wcsinfo:
     description: |
       Table of wcsinfo level 2 metadata.
-    tag: tag:astropy.org:astropy/table/table-1.1.0
+    tag: tag:astropy.org:astropy/table/table-1.*
 flowStyle: block
 propertyOrder: [basic, aperture, cal_step, coordinates, ephemeris,
 exposure, guidestar, instrument, observation, photometry,

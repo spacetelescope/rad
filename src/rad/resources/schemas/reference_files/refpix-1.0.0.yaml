@@ -19,29 +19,29 @@ properties:
             enum: [REFPIX]
           input_units:
             title: Units of the input to the linearity polynomial.
-            tag: tag:astropy.org:astropy/units/unit-1.0.0
+            tag: tag:astropy.org:astropy/units/unit-1.*
             enum: ["DN"]
           output_units:
             title: Units of the output of the linearity polynomial.
-            tag: tag:astropy.org:astropy/units/unit-1.0.0
+            tag: tag:astropy.org:astropy/units/unit-1.*
             enum: ["DN"]
         required: [output_units, input_units]
 
   gamma:
     title: Left column correction coefficients
-    tag: tag:stsci.edu:asdf/core/ndarray-1.0.0
+    tag: tag:stsci.edu:asdf/core/ndarray-1.*
     datatype: complex128
     ndim: 2
 
   zeta:
     title: Right column correction coefficients
-    tag: tag:stsci.edu:asdf/core/ndarray-1.0.0
+    tag: tag:stsci.edu:asdf/core/ndarray-1.*
     datatype: complex128
     ndim: 2
 
   alpha:
     title: Reference output correction coefficients
-    tag: tag:stsci.edu:asdf/core/ndarray-1.0.0
+    tag: tag:stsci.edu:asdf/core/ndarray-1.*
     datatype: complex128
     ndim: 2
 

@@ -19,11 +19,11 @@ properties:
             enum: [DISTORTION]
           input_units:
             title: Units of the detector coordinate inputs to this model.
-            tag: tag:stsci.edu:asdf/unit/unit-1.0.0
+            tag: tag:stsci.edu:asdf/unit/unit-1.*
             enum: ["pixel"]
           output_units:
             title: Output units of V2/V3 coordinates after the model is applied.
-            tag: tag:stsci.edu:asdf/unit/unit-1.0.0
+            tag: tag:stsci.edu:asdf/unit/unit-1.*
             enum: ["arcsec"]
         required: [output_units, input_units]
       - $ref: ref_optical_element-1.0.0
