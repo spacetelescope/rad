@@ -44,18 +44,18 @@ properties:
     description: |
        The dark current array represents the integrated number of counts
        due to the accumulation of dark current electrons in the pixels.
-    tag: tag:stsci.edu:asdf/unit/quantity-1.1.0
+    tag: tag:stsci.edu:asdf/unit/quantity-1.*
     properties:
       value:
-        tag: tag:stsci.edu:asdf/core/ndarray-1.0.0
+        tag: tag:stsci.edu:asdf/core/ndarray-1.*
         datatype: float32
         ndim: 3
       unit:
-        tag: tag:astropy.org:astropy/units/unit-1.0.0
+        tag: tag:astropy.org:astropy/units/unit-1.*
         enum: ["DN"]
   dq:
     title: 2-D data quality array for all planes
-    tag: tag:stsci.edu:asdf/core/ndarray-1.0.0
+    tag: tag:stsci.edu:asdf/core/ndarray-1.*
     datatype: uint32
     ndim: 2
   dark_slope:
@@ -64,25 +64,25 @@ properties:
        The dark current slope array represents the slope of the
        integrated number of counts due to the accumulation of dark
        current electrons in the pixels for slope fitting purposes.
-    tag: tag:stsci.edu:asdf/unit/quantity-1.1.0
+    tag: tag:stsci.edu:asdf/unit/quantity-1.*
     properties:
       value:
-        tag: tag:stsci.edu:asdf/core/ndarray-1.0.0
+        tag: tag:stsci.edu:asdf/core/ndarray-1.*
         datatype: float32
         ndim: 2
       unit:
-        tag: tag:astropy.org:astropy/units/unit-1.0.0
+        tag: tag:astropy.org:astropy/units/unit-1.*
         enum: ["DN / s"]
   dark_slope_error:
     title: Uncertainty in dark current slope array
-    tag: tag:stsci.edu:asdf/unit/quantity-1.1.0
+    tag: tag:stsci.edu:asdf/unit/quantity-1.*
     properties:
       value:
-        tag: tag:stsci.edu:asdf/core/ndarray-1.0.0
+        tag: tag:stsci.edu:asdf/core/ndarray-1.*
         datatype: float32
         ndim: 2
       unit:
-        tag: tag:astropy.org:astropy/units/unit-1.0.0
+        tag: tag:astropy.org:astropy/units/unit-1.*
         enum: ["DN / s"]
 required: [meta, data, dq, dark_slope, dark_slope_error]
 flowStyle: block

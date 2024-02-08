@@ -27,34 +27,34 @@ properties:
           photmjsr:
             title: Surface brightness, in MJy/steradian
             anyOf:
-              - tag: tag:stsci.edu:asdf/unit/quantity-1.1.0
+              - tag: tag:stsci.edu:asdf/unit/quantity-1.*
                 properties:
                   value:
                     type: number
                   unit:
-                    tag: tag:stsci.edu:asdf/unit/unit-1.0.0
+                    tag: tag:stsci.edu:asdf/unit/unit-1.*
                     enum: [MJy.sr**-1]
               - type: "null"
           uncertainty:
             title: Uncertainty of surface brightness, in MJy/steradian
             anyOf:
-              - tag: tag:stsci.edu:asdf/unit/quantity-1.1.0
+              - tag: tag:stsci.edu:asdf/unit/quantity-1.*
                 properties:
                   value:
                     type: number
                   unit:
-                    tag: tag:stsci.edu:asdf/unit/unit-1.0.0
+                    tag: tag:stsci.edu:asdf/unit/unit-1.*
                     enum: [MJy.sr**-1]
               - type: "null"
           pixelareasr:
             title: Nominal pixel area, in steradian
             anyOf:
-              - tag: tag:stsci.edu:asdf/unit/quantity-1.1.0
+              - tag: tag:stsci.edu:asdf/unit/quantity-1.*
                 properties:
                   value:
                     type: number
                   unit:
-                    tag: tag:stsci.edu:asdf/unit/unit-1.0.0
+                    tag: tag:stsci.edu:asdf/unit/unit-1.*
                     enum: [sr]
               - type: "null"
         required: [photmjsr, uncertainty, pixelareasr]

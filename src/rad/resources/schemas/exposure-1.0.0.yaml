@@ -36,7 +36,7 @@ properties:
     description: |
         This is a python date-time object that records the
         time at the start of the exposure in UTC.
-    tag: tag:stsci.edu:asdf/time/time-1.1.0
+    tag: tag:stsci.edu:asdf/time/time-1.*
     sdf:
       special_processing: VALUE_REQUIRED
       source:
@@ -49,7 +49,7 @@ properties:
     description: |
         This is a python date-time object that records the
         time at the middle of the exposure in UTC.
-    tag: tag:stsci.edu:asdf/time/time-1.1.0
+    tag: tag:stsci.edu:asdf/time/time-1.*
     sdf:
       special_processing: VALUE_REQUIRED
       source:
@@ -62,7 +62,7 @@ properties:
     description: |
         This is a python date-time object that records the
         time at the end of the exposure in UTC.
-    tag: tag:stsci.edu:asdf/time/time-1.1.0
+    tag: tag:stsci.edu:asdf/time/time-1.*
     sdf:
       special_processing: VALUE_REQUIRED
       source:

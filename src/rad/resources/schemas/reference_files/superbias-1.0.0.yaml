@@ -19,17 +19,17 @@ properties:
             enum: [BIAS]
   data:
     title: 2-D super-bias array
-    tag: tag:stsci.edu:asdf/core/ndarray-1.0.0
+    tag: tag:stsci.edu:asdf/core/ndarray-1.*
     datatype: float32
     ndim: 2
   dq:
     title: 2-D data quality array for all planes
-    tag: tag:stsci.edu:asdf/core/ndarray-1.0.0
+    tag: tag:stsci.edu:asdf/core/ndarray-1.*
     datatype: uint32
     ndim: 2
   err:
     title: 2-D Error array
-    tag: tag:stsci.edu:asdf/core/ndarray-1.0.0
+    tag: tag:stsci.edu:asdf/core/ndarray-1.*
     datatype: float32
     ndim: 2
 required: [meta, data, dq, err]

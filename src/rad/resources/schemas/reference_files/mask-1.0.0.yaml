@@ -19,7 +19,7 @@ properties:
             enum: [MASK]
   dq:
     title: Data quality mask array
-    tag: tag:stsci.edu:asdf/core/ndarray-1.0.0
+    tag: tag:stsci.edu:asdf/core/ndarray-1.*
     datatype: uint32
     ndim: 2
 required: [meta, dq]
