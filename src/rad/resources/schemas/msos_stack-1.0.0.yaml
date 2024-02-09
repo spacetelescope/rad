@@ -18,25 +18,25 @@ properties:
   data:
     title: Flux data
     value:
-      tag: tag:stsci.edu:asdf/core/ndarray-1.0.0
+      tag: tag:stsci.edu:asdf/core/ndarray-1.*
       datatype: float64
       ndim: 2
   uncertainty:
     title: uncertainty data
     value:
-      tag: tag:stsci.edu:asdf/core/ndarray-1.0.0
+      tag: tag:stsci.edu:asdf/core/ndarray-1.*
       datatype: float64
       ndim: 2
   mask:
     title: mask data
     value:
-      tag: tag:stsci.edu:asdf/core/ndarray-1.0.0
+      tag: tag:stsci.edu:asdf/core/ndarray-1.*
       datatype: uint8
       ndim: 2
   coverage:
     title: coverage data
     value:
-      tag: tag:stsci.edu:asdf/core/ndarray-1.0.0
+      tag: tag:stsci.edu:asdf/core/ndarray-1.*
       datatype: uint8
       ndim: 2
 propertyOrder: [meta, data, uncertainty, mask, coverage]
