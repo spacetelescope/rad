@@ -56,7 +56,7 @@ allOf:
           # needs a datatype
           unit:
             tag: tag:stsci.edu:asdf/unit/unit-1.*
-            # enum: [] # needs a list of units
+            enum: ["A"]
       wfi_mce_srcs_bank1_led_range:
         title: |
           Commanded range for the SRCS -> GSFC will send us the flux in
@@ -72,7 +72,7 @@ allOf:
           # needs a datatype
           unit:
             tag: tag:stsci.edu:asdf/unit/unit-1.*
-            # enum: [] # needs a list of units
+            enum: ["A"]
       wfi_mce_srcs_bank2_led_range:
         title: |
           Commanded range for the SRCS -> GSFC will send us the flux in
