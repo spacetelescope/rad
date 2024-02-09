@@ -21,6 +21,7 @@ properties:
     title: Data quality mask array
     tag: tag:stsci.edu:asdf/core/ndarray-1.*
     datatype: uint32
+    exact_datatype: true
     ndim: 2
 required: [meta, dq]
 flowStyle: block

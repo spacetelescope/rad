@@ -35,12 +35,14 @@ properties:
       have units that contain various powers of DN.
     tag: tag:stsci.edu:asdf/core/ndarray-1.*
     datatype: float32
+    exact_datatype: true
     # Dimensions: numcoeffs, ysize, xsize
     ndim: 3
   dq:
     title: 2-D data quality array for all planes
     tag: tag:stsci.edu:asdf/core/ndarray-1.*
     datatype: uint32
+    exact_datatype: true
     ndim: 2
 required: [meta, coeffs, dq]
 flowStyle: block

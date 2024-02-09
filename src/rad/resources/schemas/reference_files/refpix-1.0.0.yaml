@@ -31,18 +31,21 @@ properties:
     title: Left column correction coefficients
     tag: tag:stsci.edu:asdf/core/ndarray-1.*
     datatype: complex128
+    exact_datatype: true
     ndim: 2
 
   zeta:
     title: Right column correction coefficients
     tag: tag:stsci.edu:asdf/core/ndarray-1.*
     datatype: complex128
+    exact_datatype: true
     ndim: 2
 
   alpha:
     title: Reference output correction coefficients
     tag: tag:stsci.edu:asdf/core/ndarray-1.*
     datatype: complex128
+    exact_datatype: true
     ndim: 2
 
 required: [meta, gamma, zeta, alpha]

@@ -176,14 +176,57 @@ def test_matched_optical_element_entries():
         assert r.search(element_str)
 
 
-# Confirm that the p_keyword version of exposure type match the enum version
 def test_matched_p_exptype_entries():
+    """Confirm that the p_keyword version of exposure type match the enum version."""
     p_exptype = asdf.schema.load_schema("asdf://stsci.edu/datamodels/roman/schemas/reference_files/ref_exposure_type-1.0.0")[
         "properties"
     ]["exposure"]["properties"]["p_exptype"]["pattern"]
     r = re.compile(p_exptype)
     for element_str in EXPOSURE_TYPE_ELEMENTS:
         assert r.search(element_str + "|")
+
+
+def _find_ndarrays(key, schema):
+    """
+    Find all the ndarray entries in the schema
+    """
+    entries = []
+    if isinstance(schema, dict):
+        for new_key, value in schema.items():
+            if isinstance(value, str) and value.startswith("tag:stsci.edu:asdf/core/ndarray-"):
+                entries.append((key,))
+            else:
+                entries.extend((key, *key_) for key_ in _find_ndarrays(new_key, value))
+    elif isinstance(schema, list):
+        for index, value in enumerate(schema):
+            entries.extend((key, *key_) for key_ in _find_ndarrays(index, value))
+
+    return entries
+
+
+def _get_ndarray_entry(schema, entry):
+    """
+    Get the ndarray portion of the schema for the entry
+    """
+    current = schema
+
+    for key in entry[1:]:
+        current = current[key]
+
+    return current
+
+
+def test_exact_datatype(schema):
+    """Confirm that `exact_datatype` is defined for all arrays"""
+    entries = _find_ndarrays("", schema)
+
+    if entries:
+        for entry in entries:
+            if "datatype" in (ndarray_entry := _get_ndarray_entry(schema, entry)):
+                assert "exact_datatype" in ndarray_entry, f"extact_datatype needed for {'.'.join(entry[1:])}"
+                assert ndarray_entry["exact_datatype"] is True
+            else:
+                raise ValueError(f"datatype not found for {'.'.join(entry[1:])}")
 
 
 def _get_reftype(schema):
