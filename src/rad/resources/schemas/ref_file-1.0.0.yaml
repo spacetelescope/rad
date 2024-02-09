@@ -21,7 +21,7 @@ properties:
             origin: TBD
         archive_catalog:
           datatype: nvarchar(120)
-          destination: [ScienceCommon.crds_software_version, GuideWindow.crds_software_version]
+          destination: [ScienceCommon.crds_software_version, GuideWindow.crds_software_version, WFICommon.crds_software_version]
 
       context_used:
         title: CRDS context (.pmap) used to select ref files
@@ -32,67 +32,67 @@ properties:
             origin: TBD
         archive_catalog:
           datatype: nvarchar(120)
-          destination: [ScienceCommon.crds_context_used, GuideWindow.crds_context_used]
+          destination: [ScienceCommon.crds_context_used, GuideWindow.crds_context_used, WFICommon.crds_context_used]
   dark:
     title: Dark reference file information
     type: string
     archive_catalog:
       datatype: nvarchar(120)
-      destination: [ScienceRefData.r_dark, GuideWindow.r_dark]
+      destination: [ScienceRefData.r_dark, GuideWindow.r_dark, WFICommon.r_dark]
   distortion:
     title: Distortion reference file information
     type: string
     archive_catalog:
       datatype: nvarchar(120)
-      destination: [ScienceRefData.r_distortion, GuideWindow.r_distortion]
+      destination: [ScienceRefData.r_distortion, GuideWindow.r_distortion, WFICommon.r_distortion]
   mask:
     title: Mask reference file information
     type: string
     archive_catalog:
       datatype: nvarchar(120)
-      destination: [ScienceRefData.r_mask, GuideWindow.r_mask]
+      destination: [ScienceRefData.r_mask, GuideWindow.r_mask, WFICommon.r_mask]
   flat:
     title: Flat reference file information
     type: string
     archive_catalog:
       datatype: nvarchar(120)
-      destination: [ScienceRefData.r_flat, GuideWindow.r_flat]
+      destination: [ScienceRefData.r_flat, GuideWindow.r_flat, WFICommon.r_flat]
   gain:
     title: Gain reference file information
     type: string
     archive_catalog:
       datatype: nvarchar(120)
-      destination: [ScienceRefData.r_gain, GuideWindow.r_gain]
+      destination: [ScienceRefData.r_gain, GuideWindow.r_gain, WFICommon.r_gain]
   readnoise:
     title: Read noise reference file information
     type: string
     archive_catalog:
       datatype: nvarchar(120)
-      destination: [ScienceRefData.r_readnoise, GuideWindow.r_readnoise]
+      destination: [ScienceRefData.r_readnoise, GuideWindow.r_readnoise, WFICommon.r_readnoise]
   linearity:
     title: Linearity reference file information
     type: string
     archive_catalog:
       datatype: nvarchar(120)
-      destination: [ScienceRefData.r_linearity, GuideWindow.r_linearity]
+      destination: [ScienceRefData.r_linearity, GuideWindow.r_linearity, WFICommon.r_linearity]
   photom:
     title: Photometry reference file information
     type: string
     archive_catalog:
       datatype: nvarchar(120)
-      destination: [ScienceRefData.r_photom, GuideWindow.r_photom]
+      destination: [ScienceRefData.r_photom, GuideWindow.r_photom, WFICommon.r_photom]
   area:
     title: Area reference file information
     type: string
     archive_catalog:
       datatype: nvarchar(120)
-      destination: [ScienceRefData.r_area, GuideWindow.r_area]
+      destination: [ScienceRefData.r_area, GuideWindow.r_area, WFICommon.r_area]
   saturation:
     title: Saturation reference file information
     type: string
     archive_catalog:
       datatype: nvarchar(120)
-      destination: [ScienceRefData.r_saturation, GuideWindow.r_saturation]
+      destination: [ScienceRefData.r_saturation, GuideWindow.r_saturation, WFICommon.r_saturation]
 
 flowStyle: block
 ...

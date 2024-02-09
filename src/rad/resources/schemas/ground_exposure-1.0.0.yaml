@@ -17,7 +17,7 @@ properties:
         origin: TBD
     archive_catalog:
       datatype: nvarchar(25)
-      destination: [ScienceCommon.exposure_type, GuideWindow.exposure_type]
+      destination: [ScienceCommon.exposure_type, GuideWindow.exposure_type, WFICommon.exposure_type]
   start_time:
     title: UTC exposure start time
     description: |
@@ -30,7 +30,7 @@ properties:
         origin: TBD
     archive_catalog:
       datatype: datetime2
-      destination: [ScienceCommon.exposure_start_time, GuideWindow.exposure_start_time]
+      destination: [ScienceCommon.exposure_start_time, GuideWindow.exposure_start_time, WFICommon.exposure_start_time]
   ngroups:
     title: Number of groups in integration
     description: |
@@ -44,7 +44,7 @@ properties:
         origin: TBD
     archive_catalog:
       datatype: int
-      destination: [ScienceCommon.exposure_ngroups, GuideWindow.exposure_ngroups]
+      destination: [ScienceCommon.exposure_ngroups, GuideWindow.exposure_ngroups, WFICommon.exposure_ngroups]
   nframes:
     title: Number of frames per group
     description: |
@@ -57,7 +57,7 @@ properties:
         origin: TBD
     archive_catalog:
       datatype: int
-      destination: [ScienceCommon.exposure_nframes, GuideWindow.exposure_nframes]
+      destination: [ScienceCommon.exposure_nframes, GuideWindow.exposure_nframes, WFICommon.exposure_nframes]
   data_problem:
     title: Science telemetry indicated a problem
     description: |
@@ -70,7 +70,7 @@ properties:
         origin: TBD
     archive_catalog:
       datatype: nchar(1)
-      destination: [ScienceCommon.exposure_data_problem, GuideWindow.exposure_data_problem]
+      destination: [ScienceCommon.exposure_data_problem, GuideWindow.exposure_data_problem, WFICommon.exposure_data_problem]
   frame_divisor:
     title: Divisor applied to frame-averaged groups
     description: |
@@ -83,7 +83,7 @@ properties:
         origin: TBD
     archive_catalog:
       datatype: int
-      destination: [ScienceCommon.exposure_frame_divisor, GuideWindow.exposure_frame_divisor]
+      destination: [ScienceCommon.exposure_frame_divisor, GuideWindow.exposure_frame_divisor, WFICommon.exposure_frame_divisor]
   groupgap:
     title: Number of frames dropped between groups
     description: This is the number of reads that are "dropped" and not used in the resultant.
@@ -94,7 +94,7 @@ properties:
         origin: TBD
     archive_catalog:
       datatype: int
-      destination: [ScienceCommon.exposure_groupgap, GuideWindow.exposure_groupgap]
+      destination: [ScienceCommon.exposure_groupgap, GuideWindow.exposure_groupgap, WFICommon.exposure_groupgap]
   frame_time:
     title: "[s] Time between frames"
     description: |
@@ -107,7 +107,7 @@ properties:
         origin: TBD
     archive_catalog:
       datatype: float
-      destination: [ScienceCommon.exposure_frame_time, GuideWindow.exposure_frame_time]
+      destination: [ScienceCommon.exposure_frame_time, GuideWindow.exposure_frame_time, WFICommon.exposure_frame_time]
   group_time:
     title: "[s] Time between groups"
     description: |
@@ -120,7 +120,7 @@ properties:
         origin: TBD
     archive_catalog:
       datatype: float
-      destination: [ScienceCommon.exposure_group_time, GuideWindow.exposure_group_time]
+      destination: [ScienceCommon.exposure_group_time, GuideWindow.exposure_group_time, WFICommon.exposure_group_time]
   exposure_time:
     title: "[s] exposure time"
     description: |
@@ -133,7 +133,7 @@ properties:
         origin: TBD
     archive_catalog:
       datatype: float
-      destination: [ScienceCommon.exposure_time, GuideWindow.exposure_time]
+      destination: [ScienceCommon.exposure_time, GuideWindow.exposure_time, WFICommon.exposure_time]
   ma_table_name:
     title: Identifier for the multi-accumulation table used
     description: |
@@ -146,7 +146,7 @@ properties:
         origin: TBD
     archive_catalog:
       datatype: nvarchar(50)
-      destination: [ScienceCommon.ma_table_name, GuideWindow.ma_table_name]
+      destination: [ScienceCommon.ma_table_name, GuideWindow.ma_table_name, WFICommon.ma_table_name]
   ma_table_number:
     title: Numerical identifier for the multi-accumulation table used
     description: |
@@ -160,7 +160,7 @@ properties:
         origin: TBD
     archive_catalog:
       datatype: smallint
-      destination: [ScienceCommon.ma_table_number, GuideWindow.ma_table_number]
+      destination: [ScienceCommon.ma_table_number, GuideWindow.ma_table_number, WFICommon.ma_table_number]
   read_pattern:
     title: Pattern of reads
     description: |
@@ -177,7 +177,7 @@ properties:
         origin: TBD
     archive_catalog:
       datatype: nvarchar(3500)
-      destination: [ScienceCommon.read_pattern, GuideWindow.read_pattern]
+      destination: [ScienceCommon.read_pattern, GuideWindow.read_pattern, WFICommon.read_pattern]
 propertyOrder: [type, start_time,
            ngroups, nframes, data_problem,
            frame_divisor, groupgap, frame_time, group_time, exposure_time,

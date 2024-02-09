@@ -13,7 +13,7 @@ allOf:
         type: integer
         archive_catalog:
           datatype: int
-          destination: [TableTBA.activity_number]
+          destination: [WFITvac.activity_number]
       led_bank1_band_number_on:
         title: Band number of LED illuminating in the sRCS in bank 1
         type: array
@@ -53,13 +53,13 @@ allOf:
         type: number
         archive_catalog:
           datatype: float
-          destination: [TableTBA.srcs_pd_voltage]
+          destination: [WFITvac.srcs_pd_voltage]
       srcs_led_flux:
         title: Target flux for the sRCS LEDs
         type: number
         archive_catalog:
           datatype: float
-          destination: [TableTBA.srcs_led_flux]
+          destination: [WFITvac.srcs_led_flux]
       wfi_mce_srcs_bank1_led_i:
         title: |
           Commanded current for the SRCS -> GSFC will send us the flux
@@ -72,7 +72,7 @@ allOf:
             enum: ["A"]
         archive_catalog:
           datatype: float
-          destination: [TableTBA.wfi_mce_srcs_bank1_led_i]
+          destination: [WFITvac.wfi_mce_srcs_bank1_led_i]
       wfi_mce_srcs_bank1_led_range:
         title: |
           Commanded range for the SRCS -> GSFC will send us the flux in
@@ -81,7 +81,7 @@ allOf:
         # enum: [] add enum values
         archive_catalog:
           datatype: nvarchar(max)
-          destination: [TableTBA.wfi_mce_srcs_bank1_led_range]
+          destination: [WFITvac.wfi_mce_srcs_bank1_led_range]
       wfi_mce_srcs_bank2_led_i:
         title: |
           Commanded current for the SRCS -> GSFC will send us the flux
@@ -94,7 +94,7 @@ allOf:
             enum: ["A"]
         archive_catalog:
           datatype: float
-          destination: [TableTBA.wfi_mce_srcs_bank2_led_i]
+          destination: [WFITvac.wfi_mce_srcs_bank2_led_i]
       wfi_mce_srcs_bank2_led_range:
         title: |
           Commanded range for the SRCS -> GSFC will send us the flux in
@@ -103,13 +103,13 @@ allOf:
         # enum: [] add enum values
         archive_catalog:
           datatype: nvarchar(max)
-          destination: [TableTBA.wfi_mce_srcs_bank2_led_range]
+          destination: [WFITvac.wfi_mce_srcs_bank2_led_range]
       srcs_led_current:
         title: Input LED current set point
         type: number
         archive_catalog:
           datatype: float
-          destination: [TableTBA.srcs_led_current]
+          destination: [WFITvac.srcs_led_current]
       wfi_opt_targettype:
         title: WFI-team defined target types
         type: string
@@ -119,64 +119,64 @@ allOf:
                 PHARET-FF-PRISM, PHARET-FF-W146, POINT-SOURCE-GW, STRAY LIGHT]
         archive_catalog:
           datatype: nvarchar(max)
-          destination: [TableTBA.wfi_opt_targettype]
+          destination: [WFITvac.wfi_opt_targettype]
       analysis_tag:
         title: WFI-team defined tags for data aggregation/analysis
         type: string
         archive_catalog:
           datatype: nvarchar(max)
-          destination: [TableTBA.analysis_tag]
+          destination: [WFITvac.analysis_tag]
       gsorc_pose_mode:
         title: SORC pose mode
         type: string
         # enum: [] add enum values
         archive_catalog:
           datatype: nvarchar(max)
-          destination: [TableTBA.gsorc_pose_mode]
+          destination: [WFITvac.gsorc_pose_mode]
       gsorc_pose_target:
         title: SORC pose target
         type: string
         # enum: [] add enum values
         archive_catalog:
           datatype: nvarchar(max)
-          destination: [TableTBA.gsorc_pose_target]
+          destination: [WFITvac.gsorc_pose_target]
       gsorc_sds_active_atten:
         title: Attenuation from SDS
         type: number
         archive_catalog:
           datatype: nvarchar(max)
-          destination: [TableTBA.gsorc_sds_active_atten]
+          destination: [WFITvac.gsorc_sds_active_atten]
       gsorc_sds_lltfir_wave:
         title: Commanded wavelength for the LLTF
         type: number
         archive_catalog:
           datatype: float
-          destination: [TableTBA.gsorc_sds_lltfir_wave]
+          destination: [WFITvac.gsorc_sds_lltfir_wave]
       gsorc_sds_sorc_on:
         title: SORC on/off
         type: boolean
         archive_catalog:
           datatype: int
-          destination: [TableTBA.gsorc_sds_sorc_on]
+          destination: [WFITvac.gsorc_sds_sorc_on]
       gsorc_sds_sorc_wlen:
         title: SORC wavelength
         type: number
         archive_catalog:
           datatype: float
-          destination: [TableTBA.gsorc_sds_sorc_wlen]
+          destination: [WFITvac.gsorc_sds_sorc_wlen]
       gsorc_sds_active_source:
         title: Laser name
         type: string
         archive_catalog:
           datatype: nvarchar(max)
-          destination: [TableTBA.gsorc_sds_active_source]
+          destination: [WFITvac.gsorc_sds_active_source]
       gsorc_sds_dq_pulse:
         title: whether the source is pulsing or not
         type: string
         enum: [pulse, cw]
         archive_catalog:
           datatype: nvarchar(max)
-          destination: [TableTBA.gsorc_sds_dq_pulse]
+          destination: [WFITvac.gsorc_sds_dq_pulse]
       gsorc_sds_daq_pw:
         title: pulse width – originally in HDF5 file is in units of 0.1 ms
         tag: tag:stsci.edu:asdf/unit/quantity-1.*
@@ -187,20 +187,20 @@ allOf:
             enum: [ms]
         archive_catalog:
           datatype: float
-          destination: [TableTBA.gsorc_sds_daq_pw]
+          destination: [WFITvac.gsorc_sds_daq_pw]
       gsorc_heater1_setpt:
         title: SORC temperature set point
         type: number
         archive_catalog:
           datatype: float
-          destination: [TableTBA.gsorc_heater1_setpt]
+          destination: [WFITvac.gsorc_heater1_setpt]
       wfi_otp_wfi_ewa:
         title: Element Wheel position
         type: string
         # enum: [] add enum values
         archive_catalog:
           datatype: float
-          destination: [TableTBA.wfi_otp_wfi_ewa]
+          destination: [WFITvac.wfi_otp_wfi_ewa]
       sca_temp:
         title: SCE temperature
         tag: tag:stsci.edu:asdf/unit/quantity-1.*
@@ -211,7 +211,7 @@ allOf:
             enum: [K]
         archive_catalog:
           datatype: float
-          destination: [TableTBA.sca_temp]
+          destination: [WFITvac.sca_temp]
       mpa_temp:
         title: MPA temperature
         tag: tag:stsci.edu:asdf/unit/quantity-1.*
@@ -222,7 +222,7 @@ allOf:
             enum: [K]
         archive_catalog:
           datatype: float
-          destination: [TableTBA.mpa_temp]
+          destination: [WFITvac.mpa_temp]
       ewa_temp:
         title: ewa temp ish (there's no actual temperature sensor inside)
         tag: tag:stsci.edu:asdf/unit/quantity-1.*
@@ -233,7 +233,7 @@ allOf:
             enum: [K]
         archive_catalog:
           datatype: float
-          destination: [TableTBA.ewa_temp]
+          destination: [WFITvac.ewa_temp]
       ewta_outer_heater_temp:
         title: ewa_outer temperature sensor
         tag: tag:stsci.edu:asdf/unit/quantity-1.*
@@ -244,7 +244,7 @@ allOf:
             enum: [K]
         archive_catalog:
           datatype: float
-          destination: [TableTBA.ewta_outer_heater_temp]
+          destination: [WFITvac.ewta_outer_heater_temp]
       ewta_inner_heater_temp:
         title: ewa_inner temperature sensor
         tag: tag:stsci.edu:asdf/unit/quantity-1.*
@@ -255,7 +255,7 @@ allOf:
             enum: [K]
         archive_catalog:
           datatype: float
-          destination: [TableTBA.ewta_inner_heater_temp]
+          destination: [WFITvac.ewta_inner_heater_temp]
       coba_temp_near_ewta:
         tag: tag:stsci.edu:asdf/unit/quantity-1.*
         properties:
@@ -265,7 +265,7 @@ allOf:
             enum: [K]
         archive_catalog:
           datatype: float
-          destination: [TableTBA.coba_temp_near_ewta]
+          destination: [WFITvac.coba_temp_near_ewta]
       scea_temp:
         tag: tag:stsci.edu:asdf/unit/quantity-1.*
         properties:
@@ -275,7 +275,7 @@ allOf:
             enum: [K]
         archive_catalog:
           datatype: float
-          destination: [TableTBA.scea_temp]
+          destination: [WFITvac.scea_temp]
       wfi_sce_1_vbiasgate_v:
         tag: tag:stsci.edu:asdf/unit/quantity-1.*
         properties:
@@ -285,7 +285,7 @@ allOf:
             enum: [V]
         archive_catalog:
           datatype: float
-          destination: [TableTBA.wfi_sce_1_vbiasgate_v]
+          destination: [WFITvac.wfi_sce_1_vbiasgate_v]
       wfi_sce_1_vbiaspwr_i:
         tag: tag:stsci.edu:asdf/unit/quantity-1.*
         properties:
@@ -295,7 +295,7 @@ allOf:
             enum: [A]
         archive_catalog:
           datatype: float
-          destination: [TableTBA.wfi_sce_1_vbiaspwr_i]
+          destination: [WFITvac.wfi_sce_1_vbiaspwr_i]
       wfi_sce_1_vbiaspwr_v:
         tag: tag:stsci.edu:asdf/unit/quantity-1.*
         properties:
@@ -305,7 +305,7 @@ allOf:
             enum: [V]
         archive_catalog:
           datatype: float
-          destination: [TableTBA.wfi_sce_1_vbiaspwr_v]
+          destination: [WFITvac.wfi_sce_1_vbiaspwr_v]
       wfi_sce_1_vreset_v:
         tag: tag:stsci.edu:asdf/unit/quantity-1.*
         properties:
@@ -315,7 +315,7 @@ allOf:
             enum: [V]
         archive_catalog:
           datatype: float
-          destination: [TableTBA.wfi_sce_1_vreset_v]
+          destination: [WFITvac.wfi_sce_1_vreset_v]
       wfi_sce_1_vreset_i:
         tag: tag:stsci.edu:asdf/unit/quantity-1.*
         properties:
@@ -325,7 +325,7 @@ allOf:
             enum: [A]
         archive_catalog:
           datatype: float
-          destination: [TableTBA.wfi_sce_1_vreset_i]
+          destination: [WFITvac.wfi_sce_1_vreset_i]
       wfi_mcu_a_offs_csense_fpssen:
         title: temperature in eng units -> will change for TVAC2.
         tag: tag:stsci.edu:asdf/unit/quantity-1.*
@@ -336,7 +336,7 @@ allOf:
             enum: [K]
         archive_catalog:
           datatype: float
-          destination: [TableTBA.wfi_mcu_a_offs_csense_fpssen]
+          destination: [WFITvac.wfi_mcu_a_offs_csense_fpssen]
 
 flowStyle: block
 ...

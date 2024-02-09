@@ -15,7 +15,7 @@ properties:
         origin: TBD
     archive_catalog:
       datatype: nvarchar(20)
-      destination: [ScienceCommon.gw_id, GuideWindow.gw_id]
+      destination: [ScienceCommon.gw_id, GuideWindow.gw_id, WFICommon.gw_id]
   gw_fgs_mode:
     $ref: asdf://stsci.edu/datamodels/roman/schemas/guidewindow_modes-1.0.0
     sdf:
@@ -24,7 +24,7 @@ properties:
         origin: TBD
     archive_catalog:
       datatype: nvarchar(18)
-      destination: [ScienceCommon.gw_fgs_mode, GuideWindow.gw_fgs_mode]
+      destination: [ScienceCommon.gw_fgs_mode, GuideWindow.gw_fgs_mode, WFICommon.gw_fgs_mode]
   data_start:
     title: MJD start time of guider data within this file
     type: number
@@ -34,7 +34,7 @@ properties:
         origin: TBD
     archive_catalog:
       datatype: float
-      destination: [ScienceCommon.data_start, GuideWindow.data_start]
+      destination: [ScienceCommon.data_start, GuideWindow.data_start, WFICommon.data_start]
   data_end:
     title: MJD end time of guider data within this file
     type: number
@@ -44,7 +44,7 @@ properties:
         origin: TBD
     archive_catalog:
       datatype: float
-      destination: [ScienceCommon.data_end, GuideWindow.data_end]
+      destination: [ScienceCommon.data_end, GuideWindow.data_end, WFICommon.data_end]
   gw_window_xstart:
     title: Guide window x start position on the detector
     type: integer
@@ -54,7 +54,7 @@ properties:
         origin: Science Data Formatting
     archive_catalog:
       datatype: int
-      destination: [ScienceCommon.gw_window_xstart]
+      destination: [ScienceCommon.gw_window_xstart, WFICommon.gw_window_xstart]
   gw_window_ystart:
     title: Guide window y start position on the detector
     type: integer
@@ -64,7 +64,7 @@ properties:
         origin: Science Data Formatting
     archive_catalog:
       datatype: int
-      destination: [ScienceCommon.gw_window_ystart]
+      destination: [ScienceCommon.gw_window_ystart, WFICommon.gw_window_ystart]
   gw_window_xstop:
     title: Guide window x stop position on the detector
     type: integer
@@ -74,7 +74,7 @@ properties:
         origin: Science Data Formatting
     archive_catalog:
       datatype: int
-      destination: [ScienceCommon.gw_window_xstop]
+      destination: [ScienceCommon.gw_window_xstop, WFICommon.gw_window_xstop]
   gw_window_ystop:
     title: Guide window y stop position on the detector
     type: integer
@@ -84,7 +84,7 @@ properties:
         origin: Science Data Formatting
     archive_catalog:
       datatype: int
-      destination: [ScienceCommon.gw_window_ystop]
+      destination: [ScienceCommon.gw_window_ystop, WFICommon.gw_window_ystop]
   gw_window_xsize:
     title: Guide window size in the x direction in detector coordinates
     type: integer
@@ -94,7 +94,7 @@ properties:
         origin: Science Data Formatting
     archive_catalog:
       datatype: int
-      destination: [ScienceCommon.gw_window_xsize]
+      destination: [ScienceCommon.gw_window_xsize, WFICommon.gw_window_xsize]
   gw_window_ysize:
     title: Guide window size in the y direction in detector coordinates
     type: integer
@@ -104,7 +104,7 @@ properties:
         origin: Science Data Formatting
     archive_catalog:
       datatype: int
-      destination: [ScienceCommon.gw_window_ysize]
+      destination: [ScienceCommon.gw_window_ysize, WFICommon.gw_window_ysize]
 propertyOrder: [gw_id, gw_fgs_mode,
                data_start, data_end, gw_window_xstart,
                gw_window_ystart, gw_window_xstop, gw_window_ystop, gw_window_xsize,

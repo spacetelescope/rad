@@ -11,79 +11,79 @@ properties:
     type: string
     archive_catalog:
       datatype: nvarchar(max)
-      destination: [TableTBA.test_name]
+      destination: [WFICommon.test_name]
   test_phase:
     title: I&T Testing Phase
     type: string
     archive_catalog:
       datatype: nvarchar(max)
-      destination: [TableTBA.test_phase]
+      destination: [WFICommon.test_phase]
   test_environment:
     title: I&T Testing Environment
     type: string
     archive_catalog:
       datatype: nvarchar(max)
-      destination: [TableTBA.test_environment]
+      destination: [WFICommon.test_environment]
   test_script:
     title: Name of Testing Script Run
     type: string
     archive_catalog:
       datatype: nvarchar(max)
-      destination: [TableTBA.test_script]
+      destination: [WFICommon.test_script]
   product_date:
     title: Source File Creation Time
     tag: tag:stsci.edu:asdf/time/time-1.*
     archive_catalog:
       datatype: nvarchar(max)
-      destination: [TableTBA.product_date]
+      destination: [WFICommon.product_date]
   product_version:
     title: I&T Software Used to Generate Source File
     type: string
     archive_catalog:
       datatype: nvarchar(max)
-      destination: [TableTBA.product_version]
+      destination: [WFICommon.product_version]
   conversion_date:
     title: HDF5 to ASDF Conversion Date
     tag: tag:stsci.edu:asdf/time/time-1.*
     archive_catalog:
       datatype: datetime2
-      destination: [TableTBA.conversion_date]
+      destination: [WFICommon.conversion_date]
   conversion_version:
     title: HDF5 to ASDF Converter Version
     type: string
     archive_catalog:
       datatype: nvarchar(max)
-      destination: [TableTBA.conversion_version]
+      destination: [WFICommon.conversion_version]
   filename_pnt5:
     title: L0.5 File Name
     type: string
     archive_catalog:
       datatype: nvarchar(max)
-      destination: [TableTBA.filename_pnt5]
+      destination: [WFICommon.filename_pnt5]
   filepath_level_pnt5:
     title: L0.5 File Path
     type: string
     archive_catalog:
       datatype: nvarchar(max)
-      destination: [TableTBA.filepath_level_pnt5]
+      destination: [WFICommon.filepath_level_pnt5]
   filename_l1a:
     title: L1A File Name
     type: string
     archive_catalog:
       datatype: nvarchar(max)
-      destination: [TableTBA.filename_l1a]
+      destination: [WFICommon.filename_l1a]
   detector_id:
     title: SCA Identifier
     type: string
     archive_catalog:
       datatype: nvarchar(max)
-      destination: [TableTBA.detector_id]
+      destination: [WFICommon.detector_id]
   detector_temp:
     title: Mean Detector Temperature (Kelvin)
     type: number
     archive_catalog:
       datatype: float
-      destination: [TableTBA.detector_temp]
+      destination: [WFICommon.detector_temp]
   frames_temp:
     title: Interpolated Temperature of Frames (Kelvin)
     tag: tag:stsci.edu:asdf/core/ndarray-1.*
@@ -95,19 +95,19 @@ properties:
     type: number
     archive_catalog:
       datatype: float
-      destination: [TableTBA.ota_temp]
+      destination: [WFICommon.ota_temp]
   rcs_on:
     title: RCS On/Off
     type: boolean
     archive_catalog:
       datatype: int
-      destination: [TableTBA.rcs_on]
+      destination: [WFICommon.rcs_on]
   readout_col_num:
     title: Number of Readout Columns
     type: integer
     archive_catalog:
       datatype: int
-      destination: [TableTBA.readout_col_num]
+      destination: [WFICommon.readout_col_num]
   detector_pixel_size:
     title: Pixel Size (cm)
     tag: tag:stsci.edu:asdf/unit/quantity-1.*
