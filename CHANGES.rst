@@ -8,6 +8,8 @@
 
 - Add documentation on how to create a new schema. [#375]
 
+- Changed ``pass`` to ``pass_number`` to avoid conflict with python reserved word. [#360]
+
 0.19.0 (2024-02-09)
 -------------------
 
