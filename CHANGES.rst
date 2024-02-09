@@ -1,7 +1,8 @@
 0.19.1 (unreleased)
 -------------------
 
--
+- Convert tag keywords to wildcards for external tags. [#370]
+
 
 0.19.0 (2024-02-09)
 -------------------
@@ -12,7 +13,6 @@
 
 - Add wcs tag to wfi_image and wfi_mosaic schemas. [#351]
 
-- Convert tag keywords to wildcards for external tags. [#370]
 
 0.18.0 (2023-11-06)
 -------------------
