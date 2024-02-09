@@ -30,7 +30,9 @@ allOf:
         properties:
           value:
             tag: tag:stsci.edu:asdf/core/ndarray-1.*
-            # needs a datatype and ndim
+            datatype: float64
+            exact_datatype: true
+            # needs ndim
           unit:
             tag: tag:stsci.edu:asdf/unit/unit-1.*
             enum: ["nm"]
@@ -40,7 +42,9 @@ allOf:
         properties:
           value:
             tag: tag:stsci.edu:asdf/core/ndarray-1.*
-            # needs a datatype and ndim
+            datatype: float64
+            exact_datatype: true
+            # needs ndim
           unit:
             tag: tag:stsci.edu:asdf/unit/unit-1.*
             enum: ["nm"]

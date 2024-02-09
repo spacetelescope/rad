@@ -28,6 +28,7 @@ properties:
       value:
         tag: tag:stsci.edu:asdf/core/ndarray-1.*
         datatype: uint16
+        exact_datatype: true
         ndim: 3
       unit:
         tag: tag:astropy.org:astropy/units/unit-1.*
@@ -40,6 +41,7 @@ properties:
       value:
         tag: tag:stsci.edu:asdf/core/ndarray-1.*
         datatype: uint16
+        exact_datatype: true
         ndim: 3
       unit:
         tag: tag:astropy.org:astropy/units/unit-1.*
@@ -52,6 +54,7 @@ properties:
       value:
         tag: tag:stsci.edu:asdf/core/ndarray-1.*
         datatype: uint16
+        exact_datatype: true
         ndim: 3
       unit:
         tag: tag:astropy.org:astropy/units/unit-1.*
@@ -64,6 +67,7 @@ properties:
       value:
         tag: tag:stsci.edu:asdf/core/ndarray-1.*
         datatype: uint16
+        exact_datatype: true
         ndim: 3
       unit:
         tag: tag:astropy.org:astropy/units/unit-1.*
@@ -76,6 +80,7 @@ properties:
       value:
         tag: tag:stsci.edu:asdf/core/ndarray-1.*
         datatype: uint16
+        exact_datatype: true
         ndim: 3
       unit:
         tag: tag:astropy.org:astropy/units/unit-1.*
@@ -88,6 +93,7 @@ properties:
       value:
         tag: tag:stsci.edu:asdf/core/ndarray-1.*
         datatype: uint16
+        exact_datatype: true
         ndim: 3
       unit:
         tag: tag:astropy.org:astropy/units/unit-1.*
@@ -100,6 +106,7 @@ properties:
       value:
         tag: tag:stsci.edu:asdf/core/ndarray-1.*
         datatype: uint16
+        exact_datatype: true
         ndim: 3
       unit:
         tag: tag:astropy.org:astropy/units/unit-1.*
