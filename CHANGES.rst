@@ -1,4 +1,9 @@
-0.18.1 (unreleased)
+0.19.1 (unreleased)
+-------------------
+
+- 
+
+0.19.0 (2024-02-09)
 -------------------
 
 - Added streamlined Level 3 Mosaic metadata schemas. [#334]
