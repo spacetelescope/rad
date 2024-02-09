@@ -13,7 +13,14 @@ archive_meta: None
 type: object
 properties:
   meta:
-    $ref: asdf://stsci.edu/datamodels/roman/schemas/ground_common-1.0.0
+    allOf:
+      - $ref: asdf://stsci.edu/datamodels/roman/schemas/ground_common-1.0.0
+      - type: object
+        properties:
+          groundtest:
+            tag: asdf://stsci.edu/datamodels/roman/tags/groundtest-1.0.0
+        required: [groundtest]
+
   data:
     title: Science data, including the border reference pixels.
     tag: tag:stsci.edu:asdf/unit/quantity-1.*

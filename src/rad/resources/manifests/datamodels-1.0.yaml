@@ -156,11 +156,16 @@ tags:
   title: Guidestar information
   description: |-
     Guidestar information
-- tag_uri: asdf://stsci.edu/datamodels/roman/tags/ground_groundtest-1.0.0
-  schema_uri: asdf://stsci.edu/datamodels/roman/schemas/ground_groundtest-1.0.0
+- tag_uri: asdf://stsci.edu/datamodels/roman/tags/groundtest-1.0.0
+  schema_uri: asdf://stsci.edu/datamodels/roman/schemas/groundtest-1.0.0
   title: Ground Test Information
   description: |-
     Ground test description.
+- tag_uri: asdf://stsci.edu/datamodels/roman/tags/tvac_groundtest-1.0.0
+  schema_uri: asdf://stsci.edu/datamodels/roman/schemas/tvac_groundtest-1.0.0
+  title: TVAC Ground Test Information
+  description: |-
+    TVAC ground test description.
 - tag_uri: asdf://stsci.edu/datamodels/roman/tags/fps-1.0.0
   schema_uri: asdf://stsci.edu/datamodels/roman/schemas/fps-1.0.0
   title: FPS schema
