@@ -268,6 +268,11 @@ tags:
   title: Calibration reference file names.
   description: |-
     Calibration reference file names.
+- tag_uri: asdf://stsci.edu/datamodels/roman/tags/source_catalog-1.0.0
+  schema_uri: asdf://stsci.edu/datamodels/roman/schemas/source_catalog-1.0.0
+  title: Source catalog
+  description: |-
+    Photometry and astrometry computed by the Source Catalog Step
 # Tagged Scalars
 - tag_uri: asdf://stsci.edu/datamodels/roman/tags/calibration_software_version-1.0.0
   schema_uri: asdf://stsci.edu/datamodels/roman/schemas/tagged_scalars/calibration_software_version-1.0.0
