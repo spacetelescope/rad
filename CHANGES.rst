@@ -6,6 +6,8 @@
 - Added ``exact_datatype`` arguments to prevent ASDF from casting array
   datatypes during save. [#369]
 
+- Add documentation on how to create a new schema. [#375]
+
 0.19.0 (2024-02-09)
 -------------------
 
