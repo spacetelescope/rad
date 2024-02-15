@@ -65,6 +65,7 @@ intersphinx_mapping["asdf"] = ("https://asdf.readthedocs.io/en/latest/", None)  
 intersphinx_mapping["asdf-standard"] = ("https://asdf-standard.readthedocs.io/en/latest/", None)  # noqa: E501, F405
 intersphinx_mapping["asdf-astropy"] = ("https://asdf-astropy.readthedocs.io/en/latest/", None)  # noqa: E501, F405
 intersphinx_mapping["pytest"] = ("https://docs.pytest.org/en/latest/", None)  # noqa: E501, F405
+intersphinx_mapping["roman_datamodels"] = ("https://roman-datamodels.readthedocs.io/en/latest/", None)  # noqa: E501, F405
 
 # To perform a Sphinx version check that needs to be more specific than
 # major.minor, call `check_sphinx_version("x.y.z")` here.
