@@ -17,7 +17,7 @@ properties:
     tag: tag:astropy.org:astropy/table/table-1.*
 
 
-required: [meta, source_catalog]
+required: [source_catalog]
 flowStyle: block
-propertyOrder: [meta, source_catalog]
+propertyOrder: [source_catalog]
 ...
