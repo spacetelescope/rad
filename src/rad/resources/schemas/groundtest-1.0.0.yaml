@@ -34,7 +34,7 @@ properties:
     title: Source File Creation Time
     tag: tag:stsci.edu:asdf/time/time-1.*
     archive_catalog:
-      datatype: nvarchar(max)
+      datatype: datetime2
       destination: [WFICommon.product_date]
   product_version:
     title: I&T Software Used to Generate Source File
@@ -100,7 +100,7 @@ properties:
     title: RCS On/Off
     type: boolean
     archive_catalog:
-      datatype: int
+      datatype: nchar(1)
       destination: [WFICommon.rcs_on]
   readout_col_num:
     title: Number of Readout Columns

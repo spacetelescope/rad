@@ -19,7 +19,7 @@ allOf:
         type: array
         items:
           type: integer
-      led_bank2_band_number_on:
+      led_bank2_bank1_number_on:
         title: Band number of LED illuminating in the sRCS in bank 2
         type: array
         items:
@@ -118,33 +118,33 @@ allOf:
                 PHARET-FF-M3MM, PHARET-FF-M6MM, PHARET-FF-P3MM, PHARET-FF-P6MM,
                 PHARET-FF-PRISM, PHARET-FF-W146, POINT-SOURCE-GW, STRAY LIGHT]
         archive_catalog:
-          datatype: nvarchar(max)
+          datatype: nvarchar(20)
           destination: [WFITvac.wfi_opt_targettype]
       analysis_tag:
         title: WFI-team defined tags for data aggregation/analysis
         type: string
         archive_catalog:
-          datatype: nvarchar(max)
+          datatype: nvarchar(32)
           destination: [WFITvac.analysis_tag]
       gsorc_pose_mode:
         title: SORC pose mode
         type: string
         # enum: [] add enum values
         archive_catalog:
-          datatype: nvarchar(max)
+          datatype: nvarchar(20)
           destination: [WFITvac.gsorc_pose_mode]
       gsorc_pose_target:
         title: SORC pose target
         type: string
         # enum: [] add enum values
         archive_catalog:
-          datatype: nvarchar(max)
+          datatype: nvarchar(20)
           destination: [WFITvac.gsorc_pose_target]
       gsorc_sds_active_atten:
         title: Attenuation from SDS
         type: number
         archive_catalog:
-          datatype: nvarchar(max)
+          datatype: float
           destination: [WFITvac.gsorc_sds_active_atten]
       gsorc_sds_lltfir_wave:
         title: Commanded wavelength for the LLTF
@@ -156,7 +156,7 @@ allOf:
         title: SORC on/off
         type: boolean
         archive_catalog:
-          datatype: int
+          datatype: nchar(1)
           destination: [WFITvac.gsorc_sds_sorc_on]
       gsorc_sds_sorc_wlen:
         title: SORC wavelength
@@ -168,14 +168,14 @@ allOf:
         title: Laser name
         type: string
         archive_catalog:
-          datatype: nvarchar(max)
+          datatype: nvarchar(20)
           destination: [WFITvac.gsorc_sds_active_source]
       gsorc_sds_dq_pulse:
         title: whether the source is pulsing or not
         type: string
         enum: [pulse, cw]
         archive_catalog:
-          datatype: nvarchar(max)
+          datatype: nvarchar(10)
           destination: [WFITvac.gsorc_sds_dq_pulse]
       gsorc_sds_daq_pw:
         title: pulse width – originally in HDF5 file is in units of 0.1 ms
@@ -199,7 +199,7 @@ allOf:
         type: string
         # enum: [] add enum values
         archive_catalog:
-          datatype: float
+          datatype: nvarchar(15)
           destination: [WFITvac.wfi_otp_wfi_ewa]
       sca_temp:
         title: SCE temperature
@@ -257,6 +257,7 @@ allOf:
           datatype: float
           destination: [WFITvac.ewta_inner_heater_temp]
       coba_temp_near_ewta:
+        title: COBA temperature near element wheel
         tag: tag:stsci.edu:asdf/unit/quantity-1.*
         properties:
           # needs a datatype
@@ -267,6 +268,7 @@ allOf:
           datatype: float
           destination: [WFITvac.coba_temp_near_ewta]
       scea_temp:
+        title: SCEA temperature
         tag: tag:stsci.edu:asdf/unit/quantity-1.*
         properties:
           # needs a datatype
@@ -277,6 +279,7 @@ allOf:
           datatype: float
           destination: [WFITvac.scea_temp]
       wfi_sce_1_vbiasgate_v:
+        title: SCE gate voltage bias.
         tag: tag:stsci.edu:asdf/unit/quantity-1.*
         properties:
           # needs a datatype
