@@ -15,7 +15,13 @@ properties:
     description: |
        Photometry and astrometry computed in the Source Catalog Step.
     tag: tag:astropy.org:astropy/table/table-1.*
-
+  meta:
+    anyOf:
+      - $ref: common-1.0.0
+      - type: object
+        properties:
+          segmentation_map:
+            type: string
 
 required: [source_catalog]
 flowStyle: block
