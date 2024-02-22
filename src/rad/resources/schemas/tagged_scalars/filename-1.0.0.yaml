@@ -11,7 +11,7 @@ sdf:
     origin: TBD
 archive_catalog:
   datatype: nvarchar(120)
-  destination: [ScienceCommon.filename, GuideWindow.filename]
+  destination: [WFIExposure.filename, GuideWindow.filename]
 
 flowStyle: block
 ...

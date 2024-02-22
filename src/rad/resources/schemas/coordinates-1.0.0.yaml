@@ -13,7 +13,7 @@ properties:
     enum: [ICRS]
     archive_catalog:
       datatype: nvarchar(10)
-      destination: [ScienceCommon.reference_frame, GuideWindow.reference_frame]
+      destination: [WFIExposure.reference_frame, WFIMosaic.reference_frame, GuideWindow.reference_frame]
 flowStyle: block
 required: [reference_frame]
 ...
