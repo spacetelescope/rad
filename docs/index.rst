@@ -32,6 +32,7 @@ Developer Resources
 .. toctree::
   :maxdepth: 1
 
+  creating.rst
   contributing.rst
   changes.rst
 

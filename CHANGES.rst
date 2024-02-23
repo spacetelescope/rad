@@ -6,6 +6,8 @@
 - Added ``exact_datatype`` arguments to prevent ASDF from casting array
   datatypes during save. [#369]
 
+- Add documentation on how to create a new schema. [#375]
+
 0.19.0 (2024-02-09)
 -------------------
 
@@ -40,7 +42,7 @@
 
 - Added "archive_catalog" field to ref_file. [#303]
 
-- Added a prefix "s_" to the archive destination in "cal_step". [#303]
+- Added a prefix ``s_`` to the archive destination in "cal_step". [#303]
 
 - Require all the new ``cal_step`` steps to be present in the ``cal_step`` schema. [#301]
 
