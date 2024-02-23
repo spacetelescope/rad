@@ -13,7 +13,7 @@ properties:
       optical_element:
         title: Optical Element
         description: |
-          The optical element filter name used.
+          The optical element filter name.
         $ref: ../wfi_optical_element-1.0.0
     required: [optical_element]
 required: [instrument]

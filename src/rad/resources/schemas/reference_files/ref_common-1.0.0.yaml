@@ -29,7 +29,7 @@ properties:
       The author of who or what created the reference file.
     type: string
   useafter:
-    title: Use After
+    title: Use After Date
     description: |
       The use after date of the reference file for CRDS best references
       matching.
@@ -44,10 +44,10 @@ properties:
       - type: string
         enum: [ROMAN]
   origin:
-    title: Title
+    title: Organization
     description: |
-      The organization responsible for creating file, e.g. STSCI for the Space
-      Telescope Science Institute.
+      The organization responsible for creating the file, e.g. STSCI for the
+      Space Telescope Science Institute.
     type: string
   instrument:
     type: object

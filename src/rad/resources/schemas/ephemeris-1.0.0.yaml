@@ -68,7 +68,7 @@ properties:
       datatype: nvarchar(10)
       destination: [ScienceCommon.ephemeris_type, GuideWindow.ephemeris_type]
   time:
-    title: UTC Time of Position and Velocity Vectors in ephemeris (MJD)
+    title: UTC Time of Position and Velocity Vectors in Ephemeris (MJD)
     description: |
       UTC time of position and velocity vectors in ephemeris in MJD.
     type: number

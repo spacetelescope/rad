@@ -27,7 +27,7 @@ properties:
                   Multi-Accumulation (MA) Table read pattern.
                 type: integer
               nframes:
-                title: Number of frames per group # should be removed
+                title: Number of frames per resultant # should be removed
                 type: integer
               groupgap:
                 title: Number of Skips Between Resultants

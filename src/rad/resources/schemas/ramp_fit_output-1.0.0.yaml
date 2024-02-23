@@ -12,7 +12,7 @@ properties:
   meta:
     $ref: common-1.0.0
   slope:
-    title: Slope for specific Segment (electrons / s)
+    title: Slope for Specific Segment (electrons / s)
     description: |
       Slope of a specific segment for a ramp with uneven resultants, in units of
       electrons per second. A segment is a set of contiguous resultants where
@@ -45,7 +45,7 @@ properties:
         tag: tag:astropy.org:astropy/units/unit-1.*
         enum: ["electron / s"]
   yint:
-    title: Y-intercept Derived for a Specific Segment (electrons)
+    title: Y-Intercept Derived for a Specific Segment (electrons)
     description: |
       Y-intercept derived for a specific segment (electrons). A segment is a set
       of contiguous resultants where none of the resultants are saturated or
@@ -61,7 +61,7 @@ properties:
         tag: tag:astropy.org:astropy/units/unit-1.*
         enum: ["electron"]
   sigyint:
-    title: Uncertainty on Y-intercept Derived for a Specific Segment (electrons)
+    title: Uncertainty on Y-Intercept Derived for a Specific Segment (electrons)
     description: |
       Uncertainty on Y-intercept derived for a specific segment (electrons). A
       segment is a set of contiguous resultants where none of the resultants are
@@ -111,7 +111,7 @@ properties:
         tag: tag:astropy.org:astropy/units/unit-1.*
         enum: ["electron"]
   var_poisson:
-    title: Poisson Variance associated with a segment-specific slope (electrons^2 / sec^2)
+    title: Poisson Variance Associated with a Segment Specific Slope (electrons^2 / sec^2)
     description: |
       Poisson variance associated with a segment-specific slope, in units of
       electrons^2 / sec^2.
@@ -126,7 +126,7 @@ properties:
         tag: tag:astropy.org:astropy/units/unit-1.*
         enum: ["electron2 / s2"]
   var_rnoise:
-    title: Read Noise Associated Variance for a Segment Specific Slope (electrons^2 / sec^2)
+    title: Read Noise Variance Associated for a Segment Specific Slope (electrons^2 / sec^2)
     description: |
       Read noise-associated variance for a segment-specific slope, in units of
       electrons^2 / sec^2.

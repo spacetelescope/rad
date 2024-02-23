@@ -117,7 +117,7 @@ properties:
       datatype: float
       destination: [ScienceCommon.gs_mag, GuideWindow.gs_mag]
   gs_umag:
-    title: Guide Star instrument Magnitude Uncertainty
+    title: Guide Star Instrumental Magnitude Uncertainty
     description: |
       Uncertainty in the predicted instrumental magnitude of the guide star from
       the guide star catalog.

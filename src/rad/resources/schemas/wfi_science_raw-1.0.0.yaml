@@ -14,9 +14,9 @@ properties:
   meta:
     $ref: common-1.0.0
   data:
-    title: Science Data
+    title: Science Data (DN)
     description: |
-      Science data, including reference pixels.
+      Science data, including reference pixels in units of DN
     tag: tag:stsci.edu:asdf/unit/quantity-1.*
     properties:
       value:
@@ -29,9 +29,9 @@ properties:
         enum: ["DN"]
 
   amp33:
-    title: Amplifier 33 Reference Pixel Data
+    title: Amplifier 33 Reference Pixel Data (DN)
     description: |
-      Reference pixel data from amplifier 33.
+      Reference pixel data from amplifier 33 in units of DN.
     tag: tag:stsci.edu:asdf/unit/quantity-1.*
     properties:
       value:

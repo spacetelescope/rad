@@ -5,8 +5,8 @@ id: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.0.0
 
 title: RAD Metaschema
 description: |
-  A metaschema that extends the ASDF metaschema to add support for Scientific
-  Data Format and archive catalog-related properties.
+  A metaschema that extends the ASDF metaschema to add support for Science
+  Data Formatting and archive catalog-related properties.
 
 allOf:
   - $ref: http://stsci.edu/schemas/asdf/asdf-schema-1.0.0
@@ -31,7 +31,7 @@ allOf:
           special_processing:
             title: Special Processing
             description: |-
-              A flag indicating whether this attribute is must be present in the
+              A flag indicating whether this attribute must be present in the
               SDF file.
             type: string
             enum: [VALUE_REQUIRED, OPTIONAL]
@@ -59,7 +59,7 @@ allOf:
         type: object
         properties:
           datatype:
-            title: Archive catalog database column type
+            title: Archive Catalog Database Column Type
             description: |-
               Column type in the archive catalog database.
             anyOf:

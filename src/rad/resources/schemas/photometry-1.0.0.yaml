@@ -7,7 +7,7 @@ title: Photometry Information
 type: object
 properties:
   conversion_megajanskys:
-    title: Flux Density  Producing 1 count per second (MJy / steradian)
+    title: Flux Density Producing 1 count per second (MJy / steradian)
     description: |
       The conversion from DN / s to MJy / steradian.
     anyOf:
@@ -23,7 +23,7 @@ properties:
       datatype: float
       destination: [ScienceCommon.conversion_megajanskys]
   conversion_microjanskys:
-    title: Flux Density  Producing 1 count per second (uJy / arcsec2)
+    title: Flux Density Producing 1 count per second (uJy / arcsec2)
     description: |
       The conversion from DN / s to uJy / steradian.
     anyOf:
@@ -39,7 +39,7 @@ properties:
       datatype: float
       destination: [ScienceCommon.conversion_microjanskys]
   pixelarea_steradians:
-    title: Nominal Pixel Area  (steradians)
+    title: Nominal Pixel Area (steradians)
     description: |
       The average pixel area in units of steradians.
     anyOf:

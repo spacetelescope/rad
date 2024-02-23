@@ -12,9 +12,10 @@ properties:
   meta:
     $ref: common-1.0.0
   data:
-    title: Science Data Including Border Reference Pixels
+    title: Science Data Including Border Reference Pixels (DN, electrons)
     description: |
-      Science Data Including Border Reference Pixels.
+      Science Data Including Border Reference Pixels in units of DN or
+      electrons.
     tag: tag:stsci.edu:asdf/unit/quantity-1.*
     properties:
       value:
@@ -26,18 +27,19 @@ properties:
         tag: tag:astropy.org:astropy/units/unit-1.*
         enum: ["DN", "electron"]
   pixeldq:
-    title: Two Dimensional Data Quality Flags Array for Each Resultant
+    title: Two Dimensional Data Quality Flags Array for Each Pixel
     description: |
-      Two Dimensional Data Quality Flags Array for Each Resultant.
+      Two dimensional data quality flags array applying to all resultants in a
+      given pixel.
     tag: tag:stsci.edu:asdf/core/ndarray-1.*
     ndim: 2
     datatype: uint32
     exact_datatype: true
   groupdq:
-    title: Three dimensional Data Quality array developed for all uneven resultants in the ramp
+    title: Three-dimensional Data Quality Array For Each Resultant in Each Pixel
     description: |
-      Three dimensional Data Quality array developed for all uneven resultants
-      in the ramp.
+      Three-dimensional data quality array indicating quality of each individual
+      resultant for each pixel.
     tag: tag:stsci.edu:asdf/core/ndarray-1.*
     ndim: 3
     datatype: uint8
@@ -55,9 +57,9 @@ properties:
         tag: tag:astropy.org:astropy/units/unit-1.*
         enum: ["DN", "electron"]
   amp33:
-    title: Amp 33 Reference Pixel Data
+    title: Amp 33 Reference Pixel Data (DN)
     description: |
-      Amplifier 33 Reference Pixel Data.
+      Amplifier 33 Reference Pixel Data in units of DN.
     tag: tag:stsci.edu:asdf/unit/quantity-1.*
     properties:
       value:
@@ -69,10 +71,10 @@ properties:
         tag: tag:astropy.org:astropy/units/unit-1.*
         enum: ["DN"]
   border_ref_pix_left:
-    title: Border Reference Pixels on the Left of the Detector, from the instrument's perspective
+    title: Border Reference Pixels on the Left of the Detector, from the Instrument's Perspective (DN)
     description: |
       Border Reference Pixels on the Left of the Detector, from the instrument's
-      perspective.
+      perspective in units of DN.
     tag: tag:stsci.edu:asdf/unit/quantity-1.*
     value:
       tag: tag:stsci.edu:asdf/core/ndarray-1.*
@@ -83,10 +85,10 @@ properties:
       tag: tag:astropy.org:astropy/units/unit-1.*
       enum: ["DN"]
   border_ref_pix_right:
-    title: Border Reference Pixels on the Right of the Detector, from the instrument's perspective
+    title: Border Reference Pixels on the Right of the Detector, from the Instrument's Perspective (DN)
     description: |
       Border Reference Pixels on the Right of the Detector, from the
-      instrument's perspective.
+      instrument's perspective in units of DN.
     tag: tag:stsci.edu:asdf/unit/quantity-1.*
     properties:
       value:
@@ -98,9 +100,9 @@ properties:
         tag: tag:astropy.org:astropy/units/unit-1.*
         enum: ["DN"]
   border_ref_pix_top:
-    title: Border Reference Pixels on the Top of the Detector
+    title: Border Reference Pixels on the Top of the Detector (DN)
     description: |
-      Border Reference Pixels on the Top of the Detector.
+      Border Reference Pixels on the Top of the Detector in units of DN.
     tag: tag:stsci.edu:asdf/unit/quantity-1.*
     properties:
       value:
@@ -112,9 +114,9 @@ properties:
         tag: tag:astropy.org:astropy/units/unit-1.*
         enum: ["DN"]
   border_ref_pix_bottom:
-    title: Border Reference Pixels on the Bottom of the Detector
+    title: Border Reference Pixels on the Bottom of the Detector (DN)
     description: |
-      Border Reference Pixels on the Bottom of the Detector.
+      Border Reference Pixels on the Bottom of the Detector in units of DN.
     tag: tag:stsci.edu:asdf/unit/quantity-1.*
     properties:
       value:
@@ -135,7 +137,7 @@ properties:
     exact_datatype: true
     ndim: 2
   dq_border_ref_pix_right:
-    title: Data Quality Flag for Border Reference Pixels, on the Right edge of the Detector from the Instrument Perspective
+    title: Data Quality Flag for Border Reference Pixels, on the Right Edge of the Detector from the Instrument Perspective
     description: |
       Data Quality Flag for Border Reference Pixels, on the Right Edge of the
       Detector from the Instrument Perspective.

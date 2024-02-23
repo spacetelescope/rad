@@ -18,13 +18,13 @@ properties:
             type: string
             enum: [LINEARITY]
           input_units:
-            title: Units of the input to the linearity polynomial
+            title: Units of the Input to the Linearity Polynomial
             description: |
               Units of the input to the linearity polynomial.
             tag: tag:astropy.org:astropy/units/unit-1.*
             enum: ["DN"]
           output_units:
-            title: Units of the output of the linearity polynomial
+            title: Units of the Output of the Linearity Polynomial
             description: |
               Units of the output to the linearity polynomial.
             tag: tag:astropy.org:astropy/units/unit-1.*
@@ -34,7 +34,7 @@ properties:
     title: Linearity Coefficients
     description: |
       Contains the coefficients of a polynomial to correct the non-linear
-      response of each pixel to a linear signal.  Both the input to and output
+      response of each pixel to a linear signal. Both the input to and output
       from the polynomial are in units of DN. The coefficients have units that
       contain various powers of DN.
     tag: tag:stsci.edu:asdf/core/ndarray-1.*

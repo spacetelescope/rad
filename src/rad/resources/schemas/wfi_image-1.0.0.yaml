@@ -26,7 +26,7 @@ properties:
             tag: asdf://stsci.edu/datamodels/roman/tags/source_detection-1.0.0
         required: [photometry, wcs]
   data:
-    title: Science Data Excluding Border Reference Pixels
+    title: Science Data (electrons / s)
     description: |
       Science data, excluding border reference pixels.
     tag: tag:stsci.edu:asdf/unit/quantity-1.*
@@ -105,9 +105,9 @@ properties:
         tag: tag:astropy.org:astropy/units/unit-1.*
         enum: ["electron2 / s2"]
   amp33:
-    title: Amp 33 Reference Pixel Data
+    title: Amp 33 Reference Pixel Data (DN)
     description: |
-      Amplifier 33 reference pixel data.
+      Amplifier 33 reference pixel data in units of DN.
     tag: tag:stsci.edu:asdf/unit/quantity-1.*
     properties:
       value:
@@ -119,10 +119,10 @@ properties:
         tag: tag:astropy.org:astropy/units/unit-1.*
         enum: ["DN"]
   border_ref_pix_left:
-    title: Border Reference Pixels on the Left of the Detector, from the instrument's perspective
+    title: Border Reference Pixels on the Left of the Detector, from the Instrument's Perspective (DN)
     description: |
       Border reference pixels on the left of the detector, from the instrument's
-      perspective.
+      perspective in units of DN.
     tag: tag:stsci.edu:asdf/unit/quantity-1.*
     properties:
       value:
@@ -134,10 +134,10 @@ properties:
         tag: tag:astropy.org:astropy/units/unit-1.*
         enum: ["DN"]
   border_ref_pix_right:
-    title: Border Reference Pixels on the Right of the Detector, from the instrument's perspective
+    title: Border Reference Pixels on the Right of the Detector, from the Instrument's Perspective (DN)
     description: |
       Border reference pixels on the right of the detector, from the
-      instrument's perspective.
+      instrument's perspective in units of DN
     tag: tag:stsci.edu:asdf/unit/quantity-1.*
     properties:
       value:
@@ -149,9 +149,9 @@ properties:
         tag: tag:astropy.org:astropy/units/unit-1.*
         enum: ["DN"]
   border_ref_pix_top:
-    title: Border Reference Pixels on the Top of the Detector
+    title: Border Reference Pixels on the Top of the Detector (DN)
     description: |
-      Border reference pixels on the top of the detector.
+      Border reference pixels on the top of the detector in units of DN.
     tag: tag:stsci.edu:asdf/unit/quantity-1.*
     properties:
       value:
@@ -163,9 +163,9 @@ properties:
         tag: tag:astropy.org:astropy/units/unit-1.*
         enum: ["DN"]
   border_ref_pix_bottom:
-    title: Border Reference Pixels on the Bottom of the Detector
+    title: Border Reference Pixels on the Bottom of the Detector (DN)
     description: |
-      Border reference pixels on the bottom of the detector.
+      Border reference pixels on the bottom of the detector in units of DN.
     tag: tag:stsci.edu:asdf/unit/quantity-1.*
     properties:
       value:

@@ -39,7 +39,7 @@ properties:
   dark:
     title: Dark Reference File Information
     description: |
-      Reference file to be used to correct for the dark current contribution to
+      Reference file used to correct for the dark current contribution to
       science data.
     type: string
     archive_catalog:
@@ -55,7 +55,7 @@ properties:
       datatype: nvarchar(120)
       destination: [ScienceRefData.r_distortion, GuideWindow.r_distortion]
   mask:
-    title: Mask Reference file Information
+    title: Mask Reference File Information
     description: |
       Information about the mask reference file used with the science data.
     type: string

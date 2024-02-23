@@ -231,7 +231,7 @@ properties:
       datatype: float
       destination: [ScienceCommon.elapsed_exposure_time, GuideWindow.elapsed_exposure_time]
   frame_divisor:
-    title: Frame Divisor (s)
+    title: Frame Divisor
     description: |
       The number of reads averaged to calculate a resultant. Value depends on
       the readout pattern used from the MultiAccum table.
@@ -244,7 +244,7 @@ properties:
       datatype: int
       destination: [ScienceCommon.exposure_frame_divisor, GuideWindow.exposure_frame_divisor]
   groupgap:
-    title: Number of frames dropped between groups
+    title: Number of Frames Dropped Between Resultants
     description:
       The number of reads that are dropped, or not used to calculate a
       resultant.

@@ -7,7 +7,7 @@ title: Visit Information
 type: object
 properties:
   engineering_quality:
-    title: Engineering Quality
+    title: Engineering Quality of Data
     description: |
       The engineering data quality indicator from the Engineering Database
       (EngDB). The options available are "OK" and "SUSPECT", where "SUSPECT"
@@ -100,7 +100,7 @@ properties:
     description: |
       A boolean value which indicates whether at least one exposure in a visit
       is internal. Internal targets refer to calibration data where the
-      telescope observes without external sources by closing the shudder.
+      telescope observes without external sources by closing the shutter.
     type: boolean
     sdf:
       special_processing: VALUE_REQUIRED
@@ -113,8 +113,8 @@ properties:
     title: Target of Opportunity
     description: |
       A boolean value which indicates whether the visit is defined as a target
-      of opportunity (ToO). Targets of opportunity react to temporal phenomena,
-      such as supernova, which cannot be planned in advance.
+      of opportunity (ToO). Targets of opportunity refer to temporal phenomena,
+      such as supernovae, which cannot be planned in advance.
     type: boolean
     sdf:
       special_processing: VALUE_REQUIRED

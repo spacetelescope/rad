@@ -61,8 +61,8 @@ properties:
   linearity:
     title: Linearity Correction Step
     description: |
-      This step performs a correction for the classical non-linear detector
-      response.
+      Step in ROMANCAL which performs a correction for the classical non-linear
+      detector response.
     type: string
     enum: ['N/A', 'COMPLETE', 'SKIPPED', 'INCOMPLETE']
     archive_catalog:
@@ -71,8 +71,8 @@ properties:
   photom:
     title: Photometric Calibration Step
     description: |
-      Step in the ROMANCAL package that adds photometric calibrations  to the
-      metadata of a data product.
+      Step in ROMANCAL that adds photometric calibrations to the metadata of a
+      data product.
     type: string
     enum: ['N/A', 'COMPLETE', 'SKIPPED', 'INCOMPLETE']
     archive_catalog:
@@ -101,7 +101,7 @@ properties:
     title: Reference Pixel Correction Step
     description: |
       Step in ROMANCAL that corrects for additional signal from electronics
-      contributing to e.g. 1/f noise using the reference pixels.
+      contributing to (e.g. 1/f noise) using the reference pixels.
     type: string
     enum: ['N/A', 'COMPLETE', 'SKIPPED', 'INCOMPLETE']
     archive_catalog:
@@ -110,7 +110,7 @@ properties:
   saturation:
     title: Saturation Identification Step
     description: |
-      Step in ROMANCAL which sets pixel flags to signal if a pixel is at or
+      Step in ROMANCAL which sets pixel flags to label that a pixel is at or
       above the saturation threshold. As part of this step, pixels that are zero
       or negative are also flagged.
     type: string
@@ -132,7 +132,7 @@ properties:
     description: |
       Step in ROMANCAL that compares positions of point-like sources with
       coordinates from a Gaia catalog, and, if necessary, corrects an image's
-      World Coordinate System  alignment.
+      World Coordinate System alignment.
     type: string
     enum: ['N/A', 'COMPLETE', 'SKIPPED', 'INCOMPLETE']
     archive_catalog:
@@ -151,7 +151,7 @@ properties:
   resample:
     title: Resampling Input Data onto a Regular Grid Step
     description: |
-      Step in ROMANCAL which resamples each input 2D image based on the WCS and
+      Step in ROMANCAL which resamples each input 2D image based on its WCS and
       WCS distortion information on a grid that allows the combination of
       multiple resampled images into a single, undistorted product.
     type: string
