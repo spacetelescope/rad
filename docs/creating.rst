@@ -30,7 +30,8 @@ you should have a clear idea of the following:
        you need to pay attention to the following:
 
         * Which fields will be primitive data types like ``int``, ``float``,
-          ``str``, or ``bool``.
+          ``str``, or ``bool``. In JSON-schema these will be ``integer``,
+            ``number``, ``string``, and ``boolean`` respectively.
 
         * Which fields will require using an ASDF tag to reference another
           schema corresponding to a non-primitive type. In particular, you need
@@ -87,7 +88,7 @@ Add Your Fields
 
 Now we will populate your schema with the fields you wish to use. In almost all
 cases you will want to use an ``object`` type for your top level of the schema,
-for other cases see :ref:`alternate-fields`.  n this case your add the following
+for other cases see :ref:`alternate-fields`.  In this case you add the following
 after your ``description`` in the boilerplate:
 
 .. code:: yaml
@@ -97,7 +98,7 @@ after your ``description`` in the boilerplate:
         <first keyword>:
             title: <Title of the field>
             description: |
-                <A long description of the field>
+                <A long description of the field, can be multiline>
 
 You will repeat this step for each of the top-level fields you wish to add.
 
@@ -119,8 +120,9 @@ There are several different possibilities at this point:
 
 .. note::
 
-    The ``<type>`` for a Python float is ``number`` and the ``<type>`` for a
-    Python bool is ``boolean``.
+    The ``<type>`` for a Python ``float`` is ``number`` and the ``<type>`` for a
+    Python ``bool`` is ``boolean``. While the ``<type>`` for a Python ``int`` is
+    ``integer`` and the ``<type>`` for a Python ``str`` is ``string``.
 
 * Tagged type.
     Things that are referenced via an ASDF tag. In this case you add the
