@@ -80,7 +80,7 @@ allOf:
         type: string
         # enum: [] add enum values
         archive_catalog:
-          datatype: nvarchar(max)
+          datatype: nvarchar(80)
           destination: [WFITvac.wfi_mce_srcs_bank1_led_range]
       wfi_mce_srcs_bank2_led_i:
         title: |
@@ -102,7 +102,7 @@ allOf:
         type: string
         # enum: [] add enum values
         archive_catalog:
-          datatype: nvarchar(max)
+          datatype: nvarchar(80)
           destination: [WFITvac.wfi_mce_srcs_bank2_led_range]
       srcs_led_current:
         title: Input LED current set point

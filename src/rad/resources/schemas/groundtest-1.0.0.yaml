@@ -10,25 +10,25 @@ properties:
     title: I&T Test Name
     type: string
     archive_catalog:
-      datatype: nvarchar(max)
+      datatype: nvarchar(80)
       destination: [WFICommon.test_name]
   test_phase:
     title: I&T Testing Phase
     type: string
     archive_catalog:
-      datatype: nvarchar(max)
+      datatype: nvarchar(80)
       destination: [WFICommon.test_phase]
   test_environment:
     title: I&T Testing Environment
     type: string
     archive_catalog:
-      datatype: nvarchar(max)
+      datatype: nvarchar(80)
       destination: [WFICommon.test_environment]
   test_script:
     title: Name of Testing Script Run
     type: string
     archive_catalog:
-      datatype: nvarchar(max)
+      datatype: nvarchar(80)
       destination: [WFICommon.test_script]
   product_date:
     title: Source File Creation Time
@@ -40,7 +40,7 @@ properties:
     title: I&T Software Used to Generate Source File
     type: string
     archive_catalog:
-      datatype: nvarchar(max)
+      datatype: nvarchar(80)
       destination: [WFICommon.product_version]
   conversion_date:
     title: HDF5 to ASDF Conversion Date
@@ -52,31 +52,31 @@ properties:
     title: HDF5 to ASDF Converter Version
     type: string
     archive_catalog:
-      datatype: nvarchar(max)
+      datatype: nvarchar(80)
       destination: [WFICommon.conversion_version]
   filename_pnt5:
     title: L0.5 File Name
     type: string
     archive_catalog:
-      datatype: nvarchar(max)
+      datatype: nvarchar(80)
       destination: [WFICommon.filename_pnt5]
   filepath_level_pnt5:
     title: L0.5 File Path
     type: string
     archive_catalog:
-      datatype: nvarchar(max)
+      datatype: nvarchar(80)
       destination: [WFICommon.filepath_level_pnt5]
   filename_l1a:
     title: L1A File Name
     type: string
     archive_catalog:
-      datatype: nvarchar(max)
+      datatype: nvarchar(80)
       destination: [WFICommon.filename_l1a]
   detector_id:
     title: SCA Identifier
     type: string
     archive_catalog:
-      datatype: nvarchar(max)
+      datatype: nvarchar(80)
       destination: [WFICommon.detector_id]
   detector_temp:
     title: Mean Detector Temperature (Kelvin)

@@ -27,9 +27,6 @@ allOf:
     hdf5_telemetry:
       title: Original Raw HDF5 telemetry keywords
       type: string
-      archive_catalog:
-        datatype: nvarchar(max)
-        destination: [TableTBA.hdf5_telemetry]
     gw_meta:
       title: Guide Window HDF5 metadata
       type: object
