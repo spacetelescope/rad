@@ -6,6 +6,8 @@
 - Added ``exact_datatype`` arguments to prevent ASDF from casting array
   datatypes during save. [#369]
 
+- Updated product table names. [#380]
+
 0.19.0 (2024-02-09)
 -------------------
 
