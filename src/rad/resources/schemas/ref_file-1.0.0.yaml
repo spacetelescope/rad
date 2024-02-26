@@ -23,7 +23,8 @@ properties:
             origin: TBD
         archive_catalog:
           datatype: nvarchar(120)
-          destination: [ScienceCommon.crds_software_version, GuideWindow.crds_software_version]
+          destination: [WFIExposure.crds_software_version, WFIMosaic.crds_software_version, GuideWindow.crds_software_version]
+
       context_used:
         title: CRDS Context
         description: |
@@ -35,7 +36,7 @@ properties:
             origin: TBD
         archive_catalog:
           datatype: nvarchar(120)
-          destination: [ScienceCommon.crds_context_used, GuideWindow.crds_context_used]
+          destination: [WFIExposure.crds_context_used, WFIMosaic.crds_context_used, GuideWindow.crds_context_used]
   dark:
     title: Dark Reference File Information
     description: |
