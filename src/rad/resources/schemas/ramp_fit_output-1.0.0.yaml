@@ -3,7 +3,7 @@
 $schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.0.0
 id: asdf://stsci.edu/datamodels/roman/schemas/ramp_fit_output-1.0.0
 
-title: Ramp fit output schema
+title: Ramp Fit Output Schema
 
 datamodel_name: RampFitOutputModel
 
@@ -12,7 +12,11 @@ properties:
   meta:
     $ref: common-1.0.0
   slope:
-    title: Segment-specific slope
+    title: Slope for Specific Segment (electrons / s)
+    description: |
+      Slope of a specific segment for a ramp with uneven resultants, in units of
+      electrons per second. A segment is a set of contiguous resultants where
+      none of the resultants are saturated or cosmic ray-affected.
     tag: tag:stsci.edu:asdf/unit/quantity-1.*
     properties:
       value:
@@ -24,7 +28,12 @@ properties:
         tag: tag:astropy.org:astropy/units/unit-1.*
         enum: ["electron / s"]
   sigslope:
-    title: Sigma for segment-specific slope
+    title: Uncertainty on Slope for Specific Segment (electrons / s)
+    description: |
+      Uncertainty on slope for specific segment for a ramp with uneven
+      resultants in units of electrons per second. A segment is a set of
+      contiguous resultants where none of the resultants are saturated or cosmic
+      ray-affected.
     tag: tag:stsci.edu:asdf/unit/quantity-1.*
     properties:
       value:
@@ -36,7 +45,11 @@ properties:
         tag: tag:astropy.org:astropy/units/unit-1.*
         enum: ["electron / s"]
   yint:
-    title: Segment-specific y-intercept
+    title: Y-Intercept Derived for a Specific Segment (electrons)
+    description: |
+      Y-intercept derived for a specific segment (electrons). A segment is a set
+      of contiguous resultants where none of the resultants are saturated or
+      cosmic ray-affected.
     tag: tag:stsci.edu:asdf/unit/quantity-1.*
     properties:
       value:
@@ -48,7 +61,11 @@ properties:
         tag: tag:astropy.org:astropy/units/unit-1.*
         enum: ["electron"]
   sigyint:
-    title: Sigma for segment-specific y-intercept
+    title: Uncertainty on Y-Intercept Derived for a Specific Segment (electrons)
+    description: |
+      Uncertainty on Y-intercept derived for a specific segment (electrons). A
+      segment is a set of contiguous resultants where none of the resultants are
+      saturated or cosmic ray-affected.
     tag: tag:stsci.edu:asdf/unit/quantity-1.*
     properties:
       value:
@@ -60,7 +77,9 @@ properties:
         tag: tag:astropy.org:astropy/units/unit-1.*
         enum: ["electron"]
   pedestal:
-    title: Pedestal array
+    title: Pedestal Array (electrons)
+    description: |
+      Signal at zero exposure time for each pixel in electrons.
     tag: tag:stsci.edu:asdf/unit/quantity-1.*
     properties:
       value:
@@ -72,13 +91,15 @@ properties:
         tag: tag:astropy.org:astropy/units/unit-1.*
         enum: ["electron"]
   weights:
-    title: Weights for segment-specific fits
+    title: Weights for Segment Specific Fit
     tag: tag:stsci.edu:asdf/core/ndarray-1.*
     ndim: 3
     datatype: float32
     exact_datatype: true
   crmag:
-    title: Approximate CR magnitudes
+    title: Approximate Cosmic Ray Magnitudes (AB magnitude)
+    description: |
+      The magnitude of each segment that was flagged as having a cosmic ray hit.
     tag: tag:stsci.edu:asdf/unit/quantity-1.*
     properties:
       value:
@@ -90,7 +111,10 @@ properties:
         tag: tag:astropy.org:astropy/units/unit-1.*
         enum: ["electron"]
   var_poisson:
-    title: Variance due to poisson noise for segment-specific slope
+    title: Poisson Variance Associated with a Segment Specific Slope (electrons^2 / sec^2)
+    description: |
+      Poisson variance associated with a segment-specific slope, in units of
+      electrons^2 / sec^2.
     tag: tag:stsci.edu:asdf/unit/quantity-1.*
     properties:
       value:
@@ -102,7 +126,10 @@ properties:
         tag: tag:astropy.org:astropy/units/unit-1.*
         enum: ["electron2 / s2"]
   var_rnoise:
-    title: Variance due to read noise for segment-specific slope
+    title: Read Noise Variance Associated for a Segment Specific Slope (electrons^2 / sec^2)
+    description: |
+      Read noise-associated variance for a segment-specific slope, in units of
+      electrons^2 / sec^2.
     tag: tag:stsci.edu:asdf/unit/quantity-1.*
     properties:
       value:

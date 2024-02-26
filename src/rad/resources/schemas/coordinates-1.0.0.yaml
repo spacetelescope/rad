@@ -3,11 +3,13 @@
 $schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.0.0
 id: asdf://stsci.edu/datamodels/roman/schemas/coordinates-1.0.0
 
-title: Information about the coordinates in the file
+title: Name Of The Coordinate Reference Frame
 type: object
 properties:
   reference_frame:
-    title: Name of the coordinate reference frame
+    title: Name of the Coordinate Reference Frame
+    description: |
+      Name of the coordinate reference frame.
     type: string
     default: ICRS
     enum: [ICRS]

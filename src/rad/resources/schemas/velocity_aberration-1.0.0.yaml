@@ -3,11 +3,13 @@
 $schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.0.0
 id: asdf://stsci.edu/datamodels/roman/schemas/velocity_aberration-1.0.0
 
-title: Velocity aberration correction information
+title: Velocity Aberration Correction Information
 type: object
 properties:
   ra_offset:
-    title: Velocity aberration right ascension offset
+    title: Velocity Aberration RA Offset (degree)
+    description: |
+      Right ascension offset for velocity aberration in degrees.
     type: number
     sdf:
       special_processing: VALUE_REQUIRED
@@ -17,7 +19,9 @@ properties:
       datatype: float
       destination: [ScienceCommon.ra_offset, GuideWindow.ra_offset]
   dec_offset:
-    title: Velocity aberration declination offset
+    title: Velocity Aberration Dec Offset (degree)
+    description: |
+      Declination offset for velocity aberration in degrees.
     type: number
     sdf:
       special_processing: VALUE_REQUIRED
@@ -27,7 +31,9 @@ properties:
       datatype: float
       destination: [ScienceCommon.dec_offset, GuideWindow.dec_offset]
   scale_factor:
-    title: Velocity aberration scale factor
+    title: Velocity Aberration Scale Factor
+    description: |
+      Velocity aberration scale factor.
     type: number
     sdf:
       special_processing: VALUE_REQUIRED

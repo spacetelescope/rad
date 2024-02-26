@@ -5,7 +5,7 @@ id: asdf://stsci.edu/datamodels/roman/schemas/wfi_detector-1.0.0
 
 # Helper file to enumerate detectors for wfi_mode and ref_detector
 
-title: Name of detector used to acquire the data
+title: WFI Detector Name
 type: string
 enum:
   - WFI01

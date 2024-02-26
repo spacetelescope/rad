@@ -3,11 +3,14 @@
 $schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.0.0
 id: asdf://stsci.edu/datamodels/roman/schemas/aperture-1.0.0
 
-title: Aperture information
+title: Aperture Information
 type: object
 properties:
   name:
-    title: PRD science aperture used
+    title: PRD Science Aperture Used
+    description: |
+      Science aperture used as defined in the Project
+      Reference Database (PRD).
     type: string
     enum: ['WFI_01_FULL', 'WFI_02_FULL', 'WFI_03_FULL', 'WFI_04_FULL',
            'WFI_05_FULL', 'WFI_06_FULL', 'WFI_07_FULL', 'WFI_08_FULL',
@@ -24,7 +27,9 @@ properties:
       datatype: nvarchar(40)
       destination: [ScienceCommon.aperture_name, GuideWindow.aperture_name]
   position_angle:
-    title: "[deg] Position angle of aperture used"
+    title: "Position Angle of Aperture Used (deg)"
+    description: |
+      Position angle of the science aperture as measured in degrees.
     type: number
     sdf:
       special_processing: VALUE_REQUIRED

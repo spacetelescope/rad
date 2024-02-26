@@ -3,7 +3,7 @@
 $schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.0.0
 id: asdf://stsci.edu/datamodels/roman/schemas/reference_files/saturation-1.0.0
 
-title: Saturation reference schema
+title: Saturation Reference File Schema
 
 datamodel_name: SaturationRefModel
 
@@ -18,7 +18,10 @@ properties:
             type: string
             enum: [SATURATION]
   data:
-    title: Saturation threshold
+    title: Saturation Threshold Array
+    description: |
+      The pixel level threshold for determining saturation before non-linearity
+      corrections are applied.
     tag: tag:stsci.edu:asdf/unit/quantity-1.*
     properties:
       value:
@@ -30,7 +33,9 @@ properties:
         tag: tag:astropy.org:astropy/units/unit-1.*
         enum: ["DN"]
   dq:
-    title: 2-D data quality array for all planes
+    title: 2-D Data Quality Array
+    description: |
+      The 2-D data quality array for the Saturation Threshold Array.
     tag: tag:stsci.edu:asdf/core/ndarray-1.*
     datatype: uint32
     exact_datatype: true
