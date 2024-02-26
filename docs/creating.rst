@@ -31,7 +31,7 @@ you should have a clear idea of the following:
 
         * Which fields will be primitive data types like ``int``, ``float``,
           ``str``, or ``bool``. In JSON-schema these will be ``integer``,
-            ``number``, ``string``, and ``boolean`` respectively.
+          ``number``, ``string``, and ``boolean`` respectively.
 
         * Which fields will require using an ASDF tag to reference another
           schema corresponding to a non-primitive type. In particular, you need
