@@ -159,3 +159,6 @@ def setup(app):
 asdf_schema_path = "../src/rad/resources"
 # This is the prefix common to all schema IDs in this repository
 asdf_schema_standard_prefix = "schemas"
+asdf_schema_reference_mappings = [
+    ("asdf://stsci.edu/datamodels/roman/tags/", "https://rad.readthedocs.io/en/latest/generated/schemas/"),
+]
