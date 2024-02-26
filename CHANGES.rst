@@ -10,7 +10,7 @@
 
 - Update titles and descriptions to those provided by INS. [#361]
 
-- Updated product table names. [#380]
+- Updated product table names. [#382]
 
 0.19.0 (2024-02-09)
 -------------------
