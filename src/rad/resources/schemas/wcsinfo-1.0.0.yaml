@@ -15,7 +15,7 @@ properties:
         origin: TBD
     archive_catalog:
       datatype: float
-      destination: [ScienceCommon.v2_ref, GuideWindow.v2_ref]
+      destination: [WFIExposure.v2_ref, GuideWindow.v2_ref]
   v3_ref:
     title: "[arcsec] Telescope v3 coordinate of the reference point"
     type: number
@@ -25,7 +25,7 @@ properties:
         origin: TBD
     archive_catalog:
       datatype: float
-      destination: [ScienceCommon.v3_ref, GuideWindow.v3_ref]
+      destination: [WFIExposure.v3_ref, GuideWindow.v3_ref]
   vparity:
     title: Relative sense of rotation between Ideal xy and V2V3
     type: integer
@@ -35,7 +35,7 @@ properties:
         origin: TBD
     archive_catalog:
       datatype: int
-      destination: [ScienceCommon.vparity, GuideWindow.vparity]
+      destination: [WFIExposure.vparity, GuideWindow.vparity]
   v3yangle:
     title: "[deg] Angle from V3 axis to Ideal y axis"
     type: number
@@ -45,7 +45,7 @@ properties:
         origin: TBD
     archive_catalog:
       datatype: float
-      destination: [ScienceCommon.v3yangle, GuideWindow.v3yangle]
+      destination: [WFIExposure.v3yangle, GuideWindow.v3yangle]
   ra_ref:
     title: "[deg] Right ascension of the reference point"
     type: number
@@ -55,7 +55,7 @@ properties:
         origin: TBD
     archive_catalog:
       datatype: float
-      destination: [ScienceCommon.ra_ref, GuideWindow.ra_ref]
+      destination: [WFIExposure.ra_ref, GuideWindow.ra_ref]
   dec_ref:
     title: "[deg] Declination of the reference point"
     type: number
@@ -65,7 +65,7 @@ properties:
         origin: TBD
     archive_catalog:
       datatype: float
-      destination: [ScienceCommon.dec_ref, GuideWindow.dec_ref]
+      destination: [WFIExposure.dec_ref, GuideWindow.dec_ref]
   roll_ref:
     title: "[deg] V3 roll angle at the ref point (N over E)"
     type: number
@@ -75,7 +75,7 @@ properties:
         origin: TBD
     archive_catalog:
       datatype: float
-      destination: [ScienceCommon.roll_ref, GuideWindow.roll_ref]
+      destination: [WFIExposure.roll_ref, GuideWindow.roll_ref]
   s_region:
     title: spatial extent of the observation
     type: string
@@ -85,7 +85,7 @@ properties:
         origin: TBD
     archive_catalog:
       datatype: nvarchar(max)
-      destination: [ScienceCommon.s_region, GuideWindow.s_region]
+      destination: [WFIExposure.s_region, GuideWindow.s_region]
 propertyOrder: [v2_ref, v3_ref, vparity, v3yangle, ra_ref, dec_ref, roll_ref, s_region]
 flowStyle: block
 required: [v2_ref, v3_ref, vparity, v3yangle, ra_ref, dec_ref, roll_ref, s_region]

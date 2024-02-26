@@ -19,7 +19,7 @@ properties:
       - type: "null"
     archive_catalog:
       datatype: float
-      destination: [ScienceCommon.conversion_megajanskys]
+      destination: [WFIExposure.conversion_megajanskys, WFIMosaic.conversion_megajanskys]
   conversion_microjanskys:
     title: Flux density (uJy/arcsec2) producing 1 cps
     anyOf:
@@ -33,7 +33,7 @@ properties:
       - type: "null"
     archive_catalog:
       datatype: float
-      destination: [ScienceCommon.conversion_microjanskys]
+      destination: [WFIExposure.conversion_microjanskys, WFIMosaic.conversion_microjanskys]
   pixelarea_steradians:
     title: Nominal pixel area in steradians
     anyOf:
@@ -47,7 +47,7 @@ properties:
       - type: "null"
     archive_catalog:
       datatype: float
-      destination: [ScienceCommon.pixelarea_steradians]
+      destination: [WFIExposure.pixelarea_steradians, WFIMosaic.pixelarea_steradians]
   pixelarea_arcsecsq:
     title: Nominal pixel area in arcsec^2
     anyOf:
@@ -61,7 +61,7 @@ properties:
       - type: "null"
     archive_catalog:
       datatype: float
-      destination: [ScienceCommon.pixelarea_arcsecsq]
+      destination: [WFIExposure.pixelarea_arcsecsq, WFIMosaic.pixelarea_arcsecsq]
   conversion_megajanskys_uncertainty:
     title: Uncertainty in flux density conversion to MJy/steradians
     anyOf:
@@ -75,7 +75,7 @@ properties:
       - type: "null"
     archive_catalog:
       datatype: float
-      destination: [ScienceCommon.conversion_megajanskys_uncertainty]
+      destination: [WFIExposure.conversion_megajanskys_uncertainty, WFIMosaic.conversion_megajanskys_uncertainty]
   conversion_microjanskys_uncertainty:
     title: Uncertainty in flux density conversion to uJy/arcsec2
     anyOf:
@@ -89,7 +89,7 @@ properties:
       - type: "null"
     archive_catalog:
       datatype: float
-      destination: [ScienceCommon.conversion_microjanskys_uncertainty]
+      destination: [WFIExposure.conversion_microjanskys_uncertainty, WFIMosaic.conversion_microjanskys_uncertainty]
 propertyOrder: [conversion_microjanskys, conversion_megajanskys,
                 pixelarea_steradians, pixelarea_arcsecsq,
                 conversion_megajanskys_uncertainty, conversion_microjanskys_uncertainty]

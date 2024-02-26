@@ -16,7 +16,7 @@ properties:
         origin: TBD
     archive_catalog:
       datatype: nvarchar(10)
-      destination: [ScienceCommon.engineering_quality, GuideWindow.engineering_quality]
+      destination: [WFIExposure.engineering_quality, GuideWindow.engineering_quality]
   pointing_engdb_quality:
     title: Quality of pointing information from EngDB
     type: string
@@ -27,7 +27,7 @@ properties:
         origin: TBD
     archive_catalog:
       datatype: nvarchar(10)
-      destination: [ScienceCommon.pointing_engdb_quality, GuideWindow.pointing_engdb_quality]
+      destination: [WFIExposure.pointing_engdb_quality, GuideWindow.pointing_engdb_quality]
   type:
     title: Visit type
     type: string
@@ -37,7 +37,7 @@ properties:
         origin: PSS:dms_visit.visit_type
     archive_catalog:
       datatype: nvarchar(30)
-      destination: [ScienceCommon.visit_type, GuideWindow.visit_type]
+      destination: [WFIExposure.visit_type, GuideWindow.visit_type]
   start_time:
     title: UTC visit start time
     tag: tag:stsci.edu:asdf/time/time-1.*
@@ -47,7 +47,7 @@ properties:
         origin: TBD
     archive_catalog:
       datatype: datetime2
-      destination: [ScienceCommon.visit_start_time, GuideWindow.visit_start_time]
+      destination: [WFIExposure.visit_start_time, GuideWindow.visit_start_time]
   end_time:
     title: UTC visit end time
     tag: tag:stsci.edu:asdf/time/time-1.*
@@ -57,7 +57,7 @@ properties:
         origin: TBD
     archive_catalog:
       datatype: datetime2
-      destination: [ScienceCommon.visit_end_time, GuideWindow.visit_end_time]
+      destination: [WFIExposure.visit_end_time, GuideWindow.visit_end_time]
   status:
     title: Status of a visit
     type: string
@@ -67,7 +67,7 @@ properties:
         origin: TBD
     archive_catalog:
       datatype: nvarchar(15)
-      destination: [ScienceCommon.visit_status, GuideWindow.visit_status]
+      destination: [WFIExposure.visit_status, GuideWindow.visit_status]
   total_exposures:
     title: Total number of planned exposures in visit
     type: integer
@@ -77,7 +77,7 @@ properties:
         origin: TBD
     archive_catalog:
       datatype: int
-      destination: [ScienceCommon.visit_total_exposures, GuideWindow.visit_total_exposures]
+      destination: [WFIExposure.visit_total_exposures, GuideWindow.visit_total_exposures]
   internal_target:
     title: At least one exposure in visit is internal
     type: boolean
@@ -87,7 +87,7 @@ properties:
         origin: TBD
     archive_catalog:
       datatype: nchar(1)
-      destination: [ScienceCommon.visit_internal_target, GuideWindow.visit_internal_target]
+      destination: [WFIExposure.visit_internal_target, GuideWindow.visit_internal_target]
   target_of_opportunity:
     title: Visit scheduled as target of opportunity
     type: boolean
@@ -97,7 +97,7 @@ properties:
         origin: TBD
     archive_catalog:
       datatype: nchar(1)
-      destination: [ScienceCommon.target_of_opportunity, GuideWindow.target_of_opportunity]
+      destination: [WFIExposure.target_of_opportunity, GuideWindow.target_of_opportunity]
 propertyOrder: [engineering_quality, pointing_engdb_quality, type,
            start_time, end_time, status, total_exposures, internal_target, target_of_opportunity]
 flowStyle: block

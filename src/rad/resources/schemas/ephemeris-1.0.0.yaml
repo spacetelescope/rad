@@ -15,7 +15,7 @@ properties:
         origin: TBD
     archive_catalog:
       datatype: float
-      destination: [ScienceCommon.earth_angle, GuideWindow.earth_angle]
+      destination: [WFIExposure.earth_angle, GuideWindow.earth_angle]
   moon_angle:
     title: "[radians] Moon Angle"
     type: number
@@ -25,7 +25,7 @@ properties:
         origin: TBD
     archive_catalog:
       datatype: float
-      destination: [ScienceCommon.moon_angle, GuideWindow.moon_angle]
+      destination: [WFIExposure.moon_angle, GuideWindow.moon_angle]
   ephemeris_reference_frame:
     title: Ephemeris reference frame
     type: string
@@ -35,7 +35,7 @@ properties:
         origin: TBD
     archive_catalog:
       datatype: nvarchar(10)
-      destination: [ScienceCommon.ephemeris_reference_frame, GuideWindow.ephemeris_reference_frame]
+      destination: [WFIExposure.ephemeris_reference_frame, GuideWindow.ephemeris_reference_frame]
   sun_angle:
     title: "[radians] Sun Angle"
     type: number
@@ -45,7 +45,7 @@ properties:
         origin: TBD
     archive_catalog:
       datatype: float
-      destination: [ScienceCommon.sun_angle, GuideWindow.sun_angle]
+      destination: [WFIExposure.sun_angle, GuideWindow.sun_angle]
   type:
     title: Type of ephemeris
     type: string
@@ -56,7 +56,7 @@ properties:
         origin: TBD
     archive_catalog:
       datatype: nvarchar(10)
-      destination: [ScienceCommon.ephemeris_type, GuideWindow.ephemeris_type]
+      destination: [WFIExposure.ephemeris_type, GuideWindow.ephemeris_type]
   time:
     title: UTC time of position and velocity vectors in ephemeris (MJD)
     type: number
@@ -66,7 +66,7 @@ properties:
         origin: Roman Science Data Processing (RSDP)
     archive_catalog:
       datatype: float
-      destination: [ScienceCommon.ephemeris_time, GuideWindow.ephemeris_time]
+      destination: [WFIExposure.ephemeris_time, GuideWindow.ephemeris_time]
   spatial_x:
     title: "[km] X spatial coordinate of Roman"
     type: number
@@ -76,7 +76,7 @@ properties:
         origin: Roman Science Data Processing (RSDP)
     archive_catalog:
       datatype: float
-      destination: [ScienceCommon.spatial_x, GuideWindow.spatial_x]
+      destination: [WFIExposure.spatial_x, GuideWindow.spatial_x]
   spatial_y:
     title: "[km] Y spatial coordinate of Roman"
     type: number
@@ -86,7 +86,7 @@ properties:
         origin: Roman Science Data Processing (RSDP)
     archive_catalog:
       datatype: float
-      destination: [ScienceCommon.spatial_y, GuideWindow.spatial_y]
+      destination: [WFIExposure.spatial_y, GuideWindow.spatial_y]
   spatial_z:
     title: "[km] Z spatial coordinate of Roman"
     type: number
@@ -96,7 +96,7 @@ properties:
         origin: Roman Science Data Processing (RSDP)
     archive_catalog:
       datatype: float
-      destination: [ScienceCommon.spatial_z, GuideWindow.spatial_z]
+      destination: [WFIExposure.spatial_z, GuideWindow.spatial_z]
   velocity_x:
     title: "[km/s] X component of Roman velocity"
     type: number
@@ -106,7 +106,7 @@ properties:
         origin: Roman Science Data Processing (RSDP)
     archive_catalog:
       datatype: float
-      destination: [ScienceCommon.velocity_x, GuideWindow.velocity_x]
+      destination: [WFIExposure.velocity_x, GuideWindow.velocity_x]
   velocity_y:
     title: "[km/s] Y component of Roman velocity"
     type: number
@@ -116,7 +116,7 @@ properties:
         origin: Roman Science Data Processing (RSDP)
     archive_catalog:
       datatype: float
-      destination: [ScienceCommon.velocity_y, GuideWindow.velocity_y]
+      destination: [WFIExposure.velocity_y, GuideWindow.velocity_y]
   velocity_z:
     title: "[km/s] Z component of Roman velocity"
     type: number
@@ -126,7 +126,7 @@ properties:
         origin: Roman Science Data Processing (RSDP)
     archive_catalog:
       datatype: float
-      destination: [ScienceCommon.velocity_z, GuideWindow.velocity_z]
+      destination: [WFIExposure.velocity_z, GuideWindow.velocity_z]
 propertyOrder: [earth_angle, moon_angle, sun_angle, type, time,
                 ephemeris_reference_frame, spatial_x, spatial_y,
                 spatial_z, velocity_x, velocity_y, velocity_z]
