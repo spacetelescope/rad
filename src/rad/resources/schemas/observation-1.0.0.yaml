@@ -24,7 +24,7 @@ properties:
         origin: TBD
     archive_catalog:
       datatype: nvarchar(28)
-      destination: [ScienceCommon.obs_id, GuideWindow.obs_id]
+      destination: [WFIExposure.obs_id, GuideWindow.obs_id]
   visit_id:
     title: Visit Identifier
     description: |
@@ -39,7 +39,7 @@ properties:
         origin: TBD
     archive_catalog:
       datatype: nvarchar(19)
-      destination: [ScienceCommon.visit_id, GuideWindow.visit_id]
+      destination: [WFIExposure.visit_id, GuideWindow.visit_id]
   program:
     title: Program Number
     description: |
@@ -52,7 +52,7 @@ properties:
         origin: TBD
     archive_catalog:
       datatype: int
-      destination: [ScienceCommon.program, GuideWindow.program]
+      destination: [WFIExposure.program, GuideWindow.program]
   execution_plan:
     title: Execution Plan
     description: |
@@ -65,7 +65,7 @@ properties:
         origin: TBD
     archive_catalog:
       datatype: smallint
-      destination: [ScienceCommon.execution_plan, GuideWindow.execution_plan]
+      destination: [WFIExposure.execution_plan, GuideWindow.execution_plan]
   pass:
     title: Pass Number
     description: |
@@ -78,7 +78,7 @@ properties:
         origin: TBD
     archive_catalog:
       datatype: smallint
-      destination: [ScienceCommon.pass, GuideWindow.pass]
+      destination: [WFIExposure.pass, GuideWindow.pass]
   segment:
     title: Segment Number
     description: |
@@ -91,7 +91,7 @@ properties:
         origin: TBD
     archive_catalog:
       datatype: smallint
-      destination: [ScienceCommon.segment, GuideWindow.segment]
+      destination: [WFIExposure.segment, GuideWindow.segment]
   observation:
     title: Observation Number
     description: |
@@ -104,7 +104,7 @@ properties:
         origin: TBD
     archive_catalog:
       datatype: smallint
-      destination: [ScienceCommon.observation, GuideWindow.observation]
+      destination: [WFIExposure.observation, GuideWindow.observation]
   visit:
     title: Visit Number
     description: |
@@ -117,7 +117,7 @@ properties:
         origin: TBD
     archive_catalog:
       datatype: smallint
-      destination: [ScienceCommon.visit, GuideWindow.visit]
+      destination: [WFIExposure.visit, GuideWindow.visit]
   visit_file_group:
     title: Visit File Group
     description: |
@@ -130,7 +130,7 @@ properties:
         origin: TBD
     archive_catalog:
       datatype: smallint
-      destination: [ScienceCommon.visit_file_group, GuideWindow.visit_file_group]
+      destination: [WFIExposure.visit_file_group, GuideWindow.visit_file_group]
   visit_file_sequence:
     title: Visit File Sequence
     description: |
@@ -143,7 +143,7 @@ properties:
         origin: TBD
     archive_catalog:
       datatype: tinyint
-      destination: [ScienceCommon.visit_file_sequence, GuideWindow.visit_file_sequence]
+      destination: [WFIExposure.visit_file_sequence, GuideWindow.visit_file_sequence]
   visit_file_activity:
     title: Visit File Activity
     description: |
@@ -156,7 +156,7 @@ properties:
         origin: TBD
     archive_catalog:
       datatype: nvarchar(2)
-      destination: [ScienceCommon.visit_file_activity, GuideWindow.visit_file_activity]
+      destination: [WFIExposure.visit_file_activity, GuideWindow.visit_file_activity]
   exposure:
     title: Exposure Number
     description: |
@@ -169,7 +169,7 @@ properties:
         origin: TBD
     archive_catalog:
       datatype: int
-      destination: [ScienceCommon.observation_exposure, GuideWindow.observation_exposure]
+      destination: [WFIExposure.observation_exposure, GuideWindow.observation_exposure]
   template:
     title: Observation Template
     description: |
@@ -181,7 +181,7 @@ properties:
         origin: PSS:dms_visit.template
     archive_catalog:
       datatype: nvarchar(50)
-      destination: [ScienceCommon.template, GuideWindow.template]
+      destination: [WFIExposure.template, GuideWindow.template]
   observation_label:
     title: Observation Label
     description: |
@@ -193,7 +193,7 @@ properties:
         origin: TBD
     archive_catalog:
       datatype: nvarchar(max)
-      destination: [ScienceCommon.observation_label, GuideWindow.observation_label]
+      destination: [WFIExposure.observation_label, GuideWindow.observation_label]
   survey:
     title: Observation Survey
     description: |
@@ -205,7 +205,7 @@ properties:
     enum: [HLS, EMS, SN, N/A]
     archive_catalog:
       datatype: nvarchar(15)
-      destination: [ScienceCommon.survey, GuideWindow.survey]
+      destination: [WFIExposure.survey, GuideWindow.survey]
 propertyOrder: [obs_id, visit_id, program,
            execution_plan, pass, observation, segment,
            visit, visit_file_group, visit_file_sequence,

@@ -19,7 +19,7 @@ properties:
         origin: TBD
     archive_catalog:
       datatype: float
-      destination: [ScienceCommon.ra_v1, GuideWindow.ra_v1]
+      destination: [WFIExposure.ra_v1, GuideWindow.ra_v1]
   dec_v1:
     title: Dec of Telescope V1 Axis (deg)
     description: |
@@ -32,7 +32,7 @@ properties:
         origin: TBD
     archive_catalog:
       datatype: float
-      destination: [ScienceCommon.dec_v1, GuideWindow.dec_v1]
+      destination: [WFIExposure.dec_v1, GuideWindow.dec_v1]
   pa_v3:
     title: Position Angle of Telescope V3 Axis (deg)
     description: |
@@ -45,7 +45,7 @@ properties:
         origin: TBD
     archive_catalog:
       datatype: float
-      destination: [ScienceCommon.pa_v3, GuideWindow.pa_v3]
+      destination: [WFIExposure.pa_v3, GuideWindow.pa_v3]
 propertyOrder: [ra_v1, dec_v1, pa_v3]
 flowStyle: block
 required: [ra_v1, dec_v1, pa_v3]

@@ -17,7 +17,7 @@ properties:
         origin: PSS:dms_target.target_name
     archive_catalog:
       datatype: nvarchar(100)
-      destination: [ScienceCommon.proposer_target_name, GuideWindow.proposer_target_name]
+      destination: [WFIExposure.proposer_target_name, GuideWindow.proposer_target_name]
   catalog_name:
     title: Target Name from Catalog
     description: |
@@ -29,7 +29,7 @@ properties:
         origin: PSS:dms_target.standard_target_name
     archive_catalog:
       datatype: nvarchar(256)
-      destination: [ScienceCommon.catalog_name, GuideWindow.catalog_name]
+      destination: [WFIExposure.catalog_name, GuideWindow.catalog_name]
   type:
     title: Target Type
     description: |
@@ -47,7 +47,7 @@ properties:
         origin: PSS:dms_target.target_type
     archive_catalog:
       datatype: nvarchar(10)
-      destination: [ScienceCommon.target_type, GuideWindow.target_type]
+      destination: [WFIExposure.target_type, GuideWindow.target_type]
   ra:
     title: Target RA (deg)
     description: |
@@ -60,7 +60,7 @@ properties:
         origin: PSS:dms_target.ra_computed
     archive_catalog:
       datatype: float
-      destination: [ScienceCommon.ra, GuideWindow.ra]
+      destination: [WFIExposure.ra, GuideWindow.ra]
   dec:
     title: Target Dec (deg)
     description: |
@@ -73,7 +73,7 @@ properties:
         origin: PSS:dms_target.dec_computed
     archive_catalog:
       datatype: float
-      destination: [ScienceCommon.dec, GuideWindow.dec]
+      destination: [WFIExposure.dec, GuideWindow.dec]
   ra_uncertainty:
     title: Target RA Uncertainty (deg)
     description: |
@@ -86,7 +86,7 @@ properties:
         origin: PSS:dms_target.ra_uncertainty_computed
     archive_catalog:
       datatype: float
-      destination: [ScienceCommon.ra_uncertainty, GuideWindow.ra_uncertainty]
+      destination: [WFIExposure.ra_uncertainty, GuideWindow.ra_uncertainty]
   dec_uncertainty:
     title: Target Dec Uncertainty (deg)
     description: |
@@ -99,7 +99,7 @@ properties:
         origin: PSS:dms_target.dec_uncertainty_computed
     archive_catalog:
       datatype: float
-      destination: [ScienceCommon.dec_uncertainty, GuideWindow.dec_uncertainty]
+      destination: [WFIExposure.dec_uncertainty, GuideWindow.dec_uncertainty]
   proper_motion_ra:
     title: Proper Motion of Target RA (deg)
     description: |
@@ -111,7 +111,7 @@ properties:
         origin: PSS:dms_target.ra_proper_motion
     archive_catalog:
       datatype: float
-      destination: [ScienceCommon.proper_motion_ra, GuideWindow.proper_motion_ra]
+      destination: [WFIExposure.proper_motion_ra, GuideWindow.proper_motion_ra]
   proper_motion_dec:
     title: Proper Motion of Target Dec (deg)
     description: |
@@ -123,7 +123,7 @@ properties:
         origin: PSS:dms_target.dec_proper_motion
     archive_catalog:
       datatype: float
-      destination: [ScienceCommon.proper_motion_dec, GuideWindow.proper_motion_dec]
+      destination: [WFIExposure.proper_motion_dec, GuideWindow.proper_motion_dec]
   proper_motion_epoch:
     title: Proper Motion Epoch of Target
     description: |
@@ -136,7 +136,7 @@ properties:
         origin: PSS:dms_visit.epoch
     archive_catalog:
       datatype: nvarchar(10)
-      destination: [ScienceCommon.proper_motion_epoch, GuideWindow.proper_motion_epoch]
+      destination: [WFIExposure.proper_motion_epoch, GuideWindow.proper_motion_epoch]
   proposer_ra:
     title: RA from Proposer (deg)
     description: |
@@ -150,7 +150,7 @@ properties:
         function: hms_to_degrees
     archive_catalog:
       datatype: float
-      destination: [ScienceCommon.proposer_ra, GuideWindow.proposer_ra]
+      destination: [WFIExposure.proposer_ra, GuideWindow.proposer_ra]
   proposer_dec:
     title: Dec from Proposer (deg)
     description: |
@@ -164,7 +164,7 @@ properties:
         function: hms_to_degrees
     archive_catalog:
       datatype: float
-      destination: [ScienceCommon.proposer_dec, GuideWindow.proposer_dec]
+      destination: [WFIExposure.proposer_dec, GuideWindow.proposer_dec]
   source_type:
     title: Source Type for Calibration
     description: |
@@ -180,7 +180,7 @@ properties:
         origin: TBD
     archive_catalog:
       datatype: nvarchar(8)
-      destination: [ScienceCommon.source_type, GuideWindow.source_type]
+      destination: [WFIExposure.source_type, GuideWindow.source_type]
 propertyOrder: [proposer_name, catalog_name, type, ra, dec, ra_uncertainty, dec_uncertainty,
            proper_motion_ra, proper_motion_dec, proper_motion_epoch,
            proposer_ra, proposer_dec, source_type]

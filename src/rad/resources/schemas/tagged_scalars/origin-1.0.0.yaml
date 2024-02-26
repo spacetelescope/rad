@@ -14,7 +14,7 @@ sdf:
     origin: TBD
 archive_catalog:
   datatype: nvarchar(15)
-  destination: [ScienceCommon.origin, GuideWindow.origin]
+  destination: [WFIExposure.origin, GuideWindow.origin]
 
 flowStyle: block
 ...
