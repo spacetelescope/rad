@@ -20,11 +20,11 @@ properties:
     exact_datatype: true
   meta:
     allOf:
-      - $ref: common-1.0.0
-      - type: object
-        properties:
-          filename:
-            type: string
+      - $ref: basic-1.0.0
+      - $ref: coordinates-1.0.0
+      - $ref: wfi_optical_element-1.0.0
+      - $ref: program-1.0.0
+      - $ref: visit-1.0.0
 
 required: [meta, data]
 flowStyle: block

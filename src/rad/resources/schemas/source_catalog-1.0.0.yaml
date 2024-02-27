@@ -16,14 +16,14 @@ properties:
        Photometry and astrometry computed in the Source Catalog Step.
     tag: tag:astropy.org:astropy/table/table-1.*
   meta:
-    anyOf:
-      - $ref: common-1.0.0
-      - type: object
-        properties:
-          segmentation_map:
-            type: string
+    allOf:
+      - $ref: basic-1.0.0
+      - $ref: coordinates-1.0.0
+      - $ref: wfi_optical_element-1.0.0
+      - $ref: program-1.0.0
+      - $ref: visit-1.0.0
 
-required: [source_catalog]
+required: [meta, source_catalog]
 flowStyle: block
-propertyOrder: [source_catalog]
+propertyOrder: [meta, source_catalog]
 ...
