@@ -198,6 +198,7 @@ properties:
     title: Data Quality Flag for Border Reference Pixels, on Top
     description: |
       Data quality flag for border reference pixels, on top.
+    tag: tag:stsci.edu:asdf/core/ndarray-1.*
     datatype: uint32
     exact_datatype: true
     ndim: 2
