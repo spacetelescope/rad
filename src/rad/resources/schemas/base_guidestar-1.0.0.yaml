@@ -1,0 +1,144 @@
+%YAML 1.1
+---
+$schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.0.0
+id: asdf://stsci.edu/datamodels/roman/schemas/base_guidestar-1.0.0
+
+title: Base Guide star window information
+type: object
+properties:
+  gw_id:
+    title: Guide Star Window Identifier
+    description: |
+      Identification of the Guide Star Window.
+    type: string
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    archive_catalog:
+      datatype: nvarchar(20)
+      destination: [WFIExposure.gw_id, GuideWindow.gw_id, WFICommon.gw_id]
+  gw_fgs_mode:
+    $ref: guidewindow_modes-1.0.0
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    archive_catalog:
+      datatype: nvarchar(18)
+      destination: [WFIExposure.gw_fgs_mode, GuideWindow.gw_fgs_mode, WFICommon.gw_fgs_mode]
+  data_start:
+    title: Guide Data Start Time (MJD)
+    description: |
+      Start time of the guide window data taken for this exposure as a Modified
+      Julian Date.
+    type: number
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    archive_catalog:
+      datatype: float
+      destination: [WFIExposure.data_start, GuideWindow.data_start, WFICommon.data_start]
+  data_end:
+    title: Guide Data End Time (MJD)
+    description: |
+      End time of the guide window data taken for this exposure as a Modified
+      Julian Date.
+    type: number
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    archive_catalog:
+      datatype: float
+      destination: [WFIExposure.data_end, GuideWindow.data_end, WFICommon.data_end]
+  gw_window_xstart:
+    title: Guide Window X Start Position (pixels)
+    description: |
+      Minimum X position in the science coordinate frame of all tracking guide
+      windows in this exposure measured in pixels.
+    type: integer
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: Science Data Formatting
+    archive_catalog:
+      datatype: int
+      destination: [WFIExposure.gw_window_xstart, WFICommon.gw_window_xstart]
+  gw_window_ystart:
+    title: Guide Window Y Start Position (pixels)
+    description: |
+      Minimum Y position in the science coordinate frame of all tracking guide
+      windows in this exposure measured in pixels.
+    type: integer
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: Science Data Formatting
+    archive_catalog:
+      datatype: int
+      destination: [WFIExposure.gw_window_ystart, WFICommon.gw_window_ystart]
+  gw_window_xstop:
+    title: Guide Window X Stop Position (pixels)
+    description: |
+      Maximum X position in the science coordinate frame of all tracking guide
+      windows in this exposure measured in pixels.
+    type: integer
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: Science Data Formatting
+    archive_catalog:
+      datatype: int
+      destination: [WFIExposure.gw_window_xstop, WFICommon.gw_window_xstop]
+  gw_window_ystop:
+    title: Guide Window Y Stop Position (pixels)
+    description: |
+      Maximum Y position in the science coordinate frame of all tracking guide
+      windows in this exposure measured in pixels
+    type: integer
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: Science Data Formatting
+    archive_catalog:
+      datatype: int
+      destination: [WFIExposure.gw_window_ystop, WFICommon.gw_window_ystop]
+  gw_window_xsize:
+    title: Guide Window Size in the X Direction (pixels)
+    description: |
+      Size of a single tracking guide window in this exposure measured along the
+      X axis in units of pixels.
+    type: integer
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: Science Data Formatting
+    archive_catalog:
+      datatype: int
+      destination: [WFIExposure.gw_window_xsize, WFICommon.gw_window_xsize]
+  gw_window_ysize:
+    title: Guide Window Size in the Y Direction (pixels)
+    description: |
+      Size of a single tracking guide window in this exposure measured along the
+      Y axis in units of pixels.
+    type: integer
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: Science Data Formatting
+    archive_catalog:
+      datatype: int
+      destination: [WFIExposure.gw_window_ysize, WFICommon.gw_window_ysize]
+
+propertyOrder: [gw_id, gw_fgs_mode,
+               data_start, data_end, gw_window_xstart,
+               gw_window_ystart, gw_window_xstop, gw_window_ystop, gw_window_xsize,
+               gw_window_ysize]
+flowStyle: block
+required: [gw_id, gw_fgs_mode,
+           data_start, data_end, gw_window_xstart,
+           gw_window_ystart, gw_window_xstop, gw_window_ystop, gw_window_xsize,
+           gw_window_ysize]
+...

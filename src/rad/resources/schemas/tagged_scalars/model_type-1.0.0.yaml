@@ -11,7 +11,7 @@ sdf:
     origin: TBD
 archive_catalog:
   datatype: nvarchar(50)
-  destination: [WFIExposure.model_type, GuideWindow.model_type]
+  destination: [WFIExposure.model_type, GuideWindow.model_type, WFICommon.model_type]
 
 flowStyle: block
 ...

@@ -8,9 +8,9 @@ title: |
   Exposure Information
 
 allOf:
-  - $ref: asdf://stsci.edu/datamodels/roman/schemas/ground_exposure-1.0.0
+  - $ref: asdf://stsci.edu/datamodels/roman/schemas/base_exposure-1.0.0
   - type: object
-  - properties:
+    properties:
       id:
         title: Visit Exposure ID
         description: |
@@ -23,29 +23,6 @@ allOf:
         archive_catalog:
           datatype: int
           destination: [WFIExposure.exposure_id, GuideWindow.exposure_id]
-
-      type:
-        $ref: exposure_type-1.0.0
-        sdf:
-          special_processing: VALUE_REQUIRED
-          source:
-            origin: TBD
-        archive_catalog:
-          datatype: nvarchar(25)
-          destination: [WFIExposure.exposure_type, GuideWindow.exposure_type]
-
-      start_time:
-        title: Exposure Start Time (UTC)
-        description: |
-          The UTC time at the beginning of the exposure.
-        tag: tag:stsci.edu:asdf/time/time-1.*
-        sdf:
-          special_processing: VALUE_REQUIRED
-          source:
-            origin: TBD
-        archive_catalog:
-          datatype: datetime2
-          destination: [WFIExposure.exposure_start_time, GuideWindow.exposure_start_time]
       mid_time:
         title: Exposure Mid Time (UTC)
         description: |
@@ -148,43 +125,6 @@ allOf:
         archive_catalog:
           datatype: float
           destination: [WFIExposure.exposure_end_time_tdb, GuideWindow.exposure_end_time_tdb]
-      ngroups:
-        title: Number of Resultants
-        description: |
-          The number of resultant frames in this exposure that were transmitted to
-          the ground. The number of integrations of WFI data is always 1.
-        type: integer
-        sdf:
-          special_processing: VALUE_REQUIRED
-          source:
-            origin: TBD
-        archive_catalog:
-          datatype: int
-          destination: [WFIExposure.exposure_ngroups, GuideWindow.exposure_ngroups]
-      nframes:
-        title: Number of Reads
-        description: |
-          This is the number of science frames that are combined to produce a resultant frame.
-        type: integer
-        sdf:
-          special_processing: VALUE_REQUIRED
-          source:
-            origin: TBD
-        archive_catalog:
-          datatype: int
-          destination: [WFIExposure.exposure_nframes, GuideWindow.exposure_nframes]
-      data_problem:
-        title: Data Problem
-        description: |
-          A flag indicating an issue with science telemetry.
-        type: boolean
-        sdf:
-          special_processing: VALUE_REQUIRED
-          source:
-            origin: TBD
-        archive_catalog:
-          datatype: nchar(1)
-          destination: [WFIExposure.exposure_data_problem, GuideWindow.exposure_data_problem]
       sca_number:
         title: SCA Number
         description: |
@@ -233,72 +173,6 @@ allOf:
         archive_catalog:
           datatype: float
           destination: [WFIExposure.elapsed_exposure_time, GuideWindow.elapsed_exposure_time]
-      frame_divisor:
-        title: Frame Divisor
-        description: |
-          The number of reads averaged to calculate a resultant. Value depends on
-          the readout pattern used from the MultiAccum table.
-        type: integer
-        sdf:
-          special_processing: VALUE_REQUIRED
-          source:
-            origin: TBD
-        archive_catalog:
-          datatype: int
-          destination: [WFIExposure.exposure_frame_divisor, GuideWindow.exposure_frame_divisor]
-      groupgap:
-        title: Number of Frames Dropped Between Resultants
-        description:
-          The number of reads that are dropped, or not used to calculate a
-          resultant.
-        type: integer
-        sdf:
-          special_processing: VALUE_REQUIRED
-          source:
-            origin: TBD
-        archive_catalog:
-          datatype: int
-          destination: [WFIExposure.exposure_groupgap, GuideWindow.exposure_groupgap]
-      frame_time:
-        title: Time Between Reads (s)
-        description: |
-          The amount of time elapsed between the end of one read and the beginning
-          of the next.
-        type: number
-        sdf:
-          special_processing: VALUE_REQUIRED
-          source:
-            origin: TBD
-        archive_catalog:
-          datatype: float
-          destination: [WFIExposure.exposure_frame_time, GuideWindow.exposure_frame_time]
-      group_time:
-        title: Time Between Resultants (s)
-        description: |
-          The time that is the sum of the reads that are used to construct a
-          resultant. This will depend on the MA table being used.
-        type: number
-        sdf:
-          special_processing: VALUE_REQUIRED
-          source:
-            origin: TBD
-        archive_catalog:
-          datatype: float
-          destination: [WFIExposure.exposure_group_time, GuideWindow.exposure_group_time]
-      exposure_time:
-        title: Exposure Time (s)
-        description: |
-          The time between the start of the first Reset/Read Science Frame of an
-          Exposure and the completion of the final Read Only Science Frame of that
-          Exposure.
-        type: number
-        sdf:
-          special_processing: VALUE_REQUIRED
-          source:
-            origin: TBD
-        archive_catalog:
-          datatype: float
-          destination: [WFIExposure.exposure_time, GuideWindow.exposure_time]
       effective_exposure_time:
         title: Effective Exposure Time (s)
         description: |
@@ -325,32 +199,6 @@ allOf:
         archive_catalog:
           datatype: float
           destination: [WFIExposure.exposure_duration, GuideWindow.exposure_duration]
-      ma_table_name:
-        title: MA Table Name
-        description: |
-          The name of the MultiAccum table used for this exposure, as defined in the
-          Project Reference Database.
-        type: string
-        sdf:
-          special_processing: VALUE_REQUIRED
-          source:
-            origin: TBD
-        archive_catalog:
-          datatype: nvarchar(50)
-          destination: [WFIExposure.ma_table_name, GuideWindow.ma_table_name]
-      ma_table_number:
-        title: MA Table Number
-        description: |
-          The number of the MultiAccum table used for this exposure. Used in
-          matching exposures to their corresponding calibration data.
-        type: integer
-        sdf:
-          special_processing: VALUE_REQUIRED
-          source:
-            origin: TBD
-        archive_catalog:
-          datatype: smallint
-          destination: [WFIExposure.ma_table_number, GuideWindow.ma_table_number]
       level0_compressed:
         title: Level 0 Compression
         description: |
@@ -364,23 +212,6 @@ allOf:
         archive_catalog:
           datatype: nchar(1)
           destination: [WFIExposure.exposure_level0_compressed, GuideWindow.exposure_level0_compressed]
-      read_pattern:
-        title: Read Pattern
-        description: |
-          Enumeration of detector reads to resultants making up the L1 data
-          downlinked from the observatory.
-        type: array
-        items:
-          type: array
-          items:
-            type: integer
-        sdf:
-          special_processing: VALUE_REQUIRED
-          source:
-            origin: TBD
-        archive_catalog:
-          datatype: nvarchar(3500)
-          destination: [WFIExposure.read_pattern, GuideWindow.read_pattern]
       truncated:
         title: Truncated MA Table
         description: |
@@ -393,27 +224,21 @@ allOf:
         archive_catalog:
           datatype: nchar(1)
           destination: [WFIExposure.exposure_truncated]
-    propertyOrder: [id, type,
-              start_time, mid_time, end_time,
+    required: [id,
+              mid_time, end_time,
               start_time_mjd, mid_time_mjd, end_time_mjd,
               start_time_tdb, mid_time_tdb, end_time_tdb,
-              ngroups, nframes, data_problem, sca_number,
+              sca_number,
               gain_factor, integration_time, elapsed_exposure_time,
-              frame_divisor, groupgap,
-              frame_time, group_time, exposure_time,
               effective_exposure_time, duration,
-              ma_table_name, ma_table_number, level0_compressed,
-              read_pattern, truncated]
-    required: [id, type,
-              start_time, mid_time, end_time,
+              level0_compressed]
+    propertyOrder: [id,
+              mid_time, end_time,
               start_time_mjd, mid_time_mjd, end_time_mjd,
               start_time_tdb, mid_time_tdb, end_time_tdb,
-              ngroups, nframes, data_problem, sca_number,
+              sca_number,
               gain_factor, integration_time, elapsed_exposure_time,
-              frame_divisor, groupgap,
-              frame_time, group_time, exposure_time,
               effective_exposure_time, duration,
-              ma_table_name, ma_table_number, level0_compressed,
-              read_pattern]
+              level0_compressed, truncated]
 flowStyle: block
 ...
