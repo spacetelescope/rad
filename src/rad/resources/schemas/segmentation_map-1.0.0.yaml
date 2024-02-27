@@ -19,7 +19,7 @@ properties:
     datatype: uint32
     exact_datatype: true
   meta:
-    anyOf:
+    allOf:
       - $ref: common-1.0.0
       - type: object
         properties:
