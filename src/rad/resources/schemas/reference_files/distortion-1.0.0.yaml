@@ -3,7 +3,7 @@
 $schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.0.0
 id: asdf://stsci.edu/datamodels/roman/schemas/reference_files/distortion-1.0.0
 
-title: Distortion reference schema
+title: Distortion Reference Schema
 
 datamodel_name: DistortionRefModel
 
@@ -18,17 +18,23 @@ properties:
             type: string
             enum: [DISTORTION]
           input_units:
-            title: Units of the detector coordinate inputs to this model.
+            title: Input Model Units
+            description: |
+              The pixel input units of the detector coordinate model.
             tag: tag:stsci.edu:asdf/unit/unit-1.*
             enum: ["pixel"]
           output_units:
-            title: Output units of V2/V3 coordinates after the model is applied.
+            title: Output Model Units
+            description: |
+              The V2/V3 coordinates output units after the model is applied.
             tag: tag:stsci.edu:asdf/unit/unit-1.*
             enum: ["arcsec"]
         required: [output_units, input_units]
       - $ref: ref_optical_element-1.0.0
   coordinate_distortion_transform:
-    title: Distortion transform as an instance of astropy.modeling.Model.
+    title: Distortion Transform Model
+    description: |
+      The astropy.modeling.Model instance of of the distortion transform model.
     type: object
 required: [meta, coordinate_distortion_transform]
 flowStyle: block

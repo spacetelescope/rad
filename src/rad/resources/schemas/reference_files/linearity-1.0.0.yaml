@@ -3,7 +3,7 @@
 $schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.0.0
 id: asdf://stsci.edu/datamodels/roman/schemas/reference_files/linearity-1.0.0
 
-title: Linearity correction  reference schema
+title: Linearity Correction Reference Schema
 
 datamodel_name: LinearityRefModel
 
@@ -18,28 +18,34 @@ properties:
             type: string
             enum: [LINEARITY]
           input_units:
-            title: Units of the input to the linearity polynomial.
+            title: Units of the Input to the Linearity Polynomial
+            description: |
+              Units of the input to the linearity polynomial.
             tag: tag:astropy.org:astropy/units/unit-1.*
             enum: ["DN"]
           output_units:
-            title: Units of the output of the linearity polynomial.
+            title: Units of the Output of the Linearity Polynomial
+            description: |
+              Units of the output to the linearity polynomial.
             tag: tag:astropy.org:astropy/units/unit-1.*
             enum: ["DN"]
         required: [output_units, input_units]
   coeffs:
-    title: Linearity coefficients
+    title: Linearity Coefficients
     description: |
-      Contains the coefficients of a polynomial to correct pixel
-      values for classic non-linearity. Both the input to and
-      output from the polynomial are in units of DN. The coefficients
-      have units that contain various powers of DN.
+      Contains the coefficients of a polynomial to correct the non-linear
+      response of each pixel to a linear signal. Both the input to and output
+      from the polynomial are in units of DN. The coefficients have units that
+      contain various powers of DN.
     tag: tag:stsci.edu:asdf/core/ndarray-1.*
     datatype: float32
     exact_datatype: true
     # Dimensions: numcoeffs, ysize, xsize
     ndim: 3
   dq:
-    title: 2-D data quality array for all planes
+    title: Two Dimensional Data Quality Array for All Resultants
+    description: |
+      Two Dimensional data Quality Array for all Resultants
     tag: tag:stsci.edu:asdf/core/ndarray-1.*
     datatype: uint32
     exact_datatype: true

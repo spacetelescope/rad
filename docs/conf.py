@@ -29,7 +29,6 @@ from pathlib import Path
 
 # Ensure documentation examples are deterministically random.
 import numpy
-import stsci_rtd_theme
 
 if sys.version_info < (3, 11):
     import tomli as tomllib
@@ -106,8 +105,7 @@ version = ".".join(release.split(".")[:2])
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes. To override the custom theme, set this to the
 # name of a builtin theme or the name of a custom theme in html_theme_path.
-html_theme = "stsci_rtd_theme"
-html_theme_path = [stsci_rtd_theme.get_html_theme_path()]
+html_theme = "sphinx_rtd_theme"
 
 html_static_path = ["_static"]
 
@@ -161,3 +159,6 @@ def setup(app):
 asdf_schema_path = "../src/rad/resources"
 # This is the prefix common to all schema IDs in this repository
 asdf_schema_standard_prefix = "schemas"
+asdf_schema_reference_mappings = [
+    ("asdf://stsci.edu/datamodels/roman/tags/", "https://rad.readthedocs.io/en/latest/generated/schemas/"),
+]

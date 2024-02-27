@@ -27,11 +27,11 @@ docs = [
     'sphinx',
     'sphinx-asdf>=0.1.3',
     'sphinx-astropy',
+    'sphinx-rtd-theme',
     'astropy>=5.0.4',
     'graphviz',
     'matplotlib',
     'docutils',
-    'stsci-rtd-theme',
     'tomli; python_version <"3.11"',
     'importlib-metadata',
 ]

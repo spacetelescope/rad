@@ -3,11 +3,15 @@
 $schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.0.0
 id: asdf://stsci.edu/datamodels/roman/schemas/pointing-1.0.0
 
-title: Spacecraft pointing information
+title: Spacecraft Pointing Information
 type: object
 properties:
   ra_v1:
-    title: "[deg] RA of telescope V1 axis"
+    title: RA of Telescope V1 Axis (deg)
+    description: |
+      The right ascension (RA) coordinate, in degrees, of the V1 Axis that is
+      used along with dec_v1 and pa_v3 to describe where the telescope is
+      pointing.
     type: number
     sdf:
       special_processing: VALUE_REQUIRED
@@ -15,9 +19,12 @@ properties:
         origin: TBD
     archive_catalog:
       datatype: float
-      destination: [ScienceCommon.ra_v1, GuideWindow.ra_v1]
+      destination: [WFIExposure.ra_v1, GuideWindow.ra_v1]
   dec_v1:
-    title: "[deg] Dec of telescope V1 axis"
+    title: Dec of Telescope V1 Axis (deg)
+    description: |
+      The declination (Dec) coordinate, in degrees, of the V1 Axis that is used
+      along with ra_v1 and pa_v3 to describe where the telescope is pointing.
     type: number
     sdf:
       special_processing: VALUE_REQUIRED
@@ -25,9 +32,12 @@ properties:
         origin: TBD
     archive_catalog:
       datatype: float
-      destination: [ScienceCommon.dec_v1, GuideWindow.dec_v1]
+      destination: [WFIExposure.dec_v1, GuideWindow.dec_v1]
   pa_v3:
-    title: "[deg] Position angle of telescope V3 axis"
+    title: Position Angle of Telescope V3 Axis (deg)
+    description: |
+      The position angle (PA), in degrees, of the V3 Axis that is used along
+      with ra_v1 and dec_v1 to describe where the telescope is pointing.
     type: number
     sdf:
       special_processing: VALUE_REQUIRED
@@ -35,7 +45,7 @@ properties:
         origin: TBD
     archive_catalog:
       datatype: float
-      destination: [ScienceCommon.pa_v3, GuideWindow.pa_v3]
+      destination: [WFIExposure.pa_v3, GuideWindow.pa_v3]
 propertyOrder: [ra_v1, dec_v1, pa_v3]
 flowStyle: block
 required: [ra_v1, dec_v1, pa_v3]

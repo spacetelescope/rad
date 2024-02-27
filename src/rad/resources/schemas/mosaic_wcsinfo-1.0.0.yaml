@@ -16,7 +16,7 @@ properties:
         origin: TBD
     archive_catalog:
       datatype: float
-      destination: [ScienceCommon.ra_ref]
+      destination: [WFIMosaic.ra_ref]
   dec_ref:
     title: "[deg] Projection center Dec"
     type: number
@@ -26,7 +26,7 @@ properties:
         origin: TBD
     archive_catalog:
       datatype: float
-      destination: [ScienceCommon.dec_ref]
+      destination: [WFIMosaic.dec_ref]
   x_ref:
     title: Pixel number in mosaic corresponding to projection center ra/dec
     type: number
@@ -36,7 +36,7 @@ properties:
         origin: TBD
     archive_catalog:
       datatype: float
-      destination: [ScienceCommon.x_ref]
+      destination: [WFIMosaic.x_ref]
   y_ref:
     title: Pixel number in mosaic corresponding to projection center ra/dec
     type: number
@@ -46,7 +46,7 @@ properties:
         origin: TBD
     archive_catalog:
       datatype: float
-      destination: [ScienceCommon.y_ref]
+      destination: [WFIMosaic.y_ref]
   rotation_matrix:
     title: 2x2 rotation matrix
     type: array
@@ -60,7 +60,7 @@ properties:
         origin: TBD
     archive_catalog:
       datatype: nvarchar(3500)
-      destination: [ScienceCommon.rotation_matrix]
+      destination: [WFIMosaic.rotation_matrix]
   pixel_scale:
     title: Pixel scale at projection center
     type: number
@@ -70,7 +70,7 @@ properties:
         origin: TBD
     archive_catalog:
       datatype: float
-      destination: [ScienceCommon.pixel_scale]
+      destination: [WFIMosaic.pixel_scale]
   pixel_scale_local:
     title: Pixel scale at image center
     type: number
@@ -80,7 +80,7 @@ properties:
         origin: TBD
     archive_catalog:
       datatype: float
-      destination: [ScienceCommon.pixel_scale_local]
+      destination: [WFIMosaic.pixel_scale_local]
   projection:
     title: Projection type and order
     type: string
@@ -91,7 +91,7 @@ properties:
         origin: TBD
     archive_catalog:
       datatype: nvarchar(50)
-      destination: [ScienceCommon.projection]
+      destination: [WFIMosaic.projection]
   s_region:
     title: spatial extent of the observation
     type: string
@@ -101,7 +101,7 @@ properties:
         origin: TBD
     archive_catalog:
       datatype: nvarchar(max)
-      destination: [ScienceCommon.s_region]
+      destination: [WFIMosaic.s_region]
   pixel_shape:
     title: Shape of image (nx, ny)
     type: array
@@ -113,7 +113,7 @@ properties:
         origin: TBD
     archive_catalog:
       datatype: nvarchar(50)
-      destination: [ScienceCommon.pixel_shape]
+      destination: [WFIMosaic.pixel_shape]
   ra_center:
     title: "[deg] Mosaic center RA"
     type: number
@@ -123,7 +123,7 @@ properties:
         origin: TBD
     archive_catalog:
       datatype: float
-      destination: [ScienceCommon.ra_center]
+      destination: [WFIMosaic.ra_center]
   dec_center:
     title: "[deg] Mosaic center Dec"
     type: number
@@ -133,7 +133,7 @@ properties:
         origin: TBD
     archive_catalog:
       datatype: float
-      destination: [ScienceCommon.dec_center]
+      destination: [WFIMosaic.dec_center]
   ra_corn1:
     title: "[deg] Mosaic corner 1 RA"
     type: number
@@ -143,7 +143,7 @@ properties:
         origin: TBD
     archive_catalog:
       datatype: float
-      destination: [ScienceCommon.ra_corn1]
+      destination: [WFIMosaic.ra_corn1]
   dec_corn1:
     title: "[deg] Mosaic corner 1 Dec"
     type: number
@@ -153,7 +153,7 @@ properties:
         origin: TBD
     archive_catalog:
       datatype: float
-      destination: [ScienceCommon.dec_corn1]
+      destination: [WFIMosaic.dec_corn1]
   ra_corn2:
     title: "[deg] Mosaic corner 2 RA"
     type: number
@@ -163,7 +163,7 @@ properties:
         origin: TBD
     archive_catalog:
       datatype: float
-      destination: [ScienceCommon.ra_corn2]
+      destination: [WFIMosaic.ra_corn2]
   dec_corn2:
     title: "[deg] Mosaic corner 2 Dec"
     type: number
@@ -173,7 +173,7 @@ properties:
         origin: TBD
     archive_catalog:
       datatype: float
-      destination: [ScienceCommon.dec_corn2]
+      destination: [WFIMosaic.dec_corn2]
   ra_corn3:
     title: "[deg] Mosaic corner 3 RA"
     type: number
@@ -183,7 +183,7 @@ properties:
         origin: TBD
     archive_catalog:
       datatype: float
-      destination: [ScienceCommon.ra_corn3]
+      destination: [WFIMosaic.ra_corn3]
   dec_corn3:
     title: "[deg] Mosaic corner 3 Dec"
     type: number
@@ -193,7 +193,7 @@ properties:
         origin: TBD
     archive_catalog:
       datatype: float
-      destination: [ScienceCommon.dec_corn3]
+      destination: [WFIMosaic.dec_corn3]
   ra_corn4:
     title: "[deg] Mosaic corner 4 RA"
     type: number
@@ -203,7 +203,7 @@ properties:
         origin: TBD
     archive_catalog:
       datatype: float
-      destination: [ScienceCommon.ra_corn4]
+      destination: [WFIMosaic.ra_corn4]
   dec_corn4:
     title: "[deg] Mosaic corner 4 Dec"
     type: number
@@ -213,7 +213,7 @@ properties:
         origin: TBD
     archive_catalog:
       datatype: float
-      destination: [ScienceCommon.dec_corn4]
+      destination: [WFIMosaic.dec_corn4]
   orientat_local:
     title: Angle between north and the y axis of the projection at the mosaic
       center, turning positive in the direction of increasing right ascenscion.
@@ -224,7 +224,7 @@ properties:
         origin: TBD
     archive_catalog:
       datatype: float
-      destination: [ScienceCommon.orientat_local]
+      destination: [WFIMosaic.orientat_local]
   orientat:
     title: Angle between north and the y axis of the projection at the projection
       center, turning positive in the direction of increasing right ascenscion.
@@ -235,7 +235,7 @@ properties:
         origin: TBD
     archive_catalog:
       datatype: float
-      destination: [ScienceCommon.orientat]
+      destination: [WFIMosaic.orientat]
 propertyOrder: [ ra_ref, dec_ref, x_ref, y_ref, rotation_matrix, pixel_scale,
                  pixel_scale_local, projection, s_region, pixel_shape, ra_center,
                  dec_center, ra_corn1, dec_corn1, ra_corn2, dec_corn2, ra_corn3,

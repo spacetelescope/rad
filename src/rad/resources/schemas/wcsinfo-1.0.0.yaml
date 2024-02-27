@@ -3,11 +3,14 @@
 $schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.0.0
 id: asdf://stsci.edu/datamodels/roman/schemas/wcsinfo-1.0.0
 
-title: WCS parameters
+title: World Coordinate System (WCS) Parameters
 type: object
 properties:
   v2_ref:
-    title: "[arcsec] Telescope v2 coordinate of the reference point"
+    title: Reference Position V2 Coordinate (arcsec)
+    description: |
+      Coordinate of the reference position along the telescope V2 axis in units
+      of arcseconds.
     type: number
     sdf:
       special_processing: VALUE_REQUIRED
@@ -15,9 +18,12 @@ properties:
         origin: TBD
     archive_catalog:
       datatype: float
-      destination: [ScienceCommon.v2_ref, GuideWindow.v2_ref]
+      destination: [WFIExposure.v2_ref, GuideWindow.v2_ref]
   v3_ref:
-    title: "[arcsec] Telescope v3 coordinate of the reference point"
+    title: Reference Position V3 Coordinate (arcsec)
+    description: |
+      Coordinate of the reference position along the telescope V3 axis in units
+      of arcseconds.
     type: number
     sdf:
       special_processing: VALUE_REQUIRED
@@ -25,9 +31,13 @@ properties:
         origin: TBD
     archive_catalog:
       datatype: float
-      destination: [ScienceCommon.v3_ref, GuideWindow.v3_ref]
+      destination: [WFIExposure.v3_ref, GuideWindow.v3_ref]
   vparity:
-    title: Relative sense of rotation between Ideal xy and V2V3
+    title: Relative Rotation Between Ideal and Telescope Axes
+    description: |
+      Relative sense of rotation between the ideal and telescope coordinate
+      systems. The value may be either 1 or -1. See documents STScI-JWST-001550
+      and STScI-Roman-000143 for more information.
     type: integer
     sdf:
       special_processing: VALUE_REQUIRED
@@ -35,9 +45,12 @@ properties:
         origin: TBD
     archive_catalog:
       datatype: int
-      destination: [ScienceCommon.vparity, GuideWindow.vparity]
+      destination: [WFIExposure.vparity, GuideWindow.vparity]
   v3yangle:
-    title: "[deg] Angle from V3 axis to Ideal y axis"
+    title: Angle Between the V3 and Ideal Y Axes (deg)
+    description: |
+      Angle between the telescope V3 axis and the ideal coordinate frame y-axis
+      in units of degrees.
     type: number
     sdf:
       special_processing: VALUE_REQUIRED
@@ -45,9 +58,11 @@ properties:
         origin: TBD
     archive_catalog:
       datatype: float
-      destination: [ScienceCommon.v3yangle, GuideWindow.v3yangle]
+      destination: [WFIExposure.v3yangle, GuideWindow.v3yangle]
   ra_ref:
-    title: "[deg] Right ascension of the reference point"
+    title: Right Ascension of the Reference Position (deg)
+    description: |
+      Right ascension of the reference position on the sky in units of degrees.
     type: number
     sdf:
       special_processing: VALUE_REQUIRED
@@ -55,9 +70,11 @@ properties:
         origin: TBD
     archive_catalog:
       datatype: float
-      destination: [ScienceCommon.ra_ref, GuideWindow.ra_ref]
+      destination: [WFIExposure.ra_ref, GuideWindow.ra_ref]
   dec_ref:
-    title: "[deg] Declination of the reference point"
+    title: Declination of the Reference Position (deg)
+    description: |
+      Declination of the reference position on the sky in units of degrees.
     type: number
     sdf:
       special_processing: VALUE_REQUIRED
@@ -65,9 +82,12 @@ properties:
         origin: TBD
     archive_catalog:
       datatype: float
-      destination: [ScienceCommon.dec_ref, GuideWindow.dec_ref]
+      destination: [WFIExposure.dec_ref, GuideWindow.dec_ref]
   roll_ref:
-    title: "[deg] V3 roll angle at the ref point (N over E)"
+    title: V3 Position Angle at the Reference Position
+    description: |
+      Position angle of the V3 axis at the reference position measured from
+      North to East.
     type: number
     sdf:
       special_processing: VALUE_REQUIRED
@@ -75,9 +95,13 @@ properties:
         origin: TBD
     archive_catalog:
       datatype: float
-      destination: [ScienceCommon.roll_ref, GuideWindow.roll_ref]
+      destination: [WFIExposure.roll_ref, GuideWindow.roll_ref]
   s_region:
-    title: spatial extent of the observation
+    title: Spatial Extent of the Observation
+    description: |
+      The region of the sky enclosed by the observation footprint. This is given
+      as a polygon stored as a string with the vertices defined by a list of
+      right ascension and declination pairs in units of degrees.
     type: string
     sdf:
       special_processing: VALUE_REQUIRED
@@ -85,7 +109,7 @@ properties:
         origin: TBD
     archive_catalog:
       datatype: nvarchar(max)
-      destination: [ScienceCommon.s_region, GuideWindow.s_region]
+      destination: [WFIExposure.s_region, GuideWindow.s_region]
 propertyOrder: [v2_ref, v3_ref, vparity, v3yangle, ra_ref, dec_ref, roll_ref, s_region]
 flowStyle: block
 required: [v2_ref, v3_ref, vparity, v3yangle, ra_ref, dec_ref, roll_ref, s_region]

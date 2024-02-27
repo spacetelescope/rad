@@ -12,34 +12,49 @@ allOf:
   properties:
     # Meta Objects
     aperture:
+      title: Aperture Information
       tag: asdf://stsci.edu/datamodels/roman/tags/aperture-1.0.0
     cal_step:
+      title: Tracker of Calibration Pipeline Steps
       tag: asdf://stsci.edu/datamodels/roman/tags/cal_step-1.0.0
     coordinates:
+      title: Name Of The Coordinate Reference Frame
       tag: asdf://stsci.edu/datamodels/roman/tags/coordinates-1.0.0
     ephemeris:
+      title: Ephemeris Data Information
       tag: asdf://stsci.edu/datamodels/roman/tags/ephemeris-1.0.0
     exposure:
+      title: Exposure Information
       tag: asdf://stsci.edu/datamodels/roman/tags/exposure-1.0.0
     guidestar:
+      title: Guide Star Window Information
       tag: asdf://stsci.edu/datamodels/roman/tags/guidestar-1.0.0
     instrument:
+      title: WFI Observing Configuration
       tag: asdf://stsci.edu/datamodels/roman/tags/wfi_mode-1.0.0
     observation:
+      title: Observation Identifiers
       tag: asdf://stsci.edu/datamodels/roman/tags/observation-1.0.0
     pointing:
+      title: Spacecraft Pointing Information
       tag: asdf://stsci.edu/datamodels/roman/tags/pointing-1.0.0
     program:
+      title: Program Information
       tag: asdf://stsci.edu/datamodels/roman/tags/program-1.0.0
     ref_file:
+      title: Reference File Information
       tag: asdf://stsci.edu/datamodels/roman/tags/ref_file-1.0.0
     target:
+      title: Target Information
       tag: asdf://stsci.edu/datamodels/roman/tags/target-1.0.0
     velocity_aberration:
+      title: Velocity Aberration Correction Information
       tag: asdf://stsci.edu/datamodels/roman/tags/velocity_aberration-1.0.0
     visit:
+      title: Visit Information
       tag: asdf://stsci.edu/datamodels/roman/tags/visit-1.0.0
     wcsinfo:
+      title: World Coordinate System (WCS) Parameters
       tag: asdf://stsci.edu/datamodels/roman/tags/wcsinfo-1.0.0
   required: [aperture, cal_step, coordinates, ephemeris, exposure, guidestar,
              instrument, observation, pointing, program, ref_file,

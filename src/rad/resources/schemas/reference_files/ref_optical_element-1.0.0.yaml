@@ -3,7 +3,7 @@
 $schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.0.0
 id: asdf://stsci.edu/datamodels/roman/schemas/reference_files/ref_optical_element-1.0.0
 
-title: Name of the filter element used
+title: Optical Element Reference Schema
 
 type: object
 properties:
@@ -11,6 +11,9 @@ properties:
     type: object
     properties:
       optical_element:
+        title: Optical Element
+        description: |
+          The optical element filter name.
         $ref: ../wfi_optical_element-1.0.0
     required: [optical_element]
 required: [instrument]

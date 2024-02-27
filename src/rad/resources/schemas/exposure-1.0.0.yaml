@@ -5,15 +5,16 @@ id: asdf://stsci.edu/datamodels/roman/schemas/exposure-1.0.0
 
 
 title: |
-  Exposure information
+  Exposure Information
 
 allOf:
   - $ref: asdf://stsci.edu/datamodels/roman/schemas/ground_exposure-1.0.0
   - type: object
-    properties:
+  - properties:
       id:
-        title: Exposure id number within visit
-        description: The exposure number for a given visit id
+        title: Visit Exposure ID
+        description: |
+          The matching exposure ID for a given visit ID.
         type: integer
         sdf:
           special_processing: VALUE_REQUIRED
@@ -21,12 +22,34 @@ allOf:
             origin: TBD
         archive_catalog:
           datatype: int
-          destination: [ScienceCommon.exposure_id, GuideWindow.exposure_id]
+          destination: [WFIExposure.exposure_id, GuideWindow.exposure_id]
+
+      type:
+        $ref: exposure_type-1.0.0
+        sdf:
+          special_processing: VALUE_REQUIRED
+          source:
+            origin: TBD
+        archive_catalog:
+          datatype: nvarchar(25)
+          destination: [WFIExposure.exposure_type, GuideWindow.exposure_type]
+
+      start_time:
+        title: Exposure Start Time (UTC)
+        description: |
+          The UTC time at the beginning of the exposure.
+        tag: tag:stsci.edu:asdf/time/time-1.*
+        sdf:
+          special_processing: VALUE_REQUIRED
+          source:
+            origin: TBD
+        archive_catalog:
+          datatype: datetime2
+          destination: [WFIExposure.exposure_start_time, GuideWindow.exposure_start_time]
       mid_time:
-        title: UTC exposure mid time
+        title: Exposure Mid Time (UTC)
         description: |
-            This is a python date-time object that records the
-            time at the middle of the exposure in UTC.
+          The UTC time at the midpoint of the exposure.
         tag: tag:stsci.edu:asdf/time/time-1.*
         sdf:
           special_processing: VALUE_REQUIRED
@@ -34,12 +57,11 @@ allOf:
             origin: TBD
         archive_catalog:
           datatype: datetime2
-          destination: [ScienceCommon.exposure_mid_time, GuideWindow.exposure_mid_time]
+          destination: [WFIExposure.exposure_mid_time, GuideWindow.exposure_mid_time]
       end_time:
-        title: UTC exposure end time
+        title: Exposure End Time (UTC)
         description: |
-            This is a python date-time object that records the
-            time at the end of the exposure in UTC.
+          The UTC time at the end of the exposure.
         tag: tag:stsci.edu:asdf/time/time-1.*
         sdf:
           special_processing: VALUE_REQUIRED
@@ -47,13 +69,12 @@ allOf:
             origin: TBD
         archive_catalog:
           datatype: datetime2
-          destination: [ScienceCommon.exposure_end_time, GuideWindow.exposure_end_time]
+          destination: [WFIExposure.exposure_end_time, GuideWindow.exposure_end_time]
       start_time_mjd:
-        title: "[d] exposure start time in MJD"
+        title: MJD Start Time (d)
         description: |
-            This records the time at the start of the exposure using the
-            Modified Julian Date (MJD). This is used in the archive catalog for
-            multi-mission matching.
+          The date, in MJD, at the beginning of this exposure. Used in the archive
+          catalog for multi-mission matching.
         type: number
         sdf:
           special_processing: VALUE_REQUIRED
@@ -61,13 +82,12 @@ allOf:
             origin: TBD
         archive_catalog:
           datatype: float
-          destination: [ScienceCommon.exposure_start_time_mjd, GuideWindow.exposure_start_time_mjd]
+          destination: [WFIExposure.exposure_start_time_mjd, GuideWindow.exposure_start_time_mjd]
       mid_time_mjd:
-        title: "[d] exposure mid time in MJD"
+        title: MJD Mid Time (d)
         description: |
-            This records the time at the midpoint of the exposure using the
-            Modified Julian Date  (MJD). This is used in the archive catalog for
-            multi-mission matching.
+          The date, in MJD, at the midpoint of this exposure. Used in the archive
+          catalog for multi-mission matching.
         type: number
         sdf:
           special_processing: VALUE_REQUIRED
@@ -75,13 +95,12 @@ allOf:
             origin: TBD
         archive_catalog:
           datatype: float
-          destination: [ScienceCommon.exposure_mid_time_mjd, GuideWindow.exposure_mid_time_mjd]
+          destination: [WFIExposure.exposure_mid_time_mjd, GuideWindow.exposure_mid_time_mjd]
       end_time_mjd:
-        title: "[d] exposure end time in MJD"
+        title: MJD End Time (d)
         description: |
-            This records the time at the end of the exposure using the
-            Modified Julian Date  (MJD). This is used in the archive catalog for
-            multi-mission matching.
+          The date, in MJD, at the end of this exposure. Used in the archive catalog
+          for multi-mission matching.
         type: number
         sdf:
           special_processing: VALUE_REQUIRED
@@ -89,14 +108,12 @@ allOf:
             origin: TBD
         archive_catalog:
           datatype: float
-          destination: [ScienceCommon.exposure_end_time_mjd, GuideWindow.exposure_end_time_mjd]
+          destination: [WFIExposure.exposure_end_time_mjd, GuideWindow.exposure_end_time_mjd]
       start_time_tdb:
-        title: "[d] TDB time of exposure start in MJD"
+        title: TDB Start Time (d)
         description: |
-            This records the time at the start of the exposure using
-            the Modified Julian Date for the Barycentric Dynamical Time system
-            (TDB, Temps Dynamique Barycentrique), a relativistic coordinate
-            time scale.
+          The date, in TDB (Barycentric Dynamical Time), at the beginning of this
+          exposure.
         type: number
         sdf:
           special_processing: VALUE_REQUIRED
@@ -104,14 +121,12 @@ allOf:
             origin: TBD
         archive_catalog:
           datatype: float
-          destination: [ScienceCommon.exposure_start_time_tdb, GuideWindow.exposure_start_time_tdb]
+          destination: [WFIExposure.exposure_start_time_tdb, GuideWindow.exposure_start_time_tdb]
       mid_time_tdb:
-        title: "[d] TDB time of exposure mid in MJD"
+        title: TDB Mid Time (d)
         description: |
-            This records the time at the midpoint of the exposure using
-            the Modified Julian Date for the Barycentric Dynamical Time system
-            (TDB, Temps Dynamique Barycentrique), a relativistic coordinate
-            time scale.
+          The date, in TDB (Barycentric Dynamical Time), at the midpoint of this
+          exposure.
         type: number
         sdf:
           special_processing: VALUE_REQUIRED
@@ -119,14 +134,12 @@ allOf:
             origin: TBD
         archive_catalog:
           datatype: float
-          destination: [ScienceCommon.exposure_mid_time_tdb, GuideWindow.exposure_mid_time_tdb]
+          destination: [WFIExposure.exposure_mid_time_tdb, GuideWindow.exposure_mid_time_tdb]
       end_time_tdb:
-        title: "[d] TDB time of exposure end in MJD"
+        title: TDB End Time (d)
         description: |
-            This records the time at the end of the exposure using
-            the Modified Julian Date for the Barycentric Dynamical Time system
-            (TDB, Temps Dynamique Barycentrique), a relativistic coordinate
-            time scale.
+          The date, in TDB (Barycentric Dynamical Time), at the end of this
+          exposure.
         type: number
         sdf:
           special_processing: VALUE_REQUIRED
@@ -134,9 +147,12 @@ allOf:
             origin: TBD
         archive_catalog:
           datatype: float
-          destination: [ScienceCommon.exposure_end_time_tdb, GuideWindow.exposure_end_time_tdb]
-      sca_number:
-        title: Sensor Chip Assembly number
+          destination: [WFIExposure.exposure_end_time_tdb, GuideWindow.exposure_end_time_tdb]
+      ngroups:
+        title: Number of Resultants
+        description: |
+          The number of resultant frames in this exposure that were transmitted to
+          the ground. The number of integrations of WFI data is always 1.
         type: integer
         sdf:
           special_processing: VALUE_REQUIRED
@@ -144,9 +160,46 @@ allOf:
             origin: TBD
         archive_catalog:
           datatype: int
-          destination: [ScienceCommon.exposure_sca_number, GuideWindow.exposure_sca_number]
+          destination: [WFIExposure.exposure_ngroups, GuideWindow.exposure_ngroups]
+      nframes:
+        title: Number of Reads
+        description: |
+          This is the number of science frames that are combined to produce a resultant frame.
+        type: integer
+        sdf:
+          special_processing: VALUE_REQUIRED
+          source:
+            origin: TBD
+        archive_catalog:
+          datatype: int
+          destination: [WFIExposure.exposure_nframes, GuideWindow.exposure_nframes]
+      data_problem:
+        title: Data Problem
+        description: |
+          A flag indicating an issue with science telemetry.
+        type: boolean
+        sdf:
+          special_processing: VALUE_REQUIRED
+          source:
+            origin: TBD
+        archive_catalog:
+          datatype: nchar(1)
+          destination: [WFIExposure.exposure_data_problem, GuideWindow.exposure_data_problem]
+      sca_number:
+        title: SCA Number
+        description: |
+          The number of the detector on the Sensor Chip Assembly used for this
+          exposure.
+        type: integer
+        sdf:
+          special_processing: VALUE_REQUIRED
+          source:
+            origin: TBD
+        archive_catalog:
+          datatype: int
+          destination: [WFIExposure.exposure_sca_number, GuideWindow.exposure_sca_number]
       gain_factor:
-        title: Gain scale factor
+        title: Gain Factor
         type: number
         sdf:
           special_processing: VALUE_REQUIRED
@@ -154,10 +207,11 @@ allOf:
             origin: TBD
         archive_catalog:
           datatype: float
-          destination: [ScienceCommon.exposure_gain_factor, GuideWindow.exposure_gain_factor]
+          destination: [WFIExposure.exposure_gain_factor, GuideWindow.exposure_gain_factor]
       integration_time:
-        title: "[s] Effective integration time"
-        description: The effective time that the sensor has been exposed to the sky.
+        title: Effective Integration Time (s)
+        description:
+          The effective amount of time that the sensor was exposed to the sky.
         type: number
         sdf:
           special_processing: VALUE_REQUIRED
@@ -165,12 +219,12 @@ allOf:
             origin: TBD
         archive_catalog:
           datatype: float
-          destination: [ScienceCommon.exposure_integration_time, GuideWindow.exposure_integration_time]
+          destination: [WFIExposure.exposure_integration_time, GuideWindow.exposure_integration_time]
       elapsed_exposure_time:
-        title: "[s] Total elapsed exposure time"
+        title: Elapsed Exposure Time (s)
         description: |
-            The time between the start of the first Reset/Read Science Frame of an Exposure
-            and the completion of the final Read Only Science Frame of that Exposure.
+          The amount of time elapsed between an exposure's first and last science
+          reads.
         type: number
         sdf:
           special_processing: VALUE_REQUIRED
@@ -178,10 +232,78 @@ allOf:
             origin: TBD
         archive_catalog:
           datatype: float
-          destination: [ScienceCommon.elapsed_exposure_time, GuideWindow.elapsed_exposure_time]
+          destination: [WFIExposure.elapsed_exposure_time, GuideWindow.elapsed_exposure_time]
+      frame_divisor:
+        title: Frame Divisor
+        description: |
+          The number of reads averaged to calculate a resultant. Value depends on
+          the readout pattern used from the MultiAccum table.
+        type: integer
+        sdf:
+          special_processing: VALUE_REQUIRED
+          source:
+            origin: TBD
+        archive_catalog:
+          datatype: int
+          destination: [WFIExposure.exposure_frame_divisor, GuideWindow.exposure_frame_divisor]
+      groupgap:
+        title: Number of Frames Dropped Between Resultants
+        description:
+          The number of reads that are dropped, or not used to calculate a
+          resultant.
+        type: integer
+        sdf:
+          special_processing: VALUE_REQUIRED
+          source:
+            origin: TBD
+        archive_catalog:
+          datatype: int
+          destination: [WFIExposure.exposure_groupgap, GuideWindow.exposure_groupgap]
+      frame_time:
+        title: Time Between Reads (s)
+        description: |
+          The amount of time elapsed between the end of one read and the beginning
+          of the next.
+        type: number
+        sdf:
+          special_processing: VALUE_REQUIRED
+          source:
+            origin: TBD
+        archive_catalog:
+          datatype: float
+          destination: [WFIExposure.exposure_frame_time, GuideWindow.exposure_frame_time]
+      group_time:
+        title: Time Between Resultants (s)
+        description: |
+          The time that is the sum of the reads that are used to construct a
+          resultant. This will depend on the MA table being used.
+        type: number
+        sdf:
+          special_processing: VALUE_REQUIRED
+          source:
+            origin: TBD
+        archive_catalog:
+          datatype: float
+          destination: [WFIExposure.exposure_group_time, GuideWindow.exposure_group_time]
+      exposure_time:
+        title: Exposure Time (s)
+        description: |
+          The time between the start of the first Reset/Read Science Frame of an
+          Exposure and the completion of the final Read Only Science Frame of that
+          Exposure.
+        type: number
+        sdf:
+          special_processing: VALUE_REQUIRED
+          source:
+            origin: TBD
+        archive_catalog:
+          datatype: float
+          destination: [WFIExposure.exposure_time, GuideWindow.exposure_time]
       effective_exposure_time:
-        title: "[s] Effective exposure time"
-        description: The time that the detector is collecting photons that are used in the resultants.
+        title: Effective Exposure Time (s)
+        description: |
+          The amount of time during which the detector actually collected photons
+          during an exposure.
         type: number
         sdf:
           special_processing: VALUE_REQUIRED
@@ -189,12 +311,12 @@ allOf:
             origin: TBD
         archive_catalog:
           datatype: float
-          destination: [ScienceCommon.effective_exposure_time, GuideWindow.effective_exposure_time]
+          destination: [WFIExposure.effective_exposure_time, GuideWindow.effective_exposure_time]
       duration:
-        title: "[s] Total duration of exposure"
+        title: Exposure Duration (s)
         description: |
-            The time that the detector is dedicated to an exposure. This includes any overhead
-            and times for dropped frames etc.
+          The amount of time dedicated to a exposure, including any overhead, time
+          spent on dropped frames, and so on.
         type: number
         sdf:
           special_processing: VALUE_REQUIRED
@@ -202,12 +324,38 @@ allOf:
             origin: TBD
         archive_catalog:
           datatype: float
-          destination: [ScienceCommon.exposure_duration, GuideWindow.exposure_duration]
+          destination: [WFIExposure.exposure_duration, GuideWindow.exposure_duration]
+      ma_table_name:
+        title: MA Table Name
+        description: |
+          The name of the MultiAccum table used for this exposure, as defined in the
+          Project Reference Database.
+        type: string
+        sdf:
+          special_processing: VALUE_REQUIRED
+          source:
+            origin: TBD
+        archive_catalog:
+          datatype: nvarchar(50)
+          destination: [WFIExposure.ma_table_name, GuideWindow.ma_table_name]
+      ma_table_number:
+        title: MA Table Number
+        description: |
+          The number of the MultiAccum table used for this exposure. Used in
+          matching exposures to their corresponding calibration data.
+        type: integer
+        sdf:
+          special_processing: VALUE_REQUIRED
+          source:
+            origin: TBD
+        archive_catalog:
+          datatype: smallint
+          destination: [WFIExposure.ma_table_number, GuideWindow.ma_table_number]
       level0_compressed:
-        title: Level 0 data was compressed
+        title: Level 0 Compression
         description: |
-            A flag to indicate that the exposure has data that needed to be decompressed by
-            the ground system.
+          A flag indicating that the exposure has data that was decompressed by the
+          ground system.
         type: boolean
         sdf:
           special_processing: VALUE_REQUIRED
@@ -215,11 +363,28 @@ allOf:
             origin: TBD
         archive_catalog:
           datatype: nchar(1)
-          destination: [ScienceCommon.exposure_level0_compressed, GuideWindow.exposure_level0_compressed]
+          destination: [WFIExposure.exposure_level0_compressed, GuideWindow.exposure_level0_compressed]
+      read_pattern:
+        title: Read Pattern
+        description: |
+          Enumeration of detector reads to resultants making up the L1 data
+          downlinked from the observatory.
+        type: array
+        items:
+          type: array
+          items:
+            type: integer
+        sdf:
+          special_processing: VALUE_REQUIRED
+          source:
+            origin: TBD
+        archive_catalog:
+          datatype: nvarchar(3500)
+          destination: [WFIExposure.read_pattern, GuideWindow.read_pattern]
       truncated:
-        title: MA Tables were truncated
+        title: Truncated MA Table
         description: |
-            This is a flag to indicate that the the MA table was truncated.
+          A flag indicating whether the MA table was truncated.
         type: boolean
         sdf:
           special_processing: VALUE_REQUIRED
@@ -227,22 +392,28 @@ allOf:
             origin: TBD
         archive_catalog:
           datatype: nchar(1)
-          destination: [ScienceCommon.exposure_truncated]
-    required: [id,
-              mid_time, end_time,
+          destination: [WFIExposure.exposure_truncated]
+    propertyOrder: [id, type,
+              start_time, mid_time, end_time,
               start_time_mjd, mid_time_mjd, end_time_mjd,
               start_time_tdb, mid_time_tdb, end_time_tdb,
-              sca_number,
+              ngroups, nframes, data_problem, sca_number,
               gain_factor, integration_time, elapsed_exposure_time,
+              frame_divisor, groupgap,
+              frame_time, group_time, exposure_time,
               effective_exposure_time, duration,
-              level0_compressed]
-    propertyOrder: [id,
-              mid_time, end_time,
+              ma_table_name, ma_table_number, level0_compressed,
+              read_pattern, truncated]
+    required: [id, type,
+              start_time, mid_time, end_time,
               start_time_mjd, mid_time_mjd, end_time_mjd,
               start_time_tdb, mid_time_tdb, end_time_tdb,
-              sca_number,
+              ngroups, nframes, data_problem, sca_number,
               gain_factor, integration_time, elapsed_exposure_time,
+              frame_divisor, groupgap,
+              frame_time, group_time, exposure_time,
               effective_exposure_time, duration,
-              level0_compressed, truncated]
+              ma_table_name, ma_table_number, level0_compressed,
+              read_pattern]
 flowStyle: block
 ...

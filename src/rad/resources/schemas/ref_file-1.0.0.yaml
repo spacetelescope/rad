@@ -3,17 +3,19 @@
 $schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.0.0
 id: asdf://stsci.edu/datamodels/roman/schemas/ref_file-1.0.0
 
-title: Reference file information
-
-
+title: Reference File Information
 type: object
 properties:
   crds:
-    title: CRDS parameters
+    title: Calibration Reference Data System Parameters
+    description: |
+      Calibration Reference Data System Parameters
     type: object
     properties:
       sw_version:
-        title: Version of CRDS file selection software used
+        title: CRDS File Version
+        description: |
+          Version of Calibration Reference Data System (CRDS) file selection software.
         type: string
         sdf:
           special_processing: VALUE_REQUIRED
@@ -21,10 +23,13 @@ properties:
             origin: TBD
         archive_catalog:
           datatype: nvarchar(120)
-          destination: [ScienceCommon.crds_software_version, GuideWindow.crds_software_version, WFICommon.crds_software_version]
+          destination: [WFIExposure.crds_software_version, WFIMosaic.crds_software_version,
+                        GuideWindow.crds_software_version, WFICommon.crds_software_version]
 
       context_used:
-        title: CRDS context (.pmap) used to select ref files
+        title: CRDS Context
+        description: |
+          CRDS context (.pmap) used to select ref files.
         type: string
         sdf:
           special_processing: VALUE_REQUIRED
@@ -32,63 +37,89 @@ properties:
             origin: TBD
         archive_catalog:
           datatype: nvarchar(120)
-          destination: [ScienceCommon.crds_context_used, GuideWindow.crds_context_used, WFICommon.crds_context_used]
+          destination: [WFIExposure.crds_context_used, WFIMosaic.crds_context_used,
+                        GuideWindow.crds_context_used, WFICommon.crds_context_used]
   dark:
-    title: Dark reference file information
+    title: Dark Reference File Information
+    description: |
+      Reference file used to correct for the dark current contribution to
+      science data.
     type: string
     archive_catalog:
       datatype: nvarchar(120)
       destination: [ScienceRefData.r_dark, GuideWindow.r_dark, WFICommon.r_dark]
   distortion:
-    title: Distortion reference file information
+    title: Distortion Reference File Information
+    description: |
+      Information about the distortion reference file used with the science
+      data.
     type: string
     archive_catalog:
       datatype: nvarchar(120)
       destination: [ScienceRefData.r_distortion, GuideWindow.r_distortion, WFICommon.r_distortion]
   mask:
-    title: Mask reference file information
+    title: Mask Reference File Information
+    description: |
+      Information about the mask reference file used with the science data.
     type: string
     archive_catalog:
       datatype: nvarchar(120)
       destination: [ScienceRefData.r_mask, GuideWindow.r_mask, WFICommon.r_mask]
   flat:
-    title: Flat reference file information
+    title: Flat Reference File Information
+    description: |
+      Information about the flat reference file used with the science data.
     type: string
     archive_catalog:
       datatype: nvarchar(120)
       destination: [ScienceRefData.r_flat, GuideWindow.r_flat, WFICommon.r_flat]
   gain:
-    title: Gain reference file information
+    title: Gain Reference Rile Information
+    description: |
+      Information about the gain reference file used with the science data.
     type: string
     archive_catalog:
       datatype: nvarchar(120)
       destination: [ScienceRefData.r_gain, GuideWindow.r_gain, WFICommon.r_gain]
   readnoise:
-    title: Read noise reference file information
+    title: Read Noise Reference Rile Information
+    description: |
+      Information about the read noise reference file used with the science
+      data.
     type: string
     archive_catalog:
       datatype: nvarchar(120)
       destination: [ScienceRefData.r_readnoise, GuideWindow.r_readnoise, WFICommon.r_readnoise]
   linearity:
-    title: Linearity reference file information
+    title: Linearity Reference File Information
+    description: |
+      Information about the linearity reference file used with the science data.
     type: string
     archive_catalog:
       datatype: nvarchar(120)
       destination: [ScienceRefData.r_linearity, GuideWindow.r_linearity, WFICommon.r_linearity]
   photom:
-    title: Photometry reference file information
+    title: Photometry Reference File Information
+    description: |
+      Information about the photometry reference file used with the science
+      data.
     type: string
     archive_catalog:
       datatype: nvarchar(120)
       destination: [ScienceRefData.r_photom, GuideWindow.r_photom, WFICommon.r_photom]
   area:
-    title: Area reference file information
+    title: Area Reference File Information
+    description: |
+      Information about the area reference file used with the science data.
     type: string
     archive_catalog:
       datatype: nvarchar(120)
       destination: [ScienceRefData.r_area, GuideWindow.r_area, WFICommon.r_area]
   saturation:
-    title: Saturation reference file information
+    title: Saturation Reference File Information
+    description: |
+      Information about the saturation reference file used with the science
+      data.
     type: string
     archive_catalog:
       datatype: nvarchar(120)

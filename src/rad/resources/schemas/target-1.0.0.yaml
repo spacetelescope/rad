@@ -3,11 +3,13 @@
 $schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.0.0
 id: asdf://stsci.edu/datamodels/roman/schemas/target-1.0.0
 
-title: Target information
+title: Target Information
 type: object
 properties:
   proposer_name:
-    title: Proposer's name for the target
+    title: Target Name from Proposer
+    description: |
+      The name of the target as it was defined and submitted by the proposer.
     type: string
     sdf:
       special_processing: VALUE_REQUIRED
@@ -15,9 +17,11 @@ properties:
         origin: PSS:dms_target.target_name
     archive_catalog:
       datatype: nvarchar(100)
-      destination: [ScienceCommon.proposer_target_name, GuideWindow.proposer_target_name]
+      destination: [WFIExposure.proposer_target_name, GuideWindow.proposer_target_name]
   catalog_name:
-    title: Standard astronomical catalog name for target
+    title: Target Name from Catalog
+    description: |
+      The target name as defined by an astronomical catalog.
     type: string
     sdf:
       special_processing: VALUE_REQUIRED
@@ -25,9 +29,16 @@ properties:
         origin: PSS:dms_target.standard_target_name
     archive_catalog:
       datatype: nvarchar(256)
-      destination: [ScienceCommon.catalog_name, GuideWindow.catalog_name]
+      destination: [WFIExposure.catalog_name, GuideWindow.catalog_name]
   type:
-    title: Type of target
+    title: Target Type
+    description: |
+      The target type gives information on how the target will need to be
+      observed by the telescope. The options are "fixed", "moving", and
+      "generic". Moving indicates that the motion of the target needs to be
+      taken into account when observing, while fixed indicates that the target
+      needs a fixed orientation. Generic observations do not fit into the other
+      two categories.
     type: string
     enum: [FIXED, MOVING, GENERIC]
     sdf:
@@ -36,9 +47,12 @@ properties:
         origin: PSS:dms_target.target_type
     archive_catalog:
       datatype: nvarchar(10)
-      destination: [ScienceCommon.target_type, GuideWindow.target_type]
+      destination: [WFIExposure.target_type, GuideWindow.target_type]
   ra:
-    title: Target RA at mid time of exposure
+    title: Target RA (deg)
+    description: |
+      The right ascension (RA) of the target in degrees at the midpoint of the
+      exposure.
     type: number
     sdf:
       special_processing: VALUE_REQUIRED
@@ -46,9 +60,12 @@ properties:
         origin: PSS:dms_target.ra_computed
     archive_catalog:
       datatype: float
-      destination: [ScienceCommon.ra, GuideWindow.ra]
+      destination: [WFIExposure.ra, GuideWindow.ra]
   dec:
-    title: Target Dec at mid time of exposure
+    title: Target Dec (deg)
+    description: |
+      The declination (Dec) of the target in degrees at the midpoint of the
+      exposure.
     type: number
     sdf:
       special_processing: VALUE_REQUIRED
@@ -56,9 +73,12 @@ properties:
         origin: PSS:dms_target.dec_computed
     archive_catalog:
       datatype: float
-      destination: [ScienceCommon.dec, GuideWindow.dec]
+      destination: [WFIExposure.dec, GuideWindow.dec]
   ra_uncertainty:
-    title: Target RA uncertainty
+    title: Target RA Uncertainty (deg)
+    description: |
+      The uncertainty of the right ascension (RA) of the target in degrees at
+      the midpoint of the exposure.
     type: number
     sdf:
       special_processing: VALUE_REQUIRED
@@ -66,9 +86,12 @@ properties:
         origin: PSS:dms_target.ra_uncertainty_computed
     archive_catalog:
       datatype: float
-      destination: [ScienceCommon.ra_uncertainty, GuideWindow.ra_uncertainty]
+      destination: [WFIExposure.ra_uncertainty, GuideWindow.ra_uncertainty]
   dec_uncertainty:
-    title: Target Dec uncertainty
+    title: Target Dec Uncertainty (deg)
+    description: |
+      The uncertainty of the declination (Dec) of the target in degrees at the
+      midpoint of the exposure.
     type: number
     sdf:
       special_processing: VALUE_REQUIRED
@@ -76,9 +99,11 @@ properties:
         origin: PSS:dms_target.dec_uncertainty_computed
     archive_catalog:
       datatype: float
-      destination: [ScienceCommon.dec_uncertainty, GuideWindow.dec_uncertainty]
+      destination: [WFIExposure.dec_uncertainty, GuideWindow.dec_uncertainty]
   proper_motion_ra:
-    title: Target proper motion in RA
+    title: Proper Motion of Target RA (deg)
+    description: |
+      The proper motion of the right ascension (RA) of the target in degrees.
     type: number
     sdf:
       special_processing: VALUE_REQUIRED
@@ -86,9 +111,11 @@ properties:
         origin: PSS:dms_target.ra_proper_motion
     archive_catalog:
       datatype: float
-      destination: [ScienceCommon.proper_motion_ra, GuideWindow.proper_motion_ra]
+      destination: [WFIExposure.proper_motion_ra, GuideWindow.proper_motion_ra]
   proper_motion_dec:
-    title: Target proper motion in Dec
+    title: Proper Motion of Target Dec (deg)
+    description: |
+      The proper motion of the declination (Dec) of the target in degrees.
     type: number
     sdf:
       special_processing: VALUE_REQUIRED
@@ -96,9 +123,12 @@ properties:
         origin: PSS:dms_target.dec_proper_motion
     archive_catalog:
       datatype: float
-      destination: [ScienceCommon.proper_motion_dec, GuideWindow.proper_motion_dec]
+      destination: [WFIExposure.proper_motion_dec, GuideWindow.proper_motion_dec]
   proper_motion_epoch:
-    title: Target proper motion epoch
+    title: Proper Motion Epoch of Target
+    description: |
+      The epoch at which the proper motion was calculated. This is needed to
+      correct for the proper motion at other epochs.
     type: string
     sdf:
       special_processing: VALUE_REQUIRED
@@ -106,9 +136,12 @@ properties:
         origin: PSS:dms_visit.epoch
     archive_catalog:
       datatype: nvarchar(10)
-      destination: [ScienceCommon.proper_motion_epoch, GuideWindow.proper_motion_epoch]
+      destination: [WFIExposure.proper_motion_epoch, GuideWindow.proper_motion_epoch]
   proposer_ra:
-    title: Proposer's target RA
+    title: RA from Proposer (deg)
+    description: |
+      The right ascension (RA) of the target in degrees as it was defined and
+      submitted by the proposer.
     type: number
     sdf:
       special_processing: VALUE_REQUIRED
@@ -117,9 +150,12 @@ properties:
         function: hms_to_degrees
     archive_catalog:
       datatype: float
-      destination: [ScienceCommon.proposer_ra, GuideWindow.proposer_ra]
+      destination: [WFIExposure.proposer_ra, GuideWindow.proposer_ra]
   proposer_dec:
-    title: Proposer's target Dec
+    title: Dec from Proposer (deg)
+    description: |
+      The declination (Dec) of the target in degrees as it was defined and
+      submitted by the proposer.
     type: number
     sdf:
       special_processing: VALUE_REQUIRED
@@ -128,9 +164,14 @@ properties:
         function: hms_to_degrees
     archive_catalog:
       datatype: float
-      destination: [ScienceCommon.proposer_dec, GuideWindow.proposer_dec]
+      destination: [WFIExposure.proposer_dec, GuideWindow.proposer_dec]
   source_type:
-    title: Source type used for calibration
+    title: Source Type for Calibration
+    description: |
+      The source type is defined by the calibration needs. The options are
+      "extended", "point", and "unknown". Extended sources and point sources
+      might have different calibration requirements. Unknown is for sources
+      where the type is not yet defined.
     type: string
     enum: [EXTENDED, POINT, UNKNOWN]
     sdf:
@@ -139,7 +180,7 @@ properties:
         origin: TBD
     archive_catalog:
       datatype: nvarchar(8)
-      destination: [ScienceCommon.source_type, GuideWindow.source_type]
+      destination: [WFIExposure.source_type, GuideWindow.source_type]
 propertyOrder: [proposer_name, catalog_name, type, ra, dec, ra_uncertainty, dec_uncertainty,
            proper_motion_ra, proper_motion_dec, proper_motion_epoch,
            proposer_ra, proposer_dec, source_type]

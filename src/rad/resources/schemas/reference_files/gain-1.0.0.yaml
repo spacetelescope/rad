@@ -3,7 +3,7 @@
 $schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.0.0
 id: asdf://stsci.edu/datamodels/roman/schemas/reference_files/gain-1.0.0
 
-title: Gain reference schema
+title: Gain Reference File Schema
 
 datamodel_name: GainRefModel
 
@@ -18,7 +18,10 @@ properties:
             type: string
             enum: [GAIN]
   data:
-    title: The detector gain map
+    title: Gain Data Array
+    description: |
+      The Gain Data Array represents the pixel to pixel conversion from digital
+      numbers (DN) to electrons (e). The units are e/DN.
     tag: tag:stsci.edu:asdf/unit/quantity-1.*
     properties:
       value:
