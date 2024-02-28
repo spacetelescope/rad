@@ -1,7 +1,7 @@
 .. _reference_files:
 
-Reference Files
-===============
+Reference File Schemas
+======================
 
 Nancy Grace Roman Space Telescope Reference Files:
 
@@ -12,6 +12,8 @@ Nancy Grace Roman Space Telescope Reference Files:
     distortion-1.0.0
     flat-1.0.0
     gain-1.0.0
+    inverselinearity-1.0.0
+    ipc-1.0.0
     linearity-1.0.0
     mask-1.0.0
     pixelarea-1.0.0
@@ -19,6 +21,7 @@ Nancy Grace Roman Space Telescope Reference Files:
     ref_common-1.0.0
     ref_exposure_type-1.0.0
     ref_optical_element-1.0.0
+    refpix-1.0.0
     saturation-1.0.0
     superbias-1.0.0
     wfi_img_photom-1.0.0
