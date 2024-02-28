@@ -5,10 +5,11 @@ Roman Attribute Dictionary
 **************************
 
 The Roman Attribute Dictionary (RAD) is a package which defines schemas for the Nancy Grace
-Roman Space Telescope files. Metadata attributes are used by processing and the archive.
+Roman Space Telescope files. Metadata attributes are used by both Science Data Processing and
+the Archive Keyword Dictionary.
 
 .. note::
-  These schemas are schemas for the :ref:`ASDF file <asdf-standard:asdf-standard>` file format,
+  These are schemas for the :ref:`ASDF file <asdf-standard:asdf-standard>` file format,
   used by ASDF to serialize and deserialize data for the Nancy Grace Roman Space Telescope.
 
 Included Resources
