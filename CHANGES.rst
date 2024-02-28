@@ -1,7 +1,7 @@
 0.19.1 (unreleased)
 -------------------
 
-- Add new schemas to documentation. [386]
+- Add new schemas to documentation. [#386]
 
 - Convert tag keywords to wildcards for external tags. [#370]
 
