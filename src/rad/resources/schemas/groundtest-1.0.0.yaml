@@ -1,0 +1,141 @@
+%YAML 1.1
+---
+$schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.0.0
+id: asdf://stsci.edu/datamodels/roman/schemas/groundtest-1.0.0
+
+title: Ground Test Information
+type: object
+properties:
+  test_name:
+    title: I&T Test Name
+    type: string
+    archive_catalog:
+      datatype: nvarchar(80)
+      destination: [WFICommon.test_name]
+  test_phase:
+    title: I&T Testing Phase
+    type: string
+    archive_catalog:
+      datatype: nvarchar(80)
+      destination: [WFICommon.test_phase]
+  test_environment:
+    title: I&T Testing Environment
+    type: string
+    archive_catalog:
+      datatype: nvarchar(80)
+      destination: [WFICommon.test_environment]
+  test_script:
+    title: Name of Testing Script Run
+    type: string
+    archive_catalog:
+      datatype: nvarchar(80)
+      destination: [WFICommon.test_script]
+  product_date:
+    title: Source File Creation Time
+    tag: tag:stsci.edu:asdf/time/time-1.*
+    archive_catalog:
+      datatype: datetime2
+      destination: [WFICommon.product_date]
+  product_version:
+    title: I&T Software Used to Generate Source File
+    type: string
+    archive_catalog:
+      datatype: nvarchar(80)
+      destination: [WFICommon.product_version]
+  conversion_date:
+    title: HDF5 to ASDF Conversion Date
+    tag: tag:stsci.edu:asdf/time/time-1.*
+    archive_catalog:
+      datatype: datetime2
+      destination: [WFICommon.conversion_date]
+  conversion_version:
+    title: HDF5 to ASDF Converter Version
+    type: string
+    archive_catalog:
+      datatype: nvarchar(80)
+      destination: [WFICommon.conversion_version]
+  filename_pnt5:
+    title: L0.5 File Name
+    type: string
+    archive_catalog:
+      datatype: nvarchar(80)
+      destination: [WFICommon.filename_pnt5]
+  filepath_level_pnt5:
+    title: L0.5 File Path
+    type: string
+    archive_catalog:
+      datatype: nvarchar(80)
+      destination: [WFICommon.filepath_level_pnt5]
+  filename_l1a:
+    title: L1A File Name
+    type: string
+    archive_catalog:
+      datatype: nvarchar(80)
+      destination: [WFICommon.filename_l1a]
+  detector_id:
+    title: SCA Identifier
+    type: string
+    archive_catalog:
+      datatype: nvarchar(80)
+      destination: [WFICommon.detector_id]
+  detector_temp:
+    title: Mean Detector Temperature (Kelvin)
+    type: number
+    archive_catalog:
+      datatype: float
+      destination: [WFICommon.detector_temp]
+  frames_temp:
+    title: Interpolated Temperature of Frames (Kelvin)
+    tag: tag:stsci.edu:asdf/core/ndarray-1.*
+    datatype: float64
+    exact_datatype: true
+    # needs a ndim
+  ota_temp:
+    title: Mean OTA Temperature (Kelvin)
+    type: number
+    archive_catalog:
+      datatype: float
+      destination: [WFICommon.ota_temp]
+  rcs_on:
+    title: RCS On/Off
+    type: boolean
+    archive_catalog:
+      datatype: nchar(1)
+      destination: [WFICommon.rcs_on]
+  readout_col_num:
+    title: Number of Readout Columns
+    type: integer
+    archive_catalog:
+      datatype: int
+      destination: [WFICommon.readout_col_num]
+  detector_pixel_size:
+    title: Pixel Size (cm)
+    tag: tag:stsci.edu:asdf/unit/quantity-1.*
+    properties:
+      value:
+        tag: tag:stsci.edu:asdf/core/ndarray-1.*
+        datatype: float64
+        exact_datatype: true
+        # needs ndim
+      unit:
+        tag: tag:stsci.edu:asdf/unit/unit-1.*
+        enum: ["cm"]
+  sensor_error:
+    title: Sensor Error
+    tag: tag:stsci.edu:asdf/core/ndarray-1.*
+    datatype: float64
+    exact_datatype: true
+    # needs ndim
+
+propertyOrder: [test_name, test_phase, test_environment, test_script,
+                product_date, product_version, conversion_date, conversion_version,
+                filename_pnt5, filepath_level_pnt5, filename_l1a, detector_id,
+                detector_temp, frames_temp, ota_temp, rcs_on, readout_col_num,
+                detector_pixel_size, sensor_error]
+flowStyle: block
+required: [test_name, test_phase, test_environment, test_script,
+           product_date, product_version, conversion_date, conversion_version,
+           filename_pnt5, filepath_level_pnt5, filename_l1a, detector_id,
+           detector_temp, frames_temp, ota_temp, rcs_on, readout_col_num,
+           detector_pixel_size, sensor_error]
+...

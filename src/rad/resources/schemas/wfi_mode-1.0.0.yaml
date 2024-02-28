@@ -19,7 +19,7 @@ properties:
         origin: TBD
     archive_catalog:
       datatype: nvarchar(5)
-      destination: [WFIExposure.instrument_name, GuideWindow.instrument_name]
+      destination: [WFIExposure.instrument_name, GuideWindow.instrument_name, WFICommon.instrument_name]
   detector:
     title: WFI Detector
     description: |
@@ -31,7 +31,7 @@ properties:
         origin: TBD
     archive_catalog:
       datatype: nvarchar(10)
-      destination: [WFIExposure.detector, GuideWindow.detector]
+      destination: [WFIExposure.detector, GuideWindow.detector, WFICommon.detector]
   optical_element:
     title: WFI Optical Element
     description: |
@@ -43,7 +43,7 @@ properties:
         origin: TBD
     archive_catalog:
       datatype: nvarchar(20)
-      destination: [WFIExposure.optical_element, GuideWindow.optical_element]
+      destination: [WFIExposure.optical_element, GuideWindow.optical_element, WFICommon.optical_element]
 propertyOrder: [detector, optical_element, name]
 flowStyle: block
 required: [detector, optical_element, name]

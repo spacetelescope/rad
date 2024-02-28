@@ -1,0 +1,119 @@
+%YAML 1.1
+---
+$schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.0.0
+id: asdf://stsci.edu/datamodels/roman/schemas/tvac-1.0.0
+
+title: |
+  Schema for the TVAC Test Data
+
+datamodel_name: TvacModel
+
+archive_meta: None
+
+type: object
+properties:
+  meta:
+    allOf:
+      - $ref: asdf://stsci.edu/datamodels/roman/schemas/ground_common-1.0.0
+      - type: object
+        properties:
+          groundtest:
+            tag: asdf://stsci.edu/datamodels/roman/tags/tvac_groundtest-1.0.0
+        required: [groundtest]
+
+  data:
+    title: Science data, including the border reference pixels.
+    tag: tag:stsci.edu:asdf/unit/quantity-1.*
+    properties:
+      value:
+        tag: tag:stsci.edu:asdf/core/ndarray-1.*
+        datatype: uint16
+        exact_datatype: true
+        ndim: 3
+      unit:
+        tag: tag:astropy.org:astropy/units/unit-1.*
+        enum: ["DN"]
+
+  amp33:
+    title: Amp 33 reference pixel data.
+    tag: tag:stsci.edu:asdf/unit/quantity-1.*
+    properties:
+      value:
+        tag: tag:stsci.edu:asdf/core/ndarray-1.*
+        datatype: uint16
+        exact_datatype: true
+        ndim: 3
+      unit:
+        tag: tag:astropy.org:astropy/units/unit-1.*
+        enum: ["DN"]
+
+  amp33_reset_reads:
+    title: Amp 33 reset reads performed before integration data.
+    tag: tag:stsci.edu:asdf/unit/quantity-1.*
+    properties:
+      value:
+        tag: tag:stsci.edu:asdf/core/ndarray-1.*
+        datatype: uint16
+        exact_datatype: true
+        ndim: 3
+      unit:
+        tag: tag:astropy.org:astropy/units/unit-1.*
+        enum: ["DN"]
+
+  amp33_reference_read:
+    title: Amp 33 reference reads that can be subtracted from the amp33 ramp data, if present.
+    tag: tag:stsci.edu:asdf/unit/quantity-1.*
+    properties:
+      value:
+        tag: tag:stsci.edu:asdf/core/ndarray-1.*
+        datatype: uint16
+        exact_datatype: true
+        ndim: 3
+      unit:
+        tag: tag:astropy.org:astropy/units/unit-1.*
+        enum: ["DN"]
+
+  guidewindow:
+    title: Guide window data.
+    tag: tag:stsci.edu:asdf/unit/quantity-1.*
+    properties:
+      value:
+        tag: tag:stsci.edu:asdf/core/ndarray-1.*
+        datatype: uint16
+        exact_datatype: true
+        ndim: 3
+      unit:
+        tag: tag:astropy.org:astropy/units/unit-1.*
+        enum: ["DN"]
+
+  reference_read:
+    title: Reference read that can be subtracted from ramp, if present.
+    tag: tag:stsci.edu:asdf/unit/quantity-1.*
+    properties:
+      value:
+        tag: tag:stsci.edu:asdf/core/ndarray-1.*
+        datatype: uint16
+        exact_datatype: true
+        ndim: 3
+      unit:
+        tag: tag:astropy.org:astropy/units/unit-1.*
+        enum: ["DN"]
+
+  reset_reads:
+    title: Reset reads performed before the ramp integration, if present.
+    tag: tag:stsci.edu:asdf/unit/quantity-1.*
+    properties:
+      value:
+        tag: tag:stsci.edu:asdf/core/ndarray-1.*
+        datatype: uint16
+        exact_datatype: true
+        ndim: 3
+      unit:
+        tag: tag:astropy.org:astropy/units/unit-1.*
+        enum: ["DN"]
+
+propertyOrder: [meta, data, amp33, amp33_reset_reads, amp33_reference_read,
+                guidewindow, reference_read, reset_reads]
+flowStyle: block
+required: [meta, data, amp33, guidewindow]
+...

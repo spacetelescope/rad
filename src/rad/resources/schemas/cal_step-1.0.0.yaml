@@ -15,7 +15,7 @@ properties:
     enum: ['N/A', 'COMPLETE', 'SKIPPED', 'INCOMPLETE']
     archive_catalog:
       datatype: nvarchar(15)
-      destination: [ScienceRefData.s_assign_wcs, GuideWindow.s_assign_wcs]
+      destination: [ScienceRefData.s_assign_wcs, GuideWindow.s_assign_wcs, WFICommon.s_assign_wcs]
   flat_field:
     title: Flat Fielding Step
     descroption: |
@@ -27,7 +27,7 @@ properties:
     enum: ['N/A', 'COMPLETE', 'SKIPPED', 'INCOMPLETE']
     archive_catalog:
       datatype: nvarchar(15)
-      destination: [ScienceRefData.s_flat_field, GuideWindow.s_flat_field]
+      destination: [ScienceRefData.s_flat_field, GuideWindow.s_flat_field, WFICommon.s_flat_field]
   dark:
     title: Dark Current Subtraction Step
     description: |
@@ -37,7 +37,7 @@ properties:
     enum: ['N/A', 'COMPLETE', 'SKIPPED', 'INCOMPLETE']
     archive_catalog:
       datatype: nvarchar(15)
-      destination: [ScienceRefData.s_dark, GuideWindow.s_dark]
+      destination: [ScienceRefData.s_dark, GuideWindow.s_dark, WFICommon.s_dark]
   dq_init:
     title: Initialization of the Data Quality Extension Step
     description: |
@@ -47,7 +47,7 @@ properties:
     enum: ['N/A', 'COMPLETE', 'SKIPPED', 'INCOMPLETE']
     archive_catalog:
       datatype: nvarchar(15)
-      destination: [ScienceRefData.s_dq_init, GuideWindow.s_dq_init]
+      destination: [ScienceRefData.s_dq_init, GuideWindow.s_dq_init, WFICommon.s_dq_init]
   jump:
     title: Cosmic Rays and Jump Detection Step
     description: |
@@ -57,7 +57,7 @@ properties:
     enum: ['N/A', 'COMPLETE', 'SKIPPED', 'INCOMPLETE']
     archive_catalog:
       datatype: nvarchar(15)
-      destination: [ScienceRefData.s_jump, GuideWindow.s_jump]
+      destination: [ScienceRefData.s_jump, GuideWindow.s_jump, WFICommon.s_jump]
   linearity:
     title: Linearity Correction Step
     description: |
@@ -67,7 +67,7 @@ properties:
     enum: ['N/A', 'COMPLETE', 'SKIPPED', 'INCOMPLETE']
     archive_catalog:
       datatype: nvarchar(15)
-      destination: [ScienceRefData.s_linearity, GuideWindow.s_linearity]
+      destination: [ScienceRefData.s_linearity, GuideWindow.s_linearity, WFICommon.s_linearity]
   photom:
     title: Photometric Calibration Step
     description: |
@@ -77,7 +77,7 @@ properties:
     enum: ['N/A', 'COMPLETE', 'SKIPPED', 'INCOMPLETE']
     archive_catalog:
       datatype: nvarchar(15)
-      destination: [ScienceRefData.s_photom, GuideWindow.s_photom]
+      destination: [ScienceRefData.s_photom, GuideWindow.s_photom, WFICommon.s_photom]
   source_detection:
     title: Source Detection Step
     description: |
@@ -86,7 +86,7 @@ properties:
     enum: ['N/A', 'COMPLETE', 'SKIPPED', 'INCOMPLETE']
     archive_catalog:
       datatype: nvarchar(15)
-      destination: [ScienceRefData.s_source_detection, GuideWindow.s_source_detection]
+      destination: [ScienceRefData.s_source_detection, GuideWindow.s_source_detection, WFICommon.s_source_detection]
   ramp_fit:
     title: Ramp Fit Step
     description: |
@@ -96,7 +96,7 @@ properties:
     enum: ['N/A', 'COMPLETE', 'SKIPPED', 'INCOMPLETE']
     archive_catalog:
       datatype: nvarchar(15)
-      destination: [ScienceRefData.s_ramp_fit, GuideWindow.s_ramp_fit]
+      destination: [ScienceRefData.s_ramp_fit, GuideWindow.s_ramp_fit, WFICommon.s_ramp_fit]
   refpix:
     title: Reference Pixel Correction Step
     description: |
@@ -106,7 +106,7 @@ properties:
     enum: ['N/A', 'COMPLETE', 'SKIPPED', 'INCOMPLETE']
     archive_catalog:
       datatype: nvarchar(15)
-      destination: [ScienceRefData.s_refpix, GuideWindow.s_refpix]
+      destination: [ScienceRefData.s_refpix, GuideWindow.s_refpix, WFICommon.s_refpix]
   saturation:
     title: Saturation Identification Step
     description: |
@@ -117,7 +117,7 @@ properties:
     enum: ['N/A', 'COMPLETE', 'SKIPPED', 'INCOMPLETE']
     archive_catalog:
       datatype: nvarchar(15)
-      destination: [ScienceRefData.s_saturation, GuideWindow.s_saturation]
+      destination: [ScienceRefData.s_saturation, GuideWindow.s_saturation, WFICommon.s_saturation]
   outlier_detection:
     title: Outlier Detection Step
     description: |
@@ -126,7 +126,7 @@ properties:
     enum: ['N/A', 'COMPLETE', 'SKIPPED', 'INCOMPLETE']
     archive_catalog:
       datatype: nvarchar(15)
-      destination: [ScienceRefData.s_outlier_detection, GuideWindow.s_outlier_detection]
+      destination: [ScienceRefData.s_outlier_detection, GuideWindow.s_outlier_detection, WFICommon.s_outlier_detection]
   tweakreg:
     title: Tweakreg step
     description: |
@@ -137,7 +137,7 @@ properties:
     enum: ['N/A', 'COMPLETE', 'SKIPPED', 'INCOMPLETE']
     archive_catalog:
       datatype: nvarchar(15)
-      destination: [ScienceRefData.s_tweakreg, GuideWindow.s_tweakreg]
+      destination: [ScienceRefData.s_tweakreg, GuideWindow.s_tweakreg, WFICommon.s_tweakreg]
   skymatch:
     title: Sky Matching for Combining Overlapping Images Step
     description: |
@@ -147,7 +147,7 @@ properties:
     enum: ['N/A', 'COMPLETE', 'SKIPPED', 'INCOMPLETE']
     archive_catalog:
       datatype: nvarchar(15)
-      destination: [ScienceRefData.s_skymatch, GuideWindow.s_skymatch]
+      destination: [ScienceRefData.s_skymatch, GuideWindow.s_skymatch, WFICommon.s_skymatch]
   resample:
     title: Resampling Input Data onto a Regular Grid Step
     description: |
@@ -158,7 +158,7 @@ properties:
     enum: ['N/A', 'COMPLETE', 'SKIPPED', 'INCOMPLETE']
     archive_catalog:
       datatype: nvarchar(15)
-      destination: [ScienceRefData.s_resample, GuideWindow.s_resample]
+      destination: [ScienceRefData.s_resample, GuideWindow.s_resample, WFICommon.s_resample]
 propertyOrder: [assign_wcs, flat_field, dark, dq_init, jump, linearity, photom, source_detection, outlier_detection, ramp_fit, refpix, saturation, skymatch, tweakreg, resample]
 flowStyle: block
 required: [assign_wcs, flat_field, dark, dq_init, jump, linearity, outlier_detection, photom, source_detection, ramp_fit, refpix, resample, saturation, skymatch, tweakreg]

@@ -8,9 +8,12 @@
 
 - Add documentation on how to create a new schema. [#375]
 
+- Add ``FPS`` and ``TVAC`` schemas. [#364]
+
 - Update titles and descriptions to those provided by INS. [#361]
 
 - Updated product table names. [#382]
+
 
 0.19.0 (2024-02-09)
 -------------------
