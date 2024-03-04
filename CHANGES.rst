@@ -1,4 +1,4 @@
-0.19.1 (unreleased)
+0.20.0 (unreleased)
 -------------------
 
 - Add new schemas to documentation. [#386]
@@ -26,6 +26,7 @@
 
 - Create the flux step schema. [#395]
 
+- Add source_datalog and segmentation_map schemas. [#374]
 
 0.19.0 (2024-02-09)
 -------------------
