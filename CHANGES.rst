@@ -16,6 +16,7 @@
 
 - Updated product table names. [#382]
 
+- Added schema for Source Catalog and Segmentation Map. [#374]
 
 0.19.0 (2024-02-09)
 -------------------
