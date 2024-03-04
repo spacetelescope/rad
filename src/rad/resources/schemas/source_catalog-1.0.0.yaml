@@ -10,11 +10,6 @@ datamodel_name: SourceCatalogModel
 archive_meta: None
 type: object
 properties:
-  source_catalog:
-    title: Source Catalog
-    description: |
-       Photometry and astrometry computed in the Source Catalog Step.
-    tag: tag:astropy.org:astropy/table/table-1.*
   meta:
     allOf:
       - $ref: basic-1.0.0
@@ -22,6 +17,11 @@ properties:
       - $ref: wfi_optical_element-1.0.0
       - $ref: program-1.0.0
       - $ref: visit-1.0.0
+  source_catalog:
+    title: Source Catalog
+    description: |
+       Photometry and astrometry computed in the Source Catalog Step.
+    tag: tag:astropy.org:astropy/table/table-1.*
 
 required: [meta, source_catalog]
 flowStyle: block
