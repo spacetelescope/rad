@@ -10,6 +10,13 @@ datamodel_name: SegmentationMapModel
 archive_meta: None
 type: object
 properties:
+  meta:
+    allOf:
+      - $ref: basic-1.0.0
+      - $ref: coordinates-1.0.0
+      - $ref: wfi_optical_element-1.0.0
+      - $ref: program-1.0.0
+      - $ref: visit-1.0.0
   data:
     title: Segmentation map
     description: |
@@ -18,13 +25,6 @@ properties:
     ndim: 2
     datatype: uint32
     exact_datatype: true
-  meta:
-    allOf:
-      - $ref: basic-1.0.0
-      - $ref: coordinates-1.0.0
-      - $ref: wfi_optical_element-1.0.0
-      - $ref: program-1.0.0
-      - $ref: visit-1.0.0
 
 required: [meta, data]
 flowStyle: block
