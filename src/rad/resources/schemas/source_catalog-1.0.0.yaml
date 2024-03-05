@@ -12,11 +12,19 @@ type: object
 properties:
   meta:
     allOf:
-      - $ref: basic-1.0.0
-      - $ref: coordinates-1.0.0
-      - $ref: wfi_optical_element-1.0.0
-      - $ref: program-1.0.0
-      - $ref: visit-1.0.0
+      - type: object
+        properties:
+          basic:
+            tag: asdf://stsci.edu/datamodels/roman/tags/mosaic_basic-1.0.0
+          coordinates:
+            tag: asdf://stsci.edu/datamodels/roman/tags/coordinates-1.0.0
+          photometry:
+            tag: asdf://stsci.edu/datamodels/roman/tags/photometry-1.0.0
+          program:
+            tag: asdf://stsci.edu/datamodels/roman/tags/program-1.0.0
+          wcsinfo:
+            tag: asdf://stsci.edu/datamodels/roman/tags/mosaic_wcsinfo-1.0.0
+        required: [basic, coordinates, photometry, program, wcsinfo]
   source_catalog:
     title: Source Catalog
     description: |
