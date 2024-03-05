@@ -16,6 +16,8 @@
 
 - Updated product table names. [#382]
 
+- Changed image units. [#389]
+
 
 0.19.0 (2024-02-09)
 -------------------
