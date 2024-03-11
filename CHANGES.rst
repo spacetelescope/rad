@@ -16,6 +16,8 @@
 
 - Updated product table names. [#382]
 
+- Changed image units from e/s to DN/s (and added support for MJy/sr). [#389]
+
 
 0.19.0 (2024-02-09)
 -------------------

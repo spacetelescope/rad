@@ -26,9 +26,10 @@ properties:
             tag: asdf://stsci.edu/datamodels/roman/tags/source_detection-1.0.0
         required: [photometry, wcs]
   data:
-    title: Science Data (electrons / s)
+    title: Science Data (DN / s) or (MJy / sr)
     description: |
-      Science data, excluding border reference pixels.
+      Science data, excluding border reference pixels, in DNs per second
+      or MJ per steradian.
     tag: tag:stsci.edu:asdf/unit/quantity-1.*
     properties:
       value:
@@ -37,8 +38,10 @@ properties:
         exact_datatype: true
         ndim: 2
       unit:
-        tag: tag:astropy.org:astropy/units/unit-1.*
-        enum: ["electron / s"]
+        oneOf:
+          - tag: tag:stsci.edu:asdf/unit/unit-1.*
+          - tag: tag:astropy.org:astropy/units/unit-1.*
+        enum: ["DN / s", "MJy.sr**-1"]
   dq:
     title: Data Quality Flags
     description: |
@@ -48,9 +51,9 @@ properties:
     exact_datatype: true
     ndim: 2
   err:
-    title: Error (electrons / s)
+    title: Error (DN / s) or (MJy / sr)
     description: |
-      Error in units of electrons per second.
+      Error in units of DNs per second or MJ per steradian.
     tag: tag:stsci.edu:asdf/unit/quantity-1.*
     properties:
       value:
@@ -59,12 +62,15 @@ properties:
         exact_datatype: true
         ndim: 2
       unit:
-        tag: tag:astropy.org:astropy/units/unit-1.*
-        enum: ["electron / s"]
+        oneOf:
+          - tag: tag:stsci.edu:asdf/unit/unit-1.*
+          - tag: tag:astropy.org:astropy/units/unit-1.*
+        enum: ["DN / s", "MJy.sr**-1"]
   var_poisson:
-    title: Poisson Variance (electrons^2 / s^2)
+    title: Poisson Variance (DN^2 / s^2) or (MJy^2 / sr^2)
     description: |
-      Poisson variance in units of electrons^2 / second^2.
+      Poisson variance in units of DN^2 / second^2
+      or MJ per steradian.
     tag: tag:stsci.edu:asdf/unit/quantity-1.*
     properties:
       value:
@@ -73,12 +79,14 @@ properties:
         exact_datatype: true
         ndim: 2
       unit:
-        tag: tag:astropy.org:astropy/units/unit-1.*
-        enum: ["electron2 / s2"]
+        oneOf:
+          - tag: tag:stsci.edu:asdf/unit/unit-1.*
+          - tag: tag:astropy.org:astropy/units/unit-1.*
+        enum: ["DN2 / s2", "MJy**2.sr**-2"]
   var_rnoise:
-    title: Read Noise (electrons^2 / s^2)
+    title: Read Noise (DN^2 / s^2) or (MJy^2 / sr^2)
     description: |
-      Read noise in units of electrons^2 / second^2.
+      Read noise in units of DN^2 / second^2 or MJ^2 per steradian^2.
     tag: tag:stsci.edu:asdf/unit/quantity-1.*
     properties:
       value:
@@ -87,13 +95,15 @@ properties:
         exact_datatype: true
         ndim: 2
       unit:
-        tag: tag:astropy.org:astropy/units/unit-1.*
-        enum: ["electron2 / s2"]
+        oneOf:
+          - tag: tag:stsci.edu:asdf/unit/unit-1.*
+          - tag: tag:astropy.org:astropy/units/unit-1.*
+        enum: ["DN2 / s2", "MJy**2.sr**-2"]
   var_flat:
-    title: Variance for Estimate of Flat Pixel Flux (electrons^2 / s^2)
+    title: Variance for Estimate of Flat Pixel Flux (DN^2 / s^2) or (MJy^2 / sr^2)
     description: |
       Variance for estimate of flat pixel flux in units of
-      electrons^2 / second^2.
+      DN^2 / second^2 or MJ^2 per steradian^2.
     tag: tag:stsci.edu:asdf/unit/quantity-1.*
     properties:
       value:
@@ -102,8 +112,10 @@ properties:
         exact_datatype: true
         ndim: 2
       unit:
-        tag: tag:astropy.org:astropy/units/unit-1.*
-        enum: ["electron2 / s2"]
+        oneOf:
+          - tag: tag:stsci.edu:asdf/unit/unit-1.*
+          - tag: tag:astropy.org:astropy/units/unit-1.*
+        enum: ["DN2 / s2", "MJy**2.sr**-2"]
   amp33:
     title: Amp 33 Reference Pixel Data (DN)
     description: |
