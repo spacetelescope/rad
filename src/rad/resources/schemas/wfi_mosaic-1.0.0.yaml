@@ -13,6 +13,7 @@ type: object
 properties:
   meta:
     allOf:
+      - $ref: basic-1.0.0
       - type: object
         properties:
           # Placeholder for 'dither' schema tag

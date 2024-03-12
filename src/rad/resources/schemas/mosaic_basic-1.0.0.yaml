@@ -57,16 +57,6 @@ properties:
     archive_catalog:
       datatype: float
       destination: [WFIMosaic.mean_exposure_time]
-  model_type:
-    title: Type of data model
-    type: string
-    sdf:
-      special_processing: VALUE_REQUIRED
-      source:
-        origin: TBD
-    archive_catalog:
-      datatype: nvarchar(50)
-      destination: [WFIMosaic.model_type, GuideWindow.model_type]
   visit:
     title: Visit number within the observation, defined range of
            values is 1..999; included in obs_id and visit_id as 'VVV'.
@@ -137,8 +127,6 @@ properties:
     archive_catalog:
       datatype: nvarchar(5)
       destination: [WFIMosaic.instrument_name]
-  telescope:
-    tag: asdf://stsci.edu/datamodels/roman/tags/telescope-1.0.0
   location_name:
     title: Name of the skycell containing the mosaic
     type: string
@@ -159,15 +147,11 @@ properties:
     archive_catalog:
       datatype: nvarchar(25)
       destination: [WFIMosaic.product_type]
-  filename:
-    tag: asdf://stsci.edu/datamodels/roman/tags/filename-1.0.0
 propertyOrder: [ time_first_mjd, time_last_mjd, time_mean_mjd, max_exposure_time,
-                 mean_exposure_time, model_type, visit, segment, pass, program,
-                 survey, optical_element, instrument, telescope, location_name, product_type,
-                 filename ]
+                 mean_exposure_time, visit, segment, pass, program,
+                 survey, optical_element, instrument, location_name, product_type]
 flowStyle: block
 required: [ time_first_mjd, time_last_mjd, time_mean_mjd, max_exposure_time,
-            mean_exposure_time, model_type, visit, segment, pass, program,
-            survey, optical_element, instrument, telescope, location_name, product_type,
-            filename ]
+            mean_exposure_time, visit, segment, pass, program,
+            survey, optical_element, instrument, location_name, product_type]
 ...
