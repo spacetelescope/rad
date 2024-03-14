@@ -1,81 +1,96 @@
 [project]
-name = 'rad'
-description = 'Roman Attribute Dictionary'
-readme = { file = 'README.md', content-type = 'text/markdown' }
-requires-python = '>=3.9'
-license = { file = 'LICENSE' }
-authors = [{ name = 'STScI', email = 'help@stsci.edu' }]
+name = "rad"
+description = "Roman Attribute Dictionary"
+requires-python = ">=3.10"
+authors = [
+    { name = "STScI", email = "help@stsci.edu" },
+]
 classifiers = [
-    'Intended Audience :: Science/Research',
-    'Topic :: Scientific/Engineering :: Astronomy',
-    'License :: OSI Approved :: BSD License',
-    'Programming Language :: Python :: 3',
+    "Intended Audience :: Science/Research",
+    "Topic :: Scientific/Engineering :: Astronomy",
+    "License :: OSI Approved :: BSD License",
+    "Programming Language :: Python :: 3",
 ]
 dependencies = [
-    'asdf >=2.14.2',
-    'asdf-astropy >=0.5.0',
+    "asdf >=2.14.2",
+    "asdf-astropy >=0.5.0",
 ]
-dynamic = ['version']
+dynamic = [
+    "version",
+]
+
+[project.readme]
+file = "README.md"
+content-type = "text/markdown"
+
+[project.license]
+file = "LICENSE"
 
 [project.optional-dependencies]
 test = [
-    'pytest>=4.6.0',
-    'pytest-doctestplus>=0.11.1',
-    'crds>=11.16.16',
+    "pytest>=4.6.0",
+    "pytest-doctestplus>=0.11.1",
+    "crds>=11.16.16",
 ]
 docs = [
-    'sphinx',
-    'sphinx-asdf>=0.1.3',
-    'sphinx-astropy',
-    'sphinx-rtd-theme',
-    'astropy>=5.0.4',
-    'graphviz',
-    'matplotlib',
-    'docutils',
-    'tomli; python_version <"3.11"',
-    'importlib-metadata',
+    "sphinx",
+    "sphinx-asdf>=0.1.3",
+    "sphinx-astropy",
+    "sphinx-rtd-theme",
+    "astropy>=5.0.4",
+    "graphviz",
+    "matplotlib",
+    "docutils",
+    "tomli; python_version <\"3.11\"",
+    "importlib-metadata",
 ]
 
 [project.urls]
-'Bug Tracker' = 'https://github.com/spacetelescope/rad/issues'
-'Source Code' = 'https://github.com/spacetelescope/rad'
+"Bug Tracker" = "https://github.com/spacetelescope/rad/issues"
+"Source Code" = "https://github.com/spacetelescope/rad"
 
-[project.entry-points]
-'asdf.resource_mappings' = { 'rad' = 'rad.integration:get_resource_mappings' }
+[project.entry-points."asdf.resource_mappings"]
+rad = "rad.integration:get_resource_mappings"
 
 [build-system]
-requires = ["setuptools >=61", "setuptools_scm[toml] >=3.4", "wheel"]
+requires = [
+    "setuptools >=61",
+    "setuptools_scm[toml] >=3.4",
+    "wheel",
+]
 build-backend = "setuptools.build_meta"
 
 [tool.setuptools_scm]
 write_to = "src/rad/_version.py"
 
 [tool.setuptools.packages.find]
-where = ['src']
+where = [
+    "src",
+]
 
 [tool.package-data]
-'rad.resources' = [
-    'manifests/*.yaml',
-    'schemas/*.yaml',
-    'schemas/**/*.yaml',
+"rad.resources" = [
+    "manifests/*.yaml",
+    "schemas/*.yaml",
+    "schemas/**/*.yaml",
 ]
 
 [tool.pytest.ini_options]
 minversion = 4.6
 doctest_plus = true
 doctest_rst = true
-text_file_format = 'rst'
-addopts = '--show-capture=no'
+text_file_format = "rst"
+addopts = "--show-capture=no"
 testpaths = [
-    'tests',
-    'src/rad/resources/schemas',
+    "tests",
+    "src/rad/resources/schemas",
 ]
 filterwarnings = [
     "error::ResourceWarning",
 ]
-asdf_schema_tests_enabled = 'true'
-asdf_schema_skip_tests = 'src/rad/resources/schemas/rad_schema-1.0.0.yaml'
-asdf_schema_root = 'src/rad/resources/schemas'
+asdf_schema_tests_enabled = "true"
+asdf_schema_skip_tests = "src/rad/resources/schemas/rad_schema-1.0.0.yaml"
+asdf_schema_root = "src/rad/resources/schemas"
 
 [tool.isort]
 profile = "black"
@@ -84,21 +99,10 @@ line_length = 130
 
 [tool.black]
 line-length = 130
-force-exclude = '''
-^/(
-  (
-      \.eggs
-    | \.git
-    | \.pytest_cache
-    | \.tox
-  )/
-)
-'''
+force-exclude = "^/(\n  (\n      \\.eggs\n    | \\.git\n    | \\.pytest_cache\n    | \\.tox\n  )/\n)\n"
 
 [tool.ruff]
 line-length = 130
 
 [tool.codespell]
-skip="*.pdf,*.fits,*.asdf,.tox,build,./tags,.git,docs/_build"
-# ignore-words-list="""
-# """
+skip = "*.pdf,*.fits,*.asdf,.tox,build,./tags,.git,docs/_build"
