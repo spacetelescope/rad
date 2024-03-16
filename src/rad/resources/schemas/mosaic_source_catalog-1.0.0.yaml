@@ -1,11 +1,11 @@
 %YAML 1.1
 ---
 $schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.0.0
-id: asdf://stsci.edu/datamodels/roman/schemas/source_catalog-1.0.0
+id: asdf://stsci.edu/datamodels/roman/schemas/mosaic_source_catalog-1.0.0
 
 title: Source catalog generated from a Level 3 file by the Source Catalog Step.
 
-datamodel_name: SourceCatalogModel
+datamodel_name: MosaicSourceCatalogModel
 
 archive_meta: None
 type: object
