@@ -16,7 +16,10 @@ properties:
       - type: object
         properties:
           optical_element:
-            tag: asdf://stsci.edu/datamodels/roman/tags/wfi_optical_element-1.0.0
+            title: WFI Optical Element
+            description: |
+              WFI optical element used to take the data.
+            $ref: wfi_optical_element-1.0.0
           coordinates:
             tag: asdf://stsci.edu/datamodels/roman/tags/coordinates-1.0.0
           program:
