@@ -15,15 +15,15 @@ properties:
       - $ref: basic-1.0.0
       - type: object
         properties:
-          basic:
-            tag: asdf://stsci.edu/datamodels/roman/tags/mosaic_basic-1.0.0
+          optical_element:
+            tag: asdf://stsci.edu/datamodels/roman/tags/wfi_optical_element-1.0.0
           coordinates:
             tag: asdf://stsci.edu/datamodels/roman/tags/coordinates-1.0.0
-          photometry:
-            tag: asdf://stsci.edu/datamodels/roman/tags/photometry-1.0.0
           program:
             tag: asdf://stsci.edu/datamodels/roman/tags/program-1.0.0
-        required: [basic, coordinates, photometry, program]
+          visit:
+            tag: asdf://stsci.edu/datamodels/roman/tags/visit-1.0.0
+        required: [optical_element, coordinates, program, visit]
   source_catalog:
     title: Source Catalog
     description: |

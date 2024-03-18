@@ -386,6 +386,15 @@ actually functions; meaning that for ASDF 3.0+ to correctly handle the schema
 without issues, the ``allOf`` combiner is necessary, see
 `PR 222 <https://github.com/spacetelescope/rad/pull/222>`_ for more details.
 
+Testing Schemas
+---------------
+
+Once you created a schema, run the tests in the ``rad`` package before proceeding
+to write the model.
+
+.. note::
+     The schemas need to be committed to the working repository and the ``rad``
+     package needs to be installed before running the tests.
 
 Creating a Data Model
 ---------------------
