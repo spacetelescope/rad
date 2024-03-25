@@ -48,6 +48,16 @@ properties:
     archive_catalog:
       datatype: nvarchar(15)
       destination: [ScienceRefData.s_dq_init, GuideWindow.s_dq_init, WFICommon.s_dq_init]
+  flux:
+    title: Flux Scale Application Step
+    description: |
+      Step in ROMANCAL which applies the scaling factors determined in the Photom calibrations step.
+      The data are converted from DN/s to MJy/sr.
+    type: string
+    enum: ['N/A', 'COMPLETE', 'SKIPPED', 'INCOMPLETE']
+    archive_catalog:
+      datatype: nvarchar(15)
+      destination: [ScienceRefData.s_flux, GuideWindow.s_flux, WFICommon.s_flux]
   jump:
     title: Cosmic Rays and Jump Detection Step
     description: |
@@ -159,8 +169,8 @@ properties:
     archive_catalog:
       datatype: nvarchar(15)
       destination: [ScienceRefData.s_resample, GuideWindow.s_resample, WFICommon.s_resample]
-propertyOrder: [assign_wcs, flat_field, dark, dq_init, jump, linearity, photom, source_detection, outlier_detection, ramp_fit, refpix, saturation, skymatch, tweakreg, resample]
+propertyOrder: [assign_wcs, flat_field, dark, dq_init, flux, jump, linearity, photom, source_detection, outlier_detection, ramp_fit, refpix, saturation, skymatch, tweakreg, resample]
 flowStyle: block
-required: [assign_wcs, flat_field, dark, dq_init, jump, linearity, outlier_detection, photom, source_detection, ramp_fit, refpix, resample, saturation, skymatch, tweakreg]
+required: [assign_wcs, flat_field, dark, dq_init, flux, jump, linearity, outlier_detection, photom, source_detection, ramp_fit, refpix, resample, saturation, skymatch, tweakreg]
 additionalProperties: true
 ...

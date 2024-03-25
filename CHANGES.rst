@@ -20,6 +20,8 @@
 
 - Add attributes under the ``basic`` schema to ``WfiMosaic.meta``. [#390]
 
+- Create the flux step schema. [#395]
+
 
 0.19.0 (2024-02-09)
 -------------------
