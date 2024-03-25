@@ -17,11 +17,9 @@ properties:
         properties:
           basic:
             tag: asdf://stsci.edu/datamodels/roman/tags/mosaic_basic-1.0.0
-          coordinates:
-            tag: asdf://stsci.edu/datamodels/roman/tags/coordinates-1.0.0
           program:
             tag: asdf://stsci.edu/datamodels/roman/tags/program-1.0.0
-        required: [basic, coordinates, program]
+        required: [basic, program]
   data:
     title: Segmentation map
     description: |
