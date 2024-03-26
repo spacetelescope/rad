@@ -29,6 +29,13 @@ properties:
     description: |
       The total exposure time for the resampled product.
     type: number
+  members:
+    title: Resample Members
+    description: |
+      Filenames of resample members
+    type: array
+    items:
+      type: string
   weight_type:
     title: Weight Type
     description: |
@@ -37,7 +44,7 @@ properties:
       variance map ("ivm").
     type: string
     enum: ["exptime", "ivm"]
-propertyOrder: [pixel_scale_ratio, pixfrac, pointings, product_exposure_time, weight_type]
+propertyOrder: [members, pixel_scale_ratio, pixfrac, pointings, product_exposure_time, weight_type]
 flowStyle: block
-required: [pixel_scale_ratio, pixfrac, weight_type]
+required: [members, pixel_scale_ratio, pixfrac, weight_type]
 ...
