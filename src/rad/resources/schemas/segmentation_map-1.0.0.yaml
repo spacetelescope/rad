@@ -21,8 +21,10 @@ properties:
               WFI optical element used to take the data.
             $ref: wfi_optical_element-1.0.0
           program:
+            title: Program Information
             tag: asdf://stsci.edu/datamodels/roman/tags/program-1.0.0
           visit:
+            title: Visit Information
             tag: asdf://stsci.edu/datamodels/roman/tags/visit-1.0.0
         required: [optical_element, program, visit]
   data:
