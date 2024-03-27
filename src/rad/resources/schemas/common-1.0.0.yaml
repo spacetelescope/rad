@@ -16,7 +16,7 @@ allOf:
       tag: asdf://stsci.edu/datamodels/roman/tags/aperture-1.0.0
     cal_step:
       title: Tracker of Calibration Pipeline Steps
-      tag: asdf://stsci.edu/datamodels/roman/tags/cal_step-1.0.0
+      tag: asdf://stsci.edu/datamodels/roman/tags/l2_cal_step-1.0.0
     coordinates:
       title: Name Of The Coordinate Reference Frame
       tag: asdf://stsci.edu/datamodels/roman/tags/coordinates-1.0.0

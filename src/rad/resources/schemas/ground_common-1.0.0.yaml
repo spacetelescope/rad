@@ -12,7 +12,7 @@ allOf:
   properties:
     # Meta Objects
     cal_step:
-      tag: asdf://stsci.edu/datamodels/roman/tags/cal_step-1.0.0
+      tag: asdf://stsci.edu/datamodels/roman/tags/l2_cal_step-1.0.0
     exposure:
       tag: asdf://stsci.edu/datamodels/roman/tags/base_exposure-1.0.0
     guidestar:

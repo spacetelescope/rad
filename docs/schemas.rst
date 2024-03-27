@@ -33,7 +33,6 @@ Tags
     associations-1.0.0
     basic-1.0.0
     cal_logs-1.0.0
-    cal_step-1.0.0
     common-1.0.0
     coordinates-1.0.0
     ephemeris-1.0.0
@@ -43,6 +42,8 @@ Tags
     guidewindow_modes-1.0.0
     guidewindow-1.0.0
     individual_image_meta-1.0.0
+    l2_cal_step-1.0.0
+    l3_cal_step-1.0.0
     mosaic_associations-1.0.0
     mosaic_basic-1.0.0
     mosaic_wcsinfo-1.0.0

@@ -115,11 +115,16 @@ tags:
   title: Guidestar information
   description: |-
     Guidestar information
-- tag_uri: asdf://stsci.edu/datamodels/roman/tags/cal_step-1.0.0
-  schema_uri: asdf://stsci.edu/datamodels/roman/schemas/cal_step-1.0.0
-  title: Calibration Step status information
+- tag_uri: asdf://stsci.edu/datamodels/roman/tags/l2_cal_step-1.0.0
+  schema_uri: asdf://stsci.edu/datamodels/roman/schemas/l2_cal_step-1.0.0
+  title: Level 2 Calibration Step status information
   description: |-
-    Calibration Step status information
+    Level 2 Calibration Step status information
+- tag_uri: asdf://stsci.edu/datamodels/roman/tags/l3_cal_step-1.0.0
+  schema_uri: asdf://stsci.edu/datamodels/roman/schemas/l3_cal_step-1.0.0
+  title: Level 3 Calibration Step status information
+  description: |-
+    Level 3 Calibration Step status information
 - tag_uri: asdf://stsci.edu/datamodels/roman/tags/resample-1.0.0
   schema_uri: asdf://stsci.edu/datamodels/roman/schemas/resample-1.0.0
   title: Resample information
