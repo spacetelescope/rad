@@ -20,6 +20,7 @@ properties:
           photometry:
             tag: asdf://stsci.edu/datamodels/roman/tags/photometry-1.0.0
           program:
+            title: Program Information
             tag: asdf://stsci.edu/datamodels/roman/tags/program-1.0.0
         required: [basic, photometry, program]
   source_catalog:
