@@ -1,0 +1,36 @@
+%YAML 1.1
+---
+$schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.0.0
+id: asdf://stsci.edu/datamodels/roman/schemas/mosaic_segmentation_map-1.0.0
+
+title: Segmentation map generated from a Level 3 file by the Source Catalog Step.
+
+datamodel_name: MosaicSegmentationMapModel
+
+archive_meta: None
+type: object
+properties:
+  meta:
+    allOf:
+      - $ref: basic-1.0.0
+      - type: object
+        properties:
+          basic:
+            tag: asdf://stsci.edu/datamodels/roman/tags/mosaic_basic-1.0.0
+          program:
+            title: Program Information
+            tag: asdf://stsci.edu/datamodels/roman/tags/program-1.0.0
+        required: [basic, program]
+  data:
+    title: Segmentation map
+    description: |
+       Segmentation map of an image model, zeros correspond to background.
+    tag: tag:stsci.edu:asdf/core/ndarray-1.*
+    ndim: 2
+    datatype: uint32
+    exact_datatype: true
+
+required: [meta, data]
+flowStyle: block
+propertyOrder: [meta, data]
+...

@@ -20,6 +20,7 @@
 
 - Add attributes under the ``basic`` schema to ``WfiMosaic.meta``. [#390]
 
+- Add source_catalog and segmentation_map schemas for Level 2 and Level 3 files. [#393]
 
 0.19.0 (2024-02-09)
 -------------------
