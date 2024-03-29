@@ -20,6 +20,8 @@
 
 - Add attributes under the ``basic`` schema to ``WfiMosaic.meta``. [#390]
 
+- Add Members Keyword to Resample Schema. [#396]
+
 - Create the flux step schema. [#395]
 
 
