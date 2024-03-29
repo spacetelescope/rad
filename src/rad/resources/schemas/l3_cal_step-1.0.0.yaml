@@ -6,6 +6,16 @@ id: asdf://stsci.edu/datamodels/roman/schemas/l3_cal_step-1.0.0
 title: Level 3 Calibration Status
 type: object
 properties:
+  flux:
+    title: Flux Scale Application Step
+    description: |
+      Step in ROMANCAL which applies the scaling factors determined in the Photom calibrations step.
+      The data are converted from DN/s to MJy/sr.
+    type: string
+    enum: ['N/A', 'COMPLETE', 'SKIPPED', 'INCOMPLETE']
+    archive_catalog:
+      datatype: nvarchar(15)
+      destination: [ScienceRefData.s_flux, GuideWindow.s_flux, WFIMosaic.s_flux]
   outlier_detection:
     title: Outlier Detection Step
     description: |
@@ -14,7 +24,7 @@ properties:
     enum: ['N/A', 'COMPLETE', 'SKIPPED', 'INCOMPLETE']
     archive_catalog:
       datatype: nvarchar(15)
-      destination: [ScienceRefData.s_outlier_detection, GuideWindow.s_outlier_detection, WFICommon.s_outlier_detection]
+      destination: [ScienceRefData.s_outlier_detection, GuideWindow.s_outlier_detection, WFIMosaic.s_outlier_detection]
   skymatch:
     title: Sky Matching for Combining Overlapping Images Step
     description: |
@@ -24,7 +34,7 @@ properties:
     enum: ['N/A', 'COMPLETE', 'SKIPPED', 'INCOMPLETE']
     archive_catalog:
       datatype: nvarchar(15)
-      destination: [ScienceRefData.s_skymatch, GuideWindow.s_skymatch, WFICommon.s_skymatch]
+      destination: [ScienceRefData.s_skymatch, GuideWindow.s_skymatch, WFIMosaic.s_skymatch]
   resample:
     title: Resampling Input Data onto a Regular Grid Step
     description: |
@@ -35,9 +45,9 @@ properties:
     enum: ['N/A', 'COMPLETE', 'SKIPPED', 'INCOMPLETE']
     archive_catalog:
       datatype: nvarchar(15)
-      destination: [ScienceRefData.s_resample, GuideWindow.s_resample, WFICommon.s_resample]
-propertyOrder: [outlier_detection, skymatch, resample]
+      destination: [ScienceRefData.s_resample, GuideWindow.s_resample, WFIMosaic.s_resample]
+propertyOrder: [flux, outlier_detection, skymatch, resample]
 flowStyle: block
-required: [outlier_detection, resample, skymatch]
+required: [flux, outlier_detection, resample, skymatch]
 additionalProperties: true
 ...
