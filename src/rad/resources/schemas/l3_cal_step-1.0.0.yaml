@@ -1,0 +1,53 @@
+%YAML 1.1
+---
+$schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.0.0
+id: asdf://stsci.edu/datamodels/roman/schemas/l3_cal_step-1.0.0
+
+title: Level 3 Calibration Status
+type: object
+properties:
+  flux:
+    title: Flux Scale Application Step
+    description: |
+      Step in ROMANCAL which applies the scaling factors determined in the Photom calibrations step.
+      The data are converted from DN/s to MJy/sr.
+    type: string
+    enum: ['N/A', 'COMPLETE', 'SKIPPED', 'INCOMPLETE']
+    archive_catalog:
+      datatype: nvarchar(15)
+      destination: [ScienceRefData.s_flux, GuideWindow.s_flux, WFIMosaic.s_flux]
+  outlier_detection:
+    title: Outlier Detection Step
+    description: |
+      Step in ROMANCAL which detects and flags outliers in a science image.
+    type: string
+    enum: ['N/A', 'COMPLETE', 'SKIPPED', 'INCOMPLETE']
+    archive_catalog:
+      datatype: nvarchar(15)
+      destination: [ScienceRefData.s_outlier_detection, GuideWindow.s_outlier_detection, WFIMosaic.s_outlier_detection]
+  skymatch:
+    title: Sky Matching for Combining Overlapping Images Step
+    description: |
+      Step in ROMANCAL that computes sky background values of each input image
+      and derives scalings to equalize overlapping regions.
+    type: string
+    enum: ['N/A', 'COMPLETE', 'SKIPPED', 'INCOMPLETE']
+    archive_catalog:
+      datatype: nvarchar(15)
+      destination: [ScienceRefData.s_skymatch, GuideWindow.s_skymatch, WFIMosaic.s_skymatch]
+  resample:
+    title: Resampling Input Data onto a Regular Grid Step
+    description: |
+      Step in ROMANCAL which resamples each input 2D image based on its WCS and
+      WCS distortion information on a grid that allows the combination of
+      multiple resampled images into a single, undistorted product.
+    type: string
+    enum: ['N/A', 'COMPLETE', 'SKIPPED', 'INCOMPLETE']
+    archive_catalog:
+      datatype: nvarchar(15)
+      destination: [ScienceRefData.s_resample, GuideWindow.s_resample, WFIMosaic.s_resample]
+propertyOrder: [flux, outlier_detection, skymatch, resample]
+flowStyle: block
+required: [flux, outlier_detection, resample, skymatch]
+additionalProperties: true
+...

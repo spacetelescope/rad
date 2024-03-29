@@ -20,6 +20,8 @@
 
 - Add attributes under the ``basic`` schema to ``WfiMosaic.meta``. [#390]
 
+- Split cal_step into L2 and L3 versions. [#397]
+
 - Add Members Keyword to Resample Schema. [#396]
 
 - Create the flux step schema. [#395]
