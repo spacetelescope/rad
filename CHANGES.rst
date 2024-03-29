@@ -22,6 +22,8 @@
 
 - Add Members Keyword to Resample Schema. [#396]
 
+- Create the flux step schema. [#395]
+
 
 0.19.0 (2024-02-09)
 -------------------
