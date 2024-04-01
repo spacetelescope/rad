@@ -26,7 +26,9 @@
 
 - Create the flux step schema. [#395]
 
+- Add bit mask field to ``resample``. [#401]
 
+  
 0.19.0 (2024-02-09)
 -------------------
 
