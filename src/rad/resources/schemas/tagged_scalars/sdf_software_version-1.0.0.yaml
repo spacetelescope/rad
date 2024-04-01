@@ -12,7 +12,8 @@ sdf:
 archive_catalog:
   datatype: nvarchar(120)
   destination: [WFIExposure.sdf_software_version, GuideWindow.sdf_software_version,
-                WFICommon.sdf_software_version, WFIMosaic.sdf_software_version]
+                WFICommon.sdf_software_version, WFIMosaic.sdf_software_version,
+                SourceCatalog.sdf_software_version, SegmentationMap.sdf_software_version]
 
 flowStyle: block
 ...

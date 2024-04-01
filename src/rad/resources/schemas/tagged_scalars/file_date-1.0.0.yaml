@@ -14,7 +14,8 @@ sdf:
     origin: TBD
 archive_catalog:
   datatype: datetime2
-  destination: [WFIExposure.filedate, GuideWindow.filedate, WFICommon.filedate, WFIMosaic.filedate]
+  destination: [WFIExposure.filedate, GuideWindow.filedate, WFICommon.filedate, WFIMosaic.filedate,
+                SourceCatalog.filedate, SegmentationMap.filedate]
 
 flowStyle: block
 ...

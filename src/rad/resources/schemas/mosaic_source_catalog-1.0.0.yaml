@@ -18,6 +18,7 @@ properties:
           basic:
             tag: asdf://stsci.edu/datamodels/roman/tags/mosaic_basic-1.0.0
           photometry:
+            title: Photometry Information
             tag: asdf://stsci.edu/datamodels/roman/tags/photometry-1.0.0
           program:
             title: Program Information

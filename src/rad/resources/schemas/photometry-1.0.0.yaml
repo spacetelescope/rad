@@ -21,7 +21,8 @@ properties:
       - type: "null"
     archive_catalog:
       datatype: float
-      destination: [WFIExposure.conversion_megajanskys, WFIMosaic.conversion_megajanskys]
+      destination: [WFIExposure.conversion_megajanskys, WFIMosaic.conversion_megajanskys,
+                    SourceCatalog.conversion_megajanskys]
   conversion_microjanskys:
     title: Flux Density Producing 1 count per second (uJy / arcsec2)
     description: |
@@ -37,7 +38,8 @@ properties:
       - type: "null"
     archive_catalog:
       datatype: float
-      destination: [WFIExposure.conversion_microjanskys, WFIMosaic.conversion_microjanskys]
+      destination: [WFIExposure.conversion_microjanskys, WFIMosaic.conversion_microjanskys,
+                    SourceCatalog.conversion_microjanskys]
   pixelarea_steradians:
     title: Nominal Pixel Area (steradians)
     description: |
@@ -53,7 +55,8 @@ properties:
       - type: "null"
     archive_catalog:
       datatype: float
-      destination: [WFIExposure.pixelarea_steradians, WFIMosaic.pixelarea_steradians]
+      destination: [WFIExposure.pixelarea_steradians, WFIMosaic.pixelarea_steradians,
+                    SourceCatalog.pixelarea_steradians]
   pixelarea_arcsecsq:
     title: Nominal Pixel Area (arcsec^2)
     description: |
@@ -69,7 +72,8 @@ properties:
       - type: "null"
     archive_catalog:
       datatype: float
-      destination: [WFIExposure.pixelarea_arcsecsq, WFIMosaic.pixelarea_arcsecsq]
+      destination: [WFIExposure.pixelarea_arcsecsq, WFIMosaic.pixelarea_arcsecsq,
+                    SourceCatalog.pixelarea_arcsecsq]
   conversion_megajanskys_uncertainty:
     title: Uncertainty in Flux Density Conversion (from DN / s to MJy / steradians)
     description: |
@@ -86,7 +90,8 @@ properties:
       - type: "null"
     archive_catalog:
       datatype: float
-      destination: [WFIExposure.conversion_megajanskys_uncertainty, WFIMosaic.conversion_megajanskys_uncertainty]
+      destination: [WFIExposure.conversion_megajanskys_uncertainty, WFIMosaic.conversion_megajanskys_uncertainty,
+                    SourceCatalog.conversion_megajanskys_uncertainty]
   conversion_microjanskys_uncertainty:
     title: Uncertainty in Flux Density Conversion (from DN / s to uJy / arcsec^2)
     description: |
@@ -103,7 +108,8 @@ properties:
       - type: "null"
     archive_catalog:
       datatype: float
-      destination: [WFIExposure.conversion_microjanskys_uncertainty, WFIMosaic.conversion_microjanskys_uncertainty]
+      destination: [WFIExposure.conversion_microjanskys_uncertainty, WFIMosaic.conversion_microjanskys_uncertainty,
+                    SourceCatalog.conversion_microjanskys_uncertainty]
 propertyOrder: [conversion_microjanskys, conversion_megajanskys,
                 pixelarea_steradians, pixelarea_arcsecsq,
                 conversion_megajanskys_uncertainty, conversion_microjanskys_uncertainty]

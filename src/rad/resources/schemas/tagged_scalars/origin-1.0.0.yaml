@@ -14,7 +14,8 @@ sdf:
     origin: TBD
 archive_catalog:
   datatype: nvarchar(15)
-  destination: [WFIExposure.origin, GuideWindow.origin, WFICommon.origin, WFIMosaic.origin]
+  destination: [WFIExposure.origin, GuideWindow.origin, WFICommon.origin, WFIMosaic.origin,
+                SourceCatalog.origin, SegmentationMap.origin]
 
 flowStyle: block
 ...
