@@ -23,13 +23,16 @@ properties:
           exposure:
             title: Exposure Information
             tag: asdf://stsci.edu/datamodels/roman/tags/exposure-1.0.0
+          photometry:
+            title: Photometry Information
+            tag: asdf://stsci.edu/datamodels/roman/tags/photometry-1.0.0
           program:
             title: Program Information
             tag: asdf://stsci.edu/datamodels/roman/tags/program-1.0.0
           visit:
             title: Visit Information
             tag: asdf://stsci.edu/datamodels/roman/tags/visit-1.0.0
-        required: [optical_element, exposure, program, visit]
+        required: [optical_element, exposure, photometry, program, visit]
   source_catalog:
     title: Source Catalog
     description: |
