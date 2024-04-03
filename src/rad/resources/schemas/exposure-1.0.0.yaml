@@ -22,7 +22,8 @@ allOf:
             origin: TBD
         archive_catalog:
           datatype: int
-          destination: [WFIExposure.exposure_id, GuideWindow.exposure_id]
+          destination: [WFIExposure.exposure_id, GuideWindow.exposure_id,
+                        SourceCatalog.exposure_id, SegmentationMap.exposure_id]
       mid_time:
         title: Exposure Mid Time (UTC)
         description: |
@@ -34,7 +35,8 @@ allOf:
             origin: TBD
         archive_catalog:
           datatype: datetime2
-          destination: [WFIExposure.exposure_mid_time, GuideWindow.exposure_mid_time]
+          destination: [WFIExposure.exposure_mid_time, GuideWindow.exposure_mid_time,
+                        SourceCatalog.exposure_mid_time, SegmentationMap.exposure_mid_time]
       end_time:
         title: Exposure End Time (UTC)
         description: |
@@ -46,7 +48,8 @@ allOf:
             origin: TBD
         archive_catalog:
           datatype: datetime2
-          destination: [WFIExposure.exposure_end_time, GuideWindow.exposure_end_time]
+          destination: [WFIExposure.exposure_end_time, GuideWindow.exposure_end_time,
+                        SourceCatalog.exposure_end_time, SegmentationMap.exposure_end_time]
       start_time_mjd:
         title: MJD Start Time (d)
         description: |
@@ -59,7 +62,8 @@ allOf:
             origin: TBD
         archive_catalog:
           datatype: float
-          destination: [WFIExposure.exposure_start_time_mjd, GuideWindow.exposure_start_time_mjd]
+          destination: [WFIExposure.exposure_start_time_mjd, GuideWindow.exposure_start_time_mjd,
+                        SourceCatalog.exposure_start_time_mjd, SegmentationMap.exposure_start_time_mjd]
       mid_time_mjd:
         title: MJD Mid Time (d)
         description: |
@@ -72,7 +76,8 @@ allOf:
             origin: TBD
         archive_catalog:
           datatype: float
-          destination: [WFIExposure.exposure_mid_time_mjd, GuideWindow.exposure_mid_time_mjd]
+          destination: [WFIExposure.exposure_mid_time_mjd, GuideWindow.exposure_mid_time_mjd,
+                        SourceCatalog.exposure_mid_time_mjd, SegmentationMap.exposure_mid_time_mjd]
       end_time_mjd:
         title: MJD End Time (d)
         description: |
@@ -85,7 +90,8 @@ allOf:
             origin: TBD
         archive_catalog:
           datatype: float
-          destination: [WFIExposure.exposure_end_time_mjd, GuideWindow.exposure_end_time_mjd]
+          destination: [WFIExposure.exposure_end_time_mjd, GuideWindow.exposure_end_time_mjd,
+                        SourceCatalog.exposure_end_time_mjd, SegmentationMap.exposure_end_time_mjd]
       start_time_tdb:
         title: TDB Start Time (d)
         description: |
@@ -98,7 +104,8 @@ allOf:
             origin: TBD
         archive_catalog:
           datatype: float
-          destination: [WFIExposure.exposure_start_time_tdb, GuideWindow.exposure_start_time_tdb]
+          destination: [WFIExposure.exposure_start_time_tdb, GuideWindow.exposure_start_time_tdb,
+                        SourceCatalog.exposure_start_time_tdb, SegmentationMap.exposure_start_time_tdb]
       mid_time_tdb:
         title: TDB Mid Time (d)
         description: |
@@ -111,7 +118,8 @@ allOf:
             origin: TBD
         archive_catalog:
           datatype: float
-          destination: [WFIExposure.exposure_mid_time_tdb, GuideWindow.exposure_mid_time_tdb]
+          destination: [WFIExposure.exposure_mid_time_tdb, GuideWindow.exposure_mid_time_tdb,
+                        SourceCatalog.exposure_mid_time_tdb, SegmentationMap.exposure_mid_time_tdb]
       end_time_tdb:
         title: TDB End Time (d)
         description: |
@@ -124,7 +132,8 @@ allOf:
             origin: TBD
         archive_catalog:
           datatype: float
-          destination: [WFIExposure.exposure_end_time_tdb, GuideWindow.exposure_end_time_tdb]
+          destination: [WFIExposure.exposure_end_time_tdb, GuideWindow.exposure_end_time_tdb,
+                        SourceCatalog.exposure_end_time_tdb, SegmentationMap.exposure_end_time_tdb]
       sca_number:
         title: SCA Number
         description: |
@@ -137,7 +146,8 @@ allOf:
             origin: TBD
         archive_catalog:
           datatype: int
-          destination: [WFIExposure.exposure_sca_number, GuideWindow.exposure_sca_number]
+          destination: [WFIExposure.exposure_sca_number, GuideWindow.exposure_sca_number,
+                        SourceCatalog.exposure_sca_number, SegmentationMap.exposure_sca_number]
       gain_factor:
         title: Gain Factor
         type: number
@@ -147,7 +157,8 @@ allOf:
             origin: TBD
         archive_catalog:
           datatype: float
-          destination: [WFIExposure.exposure_gain_factor, GuideWindow.exposure_gain_factor]
+          destination: [WFIExposure.exposure_gain_factor, GuideWindow.exposure_gain_factor,
+                        SourceCatalog.exposure_gain_factor, SegmentationMap.exposure_gain_factor]
       integration_time:
         title: Effective Integration Time (s)
         description:
@@ -159,7 +170,8 @@ allOf:
             origin: TBD
         archive_catalog:
           datatype: float
-          destination: [WFIExposure.exposure_integration_time, GuideWindow.exposure_integration_time]
+          destination: [WFIExposure.exposure_integration_time, GuideWindow.exposure_integration_time,
+                        SourceCatalog.exposure_integration_time, SegmentationMap.exposure_integration_time]
       elapsed_exposure_time:
         title: Elapsed Exposure Time (s)
         description: |
@@ -172,7 +184,8 @@ allOf:
             origin: TBD
         archive_catalog:
           datatype: float
-          destination: [WFIExposure.elapsed_exposure_time, GuideWindow.elapsed_exposure_time]
+          destination: [WFIExposure.elapsed_exposure_time, GuideWindow.elapsed_exposure_time,
+                        SourceCatalog.elapsed_exposure_time, SegmentationMap.elapsed_exposure_time]
       effective_exposure_time:
         title: Effective Exposure Time (s)
         description: |
@@ -185,7 +198,8 @@ allOf:
             origin: TBD
         archive_catalog:
           datatype: float
-          destination: [WFIExposure.effective_exposure_time, GuideWindow.effective_exposure_time]
+          destination: [WFIExposure.effective_exposure_time, GuideWindow.effective_exposure_time,
+                        SourceCatalog.effective_exposure_time, SegmentationMap.effective_exposure_time]
       duration:
         title: Exposure Duration (s)
         description: |
@@ -198,7 +212,8 @@ allOf:
             origin: TBD
         archive_catalog:
           datatype: float
-          destination: [WFIExposure.exposure_duration, GuideWindow.exposure_duration]
+          destination: [WFIExposure.exposure_duration, GuideWindow.exposure_duration,
+                        SourceCatalog.exposure_duration, SegmentationMap.exposure_duration]
       level0_compressed:
         title: Level 0 Compression
         description: |
@@ -211,7 +226,8 @@ allOf:
             origin: TBD
         archive_catalog:
           datatype: nchar(1)
-          destination: [WFIExposure.exposure_level0_compressed, GuideWindow.exposure_level0_compressed]
+          destination: [WFIExposure.exposure_level0_compressed, GuideWindow.exposure_level0_compressed,
+                        SourceCatalog.exposure_level0_compressed, SegmentationMap.exposure_level0_compressed]
       truncated:
         title: Truncated MA Table
         description: |
@@ -223,7 +239,8 @@ allOf:
             origin: TBD
         archive_catalog:
           datatype: nchar(1)
-          destination: [WFIExposure.exposure_truncated]
+          destination: [WFIExposure.exposure_truncated,
+                        SourceCatalog.exposure_truncated, SegmentationMap.exposure_truncated]
     required: [id,
               mid_time, end_time,
               start_time_mjd, mid_time_mjd, end_time_mjd,
