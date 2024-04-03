@@ -1,0 +1,45 @@
+%YAML 1.1
+---
+$schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.0.0
+id: asdf://stsci.edu/datamodels/roman/schemas/source_catalog-1.0.0
+
+title: Source catalog generated from a Level 2 file by the Source Catalog Step.
+
+datamodel_name: SourceCatalogModel
+
+archive_meta: None
+type: object
+properties:
+  meta:
+    allOf:
+      - $ref: basic-1.0.0
+      - type: object
+        properties:
+          optical_element:
+            title: WFI Optical Element
+            description: |
+              WFI optical element used to take the data.
+            $ref: wfi_optical_element-1.0.0
+          exposure:
+            title: Exposure Information
+            tag: asdf://stsci.edu/datamodels/roman/tags/exposure-1.0.0
+          photometry:
+            title: Photometry Information
+            tag: asdf://stsci.edu/datamodels/roman/tags/photometry-1.0.0
+          program:
+            title: Program Information
+            tag: asdf://stsci.edu/datamodels/roman/tags/program-1.0.0
+          visit:
+            title: Visit Information
+            tag: asdf://stsci.edu/datamodels/roman/tags/visit-1.0.0
+        required: [optical_element, exposure, photometry, program, visit]
+  source_catalog:
+    title: Source Catalog
+    description: |
+       Photometry and astrometry computed in the Source Catalog Step.
+    tag: tag:astropy.org:astropy/table/table-1.*
+
+required: [meta, source_catalog]
+flowStyle: block
+propertyOrder: [meta, source_catalog]
+...

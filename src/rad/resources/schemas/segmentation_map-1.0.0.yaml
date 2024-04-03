@@ -1,0 +1,42 @@
+%YAML 1.1
+---
+$schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.0.0
+id: asdf://stsci.edu/datamodels/roman/schemas/segmentation_map-1.0.0
+
+title: Segmentation map generated from a Level 2 file by the Source Catalog Step.
+
+datamodel_name: SegmentationMapModel
+
+archive_meta: None
+type: object
+properties:
+  meta:
+    allOf:
+      - $ref: basic-1.0.0
+      - type: object
+        properties:
+          optical_element:
+            title: WFI Optical Element
+            description: |
+              WFI optical element used to take the data.
+            $ref: wfi_optical_element-1.0.0
+          program:
+            title: Program Information
+            tag: asdf://stsci.edu/datamodels/roman/tags/program-1.0.0
+          visit:
+            title: Visit Information
+            tag: asdf://stsci.edu/datamodels/roman/tags/visit-1.0.0
+        required: [optical_element, program, visit]
+  data:
+    title: Segmentation map
+    description: |
+       Segmentation map of an image model, zeros correspond to background.
+    tag: tag:stsci.edu:asdf/core/ndarray-1.*
+    ndim: 2
+    datatype: uint32
+    exact_datatype: true
+
+required: [meta, data]
+flowStyle: block
+propertyOrder: [meta, data]
+...

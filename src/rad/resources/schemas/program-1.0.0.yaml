@@ -17,7 +17,8 @@ properties:
         origin: PSS:dms_program.title
     archive_catalog:
       datatype: nvarchar(200)
-      destination: [WFIExposure.program_title, WFIMosaic.program_title, GuideWindow.program_title]
+      destination: [WFIExposure.program_title, WFIMosaic.program_title, GuideWindow.program_title,
+                    SourceCatalog.program_title, SegmentationMap.program_title]
   pi_name:
     title: Principal Investigator Name
     description: |
@@ -31,7 +32,8 @@ properties:
         origin: TBD
     archive_catalog:
       datatype: nvarchar(100)
-      destination: [WFIExposure.pi_name, WFIMosaic.pi_name, GuideWindow.pi_name]
+      destination: [WFIExposure.pi_name, WFIMosaic.pi_name, GuideWindow.pi_name,
+                    SourceCatalog.pi_name, SegmentationMap.pi_name]
   category:
     title: Program Category
     description: |
@@ -43,7 +45,8 @@ properties:
         origin: PSS:dms_program.category
     archive_catalog:
       datatype: nvarchar(6)
-      destination: [WFIExposure.program_category, WFIMosaic.program_category, GuideWindow.program_category]
+      destination: [WFIExposure.program_category, WFIMosaic.program_category, GuideWindow.program_category,
+                    SourceCatalog.program_category, SegmentationMap.program_category]
   subcategory:
     title: Program Subcategory
     description: |
@@ -55,7 +58,8 @@ properties:
         origin: PSS:dms_program.subcategory
     archive_catalog:
       datatype: nvarchar(15)
-      destination: [WFIExposure.program_subcategory, WFIMosaic.program_subcategory, GuideWindow.program_subcategory]
+      destination: [WFIExposure.program_subcategory, WFIMosaic.program_subcategory, GuideWindow.program_subcategory,
+                    SourceCatalog.program_subcategory, SegmentationMap.program_subcategory]
   science_category:
     title: Science Category
     description: |
@@ -68,7 +72,8 @@ properties:
         origin: PSS:dms_program.science_category
     archive_catalog:
       datatype: nvarchar(50)
-      destination: [WFIExposure.science_category, WFIMosaic.science_category, GuideWindow.science_category]
+      destination: [WFIExposure.science_category, WFIMosaic.science_category, GuideWindow.science_category,
+                    SourceCatalog.science_category, SegmentationMap.science_category]
   continuation_id:
     title: Continuation ID
     description: |
@@ -81,7 +86,8 @@ properties:
         origin: PSS:dms_program.continuation_id
     archive_catalog:
       datatype: int
-      destination: [WFIExposure.continuation_id, WFIMosaic.continuation_id, GuideWindow.continuation_id]
+      destination: [WFIExposure.continuation_id, WFIMosaic.continuation_id, GuideWindow.continuation_id,
+                    SourceCatalog.continuation_id, SegmentationMap.continuation_id]
 propertyOrder: [title, pi_name, category, subcategory, science_category, continuation_id]
 flowStyle: block
 required: [title, pi_name, category, subcategory, science_category, continuation_id]
