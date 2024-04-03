@@ -27,6 +27,8 @@ properties:
             tag: asdf://stsci.edu/datamodels/roman/tags/coordinates-1.0.0
           individual_image_meta:
             tag: asdf://stsci.edu/datamodels/roman/tags/individual_image_meta-1.0.0
+          outlier_detection:
+            tag: asdf://stsci.edu/datamodels/roman/tags/outlier_detection-1.0.0
           photometry:
             tag: asdf://stsci.edu/datamodels/roman/tags/photometry-1.0.0
           program:
