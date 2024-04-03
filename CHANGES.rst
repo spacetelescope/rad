@@ -26,7 +26,7 @@
 
 - Create the flux step schema. [#395]
 
-- Add bit mask field to ``resample``. [#401]
+- Create ``outlier_detection`` schema and add bit mask field to both it and ``resample``. [#401]
 
 - Add source_catalog and segmentation_map schemas for Level 2 and Level 3 files. [#393]
 
