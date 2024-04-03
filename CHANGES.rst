@@ -1,4 +1,4 @@
-0.19.1 (unreleased)
+0.20.0 (unreleased)
 -------------------
 
 - Add new schemas to documentation. [#386]
@@ -27,6 +27,8 @@
 - Create the flux step schema. [#395]
 
 - Add bit mask field to ``resample``. [#401]
+
+- Add source_catalog and segmentation_map schemas for Level 2 and Level 3 files. [#393]
 
   
 0.19.0 (2024-02-09)
