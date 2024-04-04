@@ -1,0 +1,17 @@
+%YAML 1.1
+---
+$schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.0.0
+id: asdf://stsci.edu/datamodels/roman/schemas/outlier_detection-1.0.0
+
+title: Outlier Detection Information
+type: object
+properties:
+  good_bits:
+    title: Bit Mask
+    description: |
+      Bit mask parameter sent to resample.
+    type: string
+propertyOrder: [good_bits]
+flowStyle: block
+required: [good_bits]
+...

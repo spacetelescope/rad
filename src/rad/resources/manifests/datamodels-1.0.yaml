@@ -125,6 +125,11 @@ tags:
   title: Level 3 Calibration Step status information
   description: |-
     Level 3 Calibration Step status information
+- tag_uri: asdf://stsci.edu/datamodels/roman/tags/outlier_detection-1.0.0
+  schema_uri: asdf://stsci.edu/datamodels/roman/schemas/outlier_detection-1.0.0
+  title: Outlier Detection information
+  description: |-
+    Outlier Detection information
 - tag_uri: asdf://stsci.edu/datamodels/roman/tags/resample-1.0.0
   schema_uri: asdf://stsci.edu/datamodels/roman/schemas/resample-1.0.0
   title: Resample information

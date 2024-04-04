@@ -26,9 +26,12 @@
 
 - Create the flux step schema. [#395]
 
+- Create ``outlier_detection`` schema and add bit mask field to both it and ``resample``. [#401]
+
 - Add source_catalog and segmentation_map schemas for Level 2 and Level 3 files. [#393]
 
-0.19.0 (2024-02-09)
+
+  0.19.0 (2024-02-09)
 -------------------
 
 - Added streamlined Level 3 Mosaic metadata schemas. [#334]

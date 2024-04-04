@@ -6,6 +6,11 @@ id: asdf://stsci.edu/datamodels/roman/schemas/resample-1.0.0
 title: Resample Information
 type: object
 properties:
+  good_bits:
+    title: Bit Mask
+    description: |
+      Bit mask used in resample.
+    type: string
   pixel_scale_ratio:
     title: Pixel Scale Ratio
     description: |
@@ -44,7 +49,7 @@ properties:
       variance map ("ivm").
     type: string
     enum: ["exptime", "ivm"]
-propertyOrder: [members, pixel_scale_ratio, pixfrac, pointings, product_exposure_time, weight_type]
+propertyOrder: [good_bits, members, pixel_scale_ratio, pixfrac, pointings, product_exposure_time, weight_type]
 flowStyle: block
-required: [members, pixel_scale_ratio, pixfrac, weight_type]
+required: [good_bits, members, pixel_scale_ratio, pixfrac, weight_type]
 ...

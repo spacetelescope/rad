@@ -22,6 +22,8 @@ properties:
               - type: "null"
           photometry:
             tag: asdf://stsci.edu/datamodels/roman/tags/photometry-1.0.0
+          outlier_detection:
+            tag: asdf://stsci.edu/datamodels/roman/tags/outlier_detection-1.0.0
           source_detection:
             tag: asdf://stsci.edu/datamodels/roman/tags/source_detection-1.0.0
         required: [photometry, wcs]
