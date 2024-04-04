@@ -1,4 +1,9 @@
-0.20.0 (unreleased)
+0.20.1 (unreleased)
+-------------------
+
+- 
+
+0.20.0 (2024-04-04)
 -------------------
 
 - Add new schemas to documentation. [#386]
