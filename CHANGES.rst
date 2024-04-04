@@ -1,6 +1,11 @@
 0.20.0 (unreleased)
 -------------------
 
+-
+
+0.19.1 (2024-04-04)
+-------------------
+
 - Add new schemas to documentation. [#386]
 
 - Convert tag keywords to wildcards for external tags. [#370]
