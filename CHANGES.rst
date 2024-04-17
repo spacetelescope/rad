@@ -1,4 +1,9 @@
-0.19.2 (unreleased)
+0.19.3 (unreleased)
+-------------------
+
+- 
+
+0.19.2 (2024-04-17)
 -------------------
 
 - Duplicated the keywords from base_exposure to exposure and similarly for base_guidestar and guidestar. [#406]
