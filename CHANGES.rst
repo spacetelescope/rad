@@ -1,7 +1,7 @@
 0.19.3 (unreleased)
 -------------------
 
-- 
+- Duplicated the keywords from groundtest to tvac_groundtest. [#409]
 
 0.19.2 (2024-04-17)
 -------------------
