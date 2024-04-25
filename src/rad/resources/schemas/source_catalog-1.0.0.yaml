@@ -32,7 +32,9 @@ properties:
           visit:
             title: Visit Information
             tag: asdf://stsci.edu/datamodels/roman/tags/visit-1.0.0
-        required: [optical_element, exposure, photometry, program, visit]
+          ref_file:
+            tag: asdf://stsci.edu/datamodels/roman/tags/ref_file-1.0.0
+        required: [optical_element, exposure, photometry, program, visit, ref_file]
   source_catalog:
     title: Source Catalog
     description: |

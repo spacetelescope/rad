@@ -23,7 +23,9 @@ properties:
           program:
             title: Program Information
             tag: asdf://stsci.edu/datamodels/roman/tags/program-1.0.0
-        required: [basic, photometry, program]
+          ref_file:
+            tag: asdf://stsci.edu/datamodels/roman/tags/ref_file-1.0.0
+        required: [basic, photometry, program, ref_file]
   source_catalog:
     title: Source Catalog
     description: |
