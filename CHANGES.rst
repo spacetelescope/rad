@@ -1,4 +1,9 @@
-0.19.3 (unreleased)
+0.19.4 (unreleased)
+-------------------
+
+
+
+0.19.3 (2024-04-25)
 -------------------
 
 - Duplicated the keywords from groundtest to tvac_groundtest. [#409]
