@@ -3,6 +3,7 @@
 
 - Duplicated the keywords from groundtest to tvac_groundtest. [#409]
 
+- Add ``ref_file`` section to ``source_catalog`` and ``mosaic_source_catalog``. [#410]
 
 0.19.2 (2024-04-17)
 -------------------
