@@ -30,5 +30,9 @@ def test_manifest_entries(entry):
     # Check the URIs
     assert entry["tag_uri"].startswith("asdf://stsci.edu/datamodels/roman/tags/")
     uri_suffix = entry["tag_uri"].split("asdf://stsci.edu/datamodels/roman/tags/")[-1]
-    assert entry["schema_uri"].endswith(uri_suffix)
-    assert entry["schema_uri"].startswith("asdf://stsci.edu/datamodels/roman/schemas/")
+    # Remove tagged scalars from the uri string
+    schema_uri = entry["schema_uri"]
+    if "tagged_scalars" in schema_uri.split("/"):
+        schema_uri = schema_uri.replace("tagged_scalars/","")
+    assert schema_uri.endswith(uri_suffix)
+    assert schema_uri.startswith("asdf://stsci.edu/datamodels/roman/schemas/")

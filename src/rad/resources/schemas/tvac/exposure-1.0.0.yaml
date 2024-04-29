@@ -1,7 +1,7 @@
 %YAML 1.1
 ---
 $schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.0.0
-id: asdf://stsci.edu/datamodels/roman/schemas/base_exposure-1.0.0
+id: asdf://stsci.edu/datamodels/roman/schemas/tvac/exposure-1.0.0
 
 
 title: |
@@ -10,7 +10,7 @@ title: |
 type: object
 properties:
   type:
-    $ref: asdf://stsci.edu/datamodels/roman/schemas/exposure_type-1.0.0
+    $ref: asdf://stsci.edu/datamodels/roman/schemas/tvac/exposure_type-1.0.0
     sdf:
       special_processing: VALUE_REQUIRED
       source:
