@@ -323,7 +323,7 @@ tags:
   schema_uri: asdf://stsci.edu/datamodels/roman/schemas/fps/groundtest-1.0.0
   title: FPS Ground Test Information
   description: |-
-    FPS Ground test description.    
+    FPS Ground test description.
 - tag_uri: asdf://stsci.edu/datamodels/roman/tags/fps/guidestar-1.0.0
   schema_uri: asdf://stsci.edu/datamodels/roman/schemas/fps/guidestar-1.0.0
   title: FPS Guidestar information
@@ -400,7 +400,7 @@ tags:
   schema_uri: asdf://stsci.edu/datamodels/roman/schemas/tvac/groundtest-1.0.0
   title: TVAC Ground Test Information
   description: |-
-    TVAC Ground test description.    
+    TVAC Ground test description.
 - tag_uri: asdf://stsci.edu/datamodels/roman/tags/tvac/guidestar-1.0.0
   schema_uri: asdf://stsci.edu/datamodels/roman/schemas/tvac/guidestar-1.0.0
   title: TVAC Guidestar information
@@ -464,4 +464,4 @@ tags:
   description: |-
     Level 3 schema for SSC's MSOS stack products
 ...
- 
+
