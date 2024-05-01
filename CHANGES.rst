@@ -1,7 +1,7 @@
 0.19.4 (unreleased)
 -------------------
 
-
+- Separated TVAC and FPS schemas into their own suite of files. [#414]
 
 0.19.3 (2024-04-25)
 -------------------
