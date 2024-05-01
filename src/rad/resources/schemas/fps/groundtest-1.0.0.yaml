@@ -3,7 +3,7 @@
 $schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.0.0
 id: asdf://stsci.edu/datamodels/roman/schemas/fps/groundtest-1.0.0
 
-title: Ground Test Information
+title: FPS Ground Test Information
 type: object
 properties:
   test_name:

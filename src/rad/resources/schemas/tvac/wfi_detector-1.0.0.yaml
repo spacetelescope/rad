@@ -5,7 +5,7 @@ id: asdf://stsci.edu/datamodels/roman/schemas/tvac/wfi_detector-1.0.0
 
 # Helper file to enumerate detectors for wfi_mode and ref_detector
 
-title: WFI Detector Name
+title: TVAC WFI Detector Name
 type: string
 enum:
   - WFI01

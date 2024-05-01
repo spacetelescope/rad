@@ -5,7 +5,7 @@ id: asdf://stsci.edu/datamodels/roman/schemas/fps/guidewindow_modes-1.0.0
 
 # Helper file to enumerate guide window modes for guidestar and guidewindow
 
-title: Guide Window Modes
+title: FPS Guide Window Modes
 description: |
   An enumerated collection of available guidestar and guidewindow modes.
 type: string

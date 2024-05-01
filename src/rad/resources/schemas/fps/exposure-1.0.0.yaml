@@ -5,7 +5,7 @@ id: asdf://stsci.edu/datamodels/roman/schemas/fps/exposure-1.0.0
 
 
 title: |
-  Base Exposure Information
+  FPS Base Exposure Information
 
 type: object
 properties:

@@ -3,7 +3,7 @@
 $schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.0.0
 id: asdf://stsci.edu/datamodels/roman/schemas/tvac/guidestar-1.0.0
 
-title: Base Guide star window information
+title: TVAC Base Guide star window information
 type: object
 properties:
   gw_id:

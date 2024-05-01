@@ -3,7 +3,7 @@
 $schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.0.0
 id: asdf://stsci.edu/datamodels/roman/schemas/fps/tagged_scalars/prd_software_version-1.0.0
 
-title: SOC PRD Version Number
+title: FPS SOC PRD Version Number
 type: string
 sdf:
   special_processing: VALUE_REQUIRED
