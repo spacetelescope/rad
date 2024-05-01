@@ -33,6 +33,6 @@ def test_manifest_entries(entry):
     # Remove tagged scalars from the uri string
     schema_uri = entry["schema_uri"]
     if "tagged_scalars" in schema_uri.split("/"):
-        schema_uri = schema_uri.replace("tagged_scalars/","")
+        schema_uri = schema_uri.replace("tagged_scalars/", "")
     assert schema_uri.endswith(uri_suffix)
     assert schema_uri.startswith("asdf://stsci.edu/datamodels/roman/schemas/")
