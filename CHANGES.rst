@@ -1,7 +1,7 @@
 0.19.4 (unreleased)
 -------------------
 
-
+- Updated RTD with documentation for new data products. [#419]
 
 0.19.3 (2024-04-25)
 -------------------
