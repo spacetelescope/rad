@@ -15,7 +15,7 @@ properties:
     enum: ['N/A', 'COMPLETE', 'SKIPPED', 'INCOMPLETE']
     archive_catalog:
       datatype: nvarchar(15)
-      destination: [WFIExposure.s_assign_wcs]
+      destination: [ScienceRefData.s_assign_wcs]
   flat_field:
     title: Flat Fielding Step
     descroption: |
@@ -27,7 +27,7 @@ properties:
     enum: ['N/A', 'COMPLETE', 'SKIPPED', 'INCOMPLETE']
     archive_catalog:
       datatype: nvarchar(15)
-      destination: [WFIExposure.s_flat_field]
+      destination: [ScienceRefData.s_flat_field]
   dark:
     title: Dark Current Subtraction Step
     description: |
@@ -37,7 +37,7 @@ properties:
     enum: ['N/A', 'COMPLETE', 'SKIPPED', 'INCOMPLETE']
     archive_catalog:
       datatype: nvarchar(15)
-      destination: [WFIExposure.s_dark]
+      destination: [ScienceRefData.s_dark]
   dq_init:
     title: Initialization of the Data Quality Extension Step
     description: |
@@ -47,7 +47,7 @@ properties:
     enum: ['N/A', 'COMPLETE', 'SKIPPED', 'INCOMPLETE']
     archive_catalog:
       datatype: nvarchar(15)
-      destination: [WFIExposure.s_dq_init]
+      destination: [ScienceRefData.s_dq_init]
   flux:
     title: Flux Scale Application Step
     description: |
@@ -57,7 +57,7 @@ properties:
     enum: ['N/A', 'COMPLETE', 'SKIPPED', 'INCOMPLETE']
     archive_catalog:
       datatype: nvarchar(15)
-      destination: [WFIExposure.s_flux]
+      destination: [ScienceRefData.s_flux]
   jump:
     title: Cosmic Rays and Jump Detection Step
     description: |
@@ -67,7 +67,7 @@ properties:
     enum: ['N/A', 'COMPLETE', 'SKIPPED', 'INCOMPLETE']
     archive_catalog:
       datatype: nvarchar(15)
-      destination: [WFIExposure.s_jump]
+      destination: [ScienceRefData.s_jump]
   linearity:
     title: Linearity Correction Step
     description: |
@@ -77,7 +77,7 @@ properties:
     enum: ['N/A', 'COMPLETE', 'SKIPPED', 'INCOMPLETE']
     archive_catalog:
       datatype: nvarchar(15)
-      destination: [WFIExposure.s_linearity]
+      destination: [ScienceRefData.s_linearity]
   photom:
     title: Photometric Calibration Step
     description: |
@@ -87,7 +87,7 @@ properties:
     enum: ['N/A', 'COMPLETE', 'SKIPPED', 'INCOMPLETE']
     archive_catalog:
       datatype: nvarchar(15)
-      destination: [WFIExposure.s_photom]
+      destination: [ScienceRefData.s_photom]
   source_detection:
     title: Source Detection Step
     description: |
@@ -96,7 +96,7 @@ properties:
     enum: ['N/A', 'COMPLETE', 'SKIPPED', 'INCOMPLETE']
     archive_catalog:
       datatype: nvarchar(15)
-      destination: [WFIExposure.s_source_detection]
+      destination: [ScienceRefData.s_source_detection]
   ramp_fit:
     title: Ramp Fit Step
     description: |
@@ -106,7 +106,7 @@ properties:
     enum: ['N/A', 'COMPLETE', 'SKIPPED', 'INCOMPLETE']
     archive_catalog:
       datatype: nvarchar(15)
-      destination: [WFIExposure.s_ramp_fit]
+      destination: [ScienceRefData.s_ramp_fit]
   refpix:
     title: Reference Pixel Correction Step
     description: |
@@ -116,7 +116,7 @@ properties:
     enum: ['N/A', 'COMPLETE', 'SKIPPED', 'INCOMPLETE']
     archive_catalog:
       datatype: nvarchar(15)
-      destination: [WFIExposure.s_refpix]
+      destination: [ScienceRefData.s_refpix]
   saturation:
     title: Saturation Identification Step
     description: |
@@ -127,7 +127,7 @@ properties:
     enum: ['N/A', 'COMPLETE', 'SKIPPED', 'INCOMPLETE']
     archive_catalog:
       datatype: nvarchar(15)
-      destination: [WFIExposure.s_saturation]
+      destination: [ScienceRefData.s_saturation]
   outlier_detection:
     title: Outlier Detection Step
     description: |
@@ -136,7 +136,7 @@ properties:
     enum: ['N/A', 'COMPLETE', 'SKIPPED', 'INCOMPLETE']
     archive_catalog:
       datatype: nvarchar(15)
-      destination: [WFIExposure.s_outlier_detection]
+      destination: [ScienceRefData.s_outlier_detection]
   tweakreg:
     title: Tweakreg step
     description: |
@@ -147,7 +147,7 @@ properties:
     enum: ['N/A', 'COMPLETE', 'SKIPPED', 'INCOMPLETE']
     archive_catalog:
       datatype: nvarchar(15)
-      destination: [WFIExposure.s_tweakreg]
+      destination: [ScienceRefData.s_tweakreg]
   skymatch:
     title: Sky Matching for Combining Overlapping Images Step
     description: |
@@ -157,7 +157,7 @@ properties:
     enum: ['N/A', 'COMPLETE', 'SKIPPED', 'INCOMPLETE']
     archive_catalog:
       datatype: nvarchar(15)
-      destination: [WFIExposure.s_skymatch]
+      destination: [ScienceRefData.s_skymatch]
 propertyOrder: [assign_wcs, flat_field, flux, dark, dq_init, jump, linearity, photom, source_detection,
                 outlier_detection, ramp_fit, refpix, saturation, skymatch, tweakreg]
 flowStyle: block
