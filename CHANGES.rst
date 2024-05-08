@@ -1,4 +1,9 @@
-0.19.4 (unreleased)
+0.20.0 (unreleased)
+-------------------
+
+- 
+
+0.19.4 (2024-05-08)
 -------------------
 
 - Updated RTD with documentation for new data products. [#419]
