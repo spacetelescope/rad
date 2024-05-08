@@ -1,7 +1,7 @@
 0.19.4 (unreleased)
 -------------------
 
-
+- Updated RTD with documentation for new data products. [#419]
 
 0.19.3 (2024-04-25)
 -------------------
@@ -47,7 +47,7 @@
 - Add source_catalog and segmentation_map schemas for Level 2 and Level 3 files. [#393]
 
 
-  0.19.0 (2024-02-09)
+0.19.0 (2024-02-09)
 -------------------
 
 - Added streamlined Level 3 Mosaic metadata schemas. [#334]
