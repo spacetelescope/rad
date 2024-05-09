@@ -14,11 +14,11 @@ type: object
 properties:
   meta:
     allOf:
-      - $ref: asdf://stsci.edu/datamodels/roman/schemas/ground_common-1.0.0
+      - $ref: asdf://stsci.edu/datamodels/roman/schemas/tvac/common-1.0.0
       - type: object
         properties:
           groundtest:
-            tag: asdf://stsci.edu/datamodels/roman/tags/tvac_groundtest-1.0.0
+            tag: asdf://stsci.edu/datamodels/roman/tags/tvac/groundtest-1.0.0
         required: [groundtest]
 
   data:

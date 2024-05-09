@@ -1,12 +1,14 @@
 0.20.0 (unreleased)
 -------------------
 
-- 
+- Separated TVAC and FPS schemas into their own suite of files. [#414]
+
 
 0.19.4 (2024-05-08)
 -------------------
 
 - Updated RTD with documentation for new data products. [#419]
+
 
 0.19.3 (2024-04-25)
 -------------------

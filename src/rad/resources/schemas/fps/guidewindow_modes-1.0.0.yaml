@@ -1,0 +1,20 @@
+%YAML 1.1
+---
+$schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.0.0
+id: asdf://stsci.edu/datamodels/roman/schemas/fps/guidewindow_modes-1.0.0
+
+# Helper file to enumerate guide window modes for guidestar and guidewindow
+
+title: FPS Guide Window Modes
+description: |
+  An enumerated collection of available guidestar and guidewindow modes.
+type: string
+enum:
+  - WIM-ACQ
+  - WIM-TRACK
+  - WSM-ACQ-1
+  - WSM-ACQ-2
+  - WSM-TRACK
+  - DEFOCUSED-MODERATE
+  - DEFOCUSED-LARGE
+...
