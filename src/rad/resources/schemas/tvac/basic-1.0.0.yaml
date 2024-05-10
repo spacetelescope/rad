@@ -1,0 +1,58 @@
+%YAML 1.1
+---
+$schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.0.0
+id: asdf://stsci.edu/datamodels/roman/schemas/tvac/basic-1.0.0
+
+title: TVAC Basic Information
+
+type: object
+properties:
+  # Meta Variables
+  calibration_software_version:
+    title: Calibration Software Version Number
+    description: |
+      The version number of the calibration software used in processing this
+      file.
+    tag: asdf://stsci.edu/datamodels/roman/tags/tvac/calibration_software_version-1.0.0
+  filename:
+    title: File Name
+    description: |
+      The auto-generated name of this file.
+    tag: asdf://stsci.edu/datamodels/roman/tags/tvac/filename-1.0.0
+  file_date:
+    title: File Creation Date
+    description: |
+      The date and time this file was created.
+    tag: asdf://stsci.edu/datamodels/roman/tags/tvac/file_date-1.0.0
+  model_type:
+    title: Data Model Type
+    description: |
+      The type of data model contained in this file.
+    tag: asdf://stsci.edu/datamodels/roman/tags/tvac/model_type-1.0.0
+  origin:
+    title: Institution / Organization Name
+    description: |
+      The name of the institution or organization responsible for creating this
+      file.
+    tag: asdf://stsci.edu/datamodels/roman/tags/tvac/origin-1.0.0
+  prd_software_version:
+    title: SOC PRD Version Number
+    description: |
+      The Science Operations Center (SOC) Project Reference Database (PRD)
+      version number used in generating this file.
+    tag: asdf://stsci.edu/datamodels/roman/tags/tvac/prd_software_version-1.0.0
+  sdf_software_version:
+    title: SDF Version Number
+    description: |
+      The version number of the Science Data Formatting (SDF) software used in
+      generating this file.
+    tag: asdf://stsci.edu/datamodels/roman/tags/tvac/sdf_software_version-1.0.0
+  telescope:
+    title: Telescope Name
+    description: |
+      The name of the telescope used to acquire the data.
+    tag: asdf://stsci.edu/datamodels/roman/tags/tvac/telescope-1.0.0
+required: [calibration_software_version, filename, file_date,
+           model_type, origin, prd_software_version,
+           sdf_software_version, telescope]
+...

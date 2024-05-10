@@ -1,0 +1,35 @@
+%YAML 1.1
+---
+$schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.0.0
+id: asdf://stsci.edu/datamodels/roman/schemas/fps/common-1.0.0
+
+title: FPS Common metadata properties
+
+allOf:
+# Meta Variables
+- $ref: asdf://stsci.edu/datamodels/roman/schemas/fps/basic-1.0.0
+- type: object
+  properties:
+    # Meta Objects
+    cal_step:
+      tag: asdf://stsci.edu/datamodels/roman/tags/fps/cal_step-1.0.0
+    exposure:
+      tag: asdf://stsci.edu/datamodels/roman/tags/fps/exposure-1.0.0
+    guidestar:
+      tag: asdf://stsci.edu/datamodels/roman/tags/fps/guidestar-1.0.0
+    instrument:
+      tag: asdf://stsci.edu/datamodels/roman/tags/fps/wfi_mode-1.0.0
+    ref_file:
+      tag: asdf://stsci.edu/datamodels/roman/tags/fps/ref_file-1.0.0
+    hdf5_meta:
+      title: Original Raw HDF5 metadata
+      type: object
+    hdf5_telemetry:
+      title: Original Raw HDF5 telemetry keywords
+      type: string
+    gw_meta:
+      title: Guide Window HDF5 metadata
+      type: object
+  required: [cal_step, exposure, guidestar, instrument, ref_file,
+             hdf5_meta, hdf5_telemetry, gw_meta]
+...
