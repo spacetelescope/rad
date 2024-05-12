@@ -3,6 +3,8 @@
 
 - Separated TVAC and FPS schemas into their own suite of files. [#414]
 
+- Added statistics schemas to both FPS and TVAC. [#423]
+
 
 0.19.4 (2024-05-08)
 -------------------
