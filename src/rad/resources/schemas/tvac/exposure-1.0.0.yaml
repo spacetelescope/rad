@@ -17,7 +17,7 @@ properties:
         origin: TBD
     archive_catalog:
       datatype: nvarchar(25)
-      destination: [WFIExposure.exposure_type, GuideWindow.exposure_type, WFICommon.exposure_type]
+      destination: [WFICommon.exposure_type]
   start_time:
     title: Exposure Start Time (UTC)
     description: |
@@ -29,7 +29,7 @@ properties:
         origin: TBD
     archive_catalog:
       datatype: datetime2
-      destination: [WFIExposure.exposure_start_time, GuideWindow.exposure_start_time, WFICommon.exposure_start_time]
+      destination: [WFICommon.exposure_start_time]
   ngroups:
     title: Number of Resultants
     description: |
@@ -42,7 +42,7 @@ properties:
         origin: TBD
     archive_catalog:
       datatype: int
-      destination: [WFIExposure.exposure_ngroups, GuideWindow.exposure_ngroups, WFICommon.exposure_ngroups]
+      destination: [WFICommon.exposure_ngroups]
   nframes:
     title: Number of Reads
     description: |
@@ -54,7 +54,7 @@ properties:
         origin: TBD
     archive_catalog:
       datatype: int
-      destination: [WFIExposure.exposure_nframes, GuideWindow.exposure_nframes, WFICommon.exposure_nframes]
+      destination: [WFICommon.exposure_nframes]
   data_problem:
     title: Data Problem
     description: |
@@ -66,7 +66,7 @@ properties:
         origin: TBD
     archive_catalog:
       datatype: nchar(1)
-      destination: [WFIExposure.exposure_data_problem, GuideWindow.exposure_data_problem, WFICommon.exposure_data_problem]
+      destination: [WFICommon.exposure_data_problem]
   frame_divisor:
     title: Frame Divisor
     description: |
@@ -79,7 +79,7 @@ properties:
         origin: TBD
     archive_catalog:
       datatype: int
-      destination: [WFIExposure.exposure_frame_divisor, GuideWindow.exposure_frame_divisor, WFICommon.exposure_frame_divisor]
+      destination: [WFICommon.exposure_frame_divisor]
   groupgap:
     title: Number of Frames Dropped Between Resultants
     description:
@@ -92,7 +92,7 @@ properties:
         origin: TBD
     archive_catalog:
       datatype: int
-      destination: [WFIExposure.exposure_groupgap, GuideWindow.exposure_groupgap, WFICommon.exposure_groupgap]
+      destination: [WFICommon.exposure_groupgap]
   frame_time:
     title: Time Between Reads (s)
     description: |
@@ -105,7 +105,7 @@ properties:
         origin: TBD
     archive_catalog:
       datatype: float
-      destination: [WFIExposure.exposure_frame_time, GuideWindow.exposure_frame_time, WFICommon.exposure_frame_time]
+      destination: [WFICommon.exposure_frame_time]
   group_time:
     title: Time Between Resultants (s)
     description: |
@@ -118,7 +118,7 @@ properties:
         origin: TBD
     archive_catalog:
       datatype: float
-      destination: [WFIExposure.exposure_group_time, GuideWindow.exposure_group_time, WFICommon.exposure_group_time]
+      destination: [WFICommon.exposure_group_time]
   exposure_time:
     title: Exposure Time (s)
     description: |
@@ -132,7 +132,7 @@ properties:
         origin: TBD
     archive_catalog:
       datatype: float
-      destination: [WFIExposure.exposure_time, GuideWindow.exposure_time, WFICommon.exposure_time]
+      destination: [WFICommon.exposure_time]
   ma_table_name:
     title: MA Table Name
     description: |
@@ -145,7 +145,7 @@ properties:
         origin: TBD
     archive_catalog:
       datatype: nvarchar(50)
-      destination: [WFIExposure.ma_table_name, GuideWindow.ma_table_name, WFICommon.ma_table_name]
+      destination: [WFICommon.ma_table_name]
   ma_table_number:
     title: MA Table Number
     description: |
@@ -158,7 +158,7 @@ properties:
         origin: TBD
     archive_catalog:
       datatype: smallint
-      destination: [WFIExposure.ma_table_number, GuideWindow.ma_table_number, WFICommon.ma_table_number]
+      destination: [WFICommon.ma_table_number]
   read_pattern:
     title: Read Pattern
     description: |
@@ -175,7 +175,7 @@ properties:
         origin: TBD
     archive_catalog:
       datatype: nvarchar(3500)
-      destination: [WFIExposure.read_pattern, GuideWindow.read_pattern, WFICommon.read_pattern]
+      destination: [WFICommon.read_pattern]
 propertyOrder: [type, start_time,
            ngroups, nframes, data_problem,
            frame_divisor, groupgap, frame_time, group_time, exposure_time,

@@ -10,8 +10,7 @@ enum: [ROMAN]
 
 archive_catalog:
   datatype: nvarchar(5)
-  destination: [WFIExposure.telescope, WFIMosaic.telescope, GuideWindow.telescope, WFICommon.telescope,
-                SourceCatalog.telescope, SegmentationMap.telescope]
+  destination: [WFICommon.telescope]
 
 flowStyle: block
 ...
