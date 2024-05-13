@@ -4,7 +4,7 @@
 - Separated TVAC and FPS schemas into their own suite of files. [#414]
 
 - Fixed the TVAC & FPS archive catalog destinations. [#424]
-  
+
 
 0.19.4 (2024-05-08)
 -------------------
