@@ -11,9 +11,7 @@ sdf:
     origin: TBD
 archive_catalog:
   datatype: nvarchar(120)
-  destination: [WFIExposure.prd_software_version, GuideWindow.prd_software_version,
-                WFICommon.prd_software_version, WFIMosaic.prd_software_version,
-                SourceCatalog.prd_software_version, SegmentationMap.prd_software_version]
+  destination: [WFICommon.prd_software_version]
 
 flowStyle: block
 ...
