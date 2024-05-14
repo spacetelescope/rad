@@ -329,6 +329,11 @@ tags:
   title: FPS Guidestar information
   description: |-
     FPS Guidestar information
+- tag_uri: asdf://stsci.edu/datamodels/roman/tags/fps/statistics-1.0.0
+  schema_uri: asdf://stsci.edu/datamodels/roman/schemas/fps/statistics-1.0.0
+  title: FPS Summary Statistics
+  description: |-
+    FPS Summary Statistics
 - tag_uri: asdf://stsci.edu/datamodels/roman/tags/fps/ref_file-1.0.0
   schema_uri: asdf://stsci.edu/datamodels/roman/schemas/fps/ref_file-1.0.0
   title: FPS Calibration reference file names.
@@ -406,6 +411,11 @@ tags:
   title: TVAC Guidestar information
   description: |-
     TVAC Guidestar information
+- tag_uri: asdf://stsci.edu/datamodels/roman/tags/tvac/statistics-1.0.0
+  schema_uri: asdf://stsci.edu/datamodels/roman/schemas/tvac/statistics-1.0.0
+  title: TVAC Summary Statistics
+  description: |-
+    TVAC Summary Statistics
 - tag_uri: asdf://stsci.edu/datamodels/roman/tags/tvac/ref_file-1.0.0
   schema_uri: asdf://stsci.edu/datamodels/roman/schemas/tvac/ref_file-1.0.0
   title: TVAC Calibration reference file names.
