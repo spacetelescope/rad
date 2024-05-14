@@ -15,7 +15,7 @@ properties:
     enum: ['N/A', 'COMPLETE', 'SKIPPED', 'INCOMPLETE']
     archive_catalog:
       datatype: nvarchar(15)
-      destination: [ScienceRefData.s_flux, GuideWindow.s_flux, WFIMosaic.s_flux]
+      destination: [ScienceRefData.s_flux]
   outlier_detection:
     title: Outlier Detection Step
     description: |
@@ -24,7 +24,7 @@ properties:
     enum: ['N/A', 'COMPLETE', 'SKIPPED', 'INCOMPLETE']
     archive_catalog:
       datatype: nvarchar(15)
-      destination: [ScienceRefData.s_outlier_detection, GuideWindow.s_outlier_detection, WFIMosaic.s_outlier_detection]
+      destination: [ScienceRefData.s_outlier_detection]
   skymatch:
     title: Sky Matching for Combining Overlapping Images Step
     description: |
@@ -34,7 +34,7 @@ properties:
     enum: ['N/A', 'COMPLETE', 'SKIPPED', 'INCOMPLETE']
     archive_catalog:
       datatype: nvarchar(15)
-      destination: [ScienceRefData.s_skymatch, GuideWindow.s_skymatch, WFIMosaic.s_skymatch]
+      destination: [ScienceRefData.s_skymatch]
   resample:
     title: Resampling Input Data onto a Regular Grid Step
     description: |
@@ -45,7 +45,7 @@ properties:
     enum: ['N/A', 'COMPLETE', 'SKIPPED', 'INCOMPLETE']
     archive_catalog:
       datatype: nvarchar(15)
-      destination: [ScienceRefData.s_resample, GuideWindow.s_resample, WFIMosaic.s_resample]
+      destination: [ScienceRefData.s_resample]
 propertyOrder: [flux, outlier_detection, skymatch, resample]
 flowStyle: block
 required: [flux, outlier_detection, resample, skymatch]
