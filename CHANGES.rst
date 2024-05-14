@@ -3,6 +3,8 @@
 
 - Separated TVAC and FPS schemas into their own suite of files. [#414]
 
+- Removed the db entries for filename_l1a and filename_pnt5 in TVAC and FPS schemas. [#421]
+
 
 0.19.4 (2024-05-08)
 -------------------

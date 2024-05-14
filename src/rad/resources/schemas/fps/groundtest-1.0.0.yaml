@@ -57,9 +57,6 @@ properties:
   filename_pnt5:
     title: L0.5 File Name
     type: string
-    archive_catalog:
-      datatype: nvarchar(80)
-      destination: [WFICommon.filename_pnt5]
   filepath_level_pnt5:
     title: L0.5 File Path
     type: string
@@ -69,9 +66,6 @@ properties:
   filename_l1a:
     title: L1A File Name
     type: string
-    archive_catalog:
-      datatype: nvarchar(80)
-      destination: [WFICommon.filename_l1a]
   detector_id:
     title: SCA Identifier
     type: string
