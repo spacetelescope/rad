@@ -17,7 +17,7 @@ properties:
         origin: TBD
     archive_catalog:
       datatype: nvarchar(20)
-      destination: [WFIExposure.gw_id, GuideWindow.gw_id, WFICommon.gw_id]
+      destination: [WFICommon.gw_id]
   gw_fgs_mode:
     $ref: guidewindow_modes-1.0.0
     sdf:
@@ -26,7 +26,7 @@ properties:
         origin: TBD
     archive_catalog:
       datatype: nvarchar(18)
-      destination: [WFIExposure.gw_fgs_mode, GuideWindow.gw_fgs_mode, WFICommon.gw_fgs_mode]
+      destination: [WFICommon.gw_fgs_mode]
   data_start:
     title: Guide Data Start Time (MJD)
     description: |
@@ -39,7 +39,7 @@ properties:
         origin: TBD
     archive_catalog:
       datatype: float
-      destination: [WFIExposure.data_start, GuideWindow.data_start, WFICommon.data_start]
+      destination: [WFICommon.data_start]
   data_end:
     title: Guide Data End Time (MJD)
     description: |
@@ -52,7 +52,7 @@ properties:
         origin: TBD
     archive_catalog:
       datatype: float
-      destination: [WFIExposure.data_end, GuideWindow.data_end, WFICommon.data_end]
+      destination: [WFICommon.data_end]
   gw_window_xstart:
     title: Guide Window X Start Position (pixels)
     description: |
@@ -65,7 +65,7 @@ properties:
         origin: Science Data Formatting
     archive_catalog:
       datatype: int
-      destination: [WFIExposure.gw_window_xstart, WFICommon.gw_window_xstart]
+      destination: [WFICommon.gw_window_xstart]
   gw_window_ystart:
     title: Guide Window Y Start Position (pixels)
     description: |
@@ -78,7 +78,7 @@ properties:
         origin: Science Data Formatting
     archive_catalog:
       datatype: int
-      destination: [WFIExposure.gw_window_ystart, WFICommon.gw_window_ystart]
+      destination: [WFICommon.gw_window_ystart]
   gw_window_xstop:
     title: Guide Window X Stop Position (pixels)
     description: |
@@ -91,7 +91,7 @@ properties:
         origin: Science Data Formatting
     archive_catalog:
       datatype: int
-      destination: [WFIExposure.gw_window_xstop, WFICommon.gw_window_xstop]
+      destination: [WFICommon.gw_window_xstop]
   gw_window_ystop:
     title: Guide Window Y Stop Position (pixels)
     description: |
@@ -104,7 +104,7 @@ properties:
         origin: Science Data Formatting
     archive_catalog:
       datatype: int
-      destination: [WFIExposure.gw_window_ystop, WFICommon.gw_window_ystop]
+      destination: [WFICommon.gw_window_ystop]
   gw_window_xsize:
     title: Guide Window Size in the X Direction (pixels)
     description: |
@@ -117,7 +117,7 @@ properties:
         origin: Science Data Formatting
     archive_catalog:
       datatype: int
-      destination: [WFIExposure.gw_window_xsize, WFICommon.gw_window_xsize]
+      destination: [WFICommon.gw_window_xsize]
   gw_window_ysize:
     title: Guide Window Size in the Y Direction (pixels)
     description: |
@@ -130,7 +130,7 @@ properties:
         origin: Science Data Formatting
     archive_catalog:
       datatype: int
-      destination: [WFIExposure.gw_window_ysize, WFICommon.gw_window_ysize]
+      destination: [WFICommon.gw_window_ysize]
 
 propertyOrder: [gw_id, gw_fgs_mode,
                data_start, data_end, gw_window_xstart,
