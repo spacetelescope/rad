@@ -5,6 +5,10 @@
 
 - Added statistics schemas to both FPS and TVAC. [#423]
 
+- Removed filepath_level_pnt5 from TVAC/FPS database. [#422]
+
+- Removed the db entries for filename_l1a and filename_pnt5 in TVAC and FPS schemas. [#421]
+
 
 0.19.4 (2024-05-08)
 -------------------
