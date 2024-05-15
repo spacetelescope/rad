@@ -1,4 +1,9 @@
-0.20.0 (unreleased)
+0.20.1 (unreleased)
+-------------------
+
+-
+
+0.20.0 (2024-05-15)
 -------------------
 
 - This PR removes reference file and guidewindow db tables from cal_step schemas. [#420]
