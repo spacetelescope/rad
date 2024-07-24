@@ -18,7 +18,7 @@ properties:
       destination: [ScienceRefData.s_assign_wcs]
   flat_field:
     title: Flat Fielding Step
-    descroption: |
+    description: |
       Step in ROMANCAL in which a science image is flat-fielded, whereby each
       detector pixel is calibrated to give the same signal for the same
       illumination, given its specific response. This is achieved using a
