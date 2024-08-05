@@ -130,6 +130,11 @@ tags:
   title: Outlier Detection information
   description: |-
     Outlier Detection information
+- tag_uri: asdf://stsci.edu/datamodels/roman/tags/sky_background-1.0.0
+  schema_uri: asdf://stsci.edu/datamodels/roman/schemas/sky_background-1.0.0
+  title: Sky Background Information
+  description: |-
+    Sky Background Information
 - tag_uri: asdf://stsci.edu/datamodels/roman/tags/resample-1.0.0
   schema_uri: asdf://stsci.edu/datamodels/roman/schemas/resample-1.0.0
   title: Resample information
