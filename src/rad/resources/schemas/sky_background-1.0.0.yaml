@@ -17,7 +17,7 @@ properties:
             enum: ["float64"]
           unit:
             tag: tag:astropy.org:astropy/units/unit-1.*
-            enum: ["DN / s"]
+            enum: ["DN / s", "MJy.sr**-1"]
       - type: "null"
   method:
     title: Sky Background Method
