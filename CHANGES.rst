@@ -1,4 +1,9 @@
-0.20.1 (unreleased)
+0.21.1 (unreleased)
+-------------------
+
+- 
+
+0.21.0 (2024-08-06)
 -------------------
 
 - Added sky background schema. [#432]
