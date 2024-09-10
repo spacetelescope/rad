@@ -21,7 +21,9 @@ This PR addresses ...
 
 <details><summary>news fragment change types...</summary>
 
-- ``changes/<PR#>.apichange.rst``: change to public API
+- ``changes/<PR#>.feature.rst``: new feature
 - ``changes/<PR#>.bugfix.rst``: fixes an issue
-- ``changes/<PR#>.general.rst``: infrastructure or miscellaneous change
+- ``changes/<PR#>.doc.rst``: documentation change
+- ``changes/<PR#>.removal.rst``: deprecation or removal of public API
+- ``changes/<PR#>.misc.rst``: infrastructure or miscellaneous change
 </details
