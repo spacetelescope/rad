@@ -6,6 +6,9 @@ build:
     - graphviz
   tools:
     python: "3.11"
+  jobs:
+    post_install:
+      - towncrier build --keep
 
 sphinx:
   configuration: docs/conf.py
