@@ -3,6 +3,10 @@
 Science Products Schemas
 ========================
 
+The following ASDF schemas define the structure and contents of Nancy Grace Roman Space Telescope files.
+See :ref:doc:`roman_datamodels:roman_datamodels/datamodels/general_structure` for more details about how these schemeas are used.
+See :ref:`asdf-standard:asdf-schemas` for more information about ASDF schemas.
+
 Level 1 (uncalibrated) schema
 -----------------------------
 
