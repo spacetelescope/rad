@@ -23,6 +23,7 @@ properties:
       special_processing: VALUE_REQUIRED
       source:
         origin: PSS:aperture.AperName
+    maxLength: 40
     archive_catalog:
       datatype: nvarchar(40)
       destination: [WFIExposure.aperture_name, GuideWindow.aperture_name]

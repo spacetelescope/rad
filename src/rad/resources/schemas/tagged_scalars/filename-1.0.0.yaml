@@ -9,6 +9,7 @@ sdf:
   special_processing: VALUE_REQUIRED
   source:
     origin: TBD
+maxLength: 120
 archive_catalog:
   datatype: nvarchar(120)
   destination: [WFIExposure.filename, WFIMosaic.filename, GuideWindow.filename, WFICommon.filename,

@@ -15,6 +15,7 @@ properties:
       special_processing: VALUE_REQUIRED
       source:
         origin: PSS:dms_program.title
+    maxLength: 200
     archive_catalog:
       datatype: nvarchar(200)
       destination: [WFIExposure.program_title, WFIMosaic.program_title, GuideWindow.program_title,
@@ -30,6 +31,7 @@ properties:
         # There are a number of ways to get the pi_name.  Here is one
         # of them: "= apt('./ProposalInformation/PrincipalInvestigator/InvestigatorAddress/LastName') + ', ' + apt('./ProposalInformation/PrincipalInvestigator/InvestigatorAddress/FirstName')"
         origin: TBD
+    maxLength: 100
     archive_catalog:
       datatype: nvarchar(100)
       destination: [WFIExposure.pi_name, WFIMosaic.pi_name, GuideWindow.pi_name,
@@ -43,6 +45,7 @@ properties:
       special_processing: VALUE_REQUIRED
       source:
         origin: PSS:dms_program.category
+    maxLength: 6
     archive_catalog:
       datatype: nvarchar(6)
       destination: [WFIExposure.program_category, WFIMosaic.program_category, GuideWindow.program_category,
@@ -56,6 +59,7 @@ properties:
       special_processing: VALUE_REQUIRED
       source:
         origin: PSS:dms_program.subcategory
+    maxLength: 15
     archive_catalog:
       datatype: nvarchar(15)
       destination: [WFIExposure.program_subcategory, WFIMosaic.program_subcategory, GuideWindow.program_subcategory,
@@ -70,6 +74,7 @@ properties:
       special_processing: VALUE_REQUIRED
       source:
         origin: PSS:dms_program.science_category
+    maxLength: 50
     archive_catalog:
       datatype: nvarchar(50)
       destination: [WFIExposure.science_category, WFIMosaic.science_category, GuideWindow.science_category,
