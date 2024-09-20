@@ -28,8 +28,8 @@ Level 3 (resampled mosaic) schema
 
   wfi_mosaic-1.0.0
 
-Level 4 schemas
----------------
+Level 4 (ancillary) schemas
+---------------------------
 
 .. asdf-autoschemas::
 
