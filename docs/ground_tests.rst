@@ -1,7 +1,7 @@
 .. _ground_tests:
 
-Ground Tests File Schemas
-=========================
+Ground Tests Schemas
+====================
 
 FPS
 ---
