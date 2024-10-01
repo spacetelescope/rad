@@ -9,6 +9,8 @@ updates:
     directory: ".github/workflows" # Location of package manifests
     schedule:
       interval: "monthly"
+    reviewers:
+      - "zacharyburnett"
     groups:
       actions:
         patterns:
