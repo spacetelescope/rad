@@ -17,6 +17,7 @@ properties:
       special_processing: VALUE_REQUIRED
       source:
         origin: TBD
+    maxLength: 5
     archive_catalog:
       datatype: nvarchar(5)
       destination: [WFIExposure.instrument_name, GuideWindow.instrument_name, WFICommon.instrument_name]
@@ -29,6 +30,7 @@ properties:
       special_processing: VALUE_REQUIRED
       source:
         origin: TBD
+    maxLength: 10
     archive_catalog:
       datatype: nvarchar(10)
       destination: [WFIExposure.detector, GuideWindow.detector, WFICommon.detector]
@@ -41,6 +43,7 @@ properties:
       special_processing: VALUE_REQUIRED
       source:
         origin: TBD
+    maxLength: 20
     archive_catalog:
       datatype: nvarchar(20)
       destination: [WFIExposure.optical_element, GuideWindow.optical_element, WFICommon.optical_element]

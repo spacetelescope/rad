@@ -22,6 +22,7 @@ properties:
       special_processing: VALUE_REQUIRED
       source:
         origin: TBD
+    maxLength: 28
     archive_catalog:
       datatype: nvarchar(28)
       destination: [WFIExposure.obs_id, GuideWindow.obs_id]
@@ -37,6 +38,7 @@ properties:
       special_processing: VALUE_REQUIRED
       source:
         origin: TBD
+    maxLength: 19
     archive_catalog:
       datatype: nvarchar(19)
       destination: [WFIExposure.visit_id, GuideWindow.visit_id]
@@ -154,6 +156,7 @@ properties:
       special_processing: VALUE_REQUIRED
       source:
         origin: TBD
+    maxLength: 2
     archive_catalog:
       datatype: nvarchar(2)
       destination: [WFIExposure.visit_file_activity, GuideWindow.visit_file_activity]
@@ -179,6 +182,7 @@ properties:
       special_processing: VALUE_REQUIRED
       source:
         origin: PSS:dms_visit.template
+    maxLength: 50
     archive_catalog:
       datatype: nvarchar(50)
       destination: [WFIExposure.template, GuideWindow.template]
@@ -203,6 +207,7 @@ properties:
       survey not otherwise defined here.
     type: string
     enum: [HLS, EMS, SN, N/A]
+    maxLength: 15
     archive_catalog:
       datatype: nvarchar(15)
       destination: [WFIExposure.survey, GuideWindow.survey]
