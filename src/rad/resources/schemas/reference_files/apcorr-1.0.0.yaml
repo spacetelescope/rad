@@ -26,7 +26,7 @@ properties:
           ap_corrections:
             title: Aperture Corrections
             description: The aperture correction for each enclosed energy
-                fraction. The indexing matches that of "ee_fractions".
+                fraction, corresponding to 1 / ee_fractions.
             tag: tag:stsci.edu:asdf/core/ndarray-1.*
             datatype: float64
             exact_datatype: true
