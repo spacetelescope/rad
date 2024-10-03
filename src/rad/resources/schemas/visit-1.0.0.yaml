@@ -18,6 +18,7 @@ properties:
       special_processing: VALUE_REQUIRED
       source:
         origin: TBD
+    maxLength: 10
     archive_catalog:
       datatype: nvarchar(10)
       destination: [WFIExposure.engineering_quality, GuideWindow.engineering_quality,
@@ -33,6 +34,7 @@ properties:
       special_processing: VALUE_REQUIRED
       source:
         origin: TBD
+    maxLength: 10
     archive_catalog:
       datatype: nvarchar(10)
       destination: [WFIExposure.pointing_engdb_quality, GuideWindow.pointing_engdb_quality,
@@ -46,6 +48,7 @@ properties:
       special_processing: VALUE_REQUIRED
       source:
         origin: PSS:dms_visit.visit_type
+    maxLength: 30
     archive_catalog:
       datatype: nvarchar(30)
       destination: [WFIExposure.visit_type, GuideWindow.visit_type,
@@ -85,6 +88,7 @@ properties:
       special_processing: VALUE_REQUIRED
       source:
         origin: TBD
+    maxLength: 15
     archive_catalog:
       datatype: nvarchar(15)
       destination: [WFIExposure.visit_status, GuideWindow.visit_status,

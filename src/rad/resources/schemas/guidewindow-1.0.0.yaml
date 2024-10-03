@@ -85,6 +85,7 @@ properties:
               special_processing: VALUE_REQUIRED
               source:
                 origin: Science Data Formatting
+            maxLength: 15
             archive_catalog:
               datatype: nvarchar(15)
               destination: [GuideWindow.gw_acq_exec_stat]
@@ -138,6 +139,7 @@ properties:
               special_processing: VALUE_REQUIRED
               source:
                 origin: Science Data Formatting
+            maxLength: 120
             archive_catalog:
               datatype: nvarchar(120)
               destination: [GuideWindow.gw_science_file_source]
@@ -147,6 +149,7 @@ properties:
               special_processing: VALUE_REQUIRED
               source:
                 origin: Science Data Formatting
+            maxLength: 18
             archive_catalog:
               datatype: nvarchar(18)
               destination: [GuideWindow.gw_mode]

@@ -21,6 +21,7 @@ properties:
           special_processing: VALUE_REQUIRED
           source:
             origin: TBD
+        maxLength: 120
         archive_catalog:
           datatype: nvarchar(120)
           destination: [WFIExposure.crds_software_version, WFIMosaic.crds_software_version,
@@ -34,6 +35,7 @@ properties:
           special_processing: VALUE_REQUIRED
           source:
             origin: TBD
+        maxLength: 120
         archive_catalog:
           datatype: nvarchar(120)
           destination: [WFIExposure.crds_context_used, WFIMosaic.crds_context_used,
@@ -53,6 +55,7 @@ properties:
       Reference file used to correct for the dark current contribution to
       science data.
     type: string
+    maxLength: 120
     archive_catalog:
       datatype: nvarchar(120)
       destination: [ScienceRefData.r_dark, GuideWindow.r_dark, WFICommon.r_dark]
@@ -62,6 +65,7 @@ properties:
       Information about the distortion reference file used with the science
       data.
     type: string
+    maxLength: 120
     archive_catalog:
       datatype: nvarchar(120)
       destination: [ScienceRefData.r_distortion, GuideWindow.r_distortion, WFICommon.r_distortion]
@@ -70,6 +74,7 @@ properties:
     description: |
       Information about the mask reference file used with the science data.
     type: string
+    maxLength: 120
     archive_catalog:
       datatype: nvarchar(120)
       destination: [ScienceRefData.r_mask, GuideWindow.r_mask, WFICommon.r_mask]
@@ -78,6 +83,7 @@ properties:
     description: |
       Information about the flat reference file used with the science data.
     type: string
+    maxLength: 120
     archive_catalog:
       datatype: nvarchar(120)
       destination: [ScienceRefData.r_flat, GuideWindow.r_flat, WFICommon.r_flat]
@@ -86,6 +92,7 @@ properties:
     description: |
       Information about the gain reference file used with the science data.
     type: string
+    maxLength: 120
     archive_catalog:
       datatype: nvarchar(120)
       destination: [ScienceRefData.r_gain, GuideWindow.r_gain, WFICommon.r_gain]
@@ -95,6 +102,7 @@ properties:
       Information about the read noise reference file used with the science
       data.
     type: string
+    maxLength: 120
     archive_catalog:
       datatype: nvarchar(120)
       destination: [ScienceRefData.r_readnoise, GuideWindow.r_readnoise, WFICommon.r_readnoise]
@@ -103,6 +111,7 @@ properties:
     description: |
       Information about the linearity reference file used with the science data.
     type: string
+    maxLength: 120
     archive_catalog:
       datatype: nvarchar(120)
       destination: [ScienceRefData.r_linearity, GuideWindow.r_linearity, WFICommon.r_linearity]
@@ -112,6 +121,7 @@ properties:
       Information about the photometry reference file used with the science
       data.
     type: string
+    maxLength: 120
     archive_catalog:
       datatype: nvarchar(120)
       destination: [ScienceRefData.r_photom, GuideWindow.r_photom, WFICommon.r_photom]
@@ -120,6 +130,7 @@ properties:
     description: |
       Information about the area reference file used with the science data.
     type: string
+    maxLength: 120
     archive_catalog:
       datatype: nvarchar(120)
       destination: [ScienceRefData.r_area, GuideWindow.r_area, WFICommon.r_area]
@@ -129,6 +140,7 @@ properties:
       Information about the saturation reference file used with the science
       data.
     type: string
+    maxLength: 120
     archive_catalog:
       datatype: nvarchar(120)
       destination: [ScienceRefData.r_saturation, GuideWindow.r_saturation, WFICommon.r_saturation]
