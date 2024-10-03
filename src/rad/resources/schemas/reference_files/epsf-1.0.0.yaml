@@ -53,7 +53,7 @@ properties:
         required: [pixel_x, pixel_y]
   psf:
     title: ePSF Stamps
-    description: Postage stamps of ePSF models. The 3-dimensional array is
+    description: Postage stamps of ePSF models. The 4-dimensional array is
         ordered by (defocus, effective_temperature, pixel_x, pixel_y)
         in the file metadata.
     tag: tag:stsci.edu:asdf/core/ndarray-1.*
