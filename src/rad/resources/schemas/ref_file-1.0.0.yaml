@@ -46,6 +46,7 @@ properties:
       Reference file used to correct for the reference pixel contribution to
       science data.
     type: string
+    maxLength: 120
     archive_catalog:
       datatype: nvarchar(120)
       destination: [ScienceRefData.r_refpix, GuideWindow.r_refpix, WFICommon.r_refpix]
