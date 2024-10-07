@@ -7,9 +7,10 @@ title: Name Of The Coordinate Reference Frame
 type: object
 properties:
   reference_frame:
-    title: Name of the Coordinate Reference Frame
+    title: Name of the Celestial Coordinate Reference Frame
     description: |
-      Name of the coordinate reference frame.
+      Name of the celestial coordinate reference frame used
+      for the World Coordinate System (WCS).
     type: string
     default: ICRS
     enum: [ICRS]
