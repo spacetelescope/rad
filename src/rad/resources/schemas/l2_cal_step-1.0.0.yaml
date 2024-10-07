@@ -34,7 +34,7 @@ properties:
     title: Dark Current Subtraction Step
     description: |
       Step in romancal that performs a correction for the
-      dark current by substracting the dark reference data from the
+      dark current by subtracting the dark reference data from the
       science data.
     type: string
     enum: ['N/A', 'COMPLETE', 'SKIPPED', 'INCOMPLETE']
