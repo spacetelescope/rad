@@ -10,17 +10,8 @@ properties:
     title: Sky Background Level
     description: |
       The sky background level in DN / s.
-    anyOf:
-      - tag: tag:stsci.edu:asdf/unit/quantity-1.*
-        properties:
-          datatype:
-            enum: ["float64"]
-          unit:
-            oneOf:
-            - tag: tag:stsci.edu:asdf/unit/unit-1.*
-            - tag: tag:astropy.org:astropy/units/unit-1.*
-            enum: ["DN / s", "MJy.sr**-1"]
-      - type: "null"
+    properties:
+      datatype: float64
   method:
     title: Sky Background Method
     description: |
