@@ -34,18 +34,14 @@ properties:
     description: |
       Science data, excluding border reference pixels, in DNs per second
       or MJ per steradian.
-    tag: tag:stsci.edu:asdf/unit/quantity-1.*
-    properties:
-      value:
-        tag: tag:stsci.edu:asdf/core/ndarray-1.*
-        datatype: float32
-        exact_datatype: true
-        ndim: 2
-      unit:
-        oneOf:
-          - tag: tag:stsci.edu:asdf/unit/unit-1.*
-          - tag: tag:astropy.org:astropy/units/unit-1.*
-        enum: ["DN / s", "MJy.sr**-1"]
+    tag: tag:stsci.edu:asdf/core/ndarray-1.*
+    datatype: float32
+    exact_datatype: true
+    ndim: 2
+    unit:
+      oneOf:
+        - type: string
+          enum: ["DN / s", "MJy.sr**-1"]
   dq:
     title: Data Quality Flags
     description: |
@@ -55,143 +51,101 @@ properties:
     exact_datatype: true
     ndim: 2
   err:
-    title: Error (DN / s) or (MJy / sr)
+    title: Error (DN / s)
     description: |
       Error in units of DNs per second or MJ per steradian.
-    tag: tag:stsci.edu:asdf/unit/quantity-1.*
-    properties:
-      value:
-        tag: tag:stsci.edu:asdf/core/ndarray-1.*
-        datatype: float32
-        exact_datatype: true
-        ndim: 2
-      unit:
-        oneOf:
-          - tag: tag:stsci.edu:asdf/unit/unit-1.*
-          - tag: tag:astropy.org:astropy/units/unit-1.*
-        enum: ["DN / s", "MJy.sr**-1"]
+    tag: tag:stsci.edu:asdf/core/ndarray-1.*
+    datatype: float32
+    exact_datatype: true
+    ndim: 2
+    unit:
+      oneOf:
+        - type: string
+          enum: ["DN / s", "MJy.sr**-1"]
   var_poisson:
-    title: Poisson Variance (DN^2 / s^2) or (MJy^2 / sr^2)
+    title: Poisson Variance (DN^2 / s^2)
     description: |
-      Poisson variance in units of DN^2 / second^2
-      or MJ per steradian.
-    tag: tag:stsci.edu:asdf/unit/quantity-1.*
-    properties:
-      value:
-        tag: tag:stsci.edu:asdf/core/ndarray-1.*
-        datatype: float32
-        exact_datatype: true
-        ndim: 2
-      unit:
-        oneOf:
-          - tag: tag:stsci.edu:asdf/unit/unit-1.*
-          - tag: tag:astropy.org:astropy/units/unit-1.*
-        enum: ["DN2 / s2", "MJy**2.sr**-2"]
+      Poisson variance in units of DN^2 / second^2.
+    tag: tag:stsci.edu:asdf/core/ndarray-1.*
+    datatype: float32
+    exact_datatype: true
+    ndim: 2
+    unit:
+      oneOf:
+        - type: string
+          enum: ["DN2 / s2", "MJy**2.sr**-2"]
   var_rnoise:
-    title: Read Noise (DN^2 / s^2) or (MJy^2 / sr^2)
+    title: Read Noise (DN^2 / s^2)
     description: |
-      Read noise in units of DN^2 / second^2 or MJ^2 per steradian^2.
-    tag: tag:stsci.edu:asdf/unit/quantity-1.*
-    properties:
-      value:
-        tag: tag:stsci.edu:asdf/core/ndarray-1.*
-        datatype: float32
-        exact_datatype: true
-        ndim: 2
-      unit:
-        oneOf:
-          - tag: tag:stsci.edu:asdf/unit/unit-1.*
-          - tag: tag:astropy.org:astropy/units/unit-1.*
-        enum: ["DN2 / s2", "MJy**2.sr**-2"]
+      Read noise in units of DN^2 / second^2.
+    tag: tag:stsci.edu:asdf/core/ndarray-1.*
+    datatype: float32
+    exact_datatype: true
+    ndim: 2
+    unit:
+      oneOf:
+        - type: string
+          enum: ["DN2 / s2", "MJy**2.sr**-2"]
   var_flat:
-    title: Variance for Estimate of Flat Pixel Flux (DN^2 / s^2) or (MJy^2 / sr^2)
+    title: Variance for Estimate of Flat Pixel Flux (DN^2 / s^2).
     description: |
       Variance for estimate of flat pixel flux in units of
-      DN^2 / second^2 or MJ^2 per steradian^2.
-    tag: tag:stsci.edu:asdf/unit/quantity-1.*
-    properties:
-      value:
-        tag: tag:stsci.edu:asdf/core/ndarray-1.*
-        datatype: float32
-        exact_datatype: true
-        ndim: 2
-      unit:
-        oneOf:
-          - tag: tag:stsci.edu:asdf/unit/unit-1.*
-          - tag: tag:astropy.org:astropy/units/unit-1.*
-        enum: ["DN2 / s2", "MJy**2.sr**-2"]
+      DN^2 / second^2.
+    tag: tag:stsci.edu:asdf/core/ndarray-1.*
+    datatype: float32
+    exact_datatype: true
+    ndim: 2
+    unit:
+      oneOf:
+        - type: string
+          enum: ["DN2 / s2", "MJy**2.sr**-2"]
   amp33:
     title: Amp 33 Reference Pixel Data (DN)
     description: |
       Amplifier 33 reference pixel data in units of DN.
-    tag: tag:stsci.edu:asdf/unit/quantity-1.*
-    properties:
-      value:
-        tag: tag:stsci.edu:asdf/core/ndarray-1.*
-        datatype: uint16
-        exact_datatype: true
-        ndim: 3
-      unit:
-        tag: tag:astropy.org:astropy/units/unit-1.*
-        enum: ["DN"]
+    tag: tag:stsci.edu:asdf/core/ndarray-1.*
+    datatype: uint16
+    exact_datatype: true
+    ndim: 3
+    unit: "DN"
   border_ref_pix_left:
     title: Border Reference Pixels on the Left of the Detector, from the Instrument's Perspective (DN)
     description: |
       Border reference pixels on the left of the detector, from the instrument's
       perspective in units of DN.
-    tag: tag:stsci.edu:asdf/unit/quantity-1.*
-    properties:
-      value:
-        tag: tag:stsci.edu:asdf/core/ndarray-1.*
-        datatype: float32
-        exact_datatype: true
-        ndim: 3
-      unit:
-        tag: tag:astropy.org:astropy/units/unit-1.*
-        enum: ["DN"]
+    tag: tag:stsci.edu:asdf/core/ndarray-1.*
+    datatype: float32
+    exact_datatype: true
+    ndim: 3
+    unit: "DN"
   border_ref_pix_right:
     title: Border Reference Pixels on the Right of the Detector, from the Instrument's Perspective (DN)
     description: |
       Border reference pixels on the right of the detector, from the
       instrument's perspective in units of DN
-    tag: tag:stsci.edu:asdf/unit/quantity-1.*
-    properties:
-      value:
-        tag: tag:stsci.edu:asdf/core/ndarray-1.*
-        datatype: float32
-        exact_datatype: true
-        ndim: 3
-      unit:
-        tag: tag:astropy.org:astropy/units/unit-1.*
-        enum: ["DN"]
+    tag: tag:stsci.edu:asdf/core/ndarray-1.*
+    datatype: float32
+    exact_datatype: true
+    ndim: 3
+    unit: "DN"
   border_ref_pix_top:
     title: Border Reference Pixels on the Top of the Detector (DN)
     description: |
       Border reference pixels on the top of the detector in units of DN.
-    tag: tag:stsci.edu:asdf/unit/quantity-1.*
-    properties:
-      value:
-        tag: tag:stsci.edu:asdf/core/ndarray-1.*
-        datatype: float32
-        exact_datatype: true
-        ndim: 3
-      unit:
-        tag: tag:astropy.org:astropy/units/unit-1.*
-        enum: ["DN"]
+    tag: tag:stsci.edu:asdf/core/ndarray-1.*
+    datatype: float32
+    exact_datatype: true
+    ndim: 3
+    unit: "DN"
   border_ref_pix_bottom:
     title: Border Reference Pixels on the Bottom of the Detector (DN)
     description: |
       Border reference pixels on the bottom of the detector in units of DN.
-    tag: tag:stsci.edu:asdf/unit/quantity-1.*
-    properties:
-      value:
-        tag: tag:stsci.edu:asdf/core/ndarray-1.*
-        datatype: float32
-        exact_datatype: true
-        ndim: 3
-      unit:
-        tag: tag:astropy.org:astropy/units/unit-1.*
-        enum: ["DN"]
+    tag: tag:stsci.edu:asdf/core/ndarray-1.*
+    datatype: float32
+    exact_datatype: true
+    ndim: 3
+    unit: "DN"
   dq_border_ref_pix_left:
     title: Data Quality Flag for Border Reference Pixels, on the Left Edge of the Detector from the Instrument Perspective
     description: |

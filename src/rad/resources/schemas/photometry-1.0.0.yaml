@@ -11,13 +11,7 @@ properties:
     description: |
       The conversion from DN / s to MJy / steradian.
     anyOf:
-      - tag: tag:stsci.edu:asdf/unit/quantity-1.*
-        properties:
-          datatype:
-            enum: ["float64"]
-          unit:
-            tag: tag:stsci.edu:asdf/unit/unit-1.*
-            enum: ["MJy.sr**-1"]
+      - type: number
       - type: "null"
     archive_catalog:
       datatype: float
@@ -28,13 +22,7 @@ properties:
     description: |
       The conversion from DN / s to uJy / steradian.
     anyOf:
-      - tag: tag:stsci.edu:asdf/unit/quantity-1.*
-        properties:
-          datatype:
-            enum: ["float64"]
-          unit:
-            tag: tag:stsci.edu:asdf/unit/unit-1.*
-            enum: ["uJy.arcsec**-2"]
+      - type: number
       - type: "null"
     archive_catalog:
       datatype: float
@@ -45,13 +33,7 @@ properties:
     description: |
       The average pixel area in units of steradians.
     anyOf:
-      - tag: tag:stsci.edu:asdf/unit/quantity-1.*
-        properties:
-          datatype:
-            enum: ["float64"]
-          unit:
-            tag: tag:stsci.edu:asdf/unit/unit-1.*
-            enum: ["sr"]
+      - type: number
       - type: "null"
     archive_catalog:
       datatype: float
@@ -62,13 +44,7 @@ properties:
     description: |
       The average pixel area in units of square arcseconds.
     anyOf:
-      - tag: tag:stsci.edu:asdf/unit/quantity-1.*
-        properties:
-          datatype:
-            enum: ["float64"]
-          unit:
-            tag: tag:stsci.edu:asdf/unit/unit-1.*
-            enum: ["arcsec**2"]
+      - type: number
       - type: "null"
     archive_catalog:
       datatype: float
@@ -80,13 +56,7 @@ properties:
       The uncertainty in the flux density conversion from DN to MJy /steradians
       in units of MJy / steradians.
     anyOf:
-      - tag: tag:stsci.edu:asdf/unit/quantity-1.*
-        properties:
-          datatype:
-            enum: ["float64"]
-          unit:
-            tag: tag:stsci.edu:asdf/unit/unit-1.*
-            enum: ["MJy.sr**-1"]
+      - type: number
       - type: "null"
     archive_catalog:
       datatype: float
@@ -98,13 +68,7 @@ properties:
       The uncertainty in the flux density conversion from DN / s to
       uJy /arcsec^2.
     anyOf:
-      - tag: tag:stsci.edu:asdf/unit/quantity-1.*
-        properties:
-          datatype:
-            enum: ["float64"]
-          unit:
-            tag: tag:stsci.edu:asdf/unit/unit-1.*
-            enum: ["uJy.arcsec**-2"]
+      - type: number
       - type: "null"
     archive_catalog:
       datatype: float
