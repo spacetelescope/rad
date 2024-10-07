@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repo
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
         with:
           ref: main
           fetch-depth: 0
@@ -38,7 +38,7 @@ jobs:
           git push origin ${{ steps.set_release_date.outputs.version }}
 
       - name: Create GitHub release (triggers publish-to-pypi workflow)
-        uses: zendesk/action-create-release@v1
+        uses: zendesk/action-create-release@v2
         env:
           GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
         with:
