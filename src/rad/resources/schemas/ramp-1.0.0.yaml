@@ -53,8 +53,8 @@ properties:
       Amplifier 33 Reference Pixel Data in units of DN.
     tag: tag:stsci.edu:asdf/core/ndarray-1.*
     ndim: 3
-    datatype: float32
-    unit: ["DN", "electron"]
+    datatype: uint16
+    unit: "DN"
     exact_datatype: true
   border_ref_pix_left:
     title: Border Reference Pixels on the Left of the Detector, from the Instrument's Perspective (DN)
@@ -64,7 +64,7 @@ properties:
     tag: tag:stsci.edu:asdf/core/ndarray-1.*
     ndim: 3
     datatype: float32
-    unit: ["DN", "electron"]
+    unit: "DN"
     exact_datatype: true
   border_ref_pix_right:
     title: Border Reference Pixels on the Right of the Detector, from the Instrument's Perspective (DN)
@@ -74,7 +74,7 @@ properties:
     tag: tag:stsci.edu:asdf/core/ndarray-1.*
     ndim: 3
     datatype: float32
-    unit: ["DN", "electron"]
+    unit: "DN"
     exact_datatype: true
   border_ref_pix_top:
     title: Border Reference Pixels on the Top of the Detector (DN)
@@ -83,7 +83,7 @@ properties:
     tag: tag:stsci.edu:asdf/core/ndarray-1.*
     ndim: 3
     datatype: float32
-    unit: ["DN", "electron"]
+    unit: "DN"
     exact_datatype: true
   border_ref_pix_bottom:
     title: Border Reference Pixels on the Bottom of the Detector (DN)
@@ -92,7 +92,7 @@ properties:
     tag: tag:stsci.edu:asdf/core/ndarray-1.*
     ndim: 3
     datatype: float32
-    unit: ["DN", "electron"]
+    unit: "DN"
     exact_datatype: true
   dq_border_ref_pix_left:
     title: Data Quality Flag for Border Reference Pixels, on the Left Edge of the Detector from the Instrument Perspective
