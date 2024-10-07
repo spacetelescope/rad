@@ -16,16 +16,12 @@ properties:
     description: |
       Science Data Including Border Reference Pixels in units of DN or
       electrons.
-    tag: tag:stsci.edu:asdf/unit/quantity-1.*
-    properties:
-      value:
-        tag: tag:stsci.edu:asdf/core/ndarray-1.*
-        datatype: float32
-        exact_datatype: true
-        ndim: 3
-      unit:
-        tag: tag:astropy.org:astropy/units/unit-1.*
-        enum: ["DN", "electron"]
+    tag: tag:stsci.edu:asdf/core/ndarray-1.*
+    ndim: 3
+    datatype: float32
+    unit: ["DN", "electron"]
+    exact_datatype: true
+
   pixeldq:
     title: Two Dimensional Data Quality Flags Array for Each Pixel
     description: |
@@ -46,87 +42,58 @@ properties:
     exact_datatype: true
   err:
     title: Error Array Containing the Square Root of the Exposure-level Combined Variance (DN, electrons)
-    tag: tag:stsci.edu:asdf/unit/quantity-1.*
-    properties:
-      value:
-        tag: tag:stsci.edu:asdf/core/ndarray-1.*
-        datatype: float32
-        exact_datatype: true
-        ndim: 3
-      unit:
-        tag: tag:astropy.org:astropy/units/unit-1.*
-        enum: ["DN", "electron"]
+    tag: tag:stsci.edu:asdf/core/ndarray-1.*
+    ndim: 3
+    datatype: float32
+    unit: ["DN", "electron"]
+    exact_datatype: true
   amp33:
     title: Amp 33 Reference Pixel Data (DN)
     description: |
       Amplifier 33 Reference Pixel Data in units of DN.
-    tag: tag:stsci.edu:asdf/unit/quantity-1.*
-    properties:
-      value:
-        tag: tag:stsci.edu:asdf/core/ndarray-1.*
-        datatype: uint16
-        exact_datatype: true
-        ndim: 3
-      unit:
-        tag: tag:astropy.org:astropy/units/unit-1.*
-        enum: ["DN"]
+    tag: tag:stsci.edu:asdf/core/ndarray-1.*
+    ndim: 3
+    datatype: float32
+    unit: ["DN", "electron"]
+    exact_datatype: true
   border_ref_pix_left:
     title: Border Reference Pixels on the Left of the Detector, from the Instrument's Perspective (DN)
     description: |
       Border Reference Pixels on the Left of the Detector, from the instrument's
       perspective in units of DN.
-    tag: tag:stsci.edu:asdf/unit/quantity-1.*
-    value:
-      tag: tag:stsci.edu:asdf/core/ndarray-1.*
-      datatype: float32
-      exact_datatype: true
-      ndim: 3
-    unit:
-      tag: tag:astropy.org:astropy/units/unit-1.*
-      enum: ["DN"]
+    tag: tag:stsci.edu:asdf/core/ndarray-1.*
+    ndim: 3
+    datatype: float32
+    unit: ["DN", "electron"]
+    exact_datatype: true
   border_ref_pix_right:
     title: Border Reference Pixels on the Right of the Detector, from the Instrument's Perspective (DN)
     description: |
       Border Reference Pixels on the Right of the Detector, from the
       instrument's perspective in units of DN.
-    tag: tag:stsci.edu:asdf/unit/quantity-1.*
-    properties:
-      value:
-        tag: tag:stsci.edu:asdf/core/ndarray-1.*
-        datatype: float32
-        exact_datatype: true
-        ndim: 3
-      unit:
-        tag: tag:astropy.org:astropy/units/unit-1.*
-        enum: ["DN"]
+    tag: tag:stsci.edu:asdf/core/ndarray-1.*
+    ndim: 3
+    datatype: float32
+    unit: ["DN", "electron"]
+    exact_datatype: true
   border_ref_pix_top:
     title: Border Reference Pixels on the Top of the Detector (DN)
     description: |
       Border Reference Pixels on the Top of the Detector in units of DN.
-    tag: tag:stsci.edu:asdf/unit/quantity-1.*
-    properties:
-      value:
-        tag: tag:stsci.edu:asdf/core/ndarray-1.*
-        datatype: float32
-        exact_datatype: true
-        ndim: 3
-      unit:
-        tag: tag:astropy.org:astropy/units/unit-1.*
-        enum: ["DN"]
+    tag: tag:stsci.edu:asdf/core/ndarray-1.*
+    ndim: 3
+    datatype: float32
+    unit: ["DN", "electron"]
+    exact_datatype: true
   border_ref_pix_bottom:
     title: Border Reference Pixels on the Bottom of the Detector (DN)
     description: |
       Border Reference Pixels on the Bottom of the Detector in units of DN.
-    tag: tag:stsci.edu:asdf/unit/quantity-1.*
-    properties:
-      value:
-        tag: tag:stsci.edu:asdf/core/ndarray-1.*
-        datatype: float32
-        exact_datatype: true
-        ndim: 3
-      unit:
-        tag: tag:astropy.org:astropy/units/unit-1.*
-        enum: ["DN"]
+    tag: tag:stsci.edu:asdf/core/ndarray-1.*
+    ndim: 3
+    datatype: float32
+    unit: ["DN", "electron"]
+    exact_datatype: true
   dq_border_ref_pix_left:
     title: Data Quality Flag for Border Reference Pixels, on the Left Edge of the Detector from the Instrument Perspective
     description: |
