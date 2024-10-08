@@ -1,1 +1,1 @@
-Update ``ephemeris`` schema discriptions
+Update ``ephemeris`` schema descriptions
