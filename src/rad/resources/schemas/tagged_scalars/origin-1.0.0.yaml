@@ -6,7 +6,7 @@ id: asdf://stsci.edu/datamodels/roman/schemas/tagged_scalars/origin-1.0.0
 title: Institution / Organization Name
 
 type: string
-enum: ["STSCI", "IPAC/SSC"]
+enum: ["STSCI/SOC", "IPAC/SSC"]
 
 sdf:
   special_processing: VALUE_REQUIRED
