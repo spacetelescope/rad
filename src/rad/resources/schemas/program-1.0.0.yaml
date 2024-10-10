@@ -20,10 +20,11 @@ properties:
       datatype: nvarchar(200)
       destination: [WFIExposure.program_title, WFIMosaic.program_title, GuideWindow.program_title,
                     SourceCatalog.program_title, SegmentationMap.program_title]
-  pi_name:
+  investigator_name:
     title: Principal Investigator Name
     description: |
-      The name of the Principal Investigator (PI) of the program.
+      The name of the principle investigator (PI) of the
+      program.
     type: string
     sdf:
       special_processing: VALUE_REQUIRED
@@ -34,12 +35,18 @@ properties:
     maxLength: 100
     archive_catalog:
       datatype: nvarchar(100)
-      destination: [WFIExposure.pi_name, WFIMosaic.pi_name, GuideWindow.pi_name,
-                    SourceCatalog.pi_name, SegmentationMap.pi_name]
+      destination: [WFIExposure.investigator_name, WFIMosaic.investigator_name, GuideWindow.investigator_name,
+                    SourceCatalog.investigator_name, SegmentationMap.investigator_name]
   category:
     title: Program Category
     description: |
-      The category of the program.
+      The submitted proposal category of the program. The
+      categories include calibraiton (CAL), core community survey
+      (CCS), coronagraph technology demonstration (CGI), observatory
+      commissioning (COM), engineering (ENG), general astrophysics
+      survey (GAS), general investigator (GI), and observing conducted
+      at the direction of the National Aeronautics and Space
+      Administation (NASA).
     type: string
     sdf:
       special_processing: VALUE_REQUIRED
@@ -53,8 +60,18 @@ properties:
   subcategory:
     title: Program Subcategory
     description: |
-      The subcategory of the program.
+      The submitted proposal subcategory of the program. The
+      subcategories include calibration (CAL), coronagraph technology
+      demonstration (CGI), community research programs (CR),
+      discretionary research programs (DR), Galactic Bulge Time Domain
+      Survey (GBTD), High-Latitude Time Domain Survey (HLTD),
+      High-Latitude Wide-Area Survey (HLWA), observational research
+      program (OR), Wide Field Instrument (WFI), and Wavefront Sensing
+      and Control (WFSC). All subcategories belong to only a subset of
+      the meta.program.category values.
     type: string
+    enum: ['CAL', 'CGI', 'CR', 'DR', 'GBTD', 'HLTD', 'HLWA', 'OR',
+           'WFI', 'WFSC', 'None']
     sdf:
       special_processing: VALUE_REQUIRED
       source:
@@ -67,8 +84,8 @@ properties:
   science_category:
     title: Science Category
     description: |
-      The science category assigned during the Telescope Allocation Committee
-      (TAC) process.
+      The science category assigned during the Time
+      Allocation Committee (TAC) review process.
     type: string
     sdf:
       special_processing: VALUE_REQUIRED
@@ -80,10 +97,10 @@ properties:
       destination: [WFIExposure.science_category, WFIMosaic.science_category, GuideWindow.science_category,
                     SourceCatalog.science_category, SegmentationMap.science_category]
   continuation_id:
-    title: Continuation ID
+    title: Program Continuation Identifier
     description: |
-      The identifier that marks the program as a continuation of a previous
-      program.
+      An identifier that indicates if the program is a
+      continuation of a previous program.
     type: integer
     sdf:
       special_processing: VALUE_REQUIRED
@@ -93,7 +110,9 @@ properties:
       datatype: int
       destination: [WFIExposure.continuation_id, WFIMosaic.continuation_id, GuideWindow.continuation_id,
                     SourceCatalog.continuation_id, SegmentationMap.continuation_id]
-propertyOrder: [title, pi_name, category, subcategory, science_category, continuation_id]
+propertyOrder: [title, investigator_name, category, subcategory,
+  science_category, continuation_id]
 flowStyle: block
-required: [title, pi_name, category, subcategory, science_category, continuation_id]
+required: [title, investigator_name, category, subcategory,
+  science_category, continuation_id]
 ...
