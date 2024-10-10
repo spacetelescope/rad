@@ -31,7 +31,7 @@ properties:
   pa_aperture:
     title: Aperture Position Angle (deg)
     description: |
-      Position angle in degrees of the apeture ideal Y axis
+      Position angle in degrees of the aperture ideal Y axis
       relative to the V3 axis of the spacecraft. This information
       comes from the Science Instrument Aperture File (SIAF) in the
       Science Operations Center (SOC) Project Reference Database
