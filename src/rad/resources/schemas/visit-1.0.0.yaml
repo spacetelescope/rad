@@ -54,7 +54,7 @@ properties:
           subpixel dither offsets are performed at each of the
           points in the primary dither pattern. Thus, the total
           number of dither offsets executed is the product of the
-          numnber of points in the primary and subpixel dither
+          number of points in the primary and subpixel dither
           patterns. The array contains (X, Y) pairs of offsets in
           the subpixel dither pattern where the X and Y
           coordinates are defined in the ideal system. The ideal
