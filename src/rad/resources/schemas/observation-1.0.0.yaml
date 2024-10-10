@@ -89,7 +89,7 @@ properties:
       Proposal Tool (APT) segment plan in a pass. A segment may
       include multiple traversals of mosaic pattern(s), with element
       wheel moves occurring between observations. The allowed range of
-      segement numbers is 001 to 999 inclusive.
+      segment numbers is 001 to 999 inclusive.
     type: string
     maxLength: 4
     sdf:
