@@ -3,14 +3,60 @@
 $schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.0.0
 id: asdf://stsci.edu/datamodels/roman/schemas/wcsinfo-1.0.0
 
-title: World Coordinate System (WCS) Parameters
+title: World Coordinate System (WCS) Information
 type: object
 properties:
-  v2_ref:
-    title: Reference Position V2 Coordinate (arcsec)
+  aperture_name:
+    title: Aperture Name
     description: |
-      Coordinate of the reference position along the telescope V2 axis in units
-      of arcseconds.
+      Name of the aperture used to specify the
+      transformations between detector pixel, science pixel, and
+      spacecraft V coordinate frames. This information comes from the
+      Science Instrument Aperture File (SIAF) in the Science
+      Operations Center (SOC) Project Reference Database (PRD).
+    type: string
+    maxLength: 12
+    enum: ['WFI01_FULL', 'WFI02_FULL', 'WFI03_FULL', 'WFI04_FULL',
+           'WFI05_FULL', 'WFI06_FULL', 'WFI07_FULL', 'WFI08_FULL',
+           'WFI09_FULL', 'WFI10_FULL', 'WFI11_FULL', 'WFI12_FULL',
+           'WFI13_FULL', 'WFI14_FULL', 'WFI15_FULL', 'WFI16_FULL',
+           'WFI17_FULL', 'WFI18_FULL']
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    archive_catalog:
+      datatype: nvarchar(12)
+      destination: [WFIExposure.aperture_name, GuideWindow.aperture_name]
+  pa_aperture:
+    title: Aperture Position Angle (deg)
+    description: |
+      Position angle in degrees of the apeture ideal Y axis
+      relative to the V3 axis of the spacecraft. This information
+      comes from the Science Instrument Aperture File (SIAF) in the
+      Science Operations Center (SOC) Project Reference Database
+      (PRD).
+    type: number
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    archive_catalog:
+      datatype: float
+      destination: [WFIExposure.pa_aperture, GuideWindow.pa_aperture]
+  v2_ref:
+    title: V2 Reference Position (arcsec)
+    description: |
+      Coordinate of the reference pixel position along the
+      telescope V2 axis in units of arcseconds. This information comes
+      from the Science Instrument Aperture File (SIAF) in the Science
+      Operations Center (SOC) Project Reference Database (PRD). The
+      telescope V coordinate system is defined with its origin at the
+      vertex of the primary mirror. The +V1 axis is defined as
+      parallel to the telescope boresight, the +V3 axis is orthogonal
+      to the sunshield, and the +V2 axis completes the right-hand
+      system. See Roman-STScI-000143 "Description of the Roman SIAF
+      and Coordinate Frames" for more information.
     type: number
     sdf:
       special_processing: VALUE_REQUIRED
@@ -20,10 +66,16 @@ properties:
       datatype: float
       destination: [WFIExposure.v2_ref, GuideWindow.v2_ref]
   v3_ref:
-    title: Reference Position V3 Coordinate (arcsec)
+    title: V3 Reference Position (arcsec)
     description: |
-      Coordinate of the reference position along the telescope V3 axis in units
-      of arcseconds.
+      Coordinate of the reference pixel position along the
+      telescope V3 axis in units of arcseconds. This information comes
+      from the Science Instrument Aperture File (SIAF) in the Science
+      Operations Center (SOC) Project Reference Database (PRD). The
+      telescope V coordinate system is defined with its origin at the
+      vertex of the primary mirror. The +V3 axis is orthogonal to the
+      sunshield. See Roman-STScI-000143 "Description of the Roman SIAF
+      and Coordinate Frames" for more information.
     type: number
     sdf:
       special_processing: VALUE_REQUIRED
@@ -33,12 +85,16 @@ properties:
       datatype: float
       destination: [WFIExposure.v3_ref, GuideWindow.v3_ref]
   vparity:
-    title: Relative Rotation Between Ideal and Telescope Axes
+    title: Relative Rotation Between the Ideal and Telescope Ideal Axes
     description: |
-      Relative sense of rotation between the ideal and telescope coordinate
-      systems. The value may be either 1 or -1. See documents STScI-JWST-001550
-      and STScI-Roman-000143 for more information.
+      Relative sense of rotation between the ideal and
+      telescope coordinate systems. The value may be either 1 or -1.
+      This information comes from the Science Instrument Aperture File
+      (SIAF) in the Science Operations Center (SOC) Project Reference
+      Database (PRD). See documents STScI-JWST-001550 and
+      STScI-Roman-000143 for more information.
     type: integer
+    enum: [-1, 1]
     sdf:
       special_processing: VALUE_REQUIRED
       source:
@@ -49,8 +105,16 @@ properties:
   v3yangle:
     title: Angle Between the V3 and Ideal Y Axes (deg)
     description: |
-      Angle between the telescope V3 axis and the ideal coordinate frame y-axis
-      in units of degrees.
+      Angle between the telescope V3 axis and the ideal Y
+      axis in units of degrees. This information comes from the
+      Science Instrument Aperture File (SIAF) in the Science
+      Operations Center (SOC) Project Reference Database (PRD). The
+      telescope V coordinate system is defined with its origin at the
+      vertex of the primary mirror. The +V3 axis is orthogonal to the
+      sunshield. The ideal coordinate system is a
+      geomtric-distortion-corrected reference frame projected onto a
+      tangent plane. See Roman-STScI-000143 "Description of the Roman
+      SIAF and Coordinate Frames" for more information.
     type: number
     sdf:
       special_processing: VALUE_REQUIRED
@@ -62,7 +126,8 @@ properties:
   ra_ref:
     title: Right Ascension of the Reference Position (deg)
     description: |
-      Right ascension of the reference position on the sky in units of degrees.
+      Right ascension of the reference pixel position on the
+      sky in units of degrees.
     type: number
     sdf:
       special_processing: VALUE_REQUIRED
@@ -74,7 +139,8 @@ properties:
   dec_ref:
     title: Declination of the Reference Position (deg)
     description: |
-      Declination of the reference position on the sky in units of degrees.
+      Declination of the reference pixel position on the sky
+      in units of degrees.
     type: number
     sdf:
       special_processing: VALUE_REQUIRED
@@ -86,8 +152,12 @@ properties:
   roll_ref:
     title: V3 Position Angle at the Reference Position
     description: |
-      Position angle of the V3 axis at the reference position measured from
-      North to East.
+      Position angle of the telescope V3 axis at the
+      reference pixel position measured from North to East. The
+      telescope V coordinate system is defined with its origin at the
+      vertex of the primary mirror. The +V3 axis is orthogonal to the
+      sunshield. See Roman-STScI-000143 "Description of the Roman SIAF
+      and Coordinate Frames" for more information.
     type: number
     sdf:
       special_processing: VALUE_REQUIRED
@@ -97,11 +167,12 @@ properties:
       datatype: float
       destination: [WFIExposure.roll_ref, GuideWindow.roll_ref]
   s_region:
-    title: Spatial Extent of the Observation
+    title: Spatial Extent of the Exposure
     description: |
-      The region of the sky enclosed by the observation footprint. This is given
-      as a polygon stored as a string with the vertices defined by a list of
-      right ascension and declination pairs in units of degrees.
+      The region of the sky enclosed by the pixel data
+      contained within this file. This is given as a polygon stored as
+      a string with the vertices defined by a list of right ascension
+      and declination pairs in units of degrees.
     type: string
     sdf:
       special_processing: VALUE_REQUIRED
@@ -110,7 +181,9 @@ properties:
     archive_catalog:
       datatype: nvarchar(max)
       destination: [WFIExposure.s_region, GuideWindow.s_region]
-propertyOrder: [v2_ref, v3_ref, vparity, v3yangle, ra_ref, dec_ref, roll_ref, s_region]
+propertyOrder: [aperture_name, pa_aperture, v2_ref, v3_ref, vparity, v3yangle,
+  ra_ref, dec_ref, roll_ref, s_region]
 flowStyle: block
-required: [v2_ref, v3_ref, vparity, v3yangle, ra_ref, dec_ref, roll_ref, s_region]
+required: [aperture_name, pa_aperture, v2_ref, v3_ref, vparity, v3yangle,
+  ra_ref, dec_ref, roll_ref, s_region]
 ...
