@@ -14,9 +14,6 @@ allOf:
     aperture:
       title: Aperture Information
       tag: asdf://stsci.edu/datamodels/roman/tags/aperture-1.0.0
-    cal_step:
-      title: Tracker of Calibration Pipeline Steps
-      tag: asdf://stsci.edu/datamodels/roman/tags/l2_cal_step-1.0.0
     coordinates:
       title: Name Of The Coordinate Reference Frame
       tag: asdf://stsci.edu/datamodels/roman/tags/coordinates-1.0.0
@@ -26,7 +23,7 @@ allOf:
     exposure:
       title: Exposure Information
       tag: asdf://stsci.edu/datamodels/roman/tags/exposure-1.0.0
-    guidestar:
+    guide_star:
       title: Guide Star Window Information
       tag: asdf://stsci.edu/datamodels/roman/tags/guidestar-1.0.0
     instrument:
@@ -53,10 +50,10 @@ allOf:
     visit:
       title: Visit Information
       tag: asdf://stsci.edu/datamodels/roman/tags/visit-1.0.0
-    wcsinfo:
+    wcs_info:
       title: World Coordinate System (WCS) Parameters
       tag: asdf://stsci.edu/datamodels/roman/tags/wcsinfo-1.0.0
-  required: [aperture, cal_step, coordinates, ephemeris, exposure, guidestar,
+  required: [aperture, coordinates, ephemeris, exposure, guide_star,
              instrument, observation, pointing, program, ref_file,
-             target, velocity_aberration, visit, wcsinfo]
+             target, velocity_aberration, visit, wcs_info]
 ...

@@ -6,12 +6,90 @@ id: asdf://stsci.edu/datamodels/roman/schemas/visit-1.0.0
 title: Visit Information
 type: object
 properties:
+  dither:
+    title: Dither Pattern Information
+    type: object
+    properties:
+      primary_name:
+        title: Primary Dither Pattern Name
+        description: |
+          Name of the primary dither pattern used for
+          the visit.
+        anyOf:
+          - type: string
+          - type: "null"
+        sdf:
+          special_processing: VALUE_REQUIRED
+          source:
+            origin: TBD
+        maxLength: 100
+        archive_catalog:
+          datatype: nvarchar(100)
+          destination: [WFIExposure.dither_primary_name, SourceCatalog.engineering_quality,
+                        SegmentationMap.engineering_quality]
+      subpixel_name:
+        title: Subpixel Dither Pattern Name
+        description: |
+          Name of the subpixel dither pattern used for
+          the visit.
+        anyOf:
+          - type: string
+          - type: "null"
+        sdf:
+          special_processing: VALUE_REQUIRED
+          source:
+            origin: TBD
+        maxLength: 100
+        archive_catalog:
+          datatype: nvarchar(100)
+          destination: [WFIExposure.dither_subpixel_name, SourceCatalog.dither_subpixel_name,
+                        SegmentationMap.dither_subpixel_name]
+
+      executed_pattern:
+        title: Executed Dither Pattern Offsets (arcsec)
+        description: |
+          The combination of the primary and subpixel
+          dither patterns (if selected) in units of arcseconds. If
+          a subpixel dither pattern is selected, then all of the
+          subpixel dither offsets are performed at each of the
+          points in the primary dither pattern. Thus, the total
+          number of dither offsets executed is the product of the
+          numnber of points in the primary and subpixel dither
+          patterns. The array contains (X, Y) pairs of offsets in
+          the subpixel dither pattern where the X and Y
+          coordinates are defined in the ideal system. The ideal
+          coordinate system is a geomtric-distortion-corrected
+          reference frame projected onto a tangent plane. For more
+          information, see the Science Instrument Aperture File
+          (SIAF) and associated documentation. The exposure
+          identifier in meta.observation.exposure can be used to
+          index this array to obtain the relative pointing offset
+          from the initial target position for this exposure. Note
+          that the exposure identifier is 1-indexed.
+        anyOf:
+          - type: array
+            items:
+              type: number
+          - type: "null"
+        sdf:
+          special_processing: VALUE_REQUIRED
+          source:
+            origin: TBD
+        archive_catalog:
+          datatype: nvarchar(max)
+          destination: [WFIExposure.dither_executed_pattern,
+                        SourceCatalog.dither_executed_pattern,
+                        SegmentationMap.dither_executed_pattern]
+    required: [primary_name, subpixel_name, executed_pattern]
   engineering_quality:
-    title: Engineering Quality of Data
+    title: Engineering Data Quality
     description: |
-      The engineering data quality indicator from the Engineering Database
-      (EngDB). The options available are "OK" and "SUSPECT", where "SUSPECT"
-      identifies data with indications of poor data quality.
+      Indicator of data quality problems with the
+      engineering data used to populated select metadata fields. A
+      value of "OK" indicates no suspected problems, while a value of
+      "SUSPECT" indicates one or more metadata values populated from
+      the engineering database may be missing information during the
+      exposure or are otherwise of lower quality.
     type: string
     enum: [OK, SUSPECT]
     sdf:
@@ -23,11 +101,16 @@ properties:
       datatype: nvarchar(10)
       destination: [WFIExposure.engineering_quality, GuideWindow.engineering_quality,
                     SourceCatalog.engineering_quality, SegmentationMap.engineering_quality]
-  pointing_engdb_quality:
-    title: Engineering Quality of Pointing
+  pointing_engineering_source:
+    title: Pointing Engineering Source
     description: |
-      The quality of the pointing information from the Engineering Database
-      (EngDB). The options available are "CALCULATED" and "PLANNED".
+      The source type of the pointing information in the
+      metadata may be set to either "PLANNED" or "CALCULATED". If the
+      value is "PLANNED", then pointing mnemonics were not found in
+      the engineering database, and the pointing data were taken from
+      the observation planning information. If the value is
+      "CALCULATED", then the pointing data were determined using the
+      information in the engineering database.
     type: string
     enum: [CALCULATED, PLANNED]
     sdf:
@@ -37,13 +120,15 @@ properties:
     maxLength: 10
     archive_catalog:
       datatype: nvarchar(10)
-      destination: [WFIExposure.pointing_engdb_quality, GuideWindow.pointing_engdb_quality,
-                    SourceCatalog.pointing_engdb_quality, SegmentationMap.pointing_engdb_quality]
+      destination: [WFIExposure.pointing_engineering_source, GuideWindow.pointing_engineering_source,
+                    SourceCatalog.pointing_engineering_source, SegmentationMap.pointing_engineering_source]
   type:
     title: Visit Type
     description: |
-      The type of visit.
+      The type of visit from observation planning.
     type: string
+    enum: ['GENERAL_ENGINEERING', 'GENERIC', 'PARALLEL',
+           'PRIME_TARGETED_FIXED', 'PRIME_UNTARGETED']
     sdf:
       special_processing: VALUE_REQUIRED
       source:
@@ -56,7 +141,13 @@ properties:
   start_time:
     title: Visit Start Time (UTC)
     description: |
-      The start time of the visit in coordinated universal time (UTC).
+      The UTC time at the beginning of the visit. The time
+      is serialized on disk as an International Organization for
+      Standardization (ISO) 8601-compliant ISOT string, but if opened
+      in Python with the asdf-astropy package installed, it may be
+      read as an astropy.time.Time object with all of the associated
+      methods and transforms available. See the documentation for
+      astropy.time.Time objects for more information.
     tag: tag:stsci.edu:asdf/time/time-1.*
     sdf:
       special_processing: VALUE_REQUIRED
@@ -69,7 +160,13 @@ properties:
   end_time:
     title: Visit End Time (UTC)
     description: |
-      The end time of the visit in coordinated universal time (UTC).
+      The UTC time at the end of the visit. The time is
+      serialized on disk as an International Organization for
+      Standardization (ISO) 8601-compliant ISOT string, but if opened
+      in Python with the asdf-astropy package installed, it may be
+      read as an astropy.time.Time object with all of the associated
+      methods and transforms available. See the documentation for
+      astropy.time.Time objects for more information.
     tag: tag:stsci.edu:asdf/time/time-1.*
     sdf:
       special_processing: VALUE_REQUIRED
@@ -82,8 +179,9 @@ properties:
   status:
     title: Visit Status
     description: |
-      The status of a visit.
+      Execution status of the visit.
     type: string
+    enum: ['DATALOSS', 'SUCCESSFUL', 'UNSUCCESSFUL']
     sdf:
       special_processing: VALUE_REQUIRED
       source:
@@ -93,10 +191,11 @@ properties:
       datatype: nvarchar(15)
       destination: [WFIExposure.visit_status, GuideWindow.visit_status,
                     SourceCatalog.visit_status, SegmentationMap.visit_status]
-  total_exposures:
-    title: Total Number of Exposures
+  nexposures:
+    title: Number of Planned Exposures
     description: |
-      The total number of exposures planned in a visit.
+      The total number of exposures planned within the
+      visit.
     type: integer
     sdf:
       special_processing: VALUE_REQUIRED
@@ -104,14 +203,13 @@ properties:
         origin: TBD
     archive_catalog:
       datatype: int
-      destination: [WFIExposure.visit_total_exposures, GuideWindow.visit_total_exposures,
-                    SourceCatalog.visit_total_exposures, SegmentationMap.visit_total_exposures]
+      destination: [WFIExposure.visit_nexposures, GuideWindow.visit_nexposures,
+                    SourceCatalog.visit_nexposures, SegmentationMap.visit_nexposures]
   internal_target:
     title: Internal Target
     description: |
-      A boolean value which indicates whether at least one exposure in a visit
-      is internal. Internal targets refer to calibration data where the
-      telescope observes without external sources by closing the shutter.
+      A boolean indicator which, if true, indicates that the
+      target for the visit is an internal calibration target.
     type: boolean
     sdf:
       special_processing: VALUE_REQUIRED
@@ -121,24 +219,9 @@ properties:
       datatype: nchar(1)
       destination: [WFIExposure.visit_internal_target, GuideWindow.visit_internal_target,
                     SourceCatalog.visit_internal_target, SegmentationMap.visit_internal_target]
-  target_of_opportunity:
-    title: Target of Opportunity
-    description: |
-      A boolean value which indicates whether the visit is defined as a target
-      of opportunity (ToO). Targets of opportunity refer to temporal phenomena,
-      such as supernovae, which cannot be planned in advance.
-    type: boolean
-    sdf:
-      special_processing: VALUE_REQUIRED
-      source:
-        origin: TBD
-    archive_catalog:
-      datatype: nchar(1)
-      destination: [WFIExposure.target_of_opportunity, GuideWindow.target_of_opportunity,
-                    SourceCatalog.target_of_opportunity, SegmentationMap.target_of_opportunity]
-propertyOrder: [engineering_quality, pointing_engdb_quality, type,
-           start_time, end_time, status, total_exposures, internal_target, target_of_opportunity]
+propertyOrder: [dither, engineering_quality, pointing_engineering_source, type,
+  start_time, end_time, status, nexposures, internal_target]
 flowStyle: block
-required: [engineering_quality, pointing_engdb_quality, type,
-           start_time, end_time, status, total_exposures, internal_target, target_of_opportunity]
+required: [dither, engineering_quality, pointing_engineering_source, type,
+  start_time, end_time, status, nexposures, internal_target]
 ...

@@ -3,7 +3,9 @@
 $schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.0.0
 id: asdf://stsci.edu/datamodels/roman/schemas/wfi_science_raw-1.0.0
 
-title: Level 1 WFI Imaging and Spectrographic Science Data
+title: |
+  Level 1 (L1) Uncalibrated Roman Wide Field
+  Instrument (WFI) Ramp Cube
 
 datamodel_name: ScienceRawModel
 
@@ -16,7 +18,8 @@ properties:
   data:
     title: Science Data (DN)
     description: |
-      Science data, including reference pixels in units of DN
+      Uncalibrated science ramp cube in units of data
+      numbers (DNs)
     tag: tag:stsci.edu:asdf/unit/quantity-1.*
     properties:
       value:
@@ -30,7 +33,8 @@ properties:
   amp33:
     title: Amplifier 33 Reference Pixel Data (DN)
     description: |
-      Reference pixel data from amplifier 33 in units of DN.
+      Reference pixel data from amplifier 33 in units of
+      data numbers (DNs)
     tag: tag:stsci.edu:asdf/unit/quantity-1.*
     properties:
       value:
@@ -41,11 +45,11 @@ properties:
       unit:
         tag: tag:astropy.org:astropy/units/unit-1.*
         enum: ["DN"]
-
   resultantdq:
     title: Resultant Data Quality Array
     description: |
-      An optional, 3-D data quality array, with plane DQ for each resultant.
+      Optional, 3-D data quality array with a plane for each
+      resultant.
     tag: tag:stsci.edu:asdf/core/ndarray-1.*
     ndim: 3
     datatype: uint8
