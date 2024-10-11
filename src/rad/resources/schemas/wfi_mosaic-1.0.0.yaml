@@ -123,6 +123,6 @@ properties:
 propertyOrder: [meta, data, context, err, weight, var_poisson, var_rnoise, var_flat,
                 cal_logs]
 flowStyle: block
-required: [meta, data, context, err, weight, var_poisson, var_rnoise, var_flat,
+required: [meta, data, context, err, weight, var_poisson, var_rnoise,
            cal_logs]
 ...
