@@ -53,7 +53,7 @@ allOf:
     wcs_info:
       title: World Coordinate System (WCS) Parameters
       tag: asdf://stsci.edu/datamodels/roman/tags/wcsinfo-1.0.0
-  required: [cal_step, coordinates, ephemeris, exposure, guidestar,
+  required: [cal_step, coordinates, ephemeris, exposure, guide_star,
              instrument, observation, pointing, program, ref_file,
-             rcs, velocity_aberration, visit, wcsinfo]
+             rcs, velocity_aberration, visit, wcs_info]
 ...
