@@ -18,7 +18,6 @@ properties:
           background:
             tag: asdf://stsci.edu/datamodels/roman/tags/sky_background-1.0.0
           cal_logs:
-            title: Calibration Logs
             description: |
               Calibration logs.
             tag: asdf://stsci.edu/datamodels/roman/tags/cal_logs-1.0.0
