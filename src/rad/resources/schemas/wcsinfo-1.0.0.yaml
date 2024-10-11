@@ -85,7 +85,7 @@ properties:
       datatype: float
       destination: [WFIExposure.v3_ref, GuideWindow.v3_ref]
   vparity:
-    title: Relative Rotation Between the Ideal and Telescope Ideal Axes
+    title: Relative Rotation Between the Ideal and Telescope Axes
     description: |
       Relative sense of rotation between the ideal and
       telescope coordinate systems. The value may be either 1 or -1.
