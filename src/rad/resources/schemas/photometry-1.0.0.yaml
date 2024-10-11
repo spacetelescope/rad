@@ -7,114 +7,47 @@ title: Photometry Information
 type: object
 properties:
   conversion_megajanskys:
-    title: Flux Density Producing 1 count per second (MJy / steradian)
+    title: Zeropoint Flux (MJy/sr)
     description: |
-      The conversion from DN / s to MJy / steradian.
-    anyOf:
-      - tag: tag:stsci.edu:asdf/unit/quantity-1.*
-        properties:
-          datatype:
-            enum: ["float64"]
-          unit:
-            tag: tag:stsci.edu:asdf/unit/unit-1.*
-            enum: ["MJy.sr**-1"]
-      - type: "null"
+      The flux density (in units of megaJanskys per
+      steradian; MJy/sr) that produces an instrumental count rate of 1
+      data number (DN) per second. A unit change to microJanskys per
+      square arcsecond (uJy/arcsec^2) can be made by multiplying this
+      value by the ratio (1 x 10^12 MJy/uJy) / (4.254517 x 10^10
+      arcsec^2/sr) = 23.50443054.
+    type: number
     archive_catalog:
       datatype: float
       destination: [WFIExposure.conversion_megajanskys, WFIMosaic.conversion_megajanskys,
                     SourceCatalog.conversion_megajanskys]
-  conversion_microjanskys:
-    title: Flux Density Producing 1 count per second (uJy / arcsec2)
-    description: |
-      The conversion from DN / s to uJy / steradian.
-    anyOf:
-      - tag: tag:stsci.edu:asdf/unit/quantity-1.*
-        properties:
-          datatype:
-            enum: ["float64"]
-          unit:
-            tag: tag:stsci.edu:asdf/unit/unit-1.*
-            enum: ["uJy.arcsec**-2"]
-      - type: "null"
-    archive_catalog:
-      datatype: float
-      destination: [WFIExposure.conversion_microjanskys, WFIMosaic.conversion_microjanskys,
-                    SourceCatalog.conversion_microjanskys]
-  pixelarea_steradians:
-    title: Nominal Pixel Area (steradians)
-    description: |
-      The average pixel area in units of steradians.
-    anyOf:
-      - tag: tag:stsci.edu:asdf/unit/quantity-1.*
-        properties:
-          datatype:
-            enum: ["float64"]
-          unit:
-            tag: tag:stsci.edu:asdf/unit/unit-1.*
-            enum: ["sr"]
-      - type: "null"
-    archive_catalog:
-      datatype: float
-      destination: [WFIExposure.pixelarea_steradians, WFIMosaic.pixelarea_steradians,
-                    SourceCatalog.pixelarea_steradians]
-  pixelarea_arcsecsq:
-    title: Nominal Pixel Area (arcsec^2)
-    description: |
-      The average pixel area in units of square arcseconds.
-    anyOf:
-      - tag: tag:stsci.edu:asdf/unit/quantity-1.*
-        properties:
-          datatype:
-            enum: ["float64"]
-          unit:
-            tag: tag:stsci.edu:asdf/unit/unit-1.*
-            enum: ["arcsec**2"]
-      - type: "null"
-    archive_catalog:
-      datatype: float
-      destination: [WFIExposure.pixelarea_arcsecsq, WFIMosaic.pixelarea_arcsecsq,
-                    SourceCatalog.pixelarea_arcsecsq]
   conversion_megajanskys_uncertainty:
-    title: Uncertainty in Flux Density Conversion (from DN / s to MJy / steradians)
+    title: Zeropoint Flux Uncertainty (MJy/sr)
     description: |
-      The uncertainty in the flux density conversion from DN to MJy /steradians
-      in units of MJy / steradians.
-    anyOf:
-      - tag: tag:stsci.edu:asdf/unit/quantity-1.*
-        properties:
-          datatype:
-            enum: ["float64"]
-          unit:
-            tag: tag:stsci.edu:asdf/unit/unit-1.*
-            enum: ["MJy.sr**-1"]
-      - type: "null"
+      The uncertainty in the flux density (in units of
+      megaJanskys per steradian; MJy/sr) that produces an instrumental
+      count rate of 1 data number (DN) per second. A unit change to
+      microJanskys per square arcsecond (uJy/arcsec^2) can be made by
+      multiplying this value by the ratio (1 x 10^12 MJy/uJy) /
+      (4.254517 x 10^10 arcsec^2/sr) = 23.50443.
+    type: number
     archive_catalog:
       datatype: float
       destination: [WFIExposure.conversion_megajanskys_uncertainty, WFIMosaic.conversion_megajanskys_uncertainty,
                     SourceCatalog.conversion_megajanskys_uncertainty]
-  conversion_microjanskys_uncertainty:
-    title: Uncertainty in Flux Density Conversion (from DN / s to uJy / arcsec^2)
+  pixel_area:
+    title: Nominal Pixel Area (sr)
     description: |
-      The uncertainty in the flux density conversion from DN / s to
-      uJy /arcsec^2.
-    anyOf:
-      - tag: tag:stsci.edu:asdf/unit/quantity-1.*
-        properties:
-          datatype:
-            enum: ["float64"]
-          unit:
-            tag: tag:stsci.edu:asdf/unit/unit-1.*
-            enum: ["uJy.arcsec**-2"]
-      - type: "null"
+      The average pixel area in units of steradians. This
+      may be converted to units of square arcseconds by multiplying
+      the value by 4.254517 x 10^10 square arcseconds per steradian.
+    type: number
     archive_catalog:
       datatype: float
-      destination: [WFIExposure.conversion_microjanskys_uncertainty, WFIMosaic.conversion_microjanskys_uncertainty,
-                    SourceCatalog.conversion_microjanskys_uncertainty]
-propertyOrder: [conversion_microjanskys, conversion_megajanskys,
-                pixelarea_steradians, pixelarea_arcsecsq,
-                conversion_megajanskys_uncertainty, conversion_microjanskys_uncertainty]
+      destination: [WFIExposure.pixel_area, WFIMosaic.pixel_area,
+                    SourceCatalog.pixel_area]
+propertyOrder: [conversion_megajanskys, conversion_megajanskys_uncertainty,
+  pixel_area]
 flowStyle: block
-required: [conversion_microjanskys, conversion_megajanskys,
-           pixelarea_steradians, pixelarea_arcsecsq,
-           conversion_megajanskys_uncertainty, conversion_microjanskys_uncertainty]
+required: [conversion_megajanskys, conversion_megajanskys_uncertainty,
+  pixel_area]
 ...
