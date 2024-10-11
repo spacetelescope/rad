@@ -23,7 +23,7 @@ allOf:
     exposure:
       title: Exposure Information
       tag: asdf://stsci.edu/datamodels/roman/tags/exposure-1.0.0
-    guidestar:
+    guide_star:
       title: Guide Star Window Information
       tag: asdf://stsci.edu/datamodels/roman/tags/guidestar-1.0.0
     instrument:
@@ -50,7 +50,7 @@ allOf:
     visit:
       title: Visit Information
       tag: asdf://stsci.edu/datamodels/roman/tags/visit-1.0.0
-    wcsinfo:
+    wcs_info:
       title: World Coordinate System (WCS) Parameters
       tag: asdf://stsci.edu/datamodels/roman/tags/wcsinfo-1.0.0
   required: [cal_step, coordinates, ephemeris, exposure, guidestar,

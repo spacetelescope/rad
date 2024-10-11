@@ -93,6 +93,8 @@ tags:
 - tag_uri: asdf://stsci.edu/datamodels/roman/tags/rcs-1.0.0
   schema_uri: asdf://stsci.edu/datamodels/roman/schemas/rcs-1.0.0
   title: Relative Calibration System Information
+  description: |-
+    Relative Calibration System Information
 - tag_uri: asdf://stsci.edu/datamodels/roman/tags/statistics-1.0.0
   schema_uri: asdf://stsci.edu/datamodels/roman/schemas/statistics-1.0.0
   title: Basic Statistical Information
