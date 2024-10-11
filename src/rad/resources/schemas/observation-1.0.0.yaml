@@ -6,16 +6,18 @@ id: asdf://stsci.edu/datamodels/roman/schemas/observation-1.0.0
 title: Observation Identifiers
 type: object
 properties:
-  obs_id:
+  observation_id:
     title: Programmatic Observation Identifier
     description: |
-      The format of the programmatic observation identifier is
-      'PPPPPCCAAASSSOOOVVVggsaaeeee' where 'PPPPP' is the program, 'CC' is the
-      execution plan, 'AAA' is the pass, 'SSS' is the segment number, 'OOO' is
-      the observation, 'VVV' is the visit, 'gg' is the visit file group, 's' is
-      the visit file sequence, 'aa' is the visit file activity, and 'eeee' is
-      the exposure ID. The observation ID is the complete concatenation of
-      visit_id + visit_file_statement (visit_file_group + visit_file_sequence +
+      The format of the programmatic observation identifier
+      is "PPPPPCCAAASSSOOOVVVggsaaeee" where "PPPPP" is the program
+      number, "CC" is the execution plan number, "AAA" is the pass
+      number, "SSS" is the segment number, "OOO" is the observation
+      number, "VVV" is the visit number, "gg" is the visit file group,
+      "s" is the visit file sequence, "aa" is the visit file activity,
+      and "eeee" is the exposure number. The observation identifier is
+      the complete concatenation of the visit_id +
+      visit_file_statement (visit_file_group + visit_file_sequence +
       visit_file_activity) + exposure.
     type: string
     sdf:
@@ -25,132 +27,150 @@ properties:
     maxLength: 28
     archive_catalog:
       datatype: nvarchar(28)
-      destination: [WFIExposure.obs_id, GuideWindow.obs_id]
-  visit_id:
-    title: Visit Identifier
-    description: |
-      A unique identifier for a visit. The format is 'PPPPPCCAAASSSOOOVVV' where
-      'PPPPP' is the program, 'CC' is the execution plan, 'AAA' is the pass,
-      'SSS' is the segment number, 'OOO' is the observation and 'VVV' is the
-      visit.
-    type: string
-    sdf:
-      special_processing: VALUE_REQUIRED
-      source:
-        origin: TBD
-    maxLength: 19
-    archive_catalog:
-      datatype: nvarchar(19)
-      destination: [WFIExposure.visit_id, GuideWindow.visit_id]
+      destination: [WFIExposure.observation_id, GuideWindow.observation_id]
   program:
     title: Program Number
     description: |
-      The defined range of the program number is 00001 to 18445; included in
-      obs_id and visit_id as 'PPPPP'.
+      Identifier for the observing program. A program is an
+      approved specification for a science, calibration, or
+      engineering investigation to be pursued using Roman Space
+      Telescope mission resources. The allowed range of program
+      numbers is 00001 to 18445 inclusive.
     type: string
+    maxLength: 6
     sdf:
       special_processing: VALUE_REQUIRED
       source:
         origin: TBD
     archive_catalog:
-      datatype: int
+      datatype: nvarchar(6)
       destination: [WFIExposure.program, GuideWindow.program]
   execution_plan:
-    title: Execution Plan
+    title: Execution Plan Number
     description: |
-      The defined range of the execution plan within the program is 01 to 99;
-      included in obs_id and visit_id as 'CC'.
-    type: integer
+      Identifier for the execution plan. An execution plan
+      is a version of the complete set of activities for a survey. A
+      survey may include portions of multiple execution plans. A new
+      execution plan is required whenever there is a change in the
+      program. The allowed range of execution plan numbers is 01 to 99
+      inclusive.
+    type: string
+    maxLength: 3
     sdf:
       special_processing: VALUE_REQUIRED
       source:
         origin: TBD
     archive_catalog:
-      datatype: smallint
+      datatype: nvarchar(3)
       destination: [WFIExposure.execution_plan, GuideWindow.execution_plan]
   pass:
     title: Pass Number
     description: |
-      The defined range of the pass number within the execution plan is 001 to
-      999; included in obs_id and visit_id as 'AAA'.
-    type: integer
+      Identifier for the pass. A pass is the collection of
+      activities generated from each iteration of a pass plan in the
+      Astronomer's Proposal Tool (APT). Multiple Passes may be
+      generated from the same Pass Plan to allow repetition or execute
+      at different orientations (via special requirements). The
+      allowed range of pass numbers is 001 to 999 inclusive.
+    type: string
+    maxLength: 4
     sdf:
       special_processing: VALUE_REQUIRED
       source:
         origin: TBD
     archive_catalog:
-      datatype: smallint
+      datatype: nvarchar(4)
       destination: [WFIExposure.pass, GuideWindow.pass]
   segment:
     title: Segment Number
     description: |
-      The defined range of the segment number within the pass is 001 to 999;
-      included in obs_id and visit_id as 'SSS'.
-    type: integer
+      Identifier for the segment. A segment is the sequence
+      of activities produced by each iteration of an Astronomer's
+      Proposal Tool (APT) segment plan in a pass. A segment may
+      include multiple traversals of mosaic pattern(s), with element
+      wheel moves occurring between observations. The allowed range of
+      segment numbers is 001 to 999 inclusive.
+    type: string
+    maxLength: 4
     sdf:
       special_processing: VALUE_REQUIRED
       source:
         origin: TBD
     archive_catalog:
-      datatype: smallint
+      datatype: nvarchar(4)
       destination: [WFIExposure.segment, GuideWindow.segment]
   observation:
     title: Observation Number
     description: |
-      The defined range of the observation number within the segment is 001 to
-      999; included in obs_id and visit_id as 'OOO'.
-    type: integer
+      Identifier for the observation. An observation is a
+      single traversal of a mosaic pattern, using a single, constant
+      instrument configuration (i.e., with no element wheel moves).
+      The allowed range of observation numbers is 001 to 999
+      inclusive.
+    type: string
+    maxLength: 4
     sdf:
       special_processing: VALUE_REQUIRED
       source:
         origin: TBD
     archive_catalog:
-      datatype: smallint
+      datatype: nvarchar(4)
       destination: [WFIExposure.observation, GuideWindow.observation]
   visit:
     title: Visit Number
     description: |
-      The defined range of the visit number within the observation is 001 to
-      999; included in obs_id and visit_id as 'VVV'.
-    type: integer
+      A visit is the smallest scheduling unit for Roman,
+      which is a sequence of exposures executed without interruption,
+      including dither patterns. A visit corresponds to one tile of
+      the selected mosaic pattern. The allowed range of visit numbers
+      is 001 to 999 inclusive.
+    type: string
+    maxLength: 4
     sdf:
       special_processing: VALUE_REQUIRED
       source:
         origin: TBD
     archive_catalog:
-      datatype: smallint
+      datatype: nvarchar(4)
       destination: [WFIExposure.visit, GuideWindow.visit]
   visit_file_group:
     title: Visit File Group
     description: |
-      The visit file group describes the sequence group within the visit file
-      and has a defined range of 01 to 99; included in obs_id as 'gg'.
-    type: integer
+      The visit file group identifies the sequence group
+      within the visit file. The allowed range of visit file group
+      numbers is 01 to 99 inclusive.
+    type: string
+    maxLength: 3
     sdf:
       special_processing: VALUE_REQUIRED
       source:
         origin: TBD
     archive_catalog:
-      datatype: smallint
+      datatype: nvarchar(3)
       destination: [WFIExposure.visit_file_group, GuideWindow.visit_file_group]
   visit_file_sequence:
     title: Visit File Sequence
     description: |
-      The defined range of the visit file sequence within the group 1 to 5;
-      included in obs_id as 's'.
-    type: integer
+      The visit file sequence identifies the sequence within
+      the visit file group. A value of 1 indicates a prime instrument
+      exposure, and a value greater than 1 indicates a parallel
+      instrument exposure. The allowed range of visit file sequence
+      numbers of 1 to 5 inclusive.
+    type: string
+    maxLength: 2
     sdf:
       special_processing: VALUE_REQUIRED
       source:
         origin: TBD
     archive_catalog:
-      datatype: tinyint
+      datatype: nvarchar(2)
       destination: [WFIExposure.visit_file_sequence, GuideWindow.visit_file_sequence]
   visit_file_activity:
     title: Visit File Activity
     description: |
-      The defined range of the visit file activity within the sequence is 01 to
-      ZZ; included in obs_id as 'aa'.
+      The visit file activity number identifies the activity
+      within the visit file sequence. The allowed range of visit file
+      activity numbers is 01 to 99 inclusive.
     type: string
     sdf:
       special_processing: VALUE_REQUIRED
@@ -163,63 +183,24 @@ properties:
   exposure:
     title: Exposure Number
     description: |
-      The defined range of the assigned exposure number within the visit is 0001
-      to 9999; included in obs_id as 'eeee'.
-    type: integer
+      An exposure is a single multi-accumulation (MA) table
+      sequence of the detector array at a single dither point in the
+      dither pattern. The allowed range of exposure numbers is 0001 to
+      9999 inclusive.
+    type: string
+    maxLength: 5
     sdf:
       special_processing: VALUE_REQUIRED
       source:
         origin: TBD
     archive_catalog:
-      datatype: int
+      datatype: nvarchar(5)
       destination: [WFIExposure.observation_exposure, GuideWindow.observation_exposure]
-  template:
-    title: Observation Template
-    description: |
-      The template used to design this observation.
-    type: string
-    sdf:
-      special_processing: VALUE_REQUIRED
-      source:
-        origin: PSS:dms_visit.template
-    maxLength: 50
-    archive_catalog:
-      datatype: nvarchar(50)
-      destination: [WFIExposure.template, GuideWindow.template]
-  observation_label:
-    title: Observation Label
-    description: |
-      The label given by the proposer to describe the observation.
-    type: string
-    sdf:
-      special_processing: VALUE_REQUIRED
-      source:
-        origin: TBD
-    archive_catalog:
-      datatype: nvarchar(max)
-      destination: [WFIExposure.observation_label, GuideWindow.observation_label]
-  survey:
-    title: Observation Survey
-    description: |
-      The available survey options for observations are: HLS = High Latitude
-      Wide Area Survey, EMS = Galactic Bulge Time Domain Survey, SN = High
-      Latitude Time Domain Survey, N/A = General Astrophysics Surveys or other
-      survey not otherwise defined here.
-    type: string
-    enum: [HLS, EMS, SN, N/A]
-    maxLength: 15
-    archive_catalog:
-      datatype: nvarchar(15)
-      destination: [WFIExposure.survey, GuideWindow.survey]
-propertyOrder: [obs_id, visit_id, program,
-           execution_plan, pass, observation, segment,
-           visit, visit_file_group, visit_file_sequence,
-           visit_file_activity, exposure, template,
-           observation_label, survey]
+propertyOrder: [observation_id, program, execution_plan, pass, segment,
+  observation, visit, visit_file_group, visit_file_sequence,
+  visit_file_activity, exposure]
 flowStyle: block
-required: [obs_id, visit_id, program,
-           execution_plan, pass, observation, segment,
-           visit, visit_file_group, visit_file_sequence,
-           visit_file_activity, exposure, template,
-           observation_label, survey]
+required: [observation_id, program, execution_plan, pass, segment,
+  observation, visit, visit_file_group, visit_file_sequence,
+  visit_file_activity, exposure]
 ...
