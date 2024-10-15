@@ -41,12 +41,12 @@ properties:
     title: Program Category
     description: |
       The submitted proposal category of the program. The
-      categories include calibraiton (CAL), core community survey
+      categories include calibration (CAL), core community survey
       (CCS), coronagraph technology demonstration (CGI), observatory
       commissioning (COM), engineering (ENG), general astrophysics
       survey (GAS), general investigator (GI), and observing conducted
       at the direction of the National Aeronautics and Space
-      Administation (NASA).
+      Administration (NASA).
     type: string
     sdf:
       special_processing: VALUE_REQUIRED
