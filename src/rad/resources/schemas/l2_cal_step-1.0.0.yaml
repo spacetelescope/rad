@@ -165,10 +165,10 @@ properties:
     archive_catalog:
       datatype: nvarchar(15)
       destination: [ScienceRefData.s_skymatch]
-propertyOrder: [assign_wcs, flat_field, flux, dark, dq_init, linearity, photom, source_detection,
-                outlier_detection, ramp_fit, refpix, saturation, skymatch, tweakreg]
+propertyOrder: [dq_init, saturation, refpix, linearity, dark, ramp_fit, assign_wcs,
+  flat_field, photom, source_detection, tweakreg, flux, skymatch, outlier_detection]
 flowStyle: block
-required: [assign_wcs, flat_field, flux, dark, dq_init, linearity, outlier_detection, photom,
+required: [assign_wcs, dark, dq_init, flat_field, flux, linearity, outlier_detection, photom,
            source_detection, ramp_fit, refpix, saturation, skymatch, tweakreg]
 additionalProperties: true
 ...
