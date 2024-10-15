@@ -155,7 +155,7 @@ properties:
     sdf:
       special_processing: VALUE_REQUIRED
       source:
-        origin: TBD
+        origin: PSS:dms_visit.multi_accum_table_name
     maxLength: 50
     archive_catalog:
       datatype: nvarchar(50)
@@ -171,7 +171,7 @@ properties:
     sdf:
       special_processing: VALUE_REQUIRED
       source:
-        origin: TBD
+        origin: PSS:observation_specification.multi_accum_table_number
     archive_catalog:
       datatype: smallint
       destination: [WFIExposure.ma_table_number, GuideWindow.ma_table_number, WFICommon.ma_table_number]
