@@ -11,8 +11,8 @@ properties:
     description: |
       The sky background level in DN / s or MJy.sr**-1.
     properties:
-      datatype: float32
-    unit: "DN / s"
+      datatype: float64
+    unit: ["DN / s", "MJy.sr**-1"]
   method:
     title: Sky Background Method
     description: |
