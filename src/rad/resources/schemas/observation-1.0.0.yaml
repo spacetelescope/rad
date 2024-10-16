@@ -28,6 +28,22 @@ properties:
     archive_catalog:
       datatype: nvarchar(28)
       destination: [WFIExposure.observation_id, GuideWindow.observation_id]
+  visit_id:
+    title: Visit Identifier
+    description: |
+      A unique identifier for a visit. The format is "PPPPPCCAAASSSOOOVVV" where
+      "PPPPP" is the program number, "CC" is the execution plan number, "AAA" is the pass number,
+      "SSS" is the segment number, "OOO" is the observation number, and "VVV" is the
+      visit number.
+    type: string
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    maxLength: 19
+    archive_catalog:
+      datatype: nvarchar(19)
+      destination: [WFIExposure.visit_id, GuideWindow.visit_id]
   program:
     title: Program Number
     description: |
@@ -36,14 +52,13 @@ properties:
       engineering investigation to be pursued using Roman Space
       Telescope mission resources. The allowed range of program
       numbers is 00001 to 18445 inclusive.
-    type: string
-    maxLength: 6
+    type: integer
     sdf:
       special_processing: VALUE_REQUIRED
       source:
         origin: TBD
     archive_catalog:
-      datatype: nvarchar(6)
+      datatype: int
       destination: [WFIExposure.program, GuideWindow.program]
   execution_plan:
     title: Execution Plan Number
@@ -54,14 +69,13 @@ properties:
       execution plan is required whenever there is a change in the
       program. The allowed range of execution plan numbers is 01 to 99
       inclusive.
-    type: string
-    maxLength: 3
+    type: integer
     sdf:
       special_processing: VALUE_REQUIRED
       source:
         origin: TBD
     archive_catalog:
-      datatype: nvarchar(3)
+      datatype: smallint
       destination: [WFIExposure.execution_plan, GuideWindow.execution_plan]
   pass:
     title: Pass Number
@@ -72,14 +86,13 @@ properties:
       generated from the same Pass Plan to allow repetition or execute
       at different orientations (via special requirements). The
       allowed range of pass numbers is 001 to 999 inclusive.
-    type: string
-    maxLength: 4
+    type: integer
     sdf:
       special_processing: VALUE_REQUIRED
       source:
         origin: TBD
     archive_catalog:
-      datatype: nvarchar(4)
+      datatype: smallint
       destination: [WFIExposure.pass, GuideWindow.pass]
   segment:
     title: Segment Number
@@ -90,14 +103,13 @@ properties:
       include multiple traversals of mosaic pattern(s), with element
       wheel moves occurring between observations. The allowed range of
       segment numbers is 001 to 999 inclusive.
-    type: string
-    maxLength: 4
+    type: integer
     sdf:
       special_processing: VALUE_REQUIRED
       source:
         origin: TBD
     archive_catalog:
-      datatype: nvarchar(4)
+      datatype: smallint
       destination: [WFIExposure.segment, GuideWindow.segment]
   observation:
     title: Observation Number
@@ -107,14 +119,13 @@ properties:
       instrument configuration (i.e., with no element wheel moves).
       The allowed range of observation numbers is 001 to 999
       inclusive.
-    type: string
-    maxLength: 4
+    type: integer
     sdf:
       special_processing: VALUE_REQUIRED
       source:
         origin: TBD
     archive_catalog:
-      datatype: nvarchar(4)
+      datatype: smallint
       destination: [WFIExposure.observation, GuideWindow.observation]
   visit:
     title: Visit Number
@@ -124,14 +135,13 @@ properties:
       including dither patterns. A visit corresponds to one tile of
       the selected mosaic pattern. The allowed range of visit numbers
       is 001 to 999 inclusive.
-    type: string
-    maxLength: 4
+    type: integer
     sdf:
       special_processing: VALUE_REQUIRED
       source:
         origin: TBD
     archive_catalog:
-      datatype: nvarchar(4)
+      datatype: smallint
       destination: [WFIExposure.visit, GuideWindow.visit]
   visit_file_group:
     title: Visit File Group
@@ -139,14 +149,14 @@ properties:
       The visit file group identifies the sequence group
       within the visit file. The allowed range of visit file group
       numbers is 01 to 99 inclusive.
-    type: string
+    type: integer
     maxLength: 3
     sdf:
       special_processing: VALUE_REQUIRED
       source:
         origin: TBD
     archive_catalog:
-      datatype: nvarchar(3)
+      datatype: smallint
       destination: [WFIExposure.visit_file_group, GuideWindow.visit_file_group]
   visit_file_sequence:
     title: Visit File Sequence
@@ -156,14 +166,13 @@ properties:
       exposure, and a value greater than 1 indicates a parallel
       instrument exposure. The allowed range of visit file sequence
       numbers of 1 to 5 inclusive.
-    type: string
-    maxLength: 2
+    type: integer
     sdf:
       special_processing: VALUE_REQUIRED
       source:
         origin: TBD
     archive_catalog:
-      datatype: nvarchar(2)
+      datatype: tinyint
       destination: [WFIExposure.visit_file_sequence, GuideWindow.visit_file_sequence]
   visit_file_activity:
     title: Visit File Activity
@@ -196,11 +205,11 @@ properties:
     archive_catalog:
       datatype: nvarchar(5)
       destination: [WFIExposure.observation_exposure, GuideWindow.observation_exposure]
-propertyOrder: [observation_id, program, execution_plan, pass, segment,
+propertyOrder: [observation_id, visit_id, program, execution_plan, pass, segment,
   observation, visit, visit_file_group, visit_file_sequence,
   visit_file_activity, exposure]
 flowStyle: block
-required: [observation_id, program, execution_plan, pass, segment,
+required: [observation_id, visit_id, program, execution_plan, pass, segment,
   observation, visit, visit_file_group, visit_file_sequence,
   visit_file_activity, exposure]
 ...
