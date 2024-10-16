@@ -196,14 +196,13 @@ properties:
       sequence of the detector array at a single dither point in the
       dither pattern. The allowed range of exposure numbers is 0001 to
       9999 inclusive.
-    type: string
-    maxLength: 5
+    type: integer
     sdf:
       special_processing: VALUE_REQUIRED
       source:
         origin: TBD
     archive_catalog:
-      datatype: nvarchar(5)
+      datatype: int
       destination: [WFIExposure.observation_exposure, GuideWindow.observation_exposure]
 propertyOrder: [observation_id, visit_id, program, execution_plan, pass, segment,
   observation, visit, visit_file_group, visit_file_sequence,

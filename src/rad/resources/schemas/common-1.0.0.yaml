@@ -11,9 +11,6 @@ allOf:
 - type: object
   properties:
     # Meta Objects
-    cal_step:
-      title: Tracker of Calibration Pipeline Steps
-      tag: asdf://stsci.edu/datamodels/roman/tags/l2_cal_step-1.0.0
     coordinates:
       title: Name Of The Coordinate Reference Frame
       tag: asdf://stsci.edu/datamodels/roman/tags/coordinates-1.0.0
@@ -53,7 +50,7 @@ allOf:
     wcs_info:
       title: World Coordinate System (WCS) Parameters
       tag: asdf://stsci.edu/datamodels/roman/tags/wcsinfo-1.0.0
-  required: [cal_step, coordinates, ephemeris, exposure, guide_star,
+  required: [coordinates, ephemeris, exposure, guide_star,
              instrument, observation, pointing, program, ref_file,
              rcs, velocity_aberration, visit, wcs_info]
 ...
