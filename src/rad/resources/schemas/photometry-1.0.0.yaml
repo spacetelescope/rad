@@ -13,17 +13,19 @@ properties:
     anyOf:
       - type: number
       - type: "null"
+    unit: "MJy.sr**-1"
     archive_catalog:
       datatype: float
       destination: [WFIExposure.conversion_megajanskys, WFIMosaic.conversion_megajanskys,
                     SourceCatalog.conversion_megajanskys]
   conversion_microjanskys:
-    title: Flux Density Producing 1 count per second (uJy / arcsec2)
+    title: Flux Density Producing 1 count per second (uJy / arcsec^2)
     description: |
-      The conversion from DN / s to uJy / steradian.
+      The conversion from DN / s to uJy / arcsec^2.
     anyOf:
       - type: number
       - type: "null"
+    unit: "uJy.arcsec**-2"
     archive_catalog:
       datatype: float
       destination: [WFIExposure.conversion_microjanskys, WFIMosaic.conversion_microjanskys,
@@ -35,6 +37,7 @@ properties:
     anyOf:
       - type: number
       - type: "null"
+    unit: "sr"
     archive_catalog:
       datatype: float
       destination: [WFIExposure.pixelarea_steradians, WFIMosaic.pixelarea_steradians,
@@ -46,6 +49,7 @@ properties:
     anyOf:
       - type: number
       - type: "null"
+    unit: "arcsec**2"
     archive_catalog:
       datatype: float
       destination: [WFIExposure.pixelarea_arcsecsq, WFIMosaic.pixelarea_arcsecsq,
@@ -58,6 +62,7 @@ properties:
     anyOf:
       - type: number
       - type: "null"
+    unit: "MJy.sr**-1"
     archive_catalog:
       datatype: float
       destination: [WFIExposure.conversion_megajanskys_uncertainty, WFIMosaic.conversion_megajanskys_uncertainty,
@@ -66,10 +71,11 @@ properties:
     title: Uncertainty in Flux Density Conversion (from DN / s to uJy / arcsec^2)
     description: |
       The uncertainty in the flux density conversion from DN / s to
-      uJy /arcsec^2.
+      uJy / arcsec^2.
     anyOf:
       - type: number
       - type: "null"
+    unit: "uJy.arcsec**-2"
     archive_catalog:
       datatype: float
       destination: [WFIExposure.conversion_microjanskys_uncertainty, WFIMosaic.conversion_microjanskys_uncertainty,

@@ -10,8 +10,8 @@ properties:
     title: Sky Background Level
     description: |
       The sky background level in DN / s.
-    properties:
-      datatype: float64
+    type: number
+    unit: "DN / s"
   method:
     title: Sky Background Method
     description: |

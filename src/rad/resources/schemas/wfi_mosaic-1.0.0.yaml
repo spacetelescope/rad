@@ -52,15 +52,14 @@ properties:
     datatype: float32
     exact_datatype: true
     ndim: 2
-    unit: "MJy / sr"
+    unit: "MJy.sr**-1"
   err:
     title: Error Data (MJy / steradian)
-    properties:
-      value:
-        tag: tag:stsci.edu:asdf/core/ndarray-1.*
-        datatype: float32
-        exact_datatype: true
-        ndim: 2
+    tag: tag:stsci.edu:asdf/core/ndarray-1.*
+    datatype: float32
+    exact_datatype: true
+    ndim: 2
+    unit: "MJy.sr**-1"
   context:
     title: Context Data
     tag: tag:stsci.edu:asdf/core/ndarray-1.*
@@ -75,28 +74,25 @@ properties:
     ndim: 2
   var_poisson:
     title: Poisson Variability (MJy^2 / steradian^2)
-    properties:
-      value:
-        tag: tag:stsci.edu:asdf/core/ndarray-1.*
-        datatype: float32
-        exact_datatype: true
-        ndim: 2
+    tag: tag:stsci.edu:asdf/core/ndarray-1.*
+    datatype: float32
+    exact_datatype: true
+    ndim: 2
+    unit: "MJy**2.sr**-2"
   var_rnoise:
     title: Read Noise Variance (MJy^2 / steradian^2
-    properties:
-      value:
-        tag: tag:stsci.edu:asdf/core/ndarray-1.*
-        datatype: float32
-        exact_datatype: true
-        ndim: 2
+    tag: tag:stsci.edu:asdf/core/ndarray-1.*
+    datatype: float32
+    exact_datatype: true
+    ndim: 2
+    unit: "MJy**2.sr**-2"
   var_flat:
     title: Flat Field Variance (MJy^2 / steradian^2)
-    properties:
-      value:
-        tag: tag:stsci.edu:asdf/core/ndarray-1.*
-        datatype: float32
-        exact_datatype: true
-        ndim: 2
+    tag: tag:stsci.edu:asdf/core/ndarray-1.*
+    datatype: float32
+    exact_datatype: true
+    ndim: 2
+    unit: "MJy**2.sr**-2"
   cal_logs:
     tag: asdf://stsci.edu/datamodels/roman/tags/cal_logs-1.0.0
 propertyOrder: [meta, data, context, err, weight, var_poisson, var_rnoise, var_flat,
