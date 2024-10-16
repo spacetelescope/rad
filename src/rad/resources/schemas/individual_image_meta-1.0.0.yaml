@@ -11,9 +11,13 @@ properties:
     description: |
       Table of basic level 2 metadata.
     tag: tag:astropy.org:astropy/table/table-1.*
-  aperture:
+  background:
     description: |
-      Table of aperture level 2 metadata.
+      Table of background level 2 metadata.
+    tag: tag:astropy.org:astropy/table/table-1.*
+  cal_logs:
+    description: |
+      Table of cal_logs level 2 metadata.
     tag: tag:astropy.org:astropy/table/table-1.*
   cal_step:
     description: |
@@ -31,9 +35,9 @@ properties:
     description: |
       Table of exposure level 2 metadata.
     tag: tag:astropy.org:astropy/table/table-1.*
-  guidestar:
+  guide_star:
     description: |
-      Table of guidestar level 2 metadata.
+      Table of guide_star level 2 metadata.
     tag: tag:astropy.org:astropy/table/table-1.*
   instrument:
     description: |
@@ -42,6 +46,10 @@ properties:
   observation:
     description: |
       Table of observation level 2 metadata.
+    tag: tag:astropy.org:astropy/table/table-1.*
+  outlier_detection:
+    description: |
+      Table of outlier_detection level 2 metadata.
     tag: tag:astropy.org:astropy/table/table-1.*
   photometry:
     description: |
@@ -55,13 +63,17 @@ properties:
     description: |
       Table of program level 2 metadata.
     tag: tag:astropy.org:astropy/table/table-1.*
+  rcs:
+    description: |
+      Table of rcs level 2 metadata.
+    tag: tag:astropy.org:astropy/table/table-1.*
   ref_file:
     description: |
       Table of ref_file level 2 metadata.
     tag: tag:astropy.org:astropy/table/table-1.*
-  target:
+  source_detection:
     description: |
-      Table of target level 2 metadata.
+      Table of source_detection level 2 metadata.
     tag: tag:astropy.org:astropy/table/table-1.*
   velocity_aberration:
     description: |
@@ -76,8 +88,8 @@ properties:
       Table of wcsinfo level 2 metadata.
     tag: tag:astropy.org:astropy/table/table-1.*
 flowStyle: block
-propertyOrder: [basic, aperture, cal_step, coordinates, ephemeris,
-exposure, guidestar, instrument, observation, photometry,
-pointing, program, ref_file, target, velocity_aberration,
-visit, wcsinfo]
+propertyOrder: [basic, background, cal_step, cal_logs, coordinates, ephemeris,
+  exposure, guide_star, instrument, observation, outlier_detection, photometry,
+  pointing, program, rcs, ref_file, source_detection, velocity_aberration,
+  visit, wcsinfo]
 ...

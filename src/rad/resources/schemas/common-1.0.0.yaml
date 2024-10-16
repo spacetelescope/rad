@@ -47,10 +47,10 @@ allOf:
     visit:
       title: Visit Information
       tag: asdf://stsci.edu/datamodels/roman/tags/visit-1.0.0
-    wcs_info:
+    wcsinfo:
       title: World Coordinate System (WCS) Parameters
       tag: asdf://stsci.edu/datamodels/roman/tags/wcsinfo-1.0.0
   required: [coordinates, ephemeris, exposure, guide_star,
              instrument, observation, pointing, program, ref_file,
-             rcs, velocity_aberration, visit, wcs_info]
+             rcs, velocity_aberration, visit, wcsinfo]
 ...
