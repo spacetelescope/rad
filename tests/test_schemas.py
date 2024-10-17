@@ -260,3 +260,37 @@ def test_reftype_tag(ref_file_uris):
 
     assert asdf.util.uri_match(f"asdf://stsci.edu/datamodels/roman/tags/reference_files/*{reftype}-*", tag_uri)
     assert asdf.util.uri_match(f"asdf://stsci.edu/datamodels/roman/schemas/reference_files/*{reftype}-*", schema_uri)
+
+
+# don't test tvac or fps schemas as they are static
+@pytest.mark.parametrize(
+    "uri",
+    [
+        uri
+        for uri in SCHEMA_URIS
+        if not uri.startswith("asdf://stsci.edu/datamodels/roman/schemas/fps/")
+        and not uri.startswith("asdf://stsci.edu/datamodels/roman/schemas/tvac/")
+    ],
+)
+def test_varchar_length(uri):
+    """
+    Test that varchar(N) in archive_metadata for string objects
+    has a matching maxLength: N validation keyword
+    """
+    schema = asdf.schema.load_schema(uri)
+
+    def callback(node, nvarchars={}):
+        if not isinstance(node, dict):
+            return
+        if node.get("type", "") != "string":
+            return
+        if "archive_catalog" not in node:
+            return
+        m = re.match(r"^nvarchar\(([0-9]+)\)$", node["archive_catalog"]["datatype"])
+        if not m:
+            return
+        v = int(m.group(1))
+        assert "maxLength" in node, f"archive_catalog has nvarchar, schema {uri} is missing maxLength"
+        assert node["maxLength"] == v, f"archive_catalog nvarchar does not match maxLength in schema {uri}"
+
+    asdf.treeutil.walk(schema, callback)

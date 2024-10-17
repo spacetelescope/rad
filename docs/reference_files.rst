@@ -3,7 +3,7 @@
 Reference File Schemas
 ======================
 
-Nancy Grace Roman Space Telescope Reference Files:
+Schemas used in Nancy Grace Roman Space Telescope Reference Files:
 
 .. asdf-autoschemas::
     :standard_prefix: schemas/reference_files

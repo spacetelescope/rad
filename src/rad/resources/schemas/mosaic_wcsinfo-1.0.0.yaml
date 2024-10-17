@@ -89,6 +89,7 @@ properties:
       special_processing: VALUE_REQUIRED
       source:
         origin: TBD
+    maxLength: 50
     archive_catalog:
       datatype: nvarchar(50)
       destination: [WFIMosaic.projection]

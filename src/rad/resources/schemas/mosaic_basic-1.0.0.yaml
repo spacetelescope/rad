@@ -104,6 +104,7 @@ properties:
   survey:
     title: Observation Survey
     type: string
+    maxLength: 15
     archive_catalog:
       datatype: nvarchar(15)
       destination: [WFIMosaic.survey, SourceCatalog.survey, SegmentationMap.survey]
@@ -113,6 +114,7 @@ properties:
       special_processing: VALUE_REQUIRED
       source:
         origin: TBD
+    maxLength: 20
     archive_catalog:
       datatype: nvarchar(20)
       destination: [WFIMosaic.optical_element, SourceCatalog.optical_element, SegmentationMap.optical_element]
@@ -124,6 +126,7 @@ properties:
       special_processing: VALUE_REQUIRED
       source:
         origin: TBD
+    maxLength: 5
     archive_catalog:
       datatype: nvarchar(5)
       destination: [WFIMosaic.instrument_name, SourceCatalog.instrument_name, SegmentationMap.instrument_name]
@@ -134,6 +137,7 @@ properties:
       special_processing: VALUE_REQUIRED
       source:
         origin: TBD
+    maxLength: 25
     archive_catalog:
       datatype: nvarchar(25)
       destination: [WFIMosaic.location_name, SourceCatalog.location_name, SegmentationMap.location_name]
@@ -144,6 +148,7 @@ properties:
       special_processing: VALUE_REQUIRED
       source:
         origin: TBD
+    maxLength: 25
     archive_catalog:
       datatype: nvarchar(25)
       destination: [WFIMosaic.product_type, SourceCatalog.product_type, SegmentationMap.product_type]

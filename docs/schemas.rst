@@ -3,29 +3,33 @@
 Science Products Schemas
 ========================
 
-Level 1 (uncalibrated) File schema
-----------------------------------
+The following ASDF schemas define the structures used in Nancy Grace Roman Space Telescope files.
+See :ref:doc:`roman_datamodels:roman_datamodels/datamodels/general_structure` for more details about how these schemeas are used.
+See :ref:`asdf-standard:asdf-schemas` for more information about ASDF schemas.
+
+Level 1 (uncalibrated) schema
+-----------------------------
 
 .. asdf-autoschemas::
 
   wfi_science_raw-1.0.0
 
-Level 2 (calibrated exposure) File schema
------------------------------------------
+Level 2 (calibrated exposure) schema
+------------------------------------
 
 .. asdf-autoschemas::
 
    wfi_image-1.0.0
 
-Level 3 (resampled mosaic) File schema
---------------------------------------
+Level 3 (resampled mosaic) schema
+---------------------------------
 
 .. asdf-autoschemas::
 
   wfi_mosaic-1.0.0
 
-Level 4 File schemas
---------------------
+Level 4 (ancillary) schemas
+---------------------------
 
 .. asdf-autoschemas::
 

@@ -16,6 +16,7 @@ properties:
       special_processing: VALUE_REQUIRED
       source:
         origin: TBD
+    maxLength: 20
     archive_catalog:
       datatype: nvarchar(20)
       destination: [WFIExposure.gw_id, GuideWindow.gw_id, WFICommon.gw_id]
@@ -25,6 +26,7 @@ properties:
       special_processing: VALUE_REQUIRED
       source:
         origin: TBD
+    maxLength: 18
     archive_catalog:
       datatype: nvarchar(18)
       destination: [WFIExposure.gw_fgs_mode, GuideWindow.gw_fgs_mode, WFICommon.gw_fgs_mode]
@@ -141,6 +143,7 @@ properties:
       special_processing: VALUE_REQUIRED
       source:
         origin: TBD
+    maxLength: 20
     archive_catalog:
       datatype: nvarchar(20)
       destination: [WFIExposure.gs_id, GuideWindow.gs_id]
@@ -153,6 +156,7 @@ properties:
       special_processing: VALUE_REQUIRED
       source:
         origin: TBD
+    maxLength: 20
     archive_catalog:
       datatype: nvarchar(20)
       destination: [WFIExposure.gs_catalog_version]
@@ -295,6 +299,7 @@ properties:
       special_processing: VALUE_REQUIRED
       source:
         origin: TBD
+    maxLength: 10
     archive_catalog:
       datatype: nvarchar(10)
       destination: [WFIExposure.gs_epoch, GuideWindow.gs_epoch]
