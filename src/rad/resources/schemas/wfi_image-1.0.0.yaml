@@ -28,6 +28,8 @@ properties:
             tag: asdf://stsci.edu/datamodels/roman/tags/source_detection-1.0.0
           background:
             tag: asdf://stsci.edu/datamodels/roman/tags/sky_background-1.0.0
+          statistics:
+            tag: asdf://stsci.edu/datamodels/roman/tags/statistics-1.0.0
         required: [photometry, wcs]
   data:
     title: Science Data (DN / s) or (MJy / sr)
