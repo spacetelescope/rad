@@ -9,7 +9,8 @@ properties:
   earth_angle:
     title: Earth Angle (radians)
     description: |
-      Earth angle in radians.
+      Angle between the Earth and the telescope V1 axis in
+      radians.
     type: number
     sdf:
       special_processing: VALUE_REQUIRED
@@ -21,7 +22,8 @@ properties:
   moon_angle:
     title: Moon Angle (radians)
     description: |
-      Moon angle in radians.
+      Angle between the Moon and the telescope V1 axis in
+      radians.
     type: number
     sdf:
       special_processing: VALUE_REQUIRED
@@ -30,10 +32,23 @@ properties:
     archive_catalog:
       datatype: float
       destination: [WFIExposure.moon_angle, GuideWindow.moon_angle]
+  sun_angle:
+    title: Sun Angle (radians)
+    description: |
+      Angle between the Sun and the telescope V1 axis in
+      radians.
+    type: number
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    archive_catalog:
+      datatype: float
+      destination: [WFIExposure.sun_angle, GuideWindow.sun_angle]
   ephemeris_reference_frame:
     title: Ephemeris Reference Frame
     description: |
-      Ephemeris reference frame.
+      Reference frame of the ephemeris information.
     type: string
     sdf:
       special_processing: VALUE_REQUIRED
@@ -43,22 +58,10 @@ properties:
     archive_catalog:
       datatype: nvarchar(10)
       destination: [WFIExposure.ephemeris_reference_frame, GuideWindow.ephemeris_reference_frame]
-  sun_angle:
-    title: Sun Angle (radians)
-    description: |
-      Sun angle in radians.
-    type: number
-    sdf:
-      special_processing: VALUE_REQUIRED
-      source:
-        origin: TBD
-    archive_catalog:
-      datatype: float
-      destination: [WFIExposure.sun_angle, GuideWindow.sun_angle]
   type:
-    title: Type of Ephemeris
+    title: Ephemeris Type
     description: |
-      Type of ephemeris.
+      Type of ephemeris (either DEFINITIVE or PREDICTED).
     type: string
     enum: [DEFINITIVE, PREDICTED]
     sdf:
@@ -70,9 +73,10 @@ properties:
       datatype: nvarchar(10)
       destination: [WFIExposure.ephemeris_type, GuideWindow.ephemeris_type]
   time:
-    title: UTC Time of Position and Velocity Vectors in Ephemeris (MJD)
+    title: UTC Time of Ephemeris Information (MJD)
     description: |
-      UTC time of position and velocity vectors in ephemeris in MJD.
+      UTC time of the position and velocity vectors in the
+      ephemeris. The time is provided in modified Julian date (MJD).
     type: number
     sdf:
       special_processing: VALUE_REQUIRED
@@ -84,7 +88,8 @@ properties:
   spatial_x:
     title: X Spatial Coordinate of Roman (km)
     description: |
-      X spatial coordinate of Roman in km.
+      X barycentric coordinate of the Roman observatory at
+      the MJD described by meta.ephemeris.time.
     type: number
     sdf:
       special_processing: VALUE_REQUIRED
@@ -96,7 +101,8 @@ properties:
   spatial_y:
     title: Y Spatial Coordinate of Roman (km)
     description: |
-      Y spatial coordinate of Roman in km.
+      Y barycentric coordinate of the Roman observatory at
+      the MJD described by meta.ephemeris.time.
     type: number
     sdf:
       special_processing: VALUE_REQUIRED
@@ -108,7 +114,8 @@ properties:
   spatial_z:
     title: Z Spatial Coordinate of Roman (km)
     description: |
-      Z spatial coordinate of Roman in km.
+      Z barycentric coordinate of the Roman observatory at
+      the MJD described by meta.ephemeris.time.
     type: number
     sdf:
       special_processing: VALUE_REQUIRED
@@ -118,9 +125,11 @@ properties:
       datatype: float
       destination: [WFIExposure.spatial_z, GuideWindow.spatial_z]
   velocity_x:
-    title: X Component of Roman Velocity (km / s)
+    title: X Component of Roman Velocity (km/s)
     description: |
-      X component of Roman velocity in km / s.
+      X component of the Roman velocity in a barycentric
+      system in units of km/s at the MJD described by
+      meta.ephemeris.time.
     type: number
     sdf:
       special_processing: VALUE_REQUIRED
@@ -130,9 +139,11 @@ properties:
       datatype: float
       destination: [WFIExposure.velocity_x, GuideWindow.velocity_x]
   velocity_y:
-    title: Y Component of Roman Velocity (km / s)
+    title: Y Component of Roman Velocity (km/s)
     description: |
-      Y component of Roman velocity in km / s.
+      Y component of the Roman velocity in a barycentric
+      system in units of km/s at the MJD described by
+      meta.ephemeris.time.
     type: number
     sdf:
       special_processing: VALUE_REQUIRED
@@ -142,9 +153,11 @@ properties:
       datatype: float
       destination: [WFIExposure.velocity_y, GuideWindow.velocity_y]
   velocity_z:
-    title: Z Component of Roman Velocity (km / s)
+    title: Z Component of Roman Velocity (km/s)
     description: |
-      Z component of Roman velocity in km / s.
+      Y component of the Roman velocity in a barycentric
+      system in units of km/s at the MJD described by
+      meta.ephemeris.time.
     type: number
     sdf:
       special_processing: VALUE_REQUIRED
