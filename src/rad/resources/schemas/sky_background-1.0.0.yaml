@@ -10,7 +10,10 @@ properties:
     title: Sky Background Level
     description: |
       The sky background level in DN / s or MJy.sr**-1.
-    type: number
+    value:
+        anyOf:
+          - type: number
+          - type: null
     unit: ["DN / s", "MJy.sr**-1"]
   method:
     title: Sky Background Method
