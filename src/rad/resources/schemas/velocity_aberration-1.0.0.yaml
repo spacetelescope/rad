@@ -6,10 +6,11 @@ id: asdf://stsci.edu/datamodels/roman/schemas/velocity_aberration-1.0.0
 title: Velocity Aberration Correction Information
 type: object
 properties:
-  ra_offset:
-    title: Velocity Aberration RA Offset (degree)
+  ra_reference:
+    title: Velocity Aberrated Reference Right Ascension (deg)
     description: |
-      Right ascension offset for velocity aberration in degrees.
+      Reference position right ascension corrected for
+      velocity aberration in units of degrees.
     type: number
     sdf:
       special_processing: VALUE_REQUIRED
@@ -17,11 +18,12 @@ properties:
         origin: TBD
     archive_catalog:
       datatype: float
-      destination: [WFIExposure.ra_offset, GuideWindow.ra_offset]
-  dec_offset:
-    title: Velocity Aberration Dec Offset (degree)
+      destination: [WFIExposure.ra_reference, GuideWindow.ra_reference]
+  dec_reference:
+    title: Velocity Aberrated Reference Declination (deg)
     description: |
-      Declination offset for velocity aberration in degrees.
+      Reference position declination corrected for velocity
+      aberration in units of degrees.
     type: number
     sdf:
       special_processing: VALUE_REQUIRED
@@ -29,11 +31,12 @@ properties:
         origin: TBD
     archive_catalog:
       datatype: float
-      destination: [WFIExposure.dec_offset, GuideWindow.dec_offset]
+      destination: [WFIExposure.dec_reference, GuideWindow.dec_reference]
   scale_factor:
-    title: Velocity Aberration Scale Factor
+    title: Velocity Aberration Correction Scale Factor
     description: |
-      Velocity aberration scale factor.
+      Scale factor used for the correction of the velocity
+      aberration.
     type: number
     sdf:
       special_processing: VALUE_REQUIRED
@@ -43,6 +46,6 @@ properties:
       datatype: float
       destination: [WFIExposure.scale_factor, GuideWindow.scale_factor]
 flowStyle: block
-propertyOrder: [ra_offset, dec_offset, scale_factor]
-required: [ra_offset, dec_offset, scale_factor]
+propertyOrder: [ra_reference, dec_reference, scale_factor]
+required: [ra_reference, dec_reference, scale_factor]
 ...
