@@ -18,8 +18,7 @@ jobs:
     with:
       envs: |
         - linux: py310-xdist
-        - linux: py311-xdist
-        - macos: py311-xdist
         - linux: py311-xdist-cov
           coverage: codecov
         - linux: py312-xdist
+        - linux: py313-xdist
