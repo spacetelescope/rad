@@ -19,15 +19,6 @@ properties:
           reftype:
             type: string
             enum: [REFPIX]
-          input_units:
-            title: Units of the input to the linearity polynomial.
-            tag: tag:astropy.org:astropy/units/unit-1.*
-            enum: ["DN"]
-          output_units:
-            title: Units of the output of the linearity polynomial.
-            tag: tag:astropy.org:astropy/units/unit-1.*
-            enum: ["DN"]
-        required: [output_units, input_units]
 
   gamma:
     title: Left column correction coefficients
