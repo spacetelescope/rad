@@ -21,9 +21,9 @@ properties:
       Uncalibrated science ramp cube in units of data
       numbers (DNs)
     tag: tag:stsci.edu:asdf/core/ndarray-1.*
-    datatype: float32
+    datatype: uint16
     exact_datatype: true
-    ndim: 2
+    ndim: 3
     unit: ["DN / s", "MJy.sr**-1"]
   amp33:
     title: Amplifier 33 Reference Pixel Data (DN)
