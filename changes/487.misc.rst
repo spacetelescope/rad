@@ -1,0 +1,2 @@
+Update and add descriptions in the individual image metadata schema.
+Address merge issues created by the L1 and L2 metadata updates.

@@ -7,10 +7,10 @@ title: Level 2 Calibration Status
 type: object
 properties:
   assign_wcs:
-    title: Assign WCS Step
+    title: Assign World Coordinate System (WCS) Step
     description: |
-      Step in ROMANCAL that assigns a World Coordinate System (WCS) object to a
-      science image.
+      Step in romancal that assigns a World Coordinate
+      System (WCS) object to a science image.
     type: string
     enum: ['N/A', 'COMPLETE', 'SKIPPED', 'INCOMPLETE']
     maxLength: 15
@@ -18,12 +18,12 @@ properties:
       datatype: nvarchar(15)
       destination: [ScienceRefData.s_assign_wcs]
   flat_field:
-    title: Flat Fielding Step
+    title: Flat Field Correction Step
     description: |
-      Step in ROMANCAL in which a science image is flat-fielded, whereby each
-      detector pixel is calibrated to give the same signal for the same
-      illumination, given its specific response. This is achieved using a
-      flatfield reference image.
+      Step in romancal in which a science image is
+      flat-fielded, whereby each detector pixel is calibrated to give
+      the same signal for the same illumination based on the pixel
+      response.
     type: string
     enum: ['N/A', 'COMPLETE', 'SKIPPED', 'INCOMPLETE']
     maxLength: 15
@@ -33,8 +33,9 @@ properties:
   dark:
     title: Dark Current Subtraction Step
     description: |
-      Step in ROMANCAL performing the dark current correction by subtracting
-      dark current reference data from science data.
+      Step in romancal that performs a correction for the
+      dark current by subtracting the dark reference data from the
+      science data.
     type: string
     enum: ['N/A', 'COMPLETE', 'SKIPPED', 'INCOMPLETE']
     maxLength: 15
@@ -42,10 +43,10 @@ properties:
       datatype: nvarchar(15)
       destination: [ScienceRefData.s_dark]
   dq_init:
-    title: Initialization of the Data Quality Extension Step
+    title: Data Quality Initialization Step
     description: |
-      Step in ROMANCAL in which the pixeldq attribute of the input data model
-      using the MASK reference file is initialized.
+      Step in romancal that initializes the data quality
+      array and masks known bad pixels.
     type: string
     enum: ['N/A', 'COMPLETE', 'SKIPPED', 'INCOMPLETE']
     maxLength: 15
@@ -63,22 +64,11 @@ properties:
     archive_catalog:
       datatype: nvarchar(15)
       destination: [ScienceRefData.s_flux]
-  jump:
-    title: Cosmic Rays and Jump Detection Step
-    description: |
-      Step in ROMANCAL which performs a search for jumps in values in ramp that
-      may be associated with cosmic rays.
-    type: string
-    enum: ['N/A', 'COMPLETE', 'SKIPPED', 'INCOMPLETE']
-    maxLength: 15
-    archive_catalog:
-      datatype: nvarchar(15)
-      destination: [ScienceRefData.s_jump]
   linearity:
-    title: Linearity Correction Step
+    title: Classical Linearity Correction Step
     description: |
-      Step in ROMANCAL which performs a correction for the classical non-linear
-      detector response.
+      Step in romancal that linearizes the ramp data to
+      correct for deviations from a linear response.
     type: string
     enum: ['N/A', 'COMPLETE', 'SKIPPED', 'INCOMPLETE']
     maxLength: 15
@@ -86,10 +76,10 @@ properties:
       datatype: nvarchar(15)
       destination: [ScienceRefData.s_linearity]
   photom:
-    title: Photometric Calibration Step
+    title: Populate Photometric Keywords Step
     description: |
-      Step in ROMANCAL that adds photometric calibrations to the metadata of a
-      data product.
+      Step in romancal that populates photometric
+      calibration information in the metadata of the science file.
     type: string
     enum: ['N/A', 'COMPLETE', 'SKIPPED', 'INCOMPLETE']
     maxLength: 15
@@ -99,7 +89,8 @@ properties:
   source_detection:
     title: Source Detection Step
     description: |
-      Step in ROMANCAL to detect point sources in an image and catalog them.
+      Step in romancal that detects point sources in an
+      image for use in astrometric alignment.
     type: string
     enum: ['N/A', 'COMPLETE', 'SKIPPED', 'INCOMPLETE']
     maxLength: 15
@@ -107,10 +98,10 @@ properties:
       datatype: nvarchar(15)
       destination: [ScienceRefData.s_source_detection]
   ramp_fit:
-    title: Ramp Fit Step
+    title: Ramp Fitting Step
     description: |
-      Step in ROMANCAL to fit the counts versus time with a straight line and
-      thus estimate the count rate for each pixel.
+      Step in romancal that fits a slope to each pixel to
+      compute the count rate.
     type: string
     enum: ['N/A', 'COMPLETE', 'SKIPPED', 'INCOMPLETE']
     maxLength: 15
@@ -120,8 +111,9 @@ properties:
   refpix:
     title: Reference Pixel Correction Step
     description: |
-      Step in ROMANCAL that corrects for additional signal from electronics
-      contributing to (e.g. 1/f noise) using the reference pixels.
+      Step in romancal that corrects science pixels for
+      additional signal from the readout electronics (e.g., 1/f noise)
+      using the reference pixels.
     type: string
     enum: ['N/A', 'COMPLETE', 'SKIPPED', 'INCOMPLETE']
     maxLength: 15
@@ -131,9 +123,8 @@ properties:
   saturation:
     title: Saturation Identification Step
     description: |
-      Step in ROMANCAL which sets pixel flags to label that a pixel is at or
-      above the saturation threshold. As part of this step, pixels that are zero
-      or negative are also flagged.
+      Step in romancal that sets data quality flags for
+      pixels at or above the saturation threshold.
     type: string
     enum: ['N/A', 'COMPLETE', 'SKIPPED', 'INCOMPLETE']
     maxLength: 15
@@ -153,9 +144,10 @@ properties:
   tweakreg:
     title: Tweakreg step
     description: |
-      Step in ROMANCAL that compares positions of point-like sources with
-      coordinates from a Gaia catalog, and, if necessary, corrects an image's
-      World Coordinate System alignment.
+      Step in romancal that compares the positions of point
+      sources in the image with coordinates from an astrometric
+      catalog and, if necessary, corrects the World Coordinate System
+      (WCS) alignment.
     type: string
     enum: ['N/A', 'COMPLETE', 'SKIPPED', 'INCOMPLETE']
     maxLength: 15
@@ -173,10 +165,10 @@ properties:
     archive_catalog:
       datatype: nvarchar(15)
       destination: [ScienceRefData.s_skymatch]
-propertyOrder: [assign_wcs, flat_field, flux, dark, dq_init, jump, linearity, photom, source_detection,
-                outlier_detection, ramp_fit, refpix, saturation, skymatch, tweakreg]
+propertyOrder: [dq_init, saturation, refpix, linearity, dark, ramp_fit, assign_wcs,
+  flat_field, photom, source_detection, tweakreg, flux, skymatch, outlier_detection]
 flowStyle: block
-required: [assign_wcs, flat_field, flux, dark, dq_init, jump, linearity, outlier_detection, photom,
+required: [assign_wcs, dark, dq_init, flat_field, flux, linearity, outlier_detection, photom,
            source_detection, ramp_fit, refpix, saturation, skymatch, tweakreg]
 additionalProperties: true
 ...
