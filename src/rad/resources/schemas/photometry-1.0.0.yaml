@@ -15,7 +15,10 @@ properties:
       square arcsecond (uJy/arcsec^2) can be made by multiplying this
       value by the ratio (1 x 10^12 MJy/uJy) / (4.254517 x 10^10
       arcsec^2/sr) = 23.50443054.
-    type: number
+    anyOf:
+      - type: number
+      - type: "null"
+    unit: "MJy.sr**-1"
     archive_catalog:
       datatype: float
       destination: [WFIExposure.conversion_megajanskys, WFIMosaic.conversion_megajanskys,
@@ -29,7 +32,10 @@ properties:
       microJanskys per square arcsecond (uJy/arcsec^2) can be made by
       multiplying this value by the ratio (1 x 10^12 MJy/uJy) /
       (4.254517 x 10^10 arcsec^2/sr) = 23.50443.
-    type: number
+    anyOf:
+      - type: number
+      - type: "null"
+    unit: "MJy.sr**-1"
     archive_catalog:
       datatype: float
       destination: [WFIExposure.conversion_megajanskys_uncertainty, WFIMosaic.conversion_megajanskys_uncertainty,
@@ -40,7 +46,10 @@ properties:
       The average pixel area in units of steradians. This
       may be converted to units of square arcseconds by multiplying
       the value by 4.254517 x 10^10 square arcseconds per steradian.
-    type: number
+    anyOf:
+      - type: number
+      - type: "null"
+    unit: "uJy.arcsec**-2"
     archive_catalog:
       datatype: float
       destination: [WFIExposure.pixel_area, WFIMosaic.pixel_area,
