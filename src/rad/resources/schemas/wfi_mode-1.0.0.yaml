@@ -4,13 +4,14 @@ $schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.0.0
 id: asdf://stsci.edu/datamodels/roman/schemas/wfi_mode-1.0.0
 
 
-title: WFI Observing Configuration
+title: Wide Field Instrument (WFI) Configuration Information
 type: object
 properties:
   name:
-    title: Instrument Used to Acquire the Data
+    title: Instrument Name
     description: |
-      Instrument used to acquire the data.
+      Name of the instrument used to acquire the science
+      data.
     type: string
     enum: [WFI]
     sdf:
@@ -22,9 +23,10 @@ properties:
       datatype: nvarchar(5)
       destination: [WFIExposure.instrument_name, GuideWindow.instrument_name, WFICommon.instrument_name]
   detector:
-    title: WFI Detector
+    title: Wide Field Instrument (WFI) Detector Identifier
     description: |
-      WFI detector used to take the data.
+      Name of the Wide Field Instrument (WFI) detector used
+      to take the science data in this file.
     $ref: wfi_detector-1.0.0
     sdf:
       special_processing: VALUE_REQUIRED
@@ -35,9 +37,10 @@ properties:
       datatype: nvarchar(10)
       destination: [WFIExposure.detector, GuideWindow.detector, WFICommon.detector]
   optical_element:
-    title: WFI Optical Element
+    title: Wide Field Instrument (WFI) Optical Element
     description: |
-      WFI optical element used to take the data.
+      Name of the optical element used to take the science
+      data.
     $ref: wfi_optical_element-1.0.0
     sdf:
       special_processing: VALUE_REQUIRED
