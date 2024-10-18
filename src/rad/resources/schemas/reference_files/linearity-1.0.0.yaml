@@ -17,19 +17,6 @@ properties:
           reftype:
             type: string
             enum: [LINEARITY]
-          input_units:
-            title: Units of the Input to the Linearity Polynomial
-            description: |
-              Units of the input to the linearity polynomial.
-            tag: tag:astropy.org:astropy/units/unit-1.*
-            enum: ["DN"]
-          output_units:
-            title: Units of the Output of the Linearity Polynomial
-            description: |
-              Units of the output to the linearity polynomial.
-            tag: tag:astropy.org:astropy/units/unit-1.*
-            enum: ["DN"]
-        required: [output_units, input_units]
   coeffs:
     title: Linearity Coefficients
     description: |

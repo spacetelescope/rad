@@ -22,16 +22,11 @@ properties:
     description: |
       The Gain Data Array represents the pixel to pixel conversion from digital
       numbers (DN) to electrons (e). The units are e/DN.
-    tag: tag:stsci.edu:asdf/unit/quantity-1.*
-    properties:
-      value:
-        tag: tag:stsci.edu:asdf/core/ndarray-1.*
-        datatype: float32
-        exact_datatype: true
-        ndim: 2
-      unit:
-        tag: tag:astropy.org:astropy/units/unit-1.*
-        enum: ["electron / DN"]
+    tag: tag:stsci.edu:asdf/core/ndarray-1.*
+    datatype: float32
+    exact_datatype: true
+    ndim: 2
+    unit: electron / DN
 required: [meta, data]
 flowStyle: block
 propertyOrder: [meta, data]
