@@ -87,7 +87,7 @@ properties:
         origin: TBD
     archive_catalog:
       datatype: int
-      destination: [WFIExposure.exposure_ngroups, GuideWindow.exposure_ngroups, WFICommon.exposure_ngroups]
+      destination: [WFIExposure.exposure_nresultants, GuideWindow.exposure_nresultants, WFICommon.exposure_nresultants]
   data_problem:
     title: Data Problem
     description: |
