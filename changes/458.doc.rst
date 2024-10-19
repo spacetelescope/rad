@@ -1,0 +1,1 @@
+Added ``refpix`` entry in ``ref_file``.

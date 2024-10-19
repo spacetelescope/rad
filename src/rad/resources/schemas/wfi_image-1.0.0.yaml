@@ -38,18 +38,11 @@ properties:
     description: |
       Calibrated science rate image in units of data numbers
       per second (DN/s) or megaJanskys per steradian (MJy/sr).
-    tag: tag:stsci.edu:asdf/unit/quantity-1.*
-    properties:
-      value:
-        tag: tag:stsci.edu:asdf/core/ndarray-1.*
-        datatype: float32
-        exact_datatype: true
-        ndim: 2
-      unit:
-        oneOf:
-          - tag: tag:stsci.edu:asdf/unit/unit-1.*
-          - tag: tag:astropy.org:astropy/units/unit-1.*
-        enum: ["DN / s", "MJy.sr**-1"]
+    tag: tag:stsci.edu:asdf/core/ndarray-1.*
+    datatype: float32
+    exact_datatype: true
+    ndim: 2
+    unit: ["DN / s", "MJy.sr**-1"]
   dq:
     title: Data Quality
     description: |
@@ -59,22 +52,15 @@ properties:
     exact_datatype: true
     ndim: 2
   err:
-    title: Error (DN / s) or (MJy / sr)
+    title: Error (DN / s)
     description: |
       Total error array in units of data numbers per second
       (DN/s) or megaJanskys per steradian (MJy/sr).
-    tag: tag:stsci.edu:asdf/unit/quantity-1.*
-    properties:
-      value:
-        tag: tag:stsci.edu:asdf/core/ndarray-1.*
-        datatype: float32
-        exact_datatype: true
-        ndim: 2
-      unit:
-        oneOf:
-          - tag: tag:stsci.edu:asdf/unit/unit-1.*
-          - tag: tag:astropy.org:astropy/units/unit-1.*
-        enum: ["DN / s", "MJy.sr**-1"]
+    tag: tag:stsci.edu:asdf/core/ndarray-1.*
+    datatype: float32
+    exact_datatype: true
+    ndim: 2
+    unit: ["DN / s", "MJy.sr**-1"]
   var_poisson:
     title: Poisson Variance (DN^2/s^2) or (MJy^2/sr^2)
     description: |
@@ -82,18 +68,11 @@ properties:
       noise in units of data numbers squared per second squared
       (DN^2/s^2) or megaJanskys squared per square steradian
       (MJy^2/sr^2).
-    tag: tag:stsci.edu:asdf/unit/quantity-1.*
-    properties:
-      value:
-        tag: tag:stsci.edu:asdf/core/ndarray-1.*
-        datatype: float32
-        exact_datatype: true
-        ndim: 2
-      unit:
-        oneOf:
-          - tag: tag:stsci.edu:asdf/unit/unit-1.*
-          - tag: tag:astropy.org:astropy/units/unit-1.*
-        enum: ["DN2 / s2", "MJy**2.sr**-2"]
+    tag: tag:stsci.edu:asdf/core/ndarray-1.*
+    datatype: float32
+    exact_datatype: true
+    ndim: 2
+    unit: ["DN2 / s2", "MJy**2.sr**-2"]
   var_rnoise:
     title: Read Noise Variance (DN^2/s^2) or (MJy^2/sr^2)
     description: |
@@ -101,18 +80,12 @@ properties:
       read noise in units of data numbers squared per second squared
       (DN^2/s^2) or megaJanskys squared per square steradian
       (MJy^2/sr^2).
-    tag: tag:stsci.edu:asdf/unit/quantity-1.*
-    properties:
-      value:
-        tag: tag:stsci.edu:asdf/core/ndarray-1.*
-        datatype: float32
-        exact_datatype: true
-        ndim: 2
-      unit:
-        oneOf:
-          - tag: tag:stsci.edu:asdf/unit/unit-1.*
-          - tag: tag:astropy.org:astropy/units/unit-1.*
-        enum: ["DN2 / s2", "MJy**2.sr**-2"]
+    tag: tag:stsci.edu:asdf/core/ndarray-1.*
+    datatype: float32
+    exact_datatype: true
+    ndim: 2
+    unit: ["DN2 / s2", "MJy**2.sr**-2"]
+
   var_flat:
     title: Flat Field Variance (DN^2/s^2) or (MJy^2/sr^2)
     description: |
@@ -120,33 +93,21 @@ properties:
       field in units of data numbers squared per second squared
       (DN^2/s^2) or megaJanskys squared per square steradian
       (MJy^2/sr^2).
-    tag: tag:stsci.edu:asdf/unit/quantity-1.*
-    properties:
-      value:
-        tag: tag:stsci.edu:asdf/core/ndarray-1.*
-        datatype: float32
-        exact_datatype: true
-        ndim: 2
-      unit:
-        oneOf:
-          - tag: tag:stsci.edu:asdf/unit/unit-1.*
-          - tag: tag:astropy.org:astropy/units/unit-1.*
-        enum: ["DN2 / s2", "MJy**2.sr**-2"]
+    tag: tag:stsci.edu:asdf/core/ndarray-1.*
+    datatype: float32
+    exact_datatype: true
+    ndim: 2
+    unit: ["DN2 / s2", "MJy**2.sr**-2"]
   amp33:
     title: Amplifier 33 Reference Pixel Data (DN)
     description: |
       Reference pixel data from amplifier 33 in units of
       data numbers (DN).
-    tag: tag:stsci.edu:asdf/unit/quantity-1.*
-    properties:
-      value:
-        tag: tag:stsci.edu:asdf/core/ndarray-1.*
-        datatype: uint16
-        exact_datatype: true
-        ndim: 3
-      unit:
-        tag: tag:astropy.org:astropy/units/unit-1.*
-        enum: ["DN"]
+    tag: tag:stsci.edu:asdf/core/ndarray-1.*
+    datatype: uint16
+    exact_datatype: true
+    ndim: 3
+    unit: "DN"
   border_ref_pix_left:
     title: Left-Edge Border Reference Pixels (DN)
     description: |
@@ -154,16 +115,11 @@ properties:
       from the left-edge of the detector in the science frame
       orientation. In the L1 uncal file data array, these are pixels
       (z, y, x) = [:, :, :4] in a zero-indexed system.
-    tag: tag:stsci.edu:asdf/unit/quantity-1.*
-    properties:
-      value:
-        tag: tag:stsci.edu:asdf/core/ndarray-1.*
-        datatype: uint16
-        exact_datatype: true
-        ndim: 3
-      unit:
-        tag: tag:astropy.org:astropy/units/unit-1.*
-        enum: ["DN"]
+    tag: tag:stsci.edu:asdf/core/ndarray-1.*
+    datatype: float32
+    exact_datatype: true
+    ndim: 3
+    unit: "DN"
   border_ref_pix_right:
     title: Right-Edge Border Reference Pixels (DN)
     description: |
@@ -171,30 +127,20 @@ properties:
       from the right-edge of the detector in the science frame
       orientation. In the L1 uncal file data array, these are pixels
       (z, y, x) = [:, :, 4092:] in a zero-indexed system.
-    tag: tag:stsci.edu:asdf/unit/quantity-1.*
-    properties:
-      value:
-        tag: tag:stsci.edu:asdf/core/ndarray-1.*
-        datatype: uint16
-        exact_datatype: true
-        ndim: 3
-      unit:
-        tag: tag:astropy.org:astropy/units/unit-1.*
-        enum: ["DN"]
+    tag: tag:stsci.edu:asdf/core/ndarray-1.*
+    datatype: float32
+    exact_datatype: true
+    ndim: 3
+    unit: "DN"
   border_ref_pix_top:
     title: Border Reference Pixels on the Top of the Detector (DN)
     description: |
       Border reference pixels on the top of the detector in units of DN.
-    tag: tag:stsci.edu:asdf/unit/quantity-1.*
-    properties:
-      value:
-        tag: tag:stsci.edu:asdf/core/ndarray-1.*
-        datatype: uint16
-        exact_datatype: true
-        ndim: 3
-      unit:
-        tag: tag:astropy.org:astropy/units/unit-1.*
-        enum: ["DN"]
+    tag: tag:stsci.edu:asdf/core/ndarray-1.*
+    datatype: float32
+    exact_datatype: true
+    ndim: 3
+    unit: "DN"
   border_ref_pix_bottom:
     title: Bottom-Edge Border Reference Pixels (DN)
     description: |
@@ -202,16 +148,11 @@ properties:
       from the bottom-edge of the detector in the science frame
       orientation. In the L1 uncal file data array, these are pixels
       (z, y, x) = [:, :4, :] in a zero-indexed system.
-    tag: tag:stsci.edu:asdf/unit/quantity-1.*
-    properties:
-      value:
-        tag: tag:stsci.edu:asdf/core/ndarray-1.*
-        datatype: uint16
-        exact_datatype: true
-        ndim: 3
-      unit:
-        tag: tag:astropy.org:astropy/units/unit-1.*
-        enum: ["DN"]
+    tag: tag:stsci.edu:asdf/core/ndarray-1.*
+    datatype: float32
+    exact_datatype: true
+    ndim: 3
+    unit: "DN"
   dq_border_ref_pix_left:
     title: Left-Edge Border Reference Pixel Data Quality (DN)
     description: |
