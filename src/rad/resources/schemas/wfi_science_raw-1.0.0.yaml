@@ -17,30 +17,21 @@ properties:
     title: Science Data (DN)
     description: |
       Science data, including reference pixels in units of DN
-    tag: tag:stsci.edu:asdf/unit/quantity-1.*
-    properties:
-      value:
-        tag: tag:stsci.edu:asdf/core/ndarray-1.*
-        datatype: uint16
-        exact_datatype: true
-        ndim: 3
-      unit:
-        tag: tag:astropy.org:astropy/units/unit-1.*
-        enum: ["DN"]
+    tag: tag:stsci.edu:asdf/core/ndarray-1.*
+    ndim: 3
+    datatype: uint16
+    unit: "DN"
+    exact_datatype: true
+
   amp33:
     title: Amplifier 33 Reference Pixel Data (DN)
     description: |
       Reference pixel data from amplifier 33 in units of DN.
-    tag: tag:stsci.edu:asdf/unit/quantity-1.*
-    properties:
-      value:
-        tag: tag:stsci.edu:asdf/core/ndarray-1.*
-        datatype: uint16
-        exact_datatype: true
-        ndim: 3
-      unit:
-        tag: tag:astropy.org:astropy/units/unit-1.*
-        enum: ["DN"]
+    tag: tag:stsci.edu:asdf/core/ndarray-1.*
+    ndim: 3
+    datatype: uint16
+    unit: "DN"
+    exact_datatype: true
 
   resultantdq:
     title: Resultant Data Quality Array
