@@ -17,16 +17,11 @@ properties:
       Slope of a specific segment for a ramp with uneven resultants, in units of
       electrons per second. A segment is a set of contiguous resultants where
       none of the resultants are saturated or cosmic ray-affected.
-    tag: tag:stsci.edu:asdf/unit/quantity-1.*
-    properties:
-      value:
-        tag: tag:stsci.edu:asdf/core/ndarray-1.*
-        datatype: float32
-        exact_datatype: true
-        ndim: 3
-      unit:
-        tag: tag:astropy.org:astropy/units/unit-1.*
-        enum: ["electron / s"]
+    tag: tag:stsci.edu:asdf/core/ndarray-1.*
+    ndim: 3
+    datatype: float32
+    exact_datatype: true
+    unit: "electron / s"
   sigslope:
     title: Uncertainty on Slope for Specific Segment (electrons / s)
     description: |
@@ -34,112 +29,78 @@ properties:
       resultants in units of electrons per second. A segment is a set of
       contiguous resultants where none of the resultants are saturated or cosmic
       ray-affected.
-    tag: tag:stsci.edu:asdf/unit/quantity-1.*
-    properties:
-      value:
-        tag: tag:stsci.edu:asdf/core/ndarray-1.*
-        datatype: float32
-        exact_datatype: true
-        ndim: 3
-      unit:
-        tag: tag:astropy.org:astropy/units/unit-1.*
-        enum: ["electron / s"]
+    tag: tag:stsci.edu:asdf/core/ndarray-1.*
+    ndim: 3
+    datatype: float32
+    exact_datatype: true
+    unit: "electron / s"
   yint:
     title: Y-Intercept Derived for a Specific Segment (electrons)
     description: |
       Y-intercept derived for a specific segment (electrons). A segment is a set
       of contiguous resultants where none of the resultants are saturated or
       cosmic ray-affected.
-    tag: tag:stsci.edu:asdf/unit/quantity-1.*
-    properties:
-      value:
-        tag: tag:stsci.edu:asdf/core/ndarray-1.*
-        datatype: float32
-        exact_datatype: true
-        ndim: 3
-      unit:
-        tag: tag:astropy.org:astropy/units/unit-1.*
-        enum: ["electron"]
+    tag: tag:stsci.edu:asdf/core/ndarray-1.*
+    ndim: 3
+    datatype: float32
+    exact_datatype: true
+    unit: "electron"
   sigyint:
     title: Uncertainty on Y-Intercept Derived for a Specific Segment (electrons)
     description: |
       Uncertainty on Y-intercept derived for a specific segment (electrons). A
       segment is a set of contiguous resultants where none of the resultants are
       saturated or cosmic ray-affected.
-    tag: tag:stsci.edu:asdf/unit/quantity-1.*
-    properties:
-      value:
-        tag: tag:stsci.edu:asdf/core/ndarray-1.*
-        datatype: float32
-        exact_datatype: true
-        ndim: 3
-      unit:
-        tag: tag:astropy.org:astropy/units/unit-1.*
-        enum: ["electron"]
+    tag: tag:stsci.edu:asdf/core/ndarray-1.*
+    ndim: 3
+    datatype: float32
+    exact_datatype: true
+    unit: "electron"
   pedestal:
     title: Pedestal Array (electrons)
     description: |
       Signal at zero exposure time for each pixel in electrons.
-    tag: tag:stsci.edu:asdf/unit/quantity-1.*
-    properties:
-      value:
-        tag: tag:stsci.edu:asdf/core/ndarray-1.*
-        datatype: float32
-        exact_datatype: true
-        ndim: 2
-      unit:
-        tag: tag:astropy.org:astropy/units/unit-1.*
-        enum: ["electron"]
+    tag: tag:stsci.edu:asdf/core/ndarray-1.*
+    ndim: 2
+    datatype: float32
+    exact_datatype: true
+    unit: "electron"
   weights:
     title: Weights for Segment Specific Fit
     tag: tag:stsci.edu:asdf/core/ndarray-1.*
     ndim: 3
     datatype: float32
     exact_datatype: true
+    unit: "electron"
   crmag:
     title: Approximate Cosmic Ray Magnitudes (AB magnitude)
     description: |
       The magnitude of each segment that was flagged as having a cosmic ray hit.
-    tag: tag:stsci.edu:asdf/unit/quantity-1.*
-    properties:
-      value:
-        tag: tag:stsci.edu:asdf/core/ndarray-1.*
-        datatype: float32
-        exact_datatype: true
-        ndim: 3
-      unit:
-        tag: tag:astropy.org:astropy/units/unit-1.*
-        enum: ["electron"]
+    tag: tag:stsci.edu:asdf/core/ndarray-1.*
+    ndim: 3
+    datatype: float32
+    exact_datatype: true
+    unit: "electron"
   var_poisson:
     title: Poisson Variance Associated with a Segment Specific Slope (electrons^2 / sec^2)
     description: |
       Poisson variance associated with a segment-specific slope, in units of
       electrons^2 / sec^2.
-    tag: tag:stsci.edu:asdf/unit/quantity-1.*
-    properties:
-      value:
-        tag: tag:stsci.edu:asdf/core/ndarray-1.*
-        datatype: float32
-        exact_datatype: true
-        ndim: 3
-      unit:
-        tag: tag:astropy.org:astropy/units/unit-1.*
-        enum: ["electron2 / s2"]
+    tag: tag:stsci.edu:asdf/core/ndarray-1.*
+    ndim: 3
+    datatype: float32
+    exact_datatype: true
+    unit: "electron2 / s2"
   var_rnoise:
     title: Read Noise Variance Associated for a Segment Specific Slope (electrons^2 / sec^2)
     description: |
       Read noise-associated variance for a segment-specific slope, in units of
       electrons^2 / sec^2.
-    tag: tag:stsci.edu:asdf/unit/quantity-1.*
-    properties:
-      value:
-        tag: tag:stsci.edu:asdf/core/ndarray-1.*
-        datatype: float32
-        exact_datatype: true
-        ndim: 3
-      unit:
-        tag: tag:astropy.org:astropy/units/unit-1.*
-        enum: ["electron2 / s2"]
+    tag: tag:stsci.edu:asdf/core/ndarray-1.*
+    ndim: 3
+    datatype: float32
+    exact_datatype: true
+    unit: "electron2 / s2"
 required: [meta, slope, sigslope, yint, sigyint, pedestal, weights, crmag, var_poisson,
            var_rnoise]
 propertyOrder: [meta, slope, sigslope, yint, sigyint, pedestal, weights, crmag, var_poisson,
