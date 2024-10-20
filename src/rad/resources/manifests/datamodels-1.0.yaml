@@ -166,6 +166,16 @@ tags:
   description: |-
     Mosaic WCS parameters
 # Reference Modules
+- tag_uri: asdf://stsci.edu/datamodels/roman/tags/reference_files/abvegaoffset-1.0.0
+  schema_uri: asdf://stsci.edu/datamodels/roman/schemas/reference_files/abvegaoffset-1.0.0
+  title: AB Vega Offset reference schema
+  description: |-
+    AB Vega Offset reference schema
+- tag_uri: asdf://stsci.edu/datamodels/roman/tags/reference_files/apcorr-1.0.0
+  schema_uri: asdf://stsci.edu/datamodels/roman/schemas/reference_files/apcorr-1.0.0
+  title: Aperture correction reference schema
+  description: |-
+    Aperture correction reference schema
 - tag_uri: asdf://stsci.edu/datamodels/roman/tags/reference_files/dark-1.0.0
   schema_uri: asdf://stsci.edu/datamodels/roman/schemas/reference_files/dark-1.0.0
   title: Dark reference schema
@@ -176,6 +186,11 @@ tags:
   title: Distortion reference schema
   description: |-
     Distortion reference schema
+- tag_uri: asdf://stsci.edu/datamodels/roman/tags/reference_files/epsf-1.0.0
+  schema_uri: asdf://stsci.edu/datamodels/roman/schemas/reference_files/epsf-1.0.0
+  title: ePSF reference schema
+  description: |-
+    ePSF reference schema
 - tag_uri: asdf://stsci.edu/datamodels/roman/tags/reference_files/flat-1.0.0
   schema_uri: asdf://stsci.edu/datamodels/roman/schemas/reference_files/flat-1.0.0
   title: Flat reference schema
