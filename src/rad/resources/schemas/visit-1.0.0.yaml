@@ -25,8 +25,8 @@ properties:
         maxLength: 100
         archive_catalog:
           datatype: nvarchar(100)
-          destination: [WFIExposure.dither_primary_name, SourceCatalog.engineering_quality,
-                        SegmentationMap.engineering_quality]
+          destination: [WFIExposure.dither_primary_name, SourceCatalog.dither_primary_name,
+                        SegmentationMap.dither_primary_name]
       subpixel_name:
         title: Subpixel Dither Pattern Name
         description: |
