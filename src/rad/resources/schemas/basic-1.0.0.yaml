@@ -46,7 +46,7 @@ properties:
   origin:
     title: Institution / Organization Name
     description: |
-      The name of the institution of organization
+      The name of the institution or organization
       responsible for creating this file.
     tag: asdf://stsci.edu/datamodels/roman/tags/origin-1.0.0
   prd_version:
