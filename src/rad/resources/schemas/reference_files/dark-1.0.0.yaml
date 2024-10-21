@@ -20,21 +20,6 @@ properties:
           exposure:
             type: object
             properties:
-              ngroups:
-                title: Number of Resultants
-                description: |
-                  The number of resultants averaged according to
-                  Multi-Accumulation (MA) Table read pattern.
-                type: integer
-              nframes:
-                title: Number of frames per resultant # should be removed
-                type: integer
-              groupgap:
-                title: Number of Skips Between Resultants
-                description: |
-                  The number of frames skipped between resultants according to
-                  MA Table read pattern.
-                type: integer
               ma_table_name:
                 title: Multi-Accumulation Table Name
                 description: |
@@ -48,7 +33,7 @@ properties:
                   Table that keeps the same name will have a new
                   ma_table_number.
                 type: integer
-            required: [ngroups, nframes, groupgap, ma_table_name, ma_table_number]
+            required: [ma_table_name, ma_table_number]
         required: [exposure]
       - $ref: asdf://stsci.edu/datamodels/roman/schemas/reference_files/ref_exposure_type-1.0.0
       - $ref: asdf://stsci.edu/datamodels/roman/schemas/reference_files/ref_optical_element-1.0.0
