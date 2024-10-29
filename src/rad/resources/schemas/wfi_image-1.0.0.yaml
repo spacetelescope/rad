@@ -27,11 +27,14 @@ properties:
             tag: asdf://stsci.edu/datamodels/roman/tags/photometry-1.0.0
           source_detection:
             tag: asdf://stsci.edu/datamodels/roman/tags/source_detection-1.0.0
+          statistics:
+            tag: asdf://stsci.edu/datamodels/roman/tags/statistics-1.0.0
           wcs:
             title: WCS object
             anyOf:
               - tag: tag:stsci.edu:gwcs/wcs-*
               - type: "null"
+
         required: [photometry, wcs]
   data:
     title: Science Data (DN/s) or (MJy/sr)
@@ -52,7 +55,7 @@ properties:
     exact_datatype: true
     ndim: 2
   err:
-    title: Error (DN / s)
+    title: Error (DN / s) or (MJy / sr)
     description: |
       Total error array in units of data numbers per second
       (DN/s) or megaJanskys per steradian (MJy/sr).
@@ -85,7 +88,6 @@ properties:
     exact_datatype: true
     ndim: 2
     unit: ["DN2 / s2", "MJy**2.sr**-2"]
-
   var_flat:
     title: Flat Field Variance (DN^2/s^2) or (MJy^2/sr^2)
     description: |

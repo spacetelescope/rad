@@ -1,0 +1,1 @@
+Add ``rcs`` and removes ``aperture``, ``target`` schemas

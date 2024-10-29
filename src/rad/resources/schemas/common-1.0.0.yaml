@@ -11,9 +11,6 @@ allOf:
 - type: object
   properties:
     # Meta Objects
-    aperture:
-      title: Aperture Information
-      tag: asdf://stsci.edu/datamodels/roman/tags/aperture-1.0.0
     coordinates:
       title: Name Of The Coordinate Reference Frame
       tag: asdf://stsci.edu/datamodels/roman/tags/coordinates-1.0.0
@@ -41,19 +38,19 @@ allOf:
     ref_file:
       title: Reference File Information
       tag: asdf://stsci.edu/datamodels/roman/tags/ref_file-1.0.0
-    target:
-      title: Target Information
-      tag: asdf://stsci.edu/datamodels/roman/tags/target-1.0.0
+    rcs:
+      title: Relative Calibration System Information
+      tag: asdf://stsci.edu/datamodels/roman/tags/rcs-1.0.0
     velocity_aberration:
       title: Velocity Aberration Correction Information
       tag: asdf://stsci.edu/datamodels/roman/tags/velocity_aberration-1.0.0
     visit:
       title: Visit Information
       tag: asdf://stsci.edu/datamodels/roman/tags/visit-1.0.0
-    wcs_info:
+    wcsinfo:
       title: World Coordinate System (WCS) Parameters
       tag: asdf://stsci.edu/datamodels/roman/tags/wcsinfo-1.0.0
-  required: [aperture, coordinates, ephemeris, exposure, guide_star,
+  required: [coordinates, ephemeris, exposure, guide_star,
              instrument, observation, pointing, program, ref_file,
-             target, velocity_aberration, visit, wcs_info]
+             rcs, velocity_aberration, visit, wcsinfo]
 ...
