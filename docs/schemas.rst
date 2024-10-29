@@ -72,7 +72,6 @@ Tags
     ref_file-1.0.0
     resample-1.0.0
     source_detection-1.0.0
-    target-1.0.0
     velocity_aberration-1.0.0
     visit-1.0.0
     wcsinfo-1.0.0
