@@ -7,11 +7,17 @@ title: Spacecraft Pointing Information
 type: object
 properties:
   ra_v1:
-    title: RA of Telescope V1 Axis (deg)
+    title: Right Ascension of the Telescope V1 Axis (deg)
     description: |
-      The right ascension (RA) coordinate, in degrees, of the V1 Axis that is
-      used along with dec_v1 and pa_v3 to describe where the telescope is
-      pointing.
+      The right ascension coordinate of the V1 axis in units
+      of degrees. This may be considered the right ascension
+      coordinate of the telescope boresight. The telescope V
+      coordinate system is defined with its origin at the vertex of
+      the primary mirror. The V1 axis is orthogonal to the primary
+      mirror, parallel to the telescope boresight, and increasing
+      positively through the telescope aperture. See
+      Roman-STScI-000143 "Description of the Roman SIAF and Coordinate
+      Frames" for more information.
     type: number
     sdf:
       special_processing: VALUE_REQUIRED
@@ -21,10 +27,16 @@ properties:
       datatype: float
       destination: [WFIExposure.ra_v1, GuideWindow.ra_v1]
   dec_v1:
-    title: Dec of Telescope V1 Axis (deg)
+    title: Declination of the Telescope V1 Axis (deg)
     description: |
-      The declination (Dec) coordinate, in degrees, of the V1 Axis that is used
-      along with ra_v1 and pa_v3 to describe where the telescope is pointing.
+      The declination coordinate of the V1 axis in units of
+      degrees. This may be considered the declination coordinate of
+      the telescope boresight. The telescope V coordinate system is
+      defined with its origin at the vertex of the primary mirror. The
+      +V1 axis is orthogonal to the primary mirror, parallel to the
+      telescope boresight, and increasing positively through the
+      telescope aperture. See Roman-STScI-000143 "Description of the
+      Roman SIAF and Coordinate Frames" for more information.
     type: number
     sdf:
       special_processing: VALUE_REQUIRED
@@ -34,10 +46,15 @@ properties:
       datatype: float
       destination: [WFIExposure.dec_v1, GuideWindow.dec_v1]
   pa_v3:
-    title: Position Angle of Telescope V3 Axis (deg)
+    title: Position Angle of the Telescope V3 Axis (deg)
     description: |
-      The position angle (PA), in degrees, of the V3 Axis that is used along
-      with ra_v1 and dec_v1 to describe where the telescope is pointing.
+      The position angle of the V3 axis (in units of
+      degrees) is defined as the projection of the V3 axis on the sky
+      measured from North to East. The telescope V coordinate system
+      is defined with its origin at the vertex of the primary mirror.
+      The +V3 axis is defined to be orthogonal to the sunshield. See
+      Roman-STScI-000143 "Description of the Roman SIAF and Coordinate
+      Frames" for more information.
     type: number
     sdf:
       special_processing: VALUE_REQUIRED
@@ -46,7 +63,47 @@ properties:
     archive_catalog:
       datatype: float
       destination: [WFIExposure.pa_v3, GuideWindow.pa_v3]
-propertyOrder: [ra_v1, dec_v1, pa_v3]
+  target_aperture:
+    title: Aperture Name Used for Pointing
+    description: |
+      Name of the aperture used to align the instrument to a
+      position on the sky.
+    type: string
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    maxLength: 100
+    archive_catalog:
+      datatype: nvarchar(100)
+      destination: [WFIExposure.target_aperture, GuideWindow.target_aperture]
+  target_ra:
+    title: Right Ascension of the Target Aperture (deg)
+    description: |
+      Right ascension in units of degrees at the location of
+      the target aperture.
+    type: number
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    archive_catalog:
+      datatype: float
+      destination: [WFIExposure.target_ra, GuideWindow.target_ra]
+  target_dec:
+    title: Declination of the Target Aperture
+    description: |
+      Declination in units of degrees at the location of the
+      target aperture.
+    type: number
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    archive_catalog:
+      datatype: float
+      destination: [WFIExposure.target_dec, GuideWindow.target_dec]
+propertyOrder: [ra_v1, dec_v1, pa_v3, target_aperture, target_ra, target_dec]
 flowStyle: block
-required: [ra_v1, dec_v1, pa_v3]
+required: [ra_v1, dec_v1, pa_v3, target_aperture, target_ra, target_dec]
 ...

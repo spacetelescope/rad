@@ -1,0 +1,1 @@
+Updates ``guide_star``, ``instrument``, and ``photometry`` schemas

@@ -93,7 +93,7 @@ properties:
   program:
     title: Program number, defined range is 1..18445;
            included in obs_id and visit_id as 'PPPPP'.
-    type: string
+    type: integer
     sdf:
       special_processing: VALUE_REQUIRED
       source:
