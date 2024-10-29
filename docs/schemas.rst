@@ -44,7 +44,6 @@ Tags
 
 .. asdf-autoschemas::
 
-    aperture-1.0.0
     associations-1.0.0
     basic-1.0.0
     cal_logs-1.0.0
