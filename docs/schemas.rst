@@ -84,6 +84,5 @@ Tags
     tagged_scalars/filename-1.0.0
     tagged_scalars/model_type-1.0.0
     tagged_scalars/origin-1.0.0
-    tagged_scalars/prd_software_version-1.0.0
     tagged_scalars/sdf_software_version-1.0.0
     tagged_scalars/telescope-1.0.0
