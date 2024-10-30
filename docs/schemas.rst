@@ -44,7 +44,6 @@ Tags
 
 .. asdf-autoschemas::
 
-    aperture-1.0.0
     associations-1.0.0
     basic-1.0.0
     cal_logs-1.0.0
@@ -73,7 +72,6 @@ Tags
     ref_file-1.0.0
     resample-1.0.0
     source_detection-1.0.0
-    target-1.0.0
     velocity_aberration-1.0.0
     visit-1.0.0
     wcsinfo-1.0.0
@@ -85,6 +83,5 @@ Tags
     tagged_scalars/filename-1.0.0
     tagged_scalars/model_type-1.0.0
     tagged_scalars/origin-1.0.0
-    tagged_scalars/prd_software_version-1.0.0
     tagged_scalars/sdf_software_version-1.0.0
     tagged_scalars/telescope-1.0.0

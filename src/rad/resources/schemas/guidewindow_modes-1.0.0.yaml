@@ -5,9 +5,9 @@ id: asdf://stsci.edu/datamodels/roman/schemas/guidewindow_modes-1.0.0
 
 # Helper file to enumerate guide window modes for guidestar and guidewindow
 
-title: Guide Window Modes
+title: Guide Window Mode
 description: |
-  An enumerated collection of available guidestar and guidewindow modes.
+  Type of guide window mode used during the exposure.
 type: string
 enum:
   - WIM-ACQ

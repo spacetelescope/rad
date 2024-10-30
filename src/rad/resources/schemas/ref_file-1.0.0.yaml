@@ -7,15 +7,17 @@ title: Reference File Information
 type: object
 properties:
   crds:
-    title: Calibration Reference Data System Parameters
+    title: Calibration Reference Data System (CRDS) Information
     description: |
       Calibration Reference Data System Parameters
     type: object
     properties:
-      sw_version:
-        title: CRDS File Version
+      version:
+        title: CRDS Software Version
         description: |
-          Version of Calibration Reference Data System (CRDS) file selection software.
+          Version of the Calibration Reference Data
+          System (CRDS) software package used to match calibration
+          reference files to science observations.
         type: string
         sdf:
           special_processing: VALUE_REQUIRED
@@ -24,12 +26,14 @@ properties:
         maxLength: 120
         archive_catalog:
           datatype: nvarchar(120)
-          destination: [WFIExposure.crds_software_version, WFIMosaic.crds_software_version,
-                        GuideWindow.crds_software_version, WFICommon.crds_software_version]
-      context_used:
+          destination: [WFIExposure.crds_version, WFIMosaic.crds_version,
+                        GuideWindow.crds_version, WFICommon.crds_version]
+      context:
         title: CRDS Context
         description: |
-          CRDS context (.pmap) used to select ref files.
+          Name of the Calibration Reference Data System
+          (CRDS) context (.pmap) file used to match calibration
+          reference files to science observations.
         type: string
         sdf:
           special_processing: VALUE_REQUIRED
@@ -38,23 +42,13 @@ properties:
         maxLength: 120
         archive_catalog:
           datatype: nvarchar(120)
-          destination: [WFIExposure.crds_context_used, WFIMosaic.crds_context_used,
-                        GuideWindow.crds_context_used, WFICommon.crds_context_used]
-  refpix:
-    title: Reference Pixel File Information
-    description: |
-      Reference file used to correct for the reference pixel contribution to
-      science data.
-    type: string
-    maxLength: 120
-    archive_catalog:
-      datatype: nvarchar(120)
-      destination: [ScienceRefData.r_refpix, GuideWindow.r_refpix, WFICommon.r_refpix]
+          destination: [WFIExposure.crds_context, WFIMosaic.crds_context,
+                        GuideWindow.crds_context, WFICommon.crds_context]
   dark:
     title: Dark Reference File Information
     description: |
-      Reference file used to correct for the dark current contribution to
-      science data.
+      Name of the calibration reference file used to correct
+      for dark current signal in the science data.
     type: string
     maxLength: 120
     archive_catalog:
@@ -63,17 +57,19 @@ properties:
   distortion:
     title: Distortion Reference File Information
     description: |
-      Information about the distortion reference file used with the science
-      data.
+      Name of the calibration reference file used to include
+      the geometric distortion model in the world coordinate system
+      (WCS) of the science data.
     type: string
     maxLength: 120
     archive_catalog:
       datatype: nvarchar(120)
       destination: [ScienceRefData.r_distortion, GuideWindow.r_distortion, WFICommon.r_distortion]
   mask:
-    title: Mask Reference File Information
+    title: Bad Pixel Mask Reference File Information
     description: |
-      Information about the mask reference file used with the science data.
+      Name of the calibration reference file used to mark
+      bad pixels in the data quality array of the science data.
     type: string
     maxLength: 120
     archive_catalog:
@@ -82,7 +78,9 @@ properties:
   flat:
     title: Flat Reference File Information
     description: |
-      Information about the flat reference file used with the science data.
+      Name of the calibration reference file used to correct
+      for element-dependent, spatially-variable sensitivity in the
+      science data.
     type: string
     maxLength: 120
     archive_catalog:
@@ -91,17 +89,19 @@ properties:
   gain:
     title: Gain Reference Rile Information
     description: |
-      Information about the gain reference file used with the science data.
+      Name of the calibration reference file used to convert
+      between data numbers (DN) and photo-electrons in the science
+      data.
     type: string
     maxLength: 120
     archive_catalog:
       datatype: nvarchar(120)
       destination: [ScienceRefData.r_gain, GuideWindow.r_gain, WFICommon.r_gain]
   readnoise:
-    title: Read Noise Reference Rile Information
+    title: Read Noise Reference File Information
     description: |
-      Information about the read noise reference file used with the science
-      data.
+      Name of the calibration reference file that estimates
+      the pixel-to-pixel read noise in the science data.
     type: string
     maxLength: 120
     archive_catalog:
@@ -110,26 +110,41 @@ properties:
   linearity:
     title: Linearity Reference File Information
     description: |
-      Information about the linearity reference file used with the science data.
+      Name of the calibration reference file used to correct
+      for classical linearity in the science data.
     type: string
     maxLength: 120
     archive_catalog:
       datatype: nvarchar(120)
       destination: [ScienceRefData.r_linearity, GuideWindow.r_linearity, WFICommon.r_linearity]
+  inverse_linearity:
+    title: Inverse Linearity Reference File Information
+    description: |
+      Name of the calibration reference file used in
+      simulations of Level 1 data products to imprint the effect of
+      classical non-linearity in the science data.
+    type: string
+    maxLength: 120
+    archive_catalog:
+      datatype: nvarchar(120)
+      destination: [ScienceRefData.r_inverse_linearity, GuideWindow.r_inverse_linearity, WFICommon.r_inverse_linearity]
   photom:
     title: Photometry Reference File Information
     description: |
-      Information about the photometry reference file used with the science
-      data.
+      Name of the calibration reference file containing
+      photometric zeropoints and related information populated into
+      the science product metadata.
     type: string
     maxLength: 120
     archive_catalog:
       datatype: nvarchar(120)
       destination: [ScienceRefData.r_photom, GuideWindow.r_photom, WFICommon.r_photom]
   area:
-    title: Area Reference File Information
+    title: Pixel Area Reference File Information
     description: |
-      Information about the area reference file used with the science data.
+      Name of the calibration reference file containing the
+      pixel-to-pixel estimates of the area of each detector pixel on
+      the sky.
     type: string
     maxLength: 120
     archive_catalog:
@@ -145,6 +160,15 @@ properties:
     archive_catalog:
       datatype: nvarchar(120)
       destination: [ScienceRefData.r_saturation, GuideWindow.r_saturation, WFICommon.r_saturation]
-
+  refpix:
+    title: Reference Pixel Reference File Information
+    description: |
+      Name of the calibration reference file used to correct
+      for 1/f noise using the reference pixels.
+    type: string
+    maxLength: 120
+    archive_catalog:
+      datatype: nvarchar(120)
+      destination: [ScienceRefData.r_refpix, GuideWindow.r_refpix, WFICommon.r_refpix]
 flowStyle: block
 ...
