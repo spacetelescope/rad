@@ -29,7 +29,6 @@ properties:
     title: Two Dimensional Quality Array for all Resultants
     description: |
       Two Dimensional Quality Array for all Resultants.
-    title: 2-D data quality array for all planes
     tag: tag:stsci.edu:asdf/core/ndarray-1.*
     datatype: uint32
     exact_datatype: true
