@@ -20,6 +20,7 @@ WFI_OPTICAL_ELEMENTS = list(
     asdf.schema.load_schema("asdf://stsci.edu/datamodels/roman/schemas/wfi_optical_element-1.0.0")["enum"]
 )
 EXPOSURE_TYPE_ELEMENTS = list(asdf.schema.load_schema("asdf://stsci.edu/datamodels/roman/schemas/exposure_type-1.0.0")["enum"])
+METADATA_FORCING_REQUIRED = ["archive_catalog", "sdf"]
 
 
 @pytest.fixture(scope="session", params=SCHEMA_URIS)
@@ -103,6 +104,10 @@ def test_property_order(schema, manifest):
 
 
 def test_required(schema):
+    """
+    Checks that all properties are required if there is a required list.
+    """
+
     def callback(node):
         if isinstance(node, Mapping) and "required" in node:
             assert node.get("type") == "object"
@@ -112,6 +117,22 @@ def test_required(schema):
                 missing_list = ", ".join(required_names - property_names)
                 message = "required references names that do not exist: " + missing_list
                 assert False, message
+
+    asdf.treeutil.walk(schema, callback)
+
+
+def test_metadata_force_required(schema):
+    """
+    Test that if certain properties have certain metadata entries, that they are in a required list.
+    """
+
+    def callback(node):
+        if isinstance(node, Mapping) and "properties" in node:
+            for prop_name, prop in node["properties"].items():
+                for metadata in METADATA_FORCING_REQUIRED:
+                    if isinstance(prop, Mapping) and metadata in prop:
+                        assert "required" in node
+                        assert prop_name in node["required"]
 
     asdf.treeutil.walk(schema, callback)
 
