@@ -129,9 +129,15 @@ def test_metadata_force_required(schema):
     def callback(node):
         if isinstance(node, Mapping) and "properties" in node:
             for prop_name, prop in node["properties"].items():
+                # Test that if a subnode has a required list, that the parent has a required list
+                if isinstance(prop, Mapping) and "required" in prop:
+                    assert "required" in node
+                    assert prop_name in node["required"]
+
+                # Test that if a subnode has certain metadata entries, that the parent has a required list
                 for metadata in METADATA_FORCING_REQUIRED:
                     if isinstance(prop, Mapping) and metadata in prop:
-                        assert "required" in node
+                        assert "required" in node, f"metadata {metadata} in {prop_name} requires required list"
                         assert prop_name in node["required"]
 
     asdf.treeutil.walk(schema, callback)
