@@ -44,6 +44,7 @@ properties:
           datatype: nvarchar(120)
           destination: [WFIExposure.crds_context, WFIMosaic.crds_context,
                         GuideWindow.crds_context, WFICommon.crds_context]
+    required: [version, context]
   dark:
     title: Dark Reference File Information
     description: |
@@ -171,4 +172,5 @@ properties:
       datatype: nvarchar(120)
       destination: [ScienceRefData.r_refpix, GuideWindow.r_refpix, WFICommon.r_refpix]
 flowStyle: block
+required: [crds, dark, distortion, mask, flat, gain, readnoise, linearity, photom, area, saturation, refpix]
 ...
