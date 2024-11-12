@@ -23,13 +23,15 @@ properties:
             description: Factor by which the WFI pixels have been oversampled
                 to generate the PSF.
             type: integer
-          effective_temperature:
-            title: Effective Temperature
-            description: Effective temperature (K) of the simulated source(s)
-                used to generate the PSF model.
+          spectral_type:
+            title: Spectral Type
+            description: Spectral type(s) of the SEDs used to create the ePSF(s)
+                with chromatic variations. See the Roman Documentation system (RDox)
+                for more information on mapping spectral types to colors in the
+                WFI filter system.
             type: array
             items:
-                type: integer
+                type: string
           defocus:
             title: Defocus Waves
             description: Number of defocus waves applied to the PSF.
@@ -53,13 +55,15 @@ properties:
         required: [pixel_x, pixel_y]
   psf:
     title: ePSF Stamps
-    description: Postage stamps of ePSF models. The 4-dimensional array is
-        ordered by (defocus, effective_temperature, pixel_x, pixel_y)
-        in the file metadata.
+    description: Postage stamps of ePSF models. The 5-dimensional array is
+        ordered by (defocus, spectral_type, grid_index, y, x), where defocus
+        and spectral_type are in the file metadata, grid_index is the index
+        of the pixel_x and pixel_y positions in the file metadata, and
+        y and x are the axes of the 2-D postage stamp ePSF.
     tag: tag:stsci.edu:asdf/core/ndarray-1.*
     datatype: float32
     exact_datatype: true
-    ndim: 4
+    ndim: 5
   extended_psf:
     title: Extended ePSF Stamp
     description: Postage stamp of a bright ePSF model with extended wings.
