@@ -100,7 +100,7 @@ properties:
       source:
         origin: TBD
     archive_catalog:
-      datatype: int
+      datatype: smallint
       destination: [WFIExposure.vparity, GuideWindow.vparity]
   v3yangle:
     title: Angle Between the V3 and Ideal Y Axes (deg)
