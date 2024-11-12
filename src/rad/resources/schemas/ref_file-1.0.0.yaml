@@ -44,6 +44,7 @@ properties:
           datatype: nvarchar(120)
           destination: [WFIExposure.crds_context, WFIMosaic.crds_context,
                         GuideWindow.crds_context, WFICommon.crds_context]
+    required: [version, context]
   dark:
     title: Dark Reference File Information
     description: |
