@@ -240,16 +240,11 @@ properties:
       resultants, H is the number of reads of the detector in a given science
       resultant, K is the number of guide window reads in a science read, and X
       and Y are the pixel locations.
-    tag: tag:stsci.edu:asdf/unit/quantity-1.*
-    properties:
-      value:
-        tag: tag:stsci.edu:asdf/core/ndarray-1.*
-        datatype: uint16
-        exact_datatype: true
-        ndim: 5
-      unit:
-        tag: tag:astropy.org:astropy/units/unit-1.*
-        enum: ["DN"]
+    tag: tag:stsci.edu:asdf/core/ndarray-1.*
+    datatype: uint16
+    exact_datatype: true
+    ndim: 5
+    unit: DN
   signal_frames:
     title: Guide Window Signal Resultant Array (DN)
     description: |
@@ -258,16 +253,11 @@ properties:
       resultants, H is the number of reads of the detector in a given science
       resultant, K is the number of guide window reads in a science read, and X
       and Y are the pixel locations.
-    tag: tag:stsci.edu:asdf/unit/quantity-1.*
-    properties:
-      value:
-        tag: tag:stsci.edu:asdf/core/ndarray-1.*
-        datatype: uint16
-        exact_datatype: true
-        ndim: 5
-      unit:
-        tag: tag:astropy.org:astropy/units/unit-1.*
-        enum: ["DN"]
+    tag: tag:stsci.edu:asdf/core/ndarray-1.*
+    datatype: uint16
+    exact_datatype: true
+    ndim: 5
+    unit: DN
   amp33:
     title: Guide Window Amplifier 33 Reference Pixel Resultant Array (DN)
     description: |
@@ -276,16 +266,11 @@ properties:
       science resultants, H is the number of reads of the detector in a given
       science resultant, K is the number of guide window reads in a science
       read, and X and Y are the pixel locations.
-    tag: tag:stsci.edu:asdf/unit/quantity-1.*
-    properties:
-      value:
-        tag: tag:stsci.edu:asdf/core/ndarray-1.*
-        datatype: uint16
-        exact_datatype: true
-        ndim: 5
-      unit:
-        tag: tag:astropy.org:astropy/units/unit-1.*
-        enum: ["DN"]
+    tag: tag:stsci.edu:asdf/core/ndarray-1.*
+    datatype: uint16
+    exact_datatype: true
+    ndim: 5
+    unit: DN
 propertyOrder: [meta, pedestal_frames, signal_frames, amp33]
 flowStyle: block
 required: [meta, pedestal_frames, signal_frames, amp33]
