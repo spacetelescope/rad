@@ -20,7 +20,13 @@ properties:
            'WFI05_FULL', 'WFI06_FULL', 'WFI07_FULL', 'WFI08_FULL',
            'WFI09_FULL', 'WFI10_FULL', 'WFI11_FULL', 'WFI12_FULL',
            'WFI13_FULL', 'WFI14_FULL', 'WFI15_FULL', 'WFI16_FULL',
-           'WFI17_FULL', 'WFI18_FULL', 'WFI_CEN', 'BORESIGHT', 'CGI_CEN']
+           'WFI17_FULL', 'WFI18_FULL',
+           'WFI_01_FULL', 'WFI_02_FULL', 'WFI_03_FULL', 'WFI_04_FULL',
+           'WFI_05_FULL', 'WFI_06_FULL', 'WFI_07_FULL', 'WFI_08_FULL',
+           'WFI_09_FULL', 'WFI_10_FULL', 'WFI_11_FULL', 'WFI_12_FULL',
+           'WFI_13_FULL', 'WFI_14_FULL', 'WFI_15_FULL', 'WFI_16_FULL',
+           'WFI_17_FULL', 'WFI_18_FULL',
+           'WFI_CEN', 'BORESIGHT', 'CGI_CEN']
     sdf:
       special_processing: VALUE_REQUIRED
       source:
