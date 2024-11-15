@@ -1,1 +1,0 @@
-Update visit, l1, and l2 attribute information

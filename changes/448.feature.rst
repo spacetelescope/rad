@@ -1,1 +1,0 @@
-Add maxLength keywords to schemas matching nvarchar archive_catalog datatypes.

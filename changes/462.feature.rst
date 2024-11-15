@@ -1,1 +1,0 @@
-remove var_flat from list of required mosaic attributes

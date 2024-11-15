@@ -1,1 +1,0 @@
-Added alternate WFI aperture names to match both the SIAF and legacy names.

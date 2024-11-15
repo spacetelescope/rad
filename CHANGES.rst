@@ -1,3 +1,80 @@
+0.22.0 (2024-11-15)
+===================
+
+Documentation
+-------------
+
+- use ``towncrier`` to handle change log entries (`#442
+  <https://github.com/spacetelescope/rad/issues/442>`_)
+- Update schema docs to clarify headings and add links to roman_datamodels and
+  asdf. (`#446 <https://github.com/spacetelescope/rad/issues/446>`_)
+- Added ``refpix`` entry in ``ref_file``. (`#458
+  <https://github.com/spacetelescope/rad/issues/458>`_)
+
+
+New Features
+------------
+
+- Add maxLength keywords to schemas matching nvarchar archive_catalog
+  datatypes. (`#448 <https://github.com/spacetelescope/rad/issues/448>`_)
+- Added ePSF, ABVegaOffset, and ApCorr schemas (`#452
+  <https://github.com/spacetelescope/rad/issues/452>`_)
+- remove var_flat from list of required mosaic attributes (`#462
+  <https://github.com/spacetelescope/rad/issues/462>`_)
+- Add python 3.13 support. (`#468
+  <https://github.com/spacetelescope/rad/issues/468>`_)
+- Remove units from Guidewindow schema. (`#499
+  <https://github.com/spacetelescope/rad/issues/499>`_)
+
+
+Misc
+----
+
+- Updated ``cal_step`` and ``cal_log`` schema information. (`#466
+  <https://github.com/spacetelescope/rad/issues/466>`_)
+- Update ``coordinate`` schema descriptions (`#467
+  <https://github.com/spacetelescope/rad/issues/467>`_)
+- Update ``ephemeris`` schema descriptions (`#469
+  <https://github.com/spacetelescope/rad/issues/469>`_)
+- Updates ``guide_star``, ``instrument``, and ``photometry`` schemas (`#471
+  <https://github.com/spacetelescope/rad/issues/471>`_)
+- Add ``rcs`` and removes ``aperture``, ``target`` schemas (`#473
+  <https://github.com/spacetelescope/rad/issues/473>`_)
+- Update and add keywords and descriptions in the basic-1.0.0 and statistics
+  schemas (`#474 <https://github.com/spacetelescope/rad/issues/474>`_)
+- Update the pointing schema (`#475
+  <https://github.com/spacetelescope/rad/issues/475>`_)
+- Update velocity_aberration descriptions and keywords (`#476
+  <https://github.com/spacetelescope/rad/issues/476>`_)
+- Updates wcs keywords and attribute information (`#477
+  <https://github.com/spacetelescope/rad/issues/477>`_)
+- Update exposure and program attributes information (`#478
+  <https://github.com/spacetelescope/rad/issues/478>`_)
+- Update ref_file descriptions (`#479
+  <https://github.com/spacetelescope/rad/issues/479>`_)
+- Update observation descriptions (`#480
+  <https://github.com/spacetelescope/rad/issues/480>`_)
+- Update visit, l1, and l2 attribute information (`#481
+  <https://github.com/spacetelescope/rad/issues/481>`_)
+- Update and add descriptions in the individual image metadata schema.
+  Address merge issues created by the L1 and L2 metadata updates. (`#487
+  <https://github.com/spacetelescope/rad/issues/487>`_)
+- Added alternate WFI aperture names to match both the SIAF and legacy names.
+  (`#498 <https://github.com/spacetelescope/rad/issues/498>`_)
+- Added CRDS and reference steps required lists. (`#506
+  <https://github.com/spacetelescope/rad/issues/506>`_)
+- Updated the ePSF schema. (`#507
+  <https://github.com/spacetelescope/rad/issues/507>`_)
+- pin `asdf<4.0` (`#509 <https://github.com/spacetelescope/rad/issues/509>`_)
+
+
+Deprecations and Removals
+-------------------------
+
+- Remove units from rad schema. (`#485
+  <https://github.com/spacetelescope/rad/issues/485>`_)
+
+
 0.21.0 (2024-08-06)
 -------------------
 
