@@ -86,8 +86,8 @@ properties:
     archive_catalog:
       datatype: nvarchar(15)
       destination: [ScienceRefData.s_photom]
-  source_detection:
-    title: Source Detection Step
+  source_catalog:
+    title: Source Catalog Step
     description: |
       Step in romancal that detects point sources in an
       image for use in astrometric alignment.
@@ -166,9 +166,9 @@ properties:
       datatype: nvarchar(15)
       destination: [ScienceRefData.s_skymatch]
 propertyOrder: [dq_init, saturation, refpix, linearity, dark, ramp_fit, assign_wcs,
-  flat_field, photom, source_detection, tweakreg, flux, skymatch, outlier_detection]
+  flat_field, photom, source_catalog, tweakreg, flux, skymatch, outlier_detection]
 flowStyle: block
 required: [assign_wcs, dark, dq_init, flat_field, flux, linearity, outlier_detection, photom,
-           source_detection, ramp_fit, refpix, saturation, skymatch, tweakreg]
+           source_catalog, ramp_fit, refpix, saturation, skymatch, tweakreg]
 additionalProperties: true
 ...

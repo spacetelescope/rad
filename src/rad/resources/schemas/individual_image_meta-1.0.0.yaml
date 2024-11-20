@@ -71,9 +71,9 @@ properties:
     description: |
       Table of ref_file level 2 metadata.
     tag: tag:astropy.org:astropy/table/table-1.*
-  source_detection:
+  source_catalog:
     description: |
-      Table of source_detection level 2 metadata.
+      Table of source_catalog level 2 metadata.
     tag: tag:astropy.org:astropy/table/table-1.*
   velocity_aberration:
     description: |
@@ -90,6 +90,6 @@ properties:
 flowStyle: block
 propertyOrder: [basic, background, cal_step, cal_logs, coordinates, ephemeris,
   exposure, guide_star, instrument, observation, outlier_detection, photometry,
-  pointing, program, rcs, ref_file, source_detection, velocity_aberration,
+  pointing, program, rcs, ref_file, source_catalog, velocity_aberration,
   visit, wcsinfo]
 ...
