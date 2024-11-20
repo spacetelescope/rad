@@ -1,1 +1,0 @@
-Updated ``cal_step`` and ``cal_log`` schema information.
