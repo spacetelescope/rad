@@ -75,7 +75,7 @@ Tags
     resample-1.0.0
     sky_background-1.0.0
     statistics-1.0.0
-    source_detection-1.0.0
+    source_catalog-1.0.0
     velocity_aberration-1.0.0
     visit-1.0.0
     wcsinfo-1.0.0
