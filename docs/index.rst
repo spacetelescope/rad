@@ -42,4 +42,3 @@ Index
 =====
 
 * :ref:`genindex`
-
