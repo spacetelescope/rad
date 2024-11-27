@@ -3,6 +3,7 @@
 Insert the next release's changelog header.  Prints the version, which
 our GitHub Actions workflow uses to generate a commit message.
 """
+
 import re
 from pathlib import Path
 
