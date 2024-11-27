@@ -110,6 +110,7 @@ extend-select = [
     "B",    # BugBear
     "S",    # Bandit
     "RUF",  # ruff specific
+    "NPY",  # numpy specific
 ]
 
 [tool.ruff.lint.per-file-ignores]

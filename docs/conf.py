@@ -38,7 +38,7 @@ else:
 from importlib_metadata import distribution
 
 try:
-    numpy.random.seed(int(os.environ["SOURCE_DATE_EPOCH"]))
+    numpy.random.seed(int(os.environ["SOURCE_DATE_EPOCH"]))  # noqa: NPY002
 except KeyError:
     pass
 
