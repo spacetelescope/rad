@@ -28,7 +28,9 @@ properties:
             description: Magnitude difference between the AB and Vega magnitude
                 systems. Found by calculating the AB magnitude of Vega within
                 the optical element bandpass.
-            type: number
+            anyOf:
+              - type: number
+              - type: "null"
         required: [abvega_offset]
 required: [meta, data]
 flowStyle: block
