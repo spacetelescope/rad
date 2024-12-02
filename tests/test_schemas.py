@@ -90,7 +90,7 @@ def test_property_order(schema, manifest):
                         "missing properties: " + missing_list + "\n"
                         "extra properties: " + extra_list
                     )
-                    assert False, message
+                    raise ValueError(message)
 
         asdf.treeutil.walk(schema, callback)
     else:
@@ -111,7 +111,7 @@ def test_required(schema):
             if not required_names.issubset(property_names):
                 missing_list = ", ".join(required_names - property_names)
                 message = "required references names that do not exist: " + missing_list
-                assert False, message
+                raise ValueError(message)
 
     asdf.treeutil.walk(schema, callback)
 
@@ -279,7 +279,8 @@ def test_varchar_length(uri):
     """
     schema = asdf.schema.load_schema(uri)
 
-    def callback(node, nvarchars={}):
+    def callback(node, nvarchars=None):
+        nvarchars = nvarchars or {}
         if not isinstance(node, dict):
             return
         if node.get("type", "") != "string":

@@ -57,7 +57,6 @@ rad = "rad.integration:get_resource_mappings"
 requires = [
     "setuptools >=61",
     "setuptools_scm[toml] >=3.4",
-    "wheel",
 ]
 build-backend = "setuptools.build_meta"
 
@@ -81,29 +80,43 @@ minversion = 7.0
 doctest_plus = true
 doctest_rst = true
 text_file_format = "rst"
-addopts = "--show-capture=no"
+log_cli_level = "INFO"
+xfail_strict = true
+addopts = [
+    "--color=yes",      # color test output
+    "--doctest-rst",    # enable doctests
+    "--strict-config",  # fail on unknown config options
+    "--strict-markers", # fail on unknown markers
+    "-ra",              # Show summary of all failures/errors
+]
 testpaths = [
     "tests",
     "src/rad/resources/schemas",
 ]
 filterwarnings = [
-    "error::ResourceWarning",
+    "error",
 ]
 asdf_schema_tests_enabled = "true"
 asdf_schema_skip_tests = "src/rad/resources/schemas/rad_schema-1.0.0.yaml"
 asdf_schema_root = "src/rad/resources/schemas"
 
-[tool.isort]
-profile = "black"
-filter_files = true
-line_length = 130
-
-[tool.black]
-line-length = 130
-force-exclude = "^/(\n  (\n      \\.eggs\n    | \\.git\n    | \\.pytest_cache\n    | \\.tox\n  )/\n)\n"
-
 [tool.ruff]
 line-length = 130
+
+[tool.ruff.lint]
+extend-select = [
+    "UP",   # PyUpgrade
+    "I",    # isort
+    "B",    # BugBear
+    "S",    # Bandit
+    "RUF",  # ruff specific
+    "NPY",  # numpy specific
+]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/**.py" = [
+    "S101" # Bandit: Use of assert detected (fine in test files)
+]
 
 [tool.codespell]
 skip = "*.pdf,*.fits,*.asdf,.tox,build,./tags,.git,docs/_build"

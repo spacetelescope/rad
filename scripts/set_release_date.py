@@ -4,6 +4,7 @@ Set the (latest and unreleased) changelog header release date to today.
 Prints the version, which our GitHub Actions workflow uses to
 generate a commit message and release tag.
 """
+
 import re
 from datetime import date
 from pathlib import Path
