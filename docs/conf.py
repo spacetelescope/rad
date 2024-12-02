@@ -25,16 +25,11 @@
 import datetime
 import os
 import sys
+import tomllib
 from pathlib import Path
 
 # Ensure documentation examples are deterministically random.
 import numpy
-
-if sys.version_info < (3, 11):
-    import tomli as tomllib
-else:
-    import tomllib
-
 from importlib_metadata import distribution
 
 try:

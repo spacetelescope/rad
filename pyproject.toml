@@ -41,7 +41,6 @@ docs = [
     "graphviz",
     "matplotlib",
     "docutils",
-    "tomli; python_version <\"3.11\"",
     "importlib-metadata",
     "towncrier",
 ]
