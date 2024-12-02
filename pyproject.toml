@@ -1,7 +1,7 @@
 [project]
 name = "rad"
 description = "Roman Attribute Dictionary"
-requires-python = ">=3.10"
+requires-python = ">=3.11"
 authors = [
     { name = "STScI", email = "help@stsci.edu" },
 ]
@@ -41,7 +41,6 @@ docs = [
     "graphviz",
     "matplotlib",
     "docutils",
-    "tomli; python_version <\"3.11\"",
     "importlib-metadata",
     "towncrier",
 ]
