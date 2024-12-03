@@ -96,7 +96,7 @@ properties:
     maxLength: 15
     archive_catalog:
       datatype: nvarchar(15)
-      destination: [ScienceRefData.s_source_detection]
+      destination: [ScienceRefData.s_source_catalog]
   ramp_fit:
     title: Ramp Fitting Step
     description: |
