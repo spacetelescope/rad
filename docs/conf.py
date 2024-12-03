@@ -198,5 +198,5 @@ asdf_schema_reference_mappings = [
     ("asdf://stsci.edu/datamodels/roman/tags/", "https://rad.readthedocs.io/en/latest/generated/schemas/"),
     ("asdf://stsci.edu/datamodels/roman/schemas/", "https://rad.readthedocs.io/en/latest/generated/schemas/"),
     ("http://stsci.edu/schemas/asdf/", "https://asdf-standard.readthedocs.io/en/latest/generated/stsci.edu/asdf/"),
-    ("tag:stsci.edu:gwcs/wcs-*", "https://asdf-standard.readthedocs.io/en/latest/generated/stsci.edu/asdf/wcs/wcs-1.0.0.html"),
+    ("tag:stsci.edu:gwcs/wcs-*", "https://asdf-wcs-schemas.readthedocs.io/en/latest/generated/gwcs/wcs-1.0.0.html"),
 ]
