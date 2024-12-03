@@ -17,19 +17,6 @@ properties:
           reftype:
             type: string
             enum: [INVERSELINEARITY]
-          input_units:
-            title: Inverse Linearity Input Units
-            description: |
-              Units of the input to the inverse linearity polynomial.
-            tag: tag:astropy.org:astropy/units/unit-1.*
-            enum: ["DN"]
-          output_units:
-            title: Inverse Linearity Output Units
-            description: |
-              Units of the output of the inverse linearity polynomial.
-            tag: tag:astropy.org:astropy/units/unit-1.*
-            enum: ["DN"]
-        required: [output_units, input_units]
   coeffs:
     title: Inverse Linearity Coefficients
     description: |
