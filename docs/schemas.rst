@@ -33,7 +33,7 @@ Level 4 (ancillary) schemas
 
 .. asdf-autoschemas::
 
-  source_catalog-1.0.0
+  image_source_catalog-1.0.0
   segmentation_map-1.0.0
   mosaic_source_catalog-1.0.0
   mosaic_segmentation_map-1.0.0
@@ -75,7 +75,7 @@ Tags
     resample-1.0.0
     sky_background-1.0.0
     statistics-1.0.0
-    source_detection-1.0.0
+    source_catalog-1.0.0
     velocity_aberration-1.0.0
     visit-1.0.0
     wcsinfo-1.0.0

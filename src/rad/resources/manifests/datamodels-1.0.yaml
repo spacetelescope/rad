@@ -75,8 +75,8 @@ tags:
   title: Photometry information
   description: |-
     Photometry information
-- tag_uri: asdf://stsci.edu/datamodels/roman/tags/source_detection-1.0.0
-  schema_uri: asdf://stsci.edu/datamodels/roman/schemas/source_detection-1.0.0
+- tag_uri: asdf://stsci.edu/datamodels/roman/tags/source_catalog-1.0.0
+  schema_uri: asdf://stsci.edu/datamodels/roman/schemas/source_catalog-1.0.0
   title: Source catalog for TweakReg
   description: |-
     Source catalog for TweakReg
@@ -262,9 +262,9 @@ tags:
   title: Calibration reference file names.
   description: |-
     Calibration reference file names.
-- tag_uri: asdf://stsci.edu/datamodels/roman/tags/source_catalog-1.0.0
-  schema_uri: asdf://stsci.edu/datamodels/roman/schemas/source_catalog-1.0.0
-  title: Source catalog
+- tag_uri: asdf://stsci.edu/datamodels/roman/tags/image_source_catalog-1.0.0
+  schema_uri: asdf://stsci.edu/datamodels/roman/schemas/image_source_catalog-1.0.0
+  title: Image source catalog
   description: |-
     Photometry and astrometry computed by the Source Catalog Step
 - tag_uri: asdf://stsci.edu/datamodels/roman/tags/segmentation_map-1.0.0

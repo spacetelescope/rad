@@ -1,0 +1,1 @@
+Rename source_detection to source_catalog to match step name in romancal.
