@@ -144,7 +144,8 @@ properties:
               datatype: nvarchar(120)
               destination: [GuideWindow.gw_science_file_source]
           gw_mode:
-            $ref: guidewindow_modes-1.0.0
+            allOf:
+              - $ref: guidewindow_modes-1.0.0
             sdf:
               special_processing: VALUE_REQUIRED
               source:

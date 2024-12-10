@@ -295,3 +295,29 @@ def test_varchar_length(uri):
         assert node["maxLength"] == v, f"archive_catalog nvarchar does not match maxLength in schema {uri}"
 
     asdf.treeutil.walk(schema, callback)
+
+
+# don't test tvac or fps schemas as they are static
+@pytest.mark.parametrize(
+    "uri",
+    [
+        uri
+        for uri in SCHEMA_URIS
+        if not uri.startswith("asdf://stsci.edu/datamodels/roman/schemas/fps/")
+        and not uri.startswith("asdf://stsci.edu/datamodels/roman/schemas/tvac/")
+    ],
+)
+def test_ref_loneliness(uri):
+    """
+    An object with a $ref should contain no other items
+    """
+    schema = asdf.schema.load_schema(uri)
+
+    def callback(node):
+        if not isinstance(node, dict):
+            return
+        if "$ref" not in node:
+            return
+        assert len(node) == 1
+
+    asdf.treeutil.walk(schema, callback)
