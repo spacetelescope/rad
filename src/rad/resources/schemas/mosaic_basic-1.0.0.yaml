@@ -109,7 +109,8 @@ properties:
       datatype: nvarchar(15)
       destination: [WFIMosaic.survey, SourceCatalog.survey, SegmentationMap.survey]
   optical_element:
-    $ref: wfi_optical_element-1.0.0
+    allOf:
+      - $ref: wfi_optical_element-1.0.0
     sdf:
       special_processing: VALUE_REQUIRED
       source:
