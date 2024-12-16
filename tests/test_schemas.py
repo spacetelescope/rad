@@ -297,16 +297,7 @@ def test_varchar_length(uri):
     asdf.treeutil.walk(schema, callback)
 
 
-# don't test tvac or fps schemas as they are static
-@pytest.mark.parametrize(
-    "uri",
-    [
-        uri
-        for uri in SCHEMA_URIS
-        if not uri.startswith("asdf://stsci.edu/datamodels/roman/schemas/fps/")
-        and not uri.startswith("asdf://stsci.edu/datamodels/roman/schemas/tvac/")
-    ],
-)
+@pytest.mark.parametrize("uri", SCHEMA_URIS)
 def test_ref_loneliness(uri):
     """
     An object with a $ref should contain no other items
