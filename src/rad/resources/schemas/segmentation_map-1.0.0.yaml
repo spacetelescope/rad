@@ -16,9 +16,6 @@ properties:
       - type: object
         properties:
           optical_element:
-            title: WFI Optical Element
-            description: |
-              WFI optical element used to take the data.
             $ref: wfi_optical_element-1.0.0
           program:
             title: Program Information

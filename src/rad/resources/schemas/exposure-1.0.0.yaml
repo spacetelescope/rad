@@ -10,7 +10,8 @@ title: |
 type: object
 properties:
   type:
-    $ref: asdf://stsci.edu/datamodels/roman/schemas/exposure_type-1.0.0
+    allOf:
+      - $ref: asdf://stsci.edu/datamodels/roman/schemas/exposure_type-1.0.0
     sdf:
       special_processing: VALUE_REQUIRED
       source:

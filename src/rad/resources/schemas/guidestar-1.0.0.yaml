@@ -26,7 +26,8 @@ properties:
       datatype: nvarchar(20)
       destination: [WFIExposure.guide_window_id, GuideWindow.guide_window_id, WFICommon.guide_window_id]
   guide_mode:
-    $ref: guidewindow_modes-1.0.0
+    allOf:
+      - $ref: guidewindow_modes-1.0.0
     sdf:
       special_processing: VALUE_REQUIRED
       source:
