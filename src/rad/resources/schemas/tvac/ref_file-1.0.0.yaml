@@ -37,6 +37,7 @@ properties:
         archive_catalog:
           datatype: nvarchar(120)
           destination: [WFICommon.crds_context_used]
+    required: [sw_version, context_used]
   dark:
     title: Dark Reference File Information
     description: |
@@ -122,5 +123,6 @@ properties:
     archive_catalog:
       datatype: nvarchar(120)
       destination: [WFICommon.r_saturation]
+required: [crds, dark, distortion, mask, flat, gain, readnoise, linearity, photom, area, saturation]
 flowStyle: block
 ...
