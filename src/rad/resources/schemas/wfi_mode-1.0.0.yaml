@@ -24,7 +24,7 @@ properties:
       destination: [WFIExposure.instrument_name, GuideWindow.instrument_name, WFICommon.instrument_name]
   detector:
     allOf:
-      - $ref: wfi_detector-1.0.0
+      - $ref: asdf://stsci.edu/datamodels/roman/schemas/wfi_detector-1.0.0
     title: Wide Field Instrument (WFI) Detector Identifier
     description: |
       Name of the Wide Field Instrument (WFI) detector used
@@ -39,7 +39,7 @@ properties:
       destination: [WFIExposure.detector, GuideWindow.detector, WFICommon.detector]
   optical_element:
     allOf:
-      - $ref: wfi_optical_element-1.0.0
+      - $ref: asdf://stsci.edu/datamodels/roman/schemas/wfi_optical_element-1.0.0
     title: Wide Field Instrument (WFI) Optical Element
     description: |
       Name of the optical element used to take the science
