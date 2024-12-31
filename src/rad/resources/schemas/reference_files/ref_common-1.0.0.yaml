@@ -60,7 +60,7 @@ properties:
         enum: [WFI]
       detector:
         allOf:
-          - $ref: ../wfi_detector-1.0.0
+          - $ref: asdf://stsci.edu/datamodels/roman/schemas/wfi_detector-1.0.0
         title: Detector
         description: |
           The numbered WFI detector in the focal plane (e.g., WFI01 for SCA 01).

@@ -11,7 +11,7 @@ properties:
     type: object
     properties:
       optical_element:
-        $ref: ../wfi_optical_element-1.0.0
+        $ref: asdf://stsci.edu/datamodels/roman/schemas/wfi_optical_element-1.0.0
     required: [optical_element]
 required: [instrument]
 ...

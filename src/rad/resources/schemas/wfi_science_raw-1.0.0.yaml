@@ -14,7 +14,7 @@ archive_meta: None
 type: object
 properties:
   meta:
-    $ref: common-1.0.0
+    $ref: asdf://stsci.edu/datamodels/roman/schemas/common-1.0.0
   data:
     title: Science Data (DN)
     description: |

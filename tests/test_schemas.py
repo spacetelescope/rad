@@ -6,6 +6,7 @@ import re
 from collections.abc import Mapping
 
 import asdf
+import asdf.treeutil
 import pytest
 import yaml
 from crds.config import is_crds_name
@@ -310,5 +311,25 @@ def test_ref_loneliness(uri):
         if "$ref" not in node:
             return
         assert len(node) == 1
+
+    asdf.treeutil.walk(schema, callback)
+
+
+@pytest.mark.parametrize("uri", SCHEMA_URIS)
+def test_absolute_ref(uri):
+    """
+    Test that all $ref are absolute URIs matching those registered with ASDF
+    """
+    schema = asdf.schema.load_schema(uri)
+    resources = asdf.config.get_config().resource_manager
+
+    def callback(node):
+        if not isinstance(node, dict):
+            return
+        if "$ref" not in node:
+            return
+
+        # Check that the $ref is a full URI registered with ASDF
+        assert node["$ref"] in resources
 
     asdf.treeutil.walk(schema, callback)

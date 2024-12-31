@@ -13,7 +13,7 @@ type: object
 properties:
   meta:
     allOf:
-      - $ref: common-1.0.0
+      - $ref: asdf://stsci.edu/datamodels/roman/schemas/common-1.0.0
       - type: object
         properties:
           gw_start_time:
@@ -145,7 +145,7 @@ properties:
               destination: [GuideWindow.gw_science_file_source]
           gw_mode:
             allOf:
-              - $ref: guidewindow_modes-1.0.0
+              - $ref: asdf://stsci.edu/datamodels/roman/schemas/guidewindow_modes-1.0.0
             sdf:
               special_processing: VALUE_REQUIRED
               source:

@@ -12,7 +12,7 @@ type: object
 properties:
   meta:
     allOf:
-      - $ref: common-1.0.0
+      - $ref: asdf://stsci.edu/datamodels/roman/schemas/common-1.0.0
       - image_list:
           type: string
   data:

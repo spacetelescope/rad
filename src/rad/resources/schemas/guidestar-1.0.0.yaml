@@ -27,7 +27,7 @@ properties:
       destination: [WFIExposure.guide_window_id, GuideWindow.guide_window_id, WFICommon.guide_window_id]
   guide_mode:
     allOf:
-      - $ref: guidewindow_modes-1.0.0
+      - $ref: asdf://stsci.edu/datamodels/roman/schemas/guidewindow_modes-1.0.0
     sdf:
       special_processing: VALUE_REQUIRED
       source:

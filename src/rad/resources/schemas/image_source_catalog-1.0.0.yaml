@@ -12,11 +12,11 @@ type: object
 properties:
   meta:
     allOf:
-      - $ref: basic-1.0.0
+      - $ref: asdf://stsci.edu/datamodels/roman/schemas/basic-1.0.0
       - type: object
         properties:
           optical_element:
-            $ref: wfi_optical_element-1.0.0
+            $ref: asdf://stsci.edu/datamodels/roman/schemas/wfi_optical_element-1.0.0
           exposure:
             title: Exposure Information
             tag: asdf://stsci.edu/datamodels/roman/tags/exposure-1.0.0
