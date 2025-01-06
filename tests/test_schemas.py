@@ -23,6 +23,23 @@ WFI_OPTICAL_ELEMENTS = list(
 EXPOSURE_TYPE_ELEMENTS = list(asdf.schema.load_schema("asdf://stsci.edu/datamodels/roman/schemas/exposure_type-1.0.0")["enum"])
 
 
+@pytest.fixture(scope="session")
+def valid_tag_uris():
+    uris = {t["tag_uri"] for manifest in MANIFESTS for t in manifest["tags"]}
+    uris.update(
+        [
+            "tag:stsci.edu:asdf/time/time-1.*",
+            "tag:stsci.edu:asdf/core/ndarray-1.*",
+            "tag:stsci.edu:asdf/unit/quantity-1.*",
+            "tag:stsci.edu:asdf/unit/unit-1.*",
+            "tag:astropy.org:astropy/units/unit-1.*",
+            "tag:astropy.org:astropy/table/table-1.*",
+            "tag:stsci.edu:gwcs/wcs-*",
+        ]
+    )
+    return uris
+
+
 @pytest.fixture(scope="session", params=SCHEMA_URIS)
 def schema_content(request):
     return asdf.get_config().resource_manager[request.param]
@@ -43,23 +60,6 @@ def ref_file_uris(request):
     return request.param["tag_uri"], request.param["schema_uri"]
 
 
-@pytest.fixture(scope="session")
-def valid_tag_uris(manifest):
-    uris = {t["tag_uri"] for t in manifest["tags"]}
-    uris.update(
-        [
-            "tag:stsci.edu:asdf/time/time-1.*",
-            "tag:stsci.edu:asdf/core/ndarray-1.*",
-            "tag:stsci.edu:asdf/unit/quantity-1.*",
-            "tag:stsci.edu:asdf/unit/unit-1.*",
-            "tag:astropy.org:astropy/units/unit-1.*",
-            "tag:astropy.org:astropy/table/table-1.*",
-            "tag:stsci.edu:gwcs/wcs-*",
-        ]
-    )
-    return uris
-
-
 def test_required_properties(schema):
     assert schema["$schema"] == METASCHEMA_URI
     assert "id" in schema
@@ -73,8 +73,8 @@ def test_schema_style(schema_content):
     assert not any(line != line.rstrip() for line in schema_content.split(b"\n"))
 
 
-def test_property_order(schema, manifest):
-    is_tag_schema = schema["id"] in {t["schema_uri"] for t in manifest["tags"]}
+def test_property_order(schema):
+    is_tag_schema = schema["id"] in {t["schema_uri"] for t in TAG_DEFS}
 
     if is_tag_schema:
 
@@ -117,8 +117,8 @@ def test_required(schema):
     asdf.treeutil.walk(schema, callback)
 
 
-def test_flowstyle(schema, manifest):
-    is_tag_schema = schema["id"] in {t["schema_uri"] for t in manifest["tags"]}
+def test_flowstyle(schema):
+    is_tag_schema = schema["id"] in {t["schema_uri"] for t in TAG_DEFS}
 
     if is_tag_schema:
         found_flowstyle = False
