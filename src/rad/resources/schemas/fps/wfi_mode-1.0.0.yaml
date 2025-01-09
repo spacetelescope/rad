@@ -22,7 +22,7 @@ properties:
       destination: [WFICommon.instrument_name]
   detector:
     allOf:
-      - $ref: wfi_detector-1.0.0
+      - $ref: asdf://stsci.edu/datamodels/roman/schemas/fps/wfi_detector-1.0.0
     title: WFI Detector
     description: |
       WFI detector used to take the data.
@@ -35,7 +35,7 @@ properties:
       destination: [WFICommon.detector]
   optical_element:
     allOf:
-      - $ref: wfi_optical_element-1.0.0
+      - $ref: asdf://stsci.edu/datamodels/roman/schemas/fps/wfi_optical_element-1.0.0
     title: WFI Optical Element
     description: |
       WFI optical element used to take the data.

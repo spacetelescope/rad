@@ -20,7 +20,7 @@ properties:
       destination: [WFICommon.gw_id]
   gw_fgs_mode:
     allOf:
-      - $ref: guidewindow_modes-1.0.0
+      - $ref: asdf://stsci.edu/datamodels/roman/schemas/fps/guidewindow_modes-1.0.0
     sdf:
       special_processing: VALUE_REQUIRED
       source:

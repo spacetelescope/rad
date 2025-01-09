@@ -10,7 +10,7 @@ datamodel_name: RampFitOutputModel
 type: object
 properties:
   meta:
-    $ref: common-1.0.0
+    $ref: asdf://stsci.edu/datamodels/roman/schemas/common-1.0.0
   slope:
     title: Slope for Specific Segment (electrons / s)
     description: |

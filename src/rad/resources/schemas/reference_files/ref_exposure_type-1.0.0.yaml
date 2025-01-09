@@ -12,7 +12,7 @@ properties:
     properties:
       type:
         allOf:
-          - $ref: ../exposure_type-1.0.0
+          - $ref: asdf://stsci.edu/datamodels/roman/schemas/exposure_type-1.0.0
         title: WFI Mode
         description: |
           The type of data taken with the WFI. Allowed values are WFI_IMAGE for
