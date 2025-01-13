@@ -21,6 +21,7 @@ WFI_OPTICAL_ELEMENTS = list(
     asdf.schema.load_schema("asdf://stsci.edu/datamodels/roman/schemas/wfi_optical_element-1.0.0")["enum"]
 )
 EXPOSURE_TYPE_ELEMENTS = list(asdf.schema.load_schema("asdf://stsci.edu/datamodels/roman/schemas/exposure_type-1.0.0")["enum"])
+EXPECTED_COMMON_REFERENCE = {"$ref": "asdf://stsci.edu/datamodels/roman/schemas/reference_files/ref_common-1.0.0"}
 
 
 @pytest.fixture(scope="session", params=SCHEMA_URIS)
@@ -261,6 +262,19 @@ def test_reftype_tag(ref_file_uris):
 
     assert asdf.util.uri_match(f"asdf://stsci.edu/datamodels/roman/tags/reference_files/*{reftype}-*", tag_uri)
     assert asdf.util.uri_match(f"asdf://stsci.edu/datamodels/roman/schemas/reference_files/*{reftype}-*", schema_uri)
+
+
+def test_ref_file_meta_common(ref_file_schema):
+    """
+    Test that the meta for all reference files contains a reference to `ref_common`
+    """
+    all_of = ref_file_schema["properties"]["meta"]["allOf"]
+
+    for item in all_of:
+        if item == EXPECTED_COMMON_REFERENCE:
+            break
+    else:
+        raise ValueError("ref_common not found in meta")
 
 
 # don't test tvac or fps schemas as they are static
