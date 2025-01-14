@@ -11,41 +11,22 @@ import pytest
 import yaml
 from crds.config import is_crds_name
 
-from .conftest import MANIFEST
+from .conftest import MANIFESTS
 
 SCHEMA_URI_PREFIX = "asdf://stsci.edu/datamodels/roman/schemas/"
 METASCHEMA_URI = "asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.0.0"
 SCHEMA_URIS = [u for u in asdf.get_config().resource_manager if u.startswith(SCHEMA_URI_PREFIX) and u != METASCHEMA_URI]
-REF_FILE_SCHEMA_URIS = [u["schema_uri"] for u in MANIFEST["tags"] if "/reference_files/" in u["schema_uri"]]
+TAG_DEFS = [tag_def for manifest in MANIFESTS for tag_def in manifest["tags"]]
+REF_FILE_TAG_DEFS = [tag_def for tag_def in TAG_DEFS if "/reference_files" in tag_def["schema_uri"]]
 WFI_OPTICAL_ELEMENTS = list(
     asdf.schema.load_schema("asdf://stsci.edu/datamodels/roman/schemas/wfi_optical_element-1.0.0")["enum"]
 )
 EXPOSURE_TYPE_ELEMENTS = list(asdf.schema.load_schema("asdf://stsci.edu/datamodels/roman/schemas/exposure_type-1.0.0")["enum"])
 
 
-@pytest.fixture(scope="session", params=SCHEMA_URIS)
-def schema_content(request):
-    return asdf.get_config().resource_manager[request.param]
-
-
-@pytest.fixture(scope="session", params=SCHEMA_URIS)
-def schema(request):
-    return yaml.safe_load(asdf.get_config().resource_manager[request.param])
-
-
-@pytest.fixture(scope="session", params=REF_FILE_SCHEMA_URIS)
-def ref_file_schema(request):
-    return yaml.safe_load(asdf.get_config().resource_manager[request.param])
-
-
-@pytest.fixture(scope="session", params=[entry for entry in MANIFEST["tags"] if "/reference_files/" in entry["schema_uri"]])
-def ref_file_uris(request):
-    return request.param["tag_uri"], request.param["schema_uri"]
-
-
 @pytest.fixture(scope="session")
-def valid_tag_uris(manifest):
-    uris = {t["tag_uri"] for t in manifest["tags"]}
+def valid_tag_uris():
+    uris = {t["tag_uri"] for manifest in MANIFESTS for t in manifest["tags"]}
     uris.update(
         [
             "tag:stsci.edu:asdf/time/time-1.*",
@@ -58,6 +39,26 @@ def valid_tag_uris(manifest):
         ]
     )
     return uris
+
+
+@pytest.fixture(scope="session", params=SCHEMA_URIS)
+def schema_content(request):
+    return asdf.get_config().resource_manager[request.param]
+
+
+@pytest.fixture(scope="session", params=SCHEMA_URIS)
+def schema(request):
+    return yaml.safe_load(asdf.get_config().resource_manager[request.param])
+
+
+@pytest.fixture(scope="session", params=REF_FILE_TAG_DEFS)
+def ref_file_schema(request):
+    return yaml.safe_load(asdf.get_config().resource_manager[request.param["schema_uri"]])
+
+
+@pytest.fixture(scope="session", params=REF_FILE_TAG_DEFS)
+def ref_file_uris(request):
+    return request.param["tag_uri"], request.param["schema_uri"]
 
 
 def test_required_properties(schema):
@@ -73,8 +74,8 @@ def test_schema_style(schema_content):
     assert not any(line != line.rstrip() for line in schema_content.split(b"\n"))
 
 
-def test_property_order(schema, manifest):
-    is_tag_schema = schema["id"] in {t["schema_uri"] for t in manifest["tags"]}
+def test_property_order(schema):
+    is_tag_schema = schema["id"] in {t["schema_uri"] for t in TAG_DEFS}
 
     if is_tag_schema:
 
@@ -117,8 +118,8 @@ def test_required(schema):
     asdf.treeutil.walk(schema, callback)
 
 
-def test_flowstyle(schema, manifest):
-    is_tag_schema = schema["id"] in {t["schema_uri"] for t in manifest["tags"]}
+def test_flowstyle(schema):
+    is_tag_schema = schema["id"] in {t["schema_uri"] for t in TAG_DEFS}
 
     if is_tag_schema:
         found_flowstyle = False
