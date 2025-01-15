@@ -29,7 +29,6 @@ properties:
               The V2/V3 coordinates output units after the model is applied.
             tag: tag:stsci.edu:asdf/unit/unit-1.*
             enum: ["arcsec"]
-        required: [output_units, input_units]
       - $ref: asdf://stsci.edu/datamodels/roman/schemas/reference_files/ref_optical_element-1.0.0
   coordinate_distortion_transform:
     title: Distortion Transform Model
