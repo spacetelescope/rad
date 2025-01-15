@@ -6,6 +6,7 @@ import re
 from collections.abc import Mapping
 
 import asdf
+import asdf.treeutil
 import pytest
 import yaml
 from crds.config import is_crds_name
@@ -90,7 +91,7 @@ def test_property_order(schema, manifest):
                         "missing properties: " + missing_list + "\n"
                         "extra properties: " + extra_list
                     )
-                    assert False, message
+                    raise ValueError(message)
 
         asdf.treeutil.walk(schema, callback)
     else:
@@ -111,7 +112,7 @@ def test_required(schema):
             if not required_names.issubset(property_names):
                 missing_list = ", ".join(required_names - property_names)
                 message = "required references names that do not exist: " + missing_list
-                assert False, message
+                raise ValueError(message)
 
     asdf.treeutil.walk(schema, callback)
 
@@ -279,7 +280,8 @@ def test_varchar_length(uri):
     """
     schema = asdf.schema.load_schema(uri)
 
-    def callback(node, nvarchars={}):
+    def callback(node, nvarchars=None):
+        nvarchars = nvarchars or {}
         if not isinstance(node, dict):
             return
         if node.get("type", "") != "string":
@@ -292,5 +294,42 @@ def test_varchar_length(uri):
         v = int(m.group(1))
         assert "maxLength" in node, f"archive_catalog has nvarchar, schema {uri} is missing maxLength"
         assert node["maxLength"] == v, f"archive_catalog nvarchar does not match maxLength in schema {uri}"
+
+    asdf.treeutil.walk(schema, callback)
+
+
+@pytest.mark.parametrize("uri", SCHEMA_URIS)
+def test_ref_loneliness(uri):
+    """
+    An object with a $ref should contain no other items
+    """
+    schema = asdf.schema.load_schema(uri)
+
+    def callback(node):
+        if not isinstance(node, dict):
+            return
+        if "$ref" not in node:
+            return
+        assert len(node) == 1
+
+    asdf.treeutil.walk(schema, callback)
+
+
+@pytest.mark.parametrize("uri", SCHEMA_URIS)
+def test_absolute_ref(uri):
+    """
+    Test that all $ref are absolute URIs matching those registered with ASDF
+    """
+    schema = asdf.schema.load_schema(uri)
+    resources = asdf.config.get_config().resource_manager
+
+    def callback(node):
+        if not isinstance(node, dict):
+            return
+        if "$ref" not in node:
+            return
+
+        # Check that the $ref is a full URI registered with ASDF
+        assert node["$ref"] in resources
 
     asdf.treeutil.walk(schema, callback)

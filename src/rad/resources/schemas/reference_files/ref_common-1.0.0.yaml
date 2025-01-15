@@ -59,10 +59,11 @@ properties:
         type: string
         enum: [WFI]
       detector:
+        allOf:
+          - $ref: asdf://stsci.edu/datamodels/roman/schemas/wfi_detector-1.0.0
         title: Detector
         description: |
           The numbered WFI detector in the focal plane (e.g., WFI01 for SCA 01).
-        $ref: ../wfi_detector-1.0.0
     required: [name, detector]
 required: [reftype, author, description, pedigree, useafter, telescope, origin, instrument]
 ...

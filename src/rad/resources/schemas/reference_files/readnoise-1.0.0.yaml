@@ -11,12 +11,12 @@ type: object
 properties:
   meta:
     allOf:
-      - $ref: ref_common-1.0.0
+      - $ref: asdf://stsci.edu/datamodels/roman/schemas/reference_files/ref_common-1.0.0
       - type: object
         properties:
           reftype:
             enum: [READNOISE]
-      - $ref: ref_exposure_type-1.0.0
+      - $ref: asdf://stsci.edu/datamodels/roman/schemas/reference_files/ref_exposure_type-1.0.0
   data:
     title: Read Noise Data Array
     description: |

@@ -25,20 +25,15 @@
 import datetime
 import os
 import sys
+import tomllib
 from pathlib import Path
 
 # Ensure documentation examples are deterministically random.
 import numpy
-
-if sys.version_info < (3, 11):
-    import tomli as tomllib
-else:
-    import tomllib
-
 from importlib_metadata import distribution
 
 try:
-    numpy.random.seed(int(os.environ["SOURCE_DATE_EPOCH"]))
+    numpy.random.seed(int(os.environ["SOURCE_DATE_EPOCH"]))  # noqa: NPY002
 except KeyError:
     pass
 
@@ -59,12 +54,12 @@ configuration = conf["project"]
 # If your documentation needs a minimal Sphinx version, state it here.
 # needs_sphinx = '1.2'
 
-intersphinx_mapping["pypa-packaging"] = ("https://packaging.python.org/en/latest/", None)  # noqa: E501, F405
-intersphinx_mapping["asdf"] = ("https://asdf.readthedocs.io/en/latest/", None)  # noqa: E501, F405
-intersphinx_mapping["asdf-standard"] = ("https://asdf-standard.readthedocs.io/en/latest/", None)  # noqa: E501, F405
-intersphinx_mapping["asdf-astropy"] = ("https://asdf-astropy.readthedocs.io/en/latest/", None)  # noqa: E501, F405
-intersphinx_mapping["pytest"] = ("https://docs.pytest.org/en/latest/", None)  # noqa: E501, F405
-intersphinx_mapping["roman_datamodels"] = ("https://roman-datamodels.readthedocs.io/en/latest/", None)  # noqa: E501, F405
+intersphinx_mapping["pypa-packaging"] = ("https://packaging.python.org/en/latest/", None)  # noqa: F405
+intersphinx_mapping["asdf"] = ("https://asdf.readthedocs.io/en/latest/", None)  # noqa: F405
+intersphinx_mapping["asdf-standard"] = ("https://asdf-standard.readthedocs.io/en/latest/", None)  # noqa: F405
+intersphinx_mapping["asdf-astropy"] = ("https://asdf-astropy.readthedocs.io/en/latest/", None)  # noqa: F405
+intersphinx_mapping["pytest"] = ("https://docs.pytest.org/en/latest/", None)  # noqa: F405
+intersphinx_mapping["roman_datamodels"] = ("https://roman-datamodels.readthedocs.io/en/latest/", None)  # noqa: F405
 
 # To perform a Sphinx version check that needs to be more specific than
 # major.minor, call `check_sphinx_version("x.y.z")` here.
@@ -160,5 +155,48 @@ asdf_schema_path = "../src/rad/resources"
 # This is the prefix common to all schema IDs in this repository
 asdf_schema_standard_prefix = "schemas"
 asdf_schema_reference_mappings = [
+    (
+        "asdf://stsci.edu/datamodels/roman/tags/calibration_software_name-1.0.0",
+        "https://rad.readthedocs.io/en/latest/generated/schemas/tagged_scalars/calibration_software_name-1.0.0.html",
+    ),
+    (
+        "asdf://stsci.edu/datamodels/roman/tags/calibration_software_version-1.0.0",
+        "https://rad.readthedocs.io/en/latest/generated/schemas/tagged_scalars/calibration_software_version-1.0.0.html",
+    ),
+    (
+        "asdf://stsci.edu/datamodels/roman/tags/filename-1.0.0",
+        "https://rad.readthedocs.io/en/latest/generated/schemas/tagged_scalars/filename-1.0.0.html",
+    ),
+    (
+        "asdf://stsci.edu/datamodels/roman/tags/file_date-1.0.0",
+        "https://rad.readthedocs.io/en/latest/generated/schemas/tagged_scalars/file_date-1.0.0.html",
+    ),
+    (
+        "asdf://stsci.edu/datamodels/roman/tags/model_type-1.0.0",
+        "https://rad.readthedocs.io/en/latest/generated/schemas/tagged_scalars/model_type-1.0.0.html",
+    ),
+    (
+        "asdf://stsci.edu/datamodels/roman/tags/origin-1.0.0",
+        "https://rad.readthedocs.io/en/latest/generated/schemas/tagged_scalars/origin-1.0.0.html",
+    ),
+    (
+        "asdf://stsci.edu/datamodels/roman/tags/prd_version-1.0.0",
+        "https://rad.readthedocs.io/en/latest/generated/schemas/tagged_scalars/prd_version-1.0.0.html",
+    ),
+    (
+        "asdf://stsci.edu/datamodels/roman/tags/product_type-1.0.0",
+        "https://rad.readthedocs.io/en/latest/generated/schemas/tagged_scalars/product_type-1.0.0.html",
+    ),
+    (
+        "asdf://stsci.edu/datamodels/roman/tags/sdf_software_version-1.0.0",
+        "https://rad.readthedocs.io/en/latest/generated/schemas/tagged_scalars/sdf_software_version-1.0.0.html",
+    ),
+    (
+        "asdf://stsci.edu/datamodels/roman/tags/telescope-1.0.0",
+        "https://rad.readthedocs.io/en/latest/generated/schemas/tagged_scalars/telescope-1.0.0.html",
+    ),
     ("asdf://stsci.edu/datamodels/roman/tags/", "https://rad.readthedocs.io/en/latest/generated/schemas/"),
+    ("asdf://stsci.edu/datamodels/roman/schemas/", "https://rad.readthedocs.io/en/latest/generated/schemas/"),
+    ("http://stsci.edu/schemas/asdf/", "https://asdf-standard.readthedocs.io/en/latest/generated/stsci.edu/asdf/"),
+    ("tag:stsci.edu:gwcs/wcs-*", "https://asdf-wcs-schemas.readthedocs.io/en/latest/generated/gwcs/wcs-1.0.0.html"),
 ]

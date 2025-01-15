@@ -11,12 +11,13 @@ properties:
     type: object
     properties:
       type:
+        allOf:
+          - $ref: asdf://stsci.edu/datamodels/roman/schemas/exposure_type-1.0.0
         title: WFI Mode
         description: |
           The type of data taken with the WFI. Allowed values are WFI_IMAGE for
           imaging mode, WFI_GRISM and WFI_PRISM for spectral mode, WFI_DARK for
           dark exposures, WFI_FLAT for flat fields, and WFI_WFSC.
-        $ref: ../exposure_type-1.0.0
       p_exptype:
         title: WFI Mode for CRDS
         description: |

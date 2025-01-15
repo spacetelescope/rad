@@ -11,7 +11,7 @@ type: object
 properties:
   meta:
     allOf:
-      - $ref: ref_common-1.0.0
+      - $ref: asdf://stsci.edu/datamodels/roman/schemas/reference_files/ref_common-1.0.0
       - type: object
         properties:
           reftype:
@@ -30,7 +30,7 @@ properties:
             tag: tag:stsci.edu:asdf/unit/unit-1.*
             enum: ["arcsec"]
         required: [output_units, input_units]
-      - $ref: ref_optical_element-1.0.0
+      - $ref: asdf://stsci.edu/datamodels/roman/schemas/reference_files/ref_optical_element-1.0.0
   coordinate_distortion_transform:
     title: Distortion Transform Model
     description: |

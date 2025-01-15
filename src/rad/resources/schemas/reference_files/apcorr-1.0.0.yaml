@@ -11,7 +11,7 @@ type: object
 properties:
   meta:
     allOf:
-      - $ref: ref_common-1.0.0
+      - $ref: asdf://stsci.edu/datamodels/roman/schemas/reference_files/ref_common-1.0.0
       - type: object
         properties:
           reftype:
@@ -27,39 +27,49 @@ properties:
             title: Aperture Corrections
             description: The aperture correction for each enclosed energy
                 fraction, corresponding to 1 / ee_fractions.
-            tag: tag:stsci.edu:asdf/core/ndarray-1.*
-            datatype: float64
-            exact_datatype: true
-            ndim: 1
+            anyOf:
+              - tag: tag:stsci.edu:asdf/core/ndarray-1.*
+                datatype: float64
+                exact_datatype: true
+                ndim: 1
+              - type: "null"
           ee_fractions:
             title: Enclosed Energy Fractions
             description: Fractions of the enclosed energy of the PSF at which
                 to estimate the aperture correction and enclosed energy radii.
-            tag: tag:stsci.edu:asdf/core/ndarray-1.*
-            datatype: float64
-            exact_datatype: true
-            ndim: 1
+            anyOf:
+              - tag: tag:stsci.edu:asdf/core/ndarray-1.*
+                datatype: float64
+                exact_datatype: true
+                ndim: 1
+              - type: "null"
           ee_radii:
             title: Enclosed Energy Radii
             description: Radius, in pixels, within which the enclosed energy
                 fractions are met. The indexing matches that of
                   "ee_fractions".
-            tag: tag:stsci.edu:asdf/core/ndarray-1.*
-            datatype: float64
-            exact_datatype: true
-            ndim: 1
+            anyOf:
+              - tag: tag:stsci.edu:asdf/core/ndarray-1.*
+                datatype: float64
+                exact_datatype: true
+                ndim: 1
+              - type: "null"
           sky_background_rin:
             title: Inner Radius for the Sky Background
             description: Inner radius, in pixels, to use when estimating the
                 local sky background within an annulus between this
                 radius and "sky_background_rout".
-            type: number
+            anyOf:
+              - type: number
+              - type: "null"
           sky_background_rout:
             title: Outer Radius for the Sky Background
             description: Outer radius, in pixels, to use when estimating the
                 local sky background within an annulus between this
                 radius and "sky_background_rin".
-            type: number
+            anyOf:
+              - type: number
+              - type: "null"
         required: [ap_corrections, ee_fractions, ee_radii, sky_background_rin, sky_background_rout]
 required: [meta, data]
 flowStyle: block

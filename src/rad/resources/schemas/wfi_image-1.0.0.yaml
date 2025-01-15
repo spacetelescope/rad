@@ -12,7 +12,7 @@ type: object
 properties:
   meta:
     allOf:
-      - $ref: common-1.0.0
+      - $ref: asdf://stsci.edu/datamodels/roman/schemas/common-1.0.0
       - type: object
         properties:
           background:
@@ -25,8 +25,8 @@ properties:
             tag: asdf://stsci.edu/datamodels/roman/tags/outlier_detection-1.0.0
           photometry:
             tag: asdf://stsci.edu/datamodels/roman/tags/photometry-1.0.0
-          source_detection:
-            tag: asdf://stsci.edu/datamodels/roman/tags/source_detection-1.0.0
+          source_catalog:
+            tag: asdf://stsci.edu/datamodels/roman/tags/source_catalog-1.0.0
           statistics:
             tag: asdf://stsci.edu/datamodels/roman/tags/statistics-1.0.0
           wcs:
