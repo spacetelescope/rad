@@ -1,3 +1,44 @@
+0.23.0 (2025-01-16)
+===================
+
+Bug Fixes
+---------
+
+- Move schema references under allOf combiners if the schema contains other
+  items. (`#525 <https://github.com/spacetelescope/rad/issues/525>`_)
+
+
+Documentation
+-------------
+
+- Updates the RAD documentation to match the current schemas and fixes broken
+  links. (`#514 <https://github.com/spacetelescope/rad/issues/514>`_)
+
+
+New Features
+------------
+
+- Remove units from the reference file schemas. (`#490
+  <https://github.com/spacetelescope/rad/issues/490>`_)
+- Rename source_detection to source_catalog to match step name in romancal.
+  (`#513 <https://github.com/spacetelescope/rad/issues/513>`_)
+- Update all ``$ref`` so that they use absolute URIs rather than relative URIs.
+  (`#527 <https://github.com/spacetelescope/rad/issues/527>`_)
+
+
+Misc
+----
+
+- Changed the db type of `vparity`. (`#508
+  <https://github.com/spacetelescope/rad/issues/508>`_)
+- Remove upper pin for asdf. (`#510
+  <https://github.com/spacetelescope/rad/issues/510>`_)
+- Added null values to allowed APCORR and ABVEGAOFFSET keyword values. (`#516
+  <https://github.com/spacetelescope/rad/issues/516>`_)
+- Bump min Python to 3.11 per SPEC 0. (`#520
+  <https://github.com/spacetelescope/rad/issues/520>`_)
+
+
 0.22.0 (2024-11-15)
 ===================
 

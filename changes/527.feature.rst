@@ -1,1 +1,0 @@
-Update all ``$ref`` so that they use absolute URIs rather than relative URIs.
