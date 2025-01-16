@@ -15,6 +15,10 @@ properties:
     allOf:
       - $ref: asdf://stsci.edu/datamodels/roman/schemas/reference_files/ref_common-1.0.0
       - type: object
+
+        input_units: "DN"
+        output_units: "DN"
+
         properties:
           reftype:
             type: string
