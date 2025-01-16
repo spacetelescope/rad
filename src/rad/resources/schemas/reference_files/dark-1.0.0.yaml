@@ -20,21 +20,6 @@ properties:
           exposure:
             type: object
             properties:
-              ngroups:
-                title: Number of Resultants
-                description: |
-                  The number of resultants averaged according to
-                  Multi-Accumulation (MA) Table read pattern.
-                type: integer
-              nframes:
-                title: Number of frames per resultant # should be removed
-                type: integer
-              groupgap:
-                title: Number of Skips Between Resultants
-                description: |
-                  The number of frames skipped between resultants according to
-                  MA Table read pattern.
-                type: integer
               ma_table_name:
                 title: Multi-Accumulation Table Name
                 description: |
@@ -48,7 +33,7 @@ properties:
                   Table that keeps the same name will have a new
                   ma_table_number.
                 type: integer
-            required: [ngroups, nframes, groupgap, ma_table_name, ma_table_number]
+            required: [ma_table_name, ma_table_number]
         required: [exposure]
       - $ref: asdf://stsci.edu/datamodels/roman/schemas/reference_files/ref_exposure_type-1.0.0
       - $ref: asdf://stsci.edu/datamodels/roman/schemas/reference_files/ref_optical_element-1.0.0
@@ -57,16 +42,11 @@ properties:
     description: |
       The dark current array represents the integrated number of counts due to
       the accumulation of dark current electrons in the pixels.
-    tag: tag:stsci.edu:asdf/unit/quantity-1.*
-    properties:
-      value:
-        tag: tag:stsci.edu:asdf/core/ndarray-1.*
-        datatype: float32
-        exact_datatype: true
-        ndim: 3
-      unit:
-        tag: tag:astropy.org:astropy/units/unit-1.*
-        enum: ["DN"]
+    tag: tag:stsci.edu:asdf/core/ndarray-1.*
+    datatype: float32
+    exact_datatype: true
+    ndim: 3
+    unit: DN
   dq:
     title: 2-D Data Quality Array
     description: |
@@ -81,31 +61,21 @@ properties:
       The dark current rate array represents the slope of the integrated number
       of counts due to the accumulation of dark current electrons in the pixels
       calculated from slope fitting the Dark Current Array.
-    tag: tag:stsci.edu:asdf/unit/quantity-1.*
-    properties:
-      value:
-        tag: tag:stsci.edu:asdf/core/ndarray-1.*
-        datatype: float32
-        exact_datatype: true
-        ndim: 2
-      unit:
-        tag: tag:astropy.org:astropy/units/unit-1.*
-        enum: ["DN / s"]
+    tag: tag:stsci.edu:asdf/core/ndarray-1.*
+    datatype: float32
+    exact_datatype: true
+    ndim: 2
+    unit: DN / s
   dark_slope_error:
     title: Dark Current Rate Uncertainty Array
     description: |
       The uncertainty calculated from the slope fitting of the Dark Current
       Array.
-    tag: tag:stsci.edu:asdf/unit/quantity-1.*
-    properties:
-      value:
-        tag: tag:stsci.edu:asdf/core/ndarray-1.*
-        datatype: float32
-        exact_datatype: true
-        ndim: 2
-      unit:
-        tag: tag:astropy.org:astropy/units/unit-1.*
-        enum: ["DN / s"]
+    tag: tag:stsci.edu:asdf/core/ndarray-1.*
+    datatype: float32
+    exact_datatype: true
+    ndim: 2
+    unit: DN / s
 required: [meta, data, dq, dark_slope, dark_slope_error]
 flowStyle: block
 propertyOrder: [meta, data, dq, dark_slope, dark_slope_error]
