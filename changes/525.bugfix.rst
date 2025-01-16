@@ -1,1 +1,0 @@
-Move schema references under allOf combiners if the schema contains other items.

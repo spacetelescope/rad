@@ -30,7 +30,7 @@ file = "LICENSE"
 test = [
     "pytest>=7.0.0",
     "pytest-doctestplus>=1.2.1",
-    "crds>=11.16.16",
+    "crds>=12.0.4",
 ]
 docs = [
     "sphinx",

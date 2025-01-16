@@ -1,1 +1,0 @@
-Updates the RAD documentation to match the current schemas and fixes broken links.

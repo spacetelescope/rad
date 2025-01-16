@@ -13,26 +13,17 @@ properties:
     allOf:
       - $ref: asdf://stsci.edu/datamodels/roman/schemas/reference_files/ref_common-1.0.0
       - type: object
+
+        input_units: "pixel"
+        output_units: "arcsec"
+
         properties:
           reftype:
             type: string
             enum: [DISTORTION]
-          input_units:
-            title: Input Model Units
-            description: |
-              The pixel input units of the detector coordinate model.
-            tag: tag:stsci.edu:asdf/unit/unit-1.*
-            enum: ["pixel"]
-          output_units:
-            title: Output Model Units
-            description: |
-              The V2/V3 coordinates output units after the model is applied.
-            tag: tag:stsci.edu:asdf/unit/unit-1.*
-            enum: ["arcsec"]
-        required: [output_units, input_units]
       - $ref: asdf://stsci.edu/datamodels/roman/schemas/reference_files/ref_optical_element-1.0.0
   coordinate_distortion_transform:
-    title: Distortion Transform Model
+    title: Distortion Transform Model with inputs in "pixel" and outputs in "arcsec"
     description: |
       The astropy.modeling.Model instance of of the distortion transform model.
     type: object
