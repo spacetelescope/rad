@@ -22,6 +22,7 @@ WFI_OPTICAL_ELEMENTS = list(
 )
 EXPOSURE_TYPE_ELEMENTS = list(asdf.schema.load_schema("asdf://stsci.edu/datamodels/roman/schemas/exposure_type-1.0.0")["enum"])
 EXPECTED_COMMON_REFERENCE = {"$ref": "asdf://stsci.edu/datamodels/roman/schemas/reference_files/ref_common-1.0.0"}
+METADATA_FORCING_REQUIRED = ["archive_catalog", "sdf"]
 
 
 @pytest.fixture(scope="session", params=SCHEMA_URIS)
@@ -105,6 +106,10 @@ def test_property_order(schema, manifest):
 
 
 def test_required(schema):
+    """
+    Checks that all properties are required if there is a required list.
+    """
+
     def callback(node):
         if isinstance(node, Mapping) and "required" in node:
             assert node.get("type") == "object"
@@ -114,6 +119,37 @@ def test_required(schema):
                 missing_list = ", ".join(required_names - property_names)
                 message = "required references names that do not exist: " + missing_list
                 raise ValueError(message)
+
+    asdf.treeutil.walk(schema, callback)
+
+
+def test_metadata_force_required(schema):
+    """
+    Test that if certain properties have certain metadata entries, that they are in a required list.
+    """
+    xfail_uris = (
+        "asdf://stsci.edu/datamodels/roman/schemas/tvac/groundtest-1.0.0",
+        "asdf://stsci.edu/datamodels/roman/schemas/tvac/ref_file-1.0.0",
+        "asdf://stsci.edu/datamodels/roman/schemas/fps/ref_file-1.0.0",
+    )
+    if schema["id"] in xfail_uris:
+        pytest.xfail(
+            reason=f"{schema['id']} is not being altered to ensure required lists for archive metadata, due to it being in either tvac or fps."
+        )
+
+    def callback(node):
+        if isinstance(node, Mapping) and "properties" in node:
+            for prop_name, prop in node["properties"].items():
+                # Test that if a subnode has a required list, that the parent has a required list
+                if isinstance(prop, Mapping) and "required" in prop:
+                    assert "required" in node
+                    assert prop_name in node["required"]
+
+                # Test that if a subnode has certain metadata entries, that the parent has a required list
+                for metadata in METADATA_FORCING_REQUIRED:
+                    if isinstance(prop, Mapping) and metadata in prop:
+                        assert "required" in node, f"metadata {metadata} in {prop_name} requires required list"
+                        assert prop_name in node["required"]
 
     asdf.treeutil.walk(schema, callback)
 
