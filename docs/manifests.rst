@@ -9,4 +9,3 @@ The ``tag`` manifests:
     :standard_prefix: manifests
 
     datamodels-1.0
-    datamodels-2.0.0
