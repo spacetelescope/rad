@@ -15,31 +15,30 @@ from .conftest import MANIFESTS
 
 SCHEMA_URI_PREFIX = "asdf://stsci.edu/datamodels/roman/schemas/"
 METASCHEMA_URI = "asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.0.0"
-SCHEMA_URIS = [u for u in asdf.get_config().resource_manager if u.startswith(SCHEMA_URI_PREFIX) and u != METASCHEMA_URI]
-TAG_DEFS = [tag_def for manifest in MANIFESTS for tag_def in manifest["tags"]]
-REF_FILE_TAG_DEFS = [tag_def for tag_def in TAG_DEFS if "/reference_files" in tag_def["schema_uri"]]
-WFI_OPTICAL_ELEMENTS = list(
+SCHEMA_URIS = tuple(u for u in asdf.get_config().resource_manager if u.startswith(SCHEMA_URI_PREFIX) and u != METASCHEMA_URI)
+TAG_DEFS = tuple(tag_def for manifest in MANIFESTS for tag_def in manifest["tags"])
+REF_FILE_TAG_DEFS = tuple(tag_def for tag_def in TAG_DEFS if "/reference_files" in tag_def["schema_uri"])
+WFI_OPTICAL_ELEMENTS = tuple(
     asdf.schema.load_schema("asdf://stsci.edu/datamodels/roman/schemas/wfi_optical_element-1.0.0")["enum"]
 )
-EXPOSURE_TYPE_ELEMENTS = list(asdf.schema.load_schema("asdf://stsci.edu/datamodels/roman/schemas/exposure_type-1.0.0")["enum"])
+EXPOSURE_TYPE_ELEMENTS = tuple(asdf.schema.load_schema("asdf://stsci.edu/datamodels/roman/schemas/exposure_type-1.0.0")["enum"])
 EXPECTED_COMMON_REFERENCE = {"$ref": "asdf://stsci.edu/datamodels/roman/schemas/reference_files/ref_common-1.0.0"}
-METADATA_FORCING_REQUIRED = ["archive_catalog", "sdf"]
+METADATA_FORCING_REQUIRED = ("archive_catalog", "sdf")
+ALLOWED_SCHEMA_TAG_VALIDATORS = (
+    "tag:stsci.edu:asdf/time/time-1.*",
+    "tag:stsci.edu:asdf/core/ndarray-1.*",
+    "tag:stsci.edu:asdf/unit/quantity-1.*",
+    "tag:stsci.edu:asdf/unit/unit-1.*",
+    "tag:astropy.org:astropy/units/unit-1.*",
+    "tag:astropy.org:astropy/table/table-1.*",
+    "tag:stsci.edu:gwcs/wcs-*",
+)
 
 
 @pytest.fixture(scope="session")
 def valid_tag_uris():
     uris = {t["tag_uri"] for manifest in MANIFESTS for t in manifest["tags"]}
-    uris.update(
-        [
-            "tag:stsci.edu:asdf/time/time-1.*",
-            "tag:stsci.edu:asdf/core/ndarray-1.*",
-            "tag:stsci.edu:asdf/unit/quantity-1.*",
-            "tag:stsci.edu:asdf/unit/unit-1.*",
-            "tag:astropy.org:astropy/units/unit-1.*",
-            "tag:astropy.org:astropy/table/table-1.*",
-            "tag:stsci.edu:gwcs/wcs-*",
-        ]
-    )
+    uris.update(ALLOWED_SCHEMA_TAG_VALIDATORS)
     return uris
 
 
