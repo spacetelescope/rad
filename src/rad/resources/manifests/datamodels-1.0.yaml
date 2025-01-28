@@ -513,8 +513,8 @@ tags:
   title: MSOS Stack Level 3 Schema
   description: |-
     Level 3 schema for SSC's MSOS stack products
-- tag_uri: asdf://stsci.edu/datamodels/roman/tags/reference_files/roman_skycells-1.0.0
-  schema_uri: asdf://stsci.edu/datamodels/roman/schemas/reference_files/roman_skycells-1.0.0
+- tag_uri: asdf://stsci.edu/datamodels/roman/tags/reference_files/skycells-1.0.0
+  schema_uri: asdf://stsci.edu/datamodels/roman/schemas/reference_files/skycells-1.0.0
   title: Schema for the skycell definitions
   description: |-
     This file contains definitions for all the skycells that cover the entire celestial sphere
