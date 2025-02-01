@@ -14,7 +14,7 @@ on:
 
 jobs:
   test:
-    uses: OpenAstronomy/github-actions-workflows/.github/workflows/tox.yml@d68193b68216da64eafaa618f53c59f5d271c56e  # v1.14.0
+    uses: OpenAstronomy/github-actions-workflows/.github/workflows/tox.yml@8c0fde6f7e926df6ed7057255d29afa9c1ad5320  # v1.16.0
     with:
       envs: |
         - linux: py311-xdist
@@ -23,7 +23,7 @@ jobs:
         - linux: py313-xdist
 
   roman_datamodels:
-    uses: OpenAstronomy/github-actions-workflows/.github/workflows/tox.yml@d68193b68216da64eafaa618f53c59f5d271c56e  # v1.14.0
+    uses: OpenAstronomy/github-actions-workflows/.github/workflows/tox.yml@8c0fde6f7e926df6ed7057255d29afa9c1ad5320  # v1.16.0
     with:
       envs: |
         - linux: roman_datamodels-xdist
