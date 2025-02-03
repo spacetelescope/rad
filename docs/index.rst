@@ -35,6 +35,7 @@ Developer Resources
   :maxdepth: 1
 
   creating.rst
+  versioning.rst
   contributing.rst
   changes.rst
 

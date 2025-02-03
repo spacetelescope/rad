@@ -13,44 +13,42 @@ properties:
   meta:
     allOf:
       - $ref: asdf://stsci.edu/datamodels/roman/schemas/common-1.0.0
-      - image_list:
-          type: string
+      - type: object
+        properties:
+          image_list:
+              type: string
   data:
     title: Flux Data
     description: |
       Flux array of stacked image data.
-    value:
-      tag: tag:stsci.edu:asdf/core/ndarray-1.*
-      datatype: float64
-      exact_datatype: true
-      ndim: 2
+    tag: tag:stsci.edu:asdf/core/ndarray-1.*
+    datatype: float64
+    exact_datatype: true
+    ndim: 2
   uncertainty:
     title: Uncertainty Data
     description: |
       Uncertainty array of stacked image data.
-    value:
-      tag: tag:stsci.edu:asdf/core/ndarray-1.*
-      datatype: float64
-      exact_datatype: true
-      ndim: 2
+    tag: tag:stsci.edu:asdf/core/ndarray-1.*
+    datatype: float64
+    exact_datatype: true
+    ndim: 2
   mask:
     title: Mask Data
     description: |
       Mask array of stacked image data.
-    value:
-      tag: tag:stsci.edu:asdf/core/ndarray-1.*
-      datatype: uint8
-      exact_datatype: true
-      ndim: 2
+    tag: tag:stsci.edu:asdf/core/ndarray-1.*
+    datatype: uint8
+    exact_datatype: true
+    ndim: 2
   coverage:
     title: Coverage Data
     description: |
       Coverage array of stacked image data.
-    value:
-      tag: tag:stsci.edu:asdf/core/ndarray-1.*
-      datatype: uint8
-      exact_datatype: true
-      ndim: 2
+    tag: tag:stsci.edu:asdf/core/ndarray-1.*
+    datatype: uint8
+    exact_datatype: true
+    ndim: 2
 propertyOrder: [meta, data, uncertainty, mask, coverage]
 flowStyle: block
 required: [meta, data, uncertainty, mask, coverage]

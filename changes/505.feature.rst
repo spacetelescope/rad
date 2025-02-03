@@ -1,0 +1,2 @@
+Require that ``archive_catalog`` and ``sdf`` marked keywords are in the ``required``
+list for the object containing those keywords.

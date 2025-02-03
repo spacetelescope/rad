@@ -171,5 +171,6 @@ properties:
     archive_catalog:
       datatype: nvarchar(120)
       destination: [ScienceRefData.r_refpix, GuideWindow.r_refpix, WFICommon.r_refpix]
+required: [crds, dark, distortion, mask, flat, gain, readnoise, linearity, inverse_linearity, photom, area, saturation, refpix]
 flowStyle: block
 ...
