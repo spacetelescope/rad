@@ -3,7 +3,7 @@
 $schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.0.0
 id: asdf://stsci.edu/datamodels/roman/schemas/reference_files/skycells-1.0.0
 
-title: Skycells File Schema
+title: Skycells Reference File Schema
 
 datamodel_name: SkycellsRefModel
 
