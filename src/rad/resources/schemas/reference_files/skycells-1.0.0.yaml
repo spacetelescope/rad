@@ -133,7 +133,7 @@ properties:
         byteorder: little
       - name: skycell_end
         datatype: int32
-        byteorder: littleß
+        byteorder: little
     exact_datatype: true
   skycells:
     tag: tag:stsci.edu:asdf/core/ndarray-1.*
