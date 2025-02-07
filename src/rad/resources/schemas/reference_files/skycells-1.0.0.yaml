@@ -79,7 +79,7 @@ properties:
               Within a projection region, skycells are tiled on the same global pixel grid;
               this value indicates how many pixels are overlapped in all directions in this tiling.
             type: integer
-          plate_scale:
+          pixel_scale:
             title: The size of a pixel at the tangent point in arcseconds
             description: |
               The size of the pixel at the tangent point as projected on the sky in linear pixels for
