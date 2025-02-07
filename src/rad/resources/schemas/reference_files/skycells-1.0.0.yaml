@@ -133,16 +133,7 @@ properties:
         byteorder: little
       - name: skycell_end
         datatype: int32
-        byteorder: little
-      - name: nxy_skycell
-        datatype: int32
-        byteorder: little
-      - name: skycell_border_pixels
-        datatype: int32
-        byteorder: little
-      - name: pixel_scale
-        datatype: float32
-        byteorder: little
+        byteorder: littleß
     exact_datatype: true
   skycells:
     tag: tag:stsci.edu:asdf/core/ndarray-1.*
