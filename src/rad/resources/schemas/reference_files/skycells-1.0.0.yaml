@@ -1,0 +1,190 @@
+%YAML 1.1
+---
+$schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.0.0
+id: asdf://stsci.edu/datamodels/roman/schemas/reference_files/skycells-1.0.0
+
+title: Skycells Reference File Schema
+
+datamodel_name: SkycellsRefModel
+
+type: object
+properties:
+  meta:
+    title: Metadata for Skycells definitions reference file
+    description: |
+      The necessary metadata for the Skycells reference file
+    allOf:
+      - type: object
+        properties:
+          reftype:
+            title: Reference File Type
+            description: |
+              The capitalized string of the reference file type (e.g., DARK).
+            type: string
+            enum: [SKYCELLS]
+          pedigree:
+            title: Pedigree
+            description: |
+              The pedigree of the reference file (e.g., GROUND).
+            type: string
+            enum: [GROUND]
+          description:
+            title: Description
+            description: |
+              A string describing the reference file, its intended usage, etc.
+            type: string
+          author:
+            title: Author
+            description: |
+              The author of who or what created the reference file.
+            type: string
+          useafter:
+            title: Use After Date
+            description: |
+              The use after date of the reference file for CRDS best references
+              matching.
+            tag: tag:stsci.edu:asdf/time/time-1.*
+          telescope:
+            title: Telescope
+            description: |
+              The telescope data used to select reference files, e.g. ROMAN for the
+              Nancy Grace Roman Space Telescope.
+            anyOf:
+              - tag: asdf://stsci.edu/datamodels/roman/tags/telescope-1.0.0
+              - type: string
+                enum: [ROMAN]
+          origin:
+            title: Organization
+            description: |
+              The organization responsible for creating the file, e.g. STSCI for the
+              Space Telescope Science Institute.
+            type: string
+          instrument:
+            type: object
+            properties:
+              name:
+                title: Instrument
+                description: |
+                  The Wide Field Instrument (WFI).
+                type: string
+                enum: [WFI]
+          nxy_skycell:
+            title: Number of pixels in both x and y dimensions
+            description: |
+              The shape of the skycell is (nxy_skycell, nxy_skycell)
+            type: integer
+          skycell_border_pixels:
+            title: The number of pixels in all directions that overlap with the adjacent skycell.
+            description: |
+              Within a projection region, skycells are tiled on the same global pixel grid;
+              this value indicates how many pixels are overlapped in all directions in this tiling.
+            type: integer
+          pixel_scale:
+            title: The size of a pixel at the tangent point in arcseconds
+            description: |
+              The size of the pixel at the tangent point as projected on the sky in linear pixels for
+              both directions (e.g., it is assumed equal for both directions).
+            type: number
+  projection_regions:
+    tag: tag:stsci.edu:asdf/core/ndarray-1.*
+    title: Information about each projection region
+    description: |
+      A structured array that contains relevant information about all the projection regions that
+      cover the entire celestial sphere.
+    datatype:
+      - name: index
+        datatype: int32
+        byteorder: little
+      - name: ra_tangent
+        datatype: float64
+        byteorder: little
+      - name: dec_tangent
+        datatype: float64
+        byteorder: little
+      - name: ra_min
+        datatype: float64
+        byteorder: little
+      - name: ra_max
+        datatype: float64
+        byteorder: little
+      - name: dec_min
+        datatype: float64
+        byteorder: little
+      - name: dec_max
+        datatype: float64
+        byteorder: little
+      - name: orientat
+        datatype: float32
+        byteorder: little
+      - name: x_tangent
+        datatype: float64
+        byteorder: little
+      - name: y_tangent
+        datatype: float64
+        byteorder: little
+      - name: nx
+        datatype: int32
+        byteorder: little
+      - name: ny
+        datatype: int32
+        byteorder: little
+      - name: skycell_start
+        datatype: int32
+        byteorder: little
+      - name: skycell_end
+        datatype: int32
+        byteorder: little
+    exact_datatype: true
+  skycells:
+    tag: tag:stsci.edu:asdf/core/ndarray-1.*
+    title: Information about all skycells
+    description: |
+      Relevant information about all skycells that have been defined to cover the celestial sphere.
+    datatype:
+      - name: name
+        datatype: [ucs4, 16]
+        byteorder: little
+      - name: ra_center
+        datatype: float64
+        byteorder: little
+      - name: dec_center
+        datatype: float64
+        byteorder: little
+      - name: orientat
+        datatype: float32
+        byteorder: little
+      - name: x_tangent
+        datatype: float64
+        byteorder: little
+      - name: y_tangent
+        datatype: float64
+        byteorder: little
+      - name: ra_corn1
+        datatype: float64
+        byteorder: little
+      - name: dec_corn1
+        datatype: float64
+        byteorder: little
+      - name: ra_corn2
+        datatype: float64
+        byteorder: little
+      - name: dec_corn2
+        datatype: float64
+        byteorder: little
+      - name: ra_corn3
+        datatype: float64
+        byteorder: little
+      - name: dec_corn3
+        datatype: float64
+        byteorder: little
+      - name: ra_corn4
+        datatype: float64
+        byteorder: little
+      - name: dec_corn4
+        datatype: float64
+        byteorder: little
+    exact_datatype: true
+required: [meta, projection_regions, skycells]
+flowStyle: block
+propertyOrder: [meta, projection_regions, skycells]
+...
