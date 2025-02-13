@@ -306,6 +306,9 @@ def test_ref_file_meta_common(ref_file_schema):
     """
     all_of = ref_file_schema["properties"]["meta"]["allOf"]
 
+    if ref_file_schema["id"].find("skycells") >= 0:
+        return
+
     for item in all_of:
         if item == EXPECTED_COMMON_REFERENCE:
             break

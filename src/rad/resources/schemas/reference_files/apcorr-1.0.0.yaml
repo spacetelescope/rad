@@ -28,32 +28,32 @@ properties:
             description: The aperture correction for each enclosed energy
                 fraction, corresponding to 1 / ee_fractions.
             anyOf:
+              - type: "null"
               - tag: tag:stsci.edu:asdf/core/ndarray-1.*
                 datatype: float64
                 exact_datatype: true
                 ndim: 1
-              - type: "null"
           ee_fractions:
             title: Enclosed Energy Fractions
             description: Fractions of the enclosed energy of the PSF at which
                 to estimate the aperture correction and enclosed energy radii.
             anyOf:
+              - type: "null"
               - tag: tag:stsci.edu:asdf/core/ndarray-1.*
                 datatype: float64
                 exact_datatype: true
                 ndim: 1
-              - type: "null"
           ee_radii:
             title: Enclosed Energy Radii
             description: Radius, in pixels, within which the enclosed energy
                 fractions are met. The indexing matches that of
                   "ee_fractions".
             anyOf:
+              - type: "null"
               - tag: tag:stsci.edu:asdf/core/ndarray-1.*
                 datatype: float64
                 exact_datatype: true
                 ndim: 1
-              - type: "null"
           sky_background_rin:
             title: Inner Radius for the Sky Background
             description: Inner radius, in pixels, to use when estimating the
