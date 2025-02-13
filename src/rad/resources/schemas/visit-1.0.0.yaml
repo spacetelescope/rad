@@ -38,7 +38,7 @@ properties:
         sdf:
           special_processing: VALUE_REQUIRED
           source:
-            origin: TBD
+            origin: PSS:dms_visit.subpixel_dither_type
         maxLength: 100
         archive_catalog:
           datatype: nvarchar(100)
