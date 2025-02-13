@@ -14,7 +14,7 @@ properties:
     sdf:
       special_processing: VALUE_REQUIRED
       source:
-        origin: PSS:dms_program.title
+        origin: PSS:dms_visit.template
     maxLength: 200
     archive_catalog:
       datatype: nvarchar(200)

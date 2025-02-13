@@ -47,7 +47,7 @@ properties:
     sdf:
       special_processing: VALUE_REQUIRED
       source:
-        origin: TBD
+        origin: PSS:dms_visit.optical_element
     maxLength: 20
     archive_catalog:
       datatype: nvarchar(20)
