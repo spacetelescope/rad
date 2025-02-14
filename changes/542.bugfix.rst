@@ -1,1 +1,0 @@
-Reorder anyOf items in apcorr schema to work around asdf bug.

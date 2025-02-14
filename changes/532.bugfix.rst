@@ -1,1 +1,0 @@
-Fix some inconsistencies in the ``msos_step`` and ``sky_background`` schemas.
