@@ -18,9 +18,11 @@ jobs:
     with:
       envs: |
         - linux: py311-xdist
-        - linux: py312-xdist-cov
+        - linux: py312-xdist
+        # `tox` does not currently respect `requires-python` versions when creating testing environments;
+        # if this breaks, add an upper pin to `requires-python` and revert this py3 to the latest working version
+        - linux: py3-cov-xdist
           coverage: codecov
-        - linux: py313-xdist
 
   roman_datamodels:
     uses: OpenAstronomy/github-actions-workflows/.github/workflows/tox.yml@8c0fde6f7e926df6ed7057255d29afa9c1ad5320  # v1.16.0
