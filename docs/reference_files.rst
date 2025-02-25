@@ -8,11 +8,11 @@ Schemas used in Nancy Grace Roman Space Telescope Reference Files:
 .. asdf-autoschemas::
     :standard_prefix: schemas/reference_files
 
-    abvegaoffset-1.0.0.yaml
-    apcorr-1.0.0.yaml
+    abvegaoffset-1.0.0
+    apcorr-1.0.0
     dark-1.0.0
     distortion-1.0.0
-    epsf-1.0.0.yaml
+    epsf-1.0.0
     flat-1.0.0
     gain-1.0.0
     inverselinearity-1.0.0
@@ -26,6 +26,6 @@ Schemas used in Nancy Grace Roman Space Telescope Reference Files:
     ref_optical_element-1.0.0
     refpix-1.0.0
     saturation-1.0.0
-    skycells-1.0.0.yaml
+    skycells-1.0.0
     superbias-1.0.0
     wfi_img_photom-1.0.0
