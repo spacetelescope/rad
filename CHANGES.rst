@@ -1,3 +1,40 @@
+0.23.1 (2025-02-14)
+===================
+
+Bug Fixes
+---------
+
+- Fix some inconsistencies in the ``msos_step`` and ``sky_background`` schemas.
+  (`#532 <https://github.com/spacetelescope/rad/issues/532>`_)
+- Reorder anyOf items in apcorr schema to work around asdf bug. (`#542
+  <https://github.com/spacetelescope/rad/issues/542>`_)
+
+
+Documentation
+-------------
+
+- Add section describing versioning and old file support. (`#528
+  <https://github.com/spacetelescope/rad/issues/528>`_)
+
+
+New Features
+------------
+
+- Require that ``archive_catalog`` and ``sdf`` marked keywords are in the
+  ``required``
+  list for the object containing those keywords. (`#505
+  <https://github.com/spacetelescope/rad/issues/505>`_)
+- Added schema for skycell reference file. (`#536
+  <https://github.com/spacetelescope/rad/issues/536>`_)
+
+
+Misc
+----
+
+- Adjust the RSDP origins for several keywords. (`#544
+  <https://github.com/spacetelescope/rad/issues/544>`_)
+
+
 0.23.0 (2025-01-16)
 ===================
 
