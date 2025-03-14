@@ -34,7 +34,7 @@ test = [
 ]
 docs = [
     "sphinx",
-    "sphinx-asdf>=0.1.3",
+    "sphinx-asdf @ git+https://github.com/braingram/sphinx-asdf@property_titles",
     "sphinx-astropy",
     "sphinx-rtd-theme",
     "astropy>=5.0.4",
