@@ -19,6 +19,7 @@ Schemas used in Nancy Grace Roman Space Telescope Reference Files:
     ipc-1.0.0
     linearity-1.0.0
     mask-1.0.0
+    matable-1.0.0
     pixelarea-1.0.0
     readnoise-1.0.0
     ref_common-1.0.0
