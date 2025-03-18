@@ -23,185 +23,183 @@ properties:
       Dictionary of guide window MA Tables keyed by their table ID
       (a unique identifier between 1-9999)
     type: object
-    patternProperties:
-      ^([1-9]|[1-9][0-9]|[1-9][0-9][0-9]|[1-9][0-9][0-9][0-9])$:
-        type: object
-        properties:
-          effective_pedestal_exposure_time:
-            title: Effective Pedestal Exposure Time
-            description: |
-              Time in seconds after the last pedestal reset to the arithmetic
-              mean time of all pedestal reads.
-            type: number
-          effective_signal_exposure_time:
-            title: Effective Signal Exposure Time
-            description: |
-              Time in seconds after the last pedestal reset to the arithmetic
-              mean time of all signal reads (excluding skipped signal reads).
-              This time includes the time taken to read science detector rows
-              (the number of which is defined by "science_block_size").
-            type: number
-          gw_readout_time:
-            title: Guide Window Readout Time
-            description: |
-              Time in seconds required to read out the guide window.
-            type: number
-          ma_table_name:
-            title: MA Table Name
-            description: |
-              Name of the MA table provided by GSFC. This may not be unique.
-            type: string
-          num_gw_columns:
-            title: Number of Guide Window Columns
-            description: |
-              Number of pixels that a guide window box extends in y-space.
-            type: integer
-          num_gw_rows:
-            title: Number of Guide Window Rows
-            description: |
-              Number of pixels that a guide window box extends in x-space.
-            type: integer
-          num_pedestal_reads:
-            title: Number of Pedestal Reads
-            description: |
-              Number of frames averaged in the pedestal resultant.
-            type: integer
-          num_pre_pedestal_reset_reads:
-            title: Number of Pre-pedestal Reset Reads
-            description: |
-              Number of reset reads prior to the first pedestal frame.
-            type: integer
-          num_pre_signal_skips:
-            title: Number of Pre-Signal Skips
-            description: |
-              Number of skipped/discarded reads before the first signal frame is saved.
-            type: integer
-          num_signal_reads:
-            title: Number of Signal Reads
-            description: |
-              Number of frames averaged in the signal resultant.
-            type: integer
-          science_block_size:
-            title: Science Block Size
-            description: |
-              Number of rows to read before a guide window execution.
-            type: integer
+    additionalProperties:
+      type: object
+      properties:
+        effective_pedestal_exposure_time:
+          title: Effective Pedestal Exposure Time
+          description: |
+            Time in seconds after the last pedestal reset to the arithmetic
+            mean time of all pedestal reads.
+          type: number
+        effective_signal_exposure_time:
+          title: Effective Signal Exposure Time
+          description: |
+            Time in seconds after the last pedestal reset to the arithmetic
+            mean time of all signal reads (excluding skipped signal reads).
+            This time includes the time taken to read science detector rows
+            (the number of which is defined by "science_block_size").
+          type: number
+        gw_readout_time:
+          title: Guide Window Readout Time
+          description: |
+            Time in seconds required to read out the guide window.
+          type: number
+        ma_table_name:
+          title: MA Table Name
+          description: |
+            Name of the MA table provided by GSFC. This may not be unique.
+          type: string
+        num_gw_columns:
+          title: Number of Guide Window Columns
+          description: |
+            Number of pixels that a guide window box extends in y-space.
+          type: integer
+        num_gw_rows:
+          title: Number of Guide Window Rows
+          description: |
+            Number of pixels that a guide window box extends in x-space.
+          type: integer
+        num_pedestal_reads:
+          title: Number of Pedestal Reads
+          description: |
+            Number of frames averaged in the pedestal resultant.
+          type: integer
+        num_pre_pedestal_reset_reads:
+          title: Number of Pre-pedestal Reset Reads
+          description: |
+            Number of reset reads prior to the first pedestal frame.
+          type: integer
+        num_pre_signal_skips:
+          title: Number of Pre-Signal Skips
+          description: |
+            Number of skipped/discarded reads before the first signal frame is saved.
+          type: integer
+        num_signal_reads:
+          title: Number of Signal Reads
+          description: |
+            Number of frames averaged in the signal resultant.
+          type: integer
+        science_block_size:
+          title: Science Block Size
+          description: |
+            Number of rows to read before a guide window execution.
+          type: integer
   science_tables:
     title: Science Tables
     description: |
       Dictionary of science MA Tables keyed by their table ID
       (a unique identifier between 1-9999)
     type: object
-    patternProperties:
-      ^([1-9]|[1-9][0-9]|[1-9][0-9][0-9]|[1-9][0-9][0-9][0-9])$:
-        type: object
-        properties:
-          accumulated_exposure_time:
-            title: Accumulated Exposure Time
-            description: |
-              Times in seconds after the reference read to the last read in each resultant.
-            type: array
-            items:
-              type: number
-          effective_exposure_time:
-            title: Effective Exposure Time
-            description: |
-              Times in seconds after the reference read to the arithmetic mean time of
-              all reads averaged into each resultant.
-            type: array
-            items:
-              type: number
-          frame_time:
-            title: Frame Time
-            description: |
-              The MA table dependent duration, in seconds, of a single sample read.
+    additionalProperties:
+      type: object
+      properties:
+        accumulated_exposure_time:
+          title: Accumulated Exposure Time
+          description: |
+            Times in seconds after the reference read to the last read in each resultant.
+          type: array
+          items:
             type: number
-          integration_duration:
-            title: Integration Duration
-            description: |
-              Time in seconds of the last read in each resultant including
-              all reset reads and the reference read.
-            type: array
-            items:
-              type: number
-          ma_table_name:
-            title: MA Table Name
-            description: |
-              Name of the MA table provided by GSFC. This may not be unique.
+        effective_exposure_time:
+          title: Effective Exposure Time
+          description: |
+            Times in seconds after the reference read to the arithmetic mean time of
+            all reads averaged into each resultant.
+          type: array
+          items:
+            type: number
+        frame_time:
+          title: Frame Time
+          description: |
+            The MA table dependent duration, in seconds, of a single sample read.
+          type: number
+        integration_duration:
+          title: Integration Duration
+          description: |
+            Time in seconds of the last read in each resultant including
+            all reset reads and the reference read.
+          type: array
+          items:
+            type: number
+        ma_table_name:
+          title: MA Table Name
+          description: |
+            Name of the MA table provided by GSFC. This may not be unique.
+          type: string
+        min_science_resultants:
+          title: Minimum Science Resultants
+          description: |
+            Minimum number of science resultants that is recommended for use.
+          type: integer
+        num_pre_science_reads:
+          title: Number of Pre-science Reads
+          description: |
+            Number of reference reads taken before the science reads. Almost always 0 or 1.
+          type: integer
+        num_pre_science_resultants:
+          title: Number of Pre-science Resultants
+          description: |
+            Number of reference resultants that are downlinked with the table. Almost always 0 or 1.
+          type: integer
+        num_science_resultants:
+          title: Number of Science Resultants
+          description: |
+            Maximum number of science resultants allowed in the MA table. Will be the same as the
+            length of "science_read_pattern" by definition.
+          type: integer
+        observing_mode:
+          title: Observing Mode
+          description: |
+            Fine Guidance System (FGS) mode for which the MA table should be used. Each FGS mode
+            uses a different size of guide window resulting in different frame readout times.
+            Either "DEFOCUS" for defocused mode, "WIM" for imaging mode, "WSM" for spectroscopy mode,
+            or "WIM|WSM" for mode agnostic tables.
+          type: string
+        pre_science_read_is_reference:
+          title: Pre-science Read is Reference
+          description: |
+            List of true or false to indicate which pre-science read is used as the reference read
+            to be subtracted from all science reads.
+          type: array
+          items:
+            type: boolean
+        pre_science_read_is_resultant:
+          title: Pre-science Read is Resultant
+          description: |
+            List of true or false indicating which pre-science reads are resultants and downlinked.
+          type: array
+          items:
+            type: boolean
+        pre_science_read_types:
+          title: Pre-science Read Types
+          description: |
+            List of strings for all pre-science read types. Either "reset_read" or "read".
+          type: array
+          items:
             type: string
-          min_science_resultants:
-            title: Minimum Science Resultants
-            description: |
-              Minimum number of science resultants that is recommended for use.
-            type: integer
-          num_pre_science_reads:
-            title: Number of Pre-science Reads
-            description: |
-              Number of reference reads taken before the science reads. Almost always 0 or 1.
-            type: integer
-          num_pre_science_resultants:
-            title: Number of Pre-science Resultants
-            description: |
-              Number of reference resultants that are downlinked with the table. Almost always 0 or 1.
-            type: integer
-          num_science_resultants:
-            title: Number of Science Resultants
-            description: |
-              Maximum number of science resultants allowed in the MA table. Will be the same as the
-              length of "science_read_pattern" by definition.
-            type: integer
-          observing_mode:
-            title: Observing Mode
-            description: |
-              Fine Guidance System (FGS) mode for which the MA table should be used. Each FGS mode
-              uses a different size of guide window resulting in different frame readout times.
-              Either "DEFOCUS" for defocused mode, "WIM" for imaging mode, "WSM" for spectroscopy mode,
-              or "WIM|WSM" for mode agnostic tables.
-            type: string
-          pre_science_read_is_reference:
-            title: Pre-science Read is Reference
-            description: |
-              List of true or false to indicate which pre-science read is used as the reference read
-              to be subtracted from all science reads.
+        pre_science_time_after_reset:
+          title: Pre-science Time After Reset
+          description: |
+            Time in seconds between the end of the last reset read and the start of
+            the first science read.
+          type: number
+        reset_frame_time:
+          title: Reset Frame Time
+          description: |
+            WFI reset time in seconds.
+          type: number
+        science_read_pattern:
+          title: Science Read Rattern
+          description: |
+            Contains the read numbers of each resultant and numbered such that the
+            first science read is always read 1. (e.g. a read pattern starting
+            at 2 would signify the first science read is skipped)
+          type: array
+          items:
             type: array
             items:
-              type: boolean
-          pre_science_read_is_resultant:
-            title: Pre-science Read is Resultant
-            description: |
-              List of true or false indicating which pre-science reads are resultants and downlinked.
-            type: array
-            items:
-              type: boolean
-          pre_science_read_types:
-            title: Pre-science Read Types
-            description: |
-              List of strings for all pre-science read types. Either "reset_read" or "read".
-            type: array
-            items:
-              type: string
-          pre_science_time_after_reset:
-            title: Pre-science Time After Reset
-            description: |
-              Time in seconds between the end of the last reset read and the start of
-              the first science read.
-            type: number
-          reset_frame_time:
-            title: Reset Frame Time
-            description: |
-              WFI reset time in seconds.
-            type: number
-          science_read_pattern:
-            title: Science Read Rattern
-            description: |
-              Contains the read numbers of each resultant and numbered such that the
-              first science read is always read 1. (e.g. a read pattern starting
-              at 2 would signify the first science read is skipped)
-            type: array
-            items:
-              type: array
-              items:
-                type: integer
+              type: integer
 required: [meta, guide_window_tables, science_tables]
 flowStyle: block
 propertyOrder: [meta, guide_window_tables, science_tables]
