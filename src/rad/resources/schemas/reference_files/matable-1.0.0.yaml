@@ -85,6 +85,9 @@ properties:
           description: |
             Number of rows to read before a guide window execution.
           type: integer
+      required: [effective_pedestal_exposure_time, effective_signal_exposure_time, gw_readout_time,
+        ma_table_name, num_gw_columns, num_gw_rows, num_pedestal_reads, num_pre_pedestal_reset_reads,
+        num_pre_signal_skips, num_signal_reads, science_block_size]
   science_tables:
     title: Science Tables
     description: |
@@ -200,6 +203,11 @@ properties:
             type: array
             items:
               type: integer
+      required: [accumulated_exposure_time, effective_exposure_time, frame_time,
+        integration_duration, ma_table_name, min_science_resultants, num_pre_science_reads,
+        num_pre_science_resultants, num_science_resultants, observing_mode,
+        pre_science_read_is_reference, pre_science_read_is_resultant, pre_science_read_types,
+        pre_science_time_after_reset, reset_frame_time, science_read_pattern]
 required: [meta, guide_window_tables, science_tables]
 flowStyle: block
 propertyOrder: [meta, guide_window_tables, science_tables]
