@@ -134,7 +134,8 @@ def test_metadata_force_required(schema):
     )
     if schema["id"] in xfail_uris:
         pytest.xfail(
-            reason=f"{schema['id']} is not being altered to ensure required lists for archive metadata, due to it being in either tvac or fps."
+            reason=f"{schema['id']} is not being altered to ensure required lists for archive metadata, "
+            f"due to it being in either tvac or fps."
         )
 
     def callback(node):
