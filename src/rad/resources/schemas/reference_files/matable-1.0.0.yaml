@@ -25,7 +25,7 @@ properties:
       zero-padded integer between 1-9999)
     type: object
     patternProperties:
-      '^GW([1-9]|[1-9][0-9]|[1-9][0-9][0-9]|[1-9][0-9][0-9][0-9])$':
+      ^GW(\d{4})$:
         type: object
         properties:
           effective_pedestal_exposure_time:
@@ -116,7 +116,7 @@ properties:
       zero-padded integer between 1-9999)
     type: object
     patternProperties:
-      '^SCI([1-9]|[1-9][0-9]|[1-9][0-9][0-9]|[1-9][0-9][0-9][0-9])$':
+      ^SCI(\d{4})$:
         type: object
         properties:
           accumulated_exposure_time:
