@@ -21,10 +21,11 @@ properties:
     title: Guide Window Tables
     description: |
       Dictionary of guide window MA Tables keyed by their table ID
-      (a unique identifier between 1-9999)
+      (a unique string identifier combining "GW" and a four-digit,
+      zero-padded integer between 1-9999)
     type: object
     patternProperties:
-      'GW^([1-9]|[1-9][0-9]|[1-9][0-9][0-9]|[1-9][0-9][0-9][0-9])$':
+      '^GW([1-9]|[1-9][0-9]|[1-9][0-9][0-9]|[1-9][0-9][0-9][0-9])$':
         type: object
         properties:
           effective_pedestal_exposure_time:
@@ -111,10 +112,11 @@ properties:
     title: Science Tables
     description: |
       Dictionary of science MA Tables keyed by their table ID
-      (a unique identifier between 1-9999)
+      (a unique string identifier combining "SCI" and a four-digit,
+      zero-padded integer between 1-9999)
     type: object
     patternProperties:
-      'SCI^([1-9]|[1-9][0-9]|[1-9][0-9][0-9]|[1-9][0-9][0-9][0-9])$':
+      '^SCI([1-9]|[1-9][0-9]|[1-9][0-9][0-9]|[1-9][0-9][0-9][0-9])$':
         type: object
         properties:
           accumulated_exposure_time:
