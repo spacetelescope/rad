@@ -135,7 +135,7 @@ def test_metadata_force_required(schema):
     if schema["id"] in xfail_uris:
         pytest.xfail(
             reason=f"{schema['id']} is not being altered to ensure required lists for archive metadata, "
-            f"due to it being in either tvac or fps."
+            "due to it being in either tvac or fps."
         )
 
     def callback(node):
@@ -194,6 +194,8 @@ def _model_name_from_schema_uri(schema_uri):
 
     if class_name.startswith("Wfi") and "Ref" not in class_name:
         class_name = class_name.split("Wfi")[-1]
+    elif class_name.startswith("MatableRef"):
+        class_name = "MATableRef" + class_name.split("MatableRef")[-1]
 
     return f"{class_name}Model"
 
