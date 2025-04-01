@@ -1,0 +1,409 @@
+%YAML 1.1
+---
+$schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.0.0
+id: asdf://stsci.edu/datamodels/roman/schemas/mosaic_source_catalog-1.0.1
+
+title: Source catalog generated from a Level 3 file by the Source Catalog Step.
+
+datamodel_name: MosaicSourceCatalogModel
+
+archive_meta: None
+type: object
+properties:
+  meta:
+    allOf:
+      - $ref: asdf://stsci.edu/datamodels/roman/schemas/basic-1.0.0
+      - type: object
+        properties:
+          basic:
+            tag: asdf://stsci.edu/datamodels/roman/tags/mosaic_basic-1.0.0
+          photometry:
+            title: Photometry Information
+            tag: asdf://stsci.edu/datamodels/roman/tags/photometry-1.0.0
+          program:
+            title: Program Information
+            tag: asdf://stsci.edu/datamodels/roman/tags/program-1.0.0
+        required: [basic, photometry, program]
+  source_catalog:
+    title: Source Catalog
+    description: |
+       Photometry and astrometry computed in the Source Catalog Step.
+    allOf:
+      - tag: tag:astropy.org:astropy/table/table-1.*
+      - type: object
+        properties:
+          columns:
+            type: array
+            items:
+              - type: object
+                properties:
+                  name:
+                    enum: [label]
+                  data:
+                    properties:
+                      datatype:
+                        enum: [int32]
+              - type: object
+                properties:
+                  name:
+                    enum: [xcentroid]
+                  data:
+                    properties:
+                      datatype:
+                        enum: [float64]
+              - type: object
+                properties:
+                  name:
+                    enum: [ycentroid]
+                  data:
+                    properties:
+                      datatype:
+                        enum: [float64]
+              - type: object
+                properties:
+                  name:
+                    enum: [ra_centroid]
+                  data:
+                    properties:
+                      datatype:
+                        enum: [float64]
+              - type: object
+                properties:
+                  name:
+                    enum: [dec_centroid]
+                  data:
+                    properties:
+                      datatype:
+                        enum: [float64]
+              - type: object
+                properties:
+                  name:
+                    enum: [aper_bkg_flux]
+                  data:
+                    properties:
+                      datatype:
+                        enum: [float64]
+              - type: object
+                properties:
+                  name:
+                    enum: [aper_bkg_flux_err]
+                  data:
+                    properties:
+                      datatype:
+                        enum: [float64]
+              - type: object
+                properties:
+                  name:
+                    enum: [aper30_flux]
+                  data:
+                    properties:
+                      datatype:
+                        enum: [float64]
+              - type: object
+                properties:
+                  name:
+                    enum: [aper30_flux_err]
+                  data:
+                    properties:
+                      datatype:
+                        enum: [float64]
+              - type: object
+                properties:
+                  name:
+                    enum: [aper50_flux]
+                  data:
+                    properties:
+                      datatype:
+                        enum: [float64]
+              - type: object
+                properties:
+                  name:
+                    enum: [aper50_flux_err]
+                  data:
+                    properties:
+                      datatype:
+                        enum: [float64]
+              - type: object
+                properties:
+                  name:
+                    enum: [aper70_flux]
+                  data:
+                    properties:
+                      datatype:
+                        enum: [float64]
+              - type: object
+                properties:
+                  name:
+                    enum: [aper70_flux_err]
+                  data:
+                    properties:
+                      datatype:
+                        enum: [float64]
+              - type: object
+                properties:
+                  name:
+                    enum: [aper_total_flux]
+                  data:
+                    properties:
+                      datatype:
+                        enum: [float64]
+              - type: object
+                properties:
+                  name:
+                    enum: [aper_total_flux_err]
+                  data:
+                    properties:
+                      datatype:
+                        enum: [float64]
+              - type: object
+                properties:
+                  name:
+                    enum: [flags]
+                  data:
+                    properties:
+                      datatype:
+                        enum: [int64]
+              - type: object
+                properties:
+                  name:
+                    enum: [is_extended]
+                  data:
+                    properties:
+                      datatype:
+                        enum: [bool8]
+              - type: object
+                properties:
+                  name:
+                    enum: [sharpness]
+                  data:
+                    properties:
+                      datatype:
+                        enum: [float64]
+              - type: object
+                properties:
+                  name:
+                    enum: [roundness]
+                  data:
+                    properties:
+                      datatype:
+                        enum: [float32]
+              - type: object
+                properties:
+                  name:
+                    enum: [nn_label]
+                  data:
+                    properties:
+                      datatype:
+                        enum: [int32]
+              - type: object
+                properties:
+                  name:
+                    enum: [nn_dist]
+                  data:
+                    properties:
+                      datatype:
+                        enum: [float64]
+              - type: object
+                properties:
+                  name:
+                    enum: [isophotal_flux]
+                  data:
+                    properties:
+                      datatype:
+                        enum: [float64]
+              - type: object
+                properties:
+                  name:
+                    enum: [isophotal_flux_err]
+                  data:
+                    properties:
+                      datatype:
+                        enum: [float32]
+              - type: object
+                properties:
+                  name:
+                    enum: [isophotal_area]
+                  data:
+                    properties:
+                      datatype:
+                        enum: [float64]
+              - type: object
+                properties:
+                  name:
+                    enum: [kron_flux]
+                  data:
+                    properties:
+                      datatype:
+                        enum: [float64]
+              - type: object
+                properties:
+                  name:
+                    enum: [kron_flux_err]
+                  data:
+                    properties:
+                      datatype:
+                        enum: [float64]
+              - type: object
+                properties:
+                  name:
+                    enum: [semimajor_sigma]
+                  data:
+                    properties:
+                      datatype:
+                        enum: [float64]
+              - type: object
+                properties:
+                  name:
+                    enum: [semiminor_sigma]
+                  data:
+                    properties:
+                      datatype:
+                        enum: [float64]
+              - type: object
+                properties:
+                  name:
+                    enum: [ellipticity]
+                  data:
+                    properties:
+                      datatype:
+                        enum: [float64]
+              - type: object
+                properties:
+                  name:
+                    enum: [orientation]
+                  data:
+                    properties:
+                      datatype:
+                        enum: [float64]
+              - type: object
+                properties:
+                  name:
+                    enum: [sky_orientation]
+                  data:
+                    properties:
+                      datatype:
+                        enum: [float64]
+              - type: object
+                properties:
+                  name:
+                    enum: [ra_bbox_ll]
+                  data:
+                    properties:
+                      datatype:
+                        enum: [float64]
+              - type: object
+                properties:
+                  name:
+                    enum: [dec_bbox_ll]
+                  data:
+                    properties:
+                      datatype:
+                        enum: [float64]
+              - type: object
+                properties:
+                  name:
+                    enum: [ra_bbox_ul]
+                  data:
+                    properties:
+                      datatype:
+                        enum: [float64]
+              - type: object
+                properties:
+                  name:
+                    enum: [dec_bbox_ul]
+                  data:
+                    properties:
+                      datatype:
+                        enum: [float64]
+              - type: object
+                properties:
+                  name:
+                    enum: [ra_bbox_lr]
+                  data:
+                    properties:
+                      datatype:
+                        enum: [float64]
+              - type: object
+                properties:
+                  name:
+                    enum: [dec_bbox_lr]
+                  data:
+                    properties:
+                      datatype:
+                        enum: [float64]
+              - type: object
+                properties:
+                  name:
+                    enum: [ra_bbox_ur]
+                  data:
+                    properties:
+                      datatype:
+                        enum: [float64]
+              - type: object
+                properties:
+                  name:
+                    enum: [dec_bbox_ur]
+                  data:
+                    properties:
+                      datatype:
+                        enum: [float64]
+              - type: object
+                properties:
+                  name:
+                    enum: [flag_psf]
+                  data:
+                    properties:
+                      datatype:
+                        enum: [int64]
+              - type: object
+                properties:
+                  name:
+                    enum: [x_psf]
+                  data:
+                    properties:
+                      datatype:
+                        enum: [float64]
+              - type: object
+                properties:
+                  name:
+                    enum: [x_psf_err]
+                  data:
+                    properties:
+                      datatype:
+                        enum: [float64]
+              - type: object
+                properties:
+                  name:
+                    enum: [y_psf]
+                  data:
+                    properties:
+                      datatype:
+                        enum: [float64]
+              - type: object
+                properties:
+                  name:
+                    enum: [y_psf_err]
+                  data:
+                    properties:
+                      datatype:
+                        enum: [float64]
+              - type: object
+                properties:
+                  name:
+                    enum: [flux_psf]
+                  data:
+                    properties:
+                      datatype:
+                        enum: [float64]
+              - type: object
+                properties:
+                  name:
+                    enum: [flux_psf_err]
+                  data:
+                    properties:
+                      datatype:
+                        enum: [float64]
+required: [meta, source_catalog]
+flowStyle: block
+propertyOrder: [meta, source_catalog]
+...
