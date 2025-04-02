@@ -44,6 +44,12 @@ tags:
   title: Roman WFI Instrument Mode
   description: |-
     Roman WFI Instrument
+- tag_uri: asdf://stsci.edu/datamodels/roman/tags/wfi_wcs-1.0.0
+  schema_uri: asdf://stsci.edu/datamodels/roman/schemas/wfi_wcs-1.0.0
+  title: Roman Wide Field Instrument (WFI) Level 2 (L2) WCS
+  description: |-
+    Roman Wide Field Instrument (WFI) Level 2 (L2) WCS and |-
+    modified WCS applicable for Science Raw (L1).
 # Metadata Modules
 - tag_uri: asdf://stsci.edu/datamodels/roman/tags/exposure-1.0.0
   schema_uri: asdf://stsci.edu/datamodels/roman/schemas/exposure-1.0.0
