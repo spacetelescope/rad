@@ -251,6 +251,11 @@ tags:
   title: Skycells Reference File Schema
   description: |-
     This file contains definitions for all the skycells that cover the entire celestial sphere
+- tag_uri: asdf://stsci.edu/datamodels/roman/tags/reference_files/matable-1.0.0
+  schema_uri: asdf://stsci.edu/datamodels/roman/schemas/reference_files/matable-1.0.0
+  title: Multiple Accumulation Table Reference File Schema
+  description: |-
+    Multiple Accumulation Table Reference File Schema
 # Misc
 - tag_uri: asdf://stsci.edu/datamodels/roman/tags/associations-1.0.0
   schema_uri: asdf://stsci.edu/datamodels/roman/schemas/associations-1.0.0
