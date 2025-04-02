@@ -45,6 +45,37 @@ properties:
           destination: [WFIExposure.crds_context, WFIMosaic.crds_context,
                         GuideWindow.crds_context, WFICommon.crds_context]
     required: [version, context]
+  abvegaoffset:
+    title: AB Vega Offset Reference File Schema
+    description: |
+      Name of the calibration reference file used to apply the
+      AB Vega offset to the science data.
+    type: string
+    maxLength: 120
+    archive_catalog:
+      datatype: nvarchar(120)
+      destination: [ScienceRefData.r_abvegaoffset, GuideWindow.r_abvegaoffset, WFICommon.r_abvegaoffset]
+  apcorr:
+    title: Aperture Correction Reference File Schema
+    description: |
+      Name of the calibration reference file used to apply
+      the aperture correction to the science data.
+    type: string
+    maxLength: 120
+    archive_catalog:
+      datatype: nvarchar(120)
+      destination: [ScienceRefData.r_apcorr, GuideWindow.r_apcorr, WFICommon.r_apcorr]
+  area:
+    title: Pixel Area Reference File Information
+    description: |
+      Name of the calibration reference file containing the
+      pixel-to-pixel estimates of the area of each detector pixel on
+      the sky.
+    type: string
+    maxLength: 120
+    archive_catalog:
+      datatype: nvarchar(120)
+      destination: [ScienceRefData.r_area, GuideWindow.r_area, WFICommon.r_area]
   dark:
     title: Dark Reference File Information
     description: |
@@ -108,26 +139,6 @@ properties:
     archive_catalog:
       datatype: nvarchar(120)
       destination: [ScienceRefData.r_gain, GuideWindow.r_gain, WFICommon.r_gain]
-  readnoise:
-    title: Read Noise Reference File Information
-    description: |
-      Name of the calibration reference file that estimates
-      the pixel-to-pixel read noise in the science data.
-    type: string
-    maxLength: 120
-    archive_catalog:
-      datatype: nvarchar(120)
-      destination: [ScienceRefData.r_readnoise, GuideWindow.r_readnoise, WFICommon.r_readnoise]
-  linearity:
-    title: Linearity Reference File Information
-    description: |
-      Name of the calibration reference file used to correct
-      for classical linearity in the science data.
-    type: string
-    maxLength: 120
-    archive_catalog:
-      datatype: nvarchar(120)
-      destination: [ScienceRefData.r_linearity, GuideWindow.r_linearity, WFICommon.r_linearity]
   inverse_linearity:
     title: Inverse Linearity Reference File Information
     description: |
@@ -139,6 +150,16 @@ properties:
     archive_catalog:
       datatype: nvarchar(120)
       destination: [ScienceRefData.r_inverse_linearity, GuideWindow.r_inverse_linearity, WFICommon.r_inverse_linearity]
+  linearity:
+    title: Linearity Reference File Information
+    description: |
+      Name of the calibration reference file used to correct
+      for classical linearity in the science data.
+    type: string
+    maxLength: 120
+    archive_catalog:
+      datatype: nvarchar(120)
+      destination: [ScienceRefData.r_linearity, GuideWindow.r_linearity, WFICommon.r_linearity]
   photom:
     title: Photometry Reference File Information
     description: |
@@ -150,27 +171,16 @@ properties:
     archive_catalog:
       datatype: nvarchar(120)
       destination: [ScienceRefData.r_photom, GuideWindow.r_photom, WFICommon.r_photom]
-  area:
-    title: Pixel Area Reference File Information
+  readnoise:
+    title: Read Noise Reference File Information
     description: |
-      Name of the calibration reference file containing the
-      pixel-to-pixel estimates of the area of each detector pixel on
-      the sky.
+      Name of the calibration reference file that estimates
+      the pixel-to-pixel read noise in the science data.
     type: string
     maxLength: 120
     archive_catalog:
       datatype: nvarchar(120)
-      destination: [ScienceRefData.r_area, GuideWindow.r_area, WFICommon.r_area]
-  saturation:
-    title: Saturation Reference File Information
-    description: |
-      Information about the saturation reference file used with the science
-      data.
-    type: string
-    maxLength: 120
-    archive_catalog:
-      datatype: nvarchar(120)
-      destination: [ScienceRefData.r_saturation, GuideWindow.r_saturation, WFICommon.r_saturation]
+      destination: [ScienceRefData.r_readnoise, GuideWindow.r_readnoise, WFICommon.r_readnoise]
   refpix:
     title: Reference Pixel Reference File Information
     description: |
@@ -181,7 +191,27 @@ properties:
     archive_catalog:
       datatype: nvarchar(120)
       destination: [ScienceRefData.r_refpix, GuideWindow.r_refpix, WFICommon.r_refpix]
-required: [crds, dark, distortion, epsf, mask, flat, gain, readnoise, linearity,
-  inverse_linearity, photom, area, saturation, refpix]
+  saturation:
+    title: Saturation Reference File Information
+    description: |
+      Information about the saturation reference file used with the science
+      data.
+    type: string
+    maxLength: 120
+    archive_catalog:
+      datatype: nvarchar(120)
+      destination: [ScienceRefData.r_saturation, GuideWindow.r_saturation, WFICommon.r_saturation]
+  skycells:
+    title: Skycells Reference File Schema
+    description: |
+      Information about the sky cell reference file used with the science
+      data.
+    type: string
+    maxLength: 120
+    archive_catalog:
+      datatype: nvarchar(120)
+      destination: [ScienceRefData.r_skycells, GuideWindow.r_skycells, WFICommon.r_skycells]
+required: [abvegaoffset, apcorr, crds, dark, distortion, epsf, mask, flat, gain, readnoise, linearity,
+  inverse_linearity, photom, area, saturation, refpix, skycells]
 flowStyle: block
 ...
