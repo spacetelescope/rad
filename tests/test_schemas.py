@@ -155,8 +155,12 @@ def test_metadata_force_required(schema):
     asdf.treeutil.walk(schema, callback)
 
 
-def test_flowstyle(schema, manifest):
-    is_tag_schema = schema["id"] in {t["schema_uri"] for t in manifest["tags"]}
+def test_flowstyle(schema):
+    is_tag_schema = False
+
+    for manifest in MANIFESTS:
+        if is_tag_schema := schema["id"] in {t["schema_uri"] for t in manifest["tags"]}:
+            break
 
     if is_tag_schema:
         found_flowstyle = False
