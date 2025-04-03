@@ -2,7 +2,7 @@
 ---
 id: asdf://stsci.edu/datamodels/roman/manifests/datamodels-1.1.0
 extension_uri: asdf://stsci.edu/datamodels/roman/extensions/datamodels-1.1.0
-title: Datamodels extension 2.0.0
+title: Datamodels extension
 description: |-
   A set of tags for serializing STScI Roman datamodels.
 asdf_standard_requirement:
