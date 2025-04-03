@@ -1,7 +1,7 @@
 %YAML 1.1
 ---
 $schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.0.0
-id: asdf://stsci.edu/datamodels/roman/schemas/common-1.0.0
+id: asdf://stsci.edu/datamodels/roman/schemas/common-1.1.0
 
 title: Common metadata properties
 
@@ -37,7 +37,7 @@ allOf:
       tag: asdf://stsci.edu/datamodels/roman/tags/program-1.0.0
     ref_file:
       title: Reference File Information
-      tag: asdf://stsci.edu/datamodels/roman/tags/ref_file-1.0.0
+      tag: asdf://stsci.edu/datamodels/roman/tags/ref_file-1.1.0
     rcs:
       title: Relative Calibration System Information
       tag: asdf://stsci.edu/datamodels/roman/tags/rcs-1.0.0

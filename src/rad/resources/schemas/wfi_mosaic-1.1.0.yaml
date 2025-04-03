@@ -1,7 +1,7 @@
 %YAML 1.1
 ---
 $schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.0.0
-id: asdf://stsci.edu/datamodels/roman/schemas/wfi_mosaic-1.0.0
+id: asdf://stsci.edu/datamodels/roman/schemas/wfi_mosaic-1.1.0
 
 title: |
   The schema for WFI Level 3 mosaics.
@@ -32,7 +32,7 @@ properties:
           program:
             tag: asdf://stsci.edu/datamodels/roman/tags/program-1.0.0
           ref_file:
-            tag: asdf://stsci.edu/datamodels/roman/tags/ref_file-1.0.0
+            tag: asdf://stsci.edu/datamodels/roman/tags/ref_file-1.1.0
           resample:
             tag: asdf://stsci.edu/datamodels/roman/tags/resample-1.0.0
           wcs:
