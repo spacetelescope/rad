@@ -20,6 +20,7 @@ Level 2 (calibrated exposure) schema
 .. asdf-autoschemas::
 
    wfi_image-1.0.0
+   wfi_wcs-1.0.0
 
 Level 3 (resampled mosaic) schema
 ---------------------------------

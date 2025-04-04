@@ -196,10 +196,11 @@ def _model_name_from_schema_uri(schema_uri):
     if schema_uri.startswith("asdf://stsci.edu/datamodels/roman/schemas/reference_files/"):
         class_name += "Ref"
 
-    if class_name.startswith("Wfi") and "Ref" not in class_name:
-        class_name = class_name.split("Wfi")[-1]
-    elif class_name.startswith("MatableRef"):
-        class_name = "MATableRef" + class_name.split("MatableRef")[-1]
+    if class_name not in ["WfiWcs"]:  # Names to be unmodified
+        if class_name.startswith("Wfi") and "Ref" not in class_name:
+            class_name = class_name.split("Wfi")[-1]
+        elif class_name.startswith("MatableRef"):
+            class_name = "MATableRef" + class_name.split("MatableRef")[-1]
 
     return f"{class_name}Model"
 
