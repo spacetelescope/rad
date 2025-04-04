@@ -29,6 +29,138 @@ properties:
     description: |
        Photometry and astrometry computed in the Source Catalog Step.
     tag: tag:astropy.org:astropy/table/table-1.*
+    columns:
+      - name: label
+        required: true
+        datatype: int32
+      - name: xcentroid
+        required: true
+        datatype: float64
+      - name: ycentroid
+        required: true
+        datatype: float64
+      - name: ra_centroid
+        required: true
+        datatype: float64
+      - name: dec_centroid
+        required: true
+        datatype: float64
+      - name: aper_bkg_flux
+        required: true
+        datatype: float64
+      - name: aper_bkg_flux_err
+        required: true
+        datatype: float64
+      - name: aper_30_flux
+        required: true
+        datatype: float64
+      - name: aper_30_flux_err
+        required: true
+        datatype: float64
+      - name: aper_50_flux
+        required: true
+        datatype: float64
+      - name: aper_50_flux_err
+        required: true
+        datatype: float64
+      - name: aper_70_flux
+        required: true
+        datatype: float64
+      - name: aper_70_flux_err
+        required: true
+        datatype: float64
+      - name: aper_total_flux
+        required: true
+        datatype: float64
+      - name: aper_total_flux_err
+        required: true
+        datatype: float64
+      - name: flags
+        required: true
+        datatype: int64
+      - name: is_extended
+        required: true
+        datatype: bool8
+      - name: sharpness
+        required: true
+        datatype: float64
+      - name: roundness
+        required: true
+        datatype: float64
+      - name: nn_label
+        required: true
+        datatype: int32
+      - name: nn_dist
+        required: true
+        datatype: float64
+      - name: isophotal_flux
+        required: true
+        datatype: float64
+      - name: isophotal_flux_err
+        required: true
+        datatype: float64
+      - name: isophotal_area
+        required: true
+        datatype: float64
+      - name: kron_flux
+        required: true
+        datatype: float64
+      - name: kron_flux_err
+        required: true
+        datatype: float64
+      - name: semimajor_sigma
+        required: true
+        datatype: float64
+      - name: semiminor_sigma
+        required: true
+        datatype: float64
+      - name: ellipticity
+        required: true
+        datatype: float64
+      - name: orientation
+        required: true
+        datatype: float64
+      - name: sky_orientation
+        required: true
+        datatype: float64
+      - name: ra_bbox_ll
+        required: true
+        datatype: float64
+      - name: dec_bbox_ll
+        required: true
+        datatype: float64
+      - name: ra_bbox_ul
+        required: true
+        datatype: float64
+      - name: dec_bbox_ul
+        required: true
+        datatype: float64
+      - name: ra_bbox_lr
+        required: true
+        datatype: float64
+      - name: dec_bbox_lr
+        required: true
+        datatype: float64
+      - name: ra_bbox_lr
+        required: true
+        datatype: float64
+      - name: dec_bbox_ur
+        required: true
+        datatype: float64
+      - name: flag_psf
+        datatype: float64
+      - name: x_psf
+        datatype: float64
+      - name: x_psf_err
+        datatype: float64
+      - name: y_psf
+        datatype: float64
+      - name: x_psf_err
+        datatype: float64
+      - name: flux_psf
+        datatype: float64
+      - name: flux_psf_err
+        datatype: float64
 
 required: [meta, source_catalog]
 flowStyle: block
