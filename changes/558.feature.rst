@@ -1,0 +1,1 @@
+Add column definitions to mosaic_source_catalog schema.
