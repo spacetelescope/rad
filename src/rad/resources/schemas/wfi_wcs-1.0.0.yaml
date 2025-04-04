@@ -55,10 +55,18 @@ properties:
             If missing or None, GAIA alignment was not done or failed.
           type: object
   wcs_l2:
-    title: L2 WCS Object
+    title: L2 GWCS
+    description: |
+      The GWCS object for the Level 2 product that generated it.
+      If the `tweakreg` step is successfully done, this will be the
+      GAIA-aligned wcs.
     tag: tag:stsci.edu:gwcs/wcs-*
   wcs_l1:
-    title: L1 WCS Object
+    title: L1 GWCS
+    description: |
+      The GWCS object derived from the Level 2 GWCS but with an extra shift
+      and expanded bounding box to account for the larger data array size of
+      the Level 1 product.
     tag: tag:stsci.edu:gwcs/wcs-*
 propertyOrder: [meta, wcs_l2, wcs_l1]
 flowStyle: block
