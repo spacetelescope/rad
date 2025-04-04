@@ -48,6 +48,12 @@ properties:
         required: [coordinates, ephemeris, exposure,
                    instrument, observation, pointing, program,
                    velocity_aberration, visit, wcsinfo]
+      - wcs_fit_results:
+          title: tweakreg/GAIA fit results
+          description: |
+            Results from the tweakreg result when aligning to GAIA.
+            If missing or None, GAIA alignment was not done or failed.
+          type: object
   wcs_l2:
     title: L2 WCS Object
     tag: tag:stsci.edu:gwcs/wcs-*
