@@ -112,6 +112,8 @@ def test_required(schema):
 
     def callback(node):
         if isinstance(node, Mapping) and "required" in node:
+            if isinstance(node["required"], bool):
+                return
             assert node.get("type") == "object"
             property_names = set(node.get("properties", {}).keys())
             required_names = set(node["required"])
