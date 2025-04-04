@@ -1,1 +1,1 @@
-Added epsf, abvegaoffset, apcorr, and skycells to ref_files and ref_files to image_source_catalog.
+Added epsf and apcorr to ref_files and ref_files to image_source_catalog. Updated ref_files version in common, and common version elsewhere.
