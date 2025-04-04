@@ -45,16 +45,6 @@ properties:
           destination: [WFIExposure.crds_context, WFIMosaic.crds_context,
                         GuideWindow.crds_context, WFICommon.crds_context]
     required: [version, context]
-  abvegaoffset:
-    title: AB Vega Offset Reference File Schema
-    description: |
-      Name of the calibration reference file used to apply the
-      AB Vega offset to the science data.
-    type: string
-    maxLength: 120
-    archive_catalog:
-      datatype: nvarchar(120)
-      destination: [ScienceRefData.r_abvegaoffset, GuideWindow.r_abvegaoffset, WFICommon.r_abvegaoffset]
   apcorr:
     title: Aperture Correction Reference File Schema
     description: |
@@ -201,17 +191,7 @@ properties:
     archive_catalog:
       datatype: nvarchar(120)
       destination: [ScienceRefData.r_saturation, GuideWindow.r_saturation, WFICommon.r_saturation]
-  skycells:
-    title: Skycells Reference File Schema
-    description: |
-      Information about the sky cell reference file used with the science
-      data.
-    type: string
-    maxLength: 120
-    archive_catalog:
-      datatype: nvarchar(120)
-      destination: [ScienceRefData.r_skycells, GuideWindow.r_skycells, WFICommon.r_skycells]
-required: [abvegaoffset, apcorr, crds, dark, distortion, epsf, mask, flat, gain, readnoise, linearity,
-  inverse_linearity, photom, area, saturation, refpix, skycells]
+required: [apcorr, crds, dark, distortion, epsf, mask, flat, gain, readnoise, linearity,
+  inverse_linearity, photom, area, saturation, refpix]
 flowStyle: block
 ...
