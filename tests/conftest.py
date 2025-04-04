@@ -4,6 +4,7 @@ import yaml
 
 MANIFEST_URIS = [
     "asdf://stsci.edu/datamodels/roman/manifests/datamodels-1.0",
+    "asdf://stsci.edu/datamodels/roman/manifests/datamodels-1.1.0",
 ]
 MANIFESTS = [yaml.safe_load(asdf.get_config().resource_manager[manifest_uri]) for manifest_uri in MANIFEST_URIS]
 MANIFEST_ENTRIES = []
