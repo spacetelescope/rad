@@ -1,0 +1,398 @@
+%YAML 1.1
+---
+$schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.0.0
+id: asdf://stsci.edu/datamodels/roman/schemas/guidestar-1.1.0
+
+title: Guide Star and Guide Window Information
+
+type: object
+properties:
+  guide_window_id:
+    title: Guide Window Identifier
+    description: |
+      A unique identification number of the guide window.
+      This identifier combines the visit identifier and guide star
+      acquisition number, and is set in the visit information uplinked
+      to the observatory. As the number may be zero-padded, this value
+      is saved as a string. See technical report Roman-STScI-000193
+      "Roman Programmatic Data Identification" for more information.
+    type: string
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    maxLength: 20
+    archive_catalog:
+      datatype: nvarchar(20)
+      destination: [WFIExposure.guide_window_id, GuideWindow.guide_window_id, WFICommon.guide_window_id]
+  guide_mode:
+    allOf:
+      - $ref: asdf://stsci.edu/datamodels/roman/schemas/guidewindow_modes-1.0.0
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    maxLength: 18
+    archive_catalog:
+      datatype: nvarchar(18)
+      destination: [WFIExposure.guide_mode, GuideWindow.guide_mode, WFICommon.guide_mode]
+  data_start:
+    title: Guide Data Start Time (UTC)
+    description: |
+      The UTC time at the beginning of the guide window
+      data. The time is serialized on disk as an International
+      Organization for Standardization (ISO) 8601-compliant ISOT
+      string, but if opened in Python with the asdf-astropy package
+      installed, it may be read as an astropy.time.Time object with
+      all of the associated methods and transforms available. See the
+      documentation for astropy.time.Time objects for more
+      information.
+    tag: tag:stsci.edu:asdf/time/time-1.*
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    archive_catalog:
+      datatype: datetime2
+      destination: [WFIExposure.data_start, GuideWindow.data_start, WFICommon.data_start]
+  data_end:
+    title: Guide Data End Time (UTC)
+    description: |
+      The UTC time at the end of the guide window data. The
+      time is serialized on disk as an International Organization for
+      Standardization (ISO) 8601-compliant ISOT string, but if opened
+      in Python with the asdf-astropy package installed, it may be
+      read as an astropy.time.Time object with all of the associated
+      methods and transforms available. See the documentation for
+      astropy.time.Time objects for more information.
+    tag: tag:stsci.edu:asdf/time/time-1.*
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    archive_catalog:
+      datatype: datetime2
+      destination: [WFIExposure.data_end, GuideWindow.data_end, WFICommon.data_end]
+  window_xstart:
+    title: Guide Window X Start Position (pixels)
+    description: |
+      Minimum X position in pixels in the science coordinate
+      frame of all tracking guide windows in this exposure.
+    type: integer
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: Science Data Formatting
+    archive_catalog:
+      datatype: int
+      destination: [WFIExposure.window_xstart, WFICommon.window_xstart]
+  window_ystart:
+    title: Guide Window Y Start Position (pixels)
+    description: |
+      Minimum Y position in pixels in the science coordinate
+      frame of all tracking guide windows in this exposure.
+    type: integer
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: Science Data Formatting
+    archive_catalog:
+      datatype: int
+      destination: [WFIExposure.window_ystart, WFICommon.window_ystart]
+  window_xstop:
+    title: Guide Window X Stop Position (pixels)
+    description: |
+      Maximum X position in pixels in the science coordinate
+      frame of all tracking guide windows in this exposure.
+    type: integer
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: Science Data Formatting
+    archive_catalog:
+      datatype: int
+      destination: [WFIExposure.window_xstop, WFICommon.window_xstop]
+  window_ystop:
+    title: Guide Window Y Start Position (pixels)
+    description: |
+      Maximum Y position in pixels in the science coordinate
+      frame of all tracking guide windows in this exposure.
+    type: integer
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: Science Data Formatting
+    archive_catalog:
+      datatype: int
+      destination: [WFIExposure.window_ystop, WFICommon.window_ystop]
+  window_xsize:
+    title: Guide Window Size in the X Direction (pixels)
+    description: |
+      Size of a single tracking guide window in this
+      exposure measured along the science coordinate frame X axis in
+      units of pixels.
+    type: integer
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: Science Data Formatting
+    archive_catalog:
+      datatype: int
+      destination: [WFIExposure.window_xsize, WFICommon.window_xsize]
+  window_ysize:
+    title: Guide Window Size in the Y Direction (pixels)
+    description: |
+      Size of a single tracking guide window in this
+      exposure measured along the science coordinate frame Y axis in
+      units of pixels.
+    type: integer
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: Science Data Formatting
+    archive_catalog:
+      datatype: int
+      destination: [WFIExposure.window_ysize, WFICommon.window_ysize]
+  guide_star_id:
+    title: Guide Star Identifier
+    description: |
+      Identification of the guide star from the Guide Star
+      Catalog (GSC).
+    type: string
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: PSS:dms_guide_star.star_id
+    maxLength: 20
+    archive_catalog:
+      datatype: nvarchar(20)
+      destination: [WFIExposure.guide_star_id, GuideWindow.guide_star_id]
+  gsc_version:
+    title: Guide Star Catalog Version
+    description: |
+      Version number of the Guide Star Catalog (GSC).
+    type: string
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    maxLength: 20
+    archive_catalog:
+      datatype: nvarchar(20)
+      destination: [WFIExposure.gsc_version]
+  ra:
+    title: Guide Star Right Ascension (deg)
+    description: |
+      Right ascension of the guide star from the Guide Star
+      Catalog (GSC) in units of degrees.
+    type: number
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: PSS:dms_guide_star.corrected_ra
+    archive_catalog:
+      datatype: float
+      destination: [WFIExposure.ra, GuideWindow.ra]
+  dec:
+    title: Guide Star Declination (deg)
+    description: |
+      Declination of the guide star from the Guide Star
+      Catalog (GSC) in units of degrees.
+    type: number
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: PSS:dms_guide_star.corrected_dec
+    archive_catalog:
+      datatype: float
+      destination: [WFIExposure.dec, GuideWindow.dec]
+  ra_uncertainty:
+    title: Guide Star Right Ascension Uncertainty (deg)
+    description: |
+      Uncertainty in the guide star right ascension from the
+      Guide Star Catalog (GSC) in units of degrees.
+    type: number
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    archive_catalog:
+      datatype: float
+      destination: [WFIExposure.ra_uncertainty, GuideWindow.ra_uncertainty]
+  dec_uncertainty:
+    title: Guide Star Declination Uncertainty (deg)
+    description: |
+      Uncertainty in the guide star declination from the
+      Guide Star Catalog (GSC) in units of degrees.
+    type: number
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    archive_catalog:
+      datatype: float
+      destination: [WFIExposure.dec_uncertainty, GuideWindow.dec_uncertainty]
+  fgs_magnitude:
+    title: Guide Star Instrumental Magnitude
+    description: |
+      Predicted instrumental magnitude of the guide star
+      from the Guide Star Catalog (GSC).
+    type: number
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: PSS:dms_guide_star.fgs_mag
+    archive_catalog:
+      datatype: float
+      destination: [WFIExposure.fgs_magnitude, GuideWindow.fgs_magnitude]
+  fgs_magnitude_uncertainty:
+    title: Guide Star Instrumental Magnitude Uncertainty
+    description: |
+      Uncertainty in the predicted instrumental magnitude of
+      the guide star from the Guide Star Catalog (GSC).
+    type: number
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    archive_catalog:
+      datatype: float
+      destination: [WFIExposure.fgs_magnitude_uncertainty, GuideWindow.fgs_magnitude_uncertainty]
+  centroid_x:
+    title: Guide Star Centroid X Position (pixels)
+    description: |
+      Average centroid position of the guide star along the
+      science X axis in units of pixels.
+    type: number
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    archive_catalog:
+      datatype: float
+      destination: [WFIExposure.centroid_x, GuideWindow.centroid_x]
+  centroid_y:
+    title: Guide Star Centroid Y Position (pixels)
+    description: |
+      Average centroid position of the guide star along the
+      science Y axis in units of pixels.
+    type: number
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    archive_catalog:
+      datatype: float
+      destination: [WFIExposure.centroid_y, GuideWindow.centroid_y]
+  centroid_x_uncertainty:
+    title: Guide Star Centroid X Position Uncertainty (pixels)
+    description: |
+      Uncertainty in the average centroid position of the
+      guide star along the science X axis in units of pixels.
+    type: number
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    archive_catalog:
+      datatype: float
+      destination: [WFIExposure.centroid_x_uncertainty, GuideWindow.centroid_x_uncertainty]
+  centroid_y_uncertainty:
+    title: Guide Star Centroid Y Position Uncertainty (pixels)
+    description: |
+      Uncertainty in the average centroid position of the
+      guide star along the science Y axis in units of pixels.
+    type: number
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    archive_catalog:
+      datatype: float
+      destination: [WFIExposure.gs_ctd_uy, GuideWindow.gs_ctd_uy]
+  epoch:
+    title: Guide Star Coordinates Epoch
+    description: |
+      Epoch of the celestial coordinates of the guide star
+      from the Guide Star Catalog (GSC).
+    type: string
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    maxLength: 10
+    archive_catalog:
+      datatype: nvarchar(10)
+      destination: [WFIExposure.epoch, GuideWindow.epoch]
+  proper_motion_ra:
+    title: Proper Motion of the Guide Star Right Ascension (mas / yr)
+    description: |
+      Proper motion of the guide star in right ascension
+      from the Guide Star Catalog (GSC) measured in units of
+      milli-arcseconds per year.
+    type: number
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    archive_catalog:
+      datatype: float
+      destination: [WFIExposure.proper_motion_ra, GuideWindow.proper_motion_ra]
+  proper_motion_dec:
+    title: Proper Motion of the Guide Star Declination (mas / yr)
+    description: |
+      Proper motion of the guide star in declination from
+      the Guide Star Catalog (GSC) measured in units of
+      milli-arcseconds per year.
+    type: number
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    archive_catalog:
+      datatype: float
+      destination: [WFIExposure.proper_motion_dec, GuideWindow.proper_motion_dec]
+  parallax:
+    title: Guide Star Parallax (mas)
+    description: |
+      Annual trigonometric parallax of the guide star from
+      the Guide Star Catalog (GSC) measured in units of
+      milli-arcseconds.
+    type: number
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    archive_catalog:
+      datatype: float
+      destination: [WFIExposure.parallax, GuideWindow.parallax]
+  centroid_rms:
+    title: Guide Star Centroid RMS
+    description: |
+      Root mean square (RMS) of the guide star position in
+      the tracking guide window from the Fine Attitude Correction
+      Estimate (FACE) information. The FACE information determines the
+      error across the guiding pattern using all centroid
+      measurements.
+    type: number
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    archive_catalog:
+      datatype: float
+      destination: [WFIExposure.centroid_rms, GuideWindow.centroid_rms]
+propertyOrder: [guide_window_id, guide_mode, data_start, data_end,
+  window_xstart, window_ystart, window_xstop, window_ystop, window_xsize,
+  window_ysize, guide_star_id, gsc_version, ra, dec, ra_uncertainty,
+  dec_uncertainty, fgs_magnitude, fgs_magnitude_uncertainty, centroid_x,
+  centroid_y, centroid_x_uncertainty, centroid_y_uncertainty, epoch,
+  proper_motion_ra, proper_motion_dec, parallax, centroid_rms]
+required: [guide_window_id, guide_mode, data_start, data_end,
+  window_xstart, window_ystart, window_xstop, window_ystop, window_xsize,
+  window_ysize, guide_star_id, gsc_version, ra, dec, ra_uncertainty,
+  dec_uncertainty, fgs_magnitude, fgs_magnitude_uncertainty, centroid_x,
+  centroid_y, centroid_x_uncertainty, centroid_y_uncertainty, epoch,
+  proper_motion_ra, proper_motion_dec, parallax, centroid_rms]
+flowStyle: block
+...
