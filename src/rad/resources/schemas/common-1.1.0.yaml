@@ -22,7 +22,7 @@ allOf:
       tag: asdf://stsci.edu/datamodels/roman/tags/exposure-1.0.0
     guide_star:
       title: Guide Star Window Information
-      tag: asdf://stsci.edu/datamodels/roman/tags/guidestar-1.0.0
+      tag: asdf://stsci.edu/datamodels/roman/tags/guidestar-1.1.0
     instrument:
       title: WFI Observing Configuration
       tag: asdf://stsci.edu/datamodels/roman/tags/wfi_mode-1.0.0

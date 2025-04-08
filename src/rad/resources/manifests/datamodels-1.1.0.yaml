@@ -110,8 +110,8 @@ tags:
   title: Wcsinfo information
   description: |-
     Wcsinfo information
-- tag_uri: asdf://stsci.edu/datamodels/roman/tags/guidestar-1.0.0
-  schema_uri: asdf://stsci.edu/datamodels/roman/schemas/guidestar-1.0.0
+- tag_uri: asdf://stsci.edu/datamodels/roman/tags/guidestar-1.1.0
+  schema_uri: asdf://stsci.edu/datamodels/roman/schemas/guidestar-1.1.0
   title: Guidestar information
   description: |-
     Guidestar information
