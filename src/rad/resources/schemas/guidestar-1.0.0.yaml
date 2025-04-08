@@ -162,7 +162,7 @@ properties:
     sdf:
       special_processing: VALUE_REQUIRED
       source:
-        origin: TBD
+        origin: PSS:dms_guide_star.star_id
     maxLength: 20
     archive_catalog:
       datatype: nvarchar(20)
@@ -189,7 +189,7 @@ properties:
     sdf:
       special_processing: VALUE_REQUIRED
       source:
-        origin: TBD
+        origin: PSS:dms_guide_star.corrected_ra
     archive_catalog:
       datatype: float
       destination: [WFIExposure.ra, GuideWindow.ra]
@@ -202,7 +202,7 @@ properties:
     sdf:
       special_processing: VALUE_REQUIRED
       source:
-        origin: TBD
+        origin: PSS:dms_guide_star.corrected_dec
     archive_catalog:
       datatype: float
       destination: [WFIExposure.dec, GuideWindow.dec]
@@ -241,7 +241,7 @@ properties:
     sdf:
       special_processing: VALUE_REQUIRED
       source:
-        origin: TBD
+        origin: PSS:dms_guide_star.fgs_mag
     archive_catalog:
       datatype: float
       destination: [WFIExposure.fgs_magnitude, GuideWindow.fgs_magnitude]

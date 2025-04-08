@@ -45,8 +45,8 @@ tags:
   description: |-
     Roman WFI Instrument
 # Metadata Modules
-- tag_uri: asdf://stsci.edu/datamodels/roman/tags/exposure-1.1.0
-  schema_uri: asdf://stsci.edu/datamodels/roman/schemas/exposure-1.1.0
+- tag_uri: asdf://stsci.edu/datamodels/roman/tags/exposure-1.0.0
+  schema_uri: asdf://stsci.edu/datamodels/roman/schemas/exposure-1.0.0
   title: Exposure information
   description: |-
     Exposure information
@@ -65,8 +65,8 @@ tags:
   title: Ephemeris information
   description: |-
     Ephemeris information
-- tag_uri: asdf://stsci.edu/datamodels/roman/tags/visit-1.1.0
-  schema_uri: asdf://stsci.edu/datamodels/roman/schemas/visit-1.1.0
+- tag_uri: asdf://stsci.edu/datamodels/roman/tags/visit-1.0.0
+  schema_uri: asdf://stsci.edu/datamodels/roman/schemas/visit-1.0.0
   title: Visit information
   description: |-
     Visit information
@@ -110,8 +110,8 @@ tags:
   title: Wcsinfo information
   description: |-
     Wcsinfo information
-- tag_uri: asdf://stsci.edu/datamodels/roman/tags/guidestar-1.1.0
-  schema_uri: asdf://stsci.edu/datamodels/roman/schemas/guidestar-1.1.0
+- tag_uri: asdf://stsci.edu/datamodels/roman/tags/guidestar-1.0.0
+  schema_uri: asdf://stsci.edu/datamodels/roman/schemas/guidestar-1.0.0
   title: Guidestar information
   description: |-
     Guidestar information
@@ -277,8 +277,8 @@ tags:
   title: Image source catalog
   description: |-
     Photometry and astrometry computed by the Source Catalog Step
-- tag_uri: asdf://stsci.edu/datamodels/roman/tags/segmentation_map-1.1.0
-  schema_uri: asdf://stsci.edu/datamodels/roman/schemas/segmentation_map-1.1.0
+- tag_uri: asdf://stsci.edu/datamodels/roman/tags/segmentation_map-1.0.0
+  schema_uri: asdf://stsci.edu/datamodels/roman/schemas/segmentation_map-1.0.0
   title: Segmentation map
   description: |-
     Segmentation map computed by the Source Catalog Step
