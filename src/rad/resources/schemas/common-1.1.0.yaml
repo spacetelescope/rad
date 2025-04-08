@@ -19,10 +19,10 @@ allOf:
       tag: asdf://stsci.edu/datamodels/roman/tags/ephemeris-1.0.0
     exposure:
       title: Exposure Information
-      tag: asdf://stsci.edu/datamodels/roman/tags/exposure-1.0.0
+      tag: asdf://stsci.edu/datamodels/roman/tags/exposure-1.1.0
     guide_star:
       title: Guide Star Window Information
-      tag: asdf://stsci.edu/datamodels/roman/tags/guidestar-1.0.0
+      tag: asdf://stsci.edu/datamodels/roman/tags/guidestar-1.1.0
     instrument:
       title: WFI Observing Configuration
       tag: asdf://stsci.edu/datamodels/roman/tags/wfi_mode-1.0.0
@@ -46,7 +46,7 @@ allOf:
       tag: asdf://stsci.edu/datamodels/roman/tags/velocity_aberration-1.0.0
     visit:
       title: Visit Information
-      tag: asdf://stsci.edu/datamodels/roman/tags/visit-1.0.0
+      tag: asdf://stsci.edu/datamodels/roman/tags/visit-1.1.0
     wcsinfo:
       title: World Coordinate System (WCS) Parameters
       tag: asdf://stsci.edu/datamodels/roman/tags/wcsinfo-1.0.0
