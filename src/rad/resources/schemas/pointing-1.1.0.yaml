@@ -41,8 +41,7 @@ properties:
     maxLength: 10
     archive_catalog:
       datatype: nvarchar(10)
-      destination: [WFIExposure.pointing_engineering_source, GuideWindow.pointing_engineering_source,
-                    SourceCatalog.pointing_engineering_source, SegmentationMap.pointing_engineering_source]
+      destination: [WFIExposure.pointing_engineering_source, GuideWindow.pointing_engineering_source]
   ra_v1:
     title: Right Ascension of the Telescope V1 Axis (deg)
     description: |
