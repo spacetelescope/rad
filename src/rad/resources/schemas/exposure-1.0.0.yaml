@@ -85,7 +85,7 @@ properties:
     sdf:
       special_processing: VALUE_REQUIRED
       source:
-        origin: PSS:observation_specification.multi_accum_resultant
+        origin: PSS:dms_visit.multi_accum_resultant
     archive_catalog:
       datatype: int
       destination: [WFIExposure.exposure_nresultants, GuideWindow.exposure_nresultants, WFICommon.exposure_nresultants]
@@ -172,7 +172,7 @@ properties:
     sdf:
       special_processing: VALUE_REQUIRED
       source:
-        origin: PSS:observation_specification.multi_accum_table_number
+        origin: PSS:dms_visit.multi_accum_table_number
     archive_catalog:
       datatype: smallint
       destination: [WFIExposure.ma_table_number, GuideWindow.ma_table_number, WFICommon.ma_table_number]
