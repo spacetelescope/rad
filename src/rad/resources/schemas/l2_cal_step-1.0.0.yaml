@@ -149,7 +149,7 @@ properties:
       catalog and, if necessary, corrects the World Coordinate System
       (WCS) alignment.
     type: string
-    enum: ['N/A', 'COMPLETE', 'FAILED', 'SKIPPED', 'INCOMPLETE']
+    enum: ['N/A', 'COMPLETE', 'SKIPPED', 'INCOMPLETE']
     maxLength: 15
     archive_catalog:
       datatype: nvarchar(15)
