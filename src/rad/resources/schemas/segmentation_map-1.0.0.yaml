@@ -32,7 +32,6 @@ properties:
     ndim: 2
     datatype: uint32
     exact_datatype: true
-
 required: [meta, data]
 flowStyle: block
 propertyOrder: [meta, data]
