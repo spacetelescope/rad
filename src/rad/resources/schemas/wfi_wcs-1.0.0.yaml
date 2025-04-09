@@ -71,5 +71,5 @@ properties:
     tag: tag:stsci.edu:gwcs/wcs-*
 propertyOrder: [meta, wcs_l2, wcs_l1]
 flowStyle: block
-required: [meta, wcs_l2, wcs_l1]
+required: [meta]
 ...
