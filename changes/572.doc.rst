@@ -1,0 +1,1 @@
+Update versioning docs to describe non-ASDF schema changes will not result in new schema versions.
