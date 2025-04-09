@@ -1,0 +1,180 @@
+%YAML 1.1
+---
+$schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.0.0
+id: asdf://stsci.edu/datamodels/roman/schemas/wcsinfo-1.1.0
+
+title: World Coordinate System (WCS) Information
+type: object
+properties:
+  aperture_name:
+    title: Aperture Name
+    description: |
+      Name of the aperture used to specify the
+      transformations between detector pixel, science pixel, and
+      spacecraft V coordinate frames. This information comes from the
+      Science Instrument Aperture File (SIAF) in the Science
+      Operations Center (SOC) Project Reference Database (PRD).
+    type: string
+    maxLength: 20
+    enum: ['WFI01_FULL', 'WFI02_FULL', 'WFI03_FULL', 'WFI04_FULL',
+           'WFI05_FULL', 'WFI06_FULL', 'WFI07_FULL', 'WFI08_FULL',
+           'WFI09_FULL', 'WFI10_FULL', 'WFI11_FULL', 'WFI12_FULL',
+           'WFI13_FULL', 'WFI14_FULL', 'WFI15_FULL', 'WFI16_FULL',
+           'WFI17_FULL', 'WFI18_FULL',
+           'WFI_01_FULL', 'WFI_02_FULL', 'WFI_03_FULL', 'WFI_04_FULL',
+           'WFI_05_FULL', 'WFI_06_FULL', 'WFI_07_FULL', 'WFI_08_FULL',
+           'WFI_09_FULL', 'WFI_10_FULL', 'WFI_11_FULL', 'WFI_12_FULL',
+           'WFI_13_FULL', 'WFI_14_FULL', 'WFI_15_FULL', 'WFI_16_FULL',
+           'WFI_17_FULL', 'WFI_18_FULL',
+           'WFI_CEN', 'BORESIGHT', 'CGI_CEN']
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    archive_catalog:
+      datatype: nvarchar(20)
+      destination: [WFIExposure.aperture_name, GuideWindow.aperture_name]
+
+  v2_ref:
+    title: V2 Reference Position (arcsec)
+    description: |
+      Coordinate of the reference pixel position along the
+      telescope V2 axis in units of arcseconds. This information comes
+      from the Science Instrument Aperture File (SIAF) in the Science
+      Operations Center (SOC) Project Reference Database (PRD). The
+      telescope V coordinate system is defined with its origin at the
+      vertex of the primary mirror. The +V1 axis is defined as
+      parallel to the telescope boresight, the +V3 axis is orthogonal
+      to the sunshield, and the +V2 axis completes the right-hand
+      system. See Roman-STScI-000143 "Description of the Roman SIAF
+      and Coordinate Frames" for more information.
+    type: number
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    archive_catalog:
+      datatype: float
+      destination: [WFIExposure.v2_ref, GuideWindow.v2_ref]
+  v3_ref:
+    title: V3 Reference Position (arcsec)
+    description: |
+      Coordinate of the reference pixel position along the
+      telescope V3 axis in units of arcseconds. This information comes
+      from the Science Instrument Aperture File (SIAF) in the Science
+      Operations Center (SOC) Project Reference Database (PRD). The
+      telescope V coordinate system is defined with its origin at the
+      vertex of the primary mirror. The +V3 axis is orthogonal to the
+      sunshield. See Roman-STScI-000143 "Description of the Roman SIAF
+      and Coordinate Frames" for more information.
+    type: number
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    archive_catalog:
+      datatype: float
+      destination: [WFIExposure.v3_ref, GuideWindow.v3_ref]
+  vparity:
+    title: Relative Rotation Between the Ideal and Telescope Axes
+    description: |
+      Relative sense of rotation between the ideal and
+      telescope coordinate systems. The value may be either 1 or -1.
+      This information comes from the Science Instrument Aperture File
+      (SIAF) in the Science Operations Center (SOC) Project Reference
+      Database (PRD). See documents STScI-JWST-001550 and
+      STScI-Roman-000143 for more information.
+    type: integer
+    enum: [-1, 1]
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    archive_catalog:
+      datatype: smallint
+      destination: [WFIExposure.vparity, GuideWindow.vparity]
+  v3yangle:
+    title: Angle Between the V3 and Ideal Y Axes (deg)
+    description: |
+      Angle between the telescope V3 axis and the ideal Y
+      axis in units of degrees. This information comes from the
+      Science Instrument Aperture File (SIAF) in the Science
+      Operations Center (SOC) Project Reference Database (PRD). The
+      telescope V coordinate system is defined with its origin at the
+      vertex of the primary mirror. The +V3 axis is orthogonal to the
+      sunshield. The ideal coordinate system is a
+      geomtric-distortion-corrected reference frame projected onto a
+      tangent plane. See Roman-STScI-000143 "Description of the Roman
+      SIAF and Coordinate Frames" for more information.
+    type: number
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    archive_catalog:
+      datatype: float
+      destination: [WFIExposure.v3yangle, GuideWindow.v3yangle]
+  ra_ref:
+    title: Right Ascension of the Reference Position (deg)
+    description: |
+      Right ascension of the reference pixel position on the
+      sky in units of degrees.
+    type: number
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    archive_catalog:
+      datatype: float
+      destination: [WFIExposure.ra_ref, GuideWindow.ra_ref]
+  dec_ref:
+    title: Declination of the Reference Position (deg)
+    description: |
+      Declination of the reference pixel position on the sky
+      in units of degrees.
+    type: number
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    archive_catalog:
+      datatype: float
+      destination: [WFIExposure.dec_ref, GuideWindow.dec_ref]
+  roll_ref:
+    title: V3 Position Angle at the Reference Position
+    description: |
+      Position angle of the telescope V3 axis at the
+      reference pixel position measured from North to East. The
+      telescope V coordinate system is defined with its origin at the
+      vertex of the primary mirror. The +V3 axis is orthogonal to the
+      sunshield. See Roman-STScI-000143 "Description of the Roman SIAF
+      and Coordinate Frames" for more information.
+    type: number
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    archive_catalog:
+      datatype: float
+      destination: [WFIExposure.roll_ref, GuideWindow.roll_ref]
+  s_region:
+    title: Spatial Extent of the Exposure
+    description: |
+      The region of the sky enclosed by the pixel data
+      contained within this file. This is given as a polygon stored as
+      a string with the vertices defined by a list of right ascension
+      and declination pairs in units of degrees.
+    type: string
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    archive_catalog:
+      datatype: nvarchar(max)
+      destination: [WFIExposure.s_region, GuideWindow.s_region]
+propertyOrder: [aperture_name, v2_ref, v3_ref, vparity, v3yangle,
+  ra_ref, dec_ref, roll_ref, s_region]
+flowStyle: block
+required: [aperture_name, v2_ref, v3_ref, vparity, v3yangle,
+  ra_ref, dec_ref, roll_ref, s_region]
+...

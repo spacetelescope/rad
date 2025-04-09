@@ -1,0 +1,102 @@
+%YAML 1.1
+---
+$schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.0.0
+id: asdf://stsci.edu/datamodels/roman/schemas/program-1.1.0
+
+title: Program Information
+type: object
+properties:
+  title:
+    title: Proposal Title
+    description: |
+      The submitted proposal title of the program.
+    type: string
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: PSS:dms_visit.template
+    maxLength: 200
+    archive_catalog:
+      datatype: nvarchar(200)
+      destination: [WFIExposure.program_title, WFIMosaic.program_title, GuideWindow.program_title,
+                    SourceCatalog.program_title, SegmentationMap.program_title]
+  investigator_name:
+    title: Principal Investigator Name
+    description: |
+      The name of the principle investigator (PI) of the
+      program.
+    type: string
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        # There are a number of ways to get the pi_name.  Here is one
+        # of them: "= apt('./ProposalInformation/PrincipalInvestigator/InvestigatorAddress/LastName') + ', ' + apt('./ProposalInformation/PrincipalInvestigator/InvestigatorAddress/FirstName')"
+        origin: TBD
+    maxLength: 100
+    archive_catalog:
+      datatype: nvarchar(100)
+      destination: [WFIExposure.investigator_name, WFIMosaic.investigator_name, GuideWindow.investigator_name,
+                    SourceCatalog.investigator_name, SegmentationMap.investigator_name]
+  category:
+    title: Program Category
+    description: |
+      The submitted proposal category of the program. The
+      categories include calibration (CAL), core community survey
+      (CCS), coronagraph technology demonstration (CGI), observatory
+      commissioning (COM), engineering (ENG), general astrophysics
+      survey (GAS), general investigator (GI), and observing conducted
+      at the direction of the National Aeronautics and Space
+      Administration (NASA).
+    type: string
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: PSS:dms_program.category
+    maxLength: 6
+    archive_catalog:
+      datatype: nvarchar(6)
+      destination: [WFIExposure.program_category, WFIMosaic.program_category, GuideWindow.program_category,
+                    SourceCatalog.program_category, SegmentationMap.program_category]
+  subcategory:
+    title: Program Subcategory
+    description: |
+      The submitted proposal subcategory of the program. The
+      subcategories include calibration (CAL), coronagraph technology
+      demonstration (CGI), community research programs (CR),
+      discretionary research programs (DR), Galactic Bulge Time Domain
+      Survey (GBTD), High-Latitude Time Domain Survey (HLTD),
+      High-Latitude Wide-Area Survey (HLWA), observational research
+      program (OR), Wide Field Instrument (WFI), and Wavefront Sensing
+      and Control (WFSC). All subcategories belong to only a subset of
+      the meta.program.category values.
+    type: string
+    enum: ['CAL', 'CGI', 'CR', 'DR', 'GBTD', 'HLTD', 'HLWA', 'OR',
+           'WFI', 'WFSC', 'None']
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: PSS:dms_program.subcategory
+    maxLength: 15
+    archive_catalog:
+      datatype: nvarchar(15)
+      destination: [WFIExposure.program_subcategory, WFIMosaic.program_subcategory, GuideWindow.program_subcategory,
+                    SourceCatalog.program_subcategory, SegmentationMap.program_subcategory]
+  science_category:
+    title: Science Category
+    description: |
+      The science category assigned during the Time
+      Allocation Committee (TAC) review process.
+    type: string
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: PSS:dms_program.science_category
+    maxLength: 50
+    archive_catalog:
+      datatype: nvarchar(50)
+      destination: [WFIExposure.science_category, WFIMosaic.science_category, GuideWindow.science_category,
+                    SourceCatalog.science_category, SegmentationMap.science_category]
+propertyOrder: [title, investigator_name, category, subcategory, science_category]
+flowStyle: block
+required: [title, investigator_name, category, subcategory, science_category]
+...

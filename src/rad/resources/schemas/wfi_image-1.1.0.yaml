@@ -20,7 +20,7 @@ properties:
           cal_logs:
             tag: asdf://stsci.edu/datamodels/roman/tags/cal_logs-1.0.0
           cal_step:
-            tag: asdf://stsci.edu/datamodels/roman/tags/l2_cal_step-1.0.0
+            tag: asdf://stsci.edu/datamodels/roman/tags/l2_cal_step-1.1.0
           outlier_detection:
             tag: asdf://stsci.edu/datamodels/roman/tags/outlier_detection-1.0.0
           photometry:
@@ -203,11 +203,35 @@ properties:
     datatype: uint32
     exact_datatype: true
     ndim: 2
+
+  reference_read:
+    title: Reference Read (DN)
+    description: |
+      Reference read in units of data numbers (DNs) subtracted
+      from subsequent reads up-the-ramp. This array is only present
+      if a reference read was used and downlinked.
+    tag: tag:stsci.edu:asdf/core/ndarray-1.*
+    ndim: 2
+    datatype: uint16
+    unit: "DN"
+    exact_datatype: true
+  reference_amp33:
+    title: Amplifier 33 Reference Pixel Data for the Reference Read (DN)
+    description: |
+      Reference pixel data from amplifier 33 in units of data numbers (DNs)
+      for the reference read. This array is only present if a reference
+      read was used and downlinked.
+    tag: tag:stsci.edu:asdf/core/ndarray-1.*
+    ndim: 2
+    datatype: uint16
+    unit: "DN"
+    exact_datatype: true
 propertyOrder: [meta, data, dq, err, var_poisson, var_rnoise, var_flat,
                 amp33, border_ref_pix_left, border_ref_pix_right,
                 border_ref_pix_top, border_ref_pix_bottom,
                 dq_border_ref_pix_left, dq_border_ref_pix_right,
-                dq_border_ref_pix_top, dq_border_ref_pix_bottom]
+                dq_border_ref_pix_top, dq_border_ref_pix_bottom,
+                reference_read, reference_amp33]
 flowStyle: block
 required: [meta, data, dq, err, var_poisson, var_rnoise, amp33,
            border_ref_pix_left, border_ref_pix_right, border_ref_pix_top,
