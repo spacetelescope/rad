@@ -24,7 +24,7 @@ properties:
     maxLength: 20
     archive_catalog:
       datatype: nvarchar(20)
-      destination: [WFIExposure.guide_window_id, GuideWindow.guide_window_id, WFICommon.guide_window_id]
+      destination: [WFIExposure.guide_window_id, GuideWindow.guide_window_id]
   guide_mode:
     allOf:
       - $ref: asdf://stsci.edu/datamodels/roman/schemas/guidewindow_modes-1.0.0
@@ -35,7 +35,7 @@ properties:
     maxLength: 18
     archive_catalog:
       datatype: nvarchar(18)
-      destination: [WFIExposure.guide_mode, GuideWindow.guide_mode, WFICommon.guide_mode]
+      destination: [WFIExposure.guide_mode, GuideWindow.guide_mode]
   window_xstart:
     title: Guide Window X Start Position (pixels)
     description: |
@@ -48,7 +48,7 @@ properties:
         origin: Science Data Formatting
     archive_catalog:
       datatype: int
-      destination: [WFIExposure.window_xstart, WFICommon.window_xstart]
+      destination: [WFIExposure.window_xstart]
   window_ystart:
     title: Guide Window Y Start Position (pixels)
     description: |
@@ -61,7 +61,7 @@ properties:
         origin: Science Data Formatting
     archive_catalog:
       datatype: int
-      destination: [WFIExposure.window_ystart, WFICommon.window_ystart]
+      destination: [WFIExposure.window_ystart]
   window_xstop:
     title: Guide Window X Stop Position (pixels)
     description: |
@@ -74,7 +74,7 @@ properties:
         origin: Science Data Formatting
     archive_catalog:
       datatype: int
-      destination: [WFIExposure.window_xstop, WFICommon.window_xstop]
+      destination: [WFIExposure.window_xstop]
   window_ystop:
     title: Guide Window Y Start Position (pixels)
     description: |
@@ -87,7 +87,7 @@ properties:
         origin: Science Data Formatting
     archive_catalog:
       datatype: int
-      destination: [WFIExposure.window_ystop, WFICommon.window_ystop]
+      destination: [WFIExposure.window_ystop]
   guide_star_id:
     title: Guide Star Identifier
     description: |
@@ -98,7 +98,7 @@ properties:
     sdf:
       special_processing: VALUE_REQUIRED
       source:
-        origin: TBD
+        origin: PSS:dms_guide_star.star_id
     maxLength: 20
     archive_catalog:
       datatype: nvarchar(20)
