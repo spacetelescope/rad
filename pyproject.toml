@@ -72,10 +72,12 @@ where = [
     "manifests/*.yaml",
     "schemas/*.yaml",
     "schemas/**/*.yaml",
+    "latest/*.yaml",
+    "latest/**/*.yaml",
 ]
 
 [tool.pytest.ini_options]
-minversion = 7.0
+minversion = "7.0"
 doctest_plus = true
 doctest_rst = true
 text_file_format = "rst"
@@ -90,6 +92,7 @@ addopts = [
 ]
 testpaths = [
     "tests",
+    "src/rad/resources/latest",
     "src/rad/resources/schemas",
 ]
 filterwarnings = [
@@ -97,7 +100,7 @@ filterwarnings = [
 ]
 asdf_schema_tests_enabled = "true"
 asdf_schema_skip_tests = "src/rad/resources/schemas/rad_schema-1.0.0.yaml"
-asdf_schema_root = "src/rad/resources/schemas"
+asdf_schema_root = "src/rad/resources"
 
 [tool.ruff]
 line-length = 130

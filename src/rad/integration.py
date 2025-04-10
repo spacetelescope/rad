@@ -1,6 +1,18 @@
 import importlib.resources as importlib_resources
 
+import yaml
 from asdf.resource import DirectoryResourceMapping
+
+
+class RadResourceMapping(DirectoryResourceMapping):
+    def _make_uri(self, file, path_components):
+        with file.open("rb") as f:
+            yaml_file = yaml.safe_load(f.read())
+
+        if "id" in yaml_file:
+            return yaml_file["id"]
+
+        return super()._make_uri(file, path_components)
 
 
 def get_resource_mappings():
@@ -17,7 +29,4 @@ def get_resource_mappings():
 
     resources_root = importlib_resources.files(resources)
 
-    return [
-        DirectoryResourceMapping(resources_root / "schemas", "asdf://stsci.edu/datamodels/roman/schemas/", recursive=True),
-        DirectoryResourceMapping(resources_root / "manifests", "asdf://stsci.edu/datamodels/roman/manifests/"),
-    ]
+    return [RadResourceMapping(resources_root, "", recursive=True)]
