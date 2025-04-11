@@ -193,7 +193,8 @@ properties:
       avg_face_filename:
         title: Averaged FACE Filename
         description: |
-          Filename of the guide window L1 file containing the averaged FACE fitting data for this GW exposure ID.
+          Filename of the guide window L1 file containing the averaged
+          FACE fitting data for this GW exposure ID.
         type: string
         maxLength: 120
         sdf:
@@ -675,9 +676,9 @@ properties:
 
     required: [ "fgs_modes_used", "acq_ma_table_id", "acq_gw_cycles_per_sci_read",
       "acq_pedestal_resultant_exp_time", "acq_signal_resultant_exp_time", "track_ma_table_id",
-      "track_gw_cycles_per_sci_read", "track_pedestal_resultant_exp_time", "track_signal_resultant_exp_time",
-      "guide_star_acq_num", "guide_window_id", "detector", "optical_element", "avg_face_filename",
-      "guide_window", "guide_star" ]
+      "track_gw_cycles_per_sci_read", "track_pedestal_resultant_exp_time",
+      "track_signal_resultant_exp_time", "guide_star_acq_num", "guide_window_id", "detector",
+      "optical_element", "avg_face_filename", "guide_window", "guide_star" ]
 
 
   amp33:
@@ -689,7 +690,8 @@ properties:
       amp33_track_pedestals:
         title: Pedestal Track Amplifier 33 Readouts (DN)
         description: |
-          3D array containing the 33rd amplifier readouts (e.g. reference pixels) during tracking pedestal resultants
+          3D array containing the 33rd amplifier readouts (e.g. reference pixels) during
+          tracking pedestal resultants.
         tag: tag:stsci.edu:asdf/core/ndarray-1.*
         datatype: uint16
         exact_datatype: true
@@ -698,7 +700,8 @@ properties:
       amp33_track_signals:
         title: Signal Track Amplifier 33 Readouts (DN)
         description: |
-          3D array containing the 33rd amplifier readouts (e.g. reference pixels) during tracking signal resultants
+          3D array containing the 33rd amplifier readouts (e.g. reference pixels) during
+          tracking signal resultants.
         tag: tag:stsci.edu:asdf/core/ndarray-1.*
         datatype: uint16
         exact_datatype: true
@@ -709,7 +712,8 @@ properties:
       amp33_acq_pedestals:
         title: Pedestal Amplifier 33 Readouts (DN)
         description: |
-          3D array containing the 33rd amplifier readouts (e.g. reference pixels) during acquisition pedestal resultants
+          3D array containing the 33rd amplifier readouts (e.g. reference pixels) during
+          acquisition pedestal resultants.
         tag: tag:stsci.edu:asdf/core/ndarray-1.*
         datatype: uint16
         exact_datatype: true
@@ -718,7 +722,8 @@ properties:
       amp33_acq_signals:
         title: Signal Amplifier 33 Readouts (DN)
         description: |
-          3D array containing the 33rd amplifier readouts (e.g. reference pixels)during acquisition signal resultants
+          3D array containing the 33rd amplifier readouts (e.g. reference pixels) during
+          acquisition signal resultants.
         tag: tag:stsci.edu:asdf/core/ndarray-1.*
         datatype: uint16
         exact_datatype: true
@@ -727,7 +732,8 @@ properties:
       amp33_edge_acq_pedestals:
         title: Pedestal Edge Amplifier 33 Readouts (DN)
         description: |
-          3D array containing the 33rd amplifier readouts (e.g. reference pixels) during the edge acquisition pedestal resultants
+          3D array containing the 33rd amplifier readouts (e.g. reference pixels) during
+          the edge acquisition pedestal resultants.
         tag: tag:stsci.edu:asdf/core/ndarray-1.*
         datatype: uint16
         exact_datatype: true
@@ -736,7 +742,8 @@ properties:
       amp33_edge_acq_signals:
         title: Signal Edge Amplifier 33 Readouts (DN)
         description: |
-          3D array containing the 33rd amplifier readouts (e.g. reference pixels) during the edge acquisition signal resultants
+          3D array containing the 33rd amplifier readouts (e.g. reference pixels) during
+          the edge acquisition signal resultants.
         tag: tag:stsci.edu:asdf/core/ndarray-1.*
         datatype: uint16
         exact_datatype: true
