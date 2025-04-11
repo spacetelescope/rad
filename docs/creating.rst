@@ -337,7 +337,7 @@ Tagged List
 ***********
 
 Currently, there is only one case where the RAD schemas tag a list, the
-:ref:`schemas/cal_logs-1.0.0` schema. Just as in this case, the top level of the
+:ref:`latest/cal_logs` schema. Just as in this case, the top level of the
 schema will be:
 
 .. code:: yaml
