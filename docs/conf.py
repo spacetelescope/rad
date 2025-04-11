@@ -153,7 +153,7 @@ def setup(app):
 # Top-level directory containing ASDF schemas (relative to current directory)
 asdf_schema_path = "../src/rad/resources"
 # This is the prefix common to all schema IDs in this repository
-asdf_schema_standard_prefix = "schemas"
+asdf_schema_standard_prefix = "latest"
 asdf_schema_reference_mappings = [
     (
         "asdf://stsci.edu/datamodels/roman/tags/calibration_software_name-1.0.0",
