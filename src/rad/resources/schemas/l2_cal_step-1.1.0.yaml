@@ -12,7 +12,7 @@ properties:
       Step in romancal that assigns a World Coordinate
       System (WCS) object to a science image.
     type: string
-    enum: ['N/A', 'COMPLETE', 'SKIPPED', 'INCOMPLETE']
+    enum: ['N/A', 'COMPLETE', 'FAILED', 'SKIPPED', 'INCOMPLETE']
     maxLength: 15
     archive_catalog:
       datatype: nvarchar(15)
@@ -25,7 +25,7 @@ properties:
       the same signal for the same illumination based on the pixel
       response.
     type: string
-    enum: ['N/A', 'COMPLETE', 'SKIPPED', 'INCOMPLETE']
+    enum: ['N/A', 'COMPLETE', 'FAILED', 'SKIPPED', 'INCOMPLETE']
     maxLength: 15
     archive_catalog:
       datatype: nvarchar(15)
@@ -37,7 +37,7 @@ properties:
       dark current by subtracting the dark reference data from the
       science data.
     type: string
-    enum: ['N/A', 'COMPLETE', 'SKIPPED', 'INCOMPLETE']
+    enum: ['N/A', 'COMPLETE', 'FAILED', 'SKIPPED', 'INCOMPLETE']
     maxLength: 15
     archive_catalog:
       datatype: nvarchar(15)
@@ -48,7 +48,7 @@ properties:
       Step in romancal that initializes the data quality
       array and masks known bad pixels.
     type: string
-    enum: ['N/A', 'COMPLETE', 'SKIPPED', 'INCOMPLETE']
+    enum: ['N/A', 'COMPLETE', 'FAILED', 'SKIPPED', 'INCOMPLETE']
     maxLength: 15
     archive_catalog:
       datatype: nvarchar(15)
@@ -59,7 +59,7 @@ properties:
       Step in ROMANCAL which applies the scaling factors determined in the Photom calibrations step.
       The data are converted from DN/s to MJy/sr.
     type: string
-    enum: ['N/A', 'COMPLETE', 'SKIPPED', 'INCOMPLETE']
+    enum: ['N/A', 'COMPLETE', 'FAILED', 'SKIPPED', 'INCOMPLETE']
     maxLength: 15
     archive_catalog:
       datatype: nvarchar(15)
@@ -70,7 +70,7 @@ properties:
       Step in romancal that linearizes the ramp data to
       correct for deviations from a linear response.
     type: string
-    enum: ['N/A', 'COMPLETE', 'SKIPPED', 'INCOMPLETE']
+    enum: ['N/A', 'COMPLETE', 'FAILED', 'SKIPPED', 'INCOMPLETE']
     maxLength: 15
     archive_catalog:
       datatype: nvarchar(15)
@@ -81,7 +81,7 @@ properties:
       Step in romancal that populates photometric
       calibration information in the metadata of the science file.
     type: string
-    enum: ['N/A', 'COMPLETE', 'SKIPPED', 'INCOMPLETE']
+    enum: ['N/A', 'COMPLETE', 'FAILED', 'SKIPPED', 'INCOMPLETE']
     maxLength: 15
     archive_catalog:
       datatype: nvarchar(15)
@@ -92,7 +92,7 @@ properties:
       Step in romancal that detects point sources in an
       image for use in astrometric alignment.
     type: string
-    enum: ['N/A', 'COMPLETE', 'SKIPPED', 'INCOMPLETE']
+    enum: ['N/A', 'COMPLETE', 'FAILED', 'SKIPPED', 'INCOMPLETE']
     maxLength: 15
     archive_catalog:
       datatype: nvarchar(15)
@@ -103,7 +103,7 @@ properties:
       Step in romancal that fits a slope to each pixel to
       compute the count rate.
     type: string
-    enum: ['N/A', 'COMPLETE', 'SKIPPED', 'INCOMPLETE']
+    enum: ['N/A', 'COMPLETE', 'FAILED', 'SKIPPED', 'INCOMPLETE']
     maxLength: 15
     archive_catalog:
       datatype: nvarchar(15)
@@ -115,7 +115,7 @@ properties:
       additional signal from the readout electronics (e.g., 1/f noise)
       using the reference pixels.
     type: string
-    enum: ['N/A', 'COMPLETE', 'SKIPPED', 'INCOMPLETE']
+    enum: ['N/A', 'COMPLETE', 'FAILED', 'SKIPPED', 'INCOMPLETE']
     maxLength: 15
     archive_catalog:
       datatype: nvarchar(15)
@@ -126,7 +126,7 @@ properties:
       Step in romancal that sets data quality flags for
       pixels at or above the saturation threshold.
     type: string
-    enum: ['N/A', 'COMPLETE', 'SKIPPED', 'INCOMPLETE']
+    enum: ['N/A', 'COMPLETE', 'FAILED', 'SKIPPED', 'INCOMPLETE']
     maxLength: 15
     archive_catalog:
       datatype: nvarchar(15)
@@ -136,7 +136,7 @@ properties:
     description: |
       Step in ROMANCAL which detects and flags outliers in a science image.
     type: string
-    enum: ['N/A', 'COMPLETE', 'SKIPPED', 'INCOMPLETE']
+    enum: ['N/A', 'COMPLETE', 'FAILED', 'SKIPPED', 'INCOMPLETE']
     maxLength: 15
     archive_catalog:
       datatype: nvarchar(15)
@@ -160,7 +160,7 @@ properties:
       Step in ROMANCAL that computes sky background values of each input image
       and derives scalings to equalize overlapping regions.
     type: string
-    enum: ['N/A', 'COMPLETE', 'SKIPPED', 'INCOMPLETE']
+    enum: ['N/A', 'COMPLETE', 'FAILED', 'SKIPPED', 'INCOMPLETE']
     maxLength: 15
     archive_catalog:
       datatype: nvarchar(15)

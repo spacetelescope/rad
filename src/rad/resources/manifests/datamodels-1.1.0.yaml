@@ -126,8 +126,8 @@ tags:
   title: Level 2 Calibration Step status information
   description: |-
     Level 2 Calibration Step status information
-- tag_uri: asdf://stsci.edu/datamodels/roman/tags/l3_cal_step-1.0.0
-  schema_uri: asdf://stsci.edu/datamodels/roman/schemas/l3_cal_step-1.0.0
+- tag_uri: asdf://stsci.edu/datamodels/roman/tags/l3_cal_step-1.1.0
+  schema_uri: asdf://stsci.edu/datamodels/roman/schemas/l3_cal_step-1.1.0
   title: Level 3 Calibration Step status information
   description: |-
     Level 3 Calibration Step status information
