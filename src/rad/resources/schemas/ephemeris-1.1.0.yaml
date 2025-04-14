@@ -1,0 +1,135 @@
+%YAML 1.1
+---
+$schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.0.0
+id: asdf://stsci.edu/datamodels/roman/schemas/ephemeris-1.1.0
+
+title: Ephemeris Data Information
+type: object
+properties:
+  ephemeris_reference_frame:
+    title: Ephemeris Reference Frame
+    description: |
+      Reference frame of the ephemeris information.
+    type: string
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    maxLength: 10
+    archive_catalog:
+      datatype: nvarchar(10)
+      destination: [WFIExposure.ephemeris_reference_frame, GuideWindow.ephemeris_reference_frame]
+  type:
+    title: Ephemeris Type
+    description: |
+      Type of ephemeris (either DEFINITIVE or PREDICTED).
+    type: string
+    enum: [DEFINITIVE, PREDICTED]
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    maxLength: 10
+    archive_catalog:
+      datatype: nvarchar(10)
+      destination: [WFIExposure.ephemeris_type, GuideWindow.ephemeris_type]
+  time:
+    title: UTC Time of Ephemeris Information (MJD)
+    description: |
+      UTC time of the position and velocity vectors in the
+      ephemeris. The time is provided in modified Julian date (MJD).
+    type: number
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: Roman Science Data Processing (RSDP)
+    archive_catalog:
+      datatype: float
+      destination: [WFIExposure.ephemeris_time, GuideWindow.ephemeris_time]
+  spatial_x:
+    title: X Spatial Coordinate of Roman (km)
+    description: |
+      X barycentric coordinate of the Roman observatory at
+      the MJD described by meta.ephemeris.time.
+    type: number
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: Roman Science Data Processing (RSDP)
+    archive_catalog:
+      datatype: float
+      destination: [WFIExposure.spatial_x, GuideWindow.spatial_x]
+  spatial_y:
+    title: Y Spatial Coordinate of Roman (km)
+    description: |
+      Y barycentric coordinate of the Roman observatory at
+      the MJD described by meta.ephemeris.time.
+    type: number
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: Roman Science Data Processing (RSDP)
+    archive_catalog:
+      datatype: float
+      destination: [WFIExposure.spatial_y, GuideWindow.spatial_y]
+  spatial_z:
+    title: Z Spatial Coordinate of Roman (km)
+    description: |
+      Z barycentric coordinate of the Roman observatory at
+      the MJD described by meta.ephemeris.time.
+    type: number
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: Roman Science Data Processing (RSDP)
+    archive_catalog:
+      datatype: float
+      destination: [WFIExposure.spatial_z, GuideWindow.spatial_z]
+  velocity_x:
+    title: X Component of Roman Velocity (km/s)
+    description: |
+      X component of the Roman velocity in a barycentric
+      system in units of km/s at the MJD described by
+      meta.ephemeris.time.
+    type: number
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: Roman Science Data Processing (RSDP)
+    archive_catalog:
+      datatype: float
+      destination: [WFIExposure.velocity_x, GuideWindow.velocity_x]
+  velocity_y:
+    title: Y Component of Roman Velocity (km/s)
+    description: |
+      Y component of the Roman velocity in a barycentric
+      system in units of km/s at the MJD described by
+      meta.ephemeris.time.
+    type: number
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: Roman Science Data Processing (RSDP)
+    archive_catalog:
+      datatype: float
+      destination: [WFIExposure.velocity_y, GuideWindow.velocity_y]
+  velocity_z:
+    title: Z Component of Roman Velocity (km/s)
+    description: |
+      Y component of the Roman velocity in a barycentric
+      system in units of km/s at the MJD described by
+      meta.ephemeris.time.
+    type: number
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: Roman Science Data Processing (RSDP)
+    archive_catalog:
+      datatype: float
+      destination: [WFIExposure.velocity_z, GuideWindow.velocity_z]
+propertyOrder: [type, time, ephemeris_reference_frame, spatial_x, spatial_y,
+                spatial_z, velocity_x, velocity_y, velocity_z]
+flowStyle: block
+required: [type, time, ephemeris_reference_frame, spatial_x, spatial_y,
+           spatial_z, velocity_x, velocity_y, velocity_z]
+...

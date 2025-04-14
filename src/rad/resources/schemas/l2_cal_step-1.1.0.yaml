@@ -1,0 +1,174 @@
+%YAML 1.1
+---
+$schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.0.0
+id: asdf://stsci.edu/datamodels/roman/schemas/l2_cal_step-1.1.0
+
+title: Level 2 Calibration Status
+type: object
+properties:
+  assign_wcs:
+    title: Assign World Coordinate System (WCS) Step
+    description: |
+      Step in romancal that assigns a World Coordinate
+      System (WCS) object to a science image.
+    type: string
+    enum: ['N/A', 'COMPLETE', 'FAILED', 'SKIPPED', 'INCOMPLETE']
+    maxLength: 15
+    archive_catalog:
+      datatype: nvarchar(15)
+      destination: [ScienceRefData.s_assign_wcs]
+  flat_field:
+    title: Flat Field Correction Step
+    description: |
+      Step in romancal in which a science image is
+      flat-fielded, whereby each detector pixel is calibrated to give
+      the same signal for the same illumination based on the pixel
+      response.
+    type: string
+    enum: ['N/A', 'COMPLETE', 'FAILED', 'SKIPPED', 'INCOMPLETE']
+    maxLength: 15
+    archive_catalog:
+      datatype: nvarchar(15)
+      destination: [ScienceRefData.s_flat_field]
+  dark:
+    title: Dark Current Subtraction Step
+    description: |
+      Step in romancal that performs a correction for the
+      dark current by subtracting the dark reference data from the
+      science data.
+    type: string
+    enum: ['N/A', 'COMPLETE', 'FAILED', 'SKIPPED', 'INCOMPLETE']
+    maxLength: 15
+    archive_catalog:
+      datatype: nvarchar(15)
+      destination: [ScienceRefData.s_dark]
+  dq_init:
+    title: Data Quality Initialization Step
+    description: |
+      Step in romancal that initializes the data quality
+      array and masks known bad pixels.
+    type: string
+    enum: ['N/A', 'COMPLETE', 'FAILED', 'SKIPPED', 'INCOMPLETE']
+    maxLength: 15
+    archive_catalog:
+      datatype: nvarchar(15)
+      destination: [ScienceRefData.s_dq_init]
+  flux:
+    title: Flux Scale Application Step
+    description: |
+      Step in ROMANCAL which applies the scaling factors determined in the Photom calibrations step.
+      The data are converted from DN/s to MJy/sr.
+    type: string
+    enum: ['N/A', 'COMPLETE', 'FAILED', 'SKIPPED', 'INCOMPLETE']
+    maxLength: 15
+    archive_catalog:
+      datatype: nvarchar(15)
+      destination: [ScienceRefData.s_flux]
+  linearity:
+    title: Classical Linearity Correction Step
+    description: |
+      Step in romancal that linearizes the ramp data to
+      correct for deviations from a linear response.
+    type: string
+    enum: ['N/A', 'COMPLETE', 'FAILED', 'SKIPPED', 'INCOMPLETE']
+    maxLength: 15
+    archive_catalog:
+      datatype: nvarchar(15)
+      destination: [ScienceRefData.s_linearity]
+  photom:
+    title: Populate Photometric Keywords Step
+    description: |
+      Step in romancal that populates photometric
+      calibration information in the metadata of the science file.
+    type: string
+    enum: ['N/A', 'COMPLETE', 'FAILED', 'SKIPPED', 'INCOMPLETE']
+    maxLength: 15
+    archive_catalog:
+      datatype: nvarchar(15)
+      destination: [ScienceRefData.s_photom]
+  source_catalog:
+    title: Source Catalog Step
+    description: |
+      Step in romancal that detects point sources in an
+      image for use in astrometric alignment.
+    type: string
+    enum: ['N/A', 'COMPLETE', 'FAILED', 'SKIPPED', 'INCOMPLETE']
+    maxLength: 15
+    archive_catalog:
+      datatype: nvarchar(15)
+      destination: [ScienceRefData.s_source_catalog]
+  ramp_fit:
+    title: Ramp Fitting Step
+    description: |
+      Step in romancal that fits a slope to each pixel to
+      compute the count rate.
+    type: string
+    enum: ['N/A', 'COMPLETE', 'FAILED', 'SKIPPED', 'INCOMPLETE']
+    maxLength: 15
+    archive_catalog:
+      datatype: nvarchar(15)
+      destination: [ScienceRefData.s_ramp_fit]
+  refpix:
+    title: Reference Pixel Correction Step
+    description: |
+      Step in romancal that corrects science pixels for
+      additional signal from the readout electronics (e.g., 1/f noise)
+      using the reference pixels.
+    type: string
+    enum: ['N/A', 'COMPLETE', 'FAILED', 'SKIPPED', 'INCOMPLETE']
+    maxLength: 15
+    archive_catalog:
+      datatype: nvarchar(15)
+      destination: [ScienceRefData.s_refpix]
+  saturation:
+    title: Saturation Identification Step
+    description: |
+      Step in romancal that sets data quality flags for
+      pixels at or above the saturation threshold.
+    type: string
+    enum: ['N/A', 'COMPLETE', 'FAILED', 'SKIPPED', 'INCOMPLETE']
+    maxLength: 15
+    archive_catalog:
+      datatype: nvarchar(15)
+      destination: [ScienceRefData.s_saturation]
+  outlier_detection:
+    title: Outlier Detection Step
+    description: |
+      Step in ROMANCAL which detects and flags outliers in a science image.
+    type: string
+    enum: ['N/A', 'COMPLETE', 'FAILED', 'SKIPPED', 'INCOMPLETE']
+    maxLength: 15
+    archive_catalog:
+      datatype: nvarchar(15)
+      destination: [ScienceRefData.s_outlier_detection]
+  tweakreg:
+    title: Tweakreg step
+    description: |
+      Step in romancal that compares the positions of point
+      sources in the image with coordinates from an astrometric
+      catalog and, if necessary, corrects the World Coordinate System
+      (WCS) alignment.
+    type: string
+    enum: ['N/A', 'COMPLETE', 'FAILED', 'SKIPPED', 'INCOMPLETE']
+    maxLength: 15
+    archive_catalog:
+      datatype: nvarchar(15)
+      destination: [ScienceRefData.s_tweakreg]
+  skymatch:
+    title: Sky Matching for Combining Overlapping Images Step
+    description: |
+      Step in ROMANCAL that computes sky background values of each input image
+      and derives scalings to equalize overlapping regions.
+    type: string
+    enum: ['N/A', 'COMPLETE', 'FAILED', 'SKIPPED', 'INCOMPLETE']
+    maxLength: 15
+    archive_catalog:
+      datatype: nvarchar(15)
+      destination: [ScienceRefData.s_skymatch]
+propertyOrder: [dq_init, saturation, refpix, linearity, dark, ramp_fit, assign_wcs,
+  flat_field, photom, source_catalog, tweakreg, flux, skymatch, outlier_detection]
+flowStyle: block
+required: [assign_wcs, dark, dq_init, flat_field, flux, linearity, outlier_detection, photom,
+           source_catalog, ramp_fit, refpix, saturation, skymatch, tweakreg]
+additionalProperties: true
+...
