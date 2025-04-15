@@ -940,6 +940,7 @@ properties:
         description: |
           2D array containing all the lower left corners of each guide
           window resultant pair in science coordinates (x_start, y_start).
+        tag: tag:stsci.edu:asdf/core/ndarray-1.*
         ndim: 2
         datatype: uint16
         exact_datatype: true
