@@ -1074,6 +1074,7 @@ properties:
           1D array of signed integers with the same length as the tracking signal resultants.
           Positive integers correspond to the exposure number (single MA Table read).
           Negative integers correspond to the tracking reads between exposures.
+        tag: tag:stsci.edu:asdf/core/ndarray-1.*
         ndim: 1
         datatype: uint16
         exact_datatype: true
