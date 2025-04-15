@@ -1014,6 +1014,7 @@ properties:
           pedestal and signal resultants. The span between the pedestal
           and the signal values indicate which full frame row indices
           were read out during the guide window exposure.
+        tag: tag:stsci.edu:asdf/core/ndarray-1.*
         ndim: 2
         datatype: int16
         exact_datatype: true
