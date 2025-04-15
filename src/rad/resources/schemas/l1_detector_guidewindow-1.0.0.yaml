@@ -14,6 +14,14 @@ properties:
   meta:
     type: object
     properties:
+      model_type:
+        title: Data Model Type
+        description: |
+          The type of data model contained within this file.
+        tag: asdf://stsci.edu/datamodels/roman/tags/model_type-1.0.0
+      instrument:
+        title: WFI Observing Configuration
+        tag: asdf://stsci.edu/datamodels/roman/tags/wfi_mode-1.0.0
       fgs_modes_used:
         title: FGS Guiding Modes
         description: |
@@ -164,32 +172,32 @@ properties:
         archive_catalog:
           datatype: nvarchar(120)
           destination: [GuideWindow.l1_gw_guide_window_id]
-      optical_element:
-        allOf:
-          - $ref: asdf://stsci.edu/datamodels/roman/schemas/wfi_optical_element-1.0.0
-        sdf:
-          special_processing: VALUE_REQUIRED
-          source:
-            origin: TBD
-        maxLength: 20
-        archive_catalog:
-          datatype: nvarchar(20)
-          destination: [GuideWindow.l1_gw_optical_element]
-      detector:
-        allOf:
-          - $ref: asdf://stsci.edu/datamodels/roman/schemas/wfi_detector-1.0.0
-        title: Wide Field Instrument (WFI) Detector Identifier
-        description: |
-          Name of the Wide Field Instrument (WFI) detector used
-          to take the science data in this file.
-        sdf:
-          special_processing: VALUE_REQUIRED
-          source:
-            origin: TBD
-        maxLength: 10
-        archive_catalog:
-          datatype: nvarchar(10)
-          destination: [GuideWindow.l1_gw_detector]
+      # optical_element:
+      #   allOf:
+      #     - $ref: asdf://stsci.edu/datamodels/roman/schemas/wfi_optical_element-1.0.0
+      #   sdf:
+      #     special_processing: VALUE_REQUIRED
+      #     source:
+      #       origin: TBD
+      #   maxLength: 20
+      #   archive_catalog:
+      #     datatype: nvarchar(20)
+      #     destination: [GuideWindow.l1_gw_optical_element]
+      # detector:
+      #   allOf:
+      #     - $ref: asdf://stsci.edu/datamodels/roman/schemas/wfi_detector-1.0.0
+      #   title: Wide Field Instrument (WFI) Detector Identifier
+      #   description: |
+      #     Name of the Wide Field Instrument (WFI) detector used
+      #     to take the science data in this file.
+      #   sdf:
+      #     special_processing: VALUE_REQUIRED
+      #     source:
+      #       origin: TBD
+      #   maxLength: 10
+      #   archive_catalog:
+      #     datatype: nvarchar(10)
+      #     destination: [GuideWindow.l1_gw_detector]
       avg_face_filename:
         title: Averaged FACE Filename
         description: |
@@ -677,8 +685,9 @@ properties:
     required: [ "fgs_modes_used", "acq_ma_table_id", "acq_gw_cycles_per_sci_read",
       "acq_pedestal_resultant_exp_time", "acq_signal_resultant_exp_time", "track_ma_table_id",
       "track_gw_cycles_per_sci_read", "track_pedestal_resultant_exp_time",
-      "track_signal_resultant_exp_time", "guide_star_acq_num", "guide_window_id", "detector",
-      "optical_element", "avg_face_filename", "guide_window", "guide_star" ]
+      "track_signal_resultant_exp_time", "guide_star_acq_num", "guide_window_id",
+      # "detector", "optical_element",
+      "instrument", "avg_face_filename", "guide_window", "guide_star" ]
 
 
   amp33:
@@ -793,13 +802,17 @@ properties:
           downlinked data packets. For further descriptions of the, please consult
           the Roman Documentation page. This quantity is set to None for Dark
           exposures when no centroids are taken.
-        anyOf:
-          - type: "null"
-          - type: array
-            items:
-              type: array
-              items:
-                type: string
+        tag: tag:stsci.edu:asdf/core/ndarray-1.*
+        ndim: 2
+        datatype: [ucs4, 1]
+        exact_datatype: true
+        # anyOf:
+        #   - type: "null"
+        #   - type: array
+        #     items:
+        #       type: array
+        #       items:
+        #         type: string
       acq_centroid_times:
         title: Acquisition Centroid Times
         description: |
@@ -842,11 +855,18 @@ properties:
           1D array containing strings that describe the quality of the tracking centroids.
           For further descriptions of the, please consult the Roman Documentation page.
           This quantity is set to None for Dark exposures when no centroids are taken.
-        type: array
-        items:
-          anyOf:
-            - type: "null"
-            - type: string
+        # type: array
+        # items:
+        #   anyOf:
+        #     - type: "null"
+        #     - type: string
+        anyOf:
+          - type: "null"
+          - tag: tag:stsci.edu:asdf/core/ndarray-1.*
+            ndim: 1
+            datatype: [ucs4, 7]
+            exact_datatype: true
+
       track_centroid_times:
         title: Track Centroid Times
         description: |
@@ -893,11 +913,17 @@ properties:
             centroids (only used with WSM). For further descriptions of the, please consult
             the Roman Documentation page. This quantity is set to None for Dark exposures
             when no centroids are taken.
-        type: array
-        items:
-          anyOf:
-            - type: "null"
-            - type: string
+        # type: array
+        # items:
+        #   anyOf:
+        #     - type: "null"
+        #     - type: string
+        anyOf:
+          - type: "null"
+          - tag: tag:stsci.edu:asdf/core/ndarray-1.*
+            ndim: 1
+            datatype: [ucs4, 7]
+            exact_datatype: true
       edge_acq_centroid_times:
         title: Edge Acquisition Centroid Times
         description: |
@@ -1011,7 +1037,7 @@ properties:
           and the signal values indicate which full frame row indices
           were read out during the guide window exposure.
         ndim: 2
-        datatype: int16
+        datatype: uint16
         exact_datatype: true
       sce_status_flag:
         title: SCE Status Flag
@@ -1022,7 +1048,7 @@ properties:
         anyOf:
           - type: integer
           - tag: tag:stsci.edu:asdf/core/ndarray-1.*
-            datatype: int16
+            datatype: uint8
             exact_datatype: true
             ndim: 2
       gw_resultant_err_flag:
@@ -1036,7 +1062,7 @@ properties:
         anyOf:
           - type: integer
           - tag: tag:stsci.edu:asdf/core/ndarray-1.*
-            datatype: int16
+            datatype: uint8
             exact_datatype: true
             ndim: 2
       min_bind_flag:
@@ -1048,7 +1074,7 @@ properties:
         anyOf:
           - type: integer
           - tag: tag:stsci.edu:asdf/core/ndarray-1.*
-            datatype: int16
+            datatype: uint8
             exact_datatype: true
             ndim: 2
       max_bind_flag:
@@ -1060,7 +1086,7 @@ properties:
         anyOf:
           - type: integer
           - tag: tag:stsci.edu:asdf/core/ndarray-1.*
-            datatype: int16
+            datatype: uint8
             exact_datatype: true
             ndim: 2
       # Optional
@@ -1174,7 +1200,7 @@ properties:
           and the signal values indicate which full frame row indices
           were read out during the guide window exposure.
         ndim: 2
-        datatype: int16
+        datatype: uint16
         exact_datatype: true
       sce_status_flag:
         title: SCE Status Flag
@@ -1185,7 +1211,7 @@ properties:
         anyOf:
           - type: integer
           - tag: tag:stsci.edu:asdf/core/ndarray-1.*
-            datatype: int16
+            datatype: uint8
             exact_datatype: true
             ndim: 2
       gw_resultant_err_flag:
@@ -1199,7 +1225,7 @@ properties:
         anyOf:
           - type: integer
           - tag: tag:stsci.edu:asdf/core/ndarray-1.*
-            datatype: int16
+            datatype: uint8
             exact_datatype: true
             ndim: 2
       min_bind_flag:
@@ -1211,7 +1237,7 @@ properties:
         anyOf:
           - type: integer
           - tag: tag:stsci.edu:asdf/core/ndarray-1.*
-            datatype: int16
+            datatype: uint8
             exact_datatype: true
             ndim: 2
       max_bind_flag:
@@ -1223,7 +1249,7 @@ properties:
         anyOf:
           - type: integer
           - tag: tag:stsci.edu:asdf/core/ndarray-1.*
-            datatype: int16
+            datatype: uint8
             exact_datatype: true
             ndim: 2
       # Optional
@@ -1237,7 +1263,7 @@ properties:
         datatype: uint16
         exact_datatype: true
 
-  # Optional
+  # WSM Mode Only
   edge_acq_data:
     title: Spectrum Edge Acquisition Guide Window Data
     description: |
@@ -1339,7 +1365,7 @@ properties:
           and the signal values indicate which full frame row indices
           were read out during the guide window exposure.
         ndim: 2
-        datatype: int16
+        datatype: uint16
         exact_datatype: true
       sce_status_flag:
         title: SCE Status Flag
@@ -1350,7 +1376,7 @@ properties:
         anyOf:
           - type: integer
           - tag: tag:stsci.edu:asdf/core/ndarray-1.*
-            datatype: int16
+            datatype: uint8
             exact_datatype: true
             ndim: 2
       gw_resultant_err_flag:
@@ -1364,7 +1390,7 @@ properties:
         anyOf:
           - type: integer
           - tag: tag:stsci.edu:asdf/core/ndarray-1.*
-            datatype: int16
+            datatype: uint8
             exact_datatype: true
             ndim: 2
       min_bind_flag:
@@ -1376,7 +1402,7 @@ properties:
         anyOf:
           - type: integer
           - tag: tag:stsci.edu:asdf/core/ndarray-1.*
-            datatype: int16
+            datatype: uint8
             exact_datatype: true
             ndim: 2
       max_bind_flag:
@@ -1388,7 +1414,7 @@ properties:
         anyOf:
           - type: integer
           - tag: tag:stsci.edu:asdf/core/ndarray-1.*
-            datatype: int16
+            datatype: uint8
             exact_datatype: true
             ndim: 2
       # Optional
