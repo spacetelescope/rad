@@ -976,6 +976,7 @@ properties:
           impacted by the reset sweeping across those rows of the detector.
           This flag highlights which guide window resultant pairs are
           impacted by these resets.
+        tag: tag:stsci.edu:asdf/core/ndarray-1.*
         ndim: 1
         datatype: bool8
         exact_datatype: true
