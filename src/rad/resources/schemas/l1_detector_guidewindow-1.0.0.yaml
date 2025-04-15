@@ -1289,6 +1289,7 @@ properties:
         description: |
           2D array containing all the upper right corners of each guide
           window resultant pair in science coordinates (x_stop, y_stop).
+        tag: tag:stsci.edu:asdf/core/ndarray-1.*
         ndim: 2
         datatype: uint16
         exact_datatype: true
