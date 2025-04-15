@@ -987,6 +987,7 @@ properties:
           are read out during a reset. True values correspond to pairs taken
           during reset reads, False values correspond to pairs taken during
           normal frame reads.
+        tag: tag:stsci.edu:asdf/core/ndarray-1.*
         ndim: 1
         datatype: bool8
         exact_datatype: true
