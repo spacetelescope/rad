@@ -12,14 +12,14 @@ Level 1 (uncalibrated) schema
 
 .. asdf-autoschemas::
 
-  wfi_science_raw-1.0.0
+  wfi_science_raw-1.1.0
 
 Level 2 (calibrated exposure) schema
 ------------------------------------
 
 .. asdf-autoschemas::
 
-   wfi_image-1.0.0
+   wfi_image-1.1.0
    wfi_wcs-1.0.0
 
 Level 3 (resampled mosaic) schema
@@ -27,17 +27,17 @@ Level 3 (resampled mosaic) schema
 
 .. asdf-autoschemas::
 
-  wfi_mosaic-1.0.0
+  wfi_mosaic-1.1.0
 
 Level 4 (ancillary) schemas
 ---------------------------
 
 .. asdf-autoschemas::
 
-  image_source_catalog-1.0.0
-  segmentation_map-1.0.0
-  mosaic_source_catalog-1.0.0
-  mosaic_segmentation_map-1.0.0
+  image_source_catalog-1.1.0
+  segmentation_map-1.1.0
+  mosaic_source_catalog-1.1.0
+  mosaic_segmentation_map-1.1.0
 
 
 Tags
@@ -48,38 +48,40 @@ Tags
     associations-1.0.0
     basic-1.0.0
     cal_logs-1.0.0
-    common-1.0.0
+    common-1.1.0
     coordinates-1.0.0
-    ephemeris-1.0.0
+    ephemeris-1.1.0
     exposure_type-1.0.0
-    exposure-1.0.0
-    guidestar-1.0.0
+    exposure-1.1.0
+    guidestar-1.1.0
     guidewindow_modes-1.0.0
-    guidewindow-1.0.0
+    guidewindow-1.1.0
     individual_image_meta-1.0.0
-    l2_cal_step-1.0.0
-    l3_cal_step-1.0.0
+    l1_detector_guidewindow-1.0.0.yaml
+    l1_face_guidewindow-1.0.0.yaml
+    l2_cal_step-1.1.0
+    l3_cal_step-1.1.0
     mosaic_associations-1.0.0
     mosaic_basic-1.0.0
     mosaic_wcsinfo-1.0.0
-    msos_stack-1.0.0
+    msos_stack-1.1.0
     observation-1.0.0
     outlier_detection-1.0.0
     photometry-1.0.0
     pointing-1.0.0
-    program-1.0.0
+    program-1.1.0
     rad_schema-1.0.0
-    ramp_fit_output-1.0.0
-    ramp-1.0.0
+    ramp_fit_output-1.1.0
+    ramp-1.1.0
     rcs-1.0.0
-    ref_file-1.0.0
+    ref_file-1.1.0
     resample-1.0.0
     sky_background-1.0.0
     statistics-1.0.0
     source_catalog-1.0.0
     velocity_aberration-1.0.0
-    visit-1.0.0
-    wcsinfo-1.0.0
+    visit-1.1.0
+    wcsinfo-1.1.0
     wfi_detector-1.0.0
     wfi_mode-1.0.0
     wfi_optical_element-1.0.0
