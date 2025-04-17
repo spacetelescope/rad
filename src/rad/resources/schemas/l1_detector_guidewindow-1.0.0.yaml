@@ -38,7 +38,7 @@ properties:
             origin: TBD
         archive_catalog:
           datatype: nvarchar(20)
-          destination: [GuideWindow.l1_gw_fgs_modes_used]
+          destination: [GuideWindow.l1_detector_gw_fgs_modes_used]
       acq_ma_table_id:
         title: Acquisition MA table ID
         description: |
@@ -51,7 +51,7 @@ properties:
             origin: TBD
         archive_catalog:
           datatype: nvarchar(20)
-          destination: [GuideWindow.l1_gw_acq_ma_table_id]
+          destination: [GuideWindow.l1_detector_gw_acq_ma_table_id]
       acq_gw_cycles_per_sci_read:
         title: Acquisition Cycles per Read
         description: |
@@ -64,7 +64,7 @@ properties:
             origin: TBD
         archive_catalog:
           datatype: int
-          destination: [GuideWindow.l1_gw_acq_gw_cycles_per_sci_read]
+          destination: [GuideWindow.l1_detector_gw_acq_gw_cycles_per_sci_read]
       acq_pedestal_resultant_exp_time:
         title: Acquisition Pedestal Effective Exposure Time
         description: |
@@ -77,7 +77,7 @@ properties:
             origin: TBD
         archive_catalog:
           datatype: float
-          destination: [GuideWindow.l1_gw_acq_pedestal_resultant_exp_time]
+          destination: [GuideWindow.l1_detector_gw_acq_pedestal_resultant_exp_time]
       acq_signal_resultant_exp_time:
         title: Acquisition Signal Effective Exposure Time
         description: |
@@ -90,7 +90,7 @@ properties:
             origin: TBD
         archive_catalog:
           datatype: float
-          destination: [GuideWindow.l1_gw_acq_signal_resultant_exp_time]
+          destination: [GuideWindow.l1_detector_gw_acq_signal_resultant_exp_time]
       track_ma_table_id:
         title: Track MA table ID
         description: |
@@ -103,7 +103,7 @@ properties:
             origin: TBD
         archive_catalog:
           datatype: nvarchar(20)
-          destination: [GuideWindow.l1_gw_track_ma_table_id]
+          destination: [GuideWindow.l1_detector_gw_track_ma_table_id]
       track_gw_cycles_per_sci_read:
         title: Track Cycles per Read
         description: |
@@ -116,7 +116,7 @@ properties:
             origin: TBD
         archive_catalog:
           datatype: int
-          destination: [GuideWindow.l1_gw_track_gw_cycles_per_sci_read]
+          destination: [GuideWindow.l1_detector_gw_track_gw_cycles_per_sci_read]
       track_pedestal_resultant_exp_time:
         title: Track Pedestal Effective Exposure Time
         description: |
@@ -129,7 +129,7 @@ properties:
             origin: TBD
         archive_catalog:
           datatype: float
-          destination: [GuideWindow.l1_gw_track_pedestal_resultant_exp_time]
+          destination: [GuideWindow.l1_detector_gw_track_pedestal_resultant_exp_time]
       track_signal_resultant_exp_time:
         title: Track Signal Effective Exposure Time
         description: |
@@ -142,7 +142,7 @@ properties:
             origin: TBD
         archive_catalog:
           datatype: float
-          destination: [GuideWindow.l1_gw_track_signal_resultant_exp_time]
+          destination: [GuideWindow.l1_detector_gw_track_signal_resultant_exp_time]
       guide_star_acq_num:
         title: Guide Star Acquisition Number
         description: |
@@ -154,7 +154,7 @@ properties:
             origin: TBD
         archive_catalog:
           datatype: int
-          destination: [GuideWindow.l1_gw_guide_star_acq_num]
+          destination: [GuideWindow.l1_detector_gw_guide_star_acq_num]
       guide_window_id:
         title: Guide Window ID
         description: |
@@ -171,33 +171,7 @@ properties:
             origin: TBD
         archive_catalog:
           datatype: nvarchar(120)
-          destination: [GuideWindow.l1_gw_guide_window_id]
-      # optical_element:
-      #   allOf:
-      #     - $ref: asdf://stsci.edu/datamodels/roman/schemas/wfi_optical_element-1.0.0
-      #   sdf:
-      #     special_processing: VALUE_REQUIRED
-      #     source:
-      #       origin: TBD
-      #   maxLength: 20
-      #   archive_catalog:
-      #     datatype: nvarchar(20)
-      #     destination: [GuideWindow.l1_gw_optical_element]
-      # detector:
-      #   allOf:
-      #     - $ref: asdf://stsci.edu/datamodels/roman/schemas/wfi_detector-1.0.0
-      #   title: Wide Field Instrument (WFI) Detector Identifier
-      #   description: |
-      #     Name of the Wide Field Instrument (WFI) detector used
-      #     to take the science data in this file.
-      #   sdf:
-      #     special_processing: VALUE_REQUIRED
-      #     source:
-      #       origin: TBD
-      #   maxLength: 10
-      #   archive_catalog:
-      #     datatype: nvarchar(10)
-      #     destination: [GuideWindow.l1_gw_detector]
+          destination: [GuideWindow.l1_detector_gw_guide_window_id]
       avg_face_filename:
         title: Averaged FACE Filename
         description: |
@@ -211,8 +185,7 @@ properties:
             origin: TBD
         archive_catalog:
           datatype: nvarchar(120)
-          destination: [GuideWindow.l1_gw_avg_face_filename]
-
+          destination: [GuideWindow.l1_detector_gw_avg_face_filename]
       # Optional
       edge_acq_ma_table_id:
         title: Edge Acquisition MA table ID
@@ -226,7 +199,7 @@ properties:
         #     origin: TBD
         # archive_catalog:
         #   datatype: nvarchar(20)
-        #   destination: [GuideWindow.l1_gw_edge_acq_ma_table_id]
+        #   destination: [GuideWindow.l1_detector_gw_edge_acq_ma_table_id]
       edge_acq_gw_cycles_per_sci_read:
         title: Edge Acquisition Cycles per Read
         description: |
@@ -239,7 +212,7 @@ properties:
         #     origin: TBD
         # archive_catalog:
         #   datatype: int
-        #   destination: [GuideWindow.l1_gw_edge_acq_gw_cycles_per_sci_read]
+        #   destination: [GuideWindow.l1_detector_gw_edge_acq_gw_cycles_per_sci_read]
       edge_acq_pedestal_resultant_exp_time:
         title: Edge Acquisition Pedestal Effective Exposure Time
         description: |
@@ -252,7 +225,7 @@ properties:
         #     origin: TBD
         # archive_catalog:
         #   datatype: float
-        #   destination: [GuideWindow.l1_gw_edge_acq_pedestal_resultant_exp_time]
+        #   destination: [GuideWindow.l1_detector_gw_edge_acq_pedestal_resultant_exp_time]
       edge_acq_signal_resultant_exp_time:
         title: Edge Acquisition Signal Effective Exposure Time
         description: |
@@ -265,7 +238,7 @@ properties:
         #     origin: TBD
         # archive_catalog:
         #   datatype: float
-        #   destination: [GuideWindow.l1_gw_edge_acq_signal_resultant_exp_time]
+        #   destination: [GuideWindow.l1_detector_gw_edge_acq_signal_resultant_exp_time]
       wsm_edge_used:
         title: Averaged FACE Filename
         description: |
@@ -279,8 +252,7 @@ properties:
         #     origin: TBD
         # archive_catalog:
         #   datatype: nvarchar(5)
-        #   destination: [GuideWindow.l1_gw_wsm_edge_used]
-
+        #   destination: [GuideWindow.l1_detector_gw_wsm_edge_used]
       guide_window:
         type: object
         properties:
@@ -295,7 +267,7 @@ properties:
                 origin: TBD
             archive_catalog:
               datatype: int
-              destination: [GuideWindow.l1_gw_min_acq_xstart]
+              destination: [GuideWindow.l1_detector_gw_min_acq_xstart]
           min_acq_ystart:
             title: Minimum Acquisition Y Coord
             description: |
@@ -307,7 +279,7 @@ properties:
                 origin: TBD
             archive_catalog:
               datatype: int
-              destination: [GuideWindow.l1_gw_min_acq_ystart]
+              destination: [GuideWindow.l1_detector_gw_min_acq_ystart]
           max_acq_xstop:
             title: Maximum Acquisition X Coord
             description: |
@@ -319,7 +291,7 @@ properties:
                 origin: TBD
             archive_catalog:
               datatype: int
-              destination: [GuideWindow.l1_gw_max_acq_xstop]
+              destination: [GuideWindow.l1_detector_gw_max_acq_xstop]
           max_acq_ystop:
             title: Maximum Acquisition Y Coord
             description: |
@@ -331,7 +303,7 @@ properties:
                 origin: TBD
             archive_catalog:
               datatype: int
-              destination: [GuideWindow.l1_gw_max_acq_ystop]
+              destination: [GuideWindow.l1_detector_gw_max_acq_ystop]
           acq_xsize:
             title: Acquisition X Size
             description: |
@@ -343,7 +315,7 @@ properties:
                 origin: TBD
             archive_catalog:
               datatype: int
-              destination: [GuideWindow.l1_gw_acq_xsize]
+              destination: [GuideWindow.l1_detector_gw_acq_xsize]
           acq_ysize:
             title: Acquisition Y Size
             description: |
@@ -355,9 +327,7 @@ properties:
                 origin: TBD
             archive_catalog:
               datatype: int
-              destination: [GuideWindow.l1_gw_acq_ysize]
-
-
+              destination: [GuideWindow.l1_detector_gw_acq_ysize]
           min_track_xstart:
             title: Minimum Acquisition X Coord
             description: |
@@ -369,7 +339,7 @@ properties:
                 origin: TBD
             archive_catalog:
               datatype: int
-              destination: [GuideWindow.l1_gw_min_track_xstart]
+              destination: [GuideWindow.l1_detector_gw_min_track_xstart]
           min_track_ystart:
             title: Minimum Acquisition Y Coord
             description: |
@@ -381,7 +351,7 @@ properties:
                 origin: TBD
             archive_catalog:
               datatype: int
-              destination: [GuideWindow.l1_gw_min_track_ystart]
+              destination: [GuideWindow.l1_detector_gw_min_track_ystart]
           max_track_xstop:
             title: Maximum Acquisition X Coord
             description: |
@@ -393,7 +363,7 @@ properties:
                 origin: TBD
             archive_catalog:
               datatype: int
-              destination: [GuideWindow.l1_gw_max_track_xstop]
+              destination: [GuideWindow.l1_detector_gw_max_track_xstop]
           max_track_ystop:
             title: Maximum Acquisition Y Coord
             description: |
@@ -405,7 +375,7 @@ properties:
                 origin: TBD
             archive_catalog:
               datatype: int
-              destination: [GuideWindow.l1_gw_max_track_ystop]
+              destination: [GuideWindow.l1_detector_gw_max_track_ystop]
           track_xsize:
             title: Acquisition X Size
             description: |
@@ -417,7 +387,7 @@ properties:
                 origin: TBD
             archive_catalog:
               datatype: int
-              destination: [GuideWindow.l1_gw_track_xsize]
+              destination: [GuideWindow.l1_detector_gw_track_xsize]
           track_ysize:
             title: Acquisition Y Size
             description: |
@@ -429,8 +399,7 @@ properties:
                 origin: TBD
             archive_catalog:
               datatype: int
-              destination: [GuideWindow.l1_gw_track_ysize]
-
+              destination: [GuideWindow.l1_detector_gw_track_ysize]
           # Optional
           min_edge_acq_xstart:
             title: Minimum Edge Acquisition X Coord
@@ -443,7 +412,7 @@ properties:
             #     origin: TBD
             # archive_catalog:
             #   datatype: int
-            #   destination: [GuideWindow.l1_gw_min_edge_acq_xstart]
+            #   destination: [GuideWindow.l1_detector_gw_min_edge_acq_xstart]
           min_edge_acq_ystart:
             title: Minimum Edge Acquisition Y Coord
             description: |
@@ -455,7 +424,7 @@ properties:
             #     origin: TBD
             # archive_catalog:
             #   datatype: int
-            #   destination: [GuideWindow.l1_gw_min_edge_acq_ystart]
+            #   destination: [GuideWindow.l1_detector_gw_min_edge_acq_ystart]
           max_edge_acq_xstop:
             title: Maximum Edge Acquisition X Coord
             description: |
@@ -467,7 +436,7 @@ properties:
             #     origin: TBD
             # archive_catalog:
             #   datatype: int
-            #   destination: [GuideWindow.l1_gw_max_edge_acq_xstop]
+            #   destination: [GuideWindow.l1_detector_gw_max_edge_acq_xstop]
           max_edge_acq_ystop:
             title: Maximum Edge Acquisition Y Coord
             description: |
@@ -479,7 +448,7 @@ properties:
             #     origin: TBD
             # archive_catalog:
             #   datatype: int
-            #   destination: [GuideWindow.l1_gw_max_edge_acq_ystop]
+            #   destination: [GuideWindow.l1_detector_gw_max_edge_acq_ystop]
           edge_acq_xsize:
             title: Edge Acquisition X Size
             description: |
@@ -491,7 +460,7 @@ properties:
             #     origin: TBD
             # archive_catalog:
             #   datatype: int
-            #   destination: [GuideWindow.l1_gw_edge_acq_xsize]
+            #   destination: [GuideWindow.l1_detector_gw_edge_acq_xsize]
           edge_acq_ysize:
             title: Edge Acquisition Y Size
             description: |
@@ -503,11 +472,10 @@ properties:
             #     origin: TBD
             # archive_catalog:
             #   datatype: int
-            #   destination: [GuideWindow.l1_gw_edge_acq_ysize]
+            #   destination: [GuideWindow.l1_detector_gw_edge_acq_ysize]
         required: [ "min_acq_xstart", "min_acq_ystart", "max_acq_xstop", "max_acq_ystop",
           "acq_xsize", "acq_ysize", "min_track_xstart", "min_track_ystart", "max_track_xstop",
           "max_track_ystop", "track_xsize", "track_ysize" ]
-
       guide_star:
         type: object
         properties:
@@ -524,7 +492,7 @@ properties:
                 origin: TBD
             archive_catalog:
               datatype: nvarchar(11)
-              destination: [GuideWindow.l1_gw_gsc_id]
+              destination: [GuideWindow.l1_detector_gw_gsc_id]
           predicted_ra:
             title: Right Ascension (deg)
             description: |
@@ -537,7 +505,7 @@ properties:
                 origin: TBD
             archive_catalog:
               datatype: float
-              destination: [GuideWindow.l1_gw_predicted_ra]
+              destination: [GuideWindow.l1_detector_gw_predicted_ra]
           predicted_dec:
             title: Declination (deg)
             description: |
@@ -550,7 +518,7 @@ properties:
                 origin: TBD
             archive_catalog:
               datatype: float
-              destination: [GuideWindow.l1_gw_predicted_dec]
+              destination: [GuideWindow.l1_detector_gw_predicted_dec]
           gaia_parallax:
             title: Gaia Parallax
             description: |
@@ -562,7 +530,7 @@ properties:
                 origin: TBD
             archive_catalog:
               datatype: float
-              destination: [GuideWindow.l1_gw_gaia_parallax]
+              destination: [GuideWindow.l1_detector_gw_gaia_parallax]
           ra_pm:
             title: Proper Motion Right Ascension
             description: |
@@ -575,7 +543,7 @@ properties:
                 origin: TBD
             archive_catalog:
               datatype: float
-              destination: [GuideWindow.l1_gw_ra_pm]
+              destination: [GuideWindow.l1_detector_gw_ra_pm]
           dec_pm:
             title: Proper Motion Declination
             description: |
@@ -588,7 +556,7 @@ properties:
                 origin: TBD
             archive_catalog:
               datatype: float
-              destination: [GuideWindow.l1_gw_dec_pm]
+              destination: [GuideWindow.l1_detector_gw_dec_pm]
           predicted_fgs_mag:
             title: Expected FGS Magnitude
             description: |
@@ -600,7 +568,7 @@ properties:
                 origin: TBD
             archive_catalog:
               datatype: float
-              destination: [GuideWindow.l1_gw_predicted_fgs_mag]
+              destination: [GuideWindow.l1_detector_gw_predicted_fgs_mag]
           predicted_fgs_bright_mag:
             title: Brightest Expected FGS Magnitude
             description: |
@@ -612,7 +580,7 @@ properties:
                 origin: TBD
             archive_catalog:
               datatype: float
-              destination: [GuideWindow.l1_gw_predicted_fgs_bright_mag]
+              destination: [GuideWindow.l1_detector_gw_predicted_fgs_bright_mag]
           predicted_fgs_faint_mag:
             title: Faintest Expected FGS Magnitude
             description: |
@@ -624,7 +592,7 @@ properties:
                 origin: TBD
             archive_catalog:
               datatype: float
-              destination: [GuideWindow.l1_gw_predicted_fgs_faint_mag]
+              destination: [GuideWindow.l1_detector_gw_predicted_fgs_faint_mag]
           predicted_count_rate:
             title: Expected Count Rate
             description: |
@@ -636,7 +604,7 @@ properties:
                 origin: TBD
             archive_catalog:
               datatype: float
-              destination: [GuideWindow.l1_gw_predicted_count_rate]
+              destination: [GuideWindow.l1_detector_gw_predicted_count_rate]
           predicted_x:
             title: Expected X Coord
             description: |
@@ -648,7 +616,7 @@ properties:
                 origin: TBD
             archive_catalog:
               datatype: float
-              destination: [GuideWindow.l1_gw_predicted_x]
+              destination: [GuideWindow.l1_detector_gw_predicted_x]
           predicted_y:
             title: Expected Y Coord
             description: |
@@ -660,7 +628,7 @@ properties:
                 origin: TBD
             archive_catalog:
               datatype: float
-              destination: [GuideWindow.l1_gw_predicted_y]
+              destination: [GuideWindow.l1_detector_gw_predicted_y]
           pseudo_star_flag:
             title: Pseudo Star Flag
             description: |
@@ -675,21 +643,15 @@ properties:
                 origin: TBD
             archive_catalog:
               datatype: nchar(1)
-              destination: [GuideWindow.l1_gw_pseudo_star_flag]
+              destination: [GuideWindow.l1_detector_gw_pseudo_star_flag]
         required: [ "gsc_id", "predicted_ra", "predicted_dec", "gaia_parallax", "ra_pm",
           "dec_pm", "predicted_fgs_mag", "predicted_fgs_bright_mag", "predicted_fgs_faint_mag",
           "predicted_count_rate", "predicted_x", "predicted_y", "pseudo_star_flag"]
-
-
-
     required: [ "fgs_modes_used", "acq_ma_table_id", "acq_gw_cycles_per_sci_read",
       "acq_pedestal_resultant_exp_time", "acq_signal_resultant_exp_time", "track_ma_table_id",
       "track_gw_cycles_per_sci_read", "track_pedestal_resultant_exp_time",
       "track_signal_resultant_exp_time", "guide_star_acq_num", "guide_window_id",
-      # "detector", "optical_element",
       "instrument", "avg_face_filename", "guide_window", "guide_star" ]
-
-
   amp33:
     title: Guide Window Amplifier 33 Reference Pixel Information
     description: |
@@ -716,7 +678,6 @@ properties:
         exact_datatype: true
         ndim: 3
         unit: "DN"
-
       # Optional
       amp33_acq_pedestals:
         title: Pedestal Amplifier 33 Readouts (DN)
@@ -758,7 +719,6 @@ properties:
         exact_datatype: true
         ndim: 3
         unit: "DN"
-
   centroid:
     title: Centroid Data
     description: |
@@ -806,13 +766,6 @@ properties:
         ndim: 2
         datatype: [ucs4, 1]
         exact_datatype: true
-        # anyOf:
-        #   - type: "null"
-        #   - type: array
-        #     items:
-        #       type: array
-        #       items:
-        #         type: string
       acq_centroid_times:
         title: Acquisition Centroid Times
         description: |
@@ -855,18 +808,12 @@ properties:
           1D array containing strings that describe the quality of the tracking centroids.
           For further descriptions of the, please consult the Roman Documentation page.
           This quantity is set to None for Dark exposures when no centroids are taken.
-        # type: array
-        # items:
-        #   anyOf:
-        #     - type: "null"
-        #     - type: string
         anyOf:
           - type: "null"
           - tag: tag:stsci.edu:asdf/core/ndarray-1.*
             ndim: 1
             datatype: [ucs4, 7]
             exact_datatype: true
-
       track_centroid_times:
         title: Track Centroid Times
         description: |
@@ -878,9 +825,6 @@ properties:
           anyOf:
             - type: "null"
             - tag: tag:stsci.edu:asdf/time/time-1.*
-
-
-
       # Optional
       edge_acq_centroids:
         title: Edge Acquisition Centroids
@@ -913,11 +857,6 @@ properties:
             centroids (only used with WSM). For further descriptions of the, please consult
             the Roman Documentation page. This quantity is set to None for Dark exposures
             when no centroids are taken.
-        # type: array
-        # items:
-        #   anyOf:
-        #     - type: "null"
-        #     - type: string
         anyOf:
           - type: "null"
           - tag: tag:stsci.edu:asdf/core/ndarray-1.*
@@ -936,7 +875,6 @@ properties:
           anyOf:
             - type: "null"
             - tag: tag:stsci.edu:asdf/time/time-1.*
-
   acq_data:
     title: Acquisition Guide Window Data
     description: |
@@ -966,7 +904,6 @@ properties:
         description: |
           2D array containing all the lower left corners of each guide
           window resultant pair in science coordinates (x_start, y_start).
-        tag: tag:stsci.edu:asdf/core/ndarray-1.*
         ndim: 2
         datatype: uint16
         exact_datatype: true
@@ -975,7 +912,6 @@ properties:
         description: |
           2D array containing all the upper right corners of each guide
           window resultant pair in science coordinates (x_stop, y_stop).
-        tag: tag:stsci.edu:asdf/core/ndarray-1.*
         ndim: 2
         datatype: uint16
         exact_datatype: true
@@ -1002,7 +938,6 @@ properties:
           impacted by the reset sweeping across those rows of the detector.
           This flag highlights which guide window resultant pairs are
           impacted by these resets.
-        tag: tag:stsci.edu:asdf/core/ndarray-1.*
         ndim: 1
         datatype: bool8
         exact_datatype: true
@@ -1013,7 +948,6 @@ properties:
           are read out during a reset. True values correspond to pairs taken
           during reset reads, False values correspond to pairs taken during
           normal frame reads.
-        tag: tag:stsci.edu:asdf/core/ndarray-1.*
         ndim: 1
         datatype: bool8
         exact_datatype: true
@@ -1040,7 +974,6 @@ properties:
           pedestal and signal resultants. The span between the pedestal
           and the signal values indicate which full frame row indices
           were read out during the guide window exposure.
-        tag: tag:stsci.edu:asdf/core/ndarray-1.*
         ndim: 2
         datatype: uint16
         exact_datatype: true
@@ -1094,18 +1027,6 @@ properties:
             datatype: uint8
             exact_datatype: true
             ndim: 2
-      # # Optional
-      # exposure_mapping:
-      #   title: Exposure Mapping
-      #   description: |
-      #     1D array of signed integers with the same length as the tracking signal resultants.
-      #     Positive integers correspond to the exposure number (single MA Table read).
-      #     Negative integers correspond to the tracking reads between exposures.
-      #   tag: tag:stsci.edu:asdf/core/ndarray-1.*
-      #   ndim: 1
-      #   datatype: uint16
-      #   exact_datatype: true
-
   track_data:
     title: Tracking Guide Window Data
     description: |
@@ -1135,7 +1056,6 @@ properties:
         description: |
           2D array containing all the lower left corners of each guide
           window resultant pair in science coordinates (x_start, y_start).
-        tag: tag:stsci.edu:asdf/core/ndarray-1.*
         ndim: 2
         datatype: uint16
         exact_datatype: true
@@ -1144,7 +1064,6 @@ properties:
         description: |
           2D array containing all the upper right corners of each guide
           window resultant pair in science coordinates (x_stop, y_stop).
-        tag: tag:stsci.edu:asdf/core/ndarray-1.*
         ndim: 2
         datatype: uint16
         exact_datatype: true
@@ -1171,7 +1090,6 @@ properties:
           impacted by the reset sweeping across those rows of the detector.
           This flag highlights which guide window resultant pairs are
           impacted by these resets.
-        tag: tag:stsci.edu:asdf/core/ndarray-1.*
         ndim: 1
         datatype: bool8
         exact_datatype: true
@@ -1182,7 +1100,6 @@ properties:
           are read out during a reset. True values correspond to pairs taken
           during reset reads, False values correspond to pairs taken during
           normal frame reads.
-        tag: tag:stsci.edu:asdf/core/ndarray-1.*
         ndim: 1
         datatype: bool8
         exact_datatype: true
@@ -1209,7 +1126,6 @@ properties:
           pedestal and signal resultants. The span between the pedestal
           and the signal values indicate which full frame row indices
           were read out during the guide window exposure.
-        tag: tag:stsci.edu:asdf/core/ndarray-1.*
         ndim: 2
         datatype: uint16
         exact_datatype: true
@@ -1270,11 +1186,9 @@ properties:
           1D array of signed integers with the same length as the tracking signal resultants.
           Positive integers correspond to the exposure number (single MA Table read).
           Negative integers correspond to the tracking reads between exposures.
-        tag: tag:stsci.edu:asdf/core/ndarray-1.*
         ndim: 1
         datatype: uint16
         exact_datatype: true
-
   # WSM Mode Only
   edge_acq_data:
     title: Spectrum Edge Acquisition Guide Window Data
@@ -1306,7 +1220,6 @@ properties:
         description: |
           2D array containing all the lower left corners of each guide
           window resultant pair in science coordinates (x_start, y_start).
-        tag: tag:stsci.edu:asdf/core/ndarray-1.*
         ndim: 2
         datatype: uint16
         exact_datatype: true
@@ -1315,7 +1228,6 @@ properties:
         description: |
           2D array containing all the upper right corners of each guide
           window resultant pair in science coordinates (x_stop, y_stop).
-        tag: tag:stsci.edu:asdf/core/ndarray-1.*
         ndim: 2
         datatype: uint16
         exact_datatype: true
@@ -1342,7 +1254,6 @@ properties:
           impacted by the reset sweeping across those rows of the detector.
           This flag highlights which guide window resultant pairs are
           impacted by these resets.
-        tag: tag:stsci.edu:asdf/core/ndarray-1.*
         ndim: 1
         datatype: bool8
         exact_datatype: true
@@ -1353,7 +1264,6 @@ properties:
           are read out during a reset. True values correspond to pairs taken
           during reset reads, False values correspond to pairs taken during
           normal frame reads.
-        tag: tag:stsci.edu:asdf/core/ndarray-1.*
         ndim: 1
         datatype: bool8
         exact_datatype: true
@@ -1380,7 +1290,6 @@ properties:
           pedestal and signal resultants. The span between the pedestal
           and the signal values indicate which full frame row indices
           were read out during the guide window exposure.
-        tag: tag:stsci.edu:asdf/core/ndarray-1.*
         ndim: 2
         datatype: uint16
         exact_datatype: true
@@ -1434,18 +1343,6 @@ properties:
             datatype: uint8
             exact_datatype: true
             ndim: 2
-      # # Optional
-      # exposure_mapping:
-      #   title: Exposure Mapping
-      #   description: |
-      #     1D array of signed integers with the same length as the tracking signal resultants.
-      #     Positive integers correspond to the exposure number (single MA Table read).
-      #     Negative integers correspond to the tracking reads between exposures.
-      #   tag: tag:stsci.edu:asdf/core/ndarray-1.*
-      #   ndim: 1
-      #   datatype: uint16
-      #   exact_datatype: true
-
 propertyOrder: [meta, acq_data, track_data, edge_acq_data, centroid, amp33]
 flowStyle: block
 required: [meta, acq_data, track_data, centroid, amp33]
