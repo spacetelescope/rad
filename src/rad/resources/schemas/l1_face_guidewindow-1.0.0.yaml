@@ -300,12 +300,6 @@ properties:
         ndim: 1
         datatype: [ucs4, 1]
         exact_datatype: true
-        # type: array
-        # items:
-        #   type: string
-        #   enum: ["AQ_DOF_3", "AQ_DOF_2", "AQ_DOF_1", "AQ_DEFAULT_BAD", "AQ_TOO_FEW_STARS",
-        #     "AQ_FAILED_IN_PHASE_TRANSITION", "AQ_VIRTUAL_WINDOWING_BAD"]
-          # maxLength: 30
       centroid_times:
         title: Centroid Times
         description: |
