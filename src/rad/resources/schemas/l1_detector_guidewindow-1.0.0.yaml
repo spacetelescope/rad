@@ -45,104 +45,48 @@ properties:
           Unique ID for the guide window MA table used during acquisition.
         type: string
         maxLength: 20
-        sdf:
-          special_processing: VALUE_REQUIRED
-          source:
-            origin: TBD
-        archive_catalog:
-          datatype: nvarchar(20)
-          destination: [GuideWindow.l1_detector_gw_acq_ma_table_id]
       acq_gw_cycles_per_sci_read:
         title: Acquisition Cycles per Read
         description: |
           Number of guide window pedestal and signal pairs per full frame read
           during acquisition.
         type: integer
-        sdf:
-          special_processing: VALUE_REQUIRED
-          source:
-            origin: TBD
-        archive_catalog:
-          datatype: int
-          destination: [GuideWindow.l1_detector_gw_acq_gw_cycles_per_sci_read]
       acq_pedestal_resultant_exp_time:
         title: Acquisition Pedestal Effective Exposure Time
         description: |
           Effective exposure time for each acquisition pedestal guide window
            resultant in seconds.
         type: number
-        sdf:
-          special_processing: VALUE_REQUIRED
-          source:
-            origin: TBD
-        archive_catalog:
-          datatype: float
-          destination: [GuideWindow.l1_detector_gw_acq_pedestal_resultant_exp_time]
       acq_signal_resultant_exp_time:
         title: Acquisition Signal Effective Exposure Time
         description: |
           Effective exposure time for each acquisition signal guide window
           resultant in seconds.
         type: number
-        sdf:
-          special_processing: VALUE_REQUIRED
-          source:
-            origin: TBD
-        archive_catalog:
-          datatype: float
-          destination: [GuideWindow.l1_detector_gw_acq_signal_resultant_exp_time]
       track_ma_table_id:
         title: Track MA table ID
         description: |
           Unique ID for the guide window MA table used during tracking.
         type: string
         maxLength: 20
-        sdf:
-          special_processing: VALUE_REQUIRED
-          source:
-            origin: TBD
-        archive_catalog:
-          datatype: nvarchar(20)
-          destination: [GuideWindow.l1_detector_gw_track_ma_table_id]
       track_gw_cycles_per_sci_read:
         title: Track Cycles per Read
         description: |
           Number of guide window pedestal and signal pairs per full frame
           read during tracking.
         type: integer
-        sdf:
-          special_processing: VALUE_REQUIRED
-          source:
-            origin: TBD
-        archive_catalog:
-          datatype: int
-          destination: [GuideWindow.l1_detector_gw_track_gw_cycles_per_sci_read]
       track_pedestal_resultant_exp_time:
         title: Track Pedestal Effective Exposure Time
         description: |
           Effective exposure time for each tracking pedestal guide window
           resultant in seconds.
         type: number
-        sdf:
-          special_processing: VALUE_REQUIRED
-          source:
-            origin: TBD
-        archive_catalog:
-          datatype: float
-          destination: [GuideWindow.l1_detector_gw_track_pedestal_resultant_exp_time]
       track_signal_resultant_exp_time:
         title: Track Signal Effective Exposure Time
         description: |
           Effective exposure time for each tracking signal guide window
           resultant in seconds.
         type: number
-        sdf:
-          special_processing: VALUE_REQUIRED
-          source:
-            origin: TBD
-        archive_catalog:
-          datatype: float
-          destination: [GuideWindow.l1_detector_gw_track_signal_resultant_exp_time]
       guide_star_acq_num:
         title: Guide Star Acquisition Number
         description: |
@@ -179,13 +123,6 @@ properties:
           FACE fitting data for this GW exposure ID.
         type: string
         maxLength: 120
-        sdf:
-          special_processing: VALUE_REQUIRED
-          source:
-            origin: TBD
-        archive_catalog:
-          datatype: nvarchar(120)
-          destination: [GuideWindow.l1_detector_gw_avg_face_filename]
       # Optional
       edge_acq_ma_table_id:
         title: Edge Acquisition MA table ID
@@ -193,52 +130,24 @@ properties:
           Unique ID for the guide window MA table used during edge acquisition.
         type: string
         maxLength: 20
-        # sdf:
-        #   special_processing: VALUE_REQUIRED
-        #   source:
-        #     origin: TBD
-        # archive_catalog:
-        #   datatype: nvarchar(20)
-        #   destination: [GuideWindow.l1_detector_gw_edge_acq_ma_table_id]
       edge_acq_gw_cycles_per_sci_read:
         title: Edge Acquisition Cycles per Read
         description: |
           Number of guide window pedestal and signal pairs per full frame read
           during edge acquisition.
         type: integer
-        # sdf:
-        #   special_processing: VALUE_REQUIRED
-        #   source:
-        #     origin: TBD
-        # archive_catalog:
-        #   datatype: int
-        #   destination: [GuideWindow.l1_detector_gw_edge_acq_gw_cycles_per_sci_read]
       edge_acq_pedestal_resultant_exp_time:
         title: Edge Acquisition Pedestal Effective Exposure Time
         description: |
           Effective exposure time for each edge acquisition pedestal
           guide window resultant in seconds.
         type: number
-        # sdf:
-        #   special_processing: VALUE_REQUIRED
-        #   source:
-        #     origin: TBD
-        # archive_catalog:
-        #   datatype: float
-        #   destination: [GuideWindow.l1_detector_gw_edge_acq_pedestal_resultant_exp_time]
       edge_acq_signal_resultant_exp_time:
         title: Edge Acquisition Signal Effective Exposure Time
         description: |
           Effective exposure time for each edge acquisition signal guide window
           resultant in seconds.
         type: number
-        # sdf:
-        #   special_processing: VALUE_REQUIRED
-        #   source:
-        #     origin: TBD
-        # archive_catalog:
-        #   datatype: float
-        #   destination: [GuideWindow.l1_detector_gw_edge_acq_signal_resultant_exp_time]
       wsm_edge_used:
         title: Averaged FACE Filename
         description: |
@@ -246,13 +155,6 @@ properties:
         type: string
         enum: ["blue", "red"]
         maxLength: 5
-        # sdf:
-        #   special_processing: VALUE_REQUIRED
-        #   source:
-        #     origin: TBD
-        # archive_catalog:
-        #   datatype: nvarchar(5)
-        #   destination: [GuideWindow.l1_detector_gw_wsm_edge_used]
       guide_window:
         type: object
         properties:
@@ -261,218 +163,92 @@ properties:
             description: |
               Minimal x science coordinate used in the acquisition guide window resultants.
             type: integer
-            sdf:
-              special_processing: VALUE_REQUIRED
-              source:
-                origin: TBD
-            archive_catalog:
-              datatype: int
-              destination: [GuideWindow.l1_detector_gw_min_acq_xstart]
           min_acq_ystart:
             title: Minimum Acquisition Y Coord
             description: |
               Minimal y science coordinate used in the acquisition guide window resultants.
             type: integer
-            sdf:
-              special_processing: VALUE_REQUIRED
-              source:
-                origin: TBD
-            archive_catalog:
-              datatype: int
-              destination: [GuideWindow.l1_detector_gw_min_acq_ystart]
           max_acq_xstop:
             title: Maximum Acquisition X Coord
             description: |
               Maximal x science coordinate used in the acquisition guide window resultants.
             type: integer
-            sdf:
-              special_processing: VALUE_REQUIRED
-              source:
-                origin: TBD
-            archive_catalog:
-              datatype: int
-              destination: [GuideWindow.l1_detector_gw_max_acq_xstop]
           max_acq_ystop:
             title: Maximum Acquisition Y Coord
             description: |
               Maximal y science coordinate used in the acquisition guide window resultants.
             type: integer
-            sdf:
-              special_processing: VALUE_REQUIRED
-              source:
-                origin: TBD
-            archive_catalog:
-              datatype: int
-              destination: [GuideWindow.l1_detector_gw_max_acq_ystop]
           acq_xsize:
             title: Acquisition X Size
             description: |
               Size in the x direction of the acquisition guide window.
             type: integer
-            sdf:
-              special_processing: VALUE_REQUIRED
-              source:
-                origin: TBD
-            archive_catalog:
-              datatype: int
-              destination: [GuideWindow.l1_detector_gw_acq_xsize]
           acq_ysize:
             title: Acquisition Y Size
             description: |
               Size in the y direction of the acquisition guide window.
             type: integer
-            sdf:
-              special_processing: VALUE_REQUIRED
-              source:
-                origin: TBD
-            archive_catalog:
-              datatype: int
-              destination: [GuideWindow.l1_detector_gw_acq_ysize]
           min_track_xstart:
             title: Minimum Acquisition X Coord
             description: |
               Minimal x science coordinate used in the track guide window resultants.
             type: integer
-            sdf:
-              special_processing: VALUE_REQUIRED
-              source:
-                origin: TBD
-            archive_catalog:
-              datatype: int
-              destination: [GuideWindow.l1_detector_gw_min_track_xstart]
           min_track_ystart:
             title: Minimum Acquisition Y Coord
             description: |
               Minimal y science coordinate used in the track guide window resultants.
             type: integer
-            sdf:
-              special_processing: VALUE_REQUIRED
-              source:
-                origin: TBD
-            archive_catalog:
-              datatype: int
-              destination: [GuideWindow.l1_detector_gw_min_track_ystart]
           max_track_xstop:
             title: Maximum Acquisition X Coord
             description: |
               Maximal x science coordinate used in the track guide window resultants.
             type: integer
-            sdf:
-              special_processing: VALUE_REQUIRED
-              source:
-                origin: TBD
-            archive_catalog:
-              datatype: int
-              destination: [GuideWindow.l1_detector_gw_max_track_xstop]
           max_track_ystop:
             title: Maximum Acquisition Y Coord
             description: |
               Maximal y science coordinate used in the track guide window resultants.
             type: integer
-            sdf:
-              special_processing: VALUE_REQUIRED
-              source:
-                origin: TBD
-            archive_catalog:
-              datatype: int
-              destination: [GuideWindow.l1_detector_gw_max_track_ystop]
           track_xsize:
             title: Acquisition X Size
             description: |
               Size in the x direction of the track guide window.
             type: integer
-            sdf:
-              special_processing: VALUE_REQUIRED
-              source:
-                origin: TBD
-            archive_catalog:
-              datatype: int
-              destination: [GuideWindow.l1_detector_gw_track_xsize]
           track_ysize:
             title: Acquisition Y Size
             description: |
               Size in the y direction of the track guide window.
             type: integer
-            sdf:
-              special_processing: VALUE_REQUIRED
-              source:
-                origin: TBD
-            archive_catalog:
-              datatype: int
-              destination: [GuideWindow.l1_detector_gw_track_ysize]
           # Optional
           min_edge_acq_xstart:
             title: Minimum Edge Acquisition X Coord
             description: |
               Minimal x science coordinate used in the edge acquisition guide window resultants.
             type: integer
-            # sdf:
-            #   special_processing: VALUE_REQUIRED
-            #   source:
-            #     origin: TBD
-            # archive_catalog:
-            #   datatype: int
-            #   destination: [GuideWindow.l1_detector_gw_min_edge_acq_xstart]
           min_edge_acq_ystart:
             title: Minimum Edge Acquisition Y Coord
             description: |
               Minimal y science coordinate used in the edge acquisition guide window resultants.
             type: integer
-            # sdf:
-            #   special_processing: VALUE_REQUIRED
-            #   source:
-            #     origin: TBD
-            # archive_catalog:
-            #   datatype: int
-            #   destination: [GuideWindow.l1_detector_gw_min_edge_acq_ystart]
           max_edge_acq_xstop:
             title: Maximum Edge Acquisition X Coord
             description: |
               Maximal x science coordinate used in the acquisition guide window resultants.
             type: integer
-            # sdf:
-            #   special_processing: VALUE_REQUIRED
-            #   source:
-            #     origin: TBD
-            # archive_catalog:
-            #   datatype: int
-            #   destination: [GuideWindow.l1_detector_gw_max_edge_acq_xstop]
           max_edge_acq_ystop:
             title: Maximum Edge Acquisition Y Coord
             description: |
               Maximal y science coordinate used in the edge acquisition guide window resultants.
             type: integer
-            # sdf:
-            #   special_processing: VALUE_REQUIRED
-            #   source:
-            #     origin: TBD
-            # archive_catalog:
-            #   datatype: int
-            #   destination: [GuideWindow.l1_detector_gw_max_edge_acq_ystop]
           edge_acq_xsize:
             title: Edge Acquisition X Size
             description: |
               Size in the x direction of the edge acquisition guide window.
             type: integer
-            # sdf:
-            #   special_processing: VALUE_REQUIRED
-            #   source:
-            #     origin: TBD
-            # archive_catalog:
-            #   datatype: int
-            #   destination: [GuideWindow.l1_detector_gw_edge_acq_xsize]
           edge_acq_ysize:
             title: Edge Acquisition Y Size
             description: |
               Size in the y direction of the edge acquisition guide window.
             type: integer
-            # sdf:
-            #   special_processing: VALUE_REQUIRED
-            #   source:
-            #     origin: TBD
-            # archive_catalog:
-            #   datatype: int
-            #   destination: [GuideWindow.l1_detector_gw_edge_acq_ysize]
         required: [ "min_acq_xstart", "min_acq_ystart", "max_acq_xstop", "max_acq_ystop",
           "acq_xsize", "acq_ysize", "min_track_xstart", "min_track_ystart", "max_track_xstop",
           "max_track_ystop", "track_xsize", "track_ysize" ]
@@ -524,111 +300,48 @@ properties:
             description: |
               Parallax as measured by Gaia DR 3 and reported in the Guide Star Catalog.
             type: number
-            sdf:
-              special_processing: VALUE_REQUIRED
-              source:
-                origin: TBD
-            archive_catalog:
-              datatype: float
-              destination: [GuideWindow.l1_detector_gw_gaia_parallax]
           ra_pm:
             title: Proper Motion Right Ascension
             description: |
               Right ascension component of star's proper motion from the
               Guide Star Catalog in arcseconds/year.
             type: number
-            sdf:
-              special_processing: VALUE_REQUIRED
-              source:
-                origin: TBD
-            archive_catalog:
-              datatype: float
-              destination: [GuideWindow.l1_detector_gw_ra_pm]
           dec_pm:
             title: Proper Motion Declination
             description: |
               Declination component of star's proper motion from the
               Guide Star Catalog in arcseconds/year.
             type: number
-            sdf:
-              special_processing: VALUE_REQUIRED
-              source:
-                origin: TBD
-            archive_catalog:
-              datatype: float
-              destination: [GuideWindow.l1_detector_gw_dec_pm]
           predicted_fgs_mag:
             title: Expected FGS Magnitude
             description: |
               Expected FGS magnitude for the guide star in the detector.
             type: number
-            sdf:
-              special_processing: VALUE_REQUIRED
-              source:
-                origin: TBD
-            archive_catalog:
-              datatype: float
-              destination: [GuideWindow.l1_detector_gw_predicted_fgs_mag]
           predicted_fgs_bright_mag:
             title: Brightest Expected FGS Magnitude
             description: |
               Brightest expected FGS magnitude for the guide star in the detector.
             type: number
-            sdf:
-              special_processing: VALUE_REQUIRED
-              source:
-                origin: TBD
-            archive_catalog:
-              datatype: float
-              destination: [GuideWindow.l1_detector_gw_predicted_fgs_bright_mag]
           predicted_fgs_faint_mag:
             title: Faintest Expected FGS Magnitude
             description: |
               Faintest expected FGS magnitude for the guide star in the detector.
             type: number
-            sdf:
-              special_processing: VALUE_REQUIRED
-              source:
-                origin: TBD
-            archive_catalog:
-              datatype: float
-              destination: [GuideWindow.l1_detector_gw_predicted_fgs_faint_mag]
           predicted_count_rate:
             title: Expected Count Rate
             description: |
               Expected count rate of the guide star in the detector.
             type: number
-            sdf:
-              special_processing: VALUE_REQUIRED
-              source:
-                origin: TBD
-            archive_catalog:
-              datatype: float
-              destination: [GuideWindow.l1_detector_gw_predicted_count_rate]
           predicted_x:
             title: Expected X Coord
             description: |
               Expected x coordinate in the science coordinate system.
             type: number
-            sdf:
-              special_processing: VALUE_REQUIRED
-              source:
-                origin: TBD
-            archive_catalog:
-              datatype: float
-              destination: [GuideWindow.l1_detector_gw_predicted_x]
           predicted_y:
             title: Expected Y Coord
             description: |
               Expected y coordinate in the science coordinate system.
             type: number
-            sdf:
-              special_processing: VALUE_REQUIRED
-              source:
-                origin: TBD
-            archive_catalog:
-              datatype: float
-              destination: [GuideWindow.l1_detector_gw_predicted_y]
           pseudo_star_flag:
             title: Pseudo Star Flag
             description: |
@@ -637,13 +350,6 @@ properties:
             type: string
             enum: ["Y", "N"]
             maxLength: 1
-            sdf:
-              special_processing: VALUE_REQUIRED
-              source:
-                origin: TBD
-            archive_catalog:
-              datatype: nchar(1)
-              destination: [GuideWindow.l1_detector_gw_pseudo_star_flag]
         required: [ "gsc_id", "predicted_ra", "predicted_dec", "gaia_parallax", "ra_pm",
           "dec_pm", "predicted_fgs_mag", "predicted_fgs_bright_mag", "predicted_fgs_faint_mag",
           "predicted_count_rate", "predicted_x", "predicted_y", "pseudo_star_flag"]
