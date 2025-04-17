@@ -298,7 +298,7 @@ properties:
             "AQ_VIRTUAL_WINDOWING_BAD": Bad Virtual Windowing
         tag: tag:stsci.edu:asdf/core/ndarray-1.*
         ndim: 1
-        datatype: [ucs4, 1]
+        datatype: [ucs4, 30]
         exact_datatype: true
       centroid_times:
         title: Centroid Times
