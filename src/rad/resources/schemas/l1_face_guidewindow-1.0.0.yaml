@@ -50,7 +50,7 @@ properties:
           type: string
           maxLength: 10
       gw_cycles_per_sci_read_used:
-        title: Used MA Table IDs
+        title: Guide Window Cycles per Science Read Used
         description: |
           List of the number of guide window pedestal and signal pairs per full frame read.
           The order matches that of 'fgs_modes_used'.
@@ -97,7 +97,7 @@ properties:
           - type: "null"
           - type: object
       expected_gw_acquisitions:
-        title: Acquisition Detector Guide Window Files
+        title: Detector Acquisition Guide Window Operation Mode
         description: |
           Dictionary of strings denoting how each detector guide window was expected to
           be used for during the acquisition phase:
@@ -110,7 +110,7 @@ properties:
               guide windows.
         type: object
       expected_gw_tracking:
-        title: Tracking Detector Guide Window Files
+        title: Detector Tacking Guide Window Operation Mode
         description: |
           Dictionary of strings denoting how each detector guide window was expected to
           be used for during the tracking phase:
@@ -146,7 +146,7 @@ properties:
         exact_datatype: true
         unit: "rad"
       delta2:
-        title: Best 2D Fit F1 Axis Rotation
+        title: Best 2 DOF Fit F1 Axis Rotation
         description: |
           1D array of the best fit rotation about the F1 axis for a 2 degree
           of freedom solution in radians.
@@ -165,7 +165,7 @@ properties:
         exact_datatype: true
         unit: "rad"
       epsilon2:
-        title: Best 2D Fit F2 Axis Rotation
+        title: Best 2 DOF Fit F2 Axis Rotation
         description: |
           1D array of the best fit rotation about the F2 axis for a 2 degree
           of freedom solution in radians.
@@ -243,7 +243,7 @@ properties:
         datatype: uint8
         exact_datatype: true
       attitude_estimate_quality:
-        title: FGS Guiding Modes
+        title: Quality Flag for Attitude Estimate
         description: |
           1D array containing the estimate for the quality of the FGS attitude error
           estimate. Possible values include:
