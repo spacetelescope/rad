@@ -1,0 +1,1 @@
+Added the L1 Guide Window Detector schema.
