@@ -57,8 +57,8 @@ Tags
     guidewindow_modes-1.0.0
     guidewindow-1.1.0
     individual_image_meta-1.0.0
-    l1_detector_guidewindow-1.0.0.yaml
-    l1_face_guidewindow-1.0.0.yaml
+    l1_detector_guidewindow-1.0.0
+    l1_face_guidewindow-1.0.0
     l2_cal_step-1.1.0
     l3_cal_step-1.1.0
     mosaic_associations-1.0.0
