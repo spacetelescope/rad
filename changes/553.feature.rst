@@ -1,1 +1,0 @@
-Added schema for MA Table reference files.

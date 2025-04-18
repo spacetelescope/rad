@@ -1,3 +1,43 @@
+0.24.0 (2025-04-18)
+===================
+
+Documentation
+-------------
+
+- Update versioning docs to describe non-ASDF schema changes will not result in
+  new schema versions. (`#572
+  <https://github.com/spacetelescope/rad/issues/572>`_)
+
+
+New Features
+------------
+
+- Added schema for MA Table reference files. (`#553
+  <https://github.com/spacetelescope/rad/issues/553>`_)
+- Added epsf and apcorr to ref_files and ref_files to image_source_catalog.
+  Updated ref_files version in common, and common version elsewhere. (`#560
+  <https://github.com/spacetelescope/rad/issues/560>`_)
+- Define new schema WfiWcs. (`#564
+  <https://github.com/spacetelescope/rad/issues/564>`_)
+- Added the L1 Guide Window Detector schema. (`#579
+  <https://github.com/spacetelescope/rad/issues/579>`_)
+- Added L1 Average FACE Guide Window File Schema. (`#580
+  <https://github.com/spacetelescope/rad/issues/580>`_)
+
+
+Misc
+----
+
+- test with latest supported version of Python (`#546
+  <https://github.com/spacetelescope/rad/issues/546>`_)
+- Removed the WFICommon db from the guidestar schema. (`#570
+  <https://github.com/spacetelescope/rad/issues/570>`_)
+- Updated SDP origin names for various attributes. (`#571
+  <https://github.com/spacetelescope/rad/issues/571>`_)
+- Adjusted several RTB directed L1 & L2 metadata schema changes. (`#574
+  <https://github.com/spacetelescope/rad/issues/574>`_)
+
+
 0.23.1 (2025-02-14)
 ===================
 

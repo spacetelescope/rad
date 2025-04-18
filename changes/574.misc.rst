@@ -1,1 +1,0 @@
-Adjusted several RTB directed L1 & L2 metadata schema changes.
