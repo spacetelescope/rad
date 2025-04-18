@@ -19,9 +19,12 @@ properties:
         description: |
           The type of data model contained within this file.
         tag: asdf://stsci.edu/datamodels/roman/tags/model_type-1.0.0
-      instrument:
-        title: WFI Observing Configuration
-        tag: asdf://stsci.edu/datamodels/roman/tags/wfi_mode-1.0.0
+      optical_element:
+        allOf:
+          - $ref: asdf://stsci.edu/datamodels/roman/schemas/wfi_optical_element-1.0.0
+        title: Wide Field Instrument (WFI) Optical Element
+        description: |
+          Optical element used during the exposure.
       fgs_modes_used:
         title: FGS Guiding Modes
         description: |
@@ -130,7 +133,7 @@ properties:
         type: string
         enum: ["blue", "red"]
         maxLength: 5
-    required: [ fgs_modes_used, ma_table_ids_used, gw_cycles_per_sci_read_used,
+    required: [ fgs_modes_used, ma_table_ids_used, gw_cycles_per_sci_read_used, optical_element,
       guide_star_acq_num, guide_window_id, detector_gw_files, expected_gw_acquisitions,
       expected_gw_tracking]
   face_data:
