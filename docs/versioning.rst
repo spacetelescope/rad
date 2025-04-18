@@ -14,6 +14,21 @@ mostly follow that of other ASDF extensions where:
 This allows files created with the old tag to be validated (against
 the old schema) and opened.
 
+Non-versioned changes
+=====================
+
+The RAD schemas contain archive database destination and other
+non-ASDF information including schema keywords:
+
+- archive_catalog
+- origin
+- sdf
+
+Changes to content stored under these keys will not be trigger a new
+schema version. Please consult the newest schema version for the most
+accurate values for these keywords.
+
+
 Manifest Versioning
 ===================
 

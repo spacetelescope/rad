@@ -7,7 +7,8 @@ id: asdf://stsci.edu/datamodels/roman/schemas/guidewindow_modes-1.0.0
 
 title: Guide Window Mode
 description: |
-  Type of guide window mode used during the exposure.
+  Type of guide window mode used during the exposure. This is based on
+  planned information from the Roman Planning and Scheduling Subsystem.
 type: string
 enum:
   - WIM-ACQ

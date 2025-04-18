@@ -44,7 +44,31 @@ properties:
     ndim: 3
     datatype: uint8
     exact_datatype: true
-propertyOrder: [meta, data, amp33, resultantdq]
+
+
+  reset_read:
+    title: Reset Read (DN)
+    description: |
+      Reset read in units of data numbers (DNs) subtracted
+      from subsequent reads up-the-ramp. This array is only present
+      if a reset read was used and downlinked.
+    tag: tag:stsci.edu:asdf/core/ndarray-1.*
+    ndim: 2
+    datatype: uint16
+    unit: "DN"
+    exact_datatype: true
+  reset_amp33:
+    title: Amplifier 33 Reference Pixel Data for the Reset Read (DN)
+    description: |
+      Reference pixel data from amplifier 33 in units of data numbers (DNs)
+      for the reset read. This array is only present if a reset
+      read was used and downlinked.
+    tag: tag:stsci.edu:asdf/core/ndarray-1.*
+    ndim: 2
+    datatype: uint16
+    unit: "DN"
+    exact_datatype: true
+propertyOrder: [meta, data, amp33, resultantdq, reset_read, reset_amp33]
 flowStyle: block
 required: [meta, data, amp33]
 ...

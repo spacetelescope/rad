@@ -22,7 +22,7 @@ properties:
           basic:
             tag: asdf://stsci.edu/datamodels/roman/tags/mosaic_basic-1.0.0
           cal_step:
-            tag: asdf://stsci.edu/datamodels/roman/tags/l3_cal_step-1.0.0
+            tag: asdf://stsci.edu/datamodels/roman/tags/l3_cal_step-1.1.0
           coordinates:
             tag: asdf://stsci.edu/datamodels/roman/tags/coordinates-1.0.0
           individual_image_meta:
@@ -30,7 +30,7 @@ properties:
           photometry:
             tag: asdf://stsci.edu/datamodels/roman/tags/photometry-1.0.0
           program:
-            tag: asdf://stsci.edu/datamodels/roman/tags/program-1.0.0
+            tag: asdf://stsci.edu/datamodels/roman/tags/program-1.1.0
           ref_file:
             tag: asdf://stsci.edu/datamodels/roman/tags/ref_file-1.1.0
           resample:
