@@ -8,13 +8,18 @@ import yaml
 
 from rad import resources
 
+RAD_URI_PREFIX = "asdf://stsci.edu/datamodels/roman/"
+
+MANIFEST_URI_PREFIX = f"{RAD_URI_PREFIX}manifests/"
 MANIFEST_PATHS = tuple((importlib_resources.files(resources) / "manifests").glob("**/*.yaml"))
 MANIFEST_URIS = tuple(yaml.safe_load(manifest_path.read_bytes())["id"] for manifest_path in MANIFEST_PATHS)
 MANIFESTS = tuple(yaml.safe_load(asdf.get_config().resource_manager[manifest_uri]) for manifest_uri in MANIFEST_URIS)
 MANIFEST_ENTRIES = tuple(chain(*[manifest["tags"] for manifest in MANIFESTS]))
 
-SCHEMA_URI_PREFIX = "asdf://stsci.edu/datamodels/roman/schemas/"
-METASCHEMA_URI = "asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.0.0"
+TAG_URI_PREFIX = f"{RAD_URI_PREFIX}tags/"
+
+SCHEMA_URI_PREFIX = f"{RAD_URI_PREFIX}schemas/"
+METASCHEMA_URI = f"{SCHEMA_URI_PREFIX}rad_schema-1.0.0"
 SCHEMA_URIS = tuple(u for u in asdf.get_config().resource_manager if u.startswith(SCHEMA_URI_PREFIX) and u != METASCHEMA_URI)
 TAGGED_SCHEMA_URIS = set(entry["schema_uri"] for entry in MANIFEST_ENTRIES)
 UNTAGGED_URIS = tuple(uri for uri in SCHEMA_URIS if uri not in TAGGED_SCHEMA_URIS)
@@ -71,7 +76,7 @@ def schema_content(schema_uri):
     return asdf.get_config().resource_manager[schema_uri]
 
 
-@pytest.fixture()
+@pytest.fixture(scope="session")
 def schema(schema_uri):
     return CURRENT_RESOURCES[schema_uri]
 
