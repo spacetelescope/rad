@@ -66,13 +66,6 @@ where = [
     "src",
 ]
 
-[tool.package-data]
-"rad.resources" = [
-    "manifests/*.yaml",
-    "schemas/*.yaml",
-    "schemas/**/*.yaml",
-]
-
 [tool.pytest.ini_options]
 minversion = "7.0"
 doctest_plus = true
