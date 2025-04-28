@@ -36,6 +36,7 @@ from contextlib import suppress
 from io import BytesIO
 from pathlib import Path
 from re import findall
+from tomllib import load
 
 import pytest
 import yaml
@@ -45,14 +46,16 @@ from semantic_version import Version
 
 # Using a python library load the actual RAD repository data into python
 # object which can be interacted with.
-REPO = Repo(Path(__file__).parent.parent)
+REPO_PATH = Path(__file__).parent.parent
 RAD_URLS = (
     "https://github.com/spacetelescope/rad",
     "git@github.com:spacetelescope/rad.git",
 )
 
 # The oldest version of RAD that is under schema versioning
-BASE_RELEASE = Version("0.25.0")
+REPO = Repo(REPO_PATH)
+with (REPO_PATH / "pyproject.toml").open("rb") as f:
+    BASE_RELEASE = Version(load(f)["tool"]["rad-versioning"]["base_release"])
 
 # Any expected versioning failures should be added here
 EXPECTED_XFAILS = (
