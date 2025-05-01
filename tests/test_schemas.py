@@ -11,55 +11,14 @@ import pytest
 import yaml
 from crds.config import is_crds_name
 
-from .conftest import MANIFESTS
+from .conftest import MANIFESTS, METASCHEMA_URI, SCHEMA_URIS, TAG_DEFS
 
-SCHEMA_URI_PREFIX = "asdf://stsci.edu/datamodels/roman/schemas/"
-METASCHEMA_URI = "asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.0.0"
-SCHEMA_URIS = tuple(u for u in asdf.get_config().resource_manager if u.startswith(SCHEMA_URI_PREFIX) and u != METASCHEMA_URI)
-TAG_DEFS = tuple(tag_def for manifest in MANIFESTS for tag_def in manifest["tags"])
-REF_FILE_TAG_DEFS = tuple(tag_def for tag_def in TAG_DEFS if "/reference_files" in tag_def["schema_uri"])
 WFI_OPTICAL_ELEMENTS = tuple(
     asdf.schema.load_schema("asdf://stsci.edu/datamodels/roman/schemas/wfi_optical_element-1.0.0")["enum"]
 )
 EXPOSURE_TYPE_ELEMENTS = tuple(asdf.schema.load_schema("asdf://stsci.edu/datamodels/roman/schemas/exposure_type-1.0.0")["enum"])
 EXPECTED_COMMON_REFERENCE = {"$ref": "asdf://stsci.edu/datamodels/roman/schemas/reference_files/ref_common-1.0.0"}
 METADATA_FORCING_REQUIRED = ("archive_catalog", "sdf")
-ALLOWED_SCHEMA_TAG_VALIDATORS = (
-    "tag:stsci.edu:asdf/time/time-1.*",
-    "tag:stsci.edu:asdf/core/ndarray-1.*",
-    "tag:stsci.edu:asdf/unit/quantity-1.*",
-    "tag:stsci.edu:asdf/unit/unit-1.*",
-    "tag:astropy.org:astropy/units/unit-1.*",
-    "tag:astropy.org:astropy/table/table-1.*",
-    "tag:stsci.edu:gwcs/wcs-*",
-)
-
-
-@pytest.fixture(scope="session")
-def valid_tag_uris():
-    uris = {t["tag_uri"] for manifest in MANIFESTS for t in manifest["tags"]}
-    uris.update(ALLOWED_SCHEMA_TAG_VALIDATORS)
-    return uris
-
-
-@pytest.fixture(scope="session", params=SCHEMA_URIS)
-def schema_content(request):
-    return asdf.get_config().resource_manager[request.param]
-
-
-@pytest.fixture(scope="session", params=SCHEMA_URIS)
-def schema(request):
-    return yaml.safe_load(asdf.get_config().resource_manager[request.param])
-
-
-@pytest.fixture(scope="session", params=REF_FILE_TAG_DEFS)
-def ref_file_schema(request):
-    return yaml.safe_load(asdf.get_config().resource_manager[request.param["schema_uri"]])
-
-
-@pytest.fixture(scope="session", params=REF_FILE_TAG_DEFS)
-def ref_file_uris(request):
-    return request.param["tag_uri"], request.param["schema_uri"]
 
 
 def test_required_properties(schema):
@@ -359,12 +318,11 @@ def test_varchar_length(uri):
     asdf.treeutil.walk(schema, callback)
 
 
-@pytest.mark.parametrize("uri", SCHEMA_URIS)
-def test_ref_loneliness(uri):
+def test_ref_loneliness(schema_uri):
     """
     An object with a $ref should contain no other items
     """
-    schema = asdf.schema.load_schema(uri)
+    schema = asdf.schema.load_schema(schema_uri)
 
     def callback(node):
         if not isinstance(node, dict):
@@ -376,12 +334,11 @@ def test_ref_loneliness(uri):
     asdf.treeutil.walk(schema, callback)
 
 
-@pytest.mark.parametrize("uri", SCHEMA_URIS)
-def test_absolute_ref(uri):
+def test_absolute_ref(schema_uri):
     """
     Test that all $ref are absolute URIs matching those registered with ASDF
     """
-    schema = asdf.schema.load_schema(uri)
+    schema = asdf.schema.load_schema(schema_uri)
     resources = asdf.config.get_config().resource_manager
 
     def callback(node):
