@@ -1,0 +1,2 @@
+Add tests to verify that the schemas follow the versioning rules that are defined
+for the schemas.
