@@ -20,13 +20,9 @@ which marks the start of schema versioning.
 The comparison of two different versions of a schema is done using the data read
 out of the schema file by the yaml library. This is done so that basic formatting,
 comments, and other non-ordered things do not give a false positive for a change.
-
-The yaml data is then flattened into a single level dictionary, so that we can
-ignore some of the keyword fields in the schema, which we claim do not effect the
-functionality of the schema for file validation. While doing this, we also remove
-the ordering of lists, because right now the ordering of a list (aside from
-the propertyOrder keyword, which is ignored) does not matter for the schema validation
-purposes. This is again done to avoid false positives for changes.
+The yaml dictionary is then filtered to remove the keys that we clain don't matter
+for the purposes of schema versioning. This dictionary is then what we use to check
+for equality among the different versions of the schemas.
 
 Note that the filtering and comparison of the schemas may not capture things perfectly,
 and so the exact mechanism for comparing schema version may change in the future.
@@ -35,12 +31,14 @@ indicate that a version bump is needed. If necessary, there is a builtin mechani
 for x-failing given comparisons, so we can ignore potential false positives.
 """
 
+from collections.abc import Mapping
 from io import BytesIO
 from pathlib import Path
 from re import findall
 
 import pytest
 import yaml
+from asdf.treeutil import walk_and_modify
 from git import Repo
 from semantic_version import Version
 
@@ -63,100 +61,49 @@ IGNORED_KEYWORDS = (
 )
 
 
-def flatten_dict(dict_, parent_key=None, filter_keys=None):
+def filter_ignored_keys(tree):
     """
-    Flattens a the dictionary extracted from the yaml direct yaml load of the schema
-        Flattens the dictionary into a single level dictionary with keys being
-        tuples in order of the path to the value in the original dictionary.
+    Filter out the ignored keys from the dictionary.
 
     Note
     ----
-    The filter_keys are there so that we can ignore the keywords that we claim
-    don't matter for schema versioning. This is because these have no effect on
-    the file validation. See IGNORED_KEYWORDS for the list of keywords that are
-    ignored. This list is subject to change.
+    This does not account for the possibility of a schema having a reordered list
+    which has not effect on the schema in terms of validation. This is because
+    asdf.walk_and_modify does not support iterating over sets.
 
     Parameters
     ----------
-    dict_ : dict
-        The yaml dictionary to flatten
-    parent_key : tuple
-        The parent key to use for the flattened dictionary
-    filter_keys : tuple
-        The keys to filter out of the flattened dictionary
+    tree :
+        The tree to filter
 
     Returns
     -------
-    dict
-        The flattened dictionary with keys being tuples in order of the path to the value
+    The filtered tree
     """
-    # Initialize the parent_key and filter_keys to empty tuples if they are None
-    parent_key = () if parent_key is None else parent_key
-    filter_keys = () if filter_keys is None else filter_keys
 
-    def _flatten_dict_generator(dict_, parent_key=None, filter_keys=None):
+    def filter_ignored_keys(node):
         """
-        Generator for a flattened dictionary
-            This returns a generator that yields the flattened dictionary's key
-            value pairs.
-
-        Note
-        ----
-        This is based off the flatten_dict generator example presented by
-            https://www.freecodecamp.org/news/how-to-flatten-a-dictionary-in-python-in-4-different-ways/
+        Filter out the ignored keys from the dictionary.
 
         Parameters
         ----------
-        dict_ : dict
-            The yaml dictionary to flatten
-        parent_key : tuple
-            The parent key to use for the flattened dictionary
-        filter_keys : tuple
+        node : Any
+            node to filter
 
-        Yields
-        ------
-        tuple
-            The key value pairs of the flattened dictionary
+        Returns
+        -------
+        dict
+            The filtered dictionary
         """
-        # Initialize the parent_key and filter_keys to empty tuples if they are None
-        parent_key = () if parent_key is None else parent_key
-        filter_keys = () if filter_keys is None else filter_keys
+        if isinstance(node, Mapping):
+            return {key: value for key, value in node.items() if key not in IGNORED_KEYWORDS}
+        return node
 
-        # Iterate over the outer most dictionary relative to the parent_key
-        for key, value in dict_.items():
-            # Extend the parent key with the current key
-            new_key = (*parent_key, key) if parent_key else (key,)
-
-            # If one of the keys is in the filter_keys, skip it
-            if key in filter_keys:
-                continue
-
-            # Match the value type to determine how to handle it
-            # yaml safe_load should return a dict with other dicts, lists, or
-            # primitives
-            match value:
-                # Handle the case where the value is a dictionary
-                # This is Just a recursive call to the generator
-                case dict():
-                    yield from _flatten_dict_generator(value, new_key, filter_keys)
-                # Handle the case where the value is a list
-                case list():
-                    for val in value:
-                        # Use same key "list" for all items in the list because
-                        # for the RAD schemas list ordering is not important for
-                        # schema operation outside of the propertyOrder, which is
-                        # being ignored by the filter_keys
-                        yield from _flatten_dict_generator({"list": val}, new_key, filter_keys)
-                # Handle the case where the value is a primitive
-                case _:
-                    yield new_key, value
-
-    # Expand the generator into a dictionary
-    return dict(_flatten_dict_generator(dict_, parent_key, filter_keys))
+    return walk_and_modify(tree, callback=filter_ignored_keys)
 
 
 # Get the current resources read through the conftest file and flatten them
-FLAT_CURRENT_RESOURCES = {uri: flatten_dict(schema, filter_keys=IGNORED_KEYWORDS) for uri, schema in CURRENT_RESOURCES.items()}
+FLAT_CURRENT_RESOURCES = {uri: filter_ignored_keys(schema) for uri, schema in CURRENT_RESOURCES.items()}
 
 
 def get_versions():
@@ -185,23 +132,28 @@ def get_versions():
         A tuple of all the release versions for RAD that are under schema versioning
         in order of the version number.
     """
-    pattern = r"\d+\.\d+\.\d+"
+    # Note that the `$` means that it will only match if the version number is the
+    # end of the string, this eliminates the possibility of detecting `dev` tags
+    #     That is this will match `0.23.1` and `0.24.0` but not `0.25.0.dev`
+    pattern = r"\d+\.\d+\.\d+$"
 
-    # Set so that duplicates are removed (these come from the 0.23.1.dev tags)
+    # Set to avoid duplicates
     versions = set()
     # Loop over all the tags in the repository
     for tag in REPO.tags:
         # Regex match the tag version to get the version number, there should
         # only be one match. Ideally this should fail
-        matches = findall(pattern, tag.name)
-        if len(matches) != 1:
-            raise ValueError(f"Tag {tag.name} does not match the versioning scheme")
+        if matches := findall(pattern, tag.name):
+            # This should never be the case based on the regex pattern but
+            # its better to be safe than sorry.
+            if len(matches) != 1:
+                raise ValueError(f"Tag {tag.name} does not match the versioning scheme")
 
-        # Turn the version into a semantic version object so that we can compare
-        # it to the base (oldest) release version
-        version = Version(matches[0])
-        if version >= BASE_RELEASE:
-            versions.add(version)
+            # Turn the version into a semantic version object so that we can compare
+            # it to the base (oldest) release version
+            version = Version(matches[0])
+            if version >= BASE_RELEASE:
+                versions.add(version)
 
     # Sort the versions in order of the version number
     return tuple(str(v) for v in sorted(versions))
@@ -235,7 +187,7 @@ def get_frozen_schemas(version):
 
     def predicate(i, d):
         """
-        Determines if a file should be included in
+        Determines if a file should be included in the traversal output or not.
 
         Note
         ----
@@ -280,7 +232,7 @@ def get_frozen_schemas(version):
         # path. These do not have the %YAML 1.1 header, so we can use that to filter
         if data.startswith("%YAML 1.1"):
             schema = yaml.safe_load(data)
-            schemas[schema["id"]] = flatten_dict(schema, filter_keys=IGNORED_KEYWORDS)
+            schemas[schema["id"]] = filter_ignored_keys(schema)
 
     # Sort the schemas by their URI
     # This is done so that the tests are always in the same order
