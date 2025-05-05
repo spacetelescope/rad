@@ -1,0 +1,255 @@
+%YAML 1.1
+---
+$schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.0.0
+id: asdf://stsci.edu/datamodels/roman/schemas/reference_files/matable-1.0.0
+
+title: Multiple Accumulation Table Reference File Schema
+
+datamodel_name: MATableRefModel
+
+type: object
+properties:
+  meta:
+    allOf:
+      - $ref: asdf://stsci.edu/datamodels/roman/schemas/reference_files/ref_common-1.0.0
+      - type: object
+        properties:
+          reftype:
+            type: string
+            enum: [MATABLE]
+  guide_window_tables:
+    title: Guide Window Tables
+    description: |
+      Dictionary of guide window MA Tables keyed by their table ID
+      (a unique string identifier combining "GW" and a four-digit,
+      zero-padded integer between 1-9999)
+    type: object
+    patternProperties:
+      "^GW([0-9]{4})$":
+        type: object
+        properties:
+          effective_pedestal_exposure_time:
+            title: Effective Pedestal Exposure Time
+            description: |
+              Time in seconds after the last pedestal reset to the arithmetic
+              mean time of all pedestal reads.
+            type: number
+          effective_signal_exposure_time:
+            title: Effective Signal Exposure Time
+            description: |
+              Time in seconds after the last pedestal reset to the arithmetic
+              mean time of all signal reads (excluding skipped signal reads).
+              This time includes the time taken to read science detector rows
+              (the number of which is defined by "science_block_size").
+            type: number
+          gw_readout_time:
+            title: Guide Window Readout Time
+            description: |
+              Time in seconds required to read out the guide window.
+            type: number
+          ma_table_description:
+            title: MA Table Description
+            description: |
+              Longer description of the MA table provided by GSFC.
+            type: string
+          ma_table_name:
+            title: MA Table Name
+            description: |
+              Name of the MA table provided by GSFC. This may not be unique.
+            type: string
+          ma_table_number:
+            title: MA Table Number
+            description: |
+              Unique integer assigned to the MA table.
+              Last 4 characters of the MA table ID. (1-9999)
+            type: integer
+          fsw_slot_number:
+            title: Flight Software Index
+            description: |
+              Integer index in the flight software where the MA table
+              information is stored on-board (0-99).
+            type: integer
+          num_gw_columns:
+            title: Number of Guide Window Columns
+            description: |
+              Number of pixels that a guide window box extends in y-space.
+            type: integer
+          num_gw_rows:
+            title: Number of Guide Window Rows
+            description: |
+              Number of pixels that a guide window box extends in x-space.
+            type: integer
+          num_pedestal_reads:
+            title: Number of Pedestal Reads
+            description: |
+              Number of frames averaged in the pedestal resultant.
+            type: integer
+          num_pre_pedestal_reset_reads:
+            title: Number of Pre-pedestal Reset Reads
+            description: |
+              Number of reset reads prior to the first pedestal frame.
+            type: integer
+          num_pre_signal_skips:
+            title: Number of Pre-Signal Skips
+            description: |
+              Number of skipped/discarded reads before the first signal frame is saved.
+            type: integer
+          num_signal_reads:
+            title: Number of Signal Reads
+            description: |
+              Number of frames averaged in the signal resultant.
+            type: integer
+          science_block_size:
+            title: Science Block Size
+            description: |
+              Number of rows to read before a guide window execution.
+            type: integer
+        required: [effective_pedestal_exposure_time, effective_signal_exposure_time, gw_readout_time,
+          ma_table_description, ma_table_name, ma_table_number, fsw_slot_number,
+          num_gw_columns, num_gw_rows, num_pedestal_reads, num_pre_pedestal_reset_reads,
+          num_pre_signal_skips, num_signal_reads, science_block_size]
+  science_tables:
+    title: Science Tables
+    description: |
+      Dictionary of science MA Tables keyed by their table ID
+      (a unique string identifier combining "SCI" and a four-digit,
+      zero-padded integer between 1-9999)
+    type: object
+    patternProperties:
+      "^SCI([0-9]{4})$":
+        type: object
+        properties:
+          accumulated_exposure_time:
+            title: Accumulated Exposure Time
+            description: |
+              Times in seconds after the reference read to the last read in each resultant.
+            type: array
+            items:
+              type: number
+          effective_exposure_time:
+            title: Effective Exposure Time
+            description: |
+              Times in seconds after the reference read to the arithmetic mean time of
+              all reads averaged into each resultant.
+            type: array
+            items:
+              type: number
+          frame_time:
+            title: Frame Time
+            description: |
+              The MA table dependent duration, in seconds, of a single sample read.
+            type: number
+          integration_duration:
+            title: Integration Duration
+            description: |
+              Time in seconds of the last read in each resultant including
+              all reset reads and the reference read.
+            type: array
+            items:
+              type: number
+          ma_table_description:
+            title: MA Table Description
+            description: |
+              Longer description of the MA table provided by GSFC.
+            type: string
+          ma_table_name:
+            title: MA Table Name
+            description: |
+              Name of the MA table provided by GSFC. This may not be unique.
+            type: string
+          ma_table_number:
+            title: MA Table Number
+            description: |
+              Unique integer assigned to the MA table.
+              Last 4 characters of the MA table ID. (1-9999)
+            type: integer
+          fsw_slot_number:
+            title: Flight Software Index
+            description: |
+              Integer index in the flight software where the MA table
+              information is stored on-board (0-99).
+            type: integer
+          min_science_resultants:
+            title: Minimum Science Resultants
+            description: |
+              Minimum number of science resultants that is recommended for use.
+            type: integer
+          num_pre_science_reads:
+            title: Number of Pre-science Reads
+            description: |
+              Number of reference reads taken before the science reads. Almost always 0 or 1.
+            type: integer
+          num_pre_science_resultants:
+            title: Number of Pre-science Resultants
+            description: |
+              Number of reference resultants that are downlinked with the table. Almost always 0 or 1.
+            type: integer
+          num_science_resultants:
+            title: Number of Science Resultants
+            description: |
+              Maximum number of science resultants allowed in the MA table. Will be the same as the
+              length of "science_read_pattern" by definition.
+            type: integer
+          observing_mode:
+            title: Observing Mode
+            description: |
+              Fine Guidance System (FGS) mode for which the MA table should be used. Each FGS mode
+              uses a different size of guide window resulting in different frame readout times.
+              Either "DEFOCUS" for defocused mode, "WIM" for imaging mode, "WSM" for spectroscopy mode,
+              or "WIM|WSM" for mode agnostic tables.
+            type: string
+          pre_science_read_is_reference:
+            title: Pre-science Read is Reference
+            description: |
+              List of true or false to indicate which pre-science read is used as the reference read
+              to be subtracted from all science reads.
+            type: array
+            items:
+              type: boolean
+          pre_science_read_is_resultant:
+            title: Pre-science Read is Resultant
+            description: |
+              List of true or false indicating which pre-science reads are resultants and downlinked.
+            type: array
+            items:
+              type: boolean
+          pre_science_read_types:
+            title: Pre-science Read Types
+            description: |
+              List of strings for all pre-science read types. Either "reset_read" or "read".
+            type: array
+            items:
+              type: string
+          pre_science_time_after_reset:
+            title: Pre-science Time After Reset
+            description: |
+              Time in seconds between the end of the last reset read and the start of
+              the first science read.
+            type: number
+          reset_frame_time:
+            title: Reset Frame Time
+            description: |
+              WFI reset time in seconds.
+            type: number
+          science_read_pattern:
+            title: Science Read Rattern
+            description: |
+              Contains the read numbers of each resultant and numbered such that the
+              first science read is always read 1. (e.g. a read pattern starting
+              at 2 would signify the first science read is skipped)
+            type: array
+            items:
+              type: array
+              items:
+                type: integer
+        required: [accumulated_exposure_time, effective_exposure_time, frame_time,
+          integration_duration,
+          ma_table_description, ma_table_name, ma_table_number, fsw_slot_number,
+          min_science_resultants, num_pre_science_reads,
+          num_pre_science_resultants, num_science_resultants, observing_mode,
+          pre_science_read_is_reference, pre_science_read_is_resultant, pre_science_read_types,
+          pre_science_time_after_reset, reset_frame_time, science_read_pattern]
+required: [meta, guide_window_tables, science_tables]
+flowStyle: block
+propertyOrder: [meta, guide_window_tables, science_tables]
+...

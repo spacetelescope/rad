@@ -1,0 +1,41 @@
+%YAML 1.1
+---
+$schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.0.0
+id: asdf://stsci.edu/datamodels/roman/schemas/reference_files/saturation-1.0.0
+
+title: Saturation Reference File Schema
+
+datamodel_name: SaturationRefModel
+
+type: object
+properties:
+  meta:
+    allOf:
+      - $ref: asdf://stsci.edu/datamodels/roman/schemas/reference_files/ref_common-1.0.0
+      - type: object
+        properties:
+          reftype:
+            type: string
+            enum: [SATURATION]
+  data:
+    title: Saturation Threshold Array
+    description: |
+      The pixel level threshold for determining saturation before non-linearity
+      corrections are applied.
+    tag: tag:stsci.edu:asdf/core/ndarray-1.*
+    datatype: float32
+    exact_datatype: true
+    ndim: 2
+    unit: DN
+  dq:
+    title: 2-D Data Quality Array
+    description: |
+      The 2-D data quality array for the Saturation Threshold Array.
+    tag: tag:stsci.edu:asdf/core/ndarray-1.*
+    datatype: uint32
+    exact_datatype: true
+    ndim: 2
+required: [meta, data, dq]
+flowStyle: block
+propertyOrder: [meta, data, dq]
+...

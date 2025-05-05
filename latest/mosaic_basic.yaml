@@ -1,0 +1,163 @@
+%YAML 1.1
+---
+$schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.0.0
+id: asdf://stsci.edu/datamodels/roman/schemas/mosaic_basic-1.0.0
+
+title: Basic mosaic metadata keywords
+type: object
+
+properties:
+  time_first_mjd:
+    title: Earliest component image start time in the mosaic in MJD
+    type: number
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    archive_catalog:
+      datatype: float
+      destination: [WFIMosaic.time_first_mjd, SourceCatalog.time_first_mjd, SegmentationMap.time_first_mjd]
+  time_last_mjd:
+    title: Latest component image end time in the mosaic in MJD
+    type: number
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    archive_catalog:
+      datatype: float
+      destination: [WFIMosaic.time_last_mjd, SourceCatalog.time_last_mjd, SegmentationMap.time_last_mjd]
+  time_mean_mjd:
+    title: Mean of mid-times of component images in MJD
+    type: number
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    archive_catalog:
+      datatype: float
+      destination: [WFIMosaic.time_mean_mjd, SourceCatalog.time_mean_mjd, SegmentationMap.time_mean_mjd]
+  max_exposure_time:
+    title: Maximum component image exposure time in MJD
+    type: number
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    archive_catalog:
+      datatype: float
+      destination: [WFIMosaic.max_exposure_time, SourceCatalog.max_exposure_time, SegmentationMap.max_exposure_time]
+  mean_exposure_time:
+    title: Mean of component image exposure times in MJD
+    type: number
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    archive_catalog:
+      datatype: float
+      destination: [WFIMosaic.mean_exposure_time, SourceCatalog.mean_exposure_time, SegmentationMap.mean_exposure_time]
+  visit:
+    title: Visit number within the observation, defined range of
+           values is 1..999; included in obs_id and visit_id as 'VVV'.
+    type: integer
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    archive_catalog:
+      datatype: smallint
+      destination: [WFIMosaic.visit, SourceCatalog.visit, SegmentationMap.visit]
+  segment:
+    title: Segment Number within pass, defined range is 1..999;
+           included in obs_id and visit_id as 'SSS'.
+    type: integer
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    archive_catalog:
+      datatype: smallint
+      destination: [WFIMosaic.segment, SourceCatalog.segment, SegmentationMap.segment]
+  pass:
+    title: Pass number within execution plan, defined range is 1..999;
+           included in obs_id and visit_id as 'AA'.
+    type: integer
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    archive_catalog:
+      datatype: smallint
+      destination: [WFIMosaic.pass, SourceCatalog.pass, SegmentationMap.pass]
+  program:
+    title: Program number, defined range is 1..18445;
+           included in obs_id and visit_id as 'PPPPP'.
+    type: integer
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    archive_catalog:
+      datatype: int
+      destination: [WFIMosaic.program, SourceCatalog.program, SegmentationMap.program]
+  survey:
+    title: Observation Survey
+    type: string
+    maxLength: 15
+    archive_catalog:
+      datatype: nvarchar(15)
+      destination: [WFIMosaic.survey, SourceCatalog.survey, SegmentationMap.survey]
+  optical_element:
+    allOf:
+      - $ref: asdf://stsci.edu/datamodels/roman/schemas/wfi_optical_element-1.0.0
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    maxLength: 20
+    archive_catalog:
+      datatype: nvarchar(20)
+      destination: [WFIMosaic.optical_element, SourceCatalog.optical_element, SegmentationMap.optical_element]
+  instrument:
+    title: Instrument used to acquire the data
+    type: string
+    enum: [WFI]
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    maxLength: 5
+    archive_catalog:
+      datatype: nvarchar(5)
+      destination: [WFIMosaic.instrument_name, SourceCatalog.instrument_name, SegmentationMap.instrument_name]
+  location_name:
+    title: Name of the skycell containing the mosaic
+    type: string
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    maxLength: 25
+    archive_catalog:
+      datatype: nvarchar(25)
+      destination: [WFIMosaic.location_name, SourceCatalog.location_name, SegmentationMap.location_name]
+  product_type:
+    title: Association product type
+    type: string
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    maxLength: 25
+    archive_catalog:
+      datatype: nvarchar(25)
+      destination: [WFIMosaic.product_type, SourceCatalog.product_type, SegmentationMap.product_type]
+propertyOrder: [ time_first_mjd, time_last_mjd, time_mean_mjd, max_exposure_time,
+                 mean_exposure_time, visit, segment, pass, program,
+                 survey, optical_element, instrument, location_name, product_type]
+flowStyle: block
+required: [ time_first_mjd, time_last_mjd, time_mean_mjd, max_exposure_time,
+            mean_exposure_time, visit, segment, pass, program,
+            survey, optical_element, instrument, location_name, product_type]
+...

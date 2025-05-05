@@ -1,0 +1,56 @@
+%YAML 1.1
+---
+$schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.0.0
+id: asdf://stsci.edu/datamodels/roman/schemas/common-1.1.0
+
+title: Common metadata properties
+
+allOf:
+# Meta Variables
+- $ref: asdf://stsci.edu/datamodels/roman/schemas/basic-1.0.0
+- type: object
+  properties:
+    # Meta Objects
+    coordinates:
+      title: Name Of The Coordinate Reference Frame
+      tag: asdf://stsci.edu/datamodels/roman/tags/coordinates-1.0.0
+    ephemeris:
+      title: Ephemeris Data Information
+      tag: asdf://stsci.edu/datamodels/roman/tags/ephemeris-1.1.0
+    exposure:
+      title: Exposure Information
+      tag: asdf://stsci.edu/datamodels/roman/tags/exposure-1.1.0
+    guide_star:
+      title: Guide Star Window Information
+      tag: asdf://stsci.edu/datamodels/roman/tags/guidestar-1.1.0
+    instrument:
+      title: WFI Observing Configuration
+      tag: asdf://stsci.edu/datamodels/roman/tags/wfi_mode-1.0.0
+    observation:
+      title: Observation Identifiers
+      tag: asdf://stsci.edu/datamodels/roman/tags/observation-1.0.0
+    pointing:
+      title: Spacecraft Pointing Information
+      tag: asdf://stsci.edu/datamodels/roman/tags/pointing-1.1.0
+    program:
+      title: Program Information
+      tag: asdf://stsci.edu/datamodels/roman/tags/program-1.1.0
+    ref_file:
+      title: Reference File Information
+      tag: asdf://stsci.edu/datamodels/roman/tags/ref_file-1.1.0
+    rcs:
+      title: Relative Calibration System Information
+      tag: asdf://stsci.edu/datamodels/roman/tags/rcs-1.0.0
+    velocity_aberration:
+      title: Velocity Aberration Correction Information
+      tag: asdf://stsci.edu/datamodels/roman/tags/velocity_aberration-1.0.0
+    visit:
+      title: Visit Information
+      tag: asdf://stsci.edu/datamodels/roman/tags/visit-1.1.0
+    wcsinfo:
+      title: World Coordinate System (WCS) Parameters
+      tag: asdf://stsci.edu/datamodels/roman/tags/wcsinfo-1.1.0
+  required: [coordinates, ephemeris, exposure, guide_star,
+             instrument, observation, pointing, program, ref_file,
+             rcs, velocity_aberration, visit, wcsinfo]
+...

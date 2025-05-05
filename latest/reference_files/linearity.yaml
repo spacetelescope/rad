@@ -1,0 +1,47 @@
+%YAML 1.1
+---
+$schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.0.0
+id: asdf://stsci.edu/datamodels/roman/schemas/reference_files/linearity-1.0.0
+
+title: Linearity Correction Reference Schema
+
+datamodel_name: LinearityRefModel
+
+type: object
+properties:
+  meta:
+    allOf:
+      - $ref: asdf://stsci.edu/datamodels/roman/schemas/reference_files/ref_common-1.0.0
+      - type: object
+
+        input_units: "DN"
+        output_units: "DN"
+
+        properties:
+          reftype:
+            type: string
+            enum: [LINEARITY]
+  coeffs:
+    title: Linearity Coefficients
+    description: |
+      Contains the coefficients of a polynomial to correct the non-linear
+      response of each pixel to a linear signal. Both the input to and output
+      from the polynomial are in units of DN. The coefficients have units that
+      contain various powers of DN.
+    tag: tag:stsci.edu:asdf/core/ndarray-1.*
+    datatype: float32
+    exact_datatype: true
+    # Dimensions: numcoeffs, ysize, xsize
+    ndim: 3
+  dq:
+    title: Two Dimensional Data Quality Array for All Resultants
+    description: |
+      Two Dimensional data Quality Array for all Resultants
+    tag: tag:stsci.edu:asdf/core/ndarray-1.*
+    datatype: uint32
+    exact_datatype: true
+    ndim: 2
+required: [meta, coeffs, dq]
+flowStyle: block
+propertyOrder: [meta, coeffs, dq]
+...

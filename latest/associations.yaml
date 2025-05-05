@@ -1,0 +1,92 @@
+%YAML 1.1
+---
+$schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.0.0
+id: asdf://stsci.edu/datamodels/roman/schemas/associations-1.0.0
+
+title: Association Table Data Model
+
+datamodel_name: AssociationsModel
+
+type: object
+properties:
+  asn_id:
+    title: Association ID
+    description: |
+      The unique identifier of the association to which the processed
+      observations belong.
+    type: string
+  asn_pool:
+    title: Association Pool
+    type: string
+  asn_type:
+    title: Association Type
+    description: |
+      The type of association observed, such as a dither FOV association or a
+      mosaic survey association.
+    type: string
+  asn_rule:
+    title: Association Rule
+    description: |
+      Any rules that need to be followed for this particular type of
+      association.
+    type: string
+  version_id:
+    title: Version ID
+    description: |
+      The unique version identifier that provides context for the data release
+      version and circumstances for the processing.
+    type: string
+  code_version:
+    title: Code Version
+    description: |
+      The exact code version used to process the observations.
+    type: string
+  degraded_status:
+    title: Degraded Status
+    description: |
+      Details about how the observations might have suffered degradation, such
+      as a guide star failure.
+    type: string
+  program:
+    title: Program ID
+    description: |
+      The unique program identifier to which the associated observations belong.
+    type: integer
+  target:
+    title: Target Name
+    description: |
+      The name or ID of the target being observed.
+    type: integer
+  constraints:
+    title: Constraints
+    type: string
+  products:
+    title: Resultant Products
+    description: |
+      The resulting output products created by the processing.
+    type: array
+    items:
+      type: object
+      properties:
+        name:
+          type: string
+        members:
+          type: array
+          items:
+            type: object
+            properties:
+              expname:
+                type: string
+              exposerr:
+                type: string
+              exptype:
+                type: string
+                enum: ['SCIENCE', 'CALIBRATION', 'ENGINEERING']
+            required: [expname, exposerr, exptype]
+      required: [name, members]
+
+required: [asn_id, asn_pool, asn_type, asn_rule, products]
+flowStyle: block
+propertyOrder: [asn_id, asn_pool, asn_type, asn_rule, version_id, code_version, degraded_status,
+           program, target, constraints, products]
+...

@@ -1,0 +1,53 @@
+%YAML 1.1
+---
+$schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.0.0
+id: asdf://stsci.edu/datamodels/roman/schemas/reference_files/pixelarea-1.0.0
+
+title: Pixel Area Reference Schema
+
+datamodel_name: PixelareaRefModel
+
+type: object
+properties:
+  meta:
+    allOf:
+      - $ref: asdf://stsci.edu/datamodels/roman/schemas/reference_files/ref_common-1.0.0
+      - type: object
+        properties:
+          reftype:
+            type: string
+            enum: [AREA]
+          photometry:
+            type: object
+            properties:
+              pixelarea_steradians:
+                title: Pixel Area (steradians)
+                description: |
+                  The nominal pixel area in steradians.
+                anyOf:
+                  - type: number
+                    unit: sr
+                  - type: "null"
+              pixelarea_arcsecsq:
+                title: Pixel Area (arcsec^2)
+                description:
+                  The nominal pixel area in arcec^2.
+                anyOf:
+                  - type: number
+                    unit: arcsec**2
+                  - type: "null"
+            required: [pixelarea_steradians, pixelarea_arcsecsq]
+        required: [photometry]
+      - $ref: asdf://stsci.edu/datamodels/roman/schemas/reference_files/ref_optical_element-1.0.0
+  data:
+    title: Pixel Area Array
+    description: |
+      Pixel area in units of of either arcseconds or steradians.
+    tag: tag:stsci.edu:asdf/core/ndarray-1.*
+    datatype: float32
+    exact_datatype: true
+    ndim: 2
+required: [meta, data]
+flowStyle: block
+propertyOrder: [meta, data]
+...

@@ -1,0 +1,474 @@
+%YAML 1.1
+---
+$schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.0.0
+id: asdf://stsci.edu/datamodels/roman/schemas/tvac/groundtest-1.0.0
+
+title: TVAC Ground Test Information
+type: object
+properties:
+  test_name:
+    title: I&T Test Name
+    type: string
+    archive_catalog:
+      datatype: nvarchar(80)
+      destination: [WFICommon.test_name]
+  test_phase:
+    title: I&T Testing Phase
+    type: string
+    archive_catalog:
+      datatype: nvarchar(80)
+      destination: [WFICommon.test_phase]
+  test_environment:
+    title: I&T Testing Environment
+    type: string
+    archive_catalog:
+      datatype: nvarchar(80)
+      destination: [WFICommon.test_environment]
+  test_script:
+    title: Name of Testing Script Run
+    type: string
+    archive_catalog:
+      datatype: nvarchar(80)
+      destination: [WFICommon.test_script]
+  product_date:
+    title: Source File Creation Time
+    tag: tag:stsci.edu:asdf/time/time-1.*
+    archive_catalog:
+      datatype: datetime2
+      destination: [WFICommon.product_date]
+  product_version:
+    title: I&T Software Used to Generate Source File
+    type: string
+    archive_catalog:
+      datatype: nvarchar(80)
+      destination: [WFICommon.product_version]
+  conversion_date:
+    title: HDF5 to ASDF Conversion Date
+    tag: tag:stsci.edu:asdf/time/time-1.*
+    archive_catalog:
+      datatype: datetime2
+      destination: [WFICommon.conversion_date]
+  conversion_version:
+    title: HDF5 to ASDF Converter Version
+    type: string
+    archive_catalog:
+      datatype: nvarchar(80)
+      destination: [WFICommon.conversion_version]
+  filename_pnt5:
+    title: L0.5 File Name
+    type: string
+  filepath_level_pnt5:
+    title: L0.5 File Path
+    type: string
+  filename_l1a:
+    title: L1A File Name
+    type: string
+  detector_id:
+    title: SCA Identifier
+    type: string
+    archive_catalog:
+      datatype: nvarchar(80)
+      destination: [WFICommon.detector_id]
+  detector_temp:
+    title: Mean Detector Temperature (Kelvin)
+    type: number
+    archive_catalog:
+      datatype: float
+      destination: [WFICommon.detector_temp]
+  frames_temp:
+    title: Interpolated Temperature of Frames (Kelvin)
+    tag: tag:stsci.edu:asdf/core/ndarray-1.*
+    datatype: float64
+    exact_datatype: true
+    # needs a ndim
+  ota_temp:
+    title: Mean OTA Temperature (Kelvin)
+    type: number
+    archive_catalog:
+      datatype: float
+      destination: [WFICommon.ota_temp]
+  rcs_on:
+    title: RCS On/Off
+    type: boolean
+    archive_catalog:
+      datatype: nchar(1)
+      destination: [WFICommon.rcs_on]
+  readout_col_num:
+    title: Number of Readout Columns
+    type: integer
+    archive_catalog:
+      datatype: int
+      destination: [WFICommon.readout_col_num]
+  detector_pixel_size:
+    title: Pixel Size (cm)
+    tag: tag:stsci.edu:asdf/unit/quantity-1.*
+    properties:
+      value:
+        tag: tag:stsci.edu:asdf/core/ndarray-1.*
+        datatype: float64
+        exact_datatype: true
+        # needs ndim
+      unit:
+        tag: tag:stsci.edu:asdf/unit/unit-1.*
+        enum: ["cm"]
+  sensor_error:
+    title: Sensor Error
+    tag: tag:stsci.edu:asdf/core/ndarray-1.*
+    datatype: float64
+    exact_datatype: true
+    # needs ndim
+  activity_number:
+    title: TVAC Activity Number
+    type: integer
+    archive_catalog:
+      datatype: int
+      destination: [WFITvac.activity_number]
+  led_bank1_band_number_on:
+    title: Band number of LED illuminating in the sRCS in bank 1
+    type: array
+    items:
+      type: integer
+  led_bank2_bank1_number_on:
+    title: Band number of LED illuminating in the sRCS in bank 2
+    type: array
+    items:
+      type: integer
+  led_bank1_approx_wlen:
+    title: Approximate wavelength of LED illuminating in the sRCS in bank 1
+    tag: tag:stsci.edu:asdf/unit/quantity-1.*
+    properties:
+      value:
+        tag: tag:stsci.edu:asdf/core/ndarray-1.*
+        datatype: float64
+        exact_datatype: true
+        # needs ndim
+      unit:
+        tag: tag:stsci.edu:asdf/unit/unit-1.*
+        enum: ["nm"]
+  led_bank2_approx_wlen:
+    title: Approximate wavelength of LED illuminating in the sRCS in bank 2
+    tag: tag:stsci.edu:asdf/unit/quantity-1.*
+    properties:
+      value:
+        tag: tag:stsci.edu:asdf/core/ndarray-1.*
+        datatype: float64
+        exact_datatype: true
+        # needs ndim
+      unit:
+        tag: tag:stsci.edu:asdf/unit/unit-1.*
+        enum: ["nm"]
+  srcs_pd_voltage:
+    title: sRCS Photodiode Voltage
+    type: number
+    archive_catalog:
+      datatype: float
+      destination: [WFITvac.srcs_pd_voltage]
+  srcs_led_flux:
+    title: Target flux for the sRCS LEDs
+    type: number
+    archive_catalog:
+      datatype: float
+      destination: [WFITvac.srcs_led_flux]
+  wfi_mce_srcs_bank1_led_i:
+    title: |
+      Commanded current for the SRCS -> GSFC will send us the flux
+      in target e-/s/px in the center of the sca
+    tag: tag:stsci.edu:asdf/unit/quantity-1.*
+    properties:
+      # needs a datatype
+      unit:
+        tag: tag:stsci.edu:asdf/unit/unit-1.*
+        enum: ["A"]
+    archive_catalog:
+      datatype: float
+      destination: [WFITvac.wfi_mce_srcs_bank1_led_i]
+  wfi_mce_srcs_bank1_led_range:
+    title: |
+      Commanded range for the SRCS -> GSFC will send us the flux in
+      target e-/s/px in the center of the sca
+    type: string
+    # enum: [] add enum values
+    archive_catalog:
+      datatype: nvarchar(80)
+      destination: [WFITvac.wfi_mce_srcs_bank1_led_range]
+  wfi_mce_srcs_bank2_led_i:
+    title: |
+      Commanded current for the SRCS -> GSFC will send us the flux
+      in target e-/s/px in the center of the sca
+    tag: tag:stsci.edu:asdf/unit/quantity-1.*
+    properties:
+      # needs a datatype
+      unit:
+        tag: tag:stsci.edu:asdf/unit/unit-1.*
+        enum: ["A"]
+    archive_catalog:
+      datatype: float
+      destination: [WFITvac.wfi_mce_srcs_bank2_led_i]
+  wfi_mce_srcs_bank2_led_range:
+    title: |
+      Commanded range for the SRCS -> GSFC will send us the flux in
+      target e-/s/px in the center of the sca
+    type: string
+    # enum: [] add enum values
+    archive_catalog:
+      datatype: nvarchar(80)
+      destination: [WFITvac.wfi_mce_srcs_bank2_led_range]
+  srcs_led_current:
+    title: Input LED current set point
+    type: number
+    archive_catalog:
+      datatype: float
+      destination: [WFITvac.srcs_led_current]
+  wfi_opt_targettype:
+    title: WFI-team defined target types
+    type: string
+    enum: [NONE, FLAT-sRCS, FLAT-SORC, POINT SOURCE, SPECTRUM, DARK,
+            DARK-DARKEL, DARK-W146, PHARET-GW, PHARET-FF, PHARET-FF-F158,
+            PHARET-FF-M3MM, PHARET-FF-M6MM, PHARET-FF-P3MM, PHARET-FF-P6MM,
+            PHARET-FF-PRISM, PHARET-FF-W146, POINT-SOURCE-GW, STRAY LIGHT]
+    archive_catalog:
+      datatype: nvarchar(20)
+      destination: [WFITvac.wfi_opt_targettype]
+  analysis_tag:
+    title: WFI-team defined tags for data aggregation/analysis
+    type: string
+    archive_catalog:
+      datatype: nvarchar(32)
+      destination: [WFITvac.analysis_tag]
+  gsorc_pose_mode:
+    title: SORC pose mode
+    type: string
+    # enum: [] add enum values
+    archive_catalog:
+      datatype: nvarchar(20)
+      destination: [WFITvac.gsorc_pose_mode]
+  gsorc_pose_target:
+    title: SORC pose target
+    type: string
+    # enum: [] add enum values
+    archive_catalog:
+      datatype: nvarchar(20)
+      destination: [WFITvac.gsorc_pose_target]
+  gsorc_sds_active_atten:
+    title: Attenuation from SDS
+    type: number
+    archive_catalog:
+      datatype: float
+      destination: [WFITvac.gsorc_sds_active_atten]
+  gsorc_sds_lltfir_wave:
+    title: Commanded wavelength for the LLTF
+    type: number
+    archive_catalog:
+      datatype: float
+      destination: [WFITvac.gsorc_sds_lltfir_wave]
+  gsorc_sds_sorc_on:
+    title: SORC on/off
+    type: boolean
+    archive_catalog:
+      datatype: nchar(1)
+      destination: [WFITvac.gsorc_sds_sorc_on]
+  gsorc_sds_sorc_wlen:
+    title: SORC wavelength
+    type: number
+    archive_catalog:
+      datatype: float
+      destination: [WFITvac.gsorc_sds_sorc_wlen]
+  gsorc_sds_active_source:
+    title: Laser name
+    type: string
+    archive_catalog:
+      datatype: nvarchar(20)
+      destination: [WFITvac.gsorc_sds_active_source]
+  gsorc_sds_dq_pulse:
+    title: whether the source is pulsing or not
+    type: string
+    enum: [pulse, cw]
+    archive_catalog:
+      datatype: nvarchar(10)
+      destination: [WFITvac.gsorc_sds_dq_pulse]
+  gsorc_sds_daq_pw:
+    title: pulse width – originally in HDF5 file is in units of 0.1 ms
+    tag: tag:stsci.edu:asdf/unit/quantity-1.*
+    properties:
+      # needs a datatype
+      unit:
+        tag: tag:stsci.edu:asdf/unit/unit-1.*
+        enum: [ms]
+    archive_catalog:
+      datatype: float
+      destination: [WFITvac.gsorc_sds_daq_pw]
+  gsorc_heater1_setpt:
+    title: SORC temperature set point
+    type: number
+    archive_catalog:
+      datatype: float
+      destination: [WFITvac.gsorc_heater1_setpt]
+  wfi_otp_wfi_ewa:
+    title: Element Wheel position
+    type: string
+    # enum: [] add enum values
+    archive_catalog:
+      datatype: nvarchar(15)
+      destination: [WFITvac.wfi_otp_wfi_ewa]
+  sca_temp:
+    title: SCE temperature
+    tag: tag:stsci.edu:asdf/unit/quantity-1.*
+    properties:
+      # needs a datatype
+      unit:
+        tag: tag:stsci.edu:asdf/unit/unit-1.*
+        enum: [K]
+    archive_catalog:
+      datatype: float
+      destination: [WFITvac.sca_temp]
+  mpa_temp:
+    title: MPA temperature
+    tag: tag:stsci.edu:asdf/unit/quantity-1.*
+    properties:
+      # needs a datatype
+      unit:
+        tag: tag:stsci.edu:asdf/unit/unit-1.*
+        enum: [K]
+    archive_catalog:
+      datatype: float
+      destination: [WFITvac.mpa_temp]
+  ewa_temp:
+    title: ewa temp ish (there's no actual temperature sensor inside)
+    tag: tag:stsci.edu:asdf/unit/quantity-1.*
+    properties:
+      # needs a datatype
+      unit:
+        tag: tag:stsci.edu:asdf/unit/unit-1.*
+        enum: [K]
+    archive_catalog:
+      datatype: float
+      destination: [WFITvac.ewa_temp]
+  ewta_outer_heater_temp:
+    title: ewa_outer temperature sensor
+    tag: tag:stsci.edu:asdf/unit/quantity-1.*
+    properties:
+      # needs a datatype
+      unit:
+        tag: tag:stsci.edu:asdf/unit/unit-1.*
+        enum: [K]
+    archive_catalog:
+      datatype: float
+      destination: [WFITvac.ewta_outer_heater_temp]
+  ewta_inner_heater_temp:
+    title: ewa_inner temperature sensor
+    tag: tag:stsci.edu:asdf/unit/quantity-1.*
+    properties:
+      # needs a datatype
+      unit:
+        tag: tag:stsci.edu:asdf/unit/unit-1.*
+        enum: [K]
+    archive_catalog:
+      datatype: float
+      destination: [WFITvac.ewta_inner_heater_temp]
+  coba_temp_near_ewta:
+    title: COBA temperature near element wheel
+    tag: tag:stsci.edu:asdf/unit/quantity-1.*
+    properties:
+      # needs a datatype
+      unit:
+        tag: tag:stsci.edu:asdf/unit/unit-1.*
+        enum: [K]
+    archive_catalog:
+      datatype: float
+      destination: [WFITvac.coba_temp_near_ewta]
+  scea_temp:
+    title: SCEA temperature
+    tag: tag:stsci.edu:asdf/unit/quantity-1.*
+    properties:
+      # needs a datatype
+      unit:
+        tag: tag:stsci.edu:asdf/unit/unit-1.*
+        enum: [K]
+    archive_catalog:
+      datatype: float
+      destination: [WFITvac.scea_temp]
+  wfi_sce_1_vbiasgate_v:
+    title: SCE gate voltage bias.
+    tag: tag:stsci.edu:asdf/unit/quantity-1.*
+    properties:
+      # needs a datatype
+      unit:
+        tag: tag:stsci.edu:asdf/unit/unit-1.*
+        enum: [V]
+    archive_catalog:
+      datatype: float
+      destination: [WFITvac.wfi_sce_1_vbiasgate_v]
+  wfi_sce_1_vbiaspwr_i:
+    tag: tag:stsci.edu:asdf/unit/quantity-1.*
+    properties:
+      # needs a datatype
+      unit:
+        tag: tag:stsci.edu:asdf/unit/unit-1.*
+        enum: [A]
+    archive_catalog:
+      datatype: float
+      destination: [WFITvac.wfi_sce_1_vbiaspwr_i]
+  wfi_sce_1_vbiaspwr_v:
+    tag: tag:stsci.edu:asdf/unit/quantity-1.*
+    properties:
+      # needs a datatype
+      unit:
+        tag: tag:stsci.edu:asdf/unit/unit-1.*
+        enum: [V]
+    archive_catalog:
+      datatype: float
+      destination: [WFITvac.wfi_sce_1_vbiaspwr_v]
+  wfi_sce_1_vreset_v:
+    tag: tag:stsci.edu:asdf/unit/quantity-1.*
+    properties:
+      # needs a datatype
+      unit:
+        tag: tag:stsci.edu:asdf/unit/unit-1.*
+        enum: [V]
+    archive_catalog:
+      datatype: float
+      destination: [WFITvac.wfi_sce_1_vreset_v]
+  wfi_sce_1_vreset_i:
+    tag: tag:stsci.edu:asdf/unit/quantity-1.*
+    properties:
+      # needs a datatype
+      unit:
+        tag: tag:stsci.edu:asdf/unit/unit-1.*
+        enum: [A]
+    archive_catalog:
+      datatype: float
+      destination: [WFITvac.wfi_sce_1_vreset_i]
+  wfi_mcu_a_offs_csense_fpssen:
+    title: temperature in eng units -> will change for TVAC2.
+    tag: tag:stsci.edu:asdf/unit/quantity-1.*
+    properties:
+      # needs a datatype
+      unit:
+        tag: tag:stsci.edu:asdf/unit/unit-1.*
+        enum: [K]
+    archive_catalog:
+      datatype: float
+      destination: [WFITvac.wfi_mcu_a_offs_csense_fpssen]
+propertyOrder: [test_name, test_phase, test_environment, test_script,
+                product_date, product_version, conversion_date, conversion_version,
+                filename_pnt5, filepath_level_pnt5, filename_l1a, detector_id,
+                detector_temp, frames_temp, ota_temp, rcs_on, readout_col_num,
+                detector_pixel_size, sensor_error,
+                analysis_tag, sca_temp, gsorc_heater1_setpt, srcs_led_current,
+                gsorc_sds_active_source, wfi_sce_1_vreset_v, ewa_temp, wfi_sce_1_vreset_i,
+                wfi_sce_1_vbiasgate_v, srcs_pd_voltage, gsorc_sds_daq_pw, activity_number,
+                mpa_temp, gsorc_sds_active_atten, gsorc_sds_dq_pulse, ewta_inner_heater_temp,
+                wfi_otp_wfi_ewa, wfi_mce_srcs_bank2_led_i, gsorc_sds_sorc_wlen,
+                gsorc_sds_sorc_on, wfi_mcu_a_offs_csense_fpssen, gsorc_sds_lltfir_wave,
+                wfi_mce_srcs_bank1_led_range, led_bank2_bank1_number_on, wfi_sce_1_vbiaspwr_v,
+                srcs_led_flux, gsorc_pose_mode, wfi_mce_srcs_bank1_led_i, wfi_sce_1_vbiaspwr_i,
+                led_bank2_approx_wlen, wfi_mce_srcs_bank2_led_range, ewta_outer_heater_temp,
+                gsorc_pose_target, led_bank1_band_number_on, led_bank1_approx_wlen,
+                wfi_opt_targettype, scea_temp, coba_temp_near_ewta]
+flowStyle: block
+required: [test_name, test_phase, test_environment, test_script,
+           product_date, product_version, conversion_date, conversion_version,
+           filename_pnt5, filepath_level_pnt5, filename_l1a, detector_id,
+           detector_temp, frames_temp, ota_temp, rcs_on, readout_col_num,
+           detector_pixel_size, sensor_error]
+...

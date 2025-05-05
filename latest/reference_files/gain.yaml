@@ -1,0 +1,33 @@
+%YAML 1.1
+---
+$schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.0.0
+id: asdf://stsci.edu/datamodels/roman/schemas/reference_files/gain-1.0.0
+
+title: Gain Reference File Schema
+
+datamodel_name: GainRefModel
+
+type: object
+properties:
+  meta:
+    allOf:
+      - $ref: asdf://stsci.edu/datamodels/roman/schemas/reference_files/ref_common-1.0.0
+      - type: object
+        properties:
+          reftype:
+            type: string
+            enum: [GAIN]
+  data:
+    title: Gain Data Array
+    description: |
+      The Gain Data Array represents the pixel to pixel conversion from digital
+      numbers (DN) to electrons (e). The units are e/DN.
+    tag: tag:stsci.edu:asdf/core/ndarray-1.*
+    datatype: float32
+    exact_datatype: true
+    ndim: 2
+    unit: electron / DN
+required: [meta, data]
+flowStyle: block
+propertyOrder: [meta, data]
+...

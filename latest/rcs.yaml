@@ -1,0 +1,80 @@
+%YAML 1.1
+---
+$schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.0.0
+id: asdf://stsci.edu/datamodels/roman/schemas/rcs-1.0.0
+
+title: Relative Calibration System Information
+type: object
+properties:
+  active:
+    title: Status of the Relative Calibration System (RCS)
+    description: |
+      A boolean flag to indicate if the Relative Calibration
+      System (RCS) is on (True) or off (False) during the exposure.
+    type: boolean
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    archive_catalog:
+      datatype: nchar(1)
+      destination: [WFIExposure.active]
+  electronics:
+    title: Relative Calibration System (RCS) Electronics Side
+    description: |
+      The active redundant electronics used to control the
+      Relative Calibration System (RCS). Values may be "A" or "B" if
+      the RCS is on, and "N/A" if the RCS is off.
+    anyOf:
+      - type: string
+        enum: ["A", "B", None]
+      - type: "null"
+    maxLength: 5
+    archive_catalog:
+      datatype: nvarchar(5)
+      destination: [WFIExposure.electronics]
+  bank:
+    title: Light Emitting Diode (LED) Bank Selection
+    description: |
+      The bank of light emitting diodes (LEDs) selected in
+      the program specification in the Astronomer's Proposal Tool
+      (APT). Values may be either "1" or "2" if the RCS is on, and
+      "N/A" if the RCS is off.
+    anyOf:
+      - type: string
+        enum: ["1", "2", None]
+      - type: "null"
+    maxLength: 5
+    archive_catalog:
+      datatype: nvarchar(5)
+      destination: [WFIExposure.bank]
+  led:
+    title: Light Emitting Diode (LED) Passband
+    description: |
+      The light emitting diode (LED) passband selected in
+      the program specification in the Astronomer's Proposal Tool
+      (APT). Values are integer strings between "1" and "6" inclusive,
+      when the RCS is on, and "N/A" when the RCS is off.
+    anyOf:
+      - type: string
+        enum: ["1", "2", "3", "4", "5", "6", None]
+      - type: "null"
+    maxLength: 5
+    archive_catalog:
+      datatype: nvarchar(5)
+      destination: [WFIExposure.led]
+  counts:
+    title: Light Emitting Diode (LED) Flux (DN)
+    description: |
+      The integrated number of counts of the light emitting
+      diode (LED) selected in the program specification in the
+      Astronomer's Proposal Tool (APT). Values are between 0 and
+      65,535 in units of DN.
+    type: integer
+    archive_catalog:
+      datatype: int
+      destination: [WFIExposure.counts]
+propertyOrder: [active, electronics, bank, led, counts]
+flowStyle: block
+required: [active, electronics, bank, led, counts]
+...

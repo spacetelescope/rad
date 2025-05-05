@@ -1,0 +1,289 @@
+%YAML 1.1
+---
+$schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.0.0
+id: asdf://stsci.edu/datamodels/roman/schemas/l1_face_guidewindow-1.0.0
+
+title: Level 1 FACE Guide Star Window Information schema
+
+datamodel_name: L1FaceGuidewindowModel
+
+archive_meta: None
+
+type: object
+properties:
+  meta:
+    type: object
+    properties:
+      model_type:
+        title: Data Model Type
+        description: |
+          The type of data model contained within this file.
+        tag: asdf://stsci.edu/datamodels/roman/tags/model_type-1.0.0
+      optical_element:
+        allOf:
+          - $ref: asdf://stsci.edu/datamodels/roman/schemas/wfi_optical_element-1.0.0
+        title: Wide Field Instrument (WFI) Optical Element
+        description: |
+          Optical element used during the exposure.
+      fgs_modes_used:
+        title: FGS Guiding Modes
+        description: |
+          List of unique FGS guiding modes used during the guide window exposure.
+        type: array
+        items:
+          type: string
+          enum: ["NOT_CONFIGURED", "STANDBY", "WIM_ACQ_VW", "WIM_ACQ_NA", "WIM_TRK",
+            "WIM_TRK_S", "WSM_ACQ_HC", "WSM_ACQ_VC", "WSM_TRK", "WIM_DFC"]
+          maxLength: 20
+        sdf:
+          special_processing: VALUE_REQUIRED
+          source:
+            origin: TBD
+        archive_catalog:
+          datatype: nvarchar(20)
+          destination: [GuideWindow.l1_gw_fgs_modes_used]
+      ma_table_ids_used:
+        title: Used MA Table IDs
+        description: |
+          List of unique IDs for the guide window MA table used for this guide star.
+          IDs combine a "GW" prefix with a 4-digit zero-padded identifying integer.
+          The order matches that of 'fgs_modes_used'.
+        type: array
+        items:
+          type: string
+          maxLength: 10
+      gw_cycles_per_sci_read_used:
+        title: Guide Window Cycles per Science Read Used
+        description: |
+          List of the number of guide window pedestal and signal pairs per full frame read.
+          The order matches that of 'fgs_modes_used'.
+        type: array
+        items:
+          type: integer
+      guide_star_acq_num:
+        title: Guide Star Acquisition Number
+        description: |
+          Guide star acquisition number (1-9) for the guide window exposure.
+        type: integer
+        sdf:
+          special_processing: VALUE_REQUIRED
+          source:
+            origin: TBD
+        archive_catalog:
+          datatype: int
+          destination: [GuideWindow.l1_gw_guide_star_acq_num]
+      guide_window_id:
+        title: Guide Window ID
+        description: |
+          A unique identification number of the guide window. This identifier combines the
+          visit identifier and guide star acquisition number, and is set in the visit information
+          uplinked to the observatory. As the number may be zero-padded, this value is saved as
+          a string. See technical report Roman-STScI-000193 "Roman Programmatic Data
+          Identification" for more information.
+        type: string
+        maxLength: 120
+        sdf:
+          special_processing: VALUE_REQUIRED
+          source:
+            origin: TBD
+        archive_catalog:
+          datatype: nvarchar(120)
+          destination: [GuideWindow.l1_gw_guide_window_id]
+      detector_gw_files:
+        title: Detector Guide Window Files
+        description: |
+          Dictionary of the detector specific guide window files that were used in the
+          attitude corrections listed within this file. All 18 detector names are the keys
+          (e.g. WFI03, WFI11) and the values are either the string filename or None if no
+          guide window data is available for that detector.
+        anyOf:
+          - type: "null"
+          - type: object
+      expected_gw_acquisitions:
+        title: Detector Acquisition Guide Window Operation Mode
+        description: |
+          Dictionary of strings denoting how each detector guide window was expected to
+          be used for during the acquisition phase:
+            DET_FIXED - The guide window does not move from the defined location,
+              e.g., for calibrations.
+            GUIDE - the guide star is in the guide window.
+            NOT_USED - then the guide window location is not used for guiding, i.e.,
+              the detector is offline or not available.
+            SKY_FIXED the guide window follows the pattern relative to the other
+              guide windows.
+        type: object
+      expected_gw_tracking:
+        title: Detector Tacking Guide Window Operation Mode
+        description: |
+          Dictionary of strings denoting how each detector guide window was expected to
+          be used for during the tracking phase:
+            DET_FIXED - The guide window does not move from the defined location,
+              e.g., for calibrations.
+            GUIDE - the guide star is in the guide window.
+            NOT_USED - then the guide window location is not used for guiding, i.e.,
+              the detector is offline or not available.
+            SKY_FIXED the guide window follows the pattern relative to the other
+              guide windows.
+        type: object
+      # Optional
+      wsm_edge_used:
+        title: Averaged FACE Filename
+        description: |
+          Spectral edge used for guiding with the prism or grism. Either "red" or "blue".
+        type: string
+        enum: ["blue", "red"]
+        maxLength: 5
+    required: [ fgs_modes_used, ma_table_ids_used, gw_cycles_per_sci_read_used, optical_element,
+      guide_star_acq_num, guide_window_id, detector_gw_files, expected_gw_acquisitions,
+      expected_gw_tracking]
+  face_data:
+    type: object
+    properties:
+      delta:
+        title: Best Fit F1 Axis Rotation
+        description: |
+          1D array of the best fit rotation about the F1 axis in radians.
+        tag: tag:stsci.edu:asdf/core/ndarray-1.*
+        ndim: 1
+        datatype: float32
+        exact_datatype: true
+        unit: "rad"
+      delta2:
+        title: Best 2 DOF Fit F1 Axis Rotation
+        description: |
+          1D array of the best fit rotation about the F1 axis for a 2 degree
+          of freedom solution in radians.
+        tag: tag:stsci.edu:asdf/core/ndarray-1.*
+        ndim: 1
+        datatype: float32
+        exact_datatype: true
+        unit: "rad"
+      epsilon:
+        title: Best Fit F2 Axis Rotation
+        description: |
+          1D array of the best fit rotation about the F2 axis in radians.
+        tag: tag:stsci.edu:asdf/core/ndarray-1.*
+        ndim: 1
+        datatype: float32
+        exact_datatype: true
+        unit: "rad"
+      epsilon2:
+        title: Best 2 DOF Fit F2 Axis Rotation
+        description: |
+          1D array of the best fit rotation about the F2 axis for a 2 degree
+          of freedom solution in radians.
+        tag: tag:stsci.edu:asdf/core/ndarray-1.*
+        ndim: 1
+        datatype: float32
+        exact_datatype: true
+        unit: "rad"
+      zeta:
+        title: Best Fit F3 Axis Rotation
+        description: |
+          1D array of the best fit rotation about the F3 axis in radians.
+        tag: tag:stsci.edu:asdf/core/ndarray-1.*
+        ndim: 1
+        datatype: float32
+        exact_datatype: true
+        unit: "rad"
+      delta_var:
+        title: Delta Variance
+        description: |
+          1D array of the theoretical estimate of the variance in delta.
+        tag: tag:stsci.edu:asdf/core/ndarray-1.*
+        ndim: 1
+        datatype: float32
+        exact_datatype: true
+      epsilon_var:
+        title: Epsilon Variance
+        description: |
+          1D array of the theoretical estimate of the variance in epsilon.
+        tag: tag:stsci.edu:asdf/core/ndarray-1.*
+        ndim: 1
+        datatype: float32
+        exact_datatype: true
+      zeta_var:
+        title: Zeta Variance
+        description: |
+          1D array of the theoretical estimate of the variance in zeta.
+        tag: tag:stsci.edu:asdf/core/ndarray-1.*
+        ndim: 1
+        datatype: float32
+        exact_datatype: true
+      horizontal_variance:
+        title: FGS Horizontal Variance
+        description: |
+          1D array of the horizontal residuals variance during the FGS attitude
+          error estimate.
+        tag: tag:stsci.edu:asdf/core/ndarray-1.*
+        ndim: 1
+        datatype: float32
+        exact_datatype: true
+      vertical_variance:
+        title: FGS Vertical Variance
+        description: |
+          1D array of the vertical residuals variance during the FGS attitude
+          error estimate.
+        tag: tag:stsci.edu:asdf/core/ndarray-1.*
+        ndim: 1
+        datatype: float32
+        exact_datatype: true
+      num_stars_used:
+        title: Number of FGS Stars
+        description: |
+          1D array containing the number of stars used for FGS attitude error estimate.
+        tag: tag:stsci.edu:asdf/core/ndarray-1.*
+        ndim: 1
+        datatype: uint8
+        exact_datatype: true
+      num_centroid_cycles:
+        title: Number of Centroid Cycles
+        description: |
+          1D array containing the number of cycles of centroid residual sigma editing
+          that were performed.
+        tag: tag:stsci.edu:asdf/core/ndarray-1.*
+        ndim: 1
+        datatype: uint8
+        exact_datatype: true
+      attitude_estimate_quality:
+        title: Quality Flag for Attitude Estimate
+        description: |
+          1D array containing the estimate for the quality of the FGS attitude error
+          estimate. Possible values include:
+            "AQ_DOF_3": Good Quality, 3 Degrees of Freedom
+            "AQ_DOF_2": Good Quality, 2 Degrees of Freedom
+            "AQ_DOF_1": Good Quality, 1 Degree of Freedom
+            "AQ_DEFAULT_BAD": Bad Quality
+            "AQ_TOO_FEW_STARS": Too Few Stars
+            "AQ_FAILED_IN_PHASE_TRANSITION": Failed in Phase Transition
+            "AQ_VIRTUAL_WINDOWING_BAD": Bad Virtual Windowing
+        tag: tag:stsci.edu:asdf/core/ndarray-1.*
+        ndim: 1
+        datatype: [ucs4, 30]
+        exact_datatype: true
+      centroid_times:
+        title: Centroid Times
+        description: |
+          1D array of times associated with the centroids used in the FACE calculation.
+          The centroid times should lie between the pedestal and signal resultant times.
+        type: array
+        items:
+          tag: tag:stsci.edu:asdf/time/time-1.*
+      fgs_op_phase:
+        title: FGS Guiding Modes
+        description: |
+          1D array of string operational phases used for each FACE calculation.
+          These strings can be used to distinguish the different phases of the guide star cycle.
+        type: array
+        items:
+          type: string
+          enum: ["NOT_CONFIGURED", "STANDBY", "WIM_ACQ_VW", "WIM_ACQ_NA", "WIM_TRK",
+            "WIM_TRK_S", "WSM_ACQ_HC", "WSM_ACQ_VC", "WSM_TRK", "WIM_DFC"]
+          maxLength: 20
+    required: [delta, delta2, epsilon, epsilon2, zeta, delta_var, epsilon_var, zeta_var,
+      horizontal_variance, vertical_variance, num_stars_used, num_centroid_cycles,
+      attitude_estimate_quality, centroid_times, fgs_op_phase]
+propertyOrder: [meta, face_data]
+flowStyle: block
+required: [meta, face_data]
+...

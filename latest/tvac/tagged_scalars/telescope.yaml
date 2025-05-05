@@ -1,0 +1,16 @@
+%YAML 1.1
+---
+$schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.0.0
+id: asdf://stsci.edu/datamodels/roman/schemas/tvac/tagged_scalars/telescope-1.0.0
+
+title: TVAC Telescope Name
+
+type: string
+enum: [ROMAN]
+
+archive_catalog:
+  datatype: nvarchar(5)
+  destination: [WFICommon.telescope]
+
+flowStyle: block
+...

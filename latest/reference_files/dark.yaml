@@ -1,0 +1,82 @@
+%YAML 1.1
+---
+$schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.0.0
+id: asdf://stsci.edu/datamodels/roman/schemas/reference_files/dark-1.0.0
+
+title: Dark Reference File Schema
+
+datamodel_name: DarkRefModel
+
+type: object
+properties:
+  meta:
+    allOf:
+      - $ref: asdf://stsci.edu/datamodels/roman/schemas/reference_files/ref_common-1.0.0
+      - type: object
+        properties:
+          reftype:
+            type: string
+            enum: [DARK]
+          exposure:
+            type: object
+            properties:
+              ma_table_name:
+                title: Multi-Accumulation Table Name
+                description: |
+                  The name of the MA Table used. Not a unique identifier; see
+                  ma_table_number.
+                type: string
+              ma_table_number:
+                title: Multi-Accumulation Table Number
+                description: |
+                  The unique number of the MA Table used. A modification to a MA
+                  Table that keeps the same name will have a new
+                  ma_table_number.
+                type: integer
+            required: [ma_table_name, ma_table_number]
+        required: [exposure]
+      - $ref: asdf://stsci.edu/datamodels/roman/schemas/reference_files/ref_exposure_type-1.0.0
+      - $ref: asdf://stsci.edu/datamodels/roman/schemas/reference_files/ref_optical_element-1.0.0
+  data:
+    title: Dark Current Array
+    description: |
+      The dark current array represents the integrated number of counts due to
+      the accumulation of dark current electrons in the pixels.
+    tag: tag:stsci.edu:asdf/core/ndarray-1.*
+    datatype: float32
+    exact_datatype: true
+    ndim: 3
+    unit: DN
+  dq:
+    title: 2-D Data Quality Array
+    description: |
+      The 2-D data quality array for the Dark Current Array.
+    tag: tag:stsci.edu:asdf/core/ndarray-1.*
+    datatype: uint32
+    exact_datatype: true
+    ndim: 2
+  dark_slope:
+    title: Dark Current Rate Array
+    description: |
+      The dark current rate array represents the slope of the integrated number
+      of counts due to the accumulation of dark current electrons in the pixels
+      calculated from slope fitting the Dark Current Array.
+    tag: tag:stsci.edu:asdf/core/ndarray-1.*
+    datatype: float32
+    exact_datatype: true
+    ndim: 2
+    unit: DN / s
+  dark_slope_error:
+    title: Dark Current Rate Uncertainty Array
+    description: |
+      The uncertainty calculated from the slope fitting of the Dark Current
+      Array.
+    tag: tag:stsci.edu:asdf/core/ndarray-1.*
+    datatype: float32
+    exact_datatype: true
+    ndim: 2
+    unit: DN / s
+required: [meta, data, dq, dark_slope, dark_slope_error]
+flowStyle: block
+propertyOrder: [meta, data, dq, dark_slope, dark_slope_error]
+...

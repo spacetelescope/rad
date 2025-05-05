@@ -1,0 +1,25 @@
+%YAML 1.1
+---
+$schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.0.0
+id: asdf://stsci.edu/datamodels/roman/schemas/wfi_optical_element-1.0.0
+
+# Helper file to enumerate filters for wfi_mode and ref_optical_element
+
+title: Optical Element
+description: |
+  Name of the filter element used. See the RDox Optical Element page for more
+  details on available optical elements and their properties.
+type: string
+enum:
+  - F062
+  - F087
+  - F106
+  - F129
+  - F146
+  - F158
+  - F184
+  - F213
+  - GRISM
+  - PRISM
+  - DARK
+...

@@ -1,0 +1,33 @@
+%YAML 1.1
+---
+$schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.0.0
+id: asdf://stsci.edu/datamodels/roman/schemas/reference_files/readnoise-1.0.0
+
+title: Read Noise Reference File Schema
+
+datamodel_name: ReadnoiseRefModel
+
+type: object
+properties:
+  meta:
+    allOf:
+      - $ref: asdf://stsci.edu/datamodels/roman/schemas/reference_files/ref_common-1.0.0
+      - type: object
+        properties:
+          reftype:
+            enum: [READNOISE]
+      - $ref: asdf://stsci.edu/datamodels/roman/schemas/reference_files/ref_exposure_type-1.0.0
+  data:
+    title: Read Noise Data Array
+    description: |
+      The pixel-by-pixel map read noise data array is used in estimating the
+      expected noise in each pixel.
+    tag: tag:stsci.edu:asdf/core/ndarray-1.*
+    datatype: float32
+    exact_datatype: true
+    ndim: 2
+    unit: DN
+required: [meta, data]
+flowStyle: block
+propertyOrder: [meta, data]
+...

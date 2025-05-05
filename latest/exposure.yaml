@@ -1,0 +1,246 @@
+%YAML 1.1
+---
+$schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.0.0
+id: asdf://stsci.edu/datamodels/roman/schemas/exposure-1.1.0
+
+
+title: |
+  Exposure Information
+
+type: object
+properties:
+  type:
+    allOf:
+      - $ref: asdf://stsci.edu/datamodels/roman/schemas/exposure_type-1.0.0
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: PSS:dms_visit.template
+    maxLength: 25
+    archive_catalog:
+      datatype: nvarchar(25)
+      destination: [WFIExposure.exposure_type, GuideWindow.exposure_type, WFICommon.exposure_type]
+  start_time:
+    title: Exposure Start Time (UTC)
+    description: |
+      The UTC time at the beginning of the exposure. The
+      time is serialized on disk as an International Organization for
+      Standardization (ISO) 8601-compliant ISOT string, but if opened
+      in Python with the asdf-astropy package installed, it may be
+      read as an astropy.time.Time object with all of the associated
+      methods and transforms available. See the documentation for
+      astropy.time.Time objects for more information.
+    tag: tag:stsci.edu:asdf/time/time-1.*
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    archive_catalog:
+      datatype: datetime2
+      destination: [WFIExposure.exposure_start_time, GuideWindow.exposure_start_time, WFICommon.exposure_start_time]
+  end_time:
+    title: Exposure End Time (UTC)
+    description: |
+      The UTC time at the end of the exposure. The time is
+      serialized on disk as an International Organization for
+      Standardization (ISO) 8601-compliant ISOT string, but if opened
+      in Python with the asdf-astropy package installed, it may be
+      read as an astropy.time.Time object with all of the associated
+      methods and transforms available. See the documentation for
+      astropy.time.Time objects for more information.
+    tag: tag:stsci.edu:asdf/time/time-1.*
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    archive_catalog:
+      datatype: datetime2
+      destination: [WFIExposure.exposure_end_time, GuideWindow.exposure_end_time,
+                    SourceCatalog.exposure_end_time]
+  engineering_quality:
+    title: Engineering Data Quality
+    description: |
+      Indicator of data quality problems with the
+      engineering data used to populated select metadata fields. A
+      value of "OK" indicates no suspected problems, while a value of
+      "SUSPECT" indicates one or more metadata values populated from
+      the engineering database may be missing information during the
+      exposure or are otherwise of lower quality.
+    type: string
+    enum: [OK, SUSPECT]
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    maxLength: 10
+    archive_catalog:
+      datatype: nvarchar(10)
+      destination: [WFIExposure.engineering_quality, GuideWindow.engineering_quality,
+                    SourceCatalog.engineering_quality, SegmentationMap.engineering_quality]
+  ma_table_id:
+    title: Multi-Accumulation Table Identifier
+    description: |
+      A unique identifier for the multi-accumulation (MA) table used for this exposure.
+      The identifier comes from the Science Operations Center (SOC) Project Reference
+      Database (PRD).
+    type: string
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    maxLength: 10
+    archive_catalog:
+      datatype: nvarchar(10)
+      destination: [WFIExposure.ma_table_id, GuideWindow.ma_table_id,
+                    SourceCatalog.ma_table_id, SegmentationMap.ma_table_id]
+  nresultants:
+    title: Number of Resultants
+    description: |
+      The number of resultant frames in this exposure that
+      were transmitted to the ground.
+    type: integer
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: PSS:dms_visit.multi_accum_resultant
+    archive_catalog:
+      datatype: int
+      destination: [WFIExposure.exposure_nresultants, GuideWindow.exposure_nresultants, WFICommon.exposure_nresultants]
+  data_problem:
+    title: Data Problem
+    description: |
+      String error codes indicating that a problem occurred with the exposure.
+      A value of None indicates there were no problems with the exposure.
+      See the Roman Documentation System (RDox) for more information on the meaning of the error codes.
+    anyOf:
+      - type: string
+      - type: "null"
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    archive_catalog:
+      datatype: nvarchar(max)
+      destination: [WFIExposure.exposure_data_problem, GuideWindow.exposure_data_problem, WFICommon.exposure_data_problem]
+  frame_time:
+    title: Detector Readout Time (s)
+    description: |
+      The readout time in seconds of the Wide Field
+      Instrument (WFI) detectors. This represents the time between the
+      start and end of the readout.
+    type: number
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    archive_catalog:
+      datatype: float
+      destination: [WFIExposure.exposure_frame_time, GuideWindow.exposure_frame_time, WFICommon.exposure_frame_time]
+  exposure_time:
+    title: Exposure Time (s)
+    description: |
+      The difference in time (in units of seconds) between
+      the start of the first reset/read and end of the last read in
+      the readout pattern.
+    type: number
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    archive_catalog:
+      datatype: float
+      destination: [WFIExposure.exposure_time, GuideWindow.exposure_time, WFICommon.exposure_time]
+  effective_exposure_time:
+    title: Effective Exposure Time (s)
+    description: |
+      The difference in time (in units of seconds) between
+      the midpoints of the first and last science resultants. If
+      either resultant contains only a single read, then the time at
+      the end of the read is used rather than the midpoint time.
+    type: number
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    archive_catalog:
+      datatype: float
+      destination: [WFIExposure.effective_exposure_time, GuideWindow.effective_exposure_time,
+                    SourceCatalog.effective_exposure_time]
+  ma_table_name:
+    title: Name of the Multi-Accumulation Table
+    description: |
+      The name of the multi-accumulation (MA) table used for
+      the exposure. The MA table is also referred to as the readout
+      pattern.
+    type: string
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: PSS:dms_visit.multi_accum_table_name
+    maxLength: 50
+    archive_catalog:
+      datatype: nvarchar(50)
+      destination: [WFIExposure.ma_table_name, GuideWindow.ma_table_name, WFICommon.ma_table_name]
+  ma_table_number:
+    title: Multi-Accumulation Table Identification Number
+    description: |
+      A unique identification number for the
+      multi-accumulation (MA) table used for this exposure. The number
+      comes from the Science Operations Center (SOC) Project Reference
+      Database (PRD).
+    type: integer
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: PSS:dms_visit.multi_accum_table_number
+    archive_catalog:
+      datatype: smallint
+      destination: [WFIExposure.ma_table_number, GuideWindow.ma_table_number, WFICommon.ma_table_number]
+  read_pattern:
+    title: Read Pattern
+    description: |
+      The enumeration of detector reads to resultants making
+      up the Level 1 ramp data cube. The read pattern is nested such
+      that each grouping of read numbers represents a resultant. For
+      example, a readout pattern of [[1], [2, 3], [4]] consists of
+      four reads that were downlinked as three resultants with both
+      the first and last resultant each containing a single read.
+    type: array
+    items:
+      type: array
+      items:
+        type: integer
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    archive_catalog:
+      datatype: nvarchar(3500)
+      destination: [WFIExposure.read_pattern, GuideWindow.read_pattern, WFICommon.read_pattern]
+  truncated:
+    title: Truncated MA Table
+    description: |
+      A flag indicating whether the MA table was truncated.
+    type: boolean
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    archive_catalog:
+      datatype: nchar(1)
+      destination: [WFIExposure.exposure_truncated,
+                    SourceCatalog.exposure_truncated]
+  sdf_log_file:
+    title: SDF Log File Name
+    description: |
+      File name of the Science Data Formatting (SDF) log for this exposure.
+    type: string
+    maxLength: 120
+required: [type, start_time, end_time, engineering_quality, nresultants, data_problem,
+  frame_time, exposure_time, effective_exposure_time, ma_table_name, ma_table_number, ma_table_id,
+  read_pattern, truncated]
+propertyOrder: [type, start_time, end_time, engineering_quality, nresultants, data_problem,
+  frame_time, exposure_time, effective_exposure_time, ma_table_name, ma_table_number, ma_table_id,
+  read_pattern, truncated, sdf_log_file]
+flowStyle: block
+...

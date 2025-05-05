@@ -1,0 +1,32 @@
+%YAML 1.1
+---
+$schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.0.0
+id: asdf://stsci.edu/datamodels/roman/schemas/reference_files/mask-1.0.0
+
+title: Mask Reference File Schema
+
+datamodel_name: MaskRefModel
+
+type: object
+properties:
+  meta:
+    allOf:
+      - $ref: asdf://stsci.edu/datamodels/roman/schemas/reference_files/ref_common-1.0.0
+      - type: object
+        properties:
+          reftype:
+            type: string
+            enum: [MASK]
+  dq:
+    title: Mask Data Quality Array
+    description: |
+      The Mask Data Quality Array is the pixel value of the sum of bit integer
+      dq flags.
+    tag: tag:stsci.edu:asdf/core/ndarray-1.*
+    datatype: uint32
+    exact_datatype: true
+    ndim: 2
+required: [meta, dq]
+flowStyle: block
+propertyOrder: [meta, dq]
+...
