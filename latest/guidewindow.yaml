@@ -7,7 +7,8 @@ title: Guide Star Window Information
 
 datamodel_name: GuidewindowModel
 
-archive_meta: None
+# Deprecated
+# archive_meta: None
 
 type: object
 properties:
