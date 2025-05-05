@@ -103,7 +103,7 @@ def filter_ignored_keys(tree):
 
 
 # Get the current resources read through the conftest file and flatten them
-FLAT_CURRENT_RESOURCES = {uri: filter_ignored_keys(schema) for uri, schema in CURRENT_RESOURCES.items()}
+FILTERED_CURRENT_RESOURCES = {uri: filter_ignored_keys(schema) for uri, schema in CURRENT_RESOURCES.items()}
 
 
 def get_versions():
@@ -275,15 +275,6 @@ def rad_version(request):
     return request.param
 
 
-@pytest.fixture(scope="module", params=(*VERSIONS, "HEAD"))
-def current_version(request):
-    """
-    Fixture for the version of RAD to test against including the current state
-    of the repository.
-    """
-    return request.param
-
-
 @pytest.fixture(scope="module", params=FROZEN_URIS)
 def frozen_uri(request):
     """
@@ -299,10 +290,7 @@ class TestVersioning:
 
     # There is one small case between 0.23.1 and 0.24.0 where the manifest changed
     # but the version number did not. This is not a vital issue.
-    EXPECTED_FAILS = (
-        ("0.23.1", "0.24.0", "asdf://stsci.edu/datamodels/roman/manifests/datamodels-1.0"),
-        ("0.23.1", "HEAD", "asdf://stsci.edu/datamodels/roman/manifests/datamodels-1.0"),
-    )
+    EXPECTED_FAILS = (("0.23.1", "asdf://stsci.edu/datamodels/roman/manifests/datamodels-1.0"),)
 
     def test_no_lost_uris(self, frozen_uri):
         """
@@ -315,38 +303,29 @@ class TestVersioning:
         """
         assert frozen_uri in CURRENT_RESOURCES, f"Schema {frozen_uri} is not present in the current version"
 
-    # Note it is probably sufficient to just check the current state of the repository
-    # against the frozen versions, currently this checks everyversion against every
-    # other version. Which is a bit overkill.
-    def test_resource_changes(self, rad_version, current_version, frozen_uri):
+    def test_resource_changes(self, rad_version, frozen_uri):
         """
         Test that frozen schemas have not been changed between version including the
         current state of the repository
         """
         # Filter out the expected fails
         # Both both orders of versions need to be checked.
-        if (rad_version, current_version, frozen_uri) in self.EXPECTED_FAILS or (
-            current_version,
-            rad_version,
-            frozen_uri,
-        ) in self.EXPECTED_FAILS:
-            pytest.xfail(f"Schema {frozen_uri} is expected to have changed between version {rad_version} and {current_version}")
+        if (rad_version, frozen_uri) in self.EXPECTED_FAILS:
+            pytest.xfail(f"Schema {frozen_uri} is expected to have changed between version {rad_version} and the current changes")
 
         # Get the resources for both the frozen and current versions
         frozen_resources = FROZEN_VERSIONS[rad_version]
-        current_resources = FLAT_CURRENT_RESOURCES if current_version == "HEAD" else FROZEN_VERSIONS[current_version]
 
-        # Only compare if both the frozen and current resources have the schema.
-        # When a new schema is added, it will not be in the frozen resources
-        # for previous versions, so we assume it works.
-        # The test_no_lost_uris is to check the possibility of a schema being
-        # removed from the current version.
-        if frozen_uri in frozen_resources and frozen_uri in current_resources:
+        # We need to check that the frozen_uri is in the set of frozen resources
+        # under consideration. This is because a frozen_uri may be added in a subsequent
+        # version, than the one we are checking against. This is not a problem, so the
+        # test should simply pass by default.
+        if frozen_uri in frozen_resources:
             # Get the flattened dictionary representation of both schemas
             frozen_resource = frozen_resources[frozen_uri]
-            current_resource = current_resources[frozen_uri]
+            current_resource = FILTERED_CURRENT_RESOURCES[frozen_uri]
 
             # Check that the frozen resource is the same as the current resource
             assert frozen_resource == current_resource, (
-                f"Resource {frozen_uri} has changed between versions {rad_version} and {current_version}"
+                f"Resource {frozen_uri} has changed between versions {rad_version} and the current changes"
             )
