@@ -32,6 +32,7 @@ for x-failing given comparisons, so we can ignore potential false positives.
 """
 
 from collections.abc import Mapping
+from contextlib import suppress
 from io import BytesIO
 from pathlib import Path
 from re import findall
@@ -47,6 +48,10 @@ from .conftest import CURRENT_RESOURCES
 # Using a python library load the actual RAD repository data into python
 # object which can be interacted with.
 REPO = Repo(Path(__file__).parent.parent)
+RAD_URLS = (
+    "https://github.com/spacetelescope/rad.git",
+    "git@github.com:spacetelescope/rad.git",
+)
 
 # The oldest version of RAD that is under schema versioning
 BASE_RELEASE = Version("0.23.1")
@@ -98,6 +103,23 @@ def filter_ignored_keys(tree):
 
 # Get the current resources read through the conftest file and flatten them
 FILTERED_CURRENT_RESOURCES = {uri: filter_ignored_keys(schema) for uri, schema in CURRENT_RESOURCES.items()}
+
+
+def update_tags():
+    """
+    Pull all the tags from the RAD Repository.
+    """
+
+    for remote in REPO.remotes:
+        with suppress(AttributeError):
+            url = remote.url
+            if url in RAD_URLS:
+                remote.fetch(tags=True)
+                return
+
+    raise ValueError(
+        f"Unable to find the main RAD repository remote. Please add a remote with one of the following URLs: {RAD_URLS}"
+    )
 
 
 def get_versions():
