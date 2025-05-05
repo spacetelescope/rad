@@ -65,12 +65,6 @@ def filter_ignored_keys(tree):
     """
     Filter out the ignored keys from the dictionary.
 
-    Note
-    ----
-    This does not account for the possibility of a schema having a reordered list
-    which has not effect on the schema in terms of validation. This is because
-    asdf.walk_and_modify does not support iterating over sets.
-
     Parameters
     ----------
     tree :
