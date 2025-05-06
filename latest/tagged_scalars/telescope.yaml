@@ -1,0 +1,18 @@
+%YAML 1.1
+---
+$schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.0.0
+id: asdf://stsci.edu/datamodels/roman/schemas/tagged_scalars/telescope-1.0.0
+
+title: Telescope Name
+
+type: string
+enum: [ROMAN]
+
+maxLength: 5
+archive_catalog:
+  datatype: nvarchar(5)
+  destination: [WFIExposure.telescope, WFIMosaic.telescope, GuideWindow.telescope, WFICommon.telescope,
+                SourceCatalog.telescope, SegmentationMap.telescope]
+
+flowStyle: block
+...

@@ -1,0 +1,50 @@
+%YAML 1.1
+---
+$schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.0.0
+id: asdf://stsci.edu/datamodels/roman/schemas/reference_files/flat-1.0.0
+
+title: Flat Reference File Schema
+
+datamodel_name: FlatRefModel
+
+type: object
+properties:
+  meta:
+    allOf:
+      - $ref: asdf://stsci.edu/datamodels/roman/schemas/reference_files/ref_common-1.0.0
+      - type: object
+        properties:
+          reftype:
+            type: string
+            enum: [FLAT]
+      - $ref: asdf://stsci.edu/datamodels/roman/schemas/reference_files/ref_optical_element-1.0.0
+  data:
+    title: Flat Data Array
+    description: |
+      The Flat Data Array represents the small and large pixel-to-pixel
+      mitigations necessary to account for wavelength dependent detector
+      sensitivity and distortions in the optical path.
+    tag: tag:stsci.edu:asdf/core/ndarray-1.*
+    datatype: float32
+    exact_datatype: true
+    ndim: 2
+  dq:
+    title: 2-D Data Quality Array
+    description: |
+      The 2-D data quality array for the Flat Data Array.
+    tag: tag:stsci.edu:asdf/core/ndarray-1.*
+    datatype: uint32
+    exact_datatype: true
+    ndim: 2
+  err:
+    title: Flat Data Uncertainty Array
+    description: |
+      The uncertainty in the Flat Data Array.
+    tag: tag:stsci.edu:asdf/core/ndarray-1.*
+    datatype: float32
+    exact_datatype: true
+    ndim: 2
+required: [meta, data, dq, err]
+flowStyle: block
+propertyOrder: [meta, data, dq, err]
+...

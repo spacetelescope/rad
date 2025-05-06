@@ -1,0 +1,33 @@
+%YAML 1.1
+---
+$schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.0.0
+id: asdf://stsci.edu/datamodels/roman/schemas/reference_files/ipc-1.0.0
+
+title: Interpixel Capacitance Reference File Schema
+
+datamodel_name: IpcRefModel
+
+type: object
+properties:
+  meta:
+    allOf:
+      - $ref: asdf://stsci.edu/datamodels/roman/schemas/reference_files/ref_common-1.0.0
+      - $ref: asdf://stsci.edu/datamodels/roman/schemas/reference_files/ref_optical_element-1.0.0
+      - type: object
+        properties:
+          reftype:
+            type: string
+            enum: [IPC]
+  data:
+    title: Interpixel Capacitance Kernel Array
+    description: |
+      The kernel array used for convolving data to correct for interpixel
+      capacitance of neighboring pixels.
+    tag: tag:stsci.edu:asdf/core/ndarray-1.*
+    datatype: float32
+    exact_datatype: true
+    ndim: 2
+required: [meta, data]
+flowStyle: block
+propertyOrder: [meta, data]
+...

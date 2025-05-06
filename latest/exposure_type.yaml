@@ -1,0 +1,24 @@
+%YAML 1.1
+---
+$schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.0.0
+id: asdf://stsci.edu/datamodels/roman/schemas/exposure_type-1.0.0
+
+# Helper file to enumerate viewing modes for exposure and ref_exposure
+title: Exposure Type
+description: |
+  The type of the exposure. Wide Field Instrument (WFI)
+  imaging mode observations have type WFI_IMAGE, while the
+  spectroscopic mode may be either WFI_GRISM or WFI_PRISM
+  depending on the selected optical element. Other values are
+  related to either internal calibration or engineering
+  observations.
+
+type: string
+enum:
+  - WFI_IMAGE
+  - WFI_GRISM
+  - WFI_PRISM
+  - WFI_DARK
+  - WFI_FLAT
+  - WFI_WFSC
+...

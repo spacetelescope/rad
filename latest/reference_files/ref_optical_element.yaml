@@ -1,0 +1,17 @@
+%YAML 1.1
+---
+$schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.0.0
+id: asdf://stsci.edu/datamodels/roman/schemas/reference_files/ref_optical_element-1.0.0
+
+title: Optical Element Reference Schema
+
+type: object
+properties:
+  instrument:
+    type: object
+    properties:
+      optical_element:
+        $ref: asdf://stsci.edu/datamodels/roman/schemas/wfi_optical_element-1.0.0
+    required: [optical_element]
+required: [instrument]
+...

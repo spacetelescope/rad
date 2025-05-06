@@ -1,0 +1,69 @@
+%YAML 1.1
+---
+$schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.0.0
+id: asdf://stsci.edu/datamodels/roman/schemas/reference_files/ref_common-1.0.0
+
+title: Common Reference File Metadata Properties
+
+type: object
+properties:
+  reftype:
+    title: Reference File Type
+    description: |
+      The capitalized string of the reference file type (e.g., DARK).
+    type: string
+  pedigree:
+    title: Pedigree
+    description: |
+      The pedigree of the reference file (e.g., GROUND).
+    type: string
+    enum: [GROUND, MODEL, DUMMY, SIMULATION]
+  description:
+    title: Description
+    description: |
+      A string describing the reference file, its intended usage, etc.
+    type: string
+  author:
+    title: Author
+    description: |
+      The author of who or what created the reference file.
+    type: string
+  useafter:
+    title: Use After Date
+    description: |
+      The use after date of the reference file for CRDS best references
+      matching.
+    tag: tag:stsci.edu:asdf/time/time-1.*
+  telescope:
+    title: Telescope
+    description: |
+      The telescope data used to select reference files, e.g. ROMAN for the
+      Nancy Grace Roman Space Telescope.
+    anyOf:
+      - tag: asdf://stsci.edu/datamodels/roman/tags/telescope-1.0.0
+      - type: string
+        enum: [ROMAN]
+  origin:
+    title: Organization
+    description: |
+      The organization responsible for creating the file, e.g. STSCI for the
+      Space Telescope Science Institute.
+    type: string
+  instrument:
+    type: object
+    properties:
+      name:
+        title: Instrument
+        description: |
+          The Wide Field Instrument (WFI).
+        type: string
+        enum: [WFI]
+      detector:
+        allOf:
+          - $ref: asdf://stsci.edu/datamodels/roman/schemas/wfi_detector-1.0.0
+        title: Detector
+        description: |
+          The numbered WFI detector in the focal plane (e.g., WFI01 for SCA 01).
+    required: [name, detector]
+required: [reftype, author, description, pedigree, useafter, telescope, origin, instrument]
+...

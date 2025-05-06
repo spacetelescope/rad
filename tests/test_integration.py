@@ -5,13 +5,11 @@ Test that the asdf library integration is working properly.
 import importlib.resources as importlib_resources
 
 import asdf
-import pytest
 import yaml
 
 from rad import resources
 
 
-@pytest.mark.parametrize("manifest_path", (importlib_resources.files(resources) / "manifests").glob("**/*.yaml"))
 def test_manifest_integration(manifest_path):
     content = manifest_path.read_bytes()
     manifest = yaml.safe_load(content)
@@ -19,7 +17,6 @@ def test_manifest_integration(manifest_path):
     assert asdf_content == content
 
 
-@pytest.mark.parametrize("schema_path", (importlib_resources.files(resources) / "schemas").glob("**/*.yaml"))
 def test_schema_integration(schema_path):
     content = schema_path.read_bytes()
     schema = yaml.safe_load(content)
@@ -27,7 +24,6 @@ def test_schema_integration(schema_path):
     assert asdf_content == content
 
 
-@pytest.mark.parametrize("schema_path", (importlib_resources.files(resources) / "schemas").glob("**/*.yaml"))
 def test_schema_filename(schema_path):
     """
     Check the filename pattern aligns with the schema ID.

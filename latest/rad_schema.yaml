@@ -1,0 +1,131 @@
+%YAML 1.1
+---
+$schema: http://stsci.edu/schemas/yaml-schema/draft-01
+id: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.0.0
+
+title: RAD Metaschema
+description: |
+  A metaschema that extends the ASDF metaschema to add support for Science
+  Data Formatting and archive catalog-related properties.
+
+allOf:
+  - $ref: http://stsci.edu/schemas/asdf/asdf-schema-1.0.0
+  - type: object
+    properties:
+      datamodel_name:
+        title: Datamodel Name
+        description: |-
+          Name of the datamodel described by this schema
+        type: string
+      archive_meta:
+        title: Archive Metadata
+        description: |-
+          Metadata that aids the archive in identifying ASDF files.
+        type: string
+      sdf:
+        title: Scientific Data Format
+        description: |-
+          Information on this attribute's value upon creation of Level 1 files.
+        type: object
+        properties:
+          special_processing:
+            title: Special Processing
+            description: |-
+              A flag indicating whether this attribute must be present in the
+              SDF file.
+            type: string
+            enum: [VALUE_REQUIRED, OPTIONAL]
+          source:
+            type: object
+            properties:
+              origin:
+                title: Origin
+                description: |-
+                  Source of the attribute value.
+                type: string
+              function:
+                title: Function
+                description: |-
+                  Optional function that transforms the source value.
+                type: string
+            required: [origin]
+        required: [special_processing, source]
+
+      archive_catalog:
+        title: Archive Catalog
+        description: |-
+          Information on this attribute's data type and destination table and
+          column in the archive catalog.
+        type: object
+        properties:
+          datatype:
+            title: Archive Catalog Database Column Type
+            description: |-
+              Column type in the archive catalog database.
+            anyOf:
+              - type: string
+                enum: [datetime2, float, int, nchar(1), nvarchar(max), bigint, smallint, tinyint]
+              - type: string
+                pattern: "^nvarchar\\([0-9]+\\)$"
+          destination:
+            title: Destination
+            description: |-
+              Table and column in the archive catalog database
+            type: array
+            items:
+              type: string
+              pattern: "^[A-Za-z0-9]+\\.[a-z0-9_]+$"
+            minItems: 1
+            uniqueItems: true
+        required: [datatype, destination]
+
+      # Needed to cause the validator to check sdf and archive_catalog
+      # in object properties.
+      additionalItems:
+        anyOf:
+          - type: boolean
+          - $ref: "#"
+      items:
+        anyOf:
+          - $ref: "#"
+          - $ref: "#/definitions/schemaArray"
+      additionalProperties:
+        anyOf:
+          - type: boolean
+          - $ref: "#"
+      definitions:
+        type: object
+        additionalProperties:
+          $ref: "#"
+      properties:
+        type: object
+        additionalProperties:
+          $ref: "#"
+      patternProperties:
+        type: object
+        additionalProperties:
+          $ref: "#"
+      dependencies:
+        type: object
+        additionalProperties:
+          anyOf:
+            - $ref: "#"
+            - $ref: "http://json-schema.org/draft-04/schema#/definitions/stringArray"
+      allOf:
+        $ref: "#/definitions/schemaArray"
+      anyOf:
+        $ref: "#/definitions/schemaArray"
+      oneOf:
+        $ref: "#/definitions/schemaArray"
+      not:
+        $ref: "#"
+
+# Needed to cause the validator to check sdf and archive_catalog
+# in object properties.
+definitions:
+  schemaArray:
+    type: array
+    minItems: 1
+    items:
+      $ref: "#"
+...

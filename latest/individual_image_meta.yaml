@@ -1,0 +1,95 @@
+%YAML 1.1
+---
+$schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.0.0
+id: asdf://stsci.edu/datamodels/roman/schemas/individual_image_meta-1.0.0
+
+title: Combined level 2 metadata
+
+type: object
+properties:
+  basic:
+    description: |
+      Table of basic level 2 metadata.
+    tag: tag:astropy.org:astropy/table/table-1.*
+  background:
+    description: |
+      Table of background level 2 metadata.
+    tag: tag:astropy.org:astropy/table/table-1.*
+  cal_logs:
+    description: |
+      Table of cal_logs level 2 metadata.
+    tag: tag:astropy.org:astropy/table/table-1.*
+  cal_step:
+    description: |
+      Table of cal_step level 2 metadata.
+    tag: tag:astropy.org:astropy/table/table-1.*
+  coordinates:
+    description: |
+      Table of coordinates level 2 metadata.
+    tag: tag:astropy.org:astropy/table/table-1.*
+  ephemeris:
+    description: |
+      Table of ephemeris level 2 metadata.
+    tag: tag:astropy.org:astropy/table/table-1.*
+  exposure:
+    description: |
+      Table of exposure level 2 metadata.
+    tag: tag:astropy.org:astropy/table/table-1.*
+  guide_star:
+    description: |
+      Table of guide_star level 2 metadata.
+    tag: tag:astropy.org:astropy/table/table-1.*
+  instrument:
+    description: |
+      Table of instrument level 2 metadata.
+    tag: tag:astropy.org:astropy/table/table-1.*
+  observation:
+    description: |
+      Table of observation level 2 metadata.
+    tag: tag:astropy.org:astropy/table/table-1.*
+  outlier_detection:
+    description: |
+      Table of outlier_detection level 2 metadata.
+    tag: tag:astropy.org:astropy/table/table-1.*
+  photometry:
+    description: |
+      Table of photometry level 2 metadata.
+    tag: tag:astropy.org:astropy/table/table-1.*
+  pointing:
+    description: |
+      Table of pointing level 2 metadata.
+    tag: tag:astropy.org:astropy/table/table-1.*
+  program:
+    description: |
+      Table of program level 2 metadata.
+    tag: tag:astropy.org:astropy/table/table-1.*
+  rcs:
+    description: |
+      Table of rcs level 2 metadata.
+    tag: tag:astropy.org:astropy/table/table-1.*
+  ref_file:
+    description: |
+      Table of ref_file level 2 metadata.
+    tag: tag:astropy.org:astropy/table/table-1.*
+  source_catalog:
+    description: |
+      Table of source_catalog level 2 metadata.
+    tag: tag:astropy.org:astropy/table/table-1.*
+  velocity_aberration:
+    description: |
+      Table of velocity_aberration level 2 metadata.
+    tag: tag:astropy.org:astropy/table/table-1.*
+  visit:
+    description: |
+      Table of visit level 2 metadata.
+    tag: tag:astropy.org:astropy/table/table-1.*
+  wcsinfo:
+    description: |
+      Table of wcsinfo level 2 metadata.
+    tag: tag:astropy.org:astropy/table/table-1.*
+flowStyle: block
+propertyOrder: [basic, background, cal_step, cal_logs, coordinates, ephemeris,
+  exposure, guide_star, instrument, observation, outlier_detection, photometry,
+  pointing, program, rcs, ref_file, source_catalog, velocity_aberration,
+  visit, wcsinfo]
+...

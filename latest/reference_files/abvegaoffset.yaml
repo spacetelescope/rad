@@ -1,0 +1,38 @@
+%YAML 1.1
+---
+$schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.0.0
+id: asdf://stsci.edu/datamodels/roman/schemas/reference_files/abvegaoffset-1.0.0
+
+title: AB Vega Offset Reference File Schema
+
+datamodel_name: AbvegaoffsetRefModel
+
+type: object
+properties:
+  meta:
+    allOf:
+      - $ref: asdf://stsci.edu/datamodels/roman/schemas/reference_files/ref_common-1.0.0
+      - type: object
+        properties:
+          reftype:
+            type: string
+            enum: [ABVEGAOFFSET]
+  data:
+    type: object
+    patternProperties:
+      "^(F062|F087|F106|F129|F146|F158|F184|F213|GRISM|PRISM|DARK)$":
+        type: object
+        properties:
+          abvega_offset:
+            title: AB-Vega Magntiude Offset
+            description: Magnitude difference between the AB and Vega magnitude
+                systems. Found by calculating the AB magnitude of Vega within
+                the optical element bandpass.
+            anyOf:
+              - type: number
+              - type: "null"
+        required: [abvega_offset]
+required: [meta, data]
+flowStyle: block
+propertyOrder: [meta, data]
+...

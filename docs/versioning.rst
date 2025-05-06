@@ -21,8 +21,10 @@ The RAD schemas contain archive database destination and other
 non-ASDF information including schema keywords:
 
 - archive_catalog
-- origin
 - sdf
+- title
+- description
+- propertyOrder
 
 Changes to content stored under these keys will not be trigger a new
 schema version. Please consult the newest schema version for the most
@@ -42,6 +44,128 @@ New manifests will often be created by:
 One exception is if the newest manifest version has not yet been
 released. In this case the tag definition in the existing (unreleased)
 manifest can be modified and no manifest version increase is needed.
+
+
+Creating a New Version
+======================
+
+The RAD resources (both schemas and manifests) are located in the ``src/rad/resources``
+directory for the purposes of the ASDF extension. Meaning that all resources must be
+located in this directory or have a symlink from this directory to the actual location
+for the resources. This directory is organized into two subdirectories:
+
+1. ``schemas`` - contains the ASDF schemas or symlinks to the schemas
+
+2. ``manifests`` - contains the ASDF manifests or symlinks to the manifests
+
+While ``src/rad/resources`` is where the resources are located for the ASDF extension,
+not all of the resources are directly located in this directory. Instead, the *latest*
+version of any resource (schema or manifest) is instead located within the ``latest``
+directory in the top level of the RAD repository. These files are linked to from
+the ``src/rad/resources`` directory. Note that the path relative to the ``latest``
+directory is the same as the path to the respective symlink relative to the ``src/rad/resources``.
+
+The naming conventions for resources follows two different patterns:
+
+1. The files within the ``src/rad/resources`` directory are named with a version suffix
+   (``-a.b.c.yaml``) with the latest (highest semantic) version number actually being
+   a symlink targeting a file within ``latest``.
+
+2. The files within the ``latest`` directory end only with the normal ``.yaml`` suffix
+   with no version number included. These files are then the target of the version indicated
+   by the symlink file name corresponding to the version number indicated by the URI (``id:`` keyword)
+   within the file itself.
+
+.. note::
+
+   These file naming conventions and the underlying directory structure exist to facilitate
+   a straightforward review process in git for reviewing changes to resources whenever
+   a version number is updated.
+
+   This allows for the git diff to directly show the changes to the resource within
+   ``latest`` rather than having the new version of the file appear as a brand new file
+   in the git diff. This is facilitated by the fact that the name of the ``latest`` file
+   never changes, only its contents, while the files in the ``src/rad/resources`` end
+   up with being brand new files or symlink name updates.
+
+Workflow for Updating a Resource Version
+----------------------------------------
+
+To update the version of a given resource the following steps should be taken:
+
+1. Determine the new version number to be used for the resource following the
+   [Semantic Versioning](https://semver.org/) guidelines.
+
+2. Update the version number in the symlink name in the ``src/rad/resources`` directory
+   from the current version number to the new selected (in step 1) version number.
+
+   .. note::
+
+      The symlink's target should **never** be modified as the new target of the
+      symlink will still be the resource's file with in the ``latest`` directory,
+      which will later be modified starting in step 4 to reflect the new version
+      number.
+
+3. Copy the given file in the ``latest`` directory (as is) to the appropriate
+   location in the ``src/rad/resources`` modifying the name of the file to include
+   the current version number (e.g. ``-a.b.c.yaml``).
+
+   .. note::
+
+      This should be done **before** making any modifications to the contents of
+      any resource file. This is important as the goal is to preserve the exact
+      contents of the resource as it was under the current version number.
+
+4. In ``latest`` update the version number for the URI (``id:`` keyword) to
+   match the new version number selected in step 1 within the file itself.
+
+   .. note::
+
+      In addition to the ``id:`` keyword for manifests (``datamodels.yaml``), the
+      ``extension_uri:`` keyword should also be updated to match the new version
+      number.
+
+5. Throughout the ``latest`` directory update the version number for all related
+   URIs (``tag`` and ``$ref``) to match the version number selected in step 1.
+
+   .. note::
+
+      This may cause a cascading effect where the version number for other files
+      in the ``latest`` directory need to be updated as well. This may necessitate
+      following the version update process for these files as well.
+
+6. Make the updates to the file in ``latest`` with the changes that necessitated
+   the new version.
+
+.. note::
+
+   The RAD unit tests have been designed so that the ``tests/test_versioning.py``
+   tests will fail if a file is modified without updating the version number whenever
+   a version number update would be required.
+
+   Therefore, it is suggested that one runs the unit tests after making modifications
+   to a given resource **prior** to committing those changes. If a test failure occurs
+   then simply stash the changes and then follow the version update process above.
+   The resource changes can then be unstashed and committed as the ``latest`` version
+   has now been updated properly.
+
+.. note::
+
+   The unit tests in ``tests/test_latest.py`` are designed to ensure that if a version
+   number is updated all the necessitated changes to the resources are made. This includes:
+
+   - Checking that all relevant URIs in ``latest`` have been updated to reflect the new
+     version number.
+   - Checking the integrity of the symlinks in ``src/rad/resources`` to ensure that they are
+     pointing to the correct file in ``latest``.
+   - Checking that the old version of the file has not gone missing (in combination with the
+     ``test_versioning.py`` tests).
+
+.. note::
+
+   It is important to run the unitests regularly while making changes to the resources
+   to ensure that the versioning process has been followed correctly, as they will
+   guide you through the process of when and how to update resource version numbers.
 
 
 Old version support

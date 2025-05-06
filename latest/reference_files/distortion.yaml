@@ -1,0 +1,33 @@
+%YAML 1.1
+---
+$schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.0.0
+id: asdf://stsci.edu/datamodels/roman/schemas/reference_files/distortion-1.0.0
+
+title: Distortion Reference Schema
+
+datamodel_name: DistortionRefModel
+
+type: object
+properties:
+  meta:
+    allOf:
+      - $ref: asdf://stsci.edu/datamodels/roman/schemas/reference_files/ref_common-1.0.0
+      - type: object
+
+        input_units: "pixel"
+        output_units: "arcsec"
+
+        properties:
+          reftype:
+            type: string
+            enum: [DISTORTION]
+      - $ref: asdf://stsci.edu/datamodels/roman/schemas/reference_files/ref_optical_element-1.0.0
+  coordinate_distortion_transform:
+    title: Distortion Transform Model with inputs in "pixel" and outputs in "arcsec"
+    description: |
+      The astropy.modeling.Model instance of of the distortion transform model.
+    type: object
+required: [meta, coordinate_distortion_transform]
+flowStyle: block
+propertyOrder: [meta, coordinate_distortion_transform]
+...

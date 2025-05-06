@@ -1,0 +1,22 @@
+%YAML 1.1
+---
+$schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.0.0
+id: asdf://stsci.edu/datamodels/roman/schemas/tagged_scalars/origin-1.0.0
+
+title: Institution / Organization Name
+
+type: string
+enum: ["STSCI", "STSCI/SOC", "IPAC/SSC"]
+
+sdf:
+  special_processing: VALUE_REQUIRED
+  source:
+    origin: TBD
+maxLength: 15
+archive_catalog:
+  datatype: nvarchar(15)
+  destination: [WFIExposure.origin, GuideWindow.origin, WFICommon.origin, WFIMosaic.origin,
+                SourceCatalog.origin, SegmentationMap.origin]
+
+flowStyle: block
+...

@@ -1,0 +1,51 @@
+%YAML 1.1
+---
+$schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.0.0
+id: asdf://stsci.edu/datamodels/roman/schemas/reference_files/refpix-1.0.0
+
+title: Reference Pixel Correction Reference Schema
+
+# NOTE: this needs titles and descriptions added.
+
+datamodel_name: RefpixRefModel
+
+type: object
+properties:
+  meta:
+    allOf:
+      - $ref: asdf://stsci.edu/datamodels/roman/schemas/reference_files/ref_common-1.0.0
+      - type: object
+
+        input_units: "DN"
+        output_units: "DN"
+
+        properties:
+          reftype:
+            type: string
+            enum: [REFPIX]
+
+  gamma:
+    title: Left column correction coefficients
+    tag: tag:stsci.edu:asdf/core/ndarray-1.*
+    datatype: complex128
+    exact_datatype: true
+    ndim: 2
+
+  zeta:
+    title: Right column correction coefficients
+    tag: tag:stsci.edu:asdf/core/ndarray-1.*
+    datatype: complex128
+    exact_datatype: true
+    ndim: 2
+
+  alpha:
+    title: Reference output correction coefficients
+    tag: tag:stsci.edu:asdf/core/ndarray-1.*
+    datatype: complex128
+    exact_datatype: true
+    ndim: 2
+
+required: [meta, gamma, zeta, alpha]
+flowStyle: block
+propertyOrder: [meta, gamma, zeta, alpha]
+...

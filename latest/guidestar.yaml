@@ -1,0 +1,127 @@
+%YAML 1.1
+---
+$schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.0.0
+id: asdf://stsci.edu/datamodels/roman/schemas/guidestar-1.1.0
+
+title: Guide Star and Guide Window Information
+
+type: object
+properties:
+  guide_window_id:
+    title: Guide Window Identifier
+    description: |
+      A unique identification number of the guide window.
+      This identifier combines the visit identifier and guide star
+      acquisition number, and is set in the visit information uplinked
+      to the observatory. As the number may be zero-padded, this value
+      is saved as a string. See technical report Roman-STScI-000193
+      "Roman Programmatic Data Identification" for more information.
+    type: string
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    maxLength: 20
+    archive_catalog:
+      datatype: nvarchar(20)
+      destination: [WFIExposure.guide_window_id, GuideWindow.guide_window_id]
+  guide_mode:
+    allOf:
+      - $ref: asdf://stsci.edu/datamodels/roman/schemas/guidewindow_modes-1.0.0
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    maxLength: 18
+    archive_catalog:
+      datatype: nvarchar(18)
+      destination: [WFIExposure.guide_mode, GuideWindow.guide_mode]
+  window_xstart:
+    title: Guide Window X Start Position (pixels)
+    description: |
+      Minimum X position in pixels in the science coordinate
+      frame of all tracking guide windows in this exposure.
+    type: integer
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: Science Data Formatting
+    archive_catalog:
+      datatype: int
+      destination: [WFIExposure.window_xstart]
+  window_ystart:
+    title: Guide Window Y Start Position (pixels)
+    description: |
+      Minimum Y position in pixels in the science coordinate
+      frame of all tracking guide windows in this exposure.
+    type: integer
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: Science Data Formatting
+    archive_catalog:
+      datatype: int
+      destination: [WFIExposure.window_ystart]
+  window_xstop:
+    title: Guide Window X Stop Position (pixels)
+    description: |
+      Maximum X position in pixels in the science coordinate
+      frame of all tracking guide windows in this exposure.
+    type: integer
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: Science Data Formatting
+    archive_catalog:
+      datatype: int
+      destination: [WFIExposure.window_xstop]
+  window_ystop:
+    title: Guide Window Y Start Position (pixels)
+    description: |
+      Maximum Y position in pixels in the science coordinate
+      frame of all tracking guide windows in this exposure.
+    type: integer
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: Science Data Formatting
+    archive_catalog:
+      datatype: int
+      destination: [WFIExposure.window_ystop]
+  guide_star_id:
+    title: Guide Star Identifier
+    description: |
+      Identification of the guide star from the Guide Star Catalog (GSC).
+      This is based on planned information from the Roman Planning and
+      Scheduling Subsystem.
+    type: string
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: PSS:dms_guide_star.star_id
+    maxLength: 20
+    archive_catalog:
+      datatype: nvarchar(20)
+      destination: [WFIExposure.guide_star_id, GuideWindow.guide_star_id]
+  epoch:
+    title: Guide Star Coordinates Epoch
+    description: |
+      Epoch of the celestial coordinates of the guide star
+      from the Guide Star Catalog (GSC).
+    type: string
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    maxLength: 10
+    archive_catalog:
+      datatype: nvarchar(10)
+      destination: [WFIExposure.epoch, GuideWindow.epoch]
+propertyOrder: [guide_window_id, guide_mode,
+  window_xstart, window_ystart, window_xstop, window_ystop,
+  guide_star_id, epoch]
+required: [guide_window_id, guide_mode,
+  window_xstart, window_ystart, window_xstop, window_ystop,
+  guide_star_id, epoch]
+flowStyle: block
+...

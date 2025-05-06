@@ -1,0 +1,249 @@
+%YAML 1.1
+---
+$schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.0.0
+id: asdf://stsci.edu/datamodels/roman/schemas/mosaic_wcsinfo-1.0.0
+
+title: Mosaic WCS parameters
+type: object
+
+properties:
+  ra_ref:
+    title: "[deg] Projection center RA"
+    type: number
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    archive_catalog:
+      datatype: float
+      destination: [WFIMosaic.ra_ref]
+  dec_ref:
+    title: "[deg] Projection center Dec"
+    type: number
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    archive_catalog:
+      datatype: float
+      destination: [WFIMosaic.dec_ref]
+  x_ref:
+    title: Pixel number in mosaic corresponding to projection center ra/dec
+    type: number
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    archive_catalog:
+      datatype: float
+      destination: [WFIMosaic.x_ref]
+  y_ref:
+    title: Pixel number in mosaic corresponding to projection center ra/dec
+    type: number
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    archive_catalog:
+      datatype: float
+      destination: [WFIMosaic.y_ref]
+  rotation_matrix:
+    title: 2x2 rotation matrix
+    type: array
+    items:
+      type: array
+      items:
+        type: number
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    archive_catalog:
+      datatype: nvarchar(3500)
+      destination: [WFIMosaic.rotation_matrix]
+  pixel_scale:
+    title: Pixel scale at projection center
+    type: number
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    archive_catalog:
+      datatype: float
+      destination: [WFIMosaic.pixel_scale]
+  pixel_scale_local:
+    title: Pixel scale at image center
+    type: number
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    archive_catalog:
+      datatype: float
+      destination: [WFIMosaic.pixel_scale_local]
+  projection:
+    title: Projection type and order
+    type: string
+    enum: ["TAN"]
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    maxLength: 50
+    archive_catalog:
+      datatype: nvarchar(50)
+      destination: [WFIMosaic.projection]
+  s_region:
+    title: spatial extent of the observation
+    type: string
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    archive_catalog:
+      datatype: nvarchar(max)
+      destination: [WFIMosaic.s_region]
+  pixel_shape:
+    title: Shape of image (nx, ny)
+    type: array
+    items:
+      type: integer
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    archive_catalog:
+      datatype: nvarchar(50)
+      destination: [WFIMosaic.pixel_shape]
+  ra_center:
+    title: "[deg] Mosaic center RA"
+    type: number
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    archive_catalog:
+      datatype: float
+      destination: [WFIMosaic.ra_center]
+  dec_center:
+    title: "[deg] Mosaic center Dec"
+    type: number
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    archive_catalog:
+      datatype: float
+      destination: [WFIMosaic.dec_center]
+  ra_corn1:
+    title: "[deg] Mosaic corner 1 RA"
+    type: number
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    archive_catalog:
+      datatype: float
+      destination: [WFIMosaic.ra_corn1]
+  dec_corn1:
+    title: "[deg] Mosaic corner 1 Dec"
+    type: number
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    archive_catalog:
+      datatype: float
+      destination: [WFIMosaic.dec_corn1]
+  ra_corn2:
+    title: "[deg] Mosaic corner 2 RA"
+    type: number
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    archive_catalog:
+      datatype: float
+      destination: [WFIMosaic.ra_corn2]
+  dec_corn2:
+    title: "[deg] Mosaic corner 2 Dec"
+    type: number
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    archive_catalog:
+      datatype: float
+      destination: [WFIMosaic.dec_corn2]
+  ra_corn3:
+    title: "[deg] Mosaic corner 3 RA"
+    type: number
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    archive_catalog:
+      datatype: float
+      destination: [WFIMosaic.ra_corn3]
+  dec_corn3:
+    title: "[deg] Mosaic corner 3 Dec"
+    type: number
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    archive_catalog:
+      datatype: float
+      destination: [WFIMosaic.dec_corn3]
+  ra_corn4:
+    title: "[deg] Mosaic corner 4 RA"
+    type: number
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    archive_catalog:
+      datatype: float
+      destination: [WFIMosaic.ra_corn4]
+  dec_corn4:
+    title: "[deg] Mosaic corner 4 Dec"
+    type: number
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    archive_catalog:
+      datatype: float
+      destination: [WFIMosaic.dec_corn4]
+  orientat_local:
+    title: Angle between north and the y axis of the projection at the mosaic
+      center, turning positive in the direction of increasing right ascenscion.
+    type: number
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    archive_catalog:
+      datatype: float
+      destination: [WFIMosaic.orientat_local]
+  orientat:
+    title: Angle between north and the y axis of the projection at the projection
+      center, turning positive in the direction of increasing right ascenscion.
+    type: number
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    archive_catalog:
+      datatype: float
+      destination: [WFIMosaic.orientat]
+propertyOrder: [ ra_ref, dec_ref, x_ref, y_ref, rotation_matrix, pixel_scale,
+                 pixel_scale_local, projection, s_region, pixel_shape, ra_center,
+                 dec_center, ra_corn1, dec_corn1, ra_corn2, dec_corn2, ra_corn3,
+                 dec_corn3, ra_corn4, dec_corn4, orientat_local, orientat ]
+flowStyle: block
+required: [ ra_ref, dec_ref, x_ref, y_ref, rotation_matrix, pixel_scale,
+            pixel_scale_local, projection, s_region, pixel_shape, ra_center,
+            dec_center, ra_corn1, dec_corn1, ra_corn2, dec_corn2, ra_corn3,
+            dec_corn3, ra_corn4, dec_corn4, orientat_local, orientat ]
+...

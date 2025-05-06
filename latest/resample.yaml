@@ -1,0 +1,55 @@
+%YAML 1.1
+---
+$schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.0.0
+id: asdf://stsci.edu/datamodels/roman/schemas/resample-1.0.0
+
+title: Resample Information
+type: object
+properties:
+  good_bits:
+    title: Bit Mask
+    description: |
+      Bit mask used in resample.
+    type: string
+  pixel_scale_ratio:
+    title: Pixel Scale Ratio
+    description: |
+      The pixel scale ratio compared to the input scale that resample will use
+      during processing. For example, a pixel scale ratio of 0.9 will produce a
+      resampled resultant image with smaller pixels than the native pixel scale
+      of the detector.
+    type: number
+  pixfrac:
+    title: Pixel Fraction
+    description: |
+      The fraction of a pixel to use for pixel convolution.
+    type: number
+  pointings:
+    title: Number of Pointings
+    description: |
+      The number of pointings combined with the resample processing.
+    type: integer
+  product_exposure_time:
+    title: Product Exposure Time
+    description: |
+      The total exposure time for the resampled product.
+    type: number
+  members:
+    title: Resample Members
+    description: |
+      Filenames of resample members
+    type: array
+    items:
+      type: string
+  weight_type:
+    title: Weight Type
+    description: |
+      The weight type used by the drizzle algorithm in the resample processing.
+      The two weight options available are exposure time ("exptime") and inverse
+      variance map ("ivm").
+    type: string
+    enum: ["exptime", "ivm"]
+propertyOrder: [good_bits, members, pixel_scale_ratio, pixfrac, pointings, product_exposure_time, weight_type]
+flowStyle: block
+required: [good_bits, members, pixel_scale_ratio, pixfrac, weight_type]
+...

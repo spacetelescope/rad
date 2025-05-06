@@ -1,0 +1,79 @@
+%YAML 1.1
+---
+$schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.0.0
+id: asdf://stsci.edu/datamodels/roman/schemas/reference_files/epsf-1.0.0
+
+title: ePSF Reference File Schema
+
+datamodel_name: EpsfRefModel
+
+type: object
+properties:
+  meta:
+    allOf:
+      - $ref: asdf://stsci.edu/datamodels/roman/schemas/reference_files/ref_common-1.0.0
+      - $ref: asdf://stsci.edu/datamodels/roman/schemas/reference_files/ref_optical_element-1.0.0
+      - type: object
+        properties:
+          reftype:
+            type: string
+            enum: [EPSF]
+          oversample:
+            title: Oversampling Factor
+            description: Factor by which the WFI pixels have been oversampled
+                to generate the PSF.
+            type: integer
+          spectral_type:
+            title: Spectral Type
+            description: Spectral type(s) of the SEDs used to create the ePSF(s)
+                with chromatic variations. See the Roman Documentation system (RDox)
+                for more information on mapping spectral types to colors in the
+                WFI filter system.
+            type: array
+            items:
+                type: string
+          defocus:
+            title: Defocus Waves
+            description: Number of defocus waves applied to the PSF.
+            type: array
+            items:
+                type: integer
+          pixel_x:
+            title: X Position
+            description: X-axis position of the PSF models. The order of the
+                positions corresponds to the order of the PSFs in the psf array.
+            type: array
+            items:
+                type: number
+          pixel_y:
+            title: Y Position
+            description: Y-axis position of the PSF models. The order of the
+                positions corresponds to the order of the PSFs in the psf array.
+            type: array
+            items:
+                type: number
+        required: [pixel_x, pixel_y]
+  psf:
+    title: ePSF Stamps
+    description: Postage stamps of ePSF models. The 5-dimensional array is
+        ordered by (defocus, spectral_type, grid_index, y, x), where defocus
+        and spectral_type are in the file metadata, grid_index is the index
+        of the pixel_x and pixel_y positions in the file metadata, and
+        y and x are the axes of the 2-D postage stamp ePSF.
+    tag: tag:stsci.edu:asdf/core/ndarray-1.*
+    datatype: float32
+    exact_datatype: true
+    ndim: 5
+  extended_psf:
+    title: Extended ePSF Stamp
+    description: Postage stamp of a bright ePSF model with extended wings.
+        If present, a single, in-focus, monochromatic ePSF is generated at
+        the center of the detector.
+    tag: tag:stsci.edu:asdf/core/ndarray-1.*
+    datatype: float32
+    exact_datatype: true
+    ndim: 2
+required: [meta, psf]
+flowStyle: block
+propertyOrder: [meta, psf, extended_psf]
+...

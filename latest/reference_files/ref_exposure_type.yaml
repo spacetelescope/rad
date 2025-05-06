@@ -1,0 +1,30 @@
+%YAML 1.1
+---
+$schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.0.0
+id: asdf://stsci.edu/datamodels/roman/schemas/reference_files/ref_exposure_type-1.0.0
+
+title: Exposure Type Reference Schema
+
+type: object
+properties:
+  exposure:
+    type: object
+    properties:
+      type:
+        allOf:
+          - $ref: asdf://stsci.edu/datamodels/roman/schemas/exposure_type-1.0.0
+        title: WFI Mode
+        description: |
+          The type of data taken with the WFI. Allowed values are WFI_IMAGE for
+          imaging mode, WFI_GRISM and WFI_PRISM for spectral mode, WFI_DARK for
+          dark exposures, WFI_FLAT for flat fields, and WFI_WFSC.
+      p_exptype:
+        title: WFI Mode for CRDS
+        description: |
+          The potentially multiple mode strings applied to data for reference
+          file matching in CRDS. Modes are separated by "|".
+        type: string
+        pattern: "^((WFI_IMAGE|WFI_GRISM|WFI_PRISM|WFI_DARK|WFI_FLAT|WFI_WFSC)\\s*\\|\\s*)+$"
+    required: [type,p_exptype]
+required: [exposure]
+...

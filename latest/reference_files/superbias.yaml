@@ -1,0 +1,47 @@
+%YAML 1.1
+---
+$schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.0.0
+id: asdf://stsci.edu/datamodels/roman/schemas/reference_files/superbias-1.0.0
+
+title: Super-Bias Reference Schema
+
+datamodel_name: SuperbiasRefModel
+
+type: object
+properties:
+  meta:
+    allOf:
+      - $ref: asdf://stsci.edu/datamodels/roman/schemas/reference_files/ref_common-1.0.0
+      - type: object
+        properties:
+          reftype:
+            type: string
+            enum: [BIAS]
+  data:
+    title: Two Dimensional Bias Array
+    description: |
+      Two Dimensional Bias Array.
+    tag: tag:stsci.edu:asdf/core/ndarray-1.*
+    datatype: float32
+    exact_datatype: true
+    ndim: 2
+  dq:
+    title: Two Dimensional Quality Array for all Resultants
+    description: |
+      Two Dimensional Quality Array for all Resultants.
+    tag: tag:stsci.edu:asdf/core/ndarray-1.*
+    datatype: uint32
+    exact_datatype: true
+    ndim: 2
+  err:
+    title: Two Dimensional Error Array
+    description: |
+      Two Dimensional Error Array.
+    tag: tag:stsci.edu:asdf/core/ndarray-1.*
+    datatype: float32
+    exact_datatype: true
+    ndim: 2
+required: [meta, data, dq, err]
+flowStyle: block
+propertyOrder: [meta, data, dq, err]
+...

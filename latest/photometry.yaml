@@ -1,0 +1,62 @@
+%YAML 1.1
+---
+$schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.0.0
+id: asdf://stsci.edu/datamodels/roman/schemas/photometry-1.0.0
+
+title: Photometry Information
+type: object
+properties:
+  conversion_megajanskys:
+    title: Zeropoint Flux (MJy/sr)
+    description: |
+      The flux density (in units of megaJanskys per
+      steradian; MJy/sr) that produces an instrumental count rate of 1
+      data number (DN) per second. A unit change to microJanskys per
+      square arcsecond (uJy/arcsec^2) can be made by multiplying this
+      value by the ratio (1 x 10^12 MJy/uJy) / (4.254517 x 10^10
+      arcsec^2/sr) = 23.50443054.
+    anyOf:
+      - type: number
+      - type: "null"
+    unit: "MJy.sr**-1"
+    archive_catalog:
+      datatype: float
+      destination: [WFIExposure.conversion_megajanskys, WFIMosaic.conversion_megajanskys,
+                    SourceCatalog.conversion_megajanskys]
+  conversion_megajanskys_uncertainty:
+    title: Zeropoint Flux Uncertainty (MJy/sr)
+    description: |
+      The uncertainty in the flux density (in units of
+      megaJanskys per steradian; MJy/sr) that produces an instrumental
+      count rate of 1 data number (DN) per second. A unit change to
+      microJanskys per square arcsecond (uJy/arcsec^2) can be made by
+      multiplying this value by the ratio (1 x 10^12 MJy/uJy) /
+      (4.254517 x 10^10 arcsec^2/sr) = 23.50443.
+    anyOf:
+      - type: number
+      - type: "null"
+    unit: "MJy.sr**-1"
+    archive_catalog:
+      datatype: float
+      destination: [WFIExposure.conversion_megajanskys_uncertainty, WFIMosaic.conversion_megajanskys_uncertainty,
+                    SourceCatalog.conversion_megajanskys_uncertainty]
+  pixel_area:
+    title: Nominal Pixel Area (sr)
+    description: |
+      The average pixel area in units of steradians. This
+      may be converted to units of square arcseconds by multiplying
+      the value by 4.254517 x 10^10 square arcseconds per steradian.
+    anyOf:
+      - type: number
+      - type: "null"
+    unit: "uJy.arcsec**-2"
+    archive_catalog:
+      datatype: float
+      destination: [WFIExposure.pixel_area, WFIMosaic.pixel_area,
+                    SourceCatalog.pixel_area]
+propertyOrder: [conversion_megajanskys, conversion_megajanskys_uncertainty,
+  pixel_area]
+flowStyle: block
+required: [conversion_megajanskys, conversion_megajanskys_uncertainty,
+  pixel_area]
+...
