@@ -76,7 +76,7 @@ properties:
     archive_catalog:
       datatype: nvarchar(10)
       destination: [WFIExposure.engineering_quality, GuideWindow.engineering_quality,
-                    SourceCatalog.engineering_quality, SegmentationMap.engineering_quality]
+                    SourceCatalog.engineering_quality]
   ma_table_id:
     title: Multi-Accumulation Table Identifier
     description: |
@@ -92,7 +92,7 @@ properties:
     archive_catalog:
       datatype: nvarchar(10)
       destination: [WFIExposure.ma_table_id, GuideWindow.ma_table_id,
-                    SourceCatalog.ma_table_id, SegmentationMap.ma_table_id]
+                    SourceCatalog.ma_table_id]
   nresultants:
     title: Number of Resultants
     description: |
