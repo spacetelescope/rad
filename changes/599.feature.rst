@@ -1,0 +1,1 @@
+Add ``NOT_CONFIGURED`` option to the ``wfi_optical_element`` schema.
