@@ -22,6 +22,14 @@ properties:
             title: Wide Field Instrument (WFI) Optical Element
             description: |
               Optical element used during the exposure.
+            sdf:
+              special_processing: VALUE_REQUIRED
+              source:
+                origin: TBD
+            maxLength: 20
+            archive_catalog:
+              datatype: nvarchar(20)
+              destination: [GuideWindow.optical_element]
           fgs_modes_used:
             title: FGS Guiding Modes
             description: |
