@@ -38,7 +38,7 @@ properties:
                 origin: TBD
             archive_catalog:
               datatype: nvarchar(20)
-              destination: [GuideWindow.face_gw_fgs_modes_used]
+              destination: [GuideWindow.gw_fgs_modes_used]
           ma_table_ids_used:
             title: Used MA Table IDs
             description: |
@@ -68,7 +68,7 @@ properties:
                 origin: TBD
             archive_catalog:
               datatype: int
-              destination: [GuideWindow.face_gw_guide_star_acq_num]
+              destination: [GuideWindow.gw_guide_star_acq_num]
           guide_window_id:
             title: Guide Window ID
             description: |
@@ -85,7 +85,7 @@ properties:
                 origin: TBD
             archive_catalog:
               datatype: nvarchar(120)
-              destination: [GuideWindow.face_gw_guide_window_id]
+              destination: [GuideWindow.gw_guide_window_id]
           detector_gw_files:
             title: Detector Guide Window Files
             description: |
