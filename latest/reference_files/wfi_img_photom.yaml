@@ -24,7 +24,7 @@ properties:
       MJy / steradian.
     type: object
     patternProperties:
-      "^(F062|F087|F106|F129|F146|F158|F184|F213|GRISM|PRISM|DARK)$":
+      "^(F062|F087|F106|F129|F146|F158|F184|F213|GRISM|PRISM|DARK|NOT_CONFIGURED)$":
         type: object
         properties:
           photmjsr:

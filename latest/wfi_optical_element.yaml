@@ -22,4 +22,5 @@ enum:
   - GRISM
   - PRISM
   - DARK
+  - NOT_CONFIGURED
 ...
