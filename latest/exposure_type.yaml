@@ -1,7 +1,7 @@
 %YAML 1.1
 ---
 $schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.0.0
-id: asdf://stsci.edu/datamodels/roman/schemas/exposure_type-1.0.0
+id: asdf://stsci.edu/datamodels/roman/schemas/exposure_type-1.1.0
 
 # Helper file to enumerate viewing modes for exposure and ref_exposure
 title: Exposure Type
