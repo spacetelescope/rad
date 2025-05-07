@@ -1,0 +1,2 @@
+Remove the ``SegmentationMap.engineering_quality`` and ``SegmentationMap.ma_table_id`` values
+from the ``archive_catalog.destination`` keyword.
