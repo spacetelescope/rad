@@ -24,7 +24,7 @@ properties:
           The potentially multiple mode strings applied to data for reference
           file matching in CRDS. Modes are separated by "|".
         type: string
-        pattern: "^((WFI_IMAGE|WFI_SPECTROSCOPY|WFI_IM_DARK|WFI_SP_DARK|WFI_FLAT|WFI_LOLO|WFI_WFSC|WFI_DARK|WFI_GRISM|WFI_PRISM)\\s*\\|\\s*)+$"
+        pattern: "^((WFI_IMAGE|WFI_SPECTRAL|WFI_IM_DARK|WFI_SP_DARK|WFI_FLAT|WFI_LOLO|WFI_WFSC|WFI_DARK|WFI_GRISM|WFI_PRISM)\\s*\\|\\s*)+$"
     required: [type,p_exptype]
 required: [exposure]
 ...

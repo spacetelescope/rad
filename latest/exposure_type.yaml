@@ -16,7 +16,7 @@ description: |
 type: string
 enum:
   - WFI_IMAGE
-  - WFI_SPECTROSCOPY
+  - WFI_SPECTRAL
   - WFI_IM_DARK
   - WFI_SP_DARK
   - WFI_FLAT
