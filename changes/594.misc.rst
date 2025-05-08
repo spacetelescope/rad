@@ -1,0 +1,3 @@
+Adds basic keyword group to both L1 Guidewindow schemas
+Updated database keyword names
+Commented out archive_meta in deprecated guidewindow schema
