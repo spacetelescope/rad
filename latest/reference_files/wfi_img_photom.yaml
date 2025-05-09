@@ -1,7 +1,7 @@
 %YAML 1.1
 ---
 $schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.0.0
-id: asdf://stsci.edu/datamodels/roman/schemas/reference_files/wfi_img_photom-1.0.0
+id: asdf://stsci.edu/datamodels/roman/schemas/reference_files/wfi_img_photom-1.1.0
 
 title: WFI Imaging Photometric Flux Conversion Data Model
 
