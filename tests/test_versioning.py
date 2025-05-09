@@ -36,6 +36,7 @@ from contextlib import suppress
 from io import BytesIO
 from pathlib import Path
 from re import findall
+from tomllib import load
 
 import pytest
 import yaml
@@ -47,14 +48,17 @@ from .conftest import CURRENT_RESOURCES
 
 # Using a python library load the actual RAD repository data into python
 # object which can be interacted with.
-REPO = Repo(Path(__file__).parent.parent)
+REPO_PATH = Path(__file__).parent.parent
 RAD_URLS = (
     "https://github.com/spacetelescope/rad.git",
     "git@github.com:spacetelescope/rad.git",
 )
 
 # The oldest version of RAD that is under schema versioning
-BASE_RELEASE = Version("0.23.1")
+REPO = Repo(REPO_PATH)
+with (REPO_PATH / "pyproject.toml").open("rb") as f:
+    BASE_RELEASE = Version(load(f)["tool"]["rad-versioning"]["base_release"])
+
 
 # The keywords in the schemas that we claim don't matter for schema versioning
 IGNORED_KEYWORDS = (
