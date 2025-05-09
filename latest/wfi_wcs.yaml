@@ -26,7 +26,7 @@ properties:
             tag: asdf://stsci.edu/datamodels/roman/tags/exposure-1.2.0
           instrument:
             title: WFI Observing Configuration
-            tag: asdf://stsci.edu/datamodels/roman/tags/wfi_mode-1.0.0
+            tag: asdf://stsci.edu/datamodels/roman/tags/wfi_mode-1.1.0
           observation:
             title: Observation Identifiers
             tag: asdf://stsci.edu/datamodels/roman/tags/observation-1.0.0
