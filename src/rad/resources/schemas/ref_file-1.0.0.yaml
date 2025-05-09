@@ -26,8 +26,13 @@ properties:
         maxLength: 120
         archive_catalog:
           datatype: nvarchar(120)
-          destination: [WFIExposure.crds_version, WFIMosaic.crds_version,
-                        GuideWindow.crds_version, WFICommon.crds_version]
+          destination:
+            [
+              WFIExposure.crds_version,
+              WFIMosaic.crds_version,
+              GuideWindow.crds_version,
+              WFICommon.crds_version,
+            ]
       context:
         title: CRDS Context
         description: |
@@ -42,8 +47,13 @@ properties:
         maxLength: 120
         archive_catalog:
           datatype: nvarchar(120)
-          destination: [WFIExposure.crds_context, WFIMosaic.crds_context,
-                        GuideWindow.crds_context, WFICommon.crds_context]
+          destination:
+            [
+              WFIExposure.crds_context,
+              WFIMosaic.crds_context,
+              GuideWindow.crds_context,
+              WFICommon.crds_context,
+            ]
     required: [version, context]
   dark:
     title: Dark Reference File Information
@@ -65,7 +75,12 @@ properties:
     maxLength: 120
     archive_catalog:
       datatype: nvarchar(120)
-      destination: [ScienceRefData.r_distortion, GuideWindow.r_distortion, WFICommon.r_distortion]
+      destination:
+        [
+          ScienceRefData.r_distortion,
+          GuideWindow.r_distortion,
+          WFICommon.r_distortion,
+        ]
   mask:
     title: Bad Pixel Mask Reference File Information
     description: |
@@ -107,7 +122,12 @@ properties:
     maxLength: 120
     archive_catalog:
       datatype: nvarchar(120)
-      destination: [ScienceRefData.r_readnoise, GuideWindow.r_readnoise, WFICommon.r_readnoise]
+      destination:
+        [
+          ScienceRefData.r_readnoise,
+          GuideWindow.r_readnoise,
+          WFICommon.r_readnoise,
+        ]
   linearity:
     title: Linearity Reference File Information
     description: |
@@ -117,7 +137,12 @@ properties:
     maxLength: 120
     archive_catalog:
       datatype: nvarchar(120)
-      destination: [ScienceRefData.r_linearity, GuideWindow.r_linearity, WFICommon.r_linearity]
+      destination:
+        [
+          ScienceRefData.r_linearity,
+          GuideWindow.r_linearity,
+          WFICommon.r_linearity,
+        ]
   inverse_linearity:
     title: Inverse Linearity Reference File Information
     description: |
@@ -128,7 +153,12 @@ properties:
     maxLength: 120
     archive_catalog:
       datatype: nvarchar(120)
-      destination: [ScienceRefData.r_inverse_linearity, GuideWindow.r_inverse_linearity, WFICommon.r_inverse_linearity]
+      destination:
+        [
+          ScienceRefData.r_inverse_linearity,
+          GuideWindow.r_inverse_linearity,
+          WFICommon.r_inverse_linearity,
+        ]
   photom:
     title: Photometry Reference File Information
     description: |
@@ -139,7 +169,8 @@ properties:
     maxLength: 120
     archive_catalog:
       datatype: nvarchar(120)
-      destination: [ScienceRefData.r_photom, GuideWindow.r_photom, WFICommon.r_photom]
+      destination:
+        [ScienceRefData.r_photom, GuideWindow.r_photom, WFICommon.r_photom]
   area:
     title: Pixel Area Reference File Information
     description: |
@@ -160,7 +191,12 @@ properties:
     maxLength: 120
     archive_catalog:
       datatype: nvarchar(120)
-      destination: [ScienceRefData.r_saturation, GuideWindow.r_saturation, WFICommon.r_saturation]
+      destination:
+        [
+          ScienceRefData.r_saturation,
+          GuideWindow.r_saturation,
+          WFICommon.r_saturation,
+        ]
   refpix:
     title: Reference Pixel Reference File Information
     description: |
@@ -170,7 +206,22 @@ properties:
     maxLength: 120
     archive_catalog:
       datatype: nvarchar(120)
-      destination: [ScienceRefData.r_refpix, GuideWindow.r_refpix, WFICommon.r_refpix]
-required: [crds, dark, distortion, mask, flat, gain, readnoise, linearity, inverse_linearity, photom, area, saturation, refpix]
+      destination:
+        [ScienceRefData.r_refpix, GuideWindow.r_refpix, WFICommon.r_refpix]
+required:
+  [
+    crds,
+    dark,
+    distortion,
+    mask,
+    flat,
+    gain,
+    readnoise,
+    linearity,
+    inverse_linearity,
+    photom,
+    area,
+    saturation,
+    refpix,
+  ]
 flowStyle: block
-...

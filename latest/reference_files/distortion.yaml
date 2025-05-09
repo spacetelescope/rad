@@ -30,4 +30,3 @@ properties:
 required: [meta, coordinate_distortion_transform]
 flowStyle: block
 propertyOrder: [meta, coordinate_distortion_transform]
-...

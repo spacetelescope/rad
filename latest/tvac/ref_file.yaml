@@ -123,4 +123,3 @@ properties:
       datatype: nvarchar(120)
       destination: [WFICommon.r_saturation]
 flowStyle: block
-...

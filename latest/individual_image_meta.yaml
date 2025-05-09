@@ -88,8 +88,26 @@ properties:
       Table of wcsinfo level 2 metadata.
     tag: tag:astropy.org:astropy/table/table-1.*
 flowStyle: block
-propertyOrder: [basic, background, cal_step, cal_logs, coordinates, ephemeris,
-  exposure, guide_star, instrument, observation, outlier_detection, photometry,
-  pointing, program, rcs, ref_file, source_catalog, velocity_aberration,
-  visit, wcsinfo]
-...
+propertyOrder:
+  [
+    basic,
+    background,
+    cal_step,
+    cal_logs,
+    coordinates,
+    ephemeris,
+    exposure,
+    guide_star,
+    instrument,
+    observation,
+    outlier_detection,
+    photometry,
+    pointing,
+    program,
+    rcs,
+    ref_file,
+    source_catalog,
+    velocity_aberration,
+    visit,
+    wcsinfo,
+  ]

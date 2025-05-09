@@ -227,7 +227,8 @@ properties:
       datatype: float
       destination: [WFIMosaic.orientat_local]
   orientat:
-    title: Angle between north and the y axis of the projection at the projection
+    title:
+      Angle between north and the y axis of the projection at the projection
       center, turning positive in the direction of increasing right ascenscion.
     type: number
     sdf:
@@ -237,13 +238,54 @@ properties:
     archive_catalog:
       datatype: float
       destination: [WFIMosaic.orientat]
-propertyOrder: [ ra_ref, dec_ref, x_ref, y_ref, rotation_matrix, pixel_scale,
-                 pixel_scale_local, projection, s_region, pixel_shape, ra_center,
-                 dec_center, ra_corn1, dec_corn1, ra_corn2, dec_corn2, ra_corn3,
-                 dec_corn3, ra_corn4, dec_corn4, orientat_local, orientat ]
+propertyOrder:
+  [
+    ra_ref,
+    dec_ref,
+    x_ref,
+    y_ref,
+    rotation_matrix,
+    pixel_scale,
+    pixel_scale_local,
+    projection,
+    s_region,
+    pixel_shape,
+    ra_center,
+    dec_center,
+    ra_corn1,
+    dec_corn1,
+    ra_corn2,
+    dec_corn2,
+    ra_corn3,
+    dec_corn3,
+    ra_corn4,
+    dec_corn4,
+    orientat_local,
+    orientat,
+  ]
 flowStyle: block
-required: [ ra_ref, dec_ref, x_ref, y_ref, rotation_matrix, pixel_scale,
-            pixel_scale_local, projection, s_region, pixel_shape, ra_center,
-            dec_center, ra_corn1, dec_corn1, ra_corn2, dec_corn2, ra_corn3,
-            dec_corn3, ra_corn4, dec_corn4, orientat_local, orientat ]
-...
+required:
+  [
+    ra_ref,
+    dec_ref,
+    x_ref,
+    y_ref,
+    rotation_matrix,
+    pixel_scale,
+    pixel_scale_local,
+    projection,
+    s_region,
+    pixel_shape,
+    ra_center,
+    dec_center,
+    ra_corn1,
+    dec_corn1,
+    ra_corn2,
+    dec_corn2,
+    ra_corn3,
+    dec_corn3,
+    ra_corn4,
+    dec_corn4,
+    orientat_local,
+    orientat,
+  ]
