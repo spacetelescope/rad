@@ -48,4 +48,3 @@ properties:
 flowStyle: block
 propertyOrder: [ra_reference, dec_reference, scale_factor]
 required: [ra_reference, dec_reference, scale_factor]
-...

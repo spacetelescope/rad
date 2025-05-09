@@ -106,4 +106,3 @@ properties:
 propertyOrder: [ra_v1, dec_v1, pa_v3, target_aperture, target_ra, target_dec]
 flowStyle: block
 required: [ra_v1, dec_v1, pa_v3, target_aperture, target_ra, target_dec]
-...

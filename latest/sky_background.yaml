@@ -29,4 +29,3 @@ properties:
 propertyOrder: [level, method, subtracted]
 flowStyle: block
 required: [level, method, subtracted]
-...

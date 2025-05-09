@@ -15,8 +15,14 @@ sdf:
 maxLength: 15
 archive_catalog:
   datatype: nvarchar(15)
-  destination: [WFIExposure.origin, GuideWindow.origin, WFICommon.origin, WFIMosaic.origin,
-                SourceCatalog.origin, SegmentationMap.origin]
+  destination:
+    [
+      WFIExposure.origin,
+      GuideWindow.origin,
+      WFICommon.origin,
+      WFIMosaic.origin,
+      SourceCatalog.origin,
+      SegmentationMap.origin,
+    ]
 
 flowStyle: block
-...

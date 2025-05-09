@@ -226,16 +226,43 @@ properties:
     datatype: uint16
     unit: "DN"
     exact_datatype: true
-propertyOrder: [meta, data, dq, err, var_poisson, var_rnoise, var_flat,
-                amp33, border_ref_pix_left, border_ref_pix_right,
-                border_ref_pix_top, border_ref_pix_bottom,
-                dq_border_ref_pix_left, dq_border_ref_pix_right,
-                dq_border_ref_pix_top, dq_border_ref_pix_bottom,
-                reset_read, reset_amp33]
+propertyOrder:
+  [
+    meta,
+    data,
+    dq,
+    err,
+    var_poisson,
+    var_rnoise,
+    var_flat,
+    amp33,
+    border_ref_pix_left,
+    border_ref_pix_right,
+    border_ref_pix_top,
+    border_ref_pix_bottom,
+    dq_border_ref_pix_left,
+    dq_border_ref_pix_right,
+    dq_border_ref_pix_top,
+    dq_border_ref_pix_bottom,
+    reset_read,
+    reset_amp33,
+  ]
 flowStyle: block
-required: [meta, data, dq, err, var_poisson, var_rnoise, amp33,
-           border_ref_pix_left, border_ref_pix_right, border_ref_pix_top,
-           border_ref_pix_bottom, dq_border_ref_pix_left,
-           dq_border_ref_pix_right, dq_border_ref_pix_top,
-           dq_border_ref_pix_bottom]
-...
+required:
+  [
+    meta,
+    data,
+    dq,
+    err,
+    var_poisson,
+    var_rnoise,
+    amp33,
+    border_ref_pix_left,
+    border_ref_pix_right,
+    border_ref_pix_top,
+    border_ref_pix_bottom,
+    dq_border_ref_pix_left,
+    dq_border_ref_pix_right,
+    dq_border_ref_pix_top,
+    dq_border_ref_pix_bottom,
+  ]
