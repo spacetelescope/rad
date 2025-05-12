@@ -44,4 +44,3 @@ properties:
 required: [meta, coeffs, dq]
 flowStyle: block
 propertyOrder: [meta, coeffs, dq]
-...

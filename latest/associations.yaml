@@ -81,12 +81,23 @@ properties:
                 type: string
               exptype:
                 type: string
-                enum: ['SCIENCE', 'CALIBRATION', 'ENGINEERING']
+                enum: ["SCIENCE", "CALIBRATION", "ENGINEERING"]
             required: [expname, exposerr, exptype]
       required: [name, members]
 
 required: [asn_id, asn_pool, asn_type, asn_rule, products]
 flowStyle: block
-propertyOrder: [asn_id, asn_pool, asn_type, asn_rule, version_id, code_version, degraded_status,
-           program, target, constraints, products]
-...
+propertyOrder:
+  [
+    asn_id,
+    asn_pool,
+    asn_type,
+    asn_rule,
+    version_id,
+    code_version,
+    degraded_status,
+    program,
+    target,
+    constraints,
+    products,
+  ]

@@ -16,7 +16,7 @@ properties:
       - type: object
         properties:
           image_list:
-              type: string
+            type: string
   data:
     title: Flux Data
     description: |
@@ -52,4 +52,3 @@ properties:
 propertyOrder: [meta, data, uncertainty, mask, coverage]
 flowStyle: block
 required: [meta, data, uncertainty, mask, coverage]
-...

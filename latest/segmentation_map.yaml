@@ -27,7 +27,7 @@ properties:
   data:
     title: Segmentation map
     description: |
-       Segmentation map of an image model, zeros correspond to background.
+      Segmentation map of an image model, zeros correspond to background.
     tag: tag:stsci.edu:asdf/core/ndarray-1.*
     ndim: 2
     datatype: uint32
@@ -35,4 +35,3 @@ properties:
 required: [meta, data]
 flowStyle: block
 propertyOrder: [meta, data]
-...

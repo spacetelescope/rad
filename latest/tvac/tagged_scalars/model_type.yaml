@@ -14,4 +14,3 @@ archive_catalog:
   destination: [WFICommon.model_type]
 
 flowStyle: block
-...
