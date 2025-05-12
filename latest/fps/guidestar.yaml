@@ -18,6 +18,7 @@ properties:
     archive_catalog:
       datatype: nvarchar(20)
       destination: [WFICommon.gw_id]
+    maxLength: 20
   gw_fgs_mode:
     allOf:
       - $ref: asdf://stsci.edu/datamodels/roman/schemas/fps/guidewindow_modes-1.1.0

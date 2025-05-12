@@ -147,6 +147,7 @@ properties:
     archive_catalog:
       datatype: nvarchar(50)
       destination: [WFICommon.ma_table_name]
+    maxLength: 50
   ma_table_number:
     title: MA Table Number
     description: |

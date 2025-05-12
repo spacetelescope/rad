@@ -12,24 +12,28 @@ properties:
     archive_catalog:
       datatype: nvarchar(80)
       destination: [WFICommon.test_name]
+    maxLength: 80
   test_phase:
     title: I&T Testing Phase
     type: string
     archive_catalog:
       datatype: nvarchar(80)
       destination: [WFICommon.test_phase]
+    maxLength: 80
   test_environment:
     title: I&T Testing Environment
     type: string
     archive_catalog:
       datatype: nvarchar(80)
       destination: [WFICommon.test_environment]
+    maxLength: 80
   test_script:
     title: Name of Testing Script Run
     type: string
     archive_catalog:
       datatype: nvarchar(80)
       destination: [WFICommon.test_script]
+    maxLength: 80
   product_date:
     title: Source File Creation Time
     tag: tag:stsci.edu:asdf/time/time-1.*
@@ -42,6 +46,7 @@ properties:
     archive_catalog:
       datatype: nvarchar(80)
       destination: [WFICommon.product_version]
+    maxLength: 80
   conversion_date:
     title: HDF5 to ASDF Conversion Date
     tag: tag:stsci.edu:asdf/time/time-1.*
@@ -54,6 +59,7 @@ properties:
     archive_catalog:
       datatype: nvarchar(80)
       destination: [WFICommon.conversion_version]
+    maxLength: 80
   filename_pnt5:
     title: L0.5 File Name
     type: string
@@ -69,6 +75,7 @@ properties:
     archive_catalog:
       datatype: nvarchar(80)
       destination: [WFICommon.detector_id]
+    maxLength: 80
   detector_temp:
     title: Mean Detector Temperature (Kelvin)
     type: number

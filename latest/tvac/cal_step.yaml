@@ -16,6 +16,7 @@ properties:
     archive_catalog:
       datatype: nvarchar(15)
       destination: [WFICommon.s_assign_wcs]
+    maxLength: 15
   flat_field:
     title: Flat Fielding Step
     description: |
@@ -28,6 +29,7 @@ properties:
     archive_catalog:
       datatype: nvarchar(15)
       destination: [WFICommon.s_flat_field]
+    maxLength: 15
   dark:
     title: Dark Current Subtraction Step
     description: |
@@ -38,6 +40,7 @@ properties:
     archive_catalog:
       datatype: nvarchar(15)
       destination: [WFICommon.s_dark]
+    maxLength: 15
   dq_init:
     title: Initialization of the Data Quality Extension Step
     description: |
@@ -48,6 +51,7 @@ properties:
     archive_catalog:
       datatype: nvarchar(15)
       destination: [WFICommon.s_dq_init]
+    maxLength: 15
   flux:
     title: Flux Scale Application Step
     description: |
@@ -58,6 +62,7 @@ properties:
     archive_catalog:
       datatype: nvarchar(15)
       destination: [WFICommon.s_flux]
+    maxLength: 15
   jump:
     title: Cosmic Rays and Jump Detection Step
     description: |
@@ -68,6 +73,7 @@ properties:
     archive_catalog:
       datatype: nvarchar(15)
       destination: [WFICommon.s_jump]
+    maxLength: 15
   linearity:
     title: Linearity Correction Step
     description: |
@@ -78,6 +84,7 @@ properties:
     archive_catalog:
       datatype: nvarchar(15)
       destination: [WFICommon.s_linearity]
+    maxLength: 15
   photom:
     title: Photometric Calibration Step
     description: |
@@ -88,6 +95,7 @@ properties:
     archive_catalog:
       datatype: nvarchar(15)
       destination: [WFICommon.s_photom]
+    maxLength: 15
   source_detection:
     title: Source Detection Step
     description: |
@@ -97,6 +105,7 @@ properties:
     archive_catalog:
       datatype: nvarchar(15)
       destination: [WFICommon.s_source_detection]
+    maxLength: 15
   ramp_fit:
     title: Ramp Fit Step
     description: |
@@ -107,6 +116,7 @@ properties:
     archive_catalog:
       datatype: nvarchar(15)
       destination: [WFICommon.s_ramp_fit]
+    maxLength: 15
   refpix:
     title: Reference Pixel Correction Step
     description: |
@@ -117,6 +127,7 @@ properties:
     archive_catalog:
       datatype: nvarchar(15)
       destination: [WFICommon.s_refpix]
+    maxLength: 15
   saturation:
     title: Saturation Identification Step
     description: |
@@ -128,6 +139,7 @@ properties:
     archive_catalog:
       datatype: nvarchar(15)
       destination: [WFICommon.s_saturation]
+    maxLength: 15
   outlier_detection:
     title: Outlier Detection Step
     description: |
@@ -137,6 +149,7 @@ properties:
     archive_catalog:
       datatype: nvarchar(15)
       destination: [WFICommon.s_outlier_detection]
+    maxLength: 15
   tweakreg:
     title: Tweakreg step
     description: |
@@ -148,6 +161,7 @@ properties:
     archive_catalog:
       datatype: nvarchar(15)
       destination: [WFICommon.s_tweakreg]
+    maxLength: 15
   skymatch:
     title: Sky Matching for Combining Overlapping Images Step
     description: |
@@ -158,6 +172,7 @@ properties:
     archive_catalog:
       datatype: nvarchar(15)
       destination: [WFICommon.s_skymatch]
+    maxLength: 15
 propertyOrder: [assign_wcs, flat_field, flux, dark, dq_init, jump, linearity, photom, source_detection,
                 outlier_detection, ramp_fit, refpix, saturation, skymatch, tweakreg]
 flowStyle: block

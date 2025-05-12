@@ -17,4 +17,5 @@ enum:
   - WSM-TRACK
   - DEFOCUSED-MODERATE
   - DEFOCUSED-LARGE
+maxLength: 18
 ...

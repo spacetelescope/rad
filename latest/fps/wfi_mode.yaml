@@ -20,6 +20,7 @@ properties:
     archive_catalog:
       datatype: nvarchar(5)
       destination: [WFICommon.instrument_name]
+    maxLength: 5
   detector:
     allOf:
       - $ref: asdf://stsci.edu/datamodels/roman/schemas/fps/wfi_detector-1.1.0

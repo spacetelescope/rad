@@ -12,24 +12,28 @@ properties:
     archive_catalog:
       datatype: nvarchar(80)
       destination: [WFICommon.test_name]
+    maxLength: 80
   test_phase:
     title: I&T Testing Phase
     type: string
     archive_catalog:
       datatype: nvarchar(80)
       destination: [WFICommon.test_phase]
+    maxLength: 80
   test_environment:
     title: I&T Testing Environment
     type: string
     archive_catalog:
       datatype: nvarchar(80)
       destination: [WFICommon.test_environment]
+    maxLength: 80
   test_script:
     title: Name of Testing Script Run
     type: string
     archive_catalog:
       datatype: nvarchar(80)
       destination: [WFICommon.test_script]
+    maxLength: 80
   product_date:
     title: Source File Creation Time
     tag: tag:stsci.edu:asdf/time/time-1.*
@@ -42,6 +46,7 @@ properties:
     archive_catalog:
       datatype: nvarchar(80)
       destination: [WFICommon.product_version]
+    maxLength: 80
   conversion_date:
     title: HDF5 to ASDF Conversion Date
     tag: tag:stsci.edu:asdf/time/time-1.*
@@ -54,6 +59,7 @@ properties:
     archive_catalog:
       datatype: nvarchar(80)
       destination: [WFICommon.conversion_version]
+    maxLength: 80
   filename_pnt5:
     title: L0.5 File Name
     type: string
@@ -69,6 +75,7 @@ properties:
     archive_catalog:
       datatype: nvarchar(80)
       destination: [WFICommon.detector_id]
+    maxLength: 80
   detector_temp:
     title: Mean Detector Temperature (Kelvin)
     type: number
@@ -191,6 +198,7 @@ properties:
     archive_catalog:
       datatype: nvarchar(80)
       destination: [WFITvac.wfi_mce_srcs_bank1_led_range]
+    maxLength: 80
   wfi_mce_srcs_bank2_led_i:
     title: |
       Commanded current for the SRCS -> GSFC will send us the flux
@@ -213,6 +221,7 @@ properties:
     archive_catalog:
       datatype: nvarchar(80)
       destination: [WFITvac.wfi_mce_srcs_bank2_led_range]
+    maxLength: 80
   srcs_led_current:
     title: Input LED current set point
     type: number
@@ -229,12 +238,14 @@ properties:
     archive_catalog:
       datatype: nvarchar(20)
       destination: [WFITvac.wfi_opt_targettype]
+    maxLength: 20
   analysis_tag:
     title: WFI-team defined tags for data aggregation/analysis
     type: string
     archive_catalog:
       datatype: nvarchar(32)
       destination: [WFITvac.analysis_tag]
+    maxLength: 32
   gsorc_pose_mode:
     title: SORC pose mode
     type: string
@@ -242,6 +253,7 @@ properties:
     archive_catalog:
       datatype: nvarchar(20)
       destination: [WFITvac.gsorc_pose_mode]
+    maxLength: 20
   gsorc_pose_target:
     title: SORC pose target
     type: string
@@ -249,6 +261,7 @@ properties:
     archive_catalog:
       datatype: nvarchar(20)
       destination: [WFITvac.gsorc_pose_target]
+    maxLength: 20
   gsorc_sds_active_atten:
     title: Attenuation from SDS
     type: number
@@ -279,6 +292,7 @@ properties:
     archive_catalog:
       datatype: nvarchar(20)
       destination: [WFITvac.gsorc_sds_active_source]
+    maxLength: 20
   gsorc_sds_dq_pulse:
     title: whether the source is pulsing or not
     type: string
@@ -286,6 +300,7 @@ properties:
     archive_catalog:
       datatype: nvarchar(10)
       destination: [WFITvac.gsorc_sds_dq_pulse]
+    maxLength: 10
   gsorc_sds_daq_pw:
     title: pulse width – originally in HDF5 file is in units of 0.1 ms
     tag: tag:stsci.edu:asdf/unit/quantity-1.*
@@ -310,6 +325,7 @@ properties:
     archive_catalog:
       datatype: nvarchar(15)
       destination: [WFITvac.wfi_otp_wfi_ewa]
+    maxLength: 15
   sca_temp:
     title: SCE temperature
     tag: tag:stsci.edu:asdf/unit/quantity-1.*

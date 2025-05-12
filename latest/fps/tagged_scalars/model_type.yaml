@@ -12,6 +12,7 @@ sdf:
 archive_catalog:
   datatype: nvarchar(50)
   destination: [WFICommon.model_type]
+maxLength: 50
 
 flowStyle: block
 ...

@@ -7,6 +7,7 @@ title: TVAC Telescope Name
 
 type: string
 enum: [ROMAN]
+maxLength: 5
 
 archive_catalog:
   datatype: nvarchar(5)

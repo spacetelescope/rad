@@ -24,6 +24,7 @@ properties:
         archive_catalog:
           datatype: nvarchar(120)
           destination: [WFICommon.crds_software_version]
+        maxLength: 120
 
       context_used:
         title: CRDS Context
@@ -37,6 +38,7 @@ properties:
         archive_catalog:
           datatype: nvarchar(120)
           destination: [WFICommon.crds_context_used]
+        maxLength: 120
     required: [sw_version, context_used]
   dark:
     title: Dark Reference File Information
@@ -47,6 +49,7 @@ properties:
     archive_catalog:
       datatype: nvarchar(120)
       destination: [WFICommon.r_dark]
+    maxLength: 120
   distortion:
     title: Distortion Reference File Information
     description: |
@@ -56,6 +59,7 @@ properties:
     archive_catalog:
       datatype: nvarchar(120)
       destination: [WFICommon.r_distortion]
+    maxLength: 120
   mask:
     title: Mask Reference File Information
     description: |
@@ -64,6 +68,7 @@ properties:
     archive_catalog:
       datatype: nvarchar(120)
       destination: [WFICommon.r_mask]
+    maxLength: 120
   flat:
     title: Flat Reference File Information
     description: |
@@ -72,16 +77,18 @@ properties:
     archive_catalog:
       datatype: nvarchar(120)
       destination: [WFICommon.r_flat]
+    maxLength: 120
   gain:
-    title: Gain Reference Rile Information
+    title: Gain Reference File Information
     description: |
       Information about the gain reference file used with the science data.
     type: string
     archive_catalog:
       datatype: nvarchar(120)
       destination: [WFICommon.r_gain]
+    maxLength: 120
   readnoise:
-    title: Read Noise Reference Rile Information
+    title: Read Noise Reference File Information
     description: |
       Information about the read noise reference file used with the science
       data.
@@ -89,6 +96,7 @@ properties:
     archive_catalog:
       datatype: nvarchar(120)
       destination: [WFICommon.r_readnoise]
+    maxLength: 120
   linearity:
     title: Linearity Reference File Information
     description: |
@@ -97,6 +105,7 @@ properties:
     archive_catalog:
       datatype: nvarchar(120)
       destination: [WFICommon.r_linearity]
+    maxLength: 120
   photom:
     title: Photometry Reference File Information
     description: |
@@ -106,6 +115,7 @@ properties:
     archive_catalog:
       datatype: nvarchar(120)
       destination: [WFICommon.r_photom]
+    maxLength: 120
   area:
     title: Area Reference File Information
     description: |
@@ -114,6 +124,7 @@ properties:
     archive_catalog:
       datatype: nvarchar(120)
       destination: [WFICommon.r_area]
+    maxLength: 120
   saturation:
     title: Saturation Reference File Information
     description: |
@@ -123,6 +134,7 @@ properties:
     archive_catalog:
       datatype: nvarchar(120)
       destination: [WFICommon.r_saturation]
+    maxLength: 120
 required: [crds, dark, distortion, mask, flat, gain, readnoise, linearity,
   photom, area, saturation]
 flowStyle: block

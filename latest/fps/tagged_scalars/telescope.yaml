@@ -11,6 +11,7 @@ enum: [ROMAN]
 archive_catalog:
   datatype: nvarchar(5)
   destination: [WFICommon.telescopes]
+maxLength: 5
 
 flowStyle: block
 ...
