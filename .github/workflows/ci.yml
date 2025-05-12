@@ -6,15 +6,15 @@ on:
       - main
       - "*"
     tags:
-      - '*'
+      - "*"
   pull_request:
   schedule:
     # Weekly Monday 9AM build
-    - cron: '0 9 * * 1'
+    - cron: "0 9 * * 1"
 
 jobs:
   test:
-    uses: OpenAstronomy/github-actions-workflows/.github/workflows/tox.yml@8c0fde6f7e926df6ed7057255d29afa9c1ad5320  # v1.16.0
+    uses: OpenAstronomy/github-actions-workflows/.github/workflows/tox.yml@8c0fde6f7e926df6ed7057255d29afa9c1ad5320 # v1.16.0
     with:
       envs: |
         - linux: py311-xdist
@@ -25,13 +25,13 @@ jobs:
           coverage: codecov
 
   roman_datamodels:
-    uses: OpenAstronomy/github-actions-workflows/.github/workflows/tox.yml@8c0fde6f7e926df6ed7057255d29afa9c1ad5320  # v1.16.0
+    uses: OpenAstronomy/github-actions-workflows/.github/workflows/tox.yml@8c0fde6f7e926df6ed7057255d29afa9c1ad5320 # v1.16.0
     with:
       envs: |
         - linux: roman_datamodels-xdist
 
   romancal:
-    uses: OpenAstronomy/github-actions-workflows/.github/workflows/tox.yml@8c0fde6f7e926df6ed7057255d29afa9c1ad5320  # v1.16.0
+    uses: OpenAstronomy/github-actions-workflows/.github/workflows/tox.yml@8c0fde6f7e926df6ed7057255d29afa9c1ad5320 # v1.16.0
     with:
       envs: |
         - linux: romancal-xdist

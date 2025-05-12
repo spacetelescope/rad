@@ -32,14 +32,14 @@ properties:
           visit:
             title: Visit Information
             tag: asdf://stsci.edu/datamodels/roman/tags/visit-1.1.0
-        required: [optical_element, exposure, photometry, program, ref_file, visit]
+        required:
+          [optical_element, exposure, photometry, program, ref_file, visit]
   source_catalog:
     title: Source Catalog
     description: |
-       Photometry and astrometry computed in the Source Catalog Step.
+      Photometry and astrometry computed in the Source Catalog Step.
     tag: tag:astropy.org:astropy/table/table-1.*
 
 required: [meta, source_catalog]
 flowStyle: block
 propertyOrder: [meta, source_catalog]
-...

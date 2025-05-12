@@ -16,7 +16,12 @@ properties:
         origin: TBD
     archive_catalog:
       datatype: float
-      destination: [WFIMosaic.time_first_mjd, SourceCatalog.time_first_mjd, SegmentationMap.time_first_mjd]
+      destination:
+        [
+          WFIMosaic.time_first_mjd,
+          SourceCatalog.time_first_mjd,
+          SegmentationMap.time_first_mjd,
+        ]
   time_last_mjd:
     title: Latest component image end time in the mosaic in MJD
     type: number
@@ -26,7 +31,12 @@ properties:
         origin: TBD
     archive_catalog:
       datatype: float
-      destination: [WFIMosaic.time_last_mjd, SourceCatalog.time_last_mjd, SegmentationMap.time_last_mjd]
+      destination:
+        [
+          WFIMosaic.time_last_mjd,
+          SourceCatalog.time_last_mjd,
+          SegmentationMap.time_last_mjd,
+        ]
   time_mean_mjd:
     title: Mean of mid-times of component images in MJD
     type: number
@@ -36,7 +46,12 @@ properties:
         origin: TBD
     archive_catalog:
       datatype: float
-      destination: [WFIMosaic.time_mean_mjd, SourceCatalog.time_mean_mjd, SegmentationMap.time_mean_mjd]
+      destination:
+        [
+          WFIMosaic.time_mean_mjd,
+          SourceCatalog.time_mean_mjd,
+          SegmentationMap.time_mean_mjd,
+        ]
   max_exposure_time:
     title: Maximum component image exposure time in MJD
     type: number
@@ -46,7 +61,12 @@ properties:
         origin: TBD
     archive_catalog:
       datatype: float
-      destination: [WFIMosaic.max_exposure_time, SourceCatalog.max_exposure_time, SegmentationMap.max_exposure_time]
+      destination:
+        [
+          WFIMosaic.max_exposure_time,
+          SourceCatalog.max_exposure_time,
+          SegmentationMap.max_exposure_time,
+        ]
   mean_exposure_time:
     title: Mean of component image exposure times in MJD
     type: number
@@ -56,10 +76,15 @@ properties:
         origin: TBD
     archive_catalog:
       datatype: float
-      destination: [WFIMosaic.mean_exposure_time, SourceCatalog.mean_exposure_time, SegmentationMap.mean_exposure_time]
+      destination:
+        [
+          WFIMosaic.mean_exposure_time,
+          SourceCatalog.mean_exposure_time,
+          SegmentationMap.mean_exposure_time,
+        ]
   visit:
     title: Visit number within the observation, defined range of
-           values is 1..999; included in obs_id and visit_id as 'VVV'.
+      values is 1..999; included in obs_id and visit_id as 'VVV'.
     type: integer
     sdf:
       special_processing: VALUE_REQUIRED
@@ -70,7 +95,7 @@ properties:
       destination: [WFIMosaic.visit, SourceCatalog.visit, SegmentationMap.visit]
   segment:
     title: Segment Number within pass, defined range is 1..999;
-           included in obs_id and visit_id as 'SSS'.
+      included in obs_id and visit_id as 'SSS'.
     type: integer
     sdf:
       special_processing: VALUE_REQUIRED
@@ -78,10 +103,11 @@ properties:
         origin: TBD
     archive_catalog:
       datatype: smallint
-      destination: [WFIMosaic.segment, SourceCatalog.segment, SegmentationMap.segment]
+      destination:
+        [WFIMosaic.segment, SourceCatalog.segment, SegmentationMap.segment]
   pass:
     title: Pass number within execution plan, defined range is 1..999;
-           included in obs_id and visit_id as 'AA'.
+      included in obs_id and visit_id as 'AA'.
     type: integer
     sdf:
       special_processing: VALUE_REQUIRED
@@ -92,7 +118,7 @@ properties:
       destination: [WFIMosaic.pass, SourceCatalog.pass, SegmentationMap.pass]
   program:
     title: Program number, defined range is 1..18445;
-           included in obs_id and visit_id as 'PPPPP'.
+      included in obs_id and visit_id as 'PPPPP'.
     type: integer
     sdf:
       special_processing: VALUE_REQUIRED
@@ -100,14 +126,16 @@ properties:
         origin: TBD
     archive_catalog:
       datatype: int
-      destination: [WFIMosaic.program, SourceCatalog.program, SegmentationMap.program]
+      destination:
+        [WFIMosaic.program, SourceCatalog.program, SegmentationMap.program]
   survey:
     title: Observation Survey
     type: string
     maxLength: 15
     archive_catalog:
       datatype: nvarchar(15)
-      destination: [WFIMosaic.survey, SourceCatalog.survey, SegmentationMap.survey]
+      destination:
+        [WFIMosaic.survey, SourceCatalog.survey, SegmentationMap.survey]
   optical_element:
     allOf:
       - $ref: asdf://stsci.edu/datamodels/roman/schemas/wfi_optical_element-1.0.0
@@ -118,7 +146,12 @@ properties:
     maxLength: 20
     archive_catalog:
       datatype: nvarchar(20)
-      destination: [WFIMosaic.optical_element, SourceCatalog.optical_element, SegmentationMap.optical_element]
+      destination:
+        [
+          WFIMosaic.optical_element,
+          SourceCatalog.optical_element,
+          SegmentationMap.optical_element,
+        ]
   instrument:
     title: Instrument used to acquire the data
     type: string
@@ -130,7 +163,12 @@ properties:
     maxLength: 5
     archive_catalog:
       datatype: nvarchar(5)
-      destination: [WFIMosaic.instrument_name, SourceCatalog.instrument_name, SegmentationMap.instrument_name]
+      destination:
+        [
+          WFIMosaic.instrument_name,
+          SourceCatalog.instrument_name,
+          SegmentationMap.instrument_name,
+        ]
   location_name:
     title: Name of the skycell containing the mosaic
     type: string
@@ -141,7 +179,12 @@ properties:
     maxLength: 25
     archive_catalog:
       datatype: nvarchar(25)
-      destination: [WFIMosaic.location_name, SourceCatalog.location_name, SegmentationMap.location_name]
+      destination:
+        [
+          WFIMosaic.location_name,
+          SourceCatalog.location_name,
+          SegmentationMap.location_name,
+        ]
   product_type:
     title: Association product type
     type: string
@@ -152,12 +195,44 @@ properties:
     maxLength: 25
     archive_catalog:
       datatype: nvarchar(25)
-      destination: [WFIMosaic.product_type, SourceCatalog.product_type, SegmentationMap.product_type]
-propertyOrder: [ time_first_mjd, time_last_mjd, time_mean_mjd, max_exposure_time,
-                 mean_exposure_time, visit, segment, pass, program,
-                 survey, optical_element, instrument, location_name, product_type]
+      destination:
+        [
+          WFIMosaic.product_type,
+          SourceCatalog.product_type,
+          SegmentationMap.product_type,
+        ]
+propertyOrder:
+  [
+    time_first_mjd,
+    time_last_mjd,
+    time_mean_mjd,
+    max_exposure_time,
+    mean_exposure_time,
+    visit,
+    segment,
+    pass,
+    program,
+    survey,
+    optical_element,
+    instrument,
+    location_name,
+    product_type,
+  ]
 flowStyle: block
-required: [ time_first_mjd, time_last_mjd, time_mean_mjd, max_exposure_time,
-            mean_exposure_time, visit, segment, pass, program,
-            survey, optical_element, instrument, location_name, product_type]
-...
+required:
+  [
+    time_first_mjd,
+    time_last_mjd,
+    time_mean_mjd,
+    max_exposure_time,
+    mean_exposure_time,
+    visit,
+    segment,
+    pass,
+    program,
+    survey,
+    optical_element,
+    instrument,
+    location_name,
+    product_type,
+  ]

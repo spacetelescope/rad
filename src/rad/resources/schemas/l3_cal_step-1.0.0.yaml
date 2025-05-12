@@ -12,7 +12,7 @@ properties:
       Step in ROMANCAL which applies the scaling factors determined in the Photom calibrations step.
       The data are converted from DN/s to MJy/sr.
     type: string
-    enum: ['N/A', 'COMPLETE', 'SKIPPED', 'INCOMPLETE']
+    enum: ["N/A", "COMPLETE", "SKIPPED", "INCOMPLETE"]
     maxLength: 15
     archive_catalog:
       datatype: nvarchar(15)
@@ -22,7 +22,7 @@ properties:
     description: |
       Step in ROMANCAL which detects and flags outliers in a science image.
     type: string
-    enum: ['N/A', 'COMPLETE', 'SKIPPED', 'INCOMPLETE']
+    enum: ["N/A", "COMPLETE", "SKIPPED", "INCOMPLETE"]
     maxLength: 15
     archive_catalog:
       datatype: nvarchar(15)
@@ -33,7 +33,7 @@ properties:
       Step in ROMANCAL that computes sky background values of each input image
       and derives scalings to equalize overlapping regions.
     type: string
-    enum: ['N/A', 'COMPLETE', 'SKIPPED', 'INCOMPLETE']
+    enum: ["N/A", "COMPLETE", "SKIPPED", "INCOMPLETE"]
     maxLength: 15
     archive_catalog:
       datatype: nvarchar(15)
@@ -45,7 +45,7 @@ properties:
       WCS distortion information on a grid that allows the combination of
       multiple resampled images into a single, undistorted product.
     type: string
-    enum: ['N/A', 'COMPLETE', 'SKIPPED', 'INCOMPLETE']
+    enum: ["N/A", "COMPLETE", "SKIPPED", "INCOMPLETE"]
     maxLength: 15
     archive_catalog:
       datatype: nvarchar(15)
@@ -54,4 +54,3 @@ propertyOrder: [flux, outlier_detection, skymatch, resample]
 flowStyle: block
 required: [flux, outlier_detection, resample, skymatch]
 additionalProperties: true
-...

@@ -5,9 +5,7 @@
 [![Weekly CI](https://github.com/spacetelescope/rad/actions/workflows/ci_cron.yml/badge.svg)](https://github.com/spacetelescope/rad/actions/workflows/ci_cron.yml)
 [![Powered by STScI Badge](https://img.shields.io/badge/powered%20by-STScI-blue.svg?colorA=707170&colorB=3e8ddd&style=flat)](http://www.stsci.edu)
 
-
 This is a repository for the Roman Attribute Dictionary
-
 
 ## Installation
 
@@ -25,9 +23,9 @@ between different versions of the `rad` package (e.g. a released version versus 
 
 In all cases, the installation is generally a 3-step process:
 
-* Create a conda environment
-* Activate that environment
-* Install the desired version of the `rad` package into that environment
+- Create a conda environment
+- Activate that environment
+- Install the desired version of the `rad` package into that environment
 
 Details are given below on how to do this for different types of installations, including tagged releases, DMS builds
 used in operations, and development versions. Remember that all conda operations must be done from within a bash shell.

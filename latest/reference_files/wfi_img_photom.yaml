@@ -53,4 +53,3 @@ properties:
 required: [meta, phot_table]
 flowStyle: block
 propertyOrder: [meta, phot_table]
-...

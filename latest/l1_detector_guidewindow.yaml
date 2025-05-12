@@ -26,8 +26,19 @@ properties:
             type: array
             items:
               type: string
-              enum: ["NOT_CONFIGURED", "STANDBY", "WIM_ACQ_VW", "WIM_ACQ_NA", "WIM_TRK",
-                "WIM_TRK_S", "WSM_ACQ_HC", "WSM_ACQ_VC", "WSM_TRK", "WIM_DFC"]
+              enum:
+                [
+                  "NOT_CONFIGURED",
+                  "STANDBY",
+                  "WIM_ACQ_VW",
+                  "WIM_ACQ_NA",
+                  "WIM_TRK",
+                  "WIM_TRK_S",
+                  "WSM_ACQ_HC",
+                  "WSM_ACQ_VC",
+                  "WSM_TRK",
+                  "WIM_DFC",
+                ]
               maxLength: 20
             sdf:
               special_processing: VALUE_REQUIRED
@@ -246,9 +257,21 @@ properties:
                 description: |
                   Size in the y direction of the edge acquisition guide window.
                 type: integer
-            required: [ "min_acq_xstart", "min_acq_ystart", "max_acq_xstop", "max_acq_ystop",
-              "acq_xsize", "acq_ysize", "min_track_xstart", "min_track_ystart", "max_track_xstop",
-              "max_track_ystop", "track_xsize", "track_ysize" ]
+            required:
+              [
+                "min_acq_xstart",
+                "min_acq_ystart",
+                "max_acq_xstop",
+                "max_acq_ystop",
+                "acq_xsize",
+                "acq_ysize",
+                "min_track_xstart",
+                "min_track_ystart",
+                "max_track_xstop",
+                "max_track_ystop",
+                "track_xsize",
+                "track_ysize",
+              ]
           guide_star:
             type: object
             properties:
@@ -347,14 +370,40 @@ properties:
                 type: string
                 enum: ["Y", "N"]
                 maxLength: 1
-            required: [ "gsc_id", "predicted_ra", "predicted_dec", "gaia_parallax", "ra_pm",
-              "dec_pm", "predicted_fgs_mag", "predicted_fgs_bright_mag", "predicted_fgs_faint_mag",
-              "predicted_count_rate", "predicted_x", "predicted_y", "pseudo_star_flag"]
-        required: [ "fgs_modes_used", "acq_ma_table_id", "acq_gw_cycles_per_sci_read",
-          "acq_pedestal_resultant_exp_time", "acq_signal_resultant_exp_time", "track_ma_table_id",
-          "track_gw_cycles_per_sci_read", "track_pedestal_resultant_exp_time",
-          "track_signal_resultant_exp_time", "guide_star_acq_num", "guide_window_id",
-          "instrument", "avg_face_filename", "guide_window", "guide_star" ]
+            required:
+              [
+                "gsc_id",
+                "predicted_ra",
+                "predicted_dec",
+                "gaia_parallax",
+                "ra_pm",
+                "dec_pm",
+                "predicted_fgs_mag",
+                "predicted_fgs_bright_mag",
+                "predicted_fgs_faint_mag",
+                "predicted_count_rate",
+                "predicted_x",
+                "predicted_y",
+                "pseudo_star_flag",
+              ]
+        required:
+          [
+            "fgs_modes_used",
+            "acq_ma_table_id",
+            "acq_gw_cycles_per_sci_read",
+            "acq_pedestal_resultant_exp_time",
+            "acq_signal_resultant_exp_time",
+            "track_ma_table_id",
+            "track_gw_cycles_per_sci_read",
+            "track_pedestal_resultant_exp_time",
+            "track_signal_resultant_exp_time",
+            "guide_star_acq_num",
+            "guide_window_id",
+            "instrument",
+            "avg_face_filename",
+            "guide_window",
+            "guide_star",
+          ]
   amp33:
     title: Guide Window Amplifier 33 Reference Pixel Information
     description: |
@@ -556,10 +605,10 @@ properties:
       edge_acq_centroid_quality:
         title: Edge Acquisition Centroid Quality
         description: |
-            1D array containing strings that describe the quality of the edge acquisition
-            centroids (only used with WSM). For further descriptions of the, please consult
-            the Roman Documentation page. This quantity is set to None for Dark exposures
-            when no centroids are taken.
+          1D array containing strings that describe the quality of the edge acquisition
+          centroids (only used with WSM). For further descriptions of the, please consult
+          the Roman Documentation page. This quantity is set to None for Dark exposures
+          when no centroids are taken.
         anyOf:
           - type: "null"
           - tag: tag:stsci.edu:asdf/core/ndarray-1.*
@@ -1049,4 +1098,3 @@ properties:
 propertyOrder: [meta, acq_data, track_data, edge_acq_data, centroid, amp33]
 flowStyle: block
 required: [meta, acq_data, track_data, centroid, amp33]
-...

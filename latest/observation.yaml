@@ -173,7 +173,8 @@ properties:
         origin: TBD
     archive_catalog:
       datatype: tinyint
-      destination: [WFIExposure.visit_file_sequence, GuideWindow.visit_file_sequence]
+      destination:
+        [WFIExposure.visit_file_sequence, GuideWindow.visit_file_sequence]
   visit_file_activity:
     title: Visit File Activity
     description: |
@@ -188,7 +189,8 @@ properties:
     maxLength: 2
     archive_catalog:
       datatype: nvarchar(2)
-      destination: [WFIExposure.visit_file_activity, GuideWindow.visit_file_activity]
+      destination:
+        [WFIExposure.visit_file_activity, GuideWindow.visit_file_activity]
   exposure:
     title: Exposure Number
     description: |
@@ -203,12 +205,36 @@ properties:
         origin: TBD
     archive_catalog:
       datatype: int
-      destination: [WFIExposure.observation_exposure, GuideWindow.observation_exposure]
-propertyOrder: [observation_id, visit_id, program, execution_plan, pass, segment,
-  observation, visit, visit_file_group, visit_file_sequence,
-  visit_file_activity, exposure]
+      destination:
+        [WFIExposure.observation_exposure, GuideWindow.observation_exposure]
+propertyOrder:
+  [
+    observation_id,
+    visit_id,
+    program,
+    execution_plan,
+    pass,
+    segment,
+    observation,
+    visit,
+    visit_file_group,
+    visit_file_sequence,
+    visit_file_activity,
+    exposure,
+  ]
 flowStyle: block
-required: [observation_id, visit_id, program, execution_plan, pass, segment,
-  observation, visit, visit_file_group, visit_file_sequence,
-  visit_file_activity, exposure]
-...
+required:
+  [
+    observation_id,
+    visit_id,
+    program,
+    execution_plan,
+    pass,
+    segment,
+    observation,
+    visit,
+    visit_file_group,
+    visit_file_sequence,
+    visit_file_activity,
+    exposure,
+  ]

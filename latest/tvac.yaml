@@ -112,8 +112,16 @@ properties:
         tag: tag:astropy.org:astropy/units/unit-1.*
         enum: ["DN"]
 
-propertyOrder: [meta, data, amp33, amp33_reset_reads, amp33_reference_read,
-                guidewindow, reference_read, reset_reads]
+propertyOrder:
+  [
+    meta,
+    data,
+    amp33,
+    amp33_reset_reads,
+    amp33_reference_read,
+    guidewindow,
+    reference_read,
+    reset_reads,
+  ]
 flowStyle: block
 required: [meta, data, amp33, guidewindow]
-...

@@ -12,8 +12,14 @@ sdf:
 maxLength: 50
 archive_catalog:
   datatype: nvarchar(50)
-  destination: [WFIExposure.model_type, GuideWindow.model_type, WFICommon.model_type, WFIMosaic.model_type,
-                SourceCatalog.model_type, SegmentationMap.model_type]
+  destination:
+    [
+      WFIExposure.model_type,
+      GuideWindow.model_type,
+      WFICommon.model_type,
+      WFIMosaic.model_type,
+      SourceCatalog.model_type,
+      SegmentationMap.model_type,
+    ]
 
 flowStyle: block
-...
