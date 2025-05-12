@@ -1,1 +1,0 @@
-Bump ASDF to ``>=4.1.0`` to ensure that the ``schema_info`` issue is fixed.

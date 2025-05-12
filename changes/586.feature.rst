@@ -1,3 +1,0 @@
-Reorganize the schemas so that schema changes are easier to review and understand
-if schema versions need to be bumped along with finding the cascade of changes to
-other schemas.

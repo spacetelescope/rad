@@ -1,3 +1,31 @@
+0.25.0 (2025-05-12)
+===================
+
+New Features
+------------
+
+- Reorganize the schemas so that schema changes are easier to review and
+  understand
+  if schema versions need to be bumped along with finding the cascade of
+  changes to
+  other schemas. (`#586 <https://github.com/spacetelescope/rad/issues/586>`_)
+- Add ``NOT_CONFIGURED`` option to the ``wfi_optical_element`` schema. (`#599
+  <https://github.com/spacetelescope/rad/issues/599>`_)
+- Bump ASDF to ``>=4.1.0`` to ensure that the ``schema_info`` issue is fixed.
+  (`#603 <https://github.com/spacetelescope/rad/issues/603>`_)
+- Add new ``exposure_types`` to the ``exposure_type`` schema. (`#605
+  <https://github.com/spacetelescope/rad/issues/605>`_)
+
+
+Misc
+----
+
+- Adds basic keyword group to both L1 Guidewindow schemas
+  Updated database keyword names
+  Commented out archive_meta in deprecated guidewindow schema (`#594
+  <https://github.com/spacetelescope/rad/issues/594>`_)
+
+
 0.24.0 (2025-04-18)
 ===================
 
