@@ -11,13 +11,19 @@ import pytest
 import yaml
 from crds.config import is_crds_name
 
-from .conftest import MANIFESTS, METASCHEMA_URI, SCHEMA_URIS, TAG_DEFS
+from .conftest import CURRENT_RESOURCES, MANIFESTS, METASCHEMA_URI, SCHEMA_URIS, TAG_DEFS
 
 WFI_OPTICAL_ELEMENTS = tuple(
     asdf.schema.load_schema("asdf://stsci.edu/datamodels/roman/schemas/wfi_optical_element-1.0.0")["enum"]
 )
 EXPECTED_COMMON_REFERENCE = {"$ref": "asdf://stsci.edu/datamodels/roman/schemas/reference_files/ref_common-1.0.0"}
 METADATA_FORCING_REQUIRED = ("archive_catalog", "sdf")
+
+METADATA_FORCE_FAILS = (
+    "asdf://stsci.edu/datamodels/roman/schemas/tvac/groundtest-1.0.0",
+    "asdf://stsci.edu/datamodels/roman/schemas/tvac/ref_file-1.0.0",
+    "asdf://stsci.edu/datamodels/roman/schemas/fps/ref_file-1.0.0",
+)
 
 
 def test_required_properties(schema):
@@ -81,20 +87,25 @@ def test_required(schema):
     asdf.treeutil.walk(schema, callback)
 
 
-def test_metadata_force_required(schema):
+@pytest.mark.parametrize(
+    "schema_uri",
+    [
+        pytest.param(
+            (uri,),
+            marks=pytest.mark.xfail(
+                reason=f"{uri} is not being altered to ensure required lists for archive metadata, "
+                "due to it being in either tvac or fps."
+            ),
+        )
+        if uri in METADATA_FORCE_FAILS
+        else uri
+        for uri in SCHEMA_URIS
+    ],
+)
+def test_metadata_force_required(schema_uri):
     """
     Test that if certain properties have certain metadata entries, that they are in a required list.
     """
-    xfail_uris = (
-        "asdf://stsci.edu/datamodels/roman/schemas/tvac/groundtest-1.0.0",
-        "asdf://stsci.edu/datamodels/roman/schemas/tvac/ref_file-1.0.0",
-        "asdf://stsci.edu/datamodels/roman/schemas/fps/ref_file-1.0.0",
-    )
-    if schema["id"] in xfail_uris:
-        pytest.xfail(
-            reason=f"{schema['id']} is not being altered to ensure required lists for archive metadata, "
-            "due to it being in either tvac or fps."
-        )
 
     def callback(node):
         if isinstance(node, Mapping) and "properties" in node:
@@ -110,7 +121,15 @@ def test_metadata_force_required(schema):
                         assert "required" in node, f"metadata {metadata} in {prop_name} requires required list"
                         assert prop_name in node["required"]
 
-    asdf.treeutil.walk(schema, callback)
+    asdf.treeutil.walk(CURRENT_RESOURCES[schema_uri], callback)
+
+
+@pytest.mark.parametrize("schema_uri", METADATA_FORCE_FAILS)
+def test_metadata_force_fail_relevant(schema_uri):
+    """
+    Test that URIS that are marked as failing the metadata are still relevant (in use).
+    """
+    assert schema_uri in SCHEMA_URIS, f"{schema_uri} is not in the list of schemas to be tested."
 
 
 def test_flowstyle(schema):
