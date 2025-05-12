@@ -11,11 +11,8 @@ import pytest
 import yaml
 from crds.config import is_crds_name
 
-from .conftest import MANIFESTS, METASCHEMA_URI, SCHEMA_URIS, TAG_DEFS
+from .conftest import LATEST_URIS, MANIFESTS, METASCHEMA_URI, SCHEMA_URIS, TAG_DEFS
 
-WFI_OPTICAL_ELEMENTS = tuple(
-    asdf.schema.load_schema("asdf://stsci.edu/datamodels/roman/schemas/wfi_optical_element-1.0.0")["enum"]
-)
 EXPECTED_COMMON_REFERENCE = {"$ref": "asdf://stsci.edu/datamodels/roman/schemas/reference_files/ref_common-1.0.0"}
 METADATA_FORCING_REQUIRED = ("archive_catalog", "sdf")
 
@@ -79,6 +76,21 @@ def test_required(schema):
                 raise ValueError(message)
 
     asdf.treeutil.walk(schema, callback)
+
+
+def test_string_max_length(schema_uri, schema):
+    """
+    Checks that if a `maxLength` is specified, that it is specified along with a `type` of `string`.
+    """
+
+    def callback(node):
+        if isinstance(node, Mapping) and "maxLength" in node:
+            assert node.get("type") == "string", "maxLength is only valid for strings"
+
+    # Only enforce on the latest schemas
+    # This is to avoid failures in older fixed schemas
+    if schema_uri in LATEST_URIS:
+        asdf.treeutil.walk(schema, callback)
 
 
 def test_metadata_force_required(schema):
@@ -278,10 +290,11 @@ def test_ref_file_meta_common(ref_file_schema):
         return
 
     for item in all_of:
-        if item == EXPECTED_COMMON_REFERENCE:
-            break
-    else:
-        raise ValueError("ref_common not found in meta")
+        if isinstance(item, dict) and "$ref" in item:
+            assert item["$ref"].startswith("asdf://stsci.edu/datamodels/roman/schemas/reference_files/ref_common-")
+            return
+
+    raise ValueError("ref_common not found in meta")
 
 
 # don't test tvac or fps schemas as they are static
