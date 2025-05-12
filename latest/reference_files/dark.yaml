@@ -1,7 +1,7 @@
 %YAML 1.1
 ---
 $schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.0.0
-id: asdf://stsci.edu/datamodels/roman/schemas/reference_files/dark-1.1.0
+id: asdf://stsci.edu/datamodels/roman/schemas/reference_files/dark-1.2.0
 
 title: Dark Reference File Schema
 
@@ -11,7 +11,7 @@ type: object
 properties:
   meta:
     allOf:
-      - $ref: asdf://stsci.edu/datamodels/roman/schemas/reference_files/ref_common-1.0.0
+      - $ref: asdf://stsci.edu/datamodels/roman/schemas/reference_files/ref_common-1.1.0
       - type: object
         properties:
           reftype:
@@ -35,8 +35,8 @@ properties:
                 type: integer
             required: [ma_table_name, ma_table_number]
         required: [exposure]
-      - $ref: asdf://stsci.edu/datamodels/roman/schemas/reference_files/ref_exposure_type-1.1.0
-      - $ref: asdf://stsci.edu/datamodels/roman/schemas/reference_files/ref_optical_element-1.1.0
+      - $ref: asdf://stsci.edu/datamodels/roman/schemas/reference_files/ref_exposure_type-1.2.0
+      - $ref: asdf://stsci.edu/datamodels/roman/schemas/reference_files/ref_optical_element-1.2.0
   data:
     title: Dark Current Array
     description: |
