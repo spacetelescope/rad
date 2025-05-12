@@ -93,6 +93,60 @@ def test_string_max_length(schema_uri, schema):
         asdf.treeutil.walk(schema, callback)
 
 
+def test_max_length_required(schema_uri, schema):
+    """
+    Check that if `archive_catalog.datatype = nvarchar(N)`, that maxLength is also specified to be N.
+    """
+
+    class FoundBailOut(AssertionError):
+        pass
+
+    def callback(node):
+        if (
+            isinstance(node, Mapping)
+            and "archive_catalog" in node
+            and node["archive_catalog"]["datatype"].startswith("nvarchar(")
+        ):
+            m = re.match(r"^nvarchar\(([0-9]+)\)$", node["archive_catalog"]["datatype"])
+            if m:
+                length = int(m.group(1))
+
+                def check_max_length(node):
+                    global found
+                    if isinstance(node, Mapping) and "type" in node:
+                        if node["type"] == "string":
+                            assert "maxLength" in node, (
+                                f"archive_catalog nvarchar must have maxLength in schema {schema_uri}.\nschema:\n{node}"
+                            )
+                            assert node["maxLength"] == length, (
+                                f"archive_catalog nvarchar does not match maxLength in schema {schema_uri}.\nschema:\n{node}"
+                            )
+
+                        raise FoundBailOut("Found maxLength")
+
+                if "type" in node:
+                    try:
+                        asdf.treeutil.walk(node, check_max_length)
+                    except FoundBailOut:
+                        return
+
+                if "allOf" in node or "anyOf" in node:
+                    for sub_schema in node.get("allOf", []) + node.get("anyOf", []):
+                        if isinstance(sub_schema, Mapping):
+                            sub_node = asdf.schema.load_schema(sub_schema["$ref"]) if "$ref" in sub_schema else sub_schema
+                            try:
+                                asdf.treeutil.walk(sub_node, check_max_length)
+                            except FoundBailOut:
+                                return
+
+                raise AssertionError(f"archive_catalog.datatype is nvarchar but no maxLength found.\nschema:\n{node}")
+
+    # Only enforce on the latest schemas
+    # This is to avoid failures in older fixed schemas
+    if schema_uri in LATEST_URIS:
+        asdf.treeutil.walk(schema, callback)
+
+
 def test_metadata_force_required(schema):
     """
     Test that if certain properties have certain metadata entries, that they are in a required list.
