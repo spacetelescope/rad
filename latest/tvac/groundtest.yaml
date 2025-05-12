@@ -1,7 +1,7 @@
 %YAML 1.1
 ---
 $schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.0.0
-id: asdf://stsci.edu/datamodels/roman/schemas/tvac/groundtest-1.0.0
+id: asdf://stsci.edu/datamodels/roman/schemas/tvac/groundtest-1.1.0
 
 title: TVAC Ground Test Information
 type: object
@@ -470,5 +470,13 @@ required: [test_name, test_phase, test_environment, test_script,
            product_date, product_version, conversion_date, conversion_version,
            filename_pnt5, filepath_level_pnt5, filename_l1a, detector_id,
            detector_temp, frames_temp, ota_temp, rcs_on, readout_col_num,
+           activity_number, srcs_pd_voltage, srcs_led_flux, wfi_mce_srcs_bank1_led_i,
+           wfi_mce_srcs_bank1_led_range, wfi_mce_srcs_bank2_led_i, wfi_mce_srcs_bank2_led_range,
+           srcs_led_current, wfi_opt_targettype, analysis_tag, gsorc_pose_mode, gsorc_pose_target,
+           gsorc_sds_active_atten, gsorc_sds_lltfir_wave, gsorc_sds_sorc_on, gsorc_sds_sorc_wlen,
+           gsorc_sds_active_source, gsorc_sds_dq_pulse, gsorc_sds_daq_pw, gsorc_heater1_setpt,
+           wfi_otp_wfi_ewa, sca_temp, mpa_temp, ewa_temp, ewta_outer_heater_temp, ewta_inner_heater_temp,
+           coba_temp_near_ewta, scea_temp, wfi_sce_1_vbiasgate_v, wfi_sce_1_vbiaspwr_i,
+           wfi_sce_1_vbiaspwr_v, wfi_sce_1_vreset_v, wfi_sce_1_vreset_i, wfi_mcu_a_offs_csense_fpssen,
            detector_pixel_size, sensor_error]
 ...
