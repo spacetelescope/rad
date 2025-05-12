@@ -1,7 +1,7 @@
 %YAML 1.1
 ---
 $schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.0.0
-id: asdf://stsci.edu/datamodels/roman/schemas/l1_face_guidewindow-1.0.0
+id: asdf://stsci.edu/datamodels/roman/schemas/l1_face_guidewindow-1.1.0
 
 title: Level 1 FACE Guide Star Window Information schema
 
@@ -18,7 +18,7 @@ properties:
         properties:
           optical_element:
             allOf:
-              - $ref: asdf://stsci.edu/datamodels/roman/schemas/wfi_optical_element-1.0.0
+              - $ref: asdf://stsci.edu/datamodels/roman/schemas/wfi_optical_element-1.1.0
             title: Wide Field Instrument (WFI) Optical Element
             description: |
               Optical element used during the exposure.
