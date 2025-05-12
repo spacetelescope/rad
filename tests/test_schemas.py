@@ -8,16 +8,50 @@ from collections.abc import Mapping
 import asdf
 import asdf.treeutil
 import pytest
-import yaml
 from crds.config import is_crds_name
 
-from .conftest import MANIFESTS, METASCHEMA_URI, SCHEMA_URIS, TAG_DEFS
+from .conftest import CURRENT_RESOURCES, MANIFESTS, METASCHEMA_URI, SCHEMA_URIS, TAG_DEFS
 
 WFI_OPTICAL_ELEMENTS = tuple(
     asdf.schema.load_schema("asdf://stsci.edu/datamodels/roman/schemas/wfi_optical_element-1.0.0")["enum"]
 )
 EXPECTED_COMMON_REFERENCE = {"$ref": "asdf://stsci.edu/datamodels/roman/schemas/reference_files/ref_common-1.0.0"}
 METADATA_FORCING_REQUIRED = ("archive_catalog", "sdf")
+
+METADATA_FORCE_XFAILS = (
+    "asdf://stsci.edu/datamodels/roman/schemas/fps/ref_file-1.0.0",
+    "asdf://stsci.edu/datamodels/roman/schemas/tvac/groundtest-1.0.0",
+    "asdf://stsci.edu/datamodels/roman/schemas/tvac/ref_file-1.0.0",
+)
+
+VARCHAR_XFAILS = (
+    "asdf://stsci.edu/datamodels/roman/schemas/fps/cal_step-1.0.0",
+    "asdf://stsci.edu/datamodels/roman/schemas/fps/exposure-1.0.0",
+    "asdf://stsci.edu/datamodels/roman/schemas/fps/groundtest-1.0.0",
+    "asdf://stsci.edu/datamodels/roman/schemas/fps/guidestar-1.0.0",
+    "asdf://stsci.edu/datamodels/roman/schemas/fps/ref_file-1.0.0",
+    "asdf://stsci.edu/datamodels/roman/schemas/fps/tagged_scalars/calibration_software_version-1.0.0",
+    "asdf://stsci.edu/datamodels/roman/schemas/fps/tagged_scalars/filename-1.0.0",
+    "asdf://stsci.edu/datamodels/roman/schemas/fps/tagged_scalars/model_type-1.0.0",
+    "asdf://stsci.edu/datamodels/roman/schemas/fps/tagged_scalars/origin-1.0.0",
+    "asdf://stsci.edu/datamodels/roman/schemas/fps/tagged_scalars/prd_software_version-1.0.0",
+    "asdf://stsci.edu/datamodels/roman/schemas/fps/tagged_scalars/sdf_software_version-1.0.0",
+    "asdf://stsci.edu/datamodels/roman/schemas/fps/tagged_scalars/telescope-1.0.0",
+    "asdf://stsci.edu/datamodels/roman/schemas/fps/wfi_mode-1.0.0",
+    "asdf://stsci.edu/datamodels/roman/schemas/tvac/cal_step-1.0.0",
+    "asdf://stsci.edu/datamodels/roman/schemas/tvac/exposure-1.0.0",
+    "asdf://stsci.edu/datamodels/roman/schemas/tvac/groundtest-1.0.0",
+    "asdf://stsci.edu/datamodels/roman/schemas/tvac/guidestar-1.0.0",
+    "asdf://stsci.edu/datamodels/roman/schemas/tvac/ref_file-1.0.0",
+    "asdf://stsci.edu/datamodels/roman/schemas/tvac/tagged_scalars/calibration_software_version-1.0.0",
+    "asdf://stsci.edu/datamodels/roman/schemas/tvac/tagged_scalars/filename-1.0.0",
+    "asdf://stsci.edu/datamodels/roman/schemas/tvac/tagged_scalars/model_type-1.0.0",
+    "asdf://stsci.edu/datamodels/roman/schemas/tvac/tagged_scalars/origin-1.0.0",
+    "asdf://stsci.edu/datamodels/roman/schemas/tvac/tagged_scalars/prd_software_version-1.0.0",
+    "asdf://stsci.edu/datamodels/roman/schemas/tvac/tagged_scalars/sdf_software_version-1.0.0",
+    "asdf://stsci.edu/datamodels/roman/schemas/tvac/tagged_scalars/telescope-1.0.0",
+    "asdf://stsci.edu/datamodels/roman/schemas/tvac/wfi_mode-1.0.0",
+)
 
 
 def test_required_properties(schema):
@@ -80,20 +114,25 @@ def test_required(schema):
     asdf.treeutil.walk(schema, callback)
 
 
-def test_metadata_force_required(schema):
+@pytest.mark.parametrize(
+    "uri",
+    [
+        pytest.param(
+            uri,
+            marks=pytest.mark.xfail(
+                reason=f"{uri} is not being altered to ensure required lists for archive metadata, "
+                "due to it being in either tvac or fps."
+            ),
+        )
+        if uri in METADATA_FORCE_XFAILS
+        else uri
+        for uri in SCHEMA_URIS
+    ],
+)
+def test_metadata_force_required(uri):
     """
     Test that if certain properties have certain metadata entries, that they are in a required list.
     """
-    xfail_uris = (
-        "asdf://stsci.edu/datamodels/roman/schemas/tvac/groundtest-1.0.0",
-        "asdf://stsci.edu/datamodels/roman/schemas/tvac/ref_file-1.0.0",
-        "asdf://stsci.edu/datamodels/roman/schemas/fps/ref_file-1.0.0",
-    )
-    if schema["id"] in xfail_uris:
-        pytest.xfail(
-            reason=f"{schema['id']} is not being altered to ensure required lists for archive metadata, "
-            "due to it being in either tvac or fps."
-        )
 
     def callback(node):
         if isinstance(node, Mapping) and "properties" in node:
@@ -109,7 +148,16 @@ def test_metadata_force_required(schema):
                         assert "required" in node, f"metadata {metadata} in {prop_name} requires required list"
                         assert prop_name in node["required"]
 
-    asdf.treeutil.walk(schema, callback)
+    asdf.treeutil.walk(CURRENT_RESOURCES[uri], callback)
+
+
+@pytest.mark.parametrize("uri", METADATA_FORCE_XFAILS)
+def test_metadata_force_xfail_relevant(uri):
+    """
+    Test that URIS that are marked as failing the metadata are still relevant (in use).
+    -> Smokes out when METADATA_FORCE_XFAILS is not relevant anymore.
+    """
+    assert uri in SCHEMA_URIS, f"{uri} is not in the list of schemas to be tested."
 
 
 def test_flowstyle(schema):
@@ -260,7 +308,8 @@ def test_reftype_tag(ref_file_uris):
     tag_uri = ref_file_uris[0]
     schema_uri = ref_file_uris[1]
 
-    schema = yaml.safe_load(asdf.get_config().resource_manager[schema_uri])
+    schema = CURRENT_RESOURCES[schema_uri]
+
     reftype = _get_reftype(schema).lower()
 
     assert asdf.util.uri_match(f"asdf://stsci.edu/datamodels/roman/tags/reference_files/*{reftype}-*", tag_uri)
@@ -283,14 +332,18 @@ def test_ref_file_meta_common(ref_file_schema):
         raise ValueError("ref_common not found in meta")
 
 
-# don't test tvac or fps schemas as they are static
 @pytest.mark.parametrize(
     "uri",
     [
-        uri
+        pytest.param(
+            uri,
+            marks=pytest.mark.xfail(
+                reason=f"{uri} is not being altered to ensure varchar consistency, due to it being in either tvac or fps."
+            ),
+        )
+        if uri in VARCHAR_XFAILS
+        else uri
         for uri in SCHEMA_URIS
-        if not uri.startswith("asdf://stsci.edu/datamodels/roman/schemas/fps/")
-        and not uri.startswith("asdf://stsci.edu/datamodels/roman/schemas/tvac/")
     ],
 )
 def test_varchar_length(uri):
@@ -298,7 +351,7 @@ def test_varchar_length(uri):
     Test that varchar(N) in archive_metadata for string objects
     has a matching maxLength: N validation keyword
     """
-    schema = asdf.schema.load_schema(uri)
+    schema = CURRENT_RESOURCES[uri]
 
     def callback(node, nvarchars=None):
         nvarchars = nvarchars or {}
@@ -316,6 +369,15 @@ def test_varchar_length(uri):
         assert node["maxLength"] == v, f"archive_catalog nvarchar does not match maxLength in schema {uri}"
 
     asdf.treeutil.walk(schema, callback)
+
+
+@pytest.mark.parametrize("uri", METADATA_FORCE_XFAILS)
+def test_varchar_xfail_relevant(uri):
+    """
+    Test that URIS that are marked as failing for varchar length are still relevant (in use).
+    -> Smokes out when VARCHAR_XFAILS is not relevant anymore.
+    """
+    assert uri in SCHEMA_URIS, f"{uri} is not in the list of schemas to be tested."
 
 
 def test_ref_loneliness(schema_uri):

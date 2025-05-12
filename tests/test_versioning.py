@@ -34,6 +34,7 @@ for x-failing given comparisons, so we can ignore potential false positives.
 from collections.abc import Mapping
 from contextlib import suppress
 from io import BytesIO
+from itertools import product
 from pathlib import Path
 from re import findall
 
@@ -54,7 +55,12 @@ RAD_URLS = (
 )
 
 # The oldest version of RAD that is under schema versioning
-BASE_RELEASE = Version("0.23.1")
+BASE_RELEASE = Version("0.25.0")
+
+# Any expected versioning failures should be added here
+EXPECTED_XFAILS = (
+    # ("<version>", "<uri>"),
+)
 
 # The keywords in the schemas that we claim don't matter for schema versioning
 IGNORED_KEYWORDS = (
@@ -284,14 +290,6 @@ def get_frozen_schemas_for_all_versions():
 FROZEN_VERSIONS, FROZEN_URIS = get_frozen_schemas_for_all_versions()
 
 
-@pytest.fixture(scope="module", params=VERSIONS)
-def rad_version(request):
-    """
-    Fixture for the RAD version to test against
-    """
-    return request.param
-
-
 @pytest.fixture(scope="module", params=FROZEN_URIS)
 def frozen_uri(request):
     """
@@ -305,14 +303,6 @@ class TestVersioning:
     Test to verify that schema versioning has not been violated
     """
 
-    # There is one small case between 0.23.1 and 0.24.0 where the manifest changed
-    # but the version number did not. This is not a vital issue.
-    EXPECTED_FAILS = (
-        ("0.23.1", "asdf://stsci.edu/datamodels/roman/manifests/datamodels-1.0"),
-        ("0.24.0", "asdf://stsci.edu/datamodels/roman/schemas/l1_detector_guidewindow-1.0.0"),
-        ("0.24.0", "asdf://stsci.edu/datamodels/roman/schemas/l1_face_guidewindow-1.0.0"),
-    )
-
     def test_no_lost_uris(self, frozen_uri):
         """
         Test that all previously frozen schema uris are present in the current version
@@ -324,16 +314,25 @@ class TestVersioning:
         """
         assert frozen_uri in CURRENT_RESOURCES, f"Schema {frozen_uri} is not present in the current version"
 
+    @pytest.mark.parametrize(
+        ("rad_version", "frozen_uri"),
+        [
+            pytest.param(
+                *item,
+                marks=pytest.mark.xfail(
+                    reason=f"Schema {item[1]} is expected to have changed between {item[0]} and the current changes"
+                ),
+            )
+            if item in EXPECTED_XFAILS
+            else item
+            for item in product(VERSIONS, FROZEN_URIS)
+        ],
+    )
     def test_resource_changes(self, rad_version, frozen_uri):
         """
         Test that frozen schemas have not been changed between version including the
         current state of the repository
         """
-        # Filter out the expected fails
-        # Both both orders of versions need to be checked.
-        if (rad_version, frozen_uri) in self.EXPECTED_FAILS:
-            pytest.xfail(f"Schema {frozen_uri} is expected to have changed between version {rad_version} and the current changes")
-
         # Get the resources for both the frozen and current versions
         frozen_resources = FROZEN_VERSIONS[rad_version]
 
@@ -350,3 +349,12 @@ class TestVersioning:
             assert frozen_resource == current_resource, (
                 f"Resource {frozen_uri} has changed between versions {rad_version} and the current changes"
             )
+
+    @pytest.mark.parametrize(("rad_version", "frozen_uri"), EXPECTED_XFAILS)
+    def test_expected_xfails_relevance(self, rad_version, frozen_uri):
+        """
+        Test that the expected fails are relevant to the current version of RAD
+        -> Smokes out when the EXPECTED_XFAILS are no longer relevant
+        """
+        assert rad_version in VERSIONS, f"Version {rad_version} is not a valid version of RAD"
+        assert frozen_uri in FROZEN_URIS, f"URI {frozen_uri} is not a valid frozen URI"
