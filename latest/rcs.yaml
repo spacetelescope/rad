@@ -28,8 +28,8 @@ properties:
     anyOf:
       - type: string
         enum: ["A", "B", None]
+        maxLength: 5
       - type: "null"
-    maxLength: 5
     archive_catalog:
       datatype: nvarchar(5)
       destination: [WFIExposure.electronics]
@@ -43,8 +43,8 @@ properties:
     anyOf:
       - type: string
         enum: ["1", "2", None]
+        maxLength: 5
       - type: "null"
-    maxLength: 5
     archive_catalog:
       datatype: nvarchar(5)
       destination: [WFIExposure.bank]
@@ -58,8 +58,8 @@ properties:
     anyOf:
       - type: string
         enum: ["1", "2", "3", "4", "5", "6", None]
+        maxLength: 5
       - type: "null"
-    maxLength: 5
     archive_catalog:
       datatype: nvarchar(5)
       destination: [WFIExposure.led]

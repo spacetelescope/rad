@@ -32,7 +32,6 @@ properties:
       special_processing: VALUE_REQUIRED
       source:
         origin: TBD
-    maxLength: 18
     archive_catalog:
       datatype: nvarchar(18)
       destination: [WFIExposure.guide_mode, GuideWindow.guide_mode]

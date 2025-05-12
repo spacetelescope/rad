@@ -23,4 +23,5 @@ enum:
   - PRISM
   - DARK
   - NOT_CONFIGURED
+maxLength: 20
 ...

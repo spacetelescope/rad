@@ -16,7 +16,6 @@ properties:
       special_processing: VALUE_REQUIRED
       source:
         origin: PSS:dms_visit.template
-    maxLength: 25
     archive_catalog:
       datatype: nvarchar(25)
       destination: [WFIExposure.exposure_type, GuideWindow.exposure_type, WFICommon.exposure_type]
