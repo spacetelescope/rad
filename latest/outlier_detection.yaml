@@ -14,4 +14,3 @@ properties:
 propertyOrder: [good_bits]
 flowStyle: block
 required: [good_bits]
-...

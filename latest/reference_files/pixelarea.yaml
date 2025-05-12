@@ -30,8 +30,7 @@ properties:
                   - type: "null"
               pixelarea_arcsecsq:
                 title: Pixel Area (arcsec^2)
-                description:
-                  The nominal pixel area in arcec^2.
+                description: The nominal pixel area in arcec^2.
                 anyOf:
                   - type: number
                     unit: arcsec**2
@@ -50,4 +49,3 @@ properties:
 required: [meta, data]
 flowStyle: block
 propertyOrder: [meta, data]
-...

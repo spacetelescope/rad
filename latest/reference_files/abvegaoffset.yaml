@@ -26,8 +26,8 @@ properties:
           abvega_offset:
             title: AB-Vega Magntiude Offset
             description: Magnitude difference between the AB and Vega magnitude
-                systems. Found by calculating the AB magnitude of Vega within
-                the optical element bandpass.
+              systems. Found by calculating the AB magnitude of Vega within
+              the optical element bandpass.
             anyOf:
               - type: number
               - type: "null"
@@ -35,4 +35,3 @@ properties:
 required: [meta, data]
 flowStyle: block
 propertyOrder: [meta, data]
-...

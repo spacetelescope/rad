@@ -77,4 +77,3 @@ properties:
 propertyOrder: [active, electronics, bank, led, counts]
 flowStyle: block
 required: [active, electronics, bank, led, counts]
-...

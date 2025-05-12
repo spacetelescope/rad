@@ -37,8 +37,19 @@ properties:
             type: array
             items:
               type: string
-              enum: ["NOT_CONFIGURED", "STANDBY", "WIM_ACQ_VW", "WIM_ACQ_NA", "WIM_TRK",
-                "WIM_TRK_S", "WSM_ACQ_HC", "WSM_ACQ_VC", "WSM_TRK", "WIM_DFC"]
+              enum:
+                [
+                  "NOT_CONFIGURED",
+                  "STANDBY",
+                  "WIM_ACQ_VW",
+                  "WIM_ACQ_NA",
+                  "WIM_TRK",
+                  "WIM_TRK_S",
+                  "WSM_ACQ_HC",
+                  "WSM_ACQ_VC",
+                  "WSM_TRK",
+                  "WIM_DFC",
+                ]
               maxLength: 20
             sdf:
               special_processing: VALUE_REQUIRED
@@ -138,10 +149,18 @@ properties:
             type: string
             enum: ["blue", "red"]
             maxLength: 5
-        required: [ fgs_modes_used, ma_table_ids_used, gw_cycles_per_sci_read_used, optical_element,
-          guide_star_acq_num, guide_window_id, detector_gw_files, expected_gw_acquisitions,
-          expected_gw_tracking]
-
+        required:
+          [
+            fgs_modes_used,
+            ma_table_ids_used,
+            gw_cycles_per_sci_read_used,
+            optical_element,
+            guide_star_acq_num,
+            guide_window_id,
+            detector_gw_files,
+            expected_gw_acquisitions,
+            expected_gw_tracking,
+          ]
 
   face_data:
     type: object
@@ -284,13 +303,38 @@ properties:
         type: array
         items:
           type: string
-          enum: ["NOT_CONFIGURED", "STANDBY", "WIM_ACQ_VW", "WIM_ACQ_NA", "WIM_TRK",
-            "WIM_TRK_S", "WSM_ACQ_HC", "WSM_ACQ_VC", "WSM_TRK", "WIM_DFC"]
+          enum:
+            [
+              "NOT_CONFIGURED",
+              "STANDBY",
+              "WIM_ACQ_VW",
+              "WIM_ACQ_NA",
+              "WIM_TRK",
+              "WIM_TRK_S",
+              "WSM_ACQ_HC",
+              "WSM_ACQ_VC",
+              "WSM_TRK",
+              "WIM_DFC",
+            ]
           maxLength: 20
-    required: [delta, delta2, epsilon, epsilon2, zeta, delta_var, epsilon_var, zeta_var,
-      horizontal_variance, vertical_variance, num_stars_used, num_centroid_cycles,
-      attitude_estimate_quality, centroid_times, fgs_op_phase]
+    required:
+      [
+        delta,
+        delta2,
+        epsilon,
+        epsilon2,
+        zeta,
+        delta_var,
+        epsilon_var,
+        zeta_var,
+        horizontal_variance,
+        vertical_variance,
+        num_stars_used,
+        num_centroid_cycles,
+        attitude_estimate_quality,
+        centroid_times,
+        fgs_op_phase,
+      ]
 propertyOrder: [meta, face_data]
 flowStyle: block
 required: [meta, face_data]
-...

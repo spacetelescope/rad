@@ -25,6 +25,5 @@ properties:
           file matching in CRDS. Modes are separated by "|".
         type: string
         pattern: "^((WFI_IMAGE|WFI_GRISM|WFI_PRISM|WFI_DARK|WFI_FLAT|WFI_WFSC)\\s*\\|\\s*)+$"
-    required: [type,p_exptype]
+    required: [type, p_exptype]
 required: [exposure]
-...

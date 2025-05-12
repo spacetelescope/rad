@@ -257,7 +257,11 @@ properties:
         origin: TBD
     archive_catalog:
       datatype: float
-      destination: [WFIExposure.fgs_magnitude_uncertainty, GuideWindow.fgs_magnitude_uncertainty]
+      destination:
+        [
+          WFIExposure.fgs_magnitude_uncertainty,
+          GuideWindow.fgs_magnitude_uncertainty,
+        ]
   centroid_x:
     title: Guide Star Centroid X Position (pixels)
     description: |
@@ -296,7 +300,8 @@ properties:
         origin: TBD
     archive_catalog:
       datatype: float
-      destination: [WFIExposure.centroid_x_uncertainty, GuideWindow.centroid_x_uncertainty]
+      destination:
+        [WFIExposure.centroid_x_uncertainty, GuideWindow.centroid_x_uncertainty]
   centroid_y_uncertainty:
     title: Guide Star Centroid Y Position Uncertainty (pixels)
     description: |
@@ -351,7 +356,8 @@ properties:
         origin: TBD
     archive_catalog:
       datatype: float
-      destination: [WFIExposure.proper_motion_dec, GuideWindow.proper_motion_dec]
+      destination:
+        [WFIExposure.proper_motion_dec, GuideWindow.proper_motion_dec]
   parallax:
     title: Guide Star Parallax (mas)
     description: |
@@ -382,17 +388,64 @@ properties:
     archive_catalog:
       datatype: float
       destination: [WFIExposure.centroid_rms, GuideWindow.centroid_rms]
-propertyOrder: [guide_window_id, guide_mode, data_start, data_end,
-  window_xstart, window_ystart, window_xstop, window_ystop, window_xsize,
-  window_ysize, guide_star_id, gsc_version, ra, dec, ra_uncertainty,
-  dec_uncertainty, fgs_magnitude, fgs_magnitude_uncertainty, centroid_x,
-  centroid_y, centroid_x_uncertainty, centroid_y_uncertainty, epoch,
-  proper_motion_ra, proper_motion_dec, parallax, centroid_rms]
-required: [guide_window_id, guide_mode, data_start, data_end,
-  window_xstart, window_ystart, window_xstop, window_ystop, window_xsize,
-  window_ysize, guide_star_id, gsc_version, ra, dec, ra_uncertainty,
-  dec_uncertainty, fgs_magnitude, fgs_magnitude_uncertainty, centroid_x,
-  centroid_y, centroid_x_uncertainty, centroid_y_uncertainty, epoch,
-  proper_motion_ra, proper_motion_dec, parallax, centroid_rms]
+propertyOrder:
+  [
+    guide_window_id,
+    guide_mode,
+    data_start,
+    data_end,
+    window_xstart,
+    window_ystart,
+    window_xstop,
+    window_ystop,
+    window_xsize,
+    window_ysize,
+    guide_star_id,
+    gsc_version,
+    ra,
+    dec,
+    ra_uncertainty,
+    dec_uncertainty,
+    fgs_magnitude,
+    fgs_magnitude_uncertainty,
+    centroid_x,
+    centroid_y,
+    centroid_x_uncertainty,
+    centroid_y_uncertainty,
+    epoch,
+    proper_motion_ra,
+    proper_motion_dec,
+    parallax,
+    centroid_rms,
+  ]
+required:
+  [
+    guide_window_id,
+    guide_mode,
+    data_start,
+    data_end,
+    window_xstart,
+    window_ystart,
+    window_xstop,
+    window_ystop,
+    window_xsize,
+    window_ysize,
+    guide_star_id,
+    gsc_version,
+    ra,
+    dec,
+    ra_uncertainty,
+    dec_uncertainty,
+    fgs_magnitude,
+    fgs_magnitude_uncertainty,
+    centroid_x,
+    centroid_y,
+    centroid_x_uncertainty,
+    centroid_y_uncertainty,
+    epoch,
+    proper_motion_ra,
+    proper_motion_dec,
+    parallax,
+    centroid_rms,
+  ]
 flowStyle: block
-...

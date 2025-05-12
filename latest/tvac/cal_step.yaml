@@ -12,7 +12,7 @@ properties:
       Step in ROMANCAL that assigns a World Coordinate System (WCS) object to a
       science image.
     type: string
-    enum: ['N/A', 'COMPLETE', 'SKIPPED', 'INCOMPLETE']
+    enum: ["N/A", "COMPLETE", "SKIPPED", "INCOMPLETE"]
     archive_catalog:
       datatype: nvarchar(15)
       destination: [WFICommon.s_assign_wcs]
@@ -24,7 +24,7 @@ properties:
       illumination, given its specific response. This is achieved using a
       flatfield reference image.
     type: string
-    enum: ['N/A', 'COMPLETE', 'SKIPPED', 'INCOMPLETE']
+    enum: ["N/A", "COMPLETE", "SKIPPED", "INCOMPLETE"]
     archive_catalog:
       datatype: nvarchar(15)
       destination: [WFICommon.s_flat_field]
@@ -34,7 +34,7 @@ properties:
       Step in ROMANCAL performing the dark current correction by subtracting
       dark current reference data from science data.
     type: string
-    enum: ['N/A', 'COMPLETE', 'SKIPPED', 'INCOMPLETE']
+    enum: ["N/A", "COMPLETE", "SKIPPED", "INCOMPLETE"]
     archive_catalog:
       datatype: nvarchar(15)
       destination: [WFICommon.s_dark]
@@ -44,7 +44,7 @@ properties:
       Step in ROMANCAL in which the pixeldq attribute of the input data model
       using the MASK reference file is initialized.
     type: string
-    enum: ['N/A', 'COMPLETE', 'SKIPPED', 'INCOMPLETE']
+    enum: ["N/A", "COMPLETE", "SKIPPED", "INCOMPLETE"]
     archive_catalog:
       datatype: nvarchar(15)
       destination: [WFICommon.s_dq_init]
@@ -54,7 +54,7 @@ properties:
       Step in ROMANCAL which applies the scaling factors determined in the Photom calibrations step.
       The data are converted from DN/s to MJy/sr.
     type: string
-    enum: ['N/A', 'COMPLETE', 'SKIPPED', 'INCOMPLETE']
+    enum: ["N/A", "COMPLETE", "SKIPPED", "INCOMPLETE"]
     archive_catalog:
       datatype: nvarchar(15)
       destination: [WFICommon.s_flux]
@@ -64,7 +64,7 @@ properties:
       Step in ROMANCAL which performs a search for jumps in values in ramp that
       may be associated with cosmic rays.
     type: string
-    enum: ['N/A', 'COMPLETE', 'SKIPPED', 'INCOMPLETE']
+    enum: ["N/A", "COMPLETE", "SKIPPED", "INCOMPLETE"]
     archive_catalog:
       datatype: nvarchar(15)
       destination: [WFICommon.s_jump]
@@ -74,7 +74,7 @@ properties:
       Step in ROMANCAL which performs a correction for the classical non-linear
       detector response.
     type: string
-    enum: ['N/A', 'COMPLETE', 'SKIPPED', 'INCOMPLETE']
+    enum: ["N/A", "COMPLETE", "SKIPPED", "INCOMPLETE"]
     archive_catalog:
       datatype: nvarchar(15)
       destination: [WFICommon.s_linearity]
@@ -84,7 +84,7 @@ properties:
       Step in ROMANCAL that adds photometric calibrations to the metadata of a
       data product.
     type: string
-    enum: ['N/A', 'COMPLETE', 'SKIPPED', 'INCOMPLETE']
+    enum: ["N/A", "COMPLETE", "SKIPPED", "INCOMPLETE"]
     archive_catalog:
       datatype: nvarchar(15)
       destination: [WFICommon.s_photom]
@@ -93,7 +93,7 @@ properties:
     description: |
       Step in ROMANCAL to detect point sources in an image and catalog them.
     type: string
-    enum: ['N/A', 'COMPLETE', 'SKIPPED', 'INCOMPLETE']
+    enum: ["N/A", "COMPLETE", "SKIPPED", "INCOMPLETE"]
     archive_catalog:
       datatype: nvarchar(15)
       destination: [WFICommon.s_source_detection]
@@ -103,7 +103,7 @@ properties:
       Step in ROMANCAL to fit the counts versus time with a straight line and
       thus estimate the count rate for each pixel.
     type: string
-    enum: ['N/A', 'COMPLETE', 'SKIPPED', 'INCOMPLETE']
+    enum: ["N/A", "COMPLETE", "SKIPPED", "INCOMPLETE"]
     archive_catalog:
       datatype: nvarchar(15)
       destination: [WFICommon.s_ramp_fit]
@@ -113,7 +113,7 @@ properties:
       Step in ROMANCAL that corrects for additional signal from electronics
       contributing to (e.g. 1/f noise) using the reference pixels.
     type: string
-    enum: ['N/A', 'COMPLETE', 'SKIPPED', 'INCOMPLETE']
+    enum: ["N/A", "COMPLETE", "SKIPPED", "INCOMPLETE"]
     archive_catalog:
       datatype: nvarchar(15)
       destination: [WFICommon.s_refpix]
@@ -124,7 +124,7 @@ properties:
       above the saturation threshold. As part of this step, pixels that are zero
       or negative are also flagged.
     type: string
-    enum: ['N/A', 'COMPLETE', 'SKIPPED', 'INCOMPLETE']
+    enum: ["N/A", "COMPLETE", "SKIPPED", "INCOMPLETE"]
     archive_catalog:
       datatype: nvarchar(15)
       destination: [WFICommon.s_saturation]
@@ -133,7 +133,7 @@ properties:
     description: |
       Step in ROMANCAL which detects and flags outliers in a science image.
     type: string
-    enum: ['N/A', 'COMPLETE', 'SKIPPED', 'INCOMPLETE']
+    enum: ["N/A", "COMPLETE", "SKIPPED", "INCOMPLETE"]
     archive_catalog:
       datatype: nvarchar(15)
       destination: [WFICommon.s_outlier_detection]
@@ -144,7 +144,7 @@ properties:
       coordinates from a Gaia catalog, and, if necessary, corrects an image's
       World Coordinate System alignment.
     type: string
-    enum: ['N/A', 'COMPLETE', 'SKIPPED', 'INCOMPLETE']
+    enum: ["N/A", "COMPLETE", "SKIPPED", "INCOMPLETE"]
     archive_catalog:
       datatype: nvarchar(15)
       destination: [WFICommon.s_tweakreg]
@@ -154,14 +154,45 @@ properties:
       Step in ROMANCAL that computes sky background values of each input image
       and derives scalings to equalize overlapping regions.
     type: string
-    enum: ['N/A', 'COMPLETE', 'SKIPPED', 'INCOMPLETE']
+    enum: ["N/A", "COMPLETE", "SKIPPED", "INCOMPLETE"]
     archive_catalog:
       datatype: nvarchar(15)
       destination: [WFICommon.s_skymatch]
-propertyOrder: [assign_wcs, flat_field, flux, dark, dq_init, jump, linearity, photom, source_detection,
-                outlier_detection, ramp_fit, refpix, saturation, skymatch, tweakreg]
+propertyOrder:
+  [
+    assign_wcs,
+    flat_field,
+    flux,
+    dark,
+    dq_init,
+    jump,
+    linearity,
+    photom,
+    source_detection,
+    outlier_detection,
+    ramp_fit,
+    refpix,
+    saturation,
+    skymatch,
+    tweakreg,
+  ]
 flowStyle: block
-required: [assign_wcs, flat_field, flux, dark, dq_init, jump, linearity, outlier_detection, photom,
-           source_detection, ramp_fit, refpix, saturation, skymatch, tweakreg]
+required:
+  [
+    assign_wcs,
+    flat_field,
+    flux,
+    dark,
+    dq_init,
+    jump,
+    linearity,
+    outlier_detection,
+    photom,
+    source_detection,
+    ramp_fit,
+    refpix,
+    saturation,
+    skymatch,
+    tweakreg,
+  ]
 additionalProperties: true
-...

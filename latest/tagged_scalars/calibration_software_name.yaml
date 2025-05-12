@@ -12,9 +12,14 @@ sdf:
 maxLength: 120
 archive_catalog:
   datatype: nvarchar(120)
-  destination: [WFIExposure.calibration_software_name, GuideWindow.calibration_software_name,
-                WFICommon.calibration_software_name, WFIMosaic.calibration_software_name,
-                SourceCatalog.calibration_software_name, SegmentationMap.calibration_software_name]
+  destination:
+    [
+      WFIExposure.calibration_software_name,
+      GuideWindow.calibration_software_name,
+      WFICommon.calibration_software_name,
+      WFIMosaic.calibration_software_name,
+      SourceCatalog.calibration_software_name,
+      SegmentationMap.calibration_software_name,
+    ]
 
 flowStyle: block
-...

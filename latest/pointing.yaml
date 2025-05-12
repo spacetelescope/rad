@@ -41,7 +41,11 @@ properties:
     maxLength: 10
     archive_catalog:
       datatype: nvarchar(10)
-      destination: [WFIExposure.pointing_engineering_source, GuideWindow.pointing_engineering_source]
+      destination:
+        [
+          WFIExposure.pointing_engineering_source,
+          GuideWindow.pointing_engineering_source,
+        ]
   ra_v1:
     title: Right Ascension of the Telescope V1 Axis (deg)
     description: |
@@ -139,9 +143,26 @@ properties:
     archive_catalog:
       datatype: float
       destination: [WFIExposure.target_dec, GuideWindow.target_dec]
-propertyOrder: [pa_aperture, pointing_engineering_source, ra_v1, dec_v1,
-  pa_v3, target_aperture, target_ra, target_dec]
+propertyOrder:
+  [
+    pa_aperture,
+    pointing_engineering_source,
+    ra_v1,
+    dec_v1,
+    pa_v3,
+    target_aperture,
+    target_ra,
+    target_dec,
+  ]
 flowStyle: block
-required: [pa_aperture, pointing_engineering_source, ra_v1, dec_v1,
-  pa_v3, target_aperture, target_ra, target_dec]
-...
+required:
+  [
+    pa_aperture,
+    pointing_engineering_source,
+    ra_v1,
+    dec_v1,
+    pa_v3,
+    target_aperture,
+    target_ra,
+    target_dec,
+  ]

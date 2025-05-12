@@ -52,7 +52,14 @@ properties:
     description: |
       The name of the telescope used to acquire the data.
     tag: asdf://stsci.edu/datamodels/roman/tags/fps/telescope-1.0.0
-required: [calibration_software_version, filename, file_date,
-           model_type, origin, prd_software_version,
-           sdf_software_version, telescope]
-...
+required:
+  [
+    calibration_software_version,
+    filename,
+    file_date,
+    model_type,
+    origin,
+    prd_software_version,
+    sdf_software_version,
+    telescope,
+  ]

@@ -79,4 +79,3 @@ properties:
 required: [meta, data, dq, dark_slope, dark_slope_error]
 flowStyle: block
 propertyOrder: [meta, data, dq, dark_slope, dark_slope_error]
-...

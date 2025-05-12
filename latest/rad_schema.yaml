@@ -64,7 +64,17 @@ allOf:
               Column type in the archive catalog database.
             anyOf:
               - type: string
-                enum: [datetime2, float, int, nchar(1), nvarchar(max), bigint, smallint, tinyint]
+                enum:
+                  [
+                    datetime2,
+                    float,
+                    int,
+                    nchar(1),
+                    nvarchar(max),
+                    bigint,
+                    smallint,
+                    tinyint,
+                  ]
               - type: string
                 pattern: "^nvarchar\\([0-9]+\\)$"
           destination:
@@ -128,4 +138,3 @@ definitions:
     minItems: 1
     items:
       $ref: "#"
-...

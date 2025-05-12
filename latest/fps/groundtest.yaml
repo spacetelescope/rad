@@ -117,15 +117,48 @@ properties:
     datatype: float64
     exact_datatype: true
     # needs ndim
-propertyOrder: [test_name, test_phase, test_environment, test_script,
-                product_date, product_version, conversion_date, conversion_version,
-                filename_pnt5, filepath_level_pnt5, filename_l1a, detector_id,
-                detector_temp, frames_temp, ota_temp, rcs_on, readout_col_num,
-                detector_pixel_size, sensor_error]
+propertyOrder:
+  [
+    test_name,
+    test_phase,
+    test_environment,
+    test_script,
+    product_date,
+    product_version,
+    conversion_date,
+    conversion_version,
+    filename_pnt5,
+    filepath_level_pnt5,
+    filename_l1a,
+    detector_id,
+    detector_temp,
+    frames_temp,
+    ota_temp,
+    rcs_on,
+    readout_col_num,
+    detector_pixel_size,
+    sensor_error,
+  ]
 flowStyle: block
-required: [test_name, test_phase, test_environment, test_script,
-           product_date, product_version, conversion_date, conversion_version,
-           filename_pnt5, filepath_level_pnt5, filename_l1a, detector_id,
-           detector_temp, frames_temp, ota_temp, rcs_on, readout_col_num,
-           detector_pixel_size, sensor_error]
-...
+required:
+  [
+    test_name,
+    test_phase,
+    test_environment,
+    test_script,
+    product_date,
+    product_version,
+    conversion_date,
+    conversion_version,
+    filename_pnt5,
+    filepath_level_pnt5,
+    filename_l1a,
+    detector_id,
+    detector_temp,
+    frames_temp,
+    ota_temp,
+    rcs_on,
+    readout_col_num,
+    detector_pixel_size,
+    sensor_error,
+  ]

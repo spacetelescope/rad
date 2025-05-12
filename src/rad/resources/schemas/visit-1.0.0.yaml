@@ -25,8 +25,12 @@ properties:
         maxLength: 100
         archive_catalog:
           datatype: nvarchar(100)
-          destination: [WFIExposure.dither_primary_name, SourceCatalog.dither_primary_name,
-                        SegmentationMap.dither_primary_name]
+          destination:
+            [
+              WFIExposure.dither_primary_name,
+              SourceCatalog.dither_primary_name,
+              SegmentationMap.dither_primary_name,
+            ]
       subpixel_name:
         title: Subpixel Dither Pattern Name
         description: |
@@ -42,8 +46,12 @@ properties:
         maxLength: 100
         archive_catalog:
           datatype: nvarchar(100)
-          destination: [WFIExposure.dither_subpixel_name, SourceCatalog.dither_subpixel_name,
-                        SegmentationMap.dither_subpixel_name]
+          destination:
+            [
+              WFIExposure.dither_subpixel_name,
+              SourceCatalog.dither_subpixel_name,
+              SegmentationMap.dither_subpixel_name,
+            ]
 
       executed_pattern:
         title: Executed Dither Pattern Offsets (arcsec)
@@ -77,9 +85,12 @@ properties:
             origin: TBD
         archive_catalog:
           datatype: nvarchar(max)
-          destination: [WFIExposure.dither_executed_pattern,
-                        SourceCatalog.dither_executed_pattern,
-                        SegmentationMap.dither_executed_pattern]
+          destination:
+            [
+              WFIExposure.dither_executed_pattern,
+              SourceCatalog.dither_executed_pattern,
+              SegmentationMap.dither_executed_pattern,
+            ]
     required: [primary_name, subpixel_name, executed_pattern]
   engineering_quality:
     title: Engineering Data Quality
@@ -99,8 +110,13 @@ properties:
     maxLength: 10
     archive_catalog:
       datatype: nvarchar(10)
-      destination: [WFIExposure.engineering_quality, GuideWindow.engineering_quality,
-                    SourceCatalog.engineering_quality, SegmentationMap.engineering_quality]
+      destination:
+        [
+          WFIExposure.engineering_quality,
+          GuideWindow.engineering_quality,
+          SourceCatalog.engineering_quality,
+          SegmentationMap.engineering_quality,
+        ]
   pointing_engineering_source:
     title: Pointing Engineering Source
     description: |
@@ -120,15 +136,26 @@ properties:
     maxLength: 10
     archive_catalog:
       datatype: nvarchar(10)
-      destination: [WFIExposure.pointing_engineering_source, GuideWindow.pointing_engineering_source,
-                    SourceCatalog.pointing_engineering_source, SegmentationMap.pointing_engineering_source]
+      destination:
+        [
+          WFIExposure.pointing_engineering_source,
+          GuideWindow.pointing_engineering_source,
+          SourceCatalog.pointing_engineering_source,
+          SegmentationMap.pointing_engineering_source,
+        ]
   type:
     title: Visit Type
     description: |
       The type of visit from observation planning.
     type: string
-    enum: ['GENERAL_ENGINEERING', 'GENERIC', 'PARALLEL',
-           'PRIME_TARGETED_FIXED', 'PRIME_UNTARGETED']
+    enum:
+      [
+        "GENERAL_ENGINEERING",
+        "GENERIC",
+        "PARALLEL",
+        "PRIME_TARGETED_FIXED",
+        "PRIME_UNTARGETED",
+      ]
     sdf:
       special_processing: VALUE_REQUIRED
       source:
@@ -136,8 +163,13 @@ properties:
     maxLength: 30
     archive_catalog:
       datatype: nvarchar(30)
-      destination: [WFIExposure.visit_type, GuideWindow.visit_type,
-                    SourceCatalog.visit_type, SegmentationMap.visit_type]
+      destination:
+        [
+          WFIExposure.visit_type,
+          GuideWindow.visit_type,
+          SourceCatalog.visit_type,
+          SegmentationMap.visit_type,
+        ]
   start_time:
     title: Visit Start Time (UTC)
     description: |
@@ -155,8 +187,13 @@ properties:
         origin: TBD
     archive_catalog:
       datatype: datetime2
-      destination: [WFIExposure.visit_start_time, GuideWindow.visit_start_time,
-                    SourceCatalog.visit_start_time, SegmentationMap.visit_start_time]
+      destination:
+        [
+          WFIExposure.visit_start_time,
+          GuideWindow.visit_start_time,
+          SourceCatalog.visit_start_time,
+          SegmentationMap.visit_start_time,
+        ]
   end_time:
     title: Visit End Time (UTC)
     description: |
@@ -174,14 +211,19 @@ properties:
         origin: TBD
     archive_catalog:
       datatype: datetime2
-      destination: [WFIExposure.visit_end_time, GuideWindow.visit_end_time,
-                    SourceCatalog.visit_end_time, SegmentationMap.visit_end_time]
+      destination:
+        [
+          WFIExposure.visit_end_time,
+          GuideWindow.visit_end_time,
+          SourceCatalog.visit_end_time,
+          SegmentationMap.visit_end_time,
+        ]
   status:
     title: Visit Status
     description: |
       Execution status of the visit.
     type: string
-    enum: ['DATALOSS', 'SUCCESSFUL', 'UNSUCCESSFUL']
+    enum: ["DATALOSS", "SUCCESSFUL", "UNSUCCESSFUL"]
     sdf:
       special_processing: VALUE_REQUIRED
       source:
@@ -189,8 +231,13 @@ properties:
     maxLength: 15
     archive_catalog:
       datatype: nvarchar(15)
-      destination: [WFIExposure.visit_status, GuideWindow.visit_status,
-                    SourceCatalog.visit_status, SegmentationMap.visit_status]
+      destination:
+        [
+          WFIExposure.visit_status,
+          GuideWindow.visit_status,
+          SourceCatalog.visit_status,
+          SegmentationMap.visit_status,
+        ]
   nexposures:
     title: Number of Planned Exposures
     description: |
@@ -203,8 +250,13 @@ properties:
         origin: PSS:dms_visit.exposures_per_dither
     archive_catalog:
       datatype: int
-      destination: [WFIExposure.visit_nexposures, GuideWindow.visit_nexposures,
-                    SourceCatalog.visit_nexposures, SegmentationMap.visit_nexposures]
+      destination:
+        [
+          WFIExposure.visit_nexposures,
+          GuideWindow.visit_nexposures,
+          SourceCatalog.visit_nexposures,
+          SegmentationMap.visit_nexposures,
+        ]
   internal_target:
     title: Internal Target
     description: |
@@ -217,11 +269,35 @@ properties:
         origin: PSS:dms_visit.internal_target
     archive_catalog:
       datatype: nchar(1)
-      destination: [WFIExposure.visit_internal_target, GuideWindow.visit_internal_target,
-                    SourceCatalog.visit_internal_target, SegmentationMap.visit_internal_target]
-propertyOrder: [dither, engineering_quality, pointing_engineering_source, type,
-  start_time, end_time, status, nexposures, internal_target]
+      destination:
+        [
+          WFIExposure.visit_internal_target,
+          GuideWindow.visit_internal_target,
+          SourceCatalog.visit_internal_target,
+          SegmentationMap.visit_internal_target,
+        ]
+propertyOrder:
+  [
+    dither,
+    engineering_quality,
+    pointing_engineering_source,
+    type,
+    start_time,
+    end_time,
+    status,
+    nexposures,
+    internal_target,
+  ]
 flowStyle: block
-required: [dither, engineering_quality, pointing_engineering_source, type,
-  start_time, end_time, status, nexposures, internal_target]
-...
+required:
+  [
+    dither,
+    engineering_quality,
+    pointing_engineering_source,
+    type,
+    start_time,
+    end_time,
+    status,
+    nexposures,
+    internal_target,
+  ]

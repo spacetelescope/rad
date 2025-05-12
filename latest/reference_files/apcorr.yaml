@@ -26,7 +26,7 @@ properties:
           ap_corrections:
             title: Aperture Corrections
             description: The aperture correction for each enclosed energy
-                fraction, corresponding to 1 / ee_fractions.
+              fraction, corresponding to 1 / ee_fractions.
             anyOf:
               - type: "null"
               - tag: tag:stsci.edu:asdf/core/ndarray-1.*
@@ -36,7 +36,7 @@ properties:
           ee_fractions:
             title: Enclosed Energy Fractions
             description: Fractions of the enclosed energy of the PSF at which
-                to estimate the aperture correction and enclosed energy radii.
+              to estimate the aperture correction and enclosed energy radii.
             anyOf:
               - type: "null"
               - tag: tag:stsci.edu:asdf/core/ndarray-1.*
@@ -46,8 +46,8 @@ properties:
           ee_radii:
             title: Enclosed Energy Radii
             description: Radius, in pixels, within which the enclosed energy
-                fractions are met. The indexing matches that of
-                  "ee_fractions".
+              fractions are met. The indexing matches that of
+              "ee_fractions".
             anyOf:
               - type: "null"
               - tag: tag:stsci.edu:asdf/core/ndarray-1.*
@@ -57,21 +57,27 @@ properties:
           sky_background_rin:
             title: Inner Radius for the Sky Background
             description: Inner radius, in pixels, to use when estimating the
-                local sky background within an annulus between this
-                radius and "sky_background_rout".
+              local sky background within an annulus between this
+              radius and "sky_background_rout".
             anyOf:
               - type: number
               - type: "null"
           sky_background_rout:
             title: Outer Radius for the Sky Background
             description: Outer radius, in pixels, to use when estimating the
-                local sky background within an annulus between this
-                radius and "sky_background_rin".
+              local sky background within an annulus between this
+              radius and "sky_background_rin".
             anyOf:
               - type: number
               - type: "null"
-        required: [ap_corrections, ee_fractions, ee_radii, sky_background_rin, sky_background_rout]
+        required:
+          [
+            ap_corrections,
+            ee_fractions,
+            ee_radii,
+            sky_background_rin,
+            sky_background_rout,
+          ]
 required: [meta, data]
 flowStyle: block
 propertyOrder: [meta, data]
-...

@@ -2,22 +2,15 @@
 name = "rad"
 description = "Roman Attribute Dictionary"
 requires-python = ">=3.11"
-authors = [
-    { name = "STScI", email = "help@stsci.edu" },
-]
+authors = [{ name = "STScI", email = "help@stsci.edu" }]
 classifiers = [
-    "Intended Audience :: Science/Research",
-    "Topic :: Scientific/Engineering :: Astronomy",
-    "Programming Language :: Python :: 3",
+  "Intended Audience :: Science/Research",
+  "Topic :: Scientific/Engineering :: Astronomy",
+  "Programming Language :: Python :: 3",
 ]
-dependencies = [
-    "asdf >=4.1.0",
-    "asdf-astropy >=0.5.0",
-]
+dependencies = ["asdf >=4.1.0", "asdf-astropy >=0.5.0"]
 license-files = ["LICENSE"]
-dynamic = [
-    "version",
-]
+dynamic = ["version"]
 
 [project.readme]
 file = "README.md"
@@ -25,23 +18,23 @@ content-type = "text/markdown"
 
 [project.optional-dependencies]
 test = [
-    "pytest>=7.0.0",
-    "pytest-doctestplus>=1.2.1",
-    "crds>=12.0.4",
-    "GitPython>=3.1.44",
-    "semantic-version>=2.10.0",
+  "pytest>=7.0.0",
+  "pytest-doctestplus>=1.2.1",
+  "crds>=12.0.4",
+  "GitPython>=3.1.44",
+  "semantic-version>=2.10.0",
 ]
 docs = [
-    "sphinx",
-    "sphinx-asdf>=0.1.3",
-    "sphinx-astropy",
-    "sphinx-rtd-theme",
-    "astropy>=5.0.4",
-    "graphviz",
-    "matplotlib",
-    "docutils",
-    "importlib-metadata",
-    "towncrier",
+  "sphinx",
+  "sphinx-asdf>=0.1.3",
+  "sphinx-astropy",
+  "sphinx-rtd-theme",
+  "astropy>=5.0.4",
+  "graphviz",
+  "matplotlib",
+  "docutils",
+  "importlib-metadata",
+  "towncrier",
 ]
 
 [project.urls]
@@ -52,19 +45,14 @@ docs = [
 rad = "rad.integration:get_resource_mappings"
 
 [build-system]
-requires = [
-    "setuptools >=61",
-    "setuptools_scm[toml] >=3.4",
-]
+requires = ["setuptools >=61", "setuptools_scm[toml] >=3.4"]
 build-backend = "setuptools.build_meta"
 
 [tool.setuptools_scm]
 write_to = "src/rad/_version.py"
 
 [tool.setuptools.packages.find]
-where = [
-    "src",
-]
+where = ["src"]
 
 [tool.pytest.ini_options]
 minversion = "7.0"
@@ -74,19 +62,14 @@ text_file_format = "rst"
 log_cli_level = "INFO"
 xfail_strict = true
 addopts = [
-    "--color=yes",      # color test output
-    "--doctest-rst",    # enable doctests
-    "--strict-config",  # fail on unknown config options
-    "--strict-markers", # fail on unknown markers
-    "-ra",              # Show summary of all failures/errors
+  "--color=yes",      # color test output
+  "--doctest-rst",    # enable doctests
+  "--strict-config",  # fail on unknown config options
+  "--strict-markers", # fail on unknown markers
+  "-ra",              # Show summary of all failures/errors
 ]
-testpaths = [
-    "tests",
-    "src/rad/resources/schemas",
-]
-filterwarnings = [
-    "error",
-]
+testpaths = ["tests", "src/rad/resources/schemas"]
+filterwarnings = ["error"]
 asdf_schema_tests_enabled = "true"
 asdf_schema_skip_tests = "src/rad/resources/schemas/rad_schema-1.0.0.yaml"
 asdf_schema_root = "src/rad/resources/schemas"
@@ -96,17 +79,17 @@ line-length = 130
 
 [tool.ruff.lint]
 extend-select = [
-    "UP",   # PyUpgrade
-    "I",    # isort
-    "B",    # BugBear
-    "S",    # Bandit
-    "RUF",  # ruff specific
-    "NPY",  # numpy specific
+  "UP",  # PyUpgrade
+  "I",   # isort
+  "B",   # BugBear
+  "S",   # Bandit
+  "RUF", # ruff specific
+  "NPY", # numpy specific
 ]
 
 [tool.ruff.lint.per-file-ignores]
 "tests/**.py" = [
-    "S101" # Bandit: Use of assert detected (fine in test files)
+  "S101", # Bandit: Use of assert detected (fine in test files)
 ]
 
 [tool.codespell]

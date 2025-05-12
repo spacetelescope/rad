@@ -27,10 +27,9 @@ properties:
   source_catalog:
     title: Source Catalog
     description: |
-       Photometry and astrometry computed in the Source Catalog Step.
+      Photometry and astrometry computed in the Source Catalog Step.
     tag: tag:astropy.org:astropy/table/table-1.*
 
 required: [meta, source_catalog]
 flowStyle: block
 propertyOrder: [meta, source_catalog]
-...
