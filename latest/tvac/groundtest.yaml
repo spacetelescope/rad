@@ -1,7 +1,7 @@
 %YAML 1.1
 ---
 $schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.0.0
-id: asdf://stsci.edu/datamodels/roman/schemas/tvac/groundtest-1.0.0
+id: asdf://stsci.edu/datamodels/roman/schemas/tvac/groundtest-1.1.0
 
 title: TVAC Ground Test Information
 type: object
@@ -12,24 +12,28 @@ properties:
     archive_catalog:
       datatype: nvarchar(80)
       destination: [WFICommon.test_name]
+    maxLength: 80
   test_phase:
     title: I&T Testing Phase
     type: string
     archive_catalog:
       datatype: nvarchar(80)
       destination: [WFICommon.test_phase]
+    maxLength: 80
   test_environment:
     title: I&T Testing Environment
     type: string
     archive_catalog:
       datatype: nvarchar(80)
       destination: [WFICommon.test_environment]
+    maxLength: 80
   test_script:
     title: Name of Testing Script Run
     type: string
     archive_catalog:
       datatype: nvarchar(80)
       destination: [WFICommon.test_script]
+    maxLength: 80
   product_date:
     title: Source File Creation Time
     tag: tag:stsci.edu:asdf/time/time-1.*
@@ -42,6 +46,7 @@ properties:
     archive_catalog:
       datatype: nvarchar(80)
       destination: [WFICommon.product_version]
+    maxLength: 80
   conversion_date:
     title: HDF5 to ASDF Conversion Date
     tag: tag:stsci.edu:asdf/time/time-1.*
@@ -54,6 +59,7 @@ properties:
     archive_catalog:
       datatype: nvarchar(80)
       destination: [WFICommon.conversion_version]
+    maxLength: 80
   filename_pnt5:
     title: L0.5 File Name
     type: string
@@ -69,6 +75,7 @@ properties:
     archive_catalog:
       datatype: nvarchar(80)
       destination: [WFICommon.detector_id]
+    maxLength: 80
   detector_temp:
     title: Mean Detector Temperature (Kelvin)
     type: number
@@ -191,6 +198,7 @@ properties:
     archive_catalog:
       datatype: nvarchar(80)
       destination: [WFITvac.wfi_mce_srcs_bank1_led_range]
+    maxLength: 80
   wfi_mce_srcs_bank2_led_i:
     title: |
       Commanded current for the SRCS -> GSFC will send us the flux
@@ -213,6 +221,7 @@ properties:
     archive_catalog:
       datatype: nvarchar(80)
       destination: [WFITvac.wfi_mce_srcs_bank2_led_range]
+    maxLength: 80
   srcs_led_current:
     title: Input LED current set point
     type: number
@@ -229,12 +238,14 @@ properties:
     archive_catalog:
       datatype: nvarchar(20)
       destination: [WFITvac.wfi_opt_targettype]
+    maxLength: 20
   analysis_tag:
     title: WFI-team defined tags for data aggregation/analysis
     type: string
     archive_catalog:
       datatype: nvarchar(32)
       destination: [WFITvac.analysis_tag]
+    maxLength: 32
   gsorc_pose_mode:
     title: SORC pose mode
     type: string
@@ -242,6 +253,7 @@ properties:
     archive_catalog:
       datatype: nvarchar(20)
       destination: [WFITvac.gsorc_pose_mode]
+    maxLength: 20
   gsorc_pose_target:
     title: SORC pose target
     type: string
@@ -249,6 +261,7 @@ properties:
     archive_catalog:
       datatype: nvarchar(20)
       destination: [WFITvac.gsorc_pose_target]
+    maxLength: 20
   gsorc_sds_active_atten:
     title: Attenuation from SDS
     type: number
@@ -279,6 +292,7 @@ properties:
     archive_catalog:
       datatype: nvarchar(20)
       destination: [WFITvac.gsorc_sds_active_source]
+    maxLength: 20
   gsorc_sds_dq_pulse:
     title: whether the source is pulsing or not
     type: string
@@ -286,6 +300,7 @@ properties:
     archive_catalog:
       datatype: nvarchar(10)
       destination: [WFITvac.gsorc_sds_dq_pulse]
+    maxLength: 10
   gsorc_sds_daq_pw:
     title: pulse width – originally in HDF5 file is in units of 0.1 ms
     tag: tag:stsci.edu:asdf/unit/quantity-1.*
@@ -310,6 +325,7 @@ properties:
     archive_catalog:
       datatype: nvarchar(15)
       destination: [WFITvac.wfi_otp_wfi_ewa]
+    maxLength: 15
   sca_temp:
     title: SCE temperature
     tag: tag:stsci.edu:asdf/unit/quantity-1.*
@@ -470,5 +486,13 @@ required: [test_name, test_phase, test_environment, test_script,
            product_date, product_version, conversion_date, conversion_version,
            filename_pnt5, filepath_level_pnt5, filename_l1a, detector_id,
            detector_temp, frames_temp, ota_temp, rcs_on, readout_col_num,
+           activity_number, srcs_pd_voltage, srcs_led_flux, wfi_mce_srcs_bank1_led_i,
+           wfi_mce_srcs_bank1_led_range, wfi_mce_srcs_bank2_led_i, wfi_mce_srcs_bank2_led_range,
+           srcs_led_current, wfi_opt_targettype, analysis_tag, gsorc_pose_mode, gsorc_pose_target,
+           gsorc_sds_active_atten, gsorc_sds_lltfir_wave, gsorc_sds_sorc_on, gsorc_sds_sorc_wlen,
+           gsorc_sds_active_source, gsorc_sds_dq_pulse, gsorc_sds_daq_pw, gsorc_heater1_setpt,
+           wfi_otp_wfi_ewa, sca_temp, mpa_temp, ewa_temp, ewta_outer_heater_temp, ewta_inner_heater_temp,
+           coba_temp_near_ewta, scea_temp, wfi_sce_1_vbiasgate_v, wfi_sce_1_vbiaspwr_i,
+           wfi_sce_1_vbiaspwr_v, wfi_sce_1_vreset_v, wfi_sce_1_vreset_i, wfi_mcu_a_offs_csense_fpssen,
            detector_pixel_size, sensor_error]
 ...

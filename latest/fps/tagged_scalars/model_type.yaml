@@ -1,7 +1,7 @@
 %YAML 1.1
 ---
 $schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.0.0
-id: asdf://stsci.edu/datamodels/roman/schemas/fps/tagged_scalars/model_type-1.0.0
+id: asdf://stsci.edu/datamodels/roman/schemas/fps/tagged_scalars/model_type-1.1.0
 
 title: FPS Data Model Type
 type: string
@@ -12,6 +12,7 @@ sdf:
 archive_catalog:
   datatype: nvarchar(50)
   destination: [WFICommon.model_type]
+maxLength: 50
 
 flowStyle: block
 ...

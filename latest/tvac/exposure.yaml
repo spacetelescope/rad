@@ -1,7 +1,7 @@
 %YAML 1.1
 ---
 $schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.0.0
-id: asdf://stsci.edu/datamodels/roman/schemas/tvac/exposure-1.0.0
+id: asdf://stsci.edu/datamodels/roman/schemas/tvac/exposure-1.1.0
 
 
 title: |
@@ -11,7 +11,7 @@ type: object
 properties:
   type:
     allOf:
-      - $ref: asdf://stsci.edu/datamodels/roman/schemas/tvac/exposure_type-1.0.0
+      - $ref: asdf://stsci.edu/datamodels/roman/schemas/tvac/exposure_type-1.1.0
     sdf:
       special_processing: VALUE_REQUIRED
       source:
@@ -147,6 +147,7 @@ properties:
     archive_catalog:
       datatype: nvarchar(50)
       destination: [WFICommon.ma_table_name]
+    maxLength: 50
   ma_table_number:
     title: MA Table Number
     description: |

@@ -1,7 +1,7 @@
 %YAML 1.1
 ---
 $schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.0.0
-id: asdf://stsci.edu/datamodels/roman/schemas/tvac/wfi_mode-1.0.0
+id: asdf://stsci.edu/datamodels/roman/schemas/tvac/wfi_mode-1.1.0
 
 
 title: TVAC WFI Observing Configuration
@@ -20,9 +20,10 @@ properties:
     archive_catalog:
       datatype: nvarchar(5)
       destination: [WFICommon.instrument_name]
+    maxLength: 5
   detector:
     allOf:
-       - $ref: asdf://stsci.edu/datamodels/roman/schemas/tvac/wfi_detector-1.0.0
+       - $ref: asdf://stsci.edu/datamodels/roman/schemas/tvac/wfi_detector-1.1.0
     title: WFI Detector
     description: |
       WFI detector used to take the data.
@@ -35,7 +36,7 @@ properties:
       destination: [WFICommon.detector]
   optical_element:
     allOf:
-      - $ref: asdf://stsci.edu/datamodels/roman/schemas/tvac/wfi_optical_element-1.0.0
+      - $ref: asdf://stsci.edu/datamodels/roman/schemas/tvac/wfi_optical_element-1.1.0
     title: WFI Optical Element
     description: |
       WFI optical element used to take the data.

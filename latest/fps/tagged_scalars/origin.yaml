@@ -1,7 +1,7 @@
 %YAML 1.1
 ---
 $schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.0.0
-id: asdf://stsci.edu/datamodels/roman/schemas/fps/tagged_scalars/origin-1.0.0
+id: asdf://stsci.edu/datamodels/roman/schemas/fps/tagged_scalars/origin-1.1.0
 
 title: FPS Institution / Organization Name
 
@@ -15,6 +15,7 @@ sdf:
 archive_catalog:
   datatype: nvarchar(15)
   destination: [WFICommon.origin]
+maxLength: 15
 
 flowStyle: block
 ...
