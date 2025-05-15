@@ -113,6 +113,26 @@ class TestSchemaContent:
 
         asdf.treeutil.walk(schema, callback)
 
+    def test_array_tag(self, schema):
+        """
+        Any schema using ndim, datatype, etc also has an array tag
+        """
+
+        def callback(node):
+            if not isinstance(node, dict):
+                return
+            if "destination" in node:
+                # don't check archive_catalog entries
+                return
+            if "byteorder" in node:
+                # don't check sub-dtypes
+                return
+            if any(k in node for k in ("ndim", "datatype", "exact_datatype")):
+                tag = node.get("tag", "")
+                assert tag.startswith("tag:stsci.edu:asdf/core/ndarray-")
+
+        asdf.treeutil.walk(schema, callback)
+
     def test_ref_loneliness(self, schema):
         """
         An object with a $ref should contain no other items
