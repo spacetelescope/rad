@@ -1,0 +1,1 @@
+Add missing tag validators to l1_detector_guidewindow schema.
