@@ -11,7 +11,7 @@ import pytest
 import yaml
 from crds.config import is_crds_name
 
-from .conftest import MANIFESTS, METASCHEMA_URI, SCHEMA_URIS, TAG_DEFS
+from .conftest import LATEST_URIS, MANIFESTS, METASCHEMA_URI, SCHEMA_URIS, TAG_DEFS
 
 WFI_OPTICAL_ELEMENTS = tuple(
     asdf.schema.load_schema("asdf://stsci.edu/datamodels/roman/schemas/wfi_optical_element-1.0.0")["enum"]
@@ -315,6 +315,38 @@ def test_varchar_length(uri):
         v = int(m.group(1))
         assert "maxLength" in node, f"archive_catalog has nvarchar, schema {uri} is missing maxLength"
         assert node["maxLength"] == v, f"archive_catalog nvarchar does not match maxLength in schema {uri}"
+
+    asdf.treeutil.walk(schema, callback)
+
+
+# don't test tvac or fps schemas as they are static
+@pytest.mark.parametrize(
+    "uri",
+    [
+        uri
+        for uri in LATEST_URIS
+        if not uri.startswith("asdf://stsci.edu/datamodels/roman/schemas/fps/")
+        and not uri.startswith("asdf://stsci.edu/datamodels/roman/schemas/tvac/")
+    ],
+)
+def test_array_tag(uri):
+    """
+    Any schema using ndim, datatype, etc also has an array tag
+    """
+    schema = asdf.schema.load_schema(uri)
+
+    def callback(node):
+        if not isinstance(node, dict):
+            return
+        if "destination" in node:
+            # don't check archive_catalog entries
+            return
+        if "byteorder" in node:
+            # don't check sub-dtypes
+            return
+        if any(k in node for k in ("ndim", "datatype", "exact_datatype")):
+            tag = node.get("tag", "")
+            assert tag.startswith("tag:stsci.edu:asdf/core/ndarray-")
 
     asdf.treeutil.walk(schema, callback)
 
