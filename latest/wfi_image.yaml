@@ -1,7 +1,7 @@
 %YAML 1.1
 ---
 $schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.0.0
-id: asdf://stsci.edu/datamodels/roman/schemas/wfi_image-1.1.0
+id: asdf://stsci.edu/datamodels/roman/schemas/wfi_image-1.2.0
 
 title: Level 2 (L2) Calibrated Roman Wide Field Instrument (WFI) Rate Image.
 
@@ -12,7 +12,7 @@ type: object
 properties:
   meta:
     allOf:
-      - $ref: asdf://stsci.edu/datamodels/roman/schemas/common-1.1.0
+      - $ref: asdf://stsci.edu/datamodels/roman/schemas/common-1.2.0
       - type: object
         properties:
           background:

@@ -16,7 +16,6 @@ from .conftest import MANIFESTS, METASCHEMA_URI, SCHEMA_URIS, TAG_DEFS
 WFI_OPTICAL_ELEMENTS = tuple(
     asdf.schema.load_schema("asdf://stsci.edu/datamodels/roman/schemas/wfi_optical_element-1.0.0")["enum"]
 )
-EXPOSURE_TYPE_ELEMENTS = tuple(asdf.schema.load_schema("asdf://stsci.edu/datamodels/roman/schemas/exposure_type-1.0.0")["enum"])
 EXPECTED_COMMON_REFERENCE = {"$ref": "asdf://stsci.edu/datamodels/roman/schemas/reference_files/ref_common-1.0.0"}
 METADATA_FORCING_REQUIRED = ("archive_catalog", "sdf")
 
@@ -169,26 +168,28 @@ def test_datamodel_name(schema):
         assert _model_name_from_schema_uri(schema["id"]) == schema["datamodel_name"]
 
 
-# Confirm that the optical_element filter in wfi_img_photom.yml matches WFI_OPTICAL_ELEMENTS
-def test_matched_optical_element_entries():
-    phot_table_keys = list(
-        asdf.schema.load_schema("asdf://stsci.edu/datamodels/roman/schemas/reference_files/wfi_img_photom-1.0.0")["properties"][
-            "phot_table"
-        ]["patternProperties"]
-    )
-    r = re.compile(phot_table_keys[0])
-    for element_str in WFI_OPTICAL_ELEMENTS:
-        assert r.search(element_str)
+def test_phot_table_keys_have_optical_element_entry(phot_table_key_pattern, optical_element):
+    """
+    Confirm that the optical_element filter in wfi_img_photom.yaml matches WFI_OPTICAL_ELEMENTS
+    """
+    assert phot_table_key_pattern.search(optical_element), f"phot_table_key pattern is missing {optical_element}."
 
 
-def test_matched_p_exptype_entries():
+def test_optical_elements_have_phot_table_key(phot_table_key, optical_elements):
+    """
+    Confirm that the optical_element filter in wfi_img_photom.yaml matches WFI_OPTICAL_ELEMENTS
+    """
+    assert phot_table_key in optical_elements, f"phot_table_key {phot_table_key} not found in optical_elements."
+
+
+def test_p_exptype_entries_have_exposure_type(p_exptype_pattern, exposure_type):
     """Confirm that the p_keyword version of exposure type match the enum version."""
-    p_exptype = asdf.schema.load_schema("asdf://stsci.edu/datamodels/roman/schemas/reference_files/ref_exposure_type-1.0.0")[
-        "properties"
-    ]["exposure"]["properties"]["p_exptype"]["pattern"]
-    r = re.compile(p_exptype)
-    for element_str in EXPOSURE_TYPE_ELEMENTS:
-        assert r.search(element_str + "|")
+    assert p_exptype_pattern.search(f"{exposure_type}|"), f"p_exptype pattern is missing {exposure_type}."
+
+
+def test_exposure_types_have_p_exptype_entry(p_exptype, exposure_types):
+    """Confirm that the p_exptype entry is in the exposure_types enum."""
+    assert p_exptype in exposure_types, f"p_exptype {p_exptype} not found in exposure_types."
 
 
 def _find_ndarrays(key, schema):

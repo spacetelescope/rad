@@ -58,6 +58,7 @@ BASE_RELEASE = Version("0.23.1")
 
 # The keywords in the schemas that we claim don't matter for schema versioning
 IGNORED_KEYWORDS = (
+    "archive_meta",
     "archive_catalog",
     "sdf",
     "title",
@@ -306,7 +307,11 @@ class TestVersioning:
 
     # There is one small case between 0.23.1 and 0.24.0 where the manifest changed
     # but the version number did not. This is not a vital issue.
-    EXPECTED_FAILS = (("0.23.1", "asdf://stsci.edu/datamodels/roman/manifests/datamodels-1.0"),)
+    EXPECTED_FAILS = (
+        ("0.23.1", "asdf://stsci.edu/datamodels/roman/manifests/datamodels-1.0"),
+        ("0.24.0", "asdf://stsci.edu/datamodels/roman/schemas/l1_detector_guidewindow-1.0.0"),
+        ("0.24.0", "asdf://stsci.edu/datamodels/roman/schemas/l1_face_guidewindow-1.0.0"),
+    )
 
     def test_no_lost_uris(self, frozen_uri):
         """

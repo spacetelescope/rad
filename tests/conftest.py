@@ -1,10 +1,12 @@
 import importlib.resources as importlib_resources
 from itertools import chain
 from pathlib import Path
+from re import compile, match
 
 import asdf
 import pytest
 import yaml
+from semantic_version import Version
 
 from rad import resources
 
@@ -44,6 +46,46 @@ CURRENT_RESOURCES = {
     uri: yaml.safe_load(asdf.get_config().resource_manager[uri])
     for uri in sorted(SCHEMA_URIS + MANIFEST_URIS + (METASCHEMA_URI,))
 }
+
+
+def get_latest_uri(prefix):
+    """
+    Get the latest exposure type URI.
+    """
+    pattern = rf"{prefix}-\d+\.\d+\.\d+$"
+    uris = []
+    for uri in CURRENT_RESOURCES:
+        if match(pattern, uri):
+            uris.append(uri)
+
+    assert len(uris) > 0, "There should be at least one exposure type URI"
+
+    version = Version("0.0.0")
+    uri = None
+    latest_uri = None
+    for uri in uris:
+        if version < (new := Version(uri.split("-")[-1])):
+            version = new
+            latest_uri = uri
+    return latest_uri
+
+
+EXPOSURE_TYPE_ELEMENTS = tuple(
+    CURRENT_RESOURCES[get_latest_uri("asdf://stsci.edu/datamodels/roman/schemas/exposure_type")]["enum"]
+)
+P_EXPTYPE_PATTERN = CURRENT_RESOURCES[
+    get_latest_uri("asdf://stsci.edu/datamodels/roman/schemas/reference_files/ref_exposure_type")
+]["properties"]["exposure"]["properties"]["p_exptype"]["pattern"]
+OPTICAL_ELEMENTS = tuple(
+    CURRENT_RESOURCES[get_latest_uri("asdf://stsci.edu/datamodels/roman/schemas/wfi_optical_element")]["enum"]
+)
+PHOT_TABLE_KEY_PATTERN = next(
+    iter(
+        CURRENT_RESOURCES[get_latest_uri("asdf://stsci.edu/datamodels/roman/schemas/reference_files/wfi_img_photom")][
+            "properties"
+        ]["phot_table"]["patternProperties"]
+    )
+)
 
 
 @pytest.fixture(scope="session", params=MANIFEST_PATHS)
@@ -132,3 +174,67 @@ def latest_schema_tags(latest_manifest_uri, latest_schemas):
     schema_tags = {entry["schema_uri"]: entry["tag_uri"] for entry in tag_entries}
     assert len(schema_tags) == len(tag_entries), "There should be no duplicate tags for a schema"
     return schema_tags
+
+
+@pytest.fixture(scope="session", params=EXPOSURE_TYPE_ELEMENTS)
+def exposure_type(request):
+    """
+    Get the exposure type from the request.
+    """
+    return request.param
+
+
+@pytest.fixture(scope="session")
+def exposure_types():
+    """
+    Get the exposure types from the request.
+    """
+    return EXPOSURE_TYPE_ELEMENTS
+
+
+@pytest.fixture(scope="session")
+def p_exptype_pattern():
+    """
+    Get the pattern for the exposure type used by the reference files.
+    """
+    return compile(P_EXPTYPE_PATTERN)
+
+
+@pytest.fixture(scope="session", params=P_EXPTYPE_PATTERN.split(")\\s*\\|\\s*)+$")[0].split("((")[-1].split("|"))
+def p_exptype(request):
+    """
+    Get the exposure type from the request.
+    """
+    return request.param
+
+
+@pytest.fixture(scope="session", params=OPTICAL_ELEMENTS)
+def optical_element(request):
+    """
+    Get the optical element from the request.
+    """
+    return request.param
+
+
+@pytest.fixture(scope="session")
+def optical_elements():
+    """
+    Get the optical elements from the request.
+    """
+    return OPTICAL_ELEMENTS
+
+
+@pytest.fixture(scope="session")
+def phot_table_key_pattern():
+    """
+    Get the pattern for the photometry table key used by the reference files.
+    """
+    return compile(PHOT_TABLE_KEY_PATTERN)
+
+
+@pytest.fixture(scope="session", params=PHOT_TABLE_KEY_PATTERN.split(")$")[0].split("(")[-1].split("|"))
+def phot_table_key(request):
+    """
+    Get the photometry table key from the request.
+    """
+    return request.param
