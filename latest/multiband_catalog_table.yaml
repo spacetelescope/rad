@@ -456,6 +456,30 @@ properties:
       - not:
           items:
             not:
+              description: Local background estimate for PSF-matched aperture photometry
+              unit: nJy/arcsec^2
+              properties:
+                name:
+                  pattern: ^aper_bkg_(f062|f087|f106|f129|f158|f184|f213|f146)m(f062|f087|f106|f129|f158|f184|f213|f146)_flux$
+                data:
+                  properties:
+                    datatype:
+                      enum: [float32]
+      - not:
+          items:
+            not:
+              description: Uncertainty in aper_bkg_flux_err
+              unit: nJy/arcsec^2
+              properties:
+                name:
+                  pattern: ^aper_bkg_(f062|f087|f106|f129|f158|f184|f213|f146)m(f062|f087|f106|f129|f158|f184|f213|f146)_flux_err$
+                data:
+                  properties:
+                    datatype:
+                      enum: [float32]
+      - not:
+          items:
+            not:
               description: Flux within circular aperture (radius in tenths of arcsec)
               unit: nJy
               properties:
@@ -473,6 +497,30 @@ properties:
               properties:
                 name:
                   pattern: ^aper[0-9]{2}_(f062|f087|f106|f129|f158|f184|f213|f146)_flux_err$
+                data:
+                  properties:
+                    datatype:
+                      enum: [float32]
+      - not:
+          items:
+            not:
+              description: PSF-matched flux within circular aperture (radius in tenths of arcsec)
+              unit: nJy
+              properties:
+                name:
+                  pattern: ^aper[0-9]{2}_(f062|f087|f106|f129|f158|f184|f213|f146)m(f062|f087|f106|f129|f158|f184|f213|f146)_flux$
+                data:
+                  properties:
+                    datatype:
+                      enum: [float32]
+      - not:
+          items:
+            not:
+              description: Uncertainty in PSF-matched flux within circular aperture
+              unit: nJy
+              properties:
+                name:
+                  pattern: ^aper[0-9]{2}_(f062|f087|f106|f129|f158|f184|f213|f146)m(f062|f087|f106|f129|f158|f184|f213|f146)_flux_err$
                 data:
                   properties:
                     datatype:
@@ -521,6 +569,30 @@ properties:
               properties:
                 name:
                   pattern: ^kron_(f062|f087|f106|f129|f158|f184|f213|f146)_flux_err$
+                data:
+                  properties:
+                    datatype:
+                      enum: [float32]
+      - not:
+          items:
+            not:
+              description: PSF-matched flux within the elliptical Kron aperture
+              unit: abmag
+              properties:
+                name:
+                  pattern: ^kron_(f062|f087|f106|f129|f158|f184|f213|f146)m(f062|f087|f106|f129|f158|f184|f213|f146)_abmag$
+                data:
+                  properties:
+                    datatype:
+                      enum: [float32]
+      - not:
+          items:
+            not:
+              description: Uncertainty in kron_<band>m<band>_abmag_err
+              unit: abmag
+              properties:
+                name:
+                  pattern: ^kron_(f062|f087|f106|f129|f158|f184|f213|f146)m(f062|f087|f106|f129|f158|f184|f213|f146)_abmag_err$
                 data:
                   properties:
                     datatype:
@@ -581,6 +653,30 @@ properties:
               properties:
                 name:
                   pattern: ^segment_(f062|f087|f106|f129|f158|f184|f213|f146)_flux_err$
+                data:
+                  properties:
+                    datatype:
+                      enum: [float32]
+      - not:
+          items:
+            not:
+              description: Isophotal flux after PSF matching to a reference band
+              unit: nJy
+              properties:
+                name:
+                  pattern: ^segment_(f062|f087|f106|f129|f158|f184|f213|f146)m(f062|f087|f106|f129|f158|f184|f213|f146)_flux$
+                data:
+                  properties:
+                    datatype:
+                      enum: [float32]
+      - not:
+          items:
+            not:
+              description: Isophotal flux error after PSF matching to a reference band
+              unit: nJy
+              properties:
+                name:
+                  pattern: ^segment_(f062|f087|f106|f129|f158|f184|f213|f146)m(f062|f087|f106|f129|f158|f184|f213|f146)_flux_err$
                 data:
                   properties:
                     datatype:
@@ -721,7 +817,7 @@ properties:
           items:
             not:
               description: Photutils DAOFinder roundness1 statistic
-              unit:
+              unit: none
               properties:
                 name:
                   pattern: ^roundness1_(f062|f087|f106|f129|f158|f184|f213|f146)$
@@ -785,6 +881,114 @@ properties:
               properties:
                 name:
                   pattern: ^nn_label$
+                data:
+                  properties:
+                    datatype:
+                      enum: [int32]
+      - not:
+          items:
+            not:
+              description: Recommended point estimate of photometric redshift
+              unit: none
+              properties:
+                name:
+                  pattern: ^photoz$
+                data:
+                  properties:
+                    datatype:
+                      enum: [float32]
+      - not:
+          items:
+            not:
+              description: Photo-z goodness of fit metric
+              unit: none
+              properties:
+                name:
+                  pattern: ^photoz_gof$
+                data:
+                  properties:
+                    datatype:
+                      enum: [float32]
+      - not:
+          items:
+            not:
+              description: 68% confidence upper bound on photometric redshift
+              unit: none
+              properties:
+                name:
+                  pattern: ^photoz_high68$
+                data:
+                  properties:
+                    datatype:
+                      enum: [float32]
+      - not:
+          items:
+            not:
+              description: 90% confidence upper bound on photometric redshift
+              unit: none
+              properties:
+                name:
+                  pattern: ^photoz_high90$
+                data:
+                  properties:
+                    datatype:
+                      enum: [float32]
+      - not:
+          items:
+            not:
+              description: 99% confidence upper bound on photometric redshift
+              unit: none
+              properties:
+                name:
+                  pattern: ^photoz_high99$
+                data:
+                  properties:
+                    datatype:
+                      enum: [float32]
+      - not:
+          items:
+            not:
+              description: 68% confidence lower bound on photometric redshift
+              unit: none
+              properties:
+                name:
+                  pattern: ^photoz_low68$
+                data:
+                  properties:
+                    datatype:
+                      enum: [float32]
+      - not:
+          items:
+            not:
+              description: 90% confidence lower bound on photometric redshift
+              unit: none
+              properties:
+                name:
+                  pattern: ^photoz_low90$
+                data:
+                  properties:
+                    datatype:
+                      enum: [float32]
+      - not:
+          items:
+            not:
+              description: 99% confidence lower bound on photometric redshift
+              unit: none
+              properties:
+                name:
+                  pattern: ^photoz_low99$
+                data:
+                  properties:
+                    datatype:
+                      enum: [float32]
+      - not:
+          items:
+            not:
+              description: Best-fit spectral-energy distribution for this photometric redshift
+              unit: none
+              properties:
+                name:
+                  pattern: ^photoz_sed$
                 data:
                   properties:
                     datatype:
