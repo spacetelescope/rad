@@ -8,21 +8,18 @@ import pathlib
 
 catalogs = {
     "forced": {
-        "column_name": "Forced",
         "header": {
             "schema_id": "forced_catalog_table-1.0.0",
             "title": "Forced source catalog table schema",
         },
     },
     "prompt": {
-        "column_name": "Prompt",
         "header": {
             "schema_id": "prompt_catalog_table-1.0.0",
             "title": "Prompt source catalog table schema",
         },
     },
     "multiband": {
-        "column_name": "Multiband",
         "header": {
             "schema_id": "multiband_catalog_table-1.0.0",
             "title": "Multiband source catalog table schema",
@@ -74,8 +71,9 @@ class Column:
         column.cat_types = set()
         if row["Prompt"].strip().upper() == "Y":
             column.cat_types.add("prompt")
-        if row["Forced"].strip().upper() == "Y":
+            # prompt and forced contain the same columns just with some renaming
             column.cat_types.add("forced")
+        column.forced = bool(row["Forced"].strip().upper())
         if row["Multiband"].strip().upper() == "Y":
             column.cat_types.add("multiband")
         column.dtype = row["Type"].strip()
@@ -100,7 +98,7 @@ class Column:
         if cat_type == "multiband":
             pattern = pattern.replace("<band>", BAND_REGEX)
 
-        if cat_type == "forced":
+        if cat_type == "forced" and self.forced:
             pattern = f"forced_{pattern}"
 
         if "<radius>" in pattern:
