@@ -1,0 +1,348 @@
+%YAML 1.1
+---
+$schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.0.0
+id: asdf://stsci.edu/datamodels/roman/schemas/forced_catalog_table-1.0.0
+
+title: Forced source catalog table schema
+
+type: object
+properties:
+  columns:
+    allOf:
+      - not:
+          items:
+            not:
+              description: Best estimate of the declination (ICRS)
+              unit: deg (decimal)
+              properties:
+                name:
+                  pattern: ^forced_dec$
+                data:
+                  properties:
+                    datatype:
+                      enum: [float64]
+      - not:
+          items:
+            not:
+              description: Declination (ICRS) of the PSF-fitted position
+              unit: deg (decimal)
+              properties:
+                name:
+                  pattern: ^forced_dec_psf$
+                data:
+                  properties:
+                    datatype:
+                      enum: [float64]
+      - not:
+          items:
+            not:
+              description: Uncertainty in dec_psf
+              unit: arcsec
+              properties:
+                name:
+                  pattern: ^forced_dec_psf_err$
+                data:
+                  properties:
+                    datatype:
+                      enum: [float32]
+      - not:
+          items:
+            not:
+              description: PSF goodness of fit metric
+              unit: none
+              properties:
+                name:
+                  pattern: ^forced_psf_gof$
+                data:
+                  properties:
+                    datatype:
+                      enum: [float32]
+      - not:
+          items:
+            not:
+              description: Right ascension (ICRS) of the PSF-fitted position
+              unit: deg (decimal)
+              properties:
+                name:
+                  pattern: ^forced_ra_psf$
+                data:
+                  properties:
+                    datatype:
+                      enum: [float64]
+      - not:
+          items:
+            not:
+              description: Uncertainty in ra_psf
+              unit: arcsec
+              properties:
+                name:
+                  pattern: ^forced_ra_psf_err$
+                data:
+                  properties:
+                    datatype:
+                      enum: [float32]
+      - not:
+          items:
+            not:
+              description: Column coordinate of the source from PSF fitting (0 indexed)
+              unit: pix
+              properties:
+                name:
+                  pattern: ^forced_x_psf$
+                data:
+                  properties:
+                    datatype:
+                      enum: [float32]
+      - not:
+          items:
+            not:
+              description: Uncertainty in x_psf
+              unit: pix
+              properties:
+                name:
+                  pattern: ^forced_x_psf_err$
+                data:
+                  properties:
+                    datatype:
+                      enum: [float32]
+      - not:
+          items:
+            not:
+              description: Row coordinate of the source from PSF fitting (0 indexed)
+              unit: pix
+              properties:
+                name:
+                  pattern: ^forced_y_psf$
+                data:
+                  properties:
+                    datatype:
+                      enum: [float32]
+      - not:
+          items:
+            not:
+              description: Uncertainty on y_psf
+              unit: pix
+              properties:
+                name:
+                  pattern: ^forced_y_psf_err$
+                data:
+                  properties:
+                    datatype:
+                      enum: [float32]
+      - not:
+          items:
+            not:
+              description: Local background estimated within a circular annulus
+              unit: nJy arcsec-2
+              properties:
+                name:
+                  pattern: ^forced_aper_bkg_flux$
+                data:
+                  properties:
+                    datatype:
+                      enum: [float32]
+      - not:
+          items:
+            not:
+              description: Uncertainty in aper_bkg_flux
+              unit: nJy
+              properties:
+                name:
+                  pattern: ^forced_aper_bkg_flux_err$
+                data:
+                  properties:
+                    datatype:
+                      enum: [float32]
+      - not:
+          items:
+            not:
+              description: Flux within circular aperture (radius in tenths of arcsec)
+              unit: nJy
+              properties:
+                name:
+                  pattern: ^forced_aper[0-9]{2}_flux$
+                data:
+                  properties:
+                    datatype:
+                      enum: [float32]
+      - not:
+          items:
+            not:
+              description: Uncertainty in flux within circular aperture
+              unit: nJy
+              properties:
+                name:
+                  pattern: ^forced_aper[0-9]{2}_flux_err$
+                data:
+                  properties:
+                    datatype:
+                      enum: [float32]
+      - not:
+          items:
+            not:
+              description: AB magnitude within the elliptical Kron aperture
+              unit: mag(AB)
+              properties:
+                name:
+                  pattern: ^forced_kron_abmag$
+                data:
+                  properties:
+                    datatype:
+                      enum: [float32]
+      - not:
+          items:
+            not:
+              description: Uncertainty in kron_abmag
+              unit: mag(AB)
+              properties:
+                name:
+                  pattern: ^forced_kron_abmag_err$
+                data:
+                  properties:
+                    datatype:
+                      enum: [float32]
+      - not:
+          items:
+            not:
+              description: Flux within the elliptical Kron aperture
+              unit: nJy
+              properties:
+                name:
+                  pattern: ^forced_kron_flux$
+                data:
+                  properties:
+                    datatype:
+                      enum: [float32]
+      - not:
+          items:
+            not:
+              description: Uncertainty in kron_<band>_flux_err
+              unit: nJy
+              properties:
+                name:
+                  pattern: ^forced_kron_flux_err$
+                data:
+                  properties:
+                    datatype:
+                      enum: [float32]
+      - not:
+          items:
+            not:
+              description: Total PSF flux
+              unit: nJy
+              properties:
+                name:
+                  pattern: ^forced_psf_flux$
+                data:
+                  properties:
+                    datatype:
+                      enum: [float32]
+      - not:
+          items:
+            not:
+              description: Uncertainty in psf_flux
+              unit: nJy
+              properties:
+                name:
+                  pattern: ^forced_psf_flux_err$
+                data:
+                  properties:
+                    datatype:
+                      enum: [float32]
+      - not:
+          items:
+            not:
+              description: PSF fitting bit flags (0 = good)
+              unit: none
+              properties:
+                name:
+                  pattern: ^forced_psf_flags$
+                data:
+                  properties:
+                    datatype:
+                      enum: [int32]
+      - not:
+          items:
+            not:
+              description: Isophotal flux
+              unit: nJy
+              properties:
+                name:
+                  pattern: ^forced_segment_flux$
+                data:
+                  properties:
+                    datatype:
+                      enum: [float32]
+      - not:
+          items:
+            not:
+              description: Uncertainty in segment_flux
+              unit: nJy
+              properties:
+                name:
+                  pattern: ^forced_segment_flux_err$
+                data:
+                  properties:
+                    datatype:
+                      enum: [float32]
+      - not:
+          items:
+            not:
+              description: Warning bit flags (0=good)
+              unit: none
+              properties:
+                name:
+                  pattern: ^forced_warning_flags$
+                data:
+                  properties:
+                    datatype:
+                      enum: [int32]
+      - not:
+          items:
+            not:
+              description: Radius of a circle centered on the source centroid that encloses 50% of the Kron flux
+              unit: arcsec
+              properties:
+                name:
+                  pattern: ^forced_fluxfrac_radius_50$
+                data:
+                  properties:
+                    datatype:
+                      enum: [float32]
+      - not:
+          items:
+            not:
+              description: Flag indicating that the source appears to be more extended than a point source
+              unit: none
+              properties:
+                name:
+                  pattern: ^forced_is_extended$
+                data:
+                  properties:
+                    datatype:
+                      enum: [bool8]
+      - not:
+          items:
+            not:
+              description: Photutils DAOFinder roundness1 statistic
+              unit:
+              properties:
+                name:
+                  pattern: ^forced_roundness1$
+                data:
+                  properties:
+                    datatype:
+                      enum: [float32]
+      - not:
+          items:
+            not:
+              description: Photutils DAOFinder sharpness statistic
+              unit: none
+              properties:
+                name:
+                  pattern: ^forced_sharpness$
+                data:
+                  properties:
+                    datatype:
+                      enum: [float32]
+...
