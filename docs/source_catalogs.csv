@@ -1,0 +1,83 @@
+Name,Prompt,Forced,Multiband,Type,Unit,Description
+flagged_spatial_index,Y,N,Y,int64,none,"Bit flag encoding the overlap flag , projection, skycell and pixel coordinates of the source"
+bbox_xmax,Y,N,Y,int32,none,Column index of the right edge of the source bounding box (0 indexed)
+bbox_xmin,Y,N,Y,int32,none,Column index of the left edge of the source bounding box (0 indexed)
+bbox_ymax,Y,N,Y,int32,none,Row index of the top edge of the source bounding box (0 indexed)
+bbox_ymin,Y,N,Y,int32,none,Row index of the bottom edge of the source bounding box (0 indexed)
+image_flags,Y,N,Y,int32,none,Image quality bit flags (0=good)
+label,Y,N,Y,int32,none,Label of the source segment in the segmentation image
+segment_area,Y,N,Y,float32,arcsec^2,Area of the source segment
+dec,Y,Y,Y,float64,deg (decimal),Best estimate of the declination (ICRS)
+dec_centroid,Y,N,Y,float64,deg (decimal),Declination of the source centroid (ICRS)
+dec_centroid_err,Y,N,Y,float32,arcsec,Uncertainty in dec_centroid
+dec_centroid_win,Y,N,Y,float64,deg (decimal),Declination (ICRS) of the windowed source centroid
+dec_centroid_win_err,Y,N,Y,float32,arcsec,Uncertainty in dec_centroid_win
+dec_psf_<band>,Y,Y,Y,float64,deg (decimal),Declination (ICRS) of the PSF-fitted position
+dec_psf_<band>_err,Y,Y,Y,float32,arcsec,Uncertainty in dec_psf
+psf_gof_<band>,Y,Y,Y,float32,none,PSF goodness of fit metric
+ra,Y,N,Y,float64,deg (decimal),Best estimate of the right ascension (ICRS)
+ra_centroid,Y,N,Y,float64,deg (decimal),Right ascension (ICRS) of the source centroid
+ra_centroid_err,Y,N,Y,float32,arcsec,Uncertainty in ra_centroid
+ra_centroid_win,Y,N,Y,float64,deg (decimal),Right ascension (ICRS) of the windowed source centroid
+ra_centroid_win_err,Y,N,Y,float32,arcsec,Uncertainty in ra_centroid_win
+ra_psf_<band>,Y,Y,Y,float64,deg (decimal),Right ascension (ICRS) of the PSF-fitted position
+ra_psf_<band>_err,Y,Y,Y,float32,arcsec,Uncertainty in ra_psf
+x_centroid,Y,N,Y,float32,pix,Column coordinate of the source centroid from image moments (0 indexed)
+x_centroid_err,Y,N,Y,float32,pix,Uncertainty x_centroid
+x_centroid_win,Y,N,Y,float32,pix,Column coordinate of the windowed source centroid in the detection image from image moments (0 indexed)
+x_centroid_win_err,Y,N,Y,float32,pix,Uncertainty on x_centroid_win
+x_psf_<band>,Y,Y,Y,float32,pix,Column coordinate of the source from PSF fitting (0 indexed)
+x_psf_<band>_err,Y,Y,Y,float32,pix,Uncertainty in x_psf
+y_centroid,Y,N,Y,float32,pix,Row coordinate of the source centroid in the detection image from image moments (0 indexed)
+y_centroid_err,Y,N,Y,float32,pix,Uncertainty on y_centroid
+y_centroid_win,Y,N,Y,float32,pix,Row coordinate of the windowed source centroid in the detection image from image moments (0 indexed)
+y_centroid_win_err,Y,N,Y,float32,pix,Uncertainty on y_centroid_win
+y_psf_<band>,Y,Y,Y,float32,pix,Row coordinate of the source from PSF fitting (0 indexed)
+y_psf_<band>_err,Y,Y,Y,float32,pix,Uncertainty on y_psf
+aper_bkg_<band>_flux,Y,Y,Y,float32,nJy arcsec-2,Local background estimated within a circular annulus
+aper_bkg_<band>_flux_err,Y,Y,Y,float32,nJy,Uncertainty in aper_bkg_flux
+aper_bkg_<band>m<band>_flux,N,N,Y,float32,nJy/arcsec^2,Local background estimate for PSF-matched aperture photometry
+aper_bkg_<band>m<band>_flux_err,N,N,Y,float32,nJy/arcsec^2,Uncertainty in aper_bkg_flux_err
+aper<radius>_<band>_flux,Y,Y,Y,float32,nJy,Flux within circular aperture (radius in tenths of arcsec)
+aper<radius>_<band>_flux_err,Y,Y,Y,float32,nJy,Uncertainty in flux within circular aperture
+aper<radius>_<band>m<band>_flux,N,N,Y,float32,nJy,PSF-matched flux within circular aperture (radius in tenths of arcsec)
+aper<radius>_<band>m<band>_flux_err,N,N,Y,float32,nJy,Uncertainty in PSF-matched flux within circular aperture
+kron_<band>_abmag,Y,Y,Y,float32,mag(AB),AB magnitude within the elliptical Kron aperture
+kron_<band>_abmag_err,Y,Y,Y,float32,mag(AB),Uncertainty in kron_abmag
+kron_<band>_flux,Y,Y,Y,float32,nJy,Flux within the elliptical Kron aperture
+kron_<band>_flux_err,Y,Y,Y,float32,nJy,Uncertainty in kron_<band>_flux_err
+kron_<band>m<band>_abmag,N,N,Y,float32,abmag,PSF-matched flux within the elliptical Kron aperture
+kron_<band>m<band>_abmag_err,N,N,Y,float32,abmag,Uncertainty in kron_<band>m<band>_abmag_err
+psf_<band>_flux,Y,Y,Y,float32,nJy,Total PSF flux
+psf_<band>_flux_err,Y,Y,Y,float32,nJy,Uncertainty in psf_flux
+psf_flags_<band>,Y,Y,Y,int32,none,PSF fitting bit flags (0 = good)
+segment_<band>_flux,Y,Y,Y,float32,nJy,Isophotal flux
+segment_<band>_flux_err,Y,Y,Y,float32,nJy,Uncertainty in segment_flux
+segment_<band>m<band>_flux,N,N,Y,float32,nJy,Isophotal flux after PSF matching to a reference band
+segment_<band>m<band>_flux_err,N,N,Y,float32,nJy,Isophotal flux error after PSF matching to a reference band
+warning_flags,Y,Y,Y,int32,none,Warning bit flags (0=good)
+cxx,Y,N,Y,float32,1/arcsec2,Coefficient for the x**2 term in the generalized quadratic ellipse equation
+cxy,Y,N,Y,float32,1/arcsec2,Coefficient for the x*y term in the generalized quadratic ellipse equation
+cyy,Y,N,Y,float32,1/arcsec2,Coefficient for the y**2 term in the generalized quadratic ellipse equation
+ellipticity,Y,N,Y,float32,none,Source ellipticity as 1 - (semimajor / semiminor)
+fluxfrac_radius_50_<band>,Y,Y,Y,float32,arcsec,Radius of a circle centered on the source centroid that encloses 50% of the Kron flux
+is_extended_<band>,Y,Y,Y,boolean,none,Flag indicating that the source appears to be more extended than a point source
+fwhm,Y,N,Y,float32,arcsec,Circularized full width at half maximum (FWHM) calculated from the semimajor and semiminor axes as 2*sqrt(ln(2) * (semimajor**2 + semiminor**2))
+kron_radius,Y,N,Y,float32,arcsec,First-moment radius measured in the detection image.
+orientation_pix,Y,N,Y,float32,deg,Angle measured counter-clockwise from the positive X axis to the source major axis computed from image moments
+orientation_sky,Y,N,Y,float32,deg,Position angle from North of the source major axis computed from image moments
+roundness1_<band>,Y,Y,Y,float32,,Photutils DAOFinder roundness1 statistic
+semimajor,Y,N,Y,float32,arcsec,Length of the source semiminor axis computed from image moments
+semiminor,Y,N,Y,float32,arcsec,Length of the source semimajor axis computed from image moments
+sharpness_<band>,Y,Y,Y,float32,none,Photutils DAOFinder sharpness statistic
+nn_distance,Y,N,Y,float32,arcsec,Distance to the nearest neighbor in this skycell
+nn_label,Y,N,Y,int32,none,Segment label of the nearest neighbor in this skycell
+photoz,N,N,Y,float32,none,Recommended point estimate of photometric redshift
+photoz_gof,N,N,Y,float32,none,Photo-z goodness of fit metric
+photoz_high68,N,N,Y,float32,none,68% confidence upper bound on photometric redshift
+photoz_high90,N,N,Y,float32,none,90% confidence upper bound on photometric redshift
+photoz_high99,N,N,Y,float32,none,99% confidence upper bound on photometric redshift
+photoz_low68,N,N,Y,float32,none,68% confidence lower bound on photometric redshift
+photoz_low90,N,N,Y,float32,none,90% confidence lower bound on photometric redshift
+photoz_low99,N,N,Y,float32,none,99% confidence lower bound on photometric redshift
+photoz_sed,N,N,Y,int32,none,Best-fit spectral-energy distribution for this photometric redshift
