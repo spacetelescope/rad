@@ -721,7 +721,7 @@ properties:
           items:
             not:
               description: Photutils DAOFinder roundness1 statistic
-              unit:
+              unit: none
               properties:
                 name:
                   pattern: ^roundness1$
