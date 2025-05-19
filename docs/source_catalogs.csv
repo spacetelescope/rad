@@ -36,25 +36,25 @@ y_psf_<band>,Y,Y,*,,float32,pix,Row coordinate of the source from PSF fitting (0
 y_psf_<band>_err,Y,Y,*,,float32,pix,Uncertainty on y_psf
 aper_bkg_<band>_flux,Y,Y,*,,float32,nJy arcsec-2,Local background estimated within a circular annulus
 aper_bkg_<band>_flux_err,Y,Y,*,,float32,nJy,Uncertainty in aper_bkg_flux
-aper_bkg_<band>m<band>_flux,N,Y,,,float32,nJy/arcsec^2,Local background estimate for PSF-matched aperture photometry
-aper_bkg_<band>m<band>_flux_err,N,Y,,,float32,nJy/arcsec^2,Uncertainty in aper_bkg_flux_err
+aper_bkg_<band>m<band>_flux,N,N,,,float32,nJy/arcsec^2,Local background estimate for PSF-matched aperture photometry
+aper_bkg_<band>m<band>_flux_err,N,N,,,float32,nJy/arcsec^2,Uncertainty in aper_bkg_flux_err
 aper<radius>_<band>_flux,Y,Y,*,,float32,nJy,Flux within circular aperture (radius in tenths of arcsec)
 aper<radius>_<band>_flux_err,Y,Y,*,,float32,nJy,Uncertainty in flux within circular aperture
-aper<radius>_<band>m<band>_flux,N,Y,,,float32,nJy,PSF-matched flux within circular aperture (radius in tenths of arcsec)
-aper<radius>_<band>m<band>_flux_err,N,Y,,,float32,nJy,Uncertainty in PSF-matched flux within circular aperture
+aper<radius>_<band>m<band>_flux,N,N,,,float32,nJy,PSF-matched flux within circular aperture (radius in tenths of arcsec)
+aper<radius>_<band>m<band>_flux_err,N,N,,,float32,nJy,Uncertainty in PSF-matched flux within circular aperture
 kron_<band>_abmag,Y,Y,*,,float32,mag(AB),AB magnitude within the elliptical Kron aperture
 kron_<band>_abmag_err,Y,Y,*,,float32,mag(AB),Uncertainty in kron_abmag
 kron_<band>_flux,Y,Y,*,,float32,nJy,Flux within the elliptical Kron aperture
 kron_<band>_flux_err,Y,Y,*,,float32,nJy,Uncertainty in kron_<band>_flux_err
-kron_<band>m<band>_abmag,N,Y,,,float32,abmag,PSF-matched flux within the elliptical Kron aperture
-kron_<band>m<band>_abmag_err,N,Y,,,float32,abmag,Uncertainty in kron_<band>m<band>_abmag_err
+kron_<band>m<band>_abmag,N,N,,,float32,abmag,PSF-matched flux within the elliptical Kron aperture
+kron_<band>m<band>_abmag_err,N,N,,,float32,abmag,Uncertainty in kron_<band>m<band>_abmag_err
 psf_<band>_flux,Y,Y,*,,float32,nJy,Total PSF flux
 psf_<band>_flux_err,Y,Y,*,,float32,nJy,Uncertainty in psf_flux
 psf_flags_<band>,Y,Y,*,,int32,none,PSF fitting bit flags (0 = good)
 segment_<band>_flux,Y,Y,*,,float32,nJy,Isophotal flux
 segment_<band>_flux_err,Y,Y,*,,float32,nJy,Uncertainty in segment_flux
-segment_<band>m<band>_flux,N,Y,,,float32,nJy,Isophotal flux after PSF matching to a reference band
-segment_<band>m<band>_flux_err,N,Y,,,float32,nJy,Isophotal flux error after PSF matching to a reference band
+segment_<band>m<band>_flux,N,N,,,float32,nJy,Isophotal flux after PSF matching to a reference band
+segment_<band>m<band>_flux_err,N,N,,,float32,nJy,Isophotal flux error after PSF matching to a reference band
 warning_flags,Y,Y,*,,int32,none,Warning bit flags (0=good)
 cxx,Y,Y,,,float32,1/arcsec2,Coefficient for the x**2 term in the generalized quadratic ellipse equation
 cxy,Y,Y,,,float32,1/arcsec2,Coefficient for the x*y term in the generalized quadratic ellipse equation
