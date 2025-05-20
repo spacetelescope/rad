@@ -11,4 +11,3 @@ type: array
 items:
   type: string
 flowStyle: block
-...

@@ -14,7 +14,6 @@ properties:
     title: Table name
     type: string
 
-propertyOrder: [ pool_name, table_name ]
+propertyOrder: [pool_name, table_name]
 flowStyle: block
-required: [ pool_name, table_name ]
-...
+required: [pool_name, table_name]

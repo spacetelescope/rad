@@ -47,4 +47,3 @@ properties:
 propertyOrder: [meta, data, amp33, resultantdq]
 flowStyle: block
 required: [meta, data, amp33]
-...

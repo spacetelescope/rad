@@ -65,5 +65,14 @@ properties:
         description: |
           The numbered WFI detector in the focal plane (e.g., WFI01 for SCA 01).
     required: [name, detector]
-required: [reftype, author, description, pedigree, useafter, telescope, origin, instrument]
-...
+required:
+  [
+    reftype,
+    author,
+    description,
+    pedigree,
+    useafter,
+    telescope,
+    origin,
+    instrument,
+  ]

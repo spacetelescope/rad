@@ -18,8 +18,14 @@ properties:
     maxLength: 200
     archive_catalog:
       datatype: nvarchar(200)
-      destination: [WFIExposure.program_title, WFIMosaic.program_title, GuideWindow.program_title,
-                    SourceCatalog.program_title, SegmentationMap.program_title]
+      destination:
+        [
+          WFIExposure.program_title,
+          WFIMosaic.program_title,
+          GuideWindow.program_title,
+          SourceCatalog.program_title,
+          SegmentationMap.program_title,
+        ]
   investigator_name:
     title: Principal Investigator Name
     description: |
@@ -35,8 +41,14 @@ properties:
     maxLength: 100
     archive_catalog:
       datatype: nvarchar(100)
-      destination: [WFIExposure.investigator_name, WFIMosaic.investigator_name, GuideWindow.investigator_name,
-                    SourceCatalog.investigator_name, SegmentationMap.investigator_name]
+      destination:
+        [
+          WFIExposure.investigator_name,
+          WFIMosaic.investigator_name,
+          GuideWindow.investigator_name,
+          SourceCatalog.investigator_name,
+          SegmentationMap.investigator_name,
+        ]
   category:
     title: Program Category
     description: |
@@ -55,8 +67,14 @@ properties:
     maxLength: 6
     archive_catalog:
       datatype: nvarchar(6)
-      destination: [WFIExposure.program_category, WFIMosaic.program_category, GuideWindow.program_category,
-                    SourceCatalog.program_category, SegmentationMap.program_category]
+      destination:
+        [
+          WFIExposure.program_category,
+          WFIMosaic.program_category,
+          GuideWindow.program_category,
+          SourceCatalog.program_category,
+          SegmentationMap.program_category,
+        ]
   subcategory:
     title: Program Subcategory
     description: |
@@ -70,8 +88,20 @@ properties:
       and Control (WFSC). All subcategories belong to only a subset of
       the meta.program.category values.
     type: string
-    enum: ['CAL', 'CGI', 'CR', 'DR', 'GBTD', 'HLTD', 'HLWA', 'OR',
-           'WFI', 'WFSC', 'None']
+    enum:
+      [
+        "CAL",
+        "CGI",
+        "CR",
+        "DR",
+        "GBTD",
+        "HLTD",
+        "HLWA",
+        "OR",
+        "WFI",
+        "WFSC",
+        "None",
+      ]
     sdf:
       special_processing: VALUE_REQUIRED
       source:
@@ -79,8 +109,14 @@ properties:
     maxLength: 15
     archive_catalog:
       datatype: nvarchar(15)
-      destination: [WFIExposure.program_subcategory, WFIMosaic.program_subcategory, GuideWindow.program_subcategory,
-                    SourceCatalog.program_subcategory, SegmentationMap.program_subcategory]
+      destination:
+        [
+          WFIExposure.program_subcategory,
+          WFIMosaic.program_subcategory,
+          GuideWindow.program_subcategory,
+          SourceCatalog.program_subcategory,
+          SegmentationMap.program_subcategory,
+        ]
   science_category:
     title: Science Category
     description: |
@@ -94,8 +130,14 @@ properties:
     maxLength: 50
     archive_catalog:
       datatype: nvarchar(50)
-      destination: [WFIExposure.science_category, WFIMosaic.science_category, GuideWindow.science_category,
-                    SourceCatalog.science_category, SegmentationMap.science_category]
+      destination:
+        [
+          WFIExposure.science_category,
+          WFIMosaic.science_category,
+          GuideWindow.science_category,
+          SourceCatalog.science_category,
+          SegmentationMap.science_category,
+        ]
   continuation_id:
     title: Program Continuation Identifier
     description: |
@@ -108,11 +150,30 @@ properties:
         origin: PSS:dms_program.continuation_id
     archive_catalog:
       datatype: int
-      destination: [WFIExposure.continuation_id, WFIMosaic.continuation_id, GuideWindow.continuation_id,
-                    SourceCatalog.continuation_id, SegmentationMap.continuation_id]
-propertyOrder: [title, investigator_name, category, subcategory,
-  science_category, continuation_id]
+      destination:
+        [
+          WFIExposure.continuation_id,
+          WFIMosaic.continuation_id,
+          GuideWindow.continuation_id,
+          SourceCatalog.continuation_id,
+          SegmentationMap.continuation_id,
+        ]
+propertyOrder:
+  [
+    title,
+    investigator_name,
+    category,
+    subcategory,
+    science_category,
+    continuation_id,
+  ]
 flowStyle: block
-required: [title, investigator_name, category, subcategory,
-  science_category, continuation_id]
-...
+required:
+  [
+    title,
+    investigator_name,
+    category,
+    subcategory,
+    science_category,
+    continuation_id,
+  ]

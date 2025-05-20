@@ -17,7 +17,11 @@ properties:
     maxLength: 10
     archive_catalog:
       datatype: nvarchar(10)
-      destination: [WFIExposure.reference_frame, WFIMosaic.reference_frame, GuideWindow.reference_frame]
+      destination:
+        [
+          WFIExposure.reference_frame,
+          WFIMosaic.reference_frame,
+          GuideWindow.reference_frame,
+        ]
 flowStyle: block
 required: [reference_frame]
-...

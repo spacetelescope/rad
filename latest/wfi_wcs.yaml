@@ -51,9 +51,19 @@ properties:
               Results from the tweakreg result when aligning to GAIA.
               If missing or None, GAIA alignment was not done or failed.
             type: object
-        required: [coordinates, ephemeris, exposure,
-                   instrument, observation, pointing, program,
-                   velocity_aberration, visit, wcsinfo]
+        required:
+          [
+            coordinates,
+            ephemeris,
+            exposure,
+            instrument,
+            observation,
+            pointing,
+            program,
+            velocity_aberration,
+            visit,
+            wcsinfo,
+          ]
   wcs_l2:
     title: L2 GWCS
     description: |
@@ -71,4 +81,3 @@ properties:
 propertyOrder: [meta, wcs_l2, wcs_l1]
 flowStyle: block
 required: [meta]
-...

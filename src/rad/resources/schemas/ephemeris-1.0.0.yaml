@@ -57,7 +57,11 @@ properties:
     maxLength: 10
     archive_catalog:
       datatype: nvarchar(10)
-      destination: [WFIExposure.ephemeris_reference_frame, GuideWindow.ephemeris_reference_frame]
+      destination:
+        [
+          WFIExposure.ephemeris_reference_frame,
+          GuideWindow.ephemeris_reference_frame,
+        ]
   type:
     title: Ephemeris Type
     description: |
@@ -166,11 +170,34 @@ properties:
     archive_catalog:
       datatype: float
       destination: [WFIExposure.velocity_z, GuideWindow.velocity_z]
-propertyOrder: [earth_angle, moon_angle, sun_angle, type, time,
-                ephemeris_reference_frame, spatial_x, spatial_y,
-                spatial_z, velocity_x, velocity_y, velocity_z]
+propertyOrder:
+  [
+    earth_angle,
+    moon_angle,
+    sun_angle,
+    type,
+    time,
+    ephemeris_reference_frame,
+    spatial_x,
+    spatial_y,
+    spatial_z,
+    velocity_x,
+    velocity_y,
+    velocity_z,
+  ]
 flowStyle: block
-required: [earth_angle, moon_angle, sun_angle, type, time,
-           ephemeris_reference_frame, spatial_x, spatial_y,
-           spatial_z, velocity_x, velocity_y, velocity_z]
-...
+required:
+  [
+    earth_angle,
+    moon_angle,
+    sun_angle,
+    type,
+    time,
+    ephemeris_reference_frame,
+    spatial_x,
+    spatial_y,
+    spatial_z,
+    velocity_x,
+    velocity_y,
+    velocity_z,
+  ]

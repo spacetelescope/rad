@@ -14,4 +14,3 @@ archive_catalog:
   destination: [WFICommon.sdf_software_version]
 
 flowStyle: block
-...

@@ -28,7 +28,6 @@ def test_required_properties(schema):
 
 def test_schema_style(schema_content):
     assert schema_content.startswith(b"%YAML 1.1\n---\n")
-    assert schema_content.endswith(b"\n...\n")
     assert b"\t" not in schema_content
     assert not any(line != line.rstrip() for line in schema_content.split(b"\n"))
 

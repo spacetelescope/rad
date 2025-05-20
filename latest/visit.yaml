@@ -25,8 +25,12 @@ properties:
         maxLength: 100
         archive_catalog:
           datatype: nvarchar(100)
-          destination: [WFIExposure.dither_primary_name, SourceCatalog.dither_primary_name,
-                        SegmentationMap.dither_primary_name]
+          destination:
+            [
+              WFIExposure.dither_primary_name,
+              SourceCatalog.dither_primary_name,
+              SegmentationMap.dither_primary_name,
+            ]
       subpixel_name:
         title: Subpixel Dither Pattern Name
         description: |
@@ -42,8 +46,12 @@ properties:
         maxLength: 100
         archive_catalog:
           datatype: nvarchar(100)
-          destination: [WFIExposure.dither_subpixel_name, SourceCatalog.dither_subpixel_name,
-                        SegmentationMap.dither_subpixel_name]
+          destination:
+            [
+              WFIExposure.dither_subpixel_name,
+              SourceCatalog.dither_subpixel_name,
+              SegmentationMap.dither_subpixel_name,
+            ]
 
       executed_pattern:
         title: Executed Dither Pattern Offsets (arcsec)
@@ -77,19 +85,27 @@ properties:
             origin: TBD
         archive_catalog:
           datatype: nvarchar(max)
-          destination: [WFIExposure.dither_executed_pattern,
-                        SourceCatalog.dither_executed_pattern,
-                        SegmentationMap.dither_executed_pattern]
+          destination:
+            [
+              WFIExposure.dither_executed_pattern,
+              SourceCatalog.dither_executed_pattern,
+              SegmentationMap.dither_executed_pattern,
+            ]
     required: [primary_name, subpixel_name, executed_pattern]
-
 
   type:
     title: Visit Type
     description: |
       The type of visit from observation planning.
     type: string
-    enum: ['GENERAL_ENGINEERING', 'GENERIC', 'PARALLEL',
-           'PRIME_TARGETED_FIXED', 'PRIME_UNTARGETED']
+    enum:
+      [
+        "GENERAL_ENGINEERING",
+        "GENERIC",
+        "PARALLEL",
+        "PRIME_TARGETED_FIXED",
+        "PRIME_UNTARGETED",
+      ]
     sdf:
       special_processing: VALUE_REQUIRED
       source:
@@ -97,8 +113,13 @@ properties:
     maxLength: 30
     archive_catalog:
       datatype: nvarchar(30)
-      destination: [WFIExposure.visit_type, GuideWindow.visit_type,
-                    SourceCatalog.visit_type, SegmentationMap.visit_type]
+      destination:
+        [
+          WFIExposure.visit_type,
+          GuideWindow.visit_type,
+          SourceCatalog.visit_type,
+          SegmentationMap.visit_type,
+        ]
   start_time:
     title: Visit Start Time (UTC)
     description: |
@@ -116,8 +137,13 @@ properties:
         origin: TBD
     archive_catalog:
       datatype: datetime2
-      destination: [WFIExposure.visit_start_time, GuideWindow.visit_start_time,
-                    SourceCatalog.visit_start_time, SegmentationMap.visit_start_time]
+      destination:
+        [
+          WFIExposure.visit_start_time,
+          GuideWindow.visit_start_time,
+          SourceCatalog.visit_start_time,
+          SegmentationMap.visit_start_time,
+        ]
 
   nexposures:
     title: Number of Planned Exposures
@@ -131,8 +157,13 @@ properties:
         origin: PSS:dms_visit.exposures_per_dither
     archive_catalog:
       datatype: int
-      destination: [WFIExposure.visit_nexposures, GuideWindow.visit_nexposures,
-                    SourceCatalog.visit_nexposures, SegmentationMap.visit_nexposures]
+      destination:
+        [
+          WFIExposure.visit_nexposures,
+          GuideWindow.visit_nexposures,
+          SourceCatalog.visit_nexposures,
+          SegmentationMap.visit_nexposures,
+        ]
   internal_target:
     title: Internal Target
     description: |
@@ -145,9 +176,13 @@ properties:
         origin: PSS:dms_visit.internal_target
     archive_catalog:
       datatype: nchar(1)
-      destination: [WFIExposure.visit_internal_target, GuideWindow.visit_internal_target,
-                    SourceCatalog.visit_internal_target, SegmentationMap.visit_internal_target]
+      destination:
+        [
+          WFIExposure.visit_internal_target,
+          GuideWindow.visit_internal_target,
+          SourceCatalog.visit_internal_target,
+          SegmentationMap.visit_internal_target,
+        ]
 propertyOrder: [dither, type, start_time, nexposures, internal_target]
 flowStyle: block
 required: [dither, type, start_time, nexposures, internal_target]
-...
