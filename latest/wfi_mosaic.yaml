@@ -21,6 +21,8 @@ properties:
             tag: asdf://stsci.edu/datamodels/roman/tags/mosaic_associations-1.0.0
           basic:
             tag: asdf://stsci.edu/datamodels/roman/tags/mosaic_basic-1.1.0
+          cal_logs:
+            tag: asdf://stsci.edu/datamodels/roman/tags/cal_logs-1.0.0
           cal_step:
             tag: asdf://stsci.edu/datamodels/roman/tags/l3_cal_step-1.2.0
           coordinates:
@@ -43,7 +45,17 @@ properties:
           wcsinfo:
             tag: asdf://stsci.edu/datamodels/roman/tags/mosaic_wcsinfo-1.0.0
         required:
-          [asn, basic, cal_step, photometry, program, resample, wcs, wcsinfo]
+          [
+            asn,
+            basic,
+            cal_logs,
+            cal_step,
+            photometry,
+            program,
+            resample,
+            wcs,
+            wcsinfo,
+          ]
   data:
     title: Science Data (MJy / steradian)
     description: |
@@ -101,20 +113,7 @@ properties:
     exact_datatype: true
     ndim: 2
     unit: "MJy**2.sr**-2"
-  cal_logs:
-    tag: asdf://stsci.edu/datamodels/roman/tags/cal_logs-1.0.0
 propertyOrder:
-  [
-    meta,
-    data,
-    context,
-    err,
-    weight,
-    var_poisson,
-    var_rnoise,
-    var_flat,
-    var_sky,
-    cal_logs,
-  ]
+  [meta, data, context, err, weight, var_poisson, var_rnoise, var_flat, var_sky]
 flowStyle: block
-required: [meta, data, context, err, weight, var_poisson, var_rnoise, cal_logs]
+required: [meta, data, context, err, weight, var_poisson, var_rnoise]
