@@ -12,19 +12,17 @@ import yaml
 
 from rad import resources
 
-from .conftest import LATEST_PATHS
-
 DIRECT_URL = json.loads(Distribution.from_name("rad").read_text("direct_url.json"))
 # Needs to be a bit complicated because tox still creates a wheel, it just does it a bit differently
 # to preserve editable installs
 IS_EDITABLE = DIRECT_URL["dir_info"].get("editable", False) if "dir_info" in DIRECT_URL else "editable" in DIRECT_URL["url"]
 
 
-def test_smoke_latest_paths():
+def test_smoke_latest_paths(latest_paths):
     """
     Smoke test to make sure that the latest paths are not empty.
     """
-    assert LATEST_PATHS
+    assert latest_paths
 
 
 def test_latest_filename(latest_path):
