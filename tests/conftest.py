@@ -222,7 +222,6 @@ def manifest_uris():
     return _MANIFEST_URIS
 
 
-### Fixtures for working with the schema resources
 @pytest.fixture(scope="session", params=_MANIFEST_URIS)
 def manifest_uri(request):
     """
@@ -231,6 +230,7 @@ def manifest_uri(request):
     return request.param
 
 
+### Fixtures for working with the schema resources
 @pytest.fixture(scope="session")
 def schema_uris():
     """
@@ -239,15 +239,20 @@ def schema_uris():
     return _SCHEMA_URIS
 
 
-@pytest.fixture(scope="session", params=_SCHEMA_URIS)
+@pytest.fixture(scope="session", params=tuple(uri for uri in _LATEST_URIS if uri in _SCHEMA_URIS))
 def schema_uri(request):
     """
     Get a URI for a RAD schema from the ASDF resource manager.
+
+    Note
+    ----
+    Since the schemas are versioned, fixed schema versions cannot be modified so they are
+    not returned by this fixture.
     """
     return request.param
 
 
-@pytest.fixture(scope="session", params=tuple(uri for uri in _SCHEMA_URIS if "/reference_files" in uri))
+@pytest.fixture(scope="session", params=tuple(uri for uri in _LATEST_URIS if "/reference_files" in uri and uri in _SCHEMA_URIS))
 def ref_file_uri(request):
     """
     Get a URI related to the RAD reference files from the ASDF resource manager.
