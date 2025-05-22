@@ -1,0 +1,174 @@
+%YAML 1.1
+---
+id: asdf://stsci.edu/datamodels/roman/manifests/static-1.0.0
+extension_uri: asdf://stsci.edu/datamodels/roman/extensions/static-1.0.0
+title: Static Datamodels extension
+description: |-
+  A set of tags for serializing STScI Roman datamodels, which are now static and read-only.
+asdf_standard_requirement:
+  gte: 1.1.0
+tags:
+  # FPS Schemas
+  - tag_uri: asdf://stsci.edu/datamodels/roman/tags/fps-1.0.0
+    schema_uri: asdf://stsci.edu/datamodels/roman/schemas/fps-1.0.0
+    title: FPS schema
+    description: |-
+      FPS test data
+  - tag_uri: asdf://stsci.edu/datamodels/roman/tags/fps/cal_step-1.0.0
+    schema_uri: asdf://stsci.edu/datamodels/roman/schemas/fps/cal_step-1.0.0
+    title: FPS Level 2 Calibration Step status information
+    description: |-
+      FPS Level 2 Calibration Step status information
+  - tag_uri: asdf://stsci.edu/datamodels/roman/tags/fps/exposure-1.0.0
+    schema_uri: asdf://stsci.edu/datamodels/roman/schemas/fps/exposure-1.0.0
+    title: FPS Exposure information
+    description: |-
+      FPS Exposure information
+  - tag_uri: asdf://stsci.edu/datamodels/roman/tags/fps/groundtest-1.0.0
+    schema_uri: asdf://stsci.edu/datamodels/roman/schemas/fps/groundtest-1.0.0
+    title: FPS Ground Test Information
+    description: |-
+      FPS Ground test description.
+  - tag_uri: asdf://stsci.edu/datamodels/roman/tags/fps/guidestar-1.0.0
+    schema_uri: asdf://stsci.edu/datamodels/roman/schemas/fps/guidestar-1.0.0
+    title: FPS Guidestar information
+    description: |-
+      FPS Guidestar information
+  - tag_uri: asdf://stsci.edu/datamodels/roman/tags/fps/statistics-1.0.0
+    schema_uri: asdf://stsci.edu/datamodels/roman/schemas/fps/statistics-1.0.0
+    title: FPS Summary Statistics
+    description: |-
+      FPS Summary Statistics
+  - tag_uri: asdf://stsci.edu/datamodels/roman/tags/fps/ref_file-1.0.0
+    schema_uri: asdf://stsci.edu/datamodels/roman/schemas/fps/ref_file-1.0.0
+    title: FPS Calibration reference file names.
+    description: |-
+      FPS Calibration reference file names.
+  - tag_uri: asdf://stsci.edu/datamodels/roman/tags/fps/wfi_mode-1.0.0
+    schema_uri: asdf://stsci.edu/datamodels/roman/schemas/fps/wfi_mode-1.0.0
+    title: FPS Roman WFI Instrument Mode
+    description: |-
+      FPS Roman WFI Instrument
+  # FPS Tagged Scalars
+  - tag_uri: asdf://stsci.edu/datamodels/roman/tags/fps/calibration_software_version-1.0.0
+    schema_uri: asdf://stsci.edu/datamodels/roman/schemas/fps/tagged_scalars/calibration_software_version-1.0.0
+    title: FPS Calibration software version
+    description: |-
+      FPS Calibration software version number
+  - tag_uri: asdf://stsci.edu/datamodels/roman/tags/fps/filename-1.0.0
+    schema_uri: asdf://stsci.edu/datamodels/roman/schemas/fps/tagged_scalars/filename-1.0.0
+    title: FPS Name of the file
+    description: |-
+      FPS Name of the file
+  - tag_uri: asdf://stsci.edu/datamodels/roman/tags/fps/file_date-1.0.0
+    schema_uri: asdf://stsci.edu/datamodels/roman/schemas/fps/tagged_scalars/file_date-1.0.0
+    title: FPS Date this file was created (UTC)
+    description: |-
+      FPS Date this file was created (UTC)
+  - tag_uri: asdf://stsci.edu/datamodels/roman/tags/fps/model_type-1.0.0
+    schema_uri: asdf://stsci.edu/datamodels/roman/schemas/fps/tagged_scalars/model_type-1.0.0
+    title: FPS Type of data model
+    description: |-
+      FPS Type of data model
+  - tag_uri: asdf://stsci.edu/datamodels/roman/tags/fps/origin-1.0.0
+    schema_uri: asdf://stsci.edu/datamodels/roman/schemas/fps/tagged_scalars/origin-1.0.0
+    title: FPS Organization responsible for creating file
+    description: |-
+      FPS Organization responsible for creating file
+  - tag_uri: asdf://stsci.edu/datamodels/roman/tags/fps/prd_software_version-1.0.0
+    schema_uri: asdf://stsci.edu/datamodels/roman/schemas/fps/tagged_scalars/prd_software_version-1.0.0
+    title: FPS S&OC PRD version number used in data processing
+    description: |-
+      FPS S&OC PRD version number used in data processing
+  - tag_uri: asdf://stsci.edu/datamodels/roman/tags/fps/sdf_software_version-1.0.0
+    schema_uri: asdf://stsci.edu/datamodels/roman/schemas/fps/tagged_scalars/sdf_software_version-1.0.0
+    title: FPS SDF software version number
+    description: |-
+      FPS SDF software version number
+  - tag_uri: asdf://stsci.edu/datamodels/roman/tags/fps/telescope-1.0.0
+    schema_uri: asdf://stsci.edu/datamodels/roman/schemas/fps/tagged_scalars/telescope-1.0.0
+    title: FPS Telescope used to acquire the data
+    description: |-
+      FPS Telescope used to acquire the data
+  # TVAC Schemas
+  - tag_uri: asdf://stsci.edu/datamodels/roman/tags/tvac-1.0.0
+    schema_uri: asdf://stsci.edu/datamodels/roman/schemas/tvac-1.0.0
+    title: TVAC schema
+    description: |-
+      TVAC test data
+  - tag_uri: asdf://stsci.edu/datamodels/roman/tags/tvac/cal_step-1.0.0
+    schema_uri: asdf://stsci.edu/datamodels/roman/schemas/tvac/cal_step-1.0.0
+    title: TVAC Level 2 Calibration Step status information
+    description: |-
+      TVAC Level 2 Calibration Step status information
+  - tag_uri: asdf://stsci.edu/datamodels/roman/tags/tvac/exposure-1.0.0
+    schema_uri: asdf://stsci.edu/datamodels/roman/schemas/tvac/exposure-1.0.0
+    title: TVAC Exposure information
+    description: |-
+      TVAC Exposure information
+  - tag_uri: asdf://stsci.edu/datamodels/roman/tags/tvac/groundtest-1.0.0
+    schema_uri: asdf://stsci.edu/datamodels/roman/schemas/tvac/groundtest-1.0.0
+    title: TVAC Ground Test Information
+    description: |-
+      TVAC Ground test description.
+  - tag_uri: asdf://stsci.edu/datamodels/roman/tags/tvac/guidestar-1.0.0
+    schema_uri: asdf://stsci.edu/datamodels/roman/schemas/tvac/guidestar-1.0.0
+    title: TVAC Guidestar information
+    description: |-
+      TVAC Guidestar information
+  - tag_uri: asdf://stsci.edu/datamodels/roman/tags/tvac/statistics-1.0.0
+    schema_uri: asdf://stsci.edu/datamodels/roman/schemas/tvac/statistics-1.0.0
+    title: TVAC Summary Statistics
+    description: |-
+      TVAC Summary Statistics
+  - tag_uri: asdf://stsci.edu/datamodels/roman/tags/tvac/ref_file-1.0.0
+    schema_uri: asdf://stsci.edu/datamodels/roman/schemas/tvac/ref_file-1.0.0
+    title: TVAC Calibration reference file names.
+    description: |-
+      TVAC Calibration reference file names.
+  - tag_uri: asdf://stsci.edu/datamodels/roman/tags/tvac/wfi_mode-1.0.0
+    schema_uri: asdf://stsci.edu/datamodels/roman/schemas/tvac/wfi_mode-1.0.0
+    title: TVAC Roman WFI Instrument Mode
+    description: |-
+      TVAC Roman WFI Instrument
+  # TVAC Tagged Scalars
+  - tag_uri: asdf://stsci.edu/datamodels/roman/tags/tvac/calibration_software_version-1.0.0
+    schema_uri: asdf://stsci.edu/datamodels/roman/schemas/tvac/tagged_scalars/calibration_software_version-1.0.0
+    title: TVAC Calibration software version
+    description: |-
+      TVAC Calibration software version number
+  - tag_uri: asdf://stsci.edu/datamodels/roman/tags/tvac/filename-1.0.0
+    schema_uri: asdf://stsci.edu/datamodels/roman/schemas/tvac/tagged_scalars/filename-1.0.0
+    title: TVAC Name of the file
+    description: |-
+      TVAC Name of the file
+  - tag_uri: asdf://stsci.edu/datamodels/roman/tags/tvac/file_date-1.0.0
+    schema_uri: asdf://stsci.edu/datamodels/roman/schemas/tvac/tagged_scalars/file_date-1.0.0
+    title: TVAC Date this file was created (UTC)
+    description: |-
+      TVAC Date this file was created (UTC)
+  - tag_uri: asdf://stsci.edu/datamodels/roman/tags/tvac/model_type-1.0.0
+    schema_uri: asdf://stsci.edu/datamodels/roman/schemas/tvac/tagged_scalars/model_type-1.0.0
+    title: TVAC Type of data model
+    description: |-
+      TVAC Type of data model
+  - tag_uri: asdf://stsci.edu/datamodels/roman/tags/tvac/origin-1.0.0
+    schema_uri: asdf://stsci.edu/datamodels/roman/schemas/tvac/tagged_scalars/origin-1.0.0
+    title: TVAC Organization responsible for creating file
+    description: |-
+      TVAC Organization responsible for creating file
+  - tag_uri: asdf://stsci.edu/datamodels/roman/tags/tvac/prd_software_version-1.0.0
+    schema_uri: asdf://stsci.edu/datamodels/roman/schemas/tvac/tagged_scalars/prd_software_version-1.0.0
+    title: TVAC S&OC PRD version number used in data processing
+    description: |-
+      TVAC S&OC PRD version number used in data processing
+  - tag_uri: asdf://stsci.edu/datamodels/roman/tags/tvac/sdf_software_version-1.0.0
+    schema_uri: asdf://stsci.edu/datamodels/roman/schemas/tvac/tagged_scalars/sdf_software_version-1.0.0
+    title: TVAC SDF software version number
+    description: |-
+      TVAC SDF software version number
+  - tag_uri: asdf://stsci.edu/datamodels/roman/tags/tvac/telescope-1.0.0
+    schema_uri: asdf://stsci.edu/datamodels/roman/schemas/tvac/tagged_scalars/telescope-1.0.0
+    title: TVAC Telescope used to acquire the data
+    description: |-
+      TVAC Telescope used to acquire the data
