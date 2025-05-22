@@ -26,3 +26,4 @@ enum:
   - WFI_DARK
   - WFI_GRISM
   - WFI_PRISM
+maxLength: 25
