@@ -203,6 +203,17 @@ class TestSchemaContent:
         """
         assert uri in latest_uris, f"{uri} is not in the list of schemas to be tested."
 
+    def test_string_max_length(self, schema):
+        """
+        Checks that if a `maxLength` is specified, that it is specified along with a `type` of `string`.
+        """
+
+        def callback(node):
+            if isinstance(node, Mapping) and "maxLength" in node:
+                assert node.get("type") == "string", "maxLength is only valid for strings"
+
+        asdf.treeutil.walk(schema, callback)
+
     def test_varchar_length(self, schema_uri, schema, request):
         """
         Test that varchar(N) in archive_metadata for string objects
