@@ -17,12 +17,12 @@ properties:
           the visit.
         anyOf:
           - type: string
+            maxLength: 100
           - type: "null"
         sdf:
           special_processing: VALUE_REQUIRED
           source:
             origin: PSS:dms_visit.dither_type
-        maxLength: 100
         archive_catalog:
           datatype: nvarchar(100)
           destination:
@@ -38,12 +38,12 @@ properties:
           the visit.
         anyOf:
           - type: string
+            maxLength: 100
           - type: "null"
         sdf:
           special_processing: VALUE_REQUIRED
           source:
             origin: PSS:dms_visit.subpixel_dither_type
-        maxLength: 100
         archive_catalog:
           datatype: nvarchar(100)
           destination:

@@ -151,7 +151,6 @@ properties:
               special_processing: VALUE_REQUIRED
               source:
                 origin: Science Data Formatting
-            maxLength: 18
             archive_catalog:
               datatype: nvarchar(18)
               destination: [GuideWindow.gw_mode]
