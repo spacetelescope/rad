@@ -37,7 +37,6 @@ properties:
       special_processing: VALUE_REQUIRED
       source:
         origin: TBD
-    maxLength: 10
     archive_catalog:
       datatype: nvarchar(10)
       destination:
@@ -53,7 +52,6 @@ properties:
       special_processing: VALUE_REQUIRED
       source:
         origin: TBD
-    maxLength: 20
     archive_catalog:
       datatype: nvarchar(20)
       destination:

@@ -26,7 +26,6 @@ properties:
               special_processing: VALUE_REQUIRED
               source:
                 origin: TBD
-            maxLength: 20
             archive_catalog:
               datatype: nvarchar(20)
               destination: [GuideWindow.optical_element]

@@ -150,7 +150,6 @@ properties:
       within the visit file. The allowed range of visit file group
       numbers is 01 to 99 inclusive.
     type: integer
-    maxLength: 3
     sdf:
       special_processing: VALUE_REQUIRED
       source:
