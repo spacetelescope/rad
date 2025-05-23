@@ -4,4 +4,5 @@ Screen {
 
 Label {
     padding: 1 2;
+    width: auto;
 }
