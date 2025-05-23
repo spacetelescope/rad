@@ -42,7 +42,7 @@ RAD_URLS = (
 )
 
 
-class LatestSchema(HorizontalGroup):
+class Resource(HorizontalGroup):
     """
     A class to represent the latest RAD schema.
     """
@@ -67,7 +67,7 @@ class LatestSchema(HorizontalGroup):
             return self.success()
 
     class Bump(Message):
-        def __init__(self, schema: LatestSchema, bump_version: str) -> None:
+        def __init__(self, schema: Resource, bump_version: str) -> None:
             super().__init__()
             self.schema = schema
             self.bump_version = bump_version
@@ -83,7 +83,7 @@ class LatestSchema(HorizontalGroup):
         self._label_width = None
 
     @classmethod
-    def from_path(cls, path: Path, *args, **kwargs) -> LatestSchema:
+    def from_path(cls, path: Path, *args, **kwargs) -> Resource:
         body = path.read_text()
         yaml = safe_load(body)
         uri = yaml["id"]
@@ -125,14 +125,14 @@ class LatestSchema(HorizontalGroup):
         """
         return self._schema_path(self.path, self.version, self.uri)
 
-    def update_uri(self, current_uri: str, new_uri: str) -> LatestSchema:
+    def update_uri(self, current_uri: str, new_uri: str) -> Resource:
         new_body = self.body.replace(current_uri, new_uri)
         with self.path.open("w") as f:
             f.write(new_body)
 
-        return LatestSchema.from_path(self.path)
+        return Resource.from_path(self.path)
 
-    def bump(self, version: str) -> LatestSchema:
+    def bump(self, version: str) -> Resource:
         """
         Bump the version of the schema.
             Does this via the following steps:
@@ -195,13 +195,13 @@ class LatestSchema(HorizontalGroup):
         self._label_width = value
 
 
-class UpdateLatestSchema(VerticalScroll):
+class Update(VerticalScroll):
     class Ready(Message):
         def __init__(self, versions: dict[str, str]) -> None:
             super().__init__()
             self.versions = versions
 
-    def __init__(self, schema: LatestSchema, manager: LatestSchemaManager, *args, **kwargs) -> None:
+    def __init__(self, schema: Resource, manager: Manager, *args, **kwargs) -> None:
         super().__init__(*args, **kwargs)
         self.schema = schema
         self.manager = manager
@@ -210,7 +210,7 @@ class UpdateLatestSchema(VerticalScroll):
         self.version_updates = {}
 
     @classmethod
-    def from_path(cls, path: Path, manager: LatestSchemaManager) -> UpdateLatestSchema:
+    def from_path(cls, path: Path, manager: Manager) -> Update:
         """
         Create an UpdateLatestSchema from a path.
         """
@@ -222,7 +222,7 @@ class UpdateLatestSchema(VerticalScroll):
         """
         self.manager.bump(self.order, versions)
 
-    def _find_needed_updates(self) -> dict[str, UpdateLatestSchema]:
+    def _find_needed_updates(self) -> dict[str, Update]:
         """
         Find the needed updates for the schema.
         """
@@ -232,12 +232,12 @@ class UpdateLatestSchema(VerticalScroll):
                 continue
 
             if self.schema.uri in latest.body or self.schema.tag_uri in latest.body:
-                needed_updates[uri] = UpdateLatestSchema(latest, self.manager)
+                needed_updates[uri] = Update(latest, self.manager)
 
         return needed_updates
 
     @lazyproperty
-    def graph(self) -> tuple[dict[str, set[str]], dict[str, LatestSchema]]:
+    def graph(self) -> tuple[dict[str, set[str]], dict[str, Resource]]:
         graph = {self.schema.uri: set(self.needed_updates.keys())}
         for update in self.needed_updates.values():
             graph.update(update.graph)
@@ -245,14 +245,14 @@ class UpdateLatestSchema(VerticalScroll):
         return graph
 
     @lazyproperty
-    def order(self) -> tuple[tuple[str], dict[str, LatestSchema]]:
+    def order(self) -> tuple[tuple[str], dict[str, Resource]]:
         """
         Get the update order for the schema.
         """
         return tuple(TopologicalSorter(self.graph).static_order())
 
     @lazyproperty
-    def frozen(self) -> tuple[LatestSchema]:
+    def frozen(self) -> tuple[Resource]:
         """
         Get the frozen schemas for the update.
         """
@@ -283,20 +283,20 @@ class UpdateLatestSchema(VerticalScroll):
         """
         yield from self.frozen
 
-    def on_latest_schema_bump(self, event: LatestSchema.Bump) -> None:
+    def on_resource_bump(self, event: Resource.Bump) -> None:
         event.stop()
         self.version_updates[event.schema.uri] = event.bump_version
         if self.frozen_uris == set(self.version_updates.keys()):
             self.post_message(self.Ready(self.version_updates))
 
 
-class LatestSchemaManager(Mapping):
+class Manager(Mapping):
     """
     A class to manage the latest RAD schemas.
     """
 
     def __init__(self) -> None:
-        self._latest_schemas: dict[str, LatestSchema] = {}
+        self._latest_schemas: dict[str, Resource] = {}
         self._key_map: dict[str | Path, str] = {}
 
         self._find_latest_schemas()
@@ -312,7 +312,7 @@ class LatestSchemaManager(Mapping):
         """
         Find a schema by its path.
         """
-        schema = LatestSchema.from_path(path)
+        schema = Resource.from_path(path)
         if schema.uri in self.frozen_schema_uris:
             schema.frozen = True
 
@@ -364,7 +364,7 @@ class LatestSchemaManager(Mapping):
         return tuple(str(v) for v in sorted(versions))
 
     @property
-    def manifest(self) -> LatestSchema:
+    def manifest(self) -> Resource:
         """
         The manifest schema
         """
@@ -425,13 +425,13 @@ class LatestSchemaManager(Mapping):
 
         return self._key_map[path]
 
-    def __getitem__(self, item: Path | str) -> LatestSchema:
+    def __getitem__(self, item: Path | str) -> Resource:
         """
         Get the latest schema for a given item.
         """
         return self._latest_schemas[self.get_path(item)]
 
-    def __setitem__(self, key: Path | str, value: LatestSchema) -> None:
+    def __setitem__(self, key: Path | str, value: Resource) -> None:
         """
         Set the latest schema for a given item.
         """
@@ -452,7 +452,7 @@ class LatestSchemaManager(Mapping):
         """
         Get the schemas that need to be bumped for a given schema.
         """
-        return UpdateLatestSchema.from_schema(self[item], self).update_order
+        return Update.from_schema(self[item], self).update_order
 
     def _update_uris(self, current_uri: str, new_uri: str) -> None:
         """
@@ -462,7 +462,7 @@ class LatestSchemaManager(Mapping):
             if current_uri in schema.body:
                 self._latest_schemas[schema.uri] = schema.update_uri(current_uri, new_uri)
 
-    def pop(self, item: Path | str) -> LatestSchema:
+    def pop(self, item: Path | str) -> Resource:
         schema = self._latest_schemas.pop(self.get_path(item))
         self._key_map.pop(schema.path)
         self._key_map.pop(schema.uri)
@@ -478,8 +478,8 @@ class LatestSchemaManager(Mapping):
                 self._update_uris(current_schema.uri, schema.uri)
                 self._update_uris(current_schema.tag_uri, schema.tag_uri)
 
-    def update_schema(self, path: Path) -> UpdateLatestSchema:
-        return UpdateLatestSchema(self[path], self)
+    def update_schema(self, path: Path) -> Update:
+        return Update(self[path], self)
 
 
 class Rad(DirectoryTree):
@@ -492,7 +492,7 @@ class Rad(DirectoryTree):
 
     def __init__(self, **kwargs) -> None:
         super().__init__(LATEST_DIR, **kwargs)
-        self._manager = LatestSchemaManager()
+        self._manager = Manager()
 
     def filter_paths(self, paths: Iterable[Path]) -> Iterable[Path]:
         return [path for path in paths if path.is_dir() or path.suffix == ".yaml"]
@@ -512,7 +512,7 @@ class Rad(DirectoryTree):
         return text
 
 
-class ScreenReturn(StrEnum):
+class Return(StrEnum):
     """
     An enum to represent the return values for the bump screen.
     """
@@ -521,12 +521,12 @@ class ScreenReturn(StrEnum):
     RETURN = auto()
 
 
-class BumpSchema(Screen[ScreenReturn]):
+class BumpScreen(Screen[Return]):
     """
     A screen to handle the bumping of a schema.
     """
 
-    def __init__(self, update: UpdateLatestSchema, *args, button_text: str | None = None, **kwargs) -> None:
+    def __init__(self, update: Update, *args, button_text: str | None = None, **kwargs) -> None:
         super().__init__(*args, **kwargs)
         self._update = update
         self._versions = None
@@ -549,7 +549,7 @@ class BumpSchema(Screen[ScreenReturn]):
         """
         Handle the return button press.
         """
-        self.dismiss(ScreenReturn.RETURN)
+        self.dismiss(Return.RETURN)
 
     @on(Button.Pressed, "#bump_schemas")
     def handle_bump(self) -> None:
@@ -557,14 +557,14 @@ class BumpSchema(Screen[ScreenReturn]):
         Handle the bump button press.
         """
         self._update.bump(self._versions)
-        self.dismiss(ScreenReturn.BUMP)
+        self.dismiss(Return.BUMP)
 
-    def on_update_latest_schema_ready(self, event: UpdateLatestSchema.Ready) -> None:
+    def on_update_ready(self, event: Update.Ready) -> None:
         self.query_one("#bump_schemas", Button).disabled = False
         self._versions = event.versions
 
 
-class NewSchema(Screen[ScreenReturn]):
+class NewSchema(Screen[Return]):
     """
     A screen to handle the creation of a new schema.
     """
@@ -576,7 +576,7 @@ class NewSchema(Screen[ScreenReturn]):
         A validator to check if a version is valid.
         """
 
-        def __init__(self, manager: LatestSchemaManager) -> None:
+        def __init__(self, manager: Manager) -> None:
             super().__init__()
             self.manager = manager
 
@@ -596,7 +596,7 @@ class NewSchema(Screen[ScreenReturn]):
 
             return self.success()
 
-    def __init__(self, manager: LatestSchemaManager, *args, **kwargs) -> None:
+    def __init__(self, manager: Manager, *args, **kwargs) -> None:
         super().__init__(*args, **kwargs)
         self._manager = manager
 
@@ -642,7 +642,7 @@ class NewSchema(Screen[ScreenReturn]):
 
     @on(Button.Pressed, "#return")
     def handle_return(self) -> None:
-        self.dismiss(ScreenReturn.RETURN)
+        self.dismiss(Return.RETURN)
 
     def _set_create_state_disabled(self) -> None:
         uri_valid = self.query_one("#new_uri", Input).is_valid
@@ -690,13 +690,11 @@ class NewSchema(Screen[ScreenReturn]):
             manifest = self._manager.manifest
             if manifest.frozen:
                 match await self.app.push_screen_wait(
-                    BumpSchema(
-                        UpdateLatestSchema.from_path(manifest.path, self._manager), button_text="Bump Manifest and Create Schema"
-                    )
+                    BumpScreen(Update.from_path(manifest.path, self._manager), button_text="Bump Manifest and Create Schema")
                 ):
-                    case ScreenReturn.BUMP:
+                    case Return.BUMP:
                         self.notify("Manifest bumped successfully.", severity="success")
-                    case ScreenReturn.RETURN:
+                    case Return.RETURN:
                         self.notify("Returned to new schema without bumping manifest.", severity="info")
                         return
                     case _:
@@ -704,7 +702,7 @@ class NewSchema(Screen[ScreenReturn]):
                         return
 
         self._create_new_schema()
-        self.dismiss(ScreenReturn.BUMP)
+        self.dismiss(Return.BUMP)
 
     def _create_new_schema(self) -> None:
         """
@@ -770,8 +768,8 @@ class NewSchema(Screen[ScreenReturn]):
         if symlink_path.resolve() != file_path:
             raise ValueError(f"Symlink {symlink_path} does not point to {file_path}")
 
-        self._manager[uri] = LatestSchema.from_path(file_path)
-        self.dismiss(ScreenReturn.BUMP)
+        self._manager[uri] = Resource.from_path(file_path)
+        self.dismiss(Return.BUMP)
 
 
 class RadVersioningApp(App):
@@ -786,7 +784,7 @@ class RadVersioningApp(App):
 
     def __init__(self, *args, **kwargs) -> None:
         super().__init__(*args, **kwargs)
-        self._manager = LatestSchemaManager()
+        self._manager = Manager()
         self._rad = Rad(id="rad")
         self._update_path = None
 
@@ -811,10 +809,10 @@ class RadVersioningApp(App):
         Handle the create schema button press.
         """
         match await self.push_screen_wait(NewSchema(self._manager)):
-            case ScreenReturn.BUMP:
+            case Return.BUMP:
                 self._rad.reload()
                 self.notify("New schema created successfully.", severity="success")
-            case ScreenReturn.RETURN:
+            case Return.RETURN:
                 self._rad.reload()
                 self.notify("Returned to main menu without creating a new schema.", severity="info")
             case _:
@@ -830,11 +828,11 @@ class RadVersioningApp(App):
         """
         Handle the bump button press.
         """
-        match await self.push_screen_wait(BumpSchema(UpdateLatestSchema.from_path(self._update_path, self._manager))):
-            case ScreenReturn.BUMP:
+        match await self.push_screen_wait(BumpScreen(Update.from_path(self._update_path, self._manager))):
+            case Return.BUMP:
                 self._rad.reload()
                 self.notify("Schemas bumped successfully.", severity="success")
-            case ScreenReturn.RETURN:
+            case Return.RETURN:
                 self._rad.reload()
                 self.notify("Returned to main menu without bumping.", severity="info")
             case _:
