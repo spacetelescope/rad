@@ -24,8 +24,8 @@ tags:
     title: Guide window schema
     description: |-
       Guide window schema
-  - tag_uri: asdf://stsci.edu/datamodels/roman/tags/ramp-1.2.0
-    schema_uri: asdf://stsci.edu/datamodels/roman/schemas/ramp-1.2.0
+  - tag_uri: asdf://stsci.edu/datamodels/roman/tags/ramp-1.3.0
+    schema_uri: asdf://stsci.edu/datamodels/roman/schemas/ramp-1.3.0
     title: Ramp schema
     description: |-
       Ramp schema
@@ -39,13 +39,13 @@ tags:
     title: Roman WFI Raw Science Data datamodel
     description: |-
       Basic Roman Raw Science
-  - tag_uri: asdf://stsci.edu/datamodels/roman/tags/wfi_image-1.2.0
-    schema_uri: asdf://stsci.edu/datamodels/roman/schemas/wfi_image-1.2.0
+  - tag_uri: asdf://stsci.edu/datamodels/roman/tags/wfi_image-1.3.0
+    schema_uri: asdf://stsci.edu/datamodels/roman/schemas/wfi_image-1.3.0
     title: Wfi level 2 image information
     description: |-
       Wfi level 2 image information
-  - tag_uri: asdf://stsci.edu/datamodels/roman/tags/wfi_mosaic-1.2.0
-    schema_uri: asdf://stsci.edu/datamodels/roman/schemas/wfi_mosaic-1.2.0
+  - tag_uri: asdf://stsci.edu/datamodels/roman/tags/wfi_mosaic-1.3.0
+    schema_uri: asdf://stsci.edu/datamodels/roman/schemas/wfi_mosaic-1.3.0
     title: Wfi level 3 mosaic information
     description: |-
       Wfi level 3 mosaic information
@@ -131,13 +131,13 @@ tags:
     title: Guidestar information
     description: |-
       Guidestar information
-  - tag_uri: asdf://stsci.edu/datamodels/roman/tags/l2_cal_step-1.1.0
-    schema_uri: asdf://stsci.edu/datamodels/roman/schemas/l2_cal_step-1.1.0
+  - tag_uri: asdf://stsci.edu/datamodels/roman/tags/l2_cal_step-1.2.0
+    schema_uri: asdf://stsci.edu/datamodels/roman/schemas/l2_cal_step-1.2.0
     title: Level 2 Calibration Step status information
     description: |-
       Level 2 Calibration Step status information
-  - tag_uri: asdf://stsci.edu/datamodels/roman/tags/l3_cal_step-1.1.0
-    schema_uri: asdf://stsci.edu/datamodels/roman/schemas/l3_cal_step-1.1.0
+  - tag_uri: asdf://stsci.edu/datamodels/roman/tags/l3_cal_step-1.2.0
+    schema_uri: asdf://stsci.edu/datamodels/roman/schemas/l3_cal_step-1.2.0
     title: Level 3 Calibration Step status information
     description: |-
       Level 3 Calibration Step status information
