@@ -14,8 +14,8 @@ tags:
     title: Level 1 FACE Guide Star Window Information schema
     description: |-
       Level 1 FACE Guide Star Window Information schema
-  - tag_uri: asdf://stsci.edu/datamodels/roman/tags/l1_detector_guidewindow-1.1.0
-    schema_uri: asdf://stsci.edu/datamodels/roman/schemas/l1_detector_guidewindow-1.1.0
+  - tag_uri: asdf://stsci.edu/datamodels/roman/tags/l1_detector_guidewindow-1.2.0
+    schema_uri: asdf://stsci.edu/datamodels/roman/schemas/l1_detector_guidewindow-1.2.0
     title: Level 1 Detector Guide Star Window Information schema
     description: |-
       Level 1 Detector Guide Star Window Information schema

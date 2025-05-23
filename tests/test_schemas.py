@@ -49,6 +49,13 @@ VARCHAR_XFAILS = (
 
 REF_COMMON_XFAILS = ("asdf://stsci.edu/datamodels/roman/schemas/reference_files/skycells-1.0.0",)
 
+ARRAY_TAG_XFAILS = (
+    "asdf://stsci.edu/datamodels/roman/schemas/l1_detector_guidewindow-1.0.0",
+    "asdf://stsci.edu/datamodels/roman/schemas/l1_detector_guidewindow-1.1.0",
+    "asdf://stsci.edu/datamodels/roman/schemas/fps/statistics-1.0.0",
+    "asdf://stsci.edu/datamodels/roman/schemas/tvac/statistics-1.0.0",
+)
+
 
 class TestSchemaContent:
     """
@@ -112,6 +119,42 @@ class TestSchemaContent:
                     callback_ndarray(sub_node, entry)
 
         asdf.treeutil.walk(schema, callback)
+
+    def test_array_tag(self, schema_uri, schema, request):
+        """
+        Any schema using ndim, datatype, etc also has an array tag
+        """
+        if schema_uri in ARRAY_TAG_XFAILS:
+            request.applymarker(
+                pytest.mark.xfail(
+                    reason=f"{schema_uri} is not being altered to ensure array tags, due to it being in either tvac or fps."
+                    if "fps" in schema_uri or "tvac" in schema_uri
+                    else f"{schema_uri} is a published schema."
+                )
+            )
+
+        def callback(node):
+            if not isinstance(node, dict):
+                return
+            if "destination" in node:
+                # don't check archive_catalog entries
+                return
+            if "byteorder" in node:
+                # don't check sub-dtypes
+                return
+            if any(k in node for k in ("ndim", "datatype", "exact_datatype")):
+                tag = node.get("tag", "")
+                assert tag.startswith("tag:stsci.edu:asdf/core/ndarray-")
+
+        asdf.treeutil.walk(schema, callback)
+
+    @pytest.mark.parametrize("uri", ARRAY_TAG_XFAILS)
+    def test_array_tag_xfail_relevant(self, uri, schema_uris):
+        """
+        Test that URIS that are marked as failing the array tagging are still relevant (in use).
+        -> Smokes out when ARRAY_TAG_XFAILS is not relevant anymore.
+        """
+        assert uri in schema_uris, f"{uri} is not in the list of schemas to be tested."
 
     def test_ref_loneliness(self, schema):
         """
@@ -211,7 +254,7 @@ class TestSchemaContent:
 
         asdf.treeutil.walk(schema, callback)
 
-    @pytest.mark.parametrize("uri", METADATA_FORCE_XFAILS)
+    @pytest.mark.parametrize("uri", VARCHAR_XFAILS)
     def test_varchar_xfail_relevant(self, uri, schema_uris):
         """
         Test that URIS that are marked as failing for varchar length are still relevant (in use).

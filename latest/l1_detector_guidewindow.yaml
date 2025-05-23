@@ -1,7 +1,7 @@
 %YAML 1.1
 ---
 $schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.0.0
-id: asdf://stsci.edu/datamodels/roman/schemas/l1_detector_guidewindow-1.1.0
+id: asdf://stsci.edu/datamodels/roman/schemas/l1_detector_guidewindow-1.2.0
 
 title: Level 1 Detector Guide Star Window Information
 
@@ -656,6 +656,7 @@ properties:
         description: |
           2D array containing all the lower left corners of each guide
           window resultant pair in science coordinates (x_start, y_start).
+        tag: tag:stsci.edu:asdf/core/ndarray-1.*
         ndim: 2
         datatype: uint16
         exact_datatype: true
@@ -664,6 +665,7 @@ properties:
         description: |
           2D array containing all the upper right corners of each guide
           window resultant pair in science coordinates (x_stop, y_stop).
+        tag: tag:stsci.edu:asdf/core/ndarray-1.*
         ndim: 2
         datatype: uint16
         exact_datatype: true
@@ -690,6 +692,7 @@ properties:
           impacted by the reset sweeping across those rows of the detector.
           This flag highlights which guide window resultant pairs are
           impacted by these resets.
+        tag: tag:stsci.edu:asdf/core/ndarray-1.*
         ndim: 1
         datatype: bool8
         exact_datatype: true
@@ -700,6 +703,7 @@ properties:
           are read out during a reset. True values correspond to pairs taken
           during reset reads, False values correspond to pairs taken during
           normal frame reads.
+        tag: tag:stsci.edu:asdf/core/ndarray-1.*
         ndim: 1
         datatype: bool8
         exact_datatype: true
@@ -726,6 +730,7 @@ properties:
           pedestal and signal resultants. The span between the pedestal
           and the signal values indicate which full frame row indices
           were read out during the guide window exposure.
+        tag: tag:stsci.edu:asdf/core/ndarray-1.*
         ndim: 2
         datatype: uint16
         exact_datatype: true
@@ -808,6 +813,7 @@ properties:
         description: |
           2D array containing all the lower left corners of each guide
           window resultant pair in science coordinates (x_start, y_start).
+        tag: tag:stsci.edu:asdf/core/ndarray-1.*
         ndim: 2
         datatype: uint16
         exact_datatype: true
@@ -816,6 +822,7 @@ properties:
         description: |
           2D array containing all the upper right corners of each guide
           window resultant pair in science coordinates (x_stop, y_stop).
+        tag: tag:stsci.edu:asdf/core/ndarray-1.*
         ndim: 2
         datatype: uint16
         exact_datatype: true
@@ -842,6 +849,7 @@ properties:
           impacted by the reset sweeping across those rows of the detector.
           This flag highlights which guide window resultant pairs are
           impacted by these resets.
+        tag: tag:stsci.edu:asdf/core/ndarray-1.*
         ndim: 1
         datatype: bool8
         exact_datatype: true
@@ -852,6 +860,7 @@ properties:
           are read out during a reset. True values correspond to pairs taken
           during reset reads, False values correspond to pairs taken during
           normal frame reads.
+        tag: tag:stsci.edu:asdf/core/ndarray-1.*
         ndim: 1
         datatype: bool8
         exact_datatype: true
@@ -878,6 +887,7 @@ properties:
           pedestal and signal resultants. The span between the pedestal
           and the signal values indicate which full frame row indices
           were read out during the guide window exposure.
+        tag: tag:stsci.edu:asdf/core/ndarray-1.*
         ndim: 2
         datatype: uint16
         exact_datatype: true
@@ -938,6 +948,7 @@ properties:
           1D array of signed integers with the same length as the tracking signal resultants.
           Positive integers correspond to the exposure number (single MA Table read).
           Negative integers correspond to the tracking reads between exposures.
+        tag: tag:stsci.edu:asdf/core/ndarray-1.*
         ndim: 1
         datatype: int16
         exact_datatype: true
@@ -972,6 +983,7 @@ properties:
         description: |
           2D array containing all the lower left corners of each guide
           window resultant pair in science coordinates (x_start, y_start).
+        tag: tag:stsci.edu:asdf/core/ndarray-1.*
         ndim: 2
         datatype: uint16
         exact_datatype: true
@@ -980,6 +992,7 @@ properties:
         description: |
           2D array containing all the upper right corners of each guide
           window resultant pair in science coordinates (x_stop, y_stop).
+        tag: tag:stsci.edu:asdf/core/ndarray-1.*
         ndim: 2
         datatype: uint16
         exact_datatype: true
@@ -1006,6 +1019,7 @@ properties:
           impacted by the reset sweeping across those rows of the detector.
           This flag highlights which guide window resultant pairs are
           impacted by these resets.
+        tag: tag:stsci.edu:asdf/core/ndarray-1.*
         ndim: 1
         datatype: bool8
         exact_datatype: true
@@ -1016,6 +1030,7 @@ properties:
           are read out during a reset. True values correspond to pairs taken
           during reset reads, False values correspond to pairs taken during
           normal frame reads.
+        tag: tag:stsci.edu:asdf/core/ndarray-1.*
         ndim: 1
         datatype: bool8
         exact_datatype: true
@@ -1042,6 +1057,7 @@ properties:
           pedestal and signal resultants. The span between the pedestal
           and the signal values indicate which full frame row indices
           were read out during the guide window exposure.
+        tag: tag:stsci.edu:asdf/core/ndarray-1.*
         ndim: 2
         datatype: uint16
         exact_datatype: true
