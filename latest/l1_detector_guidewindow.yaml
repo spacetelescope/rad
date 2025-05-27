@@ -157,7 +157,7 @@ properties:
               resultant in seconds.
             type: number
           wsm_edge_used:
-            title: Averaged FACE Filename
+            title: Guiding Spectral Edge
             description: |
               Spectral edge used for guiding with the prism or grism. Either "red" or "blue".
             type: string
