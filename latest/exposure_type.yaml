@@ -1,7 +1,7 @@
 %YAML 1.1
 ---
 $schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.0.0
-id: asdf://stsci.edu/datamodels/roman/schemas/exposure_type-1.0.0
+id: asdf://stsci.edu/datamodels/roman/schemas/exposure_type-1.1.0
 
 # Helper file to enumerate viewing modes for exposure and ref_exposure
 title: Exposure Type
@@ -16,9 +16,13 @@ description: |
 type: string
 enum:
   - WFI_IMAGE
+  - WFI_SPECTRAL
+  - WFI_IM_DARK
+  - WFI_SP_DARK
+  - WFI_FLAT
+  - WFI_LOLO
+  - WFI_WFSC
+  # These are slated for removal in the future
+  - WFI_DARK
   - WFI_GRISM
   - WFI_PRISM
-  - WFI_DARK
-  - WFI_FLAT
-  - WFI_WFSC
-...

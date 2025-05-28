@@ -3,7 +3,6 @@
 $schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.0.0
 id: asdf://stsci.edu/datamodels/roman/schemas/fps/exposure-1.0.0
 
-
 title: |
   FPS Base Exposure Information
 
@@ -177,13 +176,36 @@ properties:
     archive_catalog:
       datatype: nvarchar(3500)
       destination: [WFICommon.read_pattern]
-propertyOrder: [type, start_time,
-           ngroups, nframes, data_problem,
-           frame_divisor, groupgap, frame_time, group_time, exposure_time,
-           ma_table_name, ma_table_number, read_pattern]
+propertyOrder:
+  [
+    type,
+    start_time,
+    ngroups,
+    nframes,
+    data_problem,
+    frame_divisor,
+    groupgap,
+    frame_time,
+    group_time,
+    exposure_time,
+    ma_table_name,
+    ma_table_number,
+    read_pattern,
+  ]
 flowStyle: block
-required: [type, start_time,
-           ngroups, nframes, data_problem,
-           frame_divisor, groupgap, frame_time, group_time, exposure_time,
-           ma_table_name, ma_table_number, read_pattern]
-...
+required:
+  [
+    type,
+    start_time,
+    ngroups,
+    nframes,
+    data_problem,
+    frame_divisor,
+    groupgap,
+    frame_time,
+    group_time,
+    exposure_time,
+    ma_table_name,
+    ma_table_number,
+    read_pattern,
+  ]

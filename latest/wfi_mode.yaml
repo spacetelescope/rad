@@ -1,8 +1,7 @@
 %YAML 1.1
 ---
 $schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.0.0
-id: asdf://stsci.edu/datamodels/roman/schemas/wfi_mode-1.0.0
-
+id: asdf://stsci.edu/datamodels/roman/schemas/wfi_mode-1.1.0
 
 title: Wide Field Instrument (WFI) Configuration Information
 type: object
@@ -21,7 +20,12 @@ properties:
     maxLength: 5
     archive_catalog:
       datatype: nvarchar(5)
-      destination: [WFIExposure.instrument_name, GuideWindow.instrument_name, WFICommon.instrument_name]
+      destination:
+        [
+          WFIExposure.instrument_name,
+          GuideWindow.instrument_name,
+          WFICommon.instrument_name,
+        ]
   detector:
     allOf:
       - $ref: asdf://stsci.edu/datamodels/roman/schemas/wfi_detector-1.0.0
@@ -36,10 +40,11 @@ properties:
     maxLength: 10
     archive_catalog:
       datatype: nvarchar(10)
-      destination: [WFIExposure.detector, GuideWindow.detector, WFICommon.detector]
+      destination:
+        [WFIExposure.detector, GuideWindow.detector, WFICommon.detector]
   optical_element:
     allOf:
-      - $ref: asdf://stsci.edu/datamodels/roman/schemas/wfi_optical_element-1.0.0
+      - $ref: asdf://stsci.edu/datamodels/roman/schemas/wfi_optical_element-1.1.0
     title: Wide Field Instrument (WFI) Optical Element
     description: |
       Name of the optical element used to take the science
@@ -51,8 +56,12 @@ properties:
     maxLength: 20
     archive_catalog:
       datatype: nvarchar(20)
-      destination: [WFIExposure.optical_element, GuideWindow.optical_element, WFICommon.optical_element]
+      destination:
+        [
+          WFIExposure.optical_element,
+          GuideWindow.optical_element,
+          WFICommon.optical_element,
+        ]
 propertyOrder: [detector, optical_element, name]
 flowStyle: block
 required: [detector, optical_element, name]
-...

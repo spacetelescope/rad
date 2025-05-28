@@ -29,4 +29,3 @@ properties:
 required: [meta, dq]
 flowStyle: block
 propertyOrder: [meta, dq]
-...

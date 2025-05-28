@@ -13,4 +13,3 @@ archive_catalog:
   destination: [WFICommon.telescopes]
 
 flowStyle: block
-...

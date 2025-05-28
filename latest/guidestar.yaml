@@ -117,11 +117,26 @@ properties:
     archive_catalog:
       datatype: nvarchar(10)
       destination: [WFIExposure.epoch, GuideWindow.epoch]
-propertyOrder: [guide_window_id, guide_mode,
-  window_xstart, window_ystart, window_xstop, window_ystop,
-  guide_star_id, epoch]
-required: [guide_window_id, guide_mode,
-  window_xstart, window_ystart, window_xstop, window_ystop,
-  guide_star_id, epoch]
+propertyOrder:
+  [
+    guide_window_id,
+    guide_mode,
+    window_xstart,
+    window_ystart,
+    window_xstop,
+    window_ystop,
+    guide_star_id,
+    epoch,
+  ]
+required:
+  [
+    guide_window_id,
+    guide_mode,
+    window_xstart,
+    window_ystart,
+    window_xstop,
+    window_ystop,
+    guide_star_id,
+    epoch,
+  ]
 flowStyle: block
-...

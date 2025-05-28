@@ -48,4 +48,3 @@ properties:
 required: [meta, gamma, zeta, alpha]
 flowStyle: block
 propertyOrder: [meta, gamma, zeta, alpha]
-...

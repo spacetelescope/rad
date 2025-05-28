@@ -1,0 +1,112 @@
+%YAML 1.1
+---
+$schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.0.0
+id: asdf://stsci.edu/datamodels/roman/schemas/wfi_mosaic-1.2.0
+
+title: |
+  The schema for WFI Level 3 mosaics.
+
+datamodel_name: MosaicModel
+archive_meta: None
+
+type: object
+properties:
+  meta:
+    allOf:
+      - $ref: asdf://stsci.edu/datamodels/roman/schemas/basic-1.0.0
+      - type: object
+        properties:
+          # Placeholder for 'dither' schema tag
+          asn:
+            tag: asdf://stsci.edu/datamodels/roman/tags/mosaic_associations-1.0.0
+          basic:
+            tag: asdf://stsci.edu/datamodels/roman/tags/mosaic_basic-1.1.0
+          cal_step:
+            tag: asdf://stsci.edu/datamodels/roman/tags/l3_cal_step-1.1.0
+          coordinates:
+            tag: asdf://stsci.edu/datamodels/roman/tags/coordinates-1.0.0
+          individual_image_meta:
+            tag: asdf://stsci.edu/datamodels/roman/tags/individual_image_meta-1.0.0
+          photometry:
+            tag: asdf://stsci.edu/datamodels/roman/tags/photometry-1.0.0
+          program:
+            tag: asdf://stsci.edu/datamodels/roman/tags/program-1.1.0
+          ref_file:
+            tag: asdf://stsci.edu/datamodels/roman/tags/ref_file-1.1.0
+          resample:
+            tag: asdf://stsci.edu/datamodels/roman/tags/resample-1.0.0
+          wcs:
+            title: WCS object
+            anyOf:
+              - tag: tag:stsci.edu:gwcs/wcs-*
+              - type: "null"
+          wcsinfo:
+            tag: asdf://stsci.edu/datamodels/roman/tags/mosaic_wcsinfo-1.0.0
+        required:
+          [asn, basic, cal_step, photometry, program, resample, wcs, wcsinfo]
+  data:
+    title: Science Data (MJy / steradian)
+    description: |
+      The science data array, excluding the border reference pixels in units of
+      MJy / steradian.
+    tag: tag:stsci.edu:asdf/core/ndarray-1.*
+    datatype: float32
+    exact_datatype: true
+    ndim: 2
+    unit: "MJy.sr**-1"
+  err:
+    title: Error Data (MJy / steradian)
+    tag: tag:stsci.edu:asdf/core/ndarray-1.*
+    datatype: float32
+    exact_datatype: true
+    ndim: 2
+    unit: "MJy.sr**-1"
+  context:
+    title: Context Data
+    tag: tag:stsci.edu:asdf/core/ndarray-1.*
+    datatype: uint32
+    exact_datatype: true
+    ndim: 3
+  weight:
+    title: Weight Data
+    tag: tag:stsci.edu:asdf/core/ndarray-1.*
+    datatype: float32
+    exact_datatype: true
+    ndim: 2
+  var_poisson:
+    title: Poisson Variability (MJy^2 / steradian^2)
+    tag: tag:stsci.edu:asdf/core/ndarray-1.*
+    datatype: float32
+    exact_datatype: true
+    ndim: 2
+    unit: "MJy**2.sr**-2"
+  var_rnoise:
+    title: Read Noise Variance (MJy^2 / steradian^2
+    tag: tag:stsci.edu:asdf/core/ndarray-1.*
+    datatype: float32
+    exact_datatype: true
+    ndim: 2
+    unit: "MJy**2.sr**-2"
+  var_flat:
+    title: Flat Field Variance (MJy^2 / steradian^2)
+    tag: tag:stsci.edu:asdf/core/ndarray-1.*
+    datatype: float32
+    exact_datatype: true
+    ndim: 2
+    unit: "MJy**2.sr**-2"
+  cal_logs:
+    tag: asdf://stsci.edu/datamodels/roman/tags/cal_logs-1.0.0
+propertyOrder:
+  [
+    meta,
+    data,
+    context,
+    err,
+    weight,
+    var_poisson,
+    var_rnoise,
+    var_flat,
+    cal_logs,
+  ]
+flowStyle: block
+required: [meta, data, context, err, weight, var_poisson, var_rnoise, cal_logs]
