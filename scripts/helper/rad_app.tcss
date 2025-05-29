@@ -1,0 +1,8 @@
+Screen {
+    align: center middle;
+}
+
+Label {
+    padding: 1 2;
+    width: auto;
+}
