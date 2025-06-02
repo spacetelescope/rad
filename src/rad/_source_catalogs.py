@@ -58,7 +58,6 @@ footer = """
 
 BAND_NAMES = ("f062", "f087", "f106", "f129", "f158", "f184", "f213", "f146")
 BAND_REGEX = "(" + "|".join(BAND_NAMES) + ")"
-BAND_OR_NONE_REGEX = "(|" + "|".join(f"_{band}" for band in BAND_NAMES) + ")"
 RADIUS_REGEX = "[0-9]{2}"
 
 
