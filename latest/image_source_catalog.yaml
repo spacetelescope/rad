@@ -37,7 +37,7 @@ properties:
   source_catalog:
     title: Source Catalog
     description: |
-       Photometry and astrometry computed in the Source Catalog Step.
+      Photometry and astrometry computed in the Source Catalog Step.
     allOf:
       - tag: tag:astropy.org:astropy/table/table-1.*
       - $ref: asdf://stsci.edu/datamodels/roman/schemas/prompt_catalog_table-1.0.0
