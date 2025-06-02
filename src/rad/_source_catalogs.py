@@ -54,7 +54,6 @@ template = """
                       enum: [{dtype}]"""
 
 footer = """
-...
 """
 
 BAND_NAMES = ("f062", "f087", "f106", "f129", "f158", "f184", "f213", "f146")
