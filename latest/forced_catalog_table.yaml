@@ -168,42 +168,6 @@ properties:
       - not:
           items:
             not:
-              description: Declination (ICRS) of the PSF-fitted position
-              unit: deg (decimal)
-              properties:
-                name:
-                  pattern: ^forced_dec_psf$
-                data:
-                  properties:
-                    datatype:
-                      enum: [float64]
-      - not:
-          items:
-            not:
-              description: Uncertainty in dec_psf
-              unit: arcsec
-              properties:
-                name:
-                  pattern: ^forced_dec_psf_err$
-                data:
-                  properties:
-                    datatype:
-                      enum: [float32]
-      - not:
-          items:
-            not:
-              description: PSF goodness of fit metric
-              unit: none
-              properties:
-                name:
-                  pattern: ^forced_psf_gof$
-                data:
-                  properties:
-                    datatype:
-                      enum: [float32]
-      - not:
-          items:
-            not:
               description: Best estimate of the right ascension (ICRS)
               unit: deg (decimal)
               properties:
@@ -264,30 +228,6 @@ properties:
       - not:
           items:
             not:
-              description: Right ascension (ICRS) of the PSF-fitted position
-              unit: deg (decimal)
-              properties:
-                name:
-                  pattern: ^forced_ra_psf$
-                data:
-                  properties:
-                    datatype:
-                      enum: [float64]
-      - not:
-          items:
-            not:
-              description: Uncertainty in ra_psf
-              unit: arcsec
-              properties:
-                name:
-                  pattern: ^forced_ra_psf_err$
-                data:
-                  properties:
-                    datatype:
-                      enum: [float32]
-      - not:
-          items:
-            not:
               description: Column coordinate of the source centroid from image moments (0 indexed)
               unit: pix
               properties:
@@ -336,30 +276,6 @@ properties:
       - not:
           items:
             not:
-              description: Column coordinate of the source from PSF fitting (0 indexed)
-              unit: pix
-              properties:
-                name:
-                  pattern: ^forced_x_psf$
-                data:
-                  properties:
-                    datatype:
-                      enum: [float32]
-      - not:
-          items:
-            not:
-              description: Uncertainty in x_psf
-              unit: pix
-              properties:
-                name:
-                  pattern: ^forced_x_psf_err$
-                data:
-                  properties:
-                    datatype:
-                      enum: [float32]
-      - not:
-          items:
-            not:
               description: Row coordinate of the source centroid in the detection image from image moments (0 indexed)
               unit: pix
               properties:
@@ -401,30 +317,6 @@ properties:
               properties:
                 name:
                   pattern: ^y_centroid_win_err$
-                data:
-                  properties:
-                    datatype:
-                      enum: [float32]
-      - not:
-          items:
-            not:
-              description: Row coordinate of the source from PSF fitting (0 indexed)
-              unit: pix
-              properties:
-                name:
-                  pattern: ^forced_y_psf$
-                data:
-                  properties:
-                    datatype:
-                      enum: [float32]
-      - not:
-          items:
-            not:
-              description: Uncertainty on y_psf
-              unit: pix
-              properties:
-                name:
-                  pattern: ^forced_y_psf_err$
                 data:
                   properties:
                     datatype:
@@ -525,42 +417,6 @@ properties:
                   properties:
                     datatype:
                       enum: [float32]
-      - not:
-          items:
-            not:
-              description: Total PSF flux
-              unit: nJy
-              properties:
-                name:
-                  pattern: ^forced_psf_flux$
-                data:
-                  properties:
-                    datatype:
-                      enum: [float32]
-      - not:
-          items:
-            not:
-              description: Uncertainty in psf_flux
-              unit: nJy
-              properties:
-                name:
-                  pattern: ^forced_psf_flux_err$
-                data:
-                  properties:
-                    datatype:
-                      enum: [float32]
-      - not:
-          items:
-            not:
-              description: PSF fitting bit flags (0 = good)
-              unit: none
-              properties:
-                name:
-                  pattern: ^forced_psf_flags$
-                data:
-                  properties:
-                    datatype:
-                      enum: [int32]
       - not:
           items:
             not:

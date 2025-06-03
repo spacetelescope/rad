@@ -12,28 +12,28 @@ dec_centroid,Y,Y,,,float64,deg (decimal),Declination of the source centroid (ICR
 dec_centroid_err,Y,Y,,,float32,arcsec,Uncertainty in dec_centroid
 dec_centroid_win,Y,Y,,,float64,deg (decimal),Declination (ICRS) of the windowed source centroid
 dec_centroid_win_err,Y,Y,,,float32,arcsec,Uncertainty in dec_centroid_win
-dec_psf_<band>,Y,Y,*,,float64,deg (decimal),Declination (ICRS) of the PSF-fitted position
-dec_psf_<band>_err,Y,Y,*,,float32,arcsec,Uncertainty in dec_psf
-psf_gof_<band>,Y,Y,*,,float32,none,PSF goodness of fit metric
+dec_psf_<band>,N,N,*,,float64,deg (decimal),Declination (ICRS) of the PSF-fitted position
+dec_psf_<band>_err,N,N,*,,float32,arcsec,Uncertainty in dec_psf
+psf_gof_<band>,N,N,*,,float32,none,PSF goodness of fit metric
 ra,Y,Y,,,float64,deg (decimal),Best estimate of the right ascension (ICRS)
 ra_centroid,Y,Y,,,float64,deg (decimal),Right ascension (ICRS) of the source centroid
 ra_centroid_err,Y,Y,,,float32,arcsec,Uncertainty in ra_centroid
 ra_centroid_win,Y,Y,,,float64,deg (decimal),Right ascension (ICRS) of the windowed source centroid
 ra_centroid_win_err,Y,Y,,,float32,arcsec,Uncertainty in ra_centroid_win
-ra_psf_<band>,Y,Y,*,,float64,deg (decimal),Right ascension (ICRS) of the PSF-fitted position
-ra_psf_<band>_err,Y,Y,*,,float32,arcsec,Uncertainty in ra_psf
+ra_psf_<band>,N,N,*,,float64,deg (decimal),Right ascension (ICRS) of the PSF-fitted position
+ra_psf_<band>_err,N,N,*,,float32,arcsec,Uncertainty in ra_psf
 x_centroid,Y,Y,,,float32,pix,Column coordinate of the source centroid from image moments (0 indexed)
 x_centroid_err,Y,Y,,,float32,pix,Uncertainty x_centroid
 x_centroid_win,Y,Y,,,float32,pix,Column coordinate of the windowed source centroid in the detection image from image moments (0 indexed)
 x_centroid_win_err,Y,Y,,,float32,pix,Uncertainty on x_centroid_win
-x_psf_<band>,Y,Y,*,,float32,pix,Column coordinate of the source from PSF fitting (0 indexed)
-x_psf_<band>_err,Y,Y,*,,float32,pix,Uncertainty in x_psf
+x_psf_<band>,N,N,*,,float32,pix,Column coordinate of the source from PSF fitting (0 indexed)
+x_psf_<band>_err,N,N,*,,float32,pix,Uncertainty in x_psf
 y_centroid,Y,Y,,,float32,pix,Row coordinate of the source centroid in the detection image from image moments (0 indexed)
 y_centroid_err,Y,Y,,,float32,pix,Uncertainty on y_centroid
 y_centroid_win,Y,Y,,,float32,pix,Row coordinate of the windowed source centroid in the detection image from image moments (0 indexed)
 y_centroid_win_err,Y,Y,,,float32,pix,Uncertainty on y_centroid_win
-y_psf_<band>,Y,Y,*,,float32,pix,Row coordinate of the source from PSF fitting (0 indexed)
-y_psf_<band>_err,Y,Y,*,,float32,pix,Uncertainty on y_psf
+y_psf_<band>,N,N,*,,float32,pix,Row coordinate of the source from PSF fitting (0 indexed)
+y_psf_<band>_err,N,N,*,,float32,pix,Uncertainty on y_psf
 aper_bkg_<band>_flux,Y,Y,*,,float32,nJy arcsec-2,Local background estimated within a circular annulus
 aper_bkg_<band>_flux_err,Y,Y,*,,float32,nJy,Uncertainty in aper_bkg_flux
 aper_bkg_<band>m<band>_flux,N,N,,,float32,nJy/arcsec^2,Local background estimate for PSF-matched aperture photometry
@@ -48,9 +48,9 @@ kron_<band>_flux,Y,Y,*,,float32,nJy,Flux within the elliptical Kron aperture
 kron_<band>_flux_err,Y,Y,*,,float32,nJy,Uncertainty in kron_<band>_flux_err
 kron_<band>m<band>_abmag,N,N,,,float32,abmag,PSF-matched flux within the elliptical Kron aperture
 kron_<band>m<band>_abmag_err,N,N,,,float32,abmag,Uncertainty in kron_<band>m<band>_abmag_err
-psf_<band>_flux,Y,Y,*,,float32,nJy,Total PSF flux
-psf_<band>_flux_err,Y,Y,*,,float32,nJy,Uncertainty in psf_flux
-psf_flags_<band>,Y,Y,*,,int32,none,PSF fitting bit flags (0 = good)
+psf_<band>_flux,N,N,*,,float32,nJy,Total PSF flux
+psf_<band>_flux_err,N,N,*,,float32,nJy,Uncertainty in psf_flux
+psf_flags_<band>,N,N,*,,int32,none,PSF fitting bit flags (0 = good)
 segment_<band>_flux,Y,Y,*,,float32,nJy,Isophotal flux
 segment_<band>_flux_err,Y,Y,*,,float32,nJy,Uncertainty in segment_flux
 segment_<band>m<band>_flux,N,N,,,float32,nJy,Isophotal flux after PSF matching to a reference band
