@@ -7,7 +7,7 @@ title: Source catalog column definitions
 
 definitions:
   flagged_spatial_index:
-    description: Bit flag encoding the overlap flag , projection, skycell and pixel coordinates of the source
+    description: Bit flag encoding the overlap flag, projection, skycell and pixel coordinates of the source
     unit: none
     properties:
       data:
@@ -551,7 +551,7 @@ definitions:
           datatype:
             enum: [float32]
   semimajor:
-    description: Length of the source semiminor axis computed from image moments
+    description: Length of the source semimajor axis computed from image moments
     unit: arcsec
     properties:
       data:
@@ -559,7 +559,7 @@ definitions:
           datatype:
             enum: [float32]
   semiminor:
-    description: Length of the source semimajor axis computed from image moments
+    description: Length of the source semiminor axis computed from image moments
     unit: arcsec
     properties:
       data:
