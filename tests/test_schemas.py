@@ -184,7 +184,12 @@ class TestSchemaContent:
                 return
 
             # Check that the $ref is a full URI registered with ASDF
-            assert node["$ref"] in resources
+            ref_uri = node["$ref"]
+
+            # remove a fragment if it exists
+            if "#" in ref_uri:
+                ref_uri, _ = ref_uri.split("#", maxsplit=1)
+            assert ref_uri in resources
 
         asdf.treeutil.walk(schema, callback)
 
