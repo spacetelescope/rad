@@ -27,6 +27,26 @@ catalogs = {
     },
 }
 
+def_header = """%YAML 1.1
+---
+$schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.0.0
+id: asdf://stsci.edu/datamodels/roman/schemas/source_catalog_columns-1.0.0
+
+title: Source catalog column definitions
+
+definitions:"""
+
+def_template = """
+  {key}:
+    description: {description}
+    unit: {unit}
+    properties:
+      data:
+        properties:
+          datatype:
+            enum: [{dtype}]"""
+
+
 header = """%YAML 1.1
 ---
 $schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.0.0
@@ -39,19 +59,17 @@ properties:
   columns:
     allOf:"""
 
+# pattern depends on the catalog type
 template = """
       - not:
           items:
             not:
-              description: {description}
-              unit: {unit}
-              properties:
-                name:
-                  pattern: {pattern}
-                data:
-                  properties:
-                    datatype:
-                      enum: [{dtype}]"""
+              allOf:
+                -
+                  "$ref": "asdf://stsci.edu/datamodels/roman/schemas/source_catalog_columns-1.0.0#/definitions/{key}"
+                - properties:
+                    name:
+                      pattern: {pattern}"""
 
 footer = """
 """
@@ -66,6 +84,7 @@ class Column:
     def from_row(cls, row):
         column = cls()
         column.name = row["Name"].strip()
+        column.key = column.name.replace("<", "~").replace(">", "~")
         column.cat_types = set()
         if row["Prompt"].strip().upper() == "Y":
             column.cat_types.add("prompt")
@@ -103,8 +122,9 @@ class Column:
             pattern = pattern.replace("<radius>", RADIUS_REGEX)
         return f"^{pattern}$"
 
-    def render(self, cat_type):
+    def render(self, cat_type, template):
         return template.format(
+            key=self.key,
             dtype=self.dtype,
             unit=self.unit,
             pattern=self.pattern(cat_type),
@@ -119,11 +139,19 @@ def generate_schemas(csv_fn, output_dir):
         reader = csv.DictReader(f)
         columns = [Column.from_row(row) for row in reader]
 
+    # generate a "definitions" file
+    fn = "source_catalog_columns.yaml"
+    with open(output_dir / fn, "w") as f:
+        f.write(def_header)
+        for column in columns:
+            f.write(column.render("", def_template))
+        f.write("\n")
+
     for name, meta in catalogs.items():
         schema = header.format(**meta["header"])
         for column in columns:
             if column.is_included(name):
-                schema += column.render(name)
+                schema += column.render(name, template)
         schema += footer
 
         schema_fn = f"{name}_catalog_table.yaml"
