@@ -11,63 +11,12 @@ from semantic_version import Version
 
 from rad import resources
 
-
-@pytest.fixture(scope="session", params=(importlib_resources.files(resources) / "manifests").glob("**/*.yaml"))
-def manifest_path(request):
-    """
-    Get the paths to the manifest files directly from python package, rather than ASDF
-    """
-    return request.param
-
-
-@pytest.fixture(scope="session", params=(importlib_resources.files(resources) / "schemas").glob("**/*.yaml"))
-def schema_path(request):
-    """
-    Get the paths to the schema files directly from python package, rather than ASDF
-    """
-    return request.param
-
-
 # Defined directly so that the value can be reused to find the URIs from the ASDF resource manager
 # outside of a pytest fixture
 _RAD_URI_PREFIX = "asdf://stsci.edu/datamodels/roman/"
 _MANIFEST_URI_PREFIX = f"{_RAD_URI_PREFIX}manifests/"
 _SCHEMA_URI_PREFIX = f"{_RAD_URI_PREFIX}schemas/"
 _METASCHEMA_URI = f"{_SCHEMA_URI_PREFIX}rad_schema-1.0.0"
-
-
-@pytest.fixture(scope="session")
-def rad_uri_prefix():
-    """
-    Get the RAD URI prefix.
-    """
-    return _RAD_URI_PREFIX
-
-
-@pytest.fixture(scope="session")
-def manifest_uri_prefix():
-    """
-    Get the manifest URI prefix.
-    """
-    return _MANIFEST_URI_PREFIX
-
-
-@pytest.fixture(scope="session")
-def schema_uri_prefix():
-    return _SCHEMA_URI_PREFIX
-
-
-@pytest.fixture(scope="session")
-def metaschema_uri():
-    """
-    Get the metaschema URI.
-    """
-    return _METASCHEMA_URI
-
-
-@pytest.fixture(scope="session")
-def tag_uri_prefix(rad_uri_prefix):
-    return f"{rad_uri_prefix}tags/"
 
 
 # Get all the schema URIs from the ASDF resource manager cached to the current session
@@ -77,301 +26,41 @@ _SCHEMA_URIS = tuple(u for u in asdf.get_config().resource_manager if u.startswi
 _URIS = _SCHEMA_URIS + _MANIFEST_URIS + (_METASCHEMA_URI,)
 
 
-@pytest.fixture(scope="session")
-def manifest_uris():
-    """
-    Get the manifest URIs.
-    """
-    return _MANIFEST_URIS
-
-
-@pytest.fixture(scope="session", params=_MANIFEST_URIS)
-def manifest_uri(request):
-    """
-    Get the URIs of the manifest files from the ASDF resource manager.
-    """
-    return request.param
-
-
-@pytest.fixture(scope="session")
-def schema_uris():
-    """
-    Get all the URIs of RAD from the ASDF resource manager.
-    """
-    return _SCHEMA_URIS
-
-
-@pytest.fixture(scope="session", params=_SCHEMA_URIS)
-def schema_uri(request):
-    return request.param
-
-
-@pytest.fixture(scope="session")
-def uris():
-    """
-    Get all the URIs of RAD from the ASDF resource manager.
-    """
-    return _URIS
-
-
-@pytest.fixture(scope="session", params=_URIS)
-def uri(request):
-    """
-    Get the URIs of the manifest files from the ASDF resource manager.
-    """
-    return request.param
-
-
-@pytest.fixture(scope="session", params=tuple(uri for uri in _SCHEMA_URIS if "/reference_files" in uri))
-def ref_file_uri(request):
-    """
-    Get the reference file schema URI from the request.
-    """
-    return request.param
-
-
 # load all the schemas from the ASDF resource manager
 _CURRENT_CONTENT = MappingProxyType({uri: asdf.get_config().resource_manager[uri] for uri in _URIS})
 _CURRENT_RESOURCES = MappingProxyType({uri: yaml.safe_load(content) for uri, content in _CURRENT_CONTENT.items()})
 _MANIFEST_ENTRIES = tuple(chain(*[_CURRENT_RESOURCES[uri]["tags"] for uri in _MANIFEST_URIS]))
 
 
-@pytest.fixture(scope="session")
-def current_content(uri):
-    """
-    Get the current content from the ASDF resource manager.
-    """
-    return _CURRENT_CONTENT[uri]
-
-
-@pytest.fixture(scope="session")
-def current_resources():
-    """
-    Get the current resources from the ASDF resource manager.
-    """
-    return _CURRENT_RESOURCES
-
-
-@pytest.fixture(scope="session")
-def manifest(manifest_uri, current_resources):
-    """
-    Get the manifests for the given uris.
-    """
-    return current_resources[manifest_uri]
-
-
-@pytest.fixture(scope="session", params=_MANIFEST_ENTRIES)
-def manifest_entry(request):
-    """
-    Get the manifest entry for the given request.
-    """
-    return request.param
-
-
-@pytest.fixture(scope="session")
-def manifest_by_schema(manifest_uris, current_resources):
-    """
-    Get the text of the manifests.
-    """
-    return MappingProxyType(
-        {
-            uri: MappingProxyType({entry["schema_uri"]: entry["tag_uri"] for entry in current_resources[uri]["tags"]})
-            for uri in manifest_uris
-        }
-    )
-
-
-@pytest.fixture(scope="session")
-def manifest_by_tag(manifest_by_schema):
-    """
-    Get the text of the manifests.
-    """
-    return MappingProxyType(
-        {uri: MappingProxyType({value: key for key, value in entry.items()}) for uri, entry in manifest_by_schema.items()}
-    )
-
-
-@pytest.fixture(scope="session")
-def schema_tag_map(manifest_by_schema):
-    """
-    Get the schema tag map.
-    """
-    return MappingProxyType(
-        {schema_uri: tag_uri for schema_tag_map in manifest_by_schema.values() for schema_uri, tag_uri in schema_tag_map.items()}
-    )
-
-
-@pytest.fixture(scope="session")
-def schema(schema_uri, current_resources):
-    """
-    Return the yaml loaded schema for the given schema URI.
-    """
-    return current_resources[schema_uri]
-
-
-@pytest.fixture(scope="session")
-def ref_file_schema(ref_file_uri, current_resources):
-    """
-    Get the reference file tag URI from the request.
-    """
-    return current_resources[ref_file_uri]
-
-
-@pytest.fixture(scope="session")
-def manifest_entries():
-    """
-    Get the manifest entries.
-    """
-    return _MANIFEST_ENTRIES
-
-
-@pytest.fixture(scope="session")
-def tagged_schema_uris():
-    """
-    Get the tags from the manifest entries.
-    """
-    return frozenset(entry["schema_uri"] for entry in _MANIFEST_ENTRIES)
-
-
-@pytest.fixture(scope="session")
-def allowed_schema_tag_validators():
-    """
-    Get the allowed schema tag validators.
-    """
-    return frozenset(
-        (
-            "tag:stsci.edu:asdf/time/time-1.*",
-            "tag:stsci.edu:asdf/core/ndarray-1.*",
-            "tag:stsci.edu:asdf/unit/quantity-1.*",
-            "tag:stsci.edu:asdf/unit/unit-1.*",
-            "tag:astropy.org:astropy/units/unit-1.*",
-            "tag:astropy.org:astropy/table/table-1.*",
-            "tag:stsci.edu:gwcs/wcs-*",
-        )
-    )
-
-
-@pytest.fixture(scope="session")
-def valid_tag_uris(manifest_entries, allowed_schema_tag_validators):
-    uris = set(entry["tag_uri"] for entry in manifest_entries)
-    uris.update(allowed_schema_tag_validators)
-    return frozenset(uris)
-
-
-def _get_latest_uri(prefix):
-    """
-    Get the latest exposure type URI.
-    """
-    pattern = rf"{prefix}-\d+\.\d+\.\d+$"
-    uris = []
-    for uri in _CURRENT_RESOURCES:
-        if match(pattern, uri):
-            uris.append(uri)
-
-    assert len(uris) > 0, "There should be at least one exposure type URI"
-
-    version = Version("0.0.0")
-    uri = None
-    latest_uri = None
-    for uri in uris:
-        if version < (new := Version(uri.split("-")[-1])):
-            version = new
-            latest_uri = uri
-    return latest_uri
-
-
-_PHOT_TABLE_KEY_PATTERN = next(
-    iter(
-        _CURRENT_RESOURCES[_get_latest_uri("asdf://stsci.edu/datamodels/roman/schemas/reference_files/wfi_img_photom")][
-            "properties"
-        ]["phot_table"]["patternProperties"]
-    )
-)
-
-
-@pytest.fixture(scope="session")
-def phot_table_key_pattern():
-    """
-    Get the pattern for the photometry table key used by the reference files.
-    """
-    return compile(_PHOT_TABLE_KEY_PATTERN)
-
-
-@pytest.fixture(scope="session", params=_PHOT_TABLE_KEY_PATTERN.split(")$")[0].split("(")[-1].split("|"))
-def phot_table_key(request):
-    """
-    Get the photometry table key from the request.
-    """
-    return request.param
-
-
-_OPTICAL_ELEMENTS = tuple(
-    _CURRENT_RESOURCES[_get_latest_uri("asdf://stsci.edu/datamodels/roman/schemas/wfi_optical_element")]["enum"]
-)
-
-
-@pytest.fixture(scope="session", params=_OPTICAL_ELEMENTS)
-def optical_element(request):
-    """
-    Get the optical element from the request.
-    """
-    return request.param
-
-
-@pytest.fixture(scope="session")
-def optical_elements():
-    """
-    Get the optical elements from the request.
-    """
-    return _OPTICAL_ELEMENTS
-
-
-_EXPOSURE_TYPE_ELEMENTS = tuple(
-    _CURRENT_RESOURCES[_get_latest_uri("asdf://stsci.edu/datamodels/roman/schemas/exposure_type")]["enum"]
-)
-
-
-@pytest.fixture(scope="session", params=_EXPOSURE_TYPE_ELEMENTS)
-def exposure_type(request):
-    """
-    Get the exposure type from the request.
-    """
-    return request.param
-
-
-@pytest.fixture(scope="session")
-def exposure_types():
-    """
-    Get the exposure types from the request.
-    """
-    return _EXPOSURE_TYPE_ELEMENTS
-
-
-_P_EXPTYPE_PATTERN = _CURRENT_RESOURCES[
-    _get_latest_uri("asdf://stsci.edu/datamodels/roman/schemas/reference_files/ref_exposure_type")
-]["properties"]["exposure"]["properties"]["p_exptype"]["pattern"]
-
-
-@pytest.fixture(scope="session")
-def p_exptype_pattern():
-    """
-    Get the pattern for the exposure type used by the reference files.
-    """
-    return compile(_P_EXPTYPE_PATTERN)
-
-
-@pytest.fixture(scope="session", params=_P_EXPTYPE_PATTERN.split(")\\s*\\|\\s*)+$")[0].split("((")[-1].split("|"))
-def p_exptype(request):
-    """
-    Get the exposure type from the request.
-    """
-    return request.param
-
-
+# Look directly at the latest schemas storage directory to infer latest schemas
 _LATEST_PATHS = tuple((Path(__file__).parent.parent.absolute() / "latest").glob("**/*.yaml"))
 _LATEST_URIS = tuple(yaml.safe_load(latest_path.read_bytes())["id"] for latest_path in _LATEST_PATHS)
+_LATEST_MANIFEST_URIS = tuple(uri for uri in _LATEST_URIS if "manifests" in uri)
+_LATEST_MANIFEST_TAGS = MappingProxyType(
+    {uri: tuple(entry["tag_uri"] for entry in _CURRENT_RESOURCES[uri]["tags"]) for uri in _LATEST_MANIFEST_URIS}
+)
+_LATEST_DATAMODELS_URI = next(uri for uri in _LATEST_MANIFEST_URIS if "static" not in uri)
+_LATEST_STATIC_URI = next(uri for uri in _LATEST_MANIFEST_URIS if "static" in uri)
 
 
+### Fixtures for directly accessing resources via Python
+@pytest.fixture(scope="session", params=(importlib_resources.files(resources) / "manifests").glob("**/*.yaml"))
+def manifest_path(request):
+    """
+    Get a path to a manifest file directly from the python package, rather than ASDF
+    """
+    return request.param
+
+
+@pytest.fixture(scope="session", params=(importlib_resources.files(resources) / "schemas").glob("**/*.yaml"))
+def schema_path(request):
+    """
+    Get a path to a schema file directly from the python package, rather than ASDF
+    """
+    return request.param
+
+
+### Fixtures for working with only the latest schemas
 @pytest.fixture(scope="session")
 def latest_paths():
     """
@@ -405,13 +94,46 @@ def latest_uri(request):
 
 
 @pytest.fixture(scope="session")
-def latest_manifest_uri(latest_uris):
+def latest_datamodels_uri():
     """
-    Get the latest manifest URI.
+    Get the latest (datamodels) manifest URI.
     """
-    latest_manifest_uris = tuple(uri for uri in latest_uris if "manifests" in uri)
-    assert len(latest_manifest_uris) == 1, "There should be exactly one latest manifest"
-    return latest_manifest_uris[0]
+    assert len(_LATEST_MANIFEST_URIS) == 2, f"There should be exactly two latest manifests, found {len(_LATEST_MANIFEST_URIS)}"
+    return _LATEST_DATAMODELS_URI
+
+
+@pytest.fixture(scope="session", params=_LATEST_MANIFEST_TAGS[_LATEST_DATAMODELS_URI])
+def latest_datamodels_tag_uri(request):
+    """
+    Get a latest datamodels tag URI
+    """
+    return request.param
+
+
+@pytest.fixture(scope="session")
+def latest_static_uri():
+    """
+    Get the latest (static) manifest URI.
+    """
+    assert len(_LATEST_MANIFEST_URIS) == 2, f"There should be exactly two latest manifests, found {len(_LATEST_MANIFEST_URIS)}"
+    return _LATEST_STATIC_URI
+
+
+@pytest.fixture(scope="session")
+def latest_static_tags(latest_static_uri):
+    """
+    Get the latest static tags
+    """
+
+    return _LATEST_MANIFEST_TAGS[latest_static_uri]
+
+
+@pytest.fixture(scope="session", params=_LATEST_MANIFEST_TAGS[_LATEST_STATIC_URI])
+def latest_static_tag_uri(request):
+    """
+    Get a latest static tag URI
+    """
+    return request.param
 
 
 @pytest.fixture(scope="session")
@@ -423,11 +145,366 @@ def latest_schemas(latest_paths, latest_uris):
 
 
 @pytest.fixture(scope="session")
-def latest_schema_tags(latest_manifest_uri, latest_schemas):
+def latest_schema_tags(latest_datamodels_uri, latest_schemas):
     """
     Get the latest schema tags from the latest manifest.
     """
-    tag_entries = yaml.safe_load(latest_schemas[latest_manifest_uri])["tags"]
+    tag_entries = yaml.safe_load(latest_schemas[latest_datamodels_uri])["tags"]
     schema_tags = {entry["schema_uri"]: entry["tag_uri"] for entry in tag_entries}
     assert len(schema_tags) == len(tag_entries), "There should be no duplicate tags for a schema"
     return schema_tags
+
+
+### Fixtures for working with the schema URIs directly
+@pytest.fixture(scope="session")
+def rad_uri_prefix():
+    """
+    Get the RAD URI prefix.
+    """
+    return _RAD_URI_PREFIX
+
+
+@pytest.fixture(scope="session")
+def manifest_uri_prefix():
+    """
+    Get the manifest URI prefix.
+    """
+    return _MANIFEST_URI_PREFIX
+
+
+@pytest.fixture(scope="session")
+def schema_uri_prefix():
+    """
+    Get the schema URI prefix.
+    """
+    return _SCHEMA_URI_PREFIX
+
+
+@pytest.fixture(scope="session")
+def metaschema_uri():
+    """
+    Get the metaschema URI.
+    """
+    return _METASCHEMA_URI
+
+
+@pytest.fixture(scope="session")
+def tag_uri_prefix(rad_uri_prefix):
+    """
+    Get the tag URI prefix.
+    """
+    return f"{rad_uri_prefix}tags/"
+
+
+### Fixtures for working with any type of resource
+@pytest.fixture(scope="session")
+def uris():
+    """
+    Get all the URIs of RAD from the ASDF resource manager.
+    """
+    return _URIS
+
+
+@pytest.fixture(scope="session", params=_URIS)
+def uri(request):
+    """
+    Get a URI for RAD from the ASDF resource manager.
+    """
+    return request.param
+
+
+### Fixtures for working with the manifest resources
+@pytest.fixture(scope="session")
+def manifest_uris():
+    """
+    Get the manifest URIs for RAD.
+    """
+    return _MANIFEST_URIS
+
+
+@pytest.fixture(scope="session", params=_MANIFEST_URIS)
+def manifest_uri(request):
+    """
+    Get a URI for a manifest from the ASDF resource manager.
+    """
+    return request.param
+
+
+### Fixtures for working with the schema resources
+@pytest.fixture(scope="session")
+def schema_uris():
+    """
+    Get the schema URIs for RAD from the ASDF resource manager.
+    """
+    return _SCHEMA_URIS
+
+
+@pytest.fixture(scope="session", params=tuple(uri for uri in _LATEST_URIS if uri in _SCHEMA_URIS))
+def schema_uri(request):
+    """
+    Get a URI for a RAD schema from the ASDF resource manager.
+
+    Note
+    ----
+    Since the schemas are versioned, fixed schema versions cannot be modified so they are
+    not returned by this fixture.
+    """
+    return request.param
+
+
+@pytest.fixture(scope="session", params=tuple(uri for uri in _LATEST_URIS if "/reference_files" in uri and uri in _SCHEMA_URIS))
+def ref_file_uri(request):
+    """
+    Get a URI related to the RAD reference files from the ASDF resource manager.
+    """
+    return request.param
+
+
+### Fixtures for working with the information within the resources
+@pytest.fixture(scope="session")
+def current_content(uri):
+    """
+    Get the current file content from the ASDF resource manager.
+    """
+    return _CURRENT_CONTENT[uri]
+
+
+@pytest.fixture(scope="session")
+def current_resources():
+    """
+    Get the current resources (loaded yaml items) from the ASDF resource manager.
+    """
+    return _CURRENT_RESOURCES
+
+
+@pytest.fixture(scope="session")
+def manifest(manifest_uri, current_resources):
+    """
+    Get a manifest resource for RAD from the ASDF resource manager.
+    """
+    return current_resources[manifest_uri]
+
+
+@pytest.fixture(scope="session")
+def schema(schema_uri, current_resources):
+    """
+    Get a schema resource for RAD from the ASDF resource manager.
+    """
+    return current_resources[schema_uri]
+
+
+@pytest.fixture(scope="session")
+def ref_file_schema(ref_file_uri, current_resources):
+    """
+    Get a reference file schema resource for RAD from the ASDF resource manager.
+    """
+    return current_resources[ref_file_uri]
+
+
+### Fixtures for working with the content within the manifests like tags
+@pytest.fixture(scope="session")
+def manifest_entries():
+    """
+    Get the manifest entries.
+    """
+    return _MANIFEST_ENTRIES
+
+
+@pytest.fixture(scope="session", params=_MANIFEST_ENTRIES)
+def manifest_entry(request):
+    """
+    Get an entry from a manifest.
+    """
+    return request.param
+
+
+@pytest.fixture(scope="session")
+def manifest_by_schema(manifest_uris, current_resources):
+    """
+    Get the maps of schema_uris to tag_uris for a given manifest
+    """
+    return MappingProxyType(
+        {
+            uri: MappingProxyType({entry["schema_uri"]: entry["tag_uri"] for entry in current_resources[uri]["tags"]})
+            for uri in manifest_uris
+        }
+    )
+
+
+@pytest.fixture(scope="session")
+def manifest_by_tag(manifest_by_schema):
+    """
+    Get the maps of tag_uris to schema_uris for a given manifest
+    """
+    return MappingProxyType(
+        {uri: MappingProxyType({value: key for key, value in entry.items()}) for uri, entry in manifest_by_schema.items()}
+    )
+
+
+@pytest.fixture(scope="session")
+def schema_tag_map(manifest_by_schema):
+    """
+    Get a total map of any schema URI to any tag URI
+    """
+    return MappingProxyType(
+        {schema_uri: tag_uri for schema_tag_map in manifest_by_schema.values() for schema_uri, tag_uri in schema_tag_map.items()}
+    )
+
+
+@pytest.fixture(scope="session")
+def tag_schema_map(schema_tag_map):
+    """
+    Get a total map of any tag URI to any schema URI
+    """
+    return MappingProxyType({tag_uri: schema_uri for schema_uri, tag_uri in schema_tag_map.items()})
+
+
+@pytest.fixture(scope="session")
+def datamodel_tag_uris(current_resources, manifest_uris):
+    """
+    Get the set of all tags defined in any datamodels manifest
+    """
+    return frozenset(
+        chain(*[[entry["tag_uri"] for entry in current_resources[uri]["tags"]] for uri in manifest_uris if "static" not in uri])
+    )
+
+
+@pytest.fixture(scope="session")
+def tagged_schema_uris(manifest_entries):
+    """
+    Get the tags from the manifest entries.
+    """
+    return frozenset(entry["schema_uri"] for entry in manifest_entries)
+
+
+@pytest.fixture(scope="session")
+def allowed_schema_tag_validators():
+    """
+    Get the allowed schema tag validators.
+    """
+    return frozenset(
+        (
+            "tag:stsci.edu:asdf/time/time-1.*",
+            "tag:stsci.edu:asdf/core/ndarray-1.*",
+            "tag:stsci.edu:asdf/unit/quantity-1.*",
+            "tag:stsci.edu:asdf/unit/unit-1.*",
+            "tag:astropy.org:astropy/units/unit-1.*",
+            "tag:astropy.org:astropy/table/table-1.*",
+            "tag:stsci.edu:gwcs/wcs-*",
+        )
+    )
+
+
+@pytest.fixture(scope="session")
+def valid_tag_uris(manifest_entries, allowed_schema_tag_validators):
+    """
+    Get the set of all things that can be used under a tag: keyword
+    """
+    uris = set(entry["tag_uri"] for entry in manifest_entries)
+    uris.update(allowed_schema_tag_validators)
+    return frozenset(uris)
+
+
+### Fixtures for working with reading regex patterns from the schemas
+def _get_latest_uri(prefix):
+    """
+    Get the latest exposure type URI.
+    """
+    pattern = rf"{prefix}-\d+\.\d+\.\d+$"
+    uris = []
+    for uri in _CURRENT_RESOURCES:
+        if match(pattern, uri):
+            uris.append(uri)
+
+    assert len(uris) > 0, "There should be at least one exposure type URI"
+
+    version = Version("0.0.0")
+    uri = None
+    latest_uri = None
+    for uri in uris:
+        if version < (new := Version(uri.split("-")[-1])):
+            version = new
+            latest_uri = uri
+    return latest_uri
+
+
+_PHOT_TABLE_KEY_PATTERN = next(
+    iter(
+        _CURRENT_RESOURCES[_get_latest_uri("asdf://stsci.edu/datamodels/roman/schemas/reference_files/wfi_img_photom")][
+            "properties"
+        ]["phot_table"]["patternProperties"]
+    )
+)
+_OPTICAL_ELEMENTS = tuple(
+    _CURRENT_RESOURCES[_get_latest_uri("asdf://stsci.edu/datamodels/roman/schemas/wfi_optical_element")]["enum"]
+)
+_EXPOSURE_TYPE_ELEMENTS = tuple(
+    _CURRENT_RESOURCES[_get_latest_uri("asdf://stsci.edu/datamodels/roman/schemas/exposure_type")]["enum"]
+)
+_P_EXPTYPE_PATTERN = _CURRENT_RESOURCES[
+    _get_latest_uri("asdf://stsci.edu/datamodels/roman/schemas/reference_files/ref_exposure_type")
+]["properties"]["exposure"]["properties"]["p_exptype"]["pattern"]
+
+
+@pytest.fixture(scope="session")
+def phot_table_key_pattern():
+    """
+    Get the pattern for the photometry table key used by the reference files.
+    """
+    return compile(_PHOT_TABLE_KEY_PATTERN)
+
+
+@pytest.fixture(scope="session", params=_PHOT_TABLE_KEY_PATTERN.split(")$")[0].split("(")[-1].split("|"))
+def phot_table_key(request):
+    """
+    Get the photometry table key from the request.
+    """
+    return request.param
+
+
+@pytest.fixture(scope="session", params=_OPTICAL_ELEMENTS)
+def optical_element(request):
+    """
+    Get the optical element from the request.
+    """
+    return request.param
+
+
+@pytest.fixture(scope="session")
+def optical_elements():
+    """
+    Get the optical elements from the request.
+    """
+    return _OPTICAL_ELEMENTS
+
+
+@pytest.fixture(scope="session", params=_EXPOSURE_TYPE_ELEMENTS)
+def exposure_type(request):
+    """
+    Get the exposure type from the request.
+    """
+    return request.param
+
+
+@pytest.fixture(scope="session")
+def exposure_types():
+    """
+    Get the exposure types from the request.
+    """
+    return _EXPOSURE_TYPE_ELEMENTS
+
+
+@pytest.fixture(scope="session")
+def p_exptype_pattern():
+    """
+    Get the pattern for the exposure type used by the reference files.
+    """
+    return compile(_P_EXPTYPE_PATTERN)
+
+
+@pytest.fixture(scope="session", params=_P_EXPTYPE_PATTERN.split(")\\s*\\|\\s*)+$")[0].split("((")[-1].split("|"))
+def p_exptype(request):
+    """
+    Get the exposure type from the request.
+    """
+    return request.param
