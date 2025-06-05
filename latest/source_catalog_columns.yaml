@@ -72,7 +72,7 @@ definitions:
             enum: [float32]
   dec:
     description: Best estimate of the declination (ICRS)
-    unit: deg (decimal)
+    unit: deg
     properties:
       data:
         properties:
@@ -80,7 +80,7 @@ definitions:
             enum: [float64]
   dec_centroid:
     description: Declination of the source centroid (ICRS)
-    unit: deg (decimal)
+    unit: deg
     properties:
       data:
         properties:
@@ -96,7 +96,7 @@ definitions:
             enum: [float32]
   dec_centroid_win:
     description: Declination (ICRS) of the windowed source centroid
-    unit: deg (decimal)
+    unit: deg
     properties:
       data:
         properties:
@@ -112,7 +112,7 @@ definitions:
             enum: [float32]
   dec_psf_~band~:
     description: Declination (ICRS) of the PSF-fitted position
-    unit: deg (decimal)
+    unit: deg
     properties:
       data:
         properties:
@@ -136,7 +136,7 @@ definitions:
             enum: [float32]
   ra:
     description: Best estimate of the right ascension (ICRS)
-    unit: deg (decimal)
+    unit: deg
     properties:
       data:
         properties:
@@ -144,7 +144,7 @@ definitions:
             enum: [float64]
   ra_centroid:
     description: Right ascension (ICRS) of the source centroid
-    unit: deg (decimal)
+    unit: deg
     properties:
       data:
         properties:
@@ -160,7 +160,7 @@ definitions:
             enum: [float32]
   ra_centroid_win:
     description: Right ascension (ICRS) of the windowed source centroid
-    unit: deg (decimal)
+    unit: deg
     properties:
       data:
         properties:
@@ -176,7 +176,7 @@ definitions:
             enum: [float32]
   ra_psf_~band~:
     description: Right ascension (ICRS) of the PSF-fitted position
-    unit: deg (decimal)
+    unit: deg
     properties:
       data:
         properties:
