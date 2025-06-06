@@ -1,0 +1,12 @@
+Add a helper script, ``scripts/rad.py`` to assist with the management of the RAD resources.
+Features include:
+- Listing the latest versions of all the RAD resources.
+  - includes indications of which resources are "frozen" (not changeable without
+    a new version) at the time of script execution.
+- Creating (and integrating) a new RAD resource.
+  - Includes bumping the manifest version if necessary
+- Bumping existing RAD resource versions.
+  - Includes solving the cascade of version bumps that maybe required.
+- Editing existing RAD resources.
+  - Includes bumping the resource (and the cascade of other resources) if the
+    edits necessitate a version bump.
