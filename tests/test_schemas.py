@@ -52,8 +52,6 @@ REF_COMMON_XFAILS = ("asdf://stsci.edu/datamodels/roman/schemas/reference_files/
 ARRAY_TAG_XFAILS = (
     "asdf://stsci.edu/datamodels/roman/schemas/l1_detector_guidewindow-1.0.0",
     "asdf://stsci.edu/datamodels/roman/schemas/l1_detector_guidewindow-1.1.0",
-    "asdf://stsci.edu/datamodels/roman/schemas/fps/statistics-1.0.0",
-    "asdf://stsci.edu/datamodels/roman/schemas/tvac/statistics-1.0.0",
 )
 
 
@@ -142,6 +140,9 @@ class TestSchemaContent:
             if "byteorder" in node:
                 # don't check sub-dtypes
                 return
+            if isinstance(node.get("datatype"), dict):
+                # table (and old quantity containing) schemas use datatype in a different way
+                return
             if any(k in node for k in ("ndim", "datatype", "exact_datatype")):
                 tag = node.get("tag", "")
                 assert tag.startswith("tag:stsci.edu:asdf/core/ndarray-")
@@ -183,7 +184,12 @@ class TestSchemaContent:
                 return
 
             # Check that the $ref is a full URI registered with ASDF
-            assert node["$ref"] in resources
+            ref_uri = node["$ref"]
+
+            # remove a fragment if it exists
+            if "#" in ref_uri:
+                ref_uri, _ = ref_uri.split("#", maxsplit=1)
+            assert ref_uri in resources
 
         asdf.treeutil.walk(schema, callback)
 

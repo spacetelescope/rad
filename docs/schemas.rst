@@ -34,10 +34,13 @@ Level 4 (ancillary) schemas
 
 .. asdf-autoschemas::
 
-  image_source_catalog-1.1.0
+  image_source_catalog-1.3.0
+  forced_image_source_catalog-1.0.0
   segmentation_map-1.1.0
-  mosaic_source_catalog-1.1.0
+  mosaic_source_catalog-1.3.0
+  forced_mosaic_source_catalog-1.0.0
   mosaic_segmentation_map-1.1.0
+  multiband_source_catalog-1.0.0
 
 
 Tags

@@ -1,0 +1,438 @@
+%YAML 1.1
+---
+$schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.0.0
+id: asdf://stsci.edu/datamodels/roman/schemas/multiband_catalog_table-1.0.0
+
+title: Multiband source catalog table schema
+
+definitions:
+  $ref: "asdf://stsci.edu/datamodels/roman/schemas/source_catalog_columns-1.0.0#/definitions"
+
+type: object
+properties:
+  columns:
+    allOf:
+      - not:
+          items:
+            not:
+              allOf:
+                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/source_catalog_columns-1.0.0#/definitions/flagged_spatial_index"
+                - properties:
+                    name:
+                      pattern: ^flagged_spatial_index$
+      - not:
+          items:
+            not:
+              allOf:
+                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/source_catalog_columns-1.0.0#/definitions/bbox_xmax"
+                - properties:
+                    name:
+                      pattern: ^bbox_xmax$
+      - not:
+          items:
+            not:
+              allOf:
+                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/source_catalog_columns-1.0.0#/definitions/bbox_xmin"
+                - properties:
+                    name:
+                      pattern: ^bbox_xmin$
+      - not:
+          items:
+            not:
+              allOf:
+                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/source_catalog_columns-1.0.0#/definitions/bbox_ymax"
+                - properties:
+                    name:
+                      pattern: ^bbox_ymax$
+      - not:
+          items:
+            not:
+              allOf:
+                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/source_catalog_columns-1.0.0#/definitions/bbox_ymin"
+                - properties:
+                    name:
+                      pattern: ^bbox_ymin$
+      - not:
+          items:
+            not:
+              allOf:
+                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/source_catalog_columns-1.0.0#/definitions/image_flags"
+                - properties:
+                    name:
+                      pattern: ^image_flags$
+      - not:
+          items:
+            not:
+              allOf:
+                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/source_catalog_columns-1.0.0#/definitions/label"
+                - properties:
+                    name:
+                      pattern: ^label$
+      - not:
+          items:
+            not:
+              allOf:
+                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/source_catalog_columns-1.0.0#/definitions/segment_area"
+                - properties:
+                    name:
+                      pattern: ^segment_area$
+      - not:
+          items:
+            not:
+              allOf:
+                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/source_catalog_columns-1.0.0#/definitions/dec"
+                - properties:
+                    name:
+                      pattern: ^dec$
+      - not:
+          items:
+            not:
+              allOf:
+                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/source_catalog_columns-1.0.0#/definitions/dec_centroid"
+                - properties:
+                    name:
+                      pattern: ^dec_centroid$
+      - not:
+          items:
+            not:
+              allOf:
+                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/source_catalog_columns-1.0.0#/definitions/dec_centroid_err"
+                - properties:
+                    name:
+                      pattern: ^dec_centroid_err$
+      - not:
+          items:
+            not:
+              allOf:
+                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/source_catalog_columns-1.0.0#/definitions/dec_centroid_win"
+                - properties:
+                    name:
+                      pattern: ^dec_centroid_win$
+      - not:
+          items:
+            not:
+              allOf:
+                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/source_catalog_columns-1.0.0#/definitions/dec_centroid_win_err"
+                - properties:
+                    name:
+                      pattern: ^dec_centroid_win_err$
+      - not:
+          items:
+            not:
+              allOf:
+                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/source_catalog_columns-1.0.0#/definitions/ra"
+                - properties:
+                    name:
+                      pattern: ^ra$
+      - not:
+          items:
+            not:
+              allOf:
+                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/source_catalog_columns-1.0.0#/definitions/ra_centroid"
+                - properties:
+                    name:
+                      pattern: ^ra_centroid$
+      - not:
+          items:
+            not:
+              allOf:
+                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/source_catalog_columns-1.0.0#/definitions/ra_centroid_err"
+                - properties:
+                    name:
+                      pattern: ^ra_centroid_err$
+      - not:
+          items:
+            not:
+              allOf:
+                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/source_catalog_columns-1.0.0#/definitions/ra_centroid_win"
+                - properties:
+                    name:
+                      pattern: ^ra_centroid_win$
+      - not:
+          items:
+            not:
+              allOf:
+                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/source_catalog_columns-1.0.0#/definitions/ra_centroid_win_err"
+                - properties:
+                    name:
+                      pattern: ^ra_centroid_win_err$
+      - not:
+          items:
+            not:
+              allOf:
+                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/source_catalog_columns-1.0.0#/definitions/x_centroid"
+                - properties:
+                    name:
+                      pattern: ^x_centroid$
+      - not:
+          items:
+            not:
+              allOf:
+                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/source_catalog_columns-1.0.0#/definitions/x_centroid_err"
+                - properties:
+                    name:
+                      pattern: ^x_centroid_err$
+      - not:
+          items:
+            not:
+              allOf:
+                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/source_catalog_columns-1.0.0#/definitions/x_centroid_win"
+                - properties:
+                    name:
+                      pattern: ^x_centroid_win$
+      - not:
+          items:
+            not:
+              allOf:
+                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/source_catalog_columns-1.0.0#/definitions/x_centroid_win_err"
+                - properties:
+                    name:
+                      pattern: ^x_centroid_win_err$
+      - not:
+          items:
+            not:
+              allOf:
+                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/source_catalog_columns-1.0.0#/definitions/y_centroid"
+                - properties:
+                    name:
+                      pattern: ^y_centroid$
+      - not:
+          items:
+            not:
+              allOf:
+                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/source_catalog_columns-1.0.0#/definitions/y_centroid_err"
+                - properties:
+                    name:
+                      pattern: ^y_centroid_err$
+      - not:
+          items:
+            not:
+              allOf:
+                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/source_catalog_columns-1.0.0#/definitions/y_centroid_win"
+                - properties:
+                    name:
+                      pattern: ^y_centroid_win$
+      - not:
+          items:
+            not:
+              allOf:
+                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/source_catalog_columns-1.0.0#/definitions/y_centroid_win_err"
+                - properties:
+                    name:
+                      pattern: ^y_centroid_win_err$
+      - not:
+          items:
+            not:
+              allOf:
+                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/source_catalog_columns-1.0.0#/definitions/aper_bkg_~band~_flux"
+                - properties:
+                    name:
+                      pattern: ^aper_bkg_(f062|f087|f106|f129|f158|f184|f213|f146)_flux$
+      - not:
+          items:
+            not:
+              allOf:
+                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/source_catalog_columns-1.0.0#/definitions/aper_bkg_~band~_flux_err"
+                - properties:
+                    name:
+                      pattern: ^aper_bkg_(f062|f087|f106|f129|f158|f184|f213|f146)_flux_err$
+      - not:
+          items:
+            not:
+              allOf:
+                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/source_catalog_columns-1.0.0#/definitions/aper~radius~_~band~_flux"
+                - properties:
+                    name:
+                      pattern: ^aper[0-9]{2}_(f062|f087|f106|f129|f158|f184|f213|f146)_flux$
+      - not:
+          items:
+            not:
+              allOf:
+                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/source_catalog_columns-1.0.0#/definitions/aper~radius~_~band~_flux_err"
+                - properties:
+                    name:
+                      pattern: ^aper[0-9]{2}_(f062|f087|f106|f129|f158|f184|f213|f146)_flux_err$
+      - not:
+          items:
+            not:
+              allOf:
+                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/source_catalog_columns-1.0.0#/definitions/kron_~band~_abmag"
+                - properties:
+                    name:
+                      pattern: ^kron_(f062|f087|f106|f129|f158|f184|f213|f146)_abmag$
+      - not:
+          items:
+            not:
+              allOf:
+                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/source_catalog_columns-1.0.0#/definitions/kron_~band~_abmag_err"
+                - properties:
+                    name:
+                      pattern: ^kron_(f062|f087|f106|f129|f158|f184|f213|f146)_abmag_err$
+      - not:
+          items:
+            not:
+              allOf:
+                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/source_catalog_columns-1.0.0#/definitions/kron_~band~_flux"
+                - properties:
+                    name:
+                      pattern: ^kron_(f062|f087|f106|f129|f158|f184|f213|f146)_flux$
+      - not:
+          items:
+            not:
+              allOf:
+                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/source_catalog_columns-1.0.0#/definitions/kron_~band~_flux_err"
+                - properties:
+                    name:
+                      pattern: ^kron_(f062|f087|f106|f129|f158|f184|f213|f146)_flux_err$
+      - not:
+          items:
+            not:
+              allOf:
+                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/source_catalog_columns-1.0.0#/definitions/segment_~band~_flux"
+                - properties:
+                    name:
+                      pattern: ^segment_(f062|f087|f106|f129|f158|f184|f213|f146)_flux$
+      - not:
+          items:
+            not:
+              allOf:
+                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/source_catalog_columns-1.0.0#/definitions/segment_~band~_flux_err"
+                - properties:
+                    name:
+                      pattern: ^segment_(f062|f087|f106|f129|f158|f184|f213|f146)_flux_err$
+      - not:
+          items:
+            not:
+              allOf:
+                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/source_catalog_columns-1.0.0#/definitions/warning_flags"
+                - properties:
+                    name:
+                      pattern: ^warning_flags$
+      - not:
+          items:
+            not:
+              allOf:
+                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/source_catalog_columns-1.0.0#/definitions/cxx"
+                - properties:
+                    name:
+                      pattern: ^cxx$
+      - not:
+          items:
+            not:
+              allOf:
+                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/source_catalog_columns-1.0.0#/definitions/cxy"
+                - properties:
+                    name:
+                      pattern: ^cxy$
+      - not:
+          items:
+            not:
+              allOf:
+                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/source_catalog_columns-1.0.0#/definitions/cyy"
+                - properties:
+                    name:
+                      pattern: ^cyy$
+      - not:
+          items:
+            not:
+              allOf:
+                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/source_catalog_columns-1.0.0#/definitions/ellipticity"
+                - properties:
+                    name:
+                      pattern: ^ellipticity$
+      - not:
+          items:
+            not:
+              allOf:
+                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/source_catalog_columns-1.0.0#/definitions/fluxfrac_radius_50_~band~"
+                - properties:
+                    name:
+                      pattern: ^fluxfrac_radius_50_(f062|f087|f106|f129|f158|f184|f213|f146)$
+      - not:
+          items:
+            not:
+              allOf:
+                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/source_catalog_columns-1.0.0#/definitions/is_extended_~band~"
+                - properties:
+                    name:
+                      pattern: ^is_extended_(f062|f087|f106|f129|f158|f184|f213|f146)$
+      - not:
+          items:
+            not:
+              allOf:
+                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/source_catalog_columns-1.0.0#/definitions/fwhm"
+                - properties:
+                    name:
+                      pattern: ^fwhm$
+      - not:
+          items:
+            not:
+              allOf:
+                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/source_catalog_columns-1.0.0#/definitions/kron_radius"
+                - properties:
+                    name:
+                      pattern: ^kron_radius$
+      - not:
+          items:
+            not:
+              allOf:
+                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/source_catalog_columns-1.0.0#/definitions/orientation_pix"
+                - properties:
+                    name:
+                      pattern: ^orientation_pix$
+      - not:
+          items:
+            not:
+              allOf:
+                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/source_catalog_columns-1.0.0#/definitions/orientation_sky"
+                - properties:
+                    name:
+                      pattern: ^orientation_sky$
+      - not:
+          items:
+            not:
+              allOf:
+                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/source_catalog_columns-1.0.0#/definitions/roundness1_~band~"
+                - properties:
+                    name:
+                      pattern: ^roundness1_(f062|f087|f106|f129|f158|f184|f213|f146)$
+      - not:
+          items:
+            not:
+              allOf:
+                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/source_catalog_columns-1.0.0#/definitions/semimajor"
+                - properties:
+                    name:
+                      pattern: ^semimajor$
+      - not:
+          items:
+            not:
+              allOf:
+                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/source_catalog_columns-1.0.0#/definitions/semiminor"
+                - properties:
+                    name:
+                      pattern: ^semiminor$
+      - not:
+          items:
+            not:
+              allOf:
+                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/source_catalog_columns-1.0.0#/definitions/sharpness_~band~"
+                - properties:
+                    name:
+                      pattern: ^sharpness_(f062|f087|f106|f129|f158|f184|f213|f146)$
+      - not:
+          items:
+            not:
+              allOf:
+                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/source_catalog_columns-1.0.0#/definitions/nn_distance"
+                - properties:
+                    name:
+                      pattern: ^nn_distance$
+      - not:
+          items:
+            not:
+              allOf:
+                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/source_catalog_columns-1.0.0#/definitions/nn_label"
+                - properties:
+                    name:
+                      pattern: ^nn_label$
