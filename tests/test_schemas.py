@@ -20,7 +20,9 @@ VARCHAR_XFAILS = (
     # <resource uri>
 )
 
-REF_COMMON_XFAILS = ("asdf://stsci.edu/datamodels/roman/schemas/reference_files/skycells-1.0.0",)
+REF_COMMON_XFAILS = (
+    # <resource uri>
+)
 
 ARRAY_TAG_XFAILS = (
     "asdf://stsci.edu/datamodels/roman/schemas/l1_detector_guidewindow-1.0.0",

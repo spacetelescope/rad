@@ -26,4 +26,5 @@ enum:
   - WFI16
   - WFI17
   - WFI18
+  - N/A
 maxLength: 10
