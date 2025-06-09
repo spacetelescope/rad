@@ -13,7 +13,6 @@ properties:
       The data are converted from DN/s to MJy/sr.
     allOf:
       - $ref: asdf://stsci.edu/datamodels/roman/schemas/cal_step_flag-1.0.0
-    maxLength: 15
     archive_catalog:
       datatype: nvarchar(15)
       destination: [ScienceRefData.s_flux]
@@ -23,7 +22,6 @@ properties:
       Step in ROMANCAL which detects and flags outliers in a science image.
     allOf:
       - $ref: asdf://stsci.edu/datamodels/roman/schemas/cal_step_flag-1.0.0
-    maxLength: 15
     archive_catalog:
       datatype: nvarchar(15)
       destination: [ScienceRefData.s_outlier_detection]
@@ -34,7 +32,6 @@ properties:
       and derives scalings to equalize overlapping regions.
     allOf:
       - $ref: asdf://stsci.edu/datamodels/roman/schemas/cal_step_flag-1.0.0
-    maxLength: 15
     archive_catalog:
       datatype: nvarchar(15)
       destination: [ScienceRefData.s_skymatch]
@@ -46,7 +43,6 @@ properties:
       multiple resampled images into a single, undistorted product.
     allOf:
       - $ref: asdf://stsci.edu/datamodels/roman/schemas/cal_step_flag-1.0.0
-    maxLength: 15
     archive_catalog:
       datatype: nvarchar(15)
       destination: [ScienceRefData.s_resample]
