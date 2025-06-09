@@ -73,6 +73,7 @@ class _Manager:
         self._key_map = key_map or {}
 
         self._frozen = frozen or frozen_uris(path)
+        self._walk_resources()
 
     def __getitem__(self, item: Path | str) -> Resource:
         """
@@ -340,6 +341,14 @@ class _Manager:
 
             if (update.uri in resource.body or update.tag_uri in resource.body) and resource.frozen:
                 yield Bump(resource, self._resources_to_update(resource.path))
+
+    def _walk_resources(self) -> None:
+        """
+        Walk through the resources in the repository and add them to the manager.
+        --> This is used to initialize the manager with the resources in the repository.
+        """
+        for path in (self._repository / "latest").glob("**/*.yaml"):
+            self._add_resource(path)
 
 
 class Manager(_Manager, DirectoryTree):
