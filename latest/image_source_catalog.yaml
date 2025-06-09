@@ -16,10 +16,10 @@ properties:
       - type: object
         properties:
           optical_element:
-            $ref: asdf://stsci.edu/datamodels/roman/schemas/wfi_optical_element-1.1.0
+            $ref: asdf://stsci.edu/datamodels/roman/schemas/wfi_optical_element-1.2.0
           exposure:
             title: Exposure Information
-            tag: asdf://stsci.edu/datamodels/roman/tags/exposure-1.2.0
+            tag: asdf://stsci.edu/datamodels/roman/tags/exposure-1.3.0
           photometry:
             title: Photometry Information
             tag: asdf://stsci.edu/datamodels/roman/tags/photometry-1.0.0
@@ -31,7 +31,7 @@ properties:
             tag: asdf://stsci.edu/datamodels/roman/tags/ref_file-1.1.0
           visit:
             title: Visit Information
-            tag: asdf://stsci.edu/datamodels/roman/tags/visit-1.1.0
+            tag: asdf://stsci.edu/datamodels/roman/tags/visit-1.2.0
         required:
           [optical_element, exposure, photometry, program, ref_file, visit]
   source_catalog:

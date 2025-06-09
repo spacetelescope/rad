@@ -203,6 +203,17 @@ class TestSchemaContent:
         """
         assert uri in latest_uris, f"{uri} is not in the list of schemas to be tested."
 
+    def test_string_max_length(self, schema):
+        """
+        Checks that if a `maxLength` is specified, that it is specified along with a `type` of `string`.
+        """
+
+        def callback(node):
+            if isinstance(node, Mapping) and "maxLength" in node:
+                assert node.get("type") == "string", "maxLength is only valid for strings"
+
+        asdf.treeutil.walk(schema, callback)
+
     def test_varchar_length(self, schema_uri, schema, request):
         """
         Test that varchar(N) in archive_metadata for string objects
@@ -216,20 +227,56 @@ class TestSchemaContent:
                 )
             )
 
-        def callback(node, nvarchars=None):
-            nvarchars = nvarchars or {}
-            if not isinstance(node, dict):
-                return
-            if node.get("type", "") != "string":
-                return
-            if "archive_catalog" not in node:
-                return
-            m = match(r"^nvarchar\(([0-9]+)\)$", node["archive_catalog"]["datatype"])
-            if not m:
-                return
-            v = int(m.group(1))
-            assert "maxLength" in node, f"archive_catalog has nvarchar, schema {schema_uri} is missing maxLength"
-            assert node["maxLength"] == v, f"archive_catalog nvarchar does not match maxLength in schema {schema_uri}"
+        def callback(node):
+            if (
+                isinstance(node, Mapping)
+                and "archive_catalog" in node
+                and node["archive_catalog"]["datatype"].startswith("nvarchar(")
+            ):
+                m = match(r"^nvarchar\(([0-9]+)\)$", node["archive_catalog"]["datatype"])
+                if m:
+                    length = int(m.group(1))
+
+                    def check_max_length(node):
+                        nonlocal found
+                        nonlocal ref_uri
+                        if isinstance(node, Mapping) and "type" in node:
+                            if node["type"] == "string":
+                                msg = "archive_catalog.datatype nvarchar indicates maxLength is required"
+                                msg += f" in schema {ref_uri}" if ref_uri else ""
+                                msg += ", but it is not present"
+                                assert "maxLength" in node, msg
+                                assert node["maxLength"] == length, (
+                                    f"archive_catalog.datatype nvarchar indicates maxLength={length}, but found {node['maxLength']}."
+                                )
+                                found = True
+
+                            # Arrays may have a nvarchar described for archive, but they don't have a maxLength
+                            # json-schema descriptor so we assume that we found maxLength
+                            elif node["type"] == "array":
+                                found = True
+
+                    if "type" in node:
+                        found = False
+                        ref_uri = None
+                        asdf.treeutil.walk(node, check_max_length)
+                        assert found, "archive_catalog.datatype nvarchar indicates maxLength is required, none is found"
+                        return
+
+                    if "allOf" in node or "anyOf" in node:
+                        for sub_schema in node.get("allOf", []) + node.get("anyOf", []):
+                            if isinstance(sub_schema, Mapping):
+                                found = False
+                                ref_uri = sub_schema.get("$ref")
+                                sub_node = asdf.schema.load_schema(sub_schema["$ref"]) if "$ref" in sub_schema else sub_schema
+                                asdf.treeutil.walk(sub_node, check_max_length)
+                                assert found, (
+                                    f"archive_catalog.datatype nvarchar indicates there should be a maxLength in {sub_schema['$ref']}"
+                                )
+                                return
+
+                    # Fallback failure
+                    raise AssertionError("archive_catalog.datatype is nvarchar but no maxLength found.")
 
         asdf.treeutil.walk(schema, callback)
 

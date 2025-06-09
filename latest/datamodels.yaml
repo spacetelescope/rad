@@ -9,8 +9,8 @@ asdf_standard_requirement:
   gte: 1.1.0
 tags:
   # Object Modules
-  - tag_uri: asdf://stsci.edu/datamodels/roman/tags/l1_face_guidewindow-1.1.0
-    schema_uri: asdf://stsci.edu/datamodels/roman/schemas/l1_face_guidewindow-1.1.0
+  - tag_uri: asdf://stsci.edu/datamodels/roman/tags/l1_face_guidewindow-1.2.0
+    schema_uri: asdf://stsci.edu/datamodels/roman/schemas/l1_face_guidewindow-1.2.0
     title: Level 1 FACE Guide Star Window Information schema
     description: |-
       Level 1 FACE Guide Star Window Information schema
@@ -19,8 +19,8 @@ tags:
     title: Level 1 Detector Guide Star Window Information schema
     description: |-
       Level 1 Detector Guide Star Window Information schema
-  - tag_uri: asdf://stsci.edu/datamodels/roman/tags/guidewindow-1.2.0
-    schema_uri: asdf://stsci.edu/datamodels/roman/schemas/guidewindow-1.2.0
+  - tag_uri: asdf://stsci.edu/datamodels/roman/tags/guidewindow-1.3.0
+    schema_uri: asdf://stsci.edu/datamodels/roman/schemas/guidewindow-1.3.0
     title: Guide window schema
     description: |-
       Guide window schema
@@ -29,13 +29,13 @@ tags:
     title: Ramp schema
     description: |-
       Ramp schema
-  - tag_uri: asdf://stsci.edu/datamodels/roman/tags/ramp_fit_output-1.2.0
-    schema_uri: asdf://stsci.edu/datamodels/roman/schemas/ramp_fit_output-1.2.0
+  - tag_uri: asdf://stsci.edu/datamodels/roman/tags/ramp_fit_output-1.3.0
+    schema_uri: asdf://stsci.edu/datamodels/roman/schemas/ramp_fit_output-1.3.0
     title: Ramp fit output schema
     description: |-
       Ramp fit output schema
-  - tag_uri: asdf://stsci.edu/datamodels/roman/tags/wfi_science_raw-1.2.0
-    schema_uri: asdf://stsci.edu/datamodels/roman/schemas/wfi_science_raw-1.2.0
+  - tag_uri: asdf://stsci.edu/datamodels/roman/tags/wfi_science_raw-1.3.0
+    schema_uri: asdf://stsci.edu/datamodels/roman/schemas/wfi_science_raw-1.3.0
     title: Roman WFI Raw Science Data datamodel
     description: |-
       Basic Roman Raw Science
@@ -49,20 +49,20 @@ tags:
     title: Wfi level 3 mosaic information
     description: |-
       Wfi level 3 mosaic information
-  - tag_uri: asdf://stsci.edu/datamodels/roman/tags/wfi_mode-1.1.0
-    schema_uri: asdf://stsci.edu/datamodels/roman/schemas/wfi_mode-1.1.0
+  - tag_uri: asdf://stsci.edu/datamodels/roman/tags/wfi_mode-1.2.0
+    schema_uri: asdf://stsci.edu/datamodels/roman/schemas/wfi_mode-1.2.0
     title: Roman WFI Instrument Mode
     description: |-
       Roman WFI Instrument
-  - tag_uri: asdf://stsci.edu/datamodels/roman/tags/wfi_wcs-1.1.0
-    schema_uri: asdf://stsci.edu/datamodels/roman/schemas/wfi_wcs-1.1.0
+  - tag_uri: asdf://stsci.edu/datamodels/roman/tags/wfi_wcs-1.2.0
+    schema_uri: asdf://stsci.edu/datamodels/roman/schemas/wfi_wcs-1.2.0
     title: Roman Wide Field Instrument (WFI) Level 2 (L2) WCS
     description: |-
       Roman Wide Field Instrument (WFI) Level 2 (L2) WCS and
       modified WCS applicable for Science Raw (L1).
   # Metadata Modules
-  - tag_uri: asdf://stsci.edu/datamodels/roman/tags/exposure-1.2.0
-    schema_uri: asdf://stsci.edu/datamodels/roman/schemas/exposure-1.2.0
+  - tag_uri: asdf://stsci.edu/datamodels/roman/tags/exposure-1.3.0
+    schema_uri: asdf://stsci.edu/datamodels/roman/schemas/exposure-1.3.0
     title: Exposure information
     description: |-
       Exposure information
@@ -71,8 +71,8 @@ tags:
     title: Program information
     description: |-
       Program information
-  - tag_uri: asdf://stsci.edu/datamodels/roman/tags/observation-1.0.0
-    schema_uri: asdf://stsci.edu/datamodels/roman/schemas/observation-1.0.0
+  - tag_uri: asdf://stsci.edu/datamodels/roman/tags/observation-1.1.0
+    schema_uri: asdf://stsci.edu/datamodels/roman/schemas/observation-1.1.0
     title: Observation information
     description: |-
       Observation information
@@ -81,8 +81,8 @@ tags:
     title: Ephemeris information
     description: |-
       Ephemeris information
-  - tag_uri: asdf://stsci.edu/datamodels/roman/tags/visit-1.1.0
-    schema_uri: asdf://stsci.edu/datamodels/roman/schemas/visit-1.1.0
+  - tag_uri: asdf://stsci.edu/datamodels/roman/tags/visit-1.2.0
+    schema_uri: asdf://stsci.edu/datamodels/roman/schemas/visit-1.2.0
     title: Visit information
     description: |-
       Visit information
@@ -106,8 +106,8 @@ tags:
     title: Spacecraft Pointing information
     description: |-
       Spacecraft Pointing information
-  - tag_uri: asdf://stsci.edu/datamodels/roman/tags/rcs-1.0.0
-    schema_uri: asdf://stsci.edu/datamodels/roman/schemas/rcs-1.0.0
+  - tag_uri: asdf://stsci.edu/datamodels/roman/tags/rcs-1.1.0
+    schema_uri: asdf://stsci.edu/datamodels/roman/schemas/rcs-1.1.0
     title: Relative Calibration System Information
     description: |-
       Relative Calibration System Information
@@ -126,8 +126,8 @@ tags:
     title: Wcsinfo information
     description: |-
       Wcsinfo information
-  - tag_uri: asdf://stsci.edu/datamodels/roman/tags/guidestar-1.1.0
-    schema_uri: asdf://stsci.edu/datamodels/roman/schemas/guidestar-1.1.0
+  - tag_uri: asdf://stsci.edu/datamodels/roman/tags/guidestar-1.2.0
+    schema_uri: asdf://stsci.edu/datamodels/roman/schemas/guidestar-1.2.0
     title: Guidestar information
     description: |-
       Guidestar information
@@ -161,8 +161,8 @@ tags:
     title: Combined level 2 metadata
     description: |-
       Combined level 2 metadata
-  - tag_uri: asdf://stsci.edu/datamodels/roman/tags/mosaic_basic-1.1.0
-    schema_uri: asdf://stsci.edu/datamodels/roman/schemas/mosaic_basic-1.1.0
+  - tag_uri: asdf://stsci.edu/datamodels/roman/tags/mosaic_basic-1.2.0
+    schema_uri: asdf://stsci.edu/datamodels/roman/schemas/mosaic_basic-1.2.0
     title: Basic mosaic metadata keywords
     description: |-
       Basic mosaic metadata keywords
@@ -177,88 +177,88 @@ tags:
     description: |-
       Mosaic WCS parameters
   # Reference Modules
-  - tag_uri: asdf://stsci.edu/datamodels/roman/tags/reference_files/abvegaoffset-1.0.0
-    schema_uri: asdf://stsci.edu/datamodels/roman/schemas/reference_files/abvegaoffset-1.0.0
+  - tag_uri: asdf://stsci.edu/datamodels/roman/tags/reference_files/abvegaoffset-1.1.0
+    schema_uri: asdf://stsci.edu/datamodels/roman/schemas/reference_files/abvegaoffset-1.1.0
     title: AB Vega Offset reference schema
     description: |-
       AB Vega Offset reference schema
-  - tag_uri: asdf://stsci.edu/datamodels/roman/tags/reference_files/apcorr-1.0.0
-    schema_uri: asdf://stsci.edu/datamodels/roman/schemas/reference_files/apcorr-1.0.0
+  - tag_uri: asdf://stsci.edu/datamodels/roman/tags/reference_files/apcorr-1.1.0
+    schema_uri: asdf://stsci.edu/datamodels/roman/schemas/reference_files/apcorr-1.1.0
     title: Aperture correction reference schema
     description: |-
       Aperture correction reference schema
-  - tag_uri: asdf://stsci.edu/datamodels/roman/tags/reference_files/dark-1.1.0
-    schema_uri: asdf://stsci.edu/datamodels/roman/schemas/reference_files/dark-1.1.0
+  - tag_uri: asdf://stsci.edu/datamodels/roman/tags/reference_files/dark-1.2.0
+    schema_uri: asdf://stsci.edu/datamodels/roman/schemas/reference_files/dark-1.2.0
     title: Dark reference schema
     description: |-
       Dark reference schema
-  - tag_uri: asdf://stsci.edu/datamodels/roman/tags/reference_files/distortion-1.1.0
-    schema_uri: asdf://stsci.edu/datamodels/roman/schemas/reference_files/distortion-1.1.0
+  - tag_uri: asdf://stsci.edu/datamodels/roman/tags/reference_files/distortion-1.2.0
+    schema_uri: asdf://stsci.edu/datamodels/roman/schemas/reference_files/distortion-1.2.0
     title: Distortion reference schema
     description: |-
       Distortion reference schema
-  - tag_uri: asdf://stsci.edu/datamodels/roman/tags/reference_files/epsf-1.1.0
-    schema_uri: asdf://stsci.edu/datamodels/roman/schemas/reference_files/epsf-1.1.0
+  - tag_uri: asdf://stsci.edu/datamodels/roman/tags/reference_files/epsf-1.2.0
+    schema_uri: asdf://stsci.edu/datamodels/roman/schemas/reference_files/epsf-1.2.0
     title: ePSF reference schema
     description: |-
       ePSF reference schema
-  - tag_uri: asdf://stsci.edu/datamodels/roman/tags/reference_files/flat-1.1.0
-    schema_uri: asdf://stsci.edu/datamodels/roman/schemas/reference_files/flat-1.1.0
+  - tag_uri: asdf://stsci.edu/datamodels/roman/tags/reference_files/flat-1.2.0
+    schema_uri: asdf://stsci.edu/datamodels/roman/schemas/reference_files/flat-1.2.0
     title: Flat reference schema
     description: |-
       Flat field information
-  - tag_uri: asdf://stsci.edu/datamodels/roman/tags/reference_files/gain-1.0.0
-    schema_uri: asdf://stsci.edu/datamodels/roman/schemas/reference_files/gain-1.0.0
+  - tag_uri: asdf://stsci.edu/datamodels/roman/tags/reference_files/gain-1.1.0
+    schema_uri: asdf://stsci.edu/datamodels/roman/schemas/reference_files/gain-1.1.0
     title: Gain reference schema
     description: |-
       Gain reference schema
-  - tag_uri: asdf://stsci.edu/datamodels/roman/tags/reference_files/inverselinearity-1.0.0
-    schema_uri: asdf://stsci.edu/datamodels/roman/schemas/reference_files/inverselinearity-1.0.0
+  - tag_uri: asdf://stsci.edu/datamodels/roman/tags/reference_files/inverselinearity-1.1.0
+    schema_uri: asdf://stsci.edu/datamodels/roman/schemas/reference_files/inverselinearity-1.1.0
     title: Inverse linearity correction reference schema
     description: |-
       Inverse linearity correction reference schema
-  - tag_uri: asdf://stsci.edu/datamodels/roman/tags/reference_files/ipc-1.1.0
-    schema_uri: asdf://stsci.edu/datamodels/roman/schemas/reference_files/ipc-1.1.0
+  - tag_uri: asdf://stsci.edu/datamodels/roman/tags/reference_files/ipc-1.2.0
+    schema_uri: asdf://stsci.edu/datamodels/roman/schemas/reference_files/ipc-1.2.0
     title: IPC kernel reference schema
     description: |-
       IPC kernel reference schema
-  - tag_uri: asdf://stsci.edu/datamodels/roman/tags/reference_files/linearity-1.0.0
-    schema_uri: asdf://stsci.edu/datamodels/roman/schemas/reference_files/linearity-1.0.0
+  - tag_uri: asdf://stsci.edu/datamodels/roman/tags/reference_files/linearity-1.1.0
+    schema_uri: asdf://stsci.edu/datamodels/roman/schemas/reference_files/linearity-1.1.0
     title: Linearity correction reference schema
     description: |-
       Linearity correction reference schema
-  - tag_uri: asdf://stsci.edu/datamodels/roman/tags/reference_files/mask-1.0.0
-    schema_uri: asdf://stsci.edu/datamodels/roman/schemas/reference_files/mask-1.0.0
+  - tag_uri: asdf://stsci.edu/datamodels/roman/tags/reference_files/mask-1.1.0
+    schema_uri: asdf://stsci.edu/datamodels/roman/schemas/reference_files/mask-1.1.0
     title: DQ Mask reference schema
     description: |-
       DQ Mask reference schema
-  - tag_uri: asdf://stsci.edu/datamodels/roman/tags/reference_files/pixelarea-1.1.0
-    schema_uri: asdf://stsci.edu/datamodels/roman/schemas/reference_files/pixelarea-1.1.0
+  - tag_uri: asdf://stsci.edu/datamodels/roman/tags/reference_files/pixelarea-1.2.0
+    schema_uri: asdf://stsci.edu/datamodels/roman/schemas/reference_files/pixelarea-1.2.0
     title: Pixel area reference schema
     description: |-
       Pixel area reference schema
-  - tag_uri: asdf://stsci.edu/datamodels/roman/tags/reference_files/readnoise-1.1.0
-    schema_uri: asdf://stsci.edu/datamodels/roman/schemas/reference_files/readnoise-1.1.0
+  - tag_uri: asdf://stsci.edu/datamodels/roman/tags/reference_files/readnoise-1.2.0
+    schema_uri: asdf://stsci.edu/datamodels/roman/schemas/reference_files/readnoise-1.2.0
     title: Read noise reference schema
     description: |-
       Read noise reference schema
-  - tag_uri: asdf://stsci.edu/datamodels/roman/tags/reference_files/refpix-1.0.0
-    schema_uri: asdf://stsci.edu/datamodels/roman/schemas/reference_files/refpix-1.0.0
+  - tag_uri: asdf://stsci.edu/datamodels/roman/tags/reference_files/refpix-1.1.0
+    schema_uri: asdf://stsci.edu/datamodels/roman/schemas/reference_files/refpix-1.1.0
     title: Reference pixel correction reference schema
     description: |-
       Reference pixel correction reference schema
-  - tag_uri: asdf://stsci.edu/datamodels/roman/tags/reference_files/saturation-1.0.0
-    schema_uri: asdf://stsci.edu/datamodels/roman/schemas/reference_files/saturation-1.0.0
+  - tag_uri: asdf://stsci.edu/datamodels/roman/tags/reference_files/saturation-1.1.0
+    schema_uri: asdf://stsci.edu/datamodels/roman/schemas/reference_files/saturation-1.1.0
     title: Saturation reference schema
     description: |-
       Saturation reference schema
-  - tag_uri: asdf://stsci.edu/datamodels/roman/tags/reference_files/superbias-1.0.0
-    schema_uri: asdf://stsci.edu/datamodels/roman/schemas/reference_files/superbias-1.0.0
+  - tag_uri: asdf://stsci.edu/datamodels/roman/tags/reference_files/superbias-1.1.0
+    schema_uri: asdf://stsci.edu/datamodels/roman/schemas/reference_files/superbias-1.1.0
     title: Super-bias reference schema
     description: |-
       Super-bias reference schema
-  - tag_uri: asdf://stsci.edu/datamodels/roman/tags/reference_files/wfi_img_photom-1.1.0
-    schema_uri: asdf://stsci.edu/datamodels/roman/schemas/reference_files/wfi_img_photom-1.1.0
+  - tag_uri: asdf://stsci.edu/datamodels/roman/tags/reference_files/wfi_img_photom-1.2.0
+    schema_uri: asdf://stsci.edu/datamodels/roman/schemas/reference_files/wfi_img_photom-1.2.0
     title: WFI imaging photometric flux conversion data model
     description: |-
       WFI imaging photometric flux conversion data model
@@ -267,8 +267,8 @@ tags:
     title: Skycells Reference File Schema
     description: |-
       This file contains definitions for all the skycells that cover the entire celestial sphere
-  - tag_uri: asdf://stsci.edu/datamodels/roman/tags/reference_files/matable-1.0.0
-    schema_uri: asdf://stsci.edu/datamodels/roman/schemas/reference_files/matable-1.0.0
+  - tag_uri: asdf://stsci.edu/datamodels/roman/tags/reference_files/matable-1.1.0
+    schema_uri: asdf://stsci.edu/datamodels/roman/schemas/reference_files/matable-1.1.0
     title: Multiple Accumulation Table Reference File Schema
     description: |-
       Multiple Accumulation Table Reference File Schema
@@ -293,8 +293,8 @@ tags:
     title: Image source catalog
     description: |-
       Photometry and astrometry computed by the Source Catalog Step
-  - tag_uri: asdf://stsci.edu/datamodels/roman/tags/segmentation_map-1.2.0
-    schema_uri: asdf://stsci.edu/datamodels/roman/schemas/segmentation_map-1.2.0
+  - tag_uri: asdf://stsci.edu/datamodels/roman/tags/segmentation_map-1.3.0
+    schema_uri: asdf://stsci.edu/datamodels/roman/schemas/segmentation_map-1.3.0
     title: Segmentation map
     description: |-
       Segmentation map computed by the Source Catalog Step
@@ -308,8 +308,8 @@ tags:
     title: Multiband source catalog
     description: |-
       Photometry and astrometry computed by the Multiband Catalog Step
-  - tag_uri: asdf://stsci.edu/datamodels/roman/tags/mosaic_segmentation_map-1.2.0
-    schema_uri: asdf://stsci.edu/datamodels/roman/schemas/mosaic_segmentation_map-1.2.0
+  - tag_uri: asdf://stsci.edu/datamodels/roman/tags/mosaic_segmentation_map-1.3.0
+    schema_uri: asdf://stsci.edu/datamodels/roman/schemas/mosaic_segmentation_map-1.3.0
     title: Mosaic segmentation map
     description: |-
       Segmentation map computed by the Source Catalog Step
@@ -385,8 +385,8 @@ tags:
     description: |-
       The name of the telescope used to acquire the data.
   # SSC data models
-  - tag_uri: asdf://stsci.edu/datamodels/roman/tags/msos_stack-1.2.0
-    schema_uri: asdf://stsci.edu/datamodels/roman/schemas/msos_stack-1.2.0
+  - tag_uri: asdf://stsci.edu/datamodels/roman/tags/msos_stack-1.3.0
+    schema_uri: asdf://stsci.edu/datamodels/roman/schemas/msos_stack-1.3.0
     title: MSOS Stack Level 3 Schema
     description: |-
       Level 3 schema for SSC's MSOS stack products
