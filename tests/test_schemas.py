@@ -13,38 +13,11 @@ from crds.config import is_crds_name
 METADATA_FORCING_REQUIRED = ("archive_catalog", "sdf")
 
 METADATA_FORCE_XFAILS = (
-    "asdf://stsci.edu/datamodels/roman/schemas/fps/ref_file-1.0.0",
-    "asdf://stsci.edu/datamodels/roman/schemas/tvac/groundtest-1.0.0",
-    "asdf://stsci.edu/datamodels/roman/schemas/tvac/ref_file-1.0.0",
+    # <resource uri>
 )
 
 VARCHAR_XFAILS = (
-    "asdf://stsci.edu/datamodels/roman/schemas/fps/cal_step-1.0.0",
-    "asdf://stsci.edu/datamodels/roman/schemas/fps/exposure-1.0.0",
-    "asdf://stsci.edu/datamodels/roman/schemas/fps/groundtest-1.0.0",
-    "asdf://stsci.edu/datamodels/roman/schemas/fps/guidestar-1.0.0",
-    "asdf://stsci.edu/datamodels/roman/schemas/fps/ref_file-1.0.0",
-    "asdf://stsci.edu/datamodels/roman/schemas/fps/tagged_scalars/calibration_software_version-1.0.0",
-    "asdf://stsci.edu/datamodels/roman/schemas/fps/tagged_scalars/filename-1.0.0",
-    "asdf://stsci.edu/datamodels/roman/schemas/fps/tagged_scalars/model_type-1.0.0",
-    "asdf://stsci.edu/datamodels/roman/schemas/fps/tagged_scalars/origin-1.0.0",
-    "asdf://stsci.edu/datamodels/roman/schemas/fps/tagged_scalars/prd_software_version-1.0.0",
-    "asdf://stsci.edu/datamodels/roman/schemas/fps/tagged_scalars/sdf_software_version-1.0.0",
-    "asdf://stsci.edu/datamodels/roman/schemas/fps/tagged_scalars/telescope-1.0.0",
-    "asdf://stsci.edu/datamodels/roman/schemas/fps/wfi_mode-1.0.0",
-    "asdf://stsci.edu/datamodels/roman/schemas/tvac/cal_step-1.0.0",
-    "asdf://stsci.edu/datamodels/roman/schemas/tvac/exposure-1.0.0",
-    "asdf://stsci.edu/datamodels/roman/schemas/tvac/groundtest-1.0.0",
-    "asdf://stsci.edu/datamodels/roman/schemas/tvac/guidestar-1.0.0",
-    "asdf://stsci.edu/datamodels/roman/schemas/tvac/ref_file-1.0.0",
-    "asdf://stsci.edu/datamodels/roman/schemas/tvac/tagged_scalars/calibration_software_version-1.0.0",
-    "asdf://stsci.edu/datamodels/roman/schemas/tvac/tagged_scalars/filename-1.0.0",
-    "asdf://stsci.edu/datamodels/roman/schemas/tvac/tagged_scalars/model_type-1.0.0",
-    "asdf://stsci.edu/datamodels/roman/schemas/tvac/tagged_scalars/origin-1.0.0",
-    "asdf://stsci.edu/datamodels/roman/schemas/tvac/tagged_scalars/prd_software_version-1.0.0",
-    "asdf://stsci.edu/datamodels/roman/schemas/tvac/tagged_scalars/sdf_software_version-1.0.0",
-    "asdf://stsci.edu/datamodels/roman/schemas/tvac/tagged_scalars/telescope-1.0.0",
-    "asdf://stsci.edu/datamodels/roman/schemas/tvac/wfi_mode-1.0.0",
+    # <resource uri>
 )
 
 REF_COMMON_XFAILS = ("asdf://stsci.edu/datamodels/roman/schemas/reference_files/skycells-1.0.0",)
@@ -223,12 +196,12 @@ class TestSchemaContent:
         asdf.treeutil.walk(schema, callback)
 
     @pytest.mark.parametrize("uri", METADATA_FORCE_XFAILS)
-    def test_metadata_force_xfail_relevant(self, uri, schema_uris):
+    def test_metadata_force_xfail_relevant(self, uri, latest_uris):
         """
         Test that URIS that are marked as failing the metadata are still relevant (in use).
         -> Smokes out when METADATA_FORCE_XFAILS is not relevant anymore.
         """
-        assert uri in schema_uris, f"{uri} is not in the list of schemas to be tested."
+        assert uri in latest_uris, f"{uri} is not in the list of schemas to be tested."
 
     def test_varchar_length(self, schema_uri, schema, request):
         """
@@ -261,12 +234,12 @@ class TestSchemaContent:
         asdf.treeutil.walk(schema, callback)
 
     @pytest.mark.parametrize("uri", VARCHAR_XFAILS)
-    def test_varchar_xfail_relevant(self, uri, schema_uris):
+    def test_varchar_xfail_relevant(self, uri, latest_uris):
         """
         Test that URIS that are marked as failing for varchar length are still relevant (in use).
         -> Smokes out when VARCHAR_XFAILS is not relevant anymore.
         """
-        assert uri in schema_uris, f"{uri} is not in the list of schemas to be tested."
+        assert uri in latest_uris, f"{uri} is not in the list of schemas to be tested."
 
 
 class TestTaggedSchemaContent:
@@ -431,12 +404,12 @@ class TestReferenceFileSchemas:
             raise ValueError("ref_common not found in meta")
 
     @pytest.mark.parametrize("uri", REF_COMMON_XFAILS)
-    def test_ref_common_xfail_relevant(self, uri, schema_uris):
+    def test_ref_common_xfail_relevant(self, uri, latest_uris):
         """
         Test that URIS that are marked as failing the ref_common are still relevant (in use).
         -> Smokes out when REF_COMMON_XFAILS is not relevant anymore.
         """
-        assert uri in schema_uris, f"{uri} is not in the list of schemas to be tested."
+        assert uri in latest_uris, f"{uri} is not in the list of schemas to be tested."
 
 
 class TestPatternElementConsistency:
