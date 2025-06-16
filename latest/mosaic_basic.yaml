@@ -1,7 +1,7 @@
 %YAML 1.1
 ---
 $schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.0.0
-id: asdf://stsci.edu/datamodels/roman/schemas/mosaic_basic-1.1.0
+id: asdf://stsci.edu/datamodels/roman/schemas/mosaic_basic-1.2.0
 
 title: Basic mosaic metadata keywords
 type: object
@@ -143,7 +143,6 @@ properties:
       special_processing: VALUE_REQUIRED
       source:
         origin: TBD
-    maxLength: 20
     archive_catalog:
       datatype: nvarchar(20)
       destination:
