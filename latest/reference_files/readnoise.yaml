@@ -1,7 +1,7 @@
 %YAML 1.1
 ---
 $schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.0.0
-id: asdf://stsci.edu/datamodels/roman/schemas/reference_files/readnoise-1.1.0
+id: asdf://stsci.edu/datamodels/roman/schemas/reference_files/readnoise-1.2.0
 
 title: Read Noise Reference File Schema
 
@@ -11,12 +11,12 @@ type: object
 properties:
   meta:
     allOf:
-      - $ref: asdf://stsci.edu/datamodels/roman/schemas/reference_files/ref_common-1.0.0
+      - $ref: asdf://stsci.edu/datamodels/roman/schemas/reference_files/ref_common-1.1.0
       - type: object
         properties:
           reftype:
             enum: [READNOISE]
-      - $ref: asdf://stsci.edu/datamodels/roman/schemas/reference_files/ref_exposure_type-1.1.0
+      - $ref: asdf://stsci.edu/datamodels/roman/schemas/reference_files/ref_exposure_type-1.2.0
   data:
     title: Read Noise Data Array
     description: |

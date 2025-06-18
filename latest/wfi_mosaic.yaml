@@ -20,7 +20,7 @@ properties:
           asn:
             tag: asdf://stsci.edu/datamodels/roman/tags/mosaic_associations-1.0.0
           basic:
-            tag: asdf://stsci.edu/datamodels/roman/tags/mosaic_basic-1.1.0
+            tag: asdf://stsci.edu/datamodels/roman/tags/mosaic_basic-1.2.0
           cal_logs:
             tag: asdf://stsci.edu/datamodels/roman/tags/cal_logs-1.0.0
           cal_step:
