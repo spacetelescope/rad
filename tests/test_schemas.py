@@ -315,9 +315,22 @@ class TestSchemaContent:
 
         def callback(node):
             """Callback to check for object type"""
-            if isinstance(node, Mapping):
-                if any(keyword in node for keyword in object_keywords):
-                    assert node.get("type") == "object", "Schemas with properties must have type: object"
+            if isinstance(node, Mapping) and any(keyword in node for keyword in object_keywords):
+                assert node.get("type") == "object", "Schemas with properties must have type: object"
+
+        asdf.treeutil.walk(schema, callback)
+
+    def test_type_string(self, schema):
+        """
+        Check that if a schema has a pattern, then it has type: string
+        """
+
+        string_keywords = ("pattern", "minLength", "maxLength")
+
+        def callback(node):
+            """Callback to check for string type"""
+            if isinstance(node, Mapping) and any(keyword in node for keyword in string_keywords):
+                assert node.get("type") == "string", "Schemas with pattern must have type: string"
 
         asdf.treeutil.walk(schema, callback)
 
