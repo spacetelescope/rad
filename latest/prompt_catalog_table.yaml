@@ -1,12 +1,9 @@
 %YAML 1.1
 ---
 $schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.0.0
-id: asdf://stsci.edu/datamodels/roman/schemas/prompt_catalog_table-1.0.0
+id: asdf://stsci.edu/datamodels/roman/schemas/prompt_catalog_table-1.1.0
 
 title: Prompt source catalog table schema
-
-definitions:
-  $ref: "asdf://stsci.edu/datamodels/roman/schemas/source_catalog_columns-1.0.0#/definitions"
 
 type: object
 properties:
@@ -16,423 +13,476 @@ properties:
           items:
             not:
               allOf:
-                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/source_catalog_columns-1.0.0#/definitions/flagged_spatial_index"
-                - properties:
+                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/source_catalog_columns-1.1.0#/definitions/flagged_spatial_index"
+                - type: object
+                  properties:
                     name:
                       pattern: ^flagged_spatial_index$
       - not:
           items:
             not:
               allOf:
-                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/source_catalog_columns-1.0.0#/definitions/bbox_xmax"
-                - properties:
+                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/source_catalog_columns-1.1.0#/definitions/bbox_xmax"
+                - type: object
+                  properties:
                     name:
                       pattern: ^bbox_xmax$
       - not:
           items:
             not:
               allOf:
-                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/source_catalog_columns-1.0.0#/definitions/bbox_xmin"
-                - properties:
+                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/source_catalog_columns-1.1.0#/definitions/bbox_xmin"
+                - type: object
+                  properties:
                     name:
                       pattern: ^bbox_xmin$
       - not:
           items:
             not:
               allOf:
-                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/source_catalog_columns-1.0.0#/definitions/bbox_ymax"
-                - properties:
+                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/source_catalog_columns-1.1.0#/definitions/bbox_ymax"
+                - type: object
+                  properties:
                     name:
                       pattern: ^bbox_ymax$
       - not:
           items:
             not:
               allOf:
-                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/source_catalog_columns-1.0.0#/definitions/bbox_ymin"
-                - properties:
+                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/source_catalog_columns-1.1.0#/definitions/bbox_ymin"
+                - type: object
+                  properties:
                     name:
                       pattern: ^bbox_ymin$
       - not:
           items:
             not:
               allOf:
-                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/source_catalog_columns-1.0.0#/definitions/image_flags"
-                - properties:
+                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/source_catalog_columns-1.1.0#/definitions/image_flags"
+                - type: object
+                  properties:
                     name:
                       pattern: ^image_flags$
       - not:
           items:
             not:
               allOf:
-                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/source_catalog_columns-1.0.0#/definitions/label"
-                - properties:
+                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/source_catalog_columns-1.1.0#/definitions/label"
+                - type: object
+                  properties:
                     name:
                       pattern: ^label$
       - not:
           items:
             not:
               allOf:
-                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/source_catalog_columns-1.0.0#/definitions/segment_area"
-                - properties:
+                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/source_catalog_columns-1.1.0#/definitions/segment_area"
+                - type: object
+                  properties:
                     name:
                       pattern: ^segment_area$
       - not:
           items:
             not:
               allOf:
-                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/source_catalog_columns-1.0.0#/definitions/dec"
-                - properties:
+                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/source_catalog_columns-1.1.0#/definitions/dec"
+                - type: object
+                  properties:
                     name:
                       pattern: ^dec$
       - not:
           items:
             not:
               allOf:
-                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/source_catalog_columns-1.0.0#/definitions/dec_centroid"
-                - properties:
+                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/source_catalog_columns-1.1.0#/definitions/dec_centroid"
+                - type: object
+                  properties:
                     name:
                       pattern: ^dec_centroid$
       - not:
           items:
             not:
               allOf:
-                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/source_catalog_columns-1.0.0#/definitions/dec_centroid_err"
-                - properties:
+                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/source_catalog_columns-1.1.0#/definitions/dec_centroid_err"
+                - type: object
+                  properties:
                     name:
                       pattern: ^dec_centroid_err$
       - not:
           items:
             not:
               allOf:
-                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/source_catalog_columns-1.0.0#/definitions/dec_centroid_win"
-                - properties:
+                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/source_catalog_columns-1.1.0#/definitions/dec_centroid_win"
+                - type: object
+                  properties:
                     name:
                       pattern: ^dec_centroid_win$
       - not:
           items:
             not:
               allOf:
-                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/source_catalog_columns-1.0.0#/definitions/dec_centroid_win_err"
-                - properties:
+                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/source_catalog_columns-1.1.0#/definitions/dec_centroid_win_err"
+                - type: object
+                  properties:
                     name:
                       pattern: ^dec_centroid_win_err$
       - not:
           items:
             not:
               allOf:
-                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/source_catalog_columns-1.0.0#/definitions/ra"
-                - properties:
+                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/source_catalog_columns-1.1.0#/definitions/ra"
+                - type: object
+                  properties:
                     name:
                       pattern: ^ra$
       - not:
           items:
             not:
               allOf:
-                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/source_catalog_columns-1.0.0#/definitions/ra_centroid"
-                - properties:
+                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/source_catalog_columns-1.1.0#/definitions/ra_centroid"
+                - type: object
+                  properties:
                     name:
                       pattern: ^ra_centroid$
       - not:
           items:
             not:
               allOf:
-                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/source_catalog_columns-1.0.0#/definitions/ra_centroid_err"
-                - properties:
+                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/source_catalog_columns-1.1.0#/definitions/ra_centroid_err"
+                - type: object
+                  properties:
                     name:
                       pattern: ^ra_centroid_err$
       - not:
           items:
             not:
               allOf:
-                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/source_catalog_columns-1.0.0#/definitions/ra_centroid_win"
-                - properties:
+                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/source_catalog_columns-1.1.0#/definitions/ra_centroid_win"
+                - type: object
+                  properties:
                     name:
                       pattern: ^ra_centroid_win$
       - not:
           items:
             not:
               allOf:
-                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/source_catalog_columns-1.0.0#/definitions/ra_centroid_win_err"
-                - properties:
+                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/source_catalog_columns-1.1.0#/definitions/ra_centroid_win_err"
+                - type: object
+                  properties:
                     name:
                       pattern: ^ra_centroid_win_err$
       - not:
           items:
             not:
               allOf:
-                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/source_catalog_columns-1.0.0#/definitions/x_centroid"
-                - properties:
+                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/source_catalog_columns-1.1.0#/definitions/x_centroid"
+                - type: object
+                  properties:
                     name:
                       pattern: ^x_centroid$
       - not:
           items:
             not:
               allOf:
-                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/source_catalog_columns-1.0.0#/definitions/x_centroid_err"
-                - properties:
+                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/source_catalog_columns-1.1.0#/definitions/x_centroid_err"
+                - type: object
+                  properties:
                     name:
                       pattern: ^x_centroid_err$
       - not:
           items:
             not:
               allOf:
-                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/source_catalog_columns-1.0.0#/definitions/x_centroid_win"
-                - properties:
+                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/source_catalog_columns-1.1.0#/definitions/x_centroid_win"
+                - type: object
+                  properties:
                     name:
                       pattern: ^x_centroid_win$
       - not:
           items:
             not:
               allOf:
-                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/source_catalog_columns-1.0.0#/definitions/x_centroid_win_err"
-                - properties:
+                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/source_catalog_columns-1.1.0#/definitions/x_centroid_win_err"
+                - type: object
+                  properties:
                     name:
                       pattern: ^x_centroid_win_err$
       - not:
           items:
             not:
               allOf:
-                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/source_catalog_columns-1.0.0#/definitions/y_centroid"
-                - properties:
+                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/source_catalog_columns-1.1.0#/definitions/y_centroid"
+                - type: object
+                  properties:
                     name:
                       pattern: ^y_centroid$
       - not:
           items:
             not:
               allOf:
-                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/source_catalog_columns-1.0.0#/definitions/y_centroid_err"
-                - properties:
+                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/source_catalog_columns-1.1.0#/definitions/y_centroid_err"
+                - type: object
+                  properties:
                     name:
                       pattern: ^y_centroid_err$
       - not:
           items:
             not:
               allOf:
-                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/source_catalog_columns-1.0.0#/definitions/y_centroid_win"
-                - properties:
+                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/source_catalog_columns-1.1.0#/definitions/y_centroid_win"
+                - type: object
+                  properties:
                     name:
                       pattern: ^y_centroid_win$
       - not:
           items:
             not:
               allOf:
-                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/source_catalog_columns-1.0.0#/definitions/y_centroid_win_err"
-                - properties:
+                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/source_catalog_columns-1.1.0#/definitions/y_centroid_win_err"
+                - type: object
+                  properties:
                     name:
                       pattern: ^y_centroid_win_err$
       - not:
           items:
             not:
               allOf:
-                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/source_catalog_columns-1.0.0#/definitions/aper_bkg_~band~_flux"
-                - properties:
+                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/source_catalog_columns-1.1.0#/definitions/aper_bkg_~band~_flux"
+                - type: object
+                  properties:
                     name:
                       pattern: ^aper_bkg_flux$
       - not:
           items:
             not:
               allOf:
-                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/source_catalog_columns-1.0.0#/definitions/aper_bkg_~band~_flux_err"
-                - properties:
+                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/source_catalog_columns-1.1.0#/definitions/aper_bkg_~band~_flux_err"
+                - type: object
+                  properties:
                     name:
                       pattern: ^aper_bkg_flux_err$
       - not:
           items:
             not:
               allOf:
-                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/source_catalog_columns-1.0.0#/definitions/aper~radius~_~band~_flux"
-                - properties:
+                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/source_catalog_columns-1.1.0#/definitions/aper~radius~_~band~_flux"
+                - type: object
+                  properties:
                     name:
                       pattern: ^aper[0-9]{2}_flux$
       - not:
           items:
             not:
               allOf:
-                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/source_catalog_columns-1.0.0#/definitions/aper~radius~_~band~_flux_err"
-                - properties:
+                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/source_catalog_columns-1.1.0#/definitions/aper~radius~_~band~_flux_err"
+                - type: object
+                  properties:
                     name:
                       pattern: ^aper[0-9]{2}_flux_err$
       - not:
           items:
             not:
               allOf:
-                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/source_catalog_columns-1.0.0#/definitions/kron_~band~_abmag"
-                - properties:
+                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/source_catalog_columns-1.1.0#/definitions/kron_~band~_abmag"
+                - type: object
+                  properties:
                     name:
                       pattern: ^kron_abmag$
       - not:
           items:
             not:
               allOf:
-                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/source_catalog_columns-1.0.0#/definitions/kron_~band~_abmag_err"
-                - properties:
+                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/source_catalog_columns-1.1.0#/definitions/kron_~band~_abmag_err"
+                - type: object
+                  properties:
                     name:
                       pattern: ^kron_abmag_err$
       - not:
           items:
             not:
               allOf:
-                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/source_catalog_columns-1.0.0#/definitions/kron_~band~_flux"
-                - properties:
+                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/source_catalog_columns-1.1.0#/definitions/kron_~band~_flux"
+                - type: object
+                  properties:
                     name:
                       pattern: ^kron_flux$
       - not:
           items:
             not:
               allOf:
-                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/source_catalog_columns-1.0.0#/definitions/kron_~band~_flux_err"
-                - properties:
+                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/source_catalog_columns-1.1.0#/definitions/kron_~band~_flux_err"
+                - type: object
+                  properties:
                     name:
                       pattern: ^kron_flux_err$
       - not:
           items:
             not:
               allOf:
-                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/source_catalog_columns-1.0.0#/definitions/segment_~band~_flux"
-                - properties:
+                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/source_catalog_columns-1.1.0#/definitions/segment_~band~_flux"
+                - type: object
+                  properties:
                     name:
                       pattern: ^segment_flux$
       - not:
           items:
             not:
               allOf:
-                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/source_catalog_columns-1.0.0#/definitions/segment_~band~_flux_err"
-                - properties:
+                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/source_catalog_columns-1.1.0#/definitions/segment_~band~_flux_err"
+                - type: object
+                  properties:
                     name:
                       pattern: ^segment_flux_err$
       - not:
           items:
             not:
               allOf:
-                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/source_catalog_columns-1.0.0#/definitions/warning_flags"
-                - properties:
+                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/source_catalog_columns-1.1.0#/definitions/warning_flags"
+                - type: object
+                  properties:
                     name:
                       pattern: ^warning_flags$
       - not:
           items:
             not:
               allOf:
-                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/source_catalog_columns-1.0.0#/definitions/cxx"
-                - properties:
+                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/source_catalog_columns-1.1.0#/definitions/cxx"
+                - type: object
+                  properties:
                     name:
                       pattern: ^cxx$
       - not:
           items:
             not:
               allOf:
-                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/source_catalog_columns-1.0.0#/definitions/cxy"
-                - properties:
+                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/source_catalog_columns-1.1.0#/definitions/cxy"
+                - type: object
+                  properties:
                     name:
                       pattern: ^cxy$
       - not:
           items:
             not:
               allOf:
-                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/source_catalog_columns-1.0.0#/definitions/cyy"
-                - properties:
+                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/source_catalog_columns-1.1.0#/definitions/cyy"
+                - type: object
+                  properties:
                     name:
                       pattern: ^cyy$
       - not:
           items:
             not:
               allOf:
-                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/source_catalog_columns-1.0.0#/definitions/ellipticity"
-                - properties:
+                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/source_catalog_columns-1.1.0#/definitions/ellipticity"
+                - type: object
+                  properties:
                     name:
                       pattern: ^ellipticity$
       - not:
           items:
             not:
               allOf:
-                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/source_catalog_columns-1.0.0#/definitions/fluxfrac_radius_50_~band~"
-                - properties:
+                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/source_catalog_columns-1.1.0#/definitions/fluxfrac_radius_50_~band~"
+                - type: object
+                  properties:
                     name:
                       pattern: ^fluxfrac_radius_50$
       - not:
           items:
             not:
               allOf:
-                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/source_catalog_columns-1.0.0#/definitions/is_extended_~band~"
-                - properties:
+                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/source_catalog_columns-1.1.0#/definitions/is_extended_~band~"
+                - type: object
+                  properties:
                     name:
                       pattern: ^is_extended$
       - not:
           items:
             not:
               allOf:
-                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/source_catalog_columns-1.0.0#/definitions/fwhm"
-                - properties:
+                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/source_catalog_columns-1.1.0#/definitions/fwhm"
+                - type: object
+                  properties:
                     name:
                       pattern: ^fwhm$
       - not:
           items:
             not:
               allOf:
-                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/source_catalog_columns-1.0.0#/definitions/kron_radius"
-                - properties:
+                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/source_catalog_columns-1.1.0#/definitions/kron_radius"
+                - type: object
+                  properties:
                     name:
                       pattern: ^kron_radius$
       - not:
           items:
             not:
               allOf:
-                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/source_catalog_columns-1.0.0#/definitions/orientation_pix"
-                - properties:
+                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/source_catalog_columns-1.1.0#/definitions/orientation_pix"
+                - type: object
+                  properties:
                     name:
                       pattern: ^orientation_pix$
       - not:
           items:
             not:
               allOf:
-                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/source_catalog_columns-1.0.0#/definitions/orientation_sky"
-                - properties:
+                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/source_catalog_columns-1.1.0#/definitions/orientation_sky"
+                - type: object
+                  properties:
                     name:
                       pattern: ^orientation_sky$
       - not:
           items:
             not:
               allOf:
-                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/source_catalog_columns-1.0.0#/definitions/roundness1_~band~"
-                - properties:
+                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/source_catalog_columns-1.1.0#/definitions/roundness1_~band~"
+                - type: object
+                  properties:
                     name:
                       pattern: ^roundness1$
       - not:
           items:
             not:
               allOf:
-                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/source_catalog_columns-1.0.0#/definitions/semimajor"
-                - properties:
+                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/source_catalog_columns-1.1.0#/definitions/semimajor"
+                - type: object
+                  properties:
                     name:
                       pattern: ^semimajor$
       - not:
           items:
             not:
               allOf:
-                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/source_catalog_columns-1.0.0#/definitions/semiminor"
-                - properties:
+                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/source_catalog_columns-1.1.0#/definitions/semiminor"
+                - type: object
+                  properties:
                     name:
                       pattern: ^semiminor$
       - not:
           items:
             not:
               allOf:
-                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/source_catalog_columns-1.0.0#/definitions/sharpness_~band~"
-                - properties:
+                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/source_catalog_columns-1.1.0#/definitions/sharpness_~band~"
+                - type: object
+                  properties:
                     name:
                       pattern: ^sharpness$
       - not:
           items:
             not:
               allOf:
-                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/source_catalog_columns-1.0.0#/definitions/nn_distance"
-                - properties:
+                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/source_catalog_columns-1.1.0#/definitions/nn_distance"
+                - type: object
+                  properties:
                     name:
                       pattern: ^nn_distance$
       - not:
           items:
             not:
               allOf:
-                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/source_catalog_columns-1.0.0#/definitions/nn_label"
-                - properties:
+                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/source_catalog_columns-1.1.0#/definitions/nn_label"
+                - type: object
+                  properties:
                     name:
                       pattern: ^nn_label$
