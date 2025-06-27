@@ -334,6 +334,19 @@ class TestSchemaContent:
 
         asdf.treeutil.walk(schema, callback)
 
+    def test_type_array(self, schema):
+        """
+        Check that if a schema has an items key, then it has type: array
+        """
+        array_keywords = ("items", "additionalItems", "maxItems", "minItems", "uniqueItems")
+
+        def callback(node):
+            """Callback to check for array type"""
+            if isinstance(node, Mapping) and any(keyword in node for keyword in array_keywords):
+                assert node.get("type") == "array", "Schemas with pattern must have type: array"
+
+        asdf.treeutil.walk(schema, callback)
+
 
 class TestTaggedSchemaContent:
     """
