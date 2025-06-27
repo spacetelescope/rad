@@ -41,6 +41,9 @@ _LATEST_MANIFEST_TAGS = MappingProxyType(
 )
 _LATEST_DATAMODELS_URI = next(uri for uri in _LATEST_MANIFEST_URIS if "static" not in uri)
 _LATEST_STATIC_URI = next(uri for uri in _LATEST_MANIFEST_URIS if "static" in uri)
+_STATIC_URIS = tuple(entry["schema_uri"] for entry in _CURRENT_RESOURCES[_LATEST_STATIC_URI]["tags"])
+
+_ARCHIVE_META_URIS = tuple(uri for uri in _LATEST_URIS + _STATIC_URIS if "archive_meta" in _CURRENT_RESOURCES[uri])
 
 
 ### Fixtures for directly accessing resources via Python
@@ -135,6 +138,14 @@ def latest_static_uri():
     """
     assert len(_LATEST_MANIFEST_URIS) == 2, f"There should be exactly two latest manifests, found {len(_LATEST_MANIFEST_URIS)}"
     return _LATEST_STATIC_URI
+
+
+@pytest.fixture(scope="session", params=_ARCHIVE_META_URIS)
+def archive_meta_uri(request):
+    """
+    Get a schema uris with an archive_meta key
+    """
+    return request.param
 
 
 @pytest.fixture(scope="session")

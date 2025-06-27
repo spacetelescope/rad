@@ -111,6 +111,10 @@ extend-select = [
   "RUF", # ruff specific
   "NPY", # numpy specific
 ]
+ignore = [
+  "RUF009", # ruff flags the `schema()` function in dataclass creation which is just a wrapper
+  # around the allowed `dataclasses.field()` function to set the `metadata` field
+]
 
 [tool.ruff.lint.per-file-ignores]
 "tests/**.py" = [
