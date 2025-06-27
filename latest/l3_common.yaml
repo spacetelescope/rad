@@ -1,7 +1,7 @@
 %YAML 1.1
 ---
 $schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.0.0
-id: asdf://stsci.edu/datamodels/roman/schemas/l3_common-1.0.0
+id: asdf://stsci.edu/datamodels/roman/schemas/l3_common-1.1.0
 
 title: Common Level 3 Metadata
 
@@ -74,6 +74,7 @@ properties:
 
   coordinates:
     title: Celestial Coordinate Reference Frame
+    type: object
     properties:
       reference_frame:
         title: Name of the Celestial Coordinate Reference Frame
@@ -90,6 +91,7 @@ properties:
 
   coadd_info:
     title: Co-Addition Information
+    type: object
     properties:
       time_first:
         title: Start Time of the First Exposure
@@ -169,6 +171,7 @@ properties:
 
   individual_image_meta:
     title: Selected, Tabulated Input Level 2 (L2) Calibrated Rate Image Metadata
+    type: object
     properties:
       background:
         title: Table of Background Level 2 (L2) Metadata
@@ -310,6 +313,7 @@ properties:
 
   instrument:
     title: Wide Field Instrument (WFI) Configuration Information
+    type: object
     properties:
       name:
         title: Instrument Name
@@ -337,6 +341,7 @@ properties:
 
   observation:
     title: Observation Identifiers
+    type: object
     properties:
       execution_plan:
         title: Execution Plan Number
@@ -463,6 +468,7 @@ properties:
 
   program:
     title: Program Information
+    type: object
     properties:
       title:
         title: Proposal Title
@@ -550,6 +556,7 @@ properties:
 
   statistics:
     title: Basic Statistical Information
+    type: object
     properties:
       image_median:
         title: Median Image Value (MJy/sr)
