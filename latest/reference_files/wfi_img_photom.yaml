@@ -68,7 +68,15 @@ properties:
             exact_datatype: true
             ndim: 1
             unit: "m^2"
-        required: [photmjsr, uncertainty, pixelareasr, collecting_area, wavelength, effective_area]
+        required:
+          [
+            photmjsr,
+            uncertainty,
+            pixelareasr,
+            collecting_area,
+            wavelength,
+            effective_area,
+          ]
       "^(GRISM|GRISM_0|PRISM)$":
         type: object
         properties:
@@ -114,7 +122,15 @@ properties:
             exact_datatype: true
             ndim: 1
             unit: "m^2"
-        required: [photmjsr, uncertainty, pixelareasr, collecting_area, wavelength, effective_area]
+        required:
+          [
+            photmjsr,
+            uncertainty,
+            pixelareasr,
+            collecting_area,
+            wavelength,
+            effective_area,
+          ]
       "^(DARK|NOT_CONFIGURED)$":
         type: object
         properties:
@@ -152,7 +168,15 @@ properties:
             description: |
               The effective area in units of square meters (m^2) as a function of wavelength.
             type: "null"
-        required: [photmjsr, uncertainty, pixelareasr, collecting_area, wavelength, effective_area]
+        required:
+          [
+            photmjsr,
+            uncertainty,
+            pixelareasr,
+            collecting_area,
+            wavelength,
+            effective_area,
+          ]
     additionalProperties: false
 required: [meta, phot_table]
 flowStyle: block
