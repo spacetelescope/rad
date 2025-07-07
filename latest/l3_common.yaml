@@ -345,9 +345,55 @@ properties:
         title: Exposure Grouping
         # TODO missing description type, etc
         # archive_catalog?
+        # TODO assumed based on examples
+        type: string
         description: >
           TBD
     required: [program, execution_plan, pass, segment, visit, exposure_grouping]
+
+  program:
+    title: Program Information
+    properties:
+      title:
+        title: Proposal Title
+        description: The submitted proposal title of the program.
+        type: string
+      investigator_name:
+        title: Principle Investigator Name
+        description: The name of the principle investigator (PI) of the program.
+        type: string
+      category:
+        title: Program Category
+        description: >
+          The submitted proposal category of the program. The
+          categories include calibraiton (CAL), core community survey
+          (CCS), coronagraph technology demonstration (CGI), observatory
+          commissioning (COM), engineering (ENG), general astrophysics
+          survey (GAS), general investigator (GI), and observing conducted
+          at the direction of the National Aeronautics and Space
+          Administation (NASA).
+        type: string
+        enum: ['CAL', 'CCS', 'CGI', 'COM', 'ENG', 'GAS', 'GI', 'NASA']
+      subcategory:
+        title: Program Subcategory
+        description: >
+          The submitted proposal subcategory of the program. The
+          subcategories include calibration (CAL), coronagraph technology
+          demonstration (CGI), community research programs (CR),
+          discretionary research programs (DR), Galactic Bulge Time Domain
+          Survey (GBTD), High-Latitude Time Domain Survey (HLTD),
+          High-Latitude Wide-Area Survey (HLWA), observational research
+          program (OR), Wide Field Instrument (WFI), and Wavefront Sensing
+          and Control (WFSC). All subcategories belong to only a subset of
+          the meta.program.category values.
+        type: string
+        enum: ['CAL', 'CGI', 'CR', 'DR', 'GBTD', 'HLTD', 'HLWA', 'OR', 'WFI', 'WFSC', 'None']
+      science_category:
+        title: Science Category
+        description: >
+          The science category assigned during the Time Allocation Committee (TAC) review process.
+        type: string
+    required: [title, investigator_name, category, subcategory, science_category]
 
   statistics:
     title: Basic Statistical Information
