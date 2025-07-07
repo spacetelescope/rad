@@ -27,13 +27,9 @@ ARRAY_TAG_XFAILS = (
     "asdf://stsci.edu/datamodels/roman/schemas/l1_detector_guidewindow-1.1.0",
 )
 
-REQUIRED_SKIPS = (
-    "asdf://stsci.edu/datamodels/roman/schemas/wfi_mosaic-1.3.0",
-)
+REQUIRED_SKIPS = ("asdf://stsci.edu/datamodels/roman/schemas/wfi_mosaic-1.3.0",)
 
-NESTED_REQUIRED_SKIPS = (
-    "asdf://stsci.edu/datamodels/roman/schemas/l3_common-1.0.0",
-)
+NESTED_REQUIRED_SKIPS = ("asdf://stsci.edu/datamodels/roman/schemas/l3_common-1.0.0",)
 
 
 class TestSchemaContent:
@@ -64,7 +60,7 @@ class TestSchemaContent:
         """
         Checks that all required properties are present in the schema
         """
-        if schema['id'] in REQUIRED_SKIPS:
+        if schema["id"] in REQUIRED_SKIPS:
             pytest.skip(f"skipped required keyword test for {schema['id']}")
 
         def callback(node):

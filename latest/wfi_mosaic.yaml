@@ -14,16 +14,18 @@ properties:
   meta:
     allOf:
       - $ref: asdf://stsci.edu/datamodels/roman/schemas/l3_common-1.0.0
-      - required: [
-          cal_logs,
-          coadd_info,
-          coordinates,
-          individual_image_meta,
-          instrument,
-          observation,  # TODO not in document
-          program,
-          statistics,
-      ]
+      # TODO program not in document
+      - required:
+          [
+            cal_logs,
+            coadd_info,
+            coordinates,
+            individual_image_meta,
+            instrument,
+            observation,
+            program,
+            statistics,
+          ]
       - properties:
           association:
             title: Association Information
