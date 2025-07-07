@@ -252,8 +252,9 @@ properties:
           data. If data using multiple optical elements are combined, the
           value of optical_element will be a string indicating the
           combination (e.g., "F158, F184").
-        allOf:
-          - $ref: asdf://stsci.edu/datamodels/roman/schemas/wfi_optical_element-1.2.0
+        # TODO wfi_optical_element is no longer a match
+        type: string
+        # TODO archive_catalog nvarchar is too short as values could be up to 122 chars
         sdf:
           special_processing: VALUE_REQUIRED
           source:
