@@ -14,7 +14,6 @@ properties:
   meta:
     allOf:
       - $ref: asdf://stsci.edu/datamodels/roman/schemas/l3_common-1.0.0
-      # TODO program not in document
       - required:
           [
             cal_logs,
