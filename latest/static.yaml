@@ -8,6 +8,12 @@ description: |-
 asdf_standard_requirement:
   gte: 1.1.0
 tags:
+  # Obsolete Schemas
+  - tag_uri: asdf://stsci.edu/datamodels/roman/tags/l3_cal_step-1.1.0
+    schema_uri: asdf://stsci.edu/datamodels/roman/schemas/l3_cal_step-1.1.0
+    title: Level 3 Calibration Step status information
+    description: |-
+      Level 3 Calibration Step status information
   # FPS Schemas
   - tag_uri: asdf://stsci.edu/datamodels/roman/tags/fps-1.0.0
     schema_uri: asdf://stsci.edu/datamodels/roman/schemas/fps-1.0.0

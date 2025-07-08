@@ -136,11 +136,6 @@ tags:
     title: Level 2 Calibration Step status information
     description: |-
       Level 2 Calibration Step status information
-  - tag_uri: asdf://stsci.edu/datamodels/roman/tags/l3_cal_step-1.2.0
-    schema_uri: asdf://stsci.edu/datamodels/roman/schemas/l3_cal_step-1.2.0
-    title: Level 3 Calibration Step status information
-    description: |-
-      Level 3 Calibration Step status information
   - tag_uri: asdf://stsci.edu/datamodels/roman/tags/outlier_detection-1.0.0
     schema_uri: asdf://stsci.edu/datamodels/roman/schemas/outlier_detection-1.0.0
     title: Outlier Detection information
