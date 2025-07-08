@@ -29,7 +29,6 @@ properties:
           destination:
             [
               WFIExposure.crds_version,
-              WFIMosaic.crds_version,
               GuideWindow.crds_version,
               WFICommon.crds_version,
             ]
@@ -50,7 +49,6 @@ properties:
           destination:
             [
               WFIExposure.crds_context,
-              WFIMosaic.crds_context,
               GuideWindow.crds_context,
               WFICommon.crds_context,
             ]

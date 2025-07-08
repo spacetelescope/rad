@@ -348,10 +348,26 @@ properties:
         title: Proposal Title
         description: The submitted proposal title of the program.
         type: string
+        sdf:
+          special_processing: VALUE_REQUIRED
+          source:
+            origin: PSS:dms_visit.template
+        maxLength: 200
+        archive_catalog:
+          datatype: nvarchar(200)
+          destination: [WFIMosaic.program_title]
       investigator_name:
         title: Principle Investigator Name
         description: The name of the principle investigator (PI) of the program.
         type: string
+        sdf:
+          special_processing: VALUE_REQUIRED
+          source:
+            origin: TBD
+        maxLength: 100
+        archive_catalog:
+          datatype: nvarchar(100)
+          destination: [WFIMosaic.investigator_name]
       category:
         title: Program Category
         description: >
@@ -364,6 +380,14 @@ properties:
           Administration (NASA).
         type: string
         enum: ["CAL", "CCS", "CGI", "COM", "ENG", "GAS", "GI", "NASA"]
+        sdf:
+          special_processing: VALUE_REQUIRED
+          source:
+            origin: PSS:dms_program.category
+        maxLength: 6
+        archive_catalog:
+          datatype: nvarchar(6)
+          destination: [WFIMosaic.program_category]
       subcategory:
         title: Program Subcategory
         description: >
@@ -391,11 +415,27 @@ properties:
             "WFSC",
             "None",
           ]
+        sdf:
+          special_processing: VALUE_REQUIRED
+          source:
+            origin: PSS:dms_program.subcategory
+        maxLength: 15
+        archive_catalog:
+          datatype: nvarchar(15)
+          destination: [WFIMosaic.program_subcategory]
       science_category:
         title: Science Category
         description: >
           The science category assigned during the Time Allocation Committee (TAC) review process.
         type: string
+        sdf:
+          special_processing: VALUE_REQUIRED
+          source:
+            origin: PSS:dms_program.science_category
+        maxLength: 50
+        archive_catalog:
+          datatype: nvarchar(50)
+          destination: [WFIMosaic.science_category]
     required:
       [title, investigator_name, category, subcategory, science_category]
 
