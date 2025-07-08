@@ -9,6 +9,11 @@ asdf_standard_requirement:
   gte: 1.1.0
 tags:
   # Obsolete Schemas
+  - tag_uri: asdf://stsci.edu/datamodels/roman/tags/individual_image_meta-1.0.0
+    schema_uri: asdf://stsci.edu/datamodels/roman/schemas/individual_image_meta-1.0.0
+    title: Combined level 2 metadata
+    description: |-
+      Combined level 2 metadata
   - tag_uri: asdf://stsci.edu/datamodels/roman/tags/l3_cal_step-1.1.0
     schema_uri: asdf://stsci.edu/datamodels/roman/schemas/l3_cal_step-1.1.0
     title: Level 3 Calibration Step status information
