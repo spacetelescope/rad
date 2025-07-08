@@ -24,6 +24,11 @@ tags:
     title: Mosaic associations metadata keywords
     description: |-
       Mosaic associations metadata keywords
+  - tag_uri: asdf://stsci.edu/datamodels/roman/tags/mosaic_wcsinfo-1.0.0
+    schema_uri: asdf://stsci.edu/datamodels/roman/schemas/mosaic_wcsinfo-1.0.0
+    title: Mosaic WCS parameters
+    description: |-
+      Mosaic WCS parameters
   - tag_uri: asdf://stsci.edu/datamodels/roman/tags/resample-1.0.0
     schema_uri: asdf://stsci.edu/datamodels/roman/schemas/resample-1.0.0
     title: Resample information
