@@ -72,8 +72,6 @@ properties:
 
   coordinates:
     # TODO not required?
-    # TODO title/description don't match coordinates tag
-    #tag: asdf://stsci.edu/datamodels/roman/tags/coordinates-1.0.0
     title: Celestial Coordinate Reference Frame
     properties:
       reference_frame:
