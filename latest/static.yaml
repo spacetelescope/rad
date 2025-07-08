@@ -24,6 +24,11 @@ tags:
     title: Mosaic associations metadata keywords
     description: |-
       Mosaic associations metadata keywords
+  - tag_uri: asdf://stsci.edu/datamodels/roman/tags/resample-1.0.0
+    schema_uri: asdf://stsci.edu/datamodels/roman/schemas/resample-1.0.0
+    title: Resample information
+    description: |-
+      Resample information
   # FPS Schemas
   - tag_uri: asdf://stsci.edu/datamodels/roman/tags/fps-1.0.0
     schema_uri: asdf://stsci.edu/datamodels/roman/schemas/fps-1.0.0
