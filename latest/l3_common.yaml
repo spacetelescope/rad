@@ -255,13 +255,13 @@ properties:
         # TODO wfi_optical_element is no longer a match
         type: string
         # TODO archive_catalog nvarchar is too short as values could be up to 122 chars
-        sdf:
-          special_processing: VALUE_REQUIRED
-          source:
-            origin: TBD
-        archive_catalog:
-          datatype: nvarchar(20)
-          destination: [WFIMosaic.optical_element]
+        # sdf:
+        #   special_processing: VALUE_REQUIRED
+        #   source:
+        #     origin: TBD
+        # archive_catalog:
+        #   datatype: nvarchar(20)
+        #   destination: [WFIMosaic.optical_element]
     required: [name, optical_element]
 
   observation:

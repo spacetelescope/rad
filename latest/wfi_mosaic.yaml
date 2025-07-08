@@ -3,7 +3,7 @@
 $schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.0.0
 id: asdf://stsci.edu/datamodels/roman/schemas/wfi_mosaic-1.3.0
 
-title: |
+title: >
   The schema for WFI Level 3 mosaics.
 
 datamodel_name: MosaicModel
@@ -31,35 +31,357 @@ properties:
             title: Association Information
             type: object
             properties:
-              # TODO is "meta.association.name" to reduce redundancy?
+              # TODO "meta.association.name" to reduce redundancy?
               association_name:
                 title: Association File Name
                 description: >
                   Name of the association file used to generate the data product.
                 type: string
             required: [association_name]
-        required: [association]
-      - properties:
           cal_step:
-            # TODO: not an exact match: descriptions have changed
-            tag: asdf://stsci.edu/datamodels/roman/tags/l3_cal_step-1.2.0
-        required: [cal_step]
-      - properties:
+            title: Level 3 Calibration Status
+            type: object
+            properties:
+              flux:
+                title: Flux Scale Application Step
+                description: >
+                  Step in romancal that applies the scaling factor(s)
+                  necessary to convert from units of data numbers per second
+                  (DN/s) to megaJanskys per steradian (MJy/sr).
+                allOf:
+                  - $ref: asdf://stsci.edu/datamodels/roman/schemas/cal_step_flag-1.0.0
+                archive_catalog:
+                  datatype: nvarchar(15)
+                  destination: [ScienceRefData.s_flux]
+              outlier_detection:
+                title: Outlier Detection Step
+                description: >
+                  Step in romancal that detects and flags outliers in a stack of rate images.
+                allOf:
+                  - $ref: asdf://stsci.edu/datamodels/roman/schemas/cal_step_flag-1.0.0
+                archive_catalog:
+                  datatype: nvarchar(15)
+                  destination: [ScienceRefData.s_outlier_detection]
+              skymatch:
+                title: Sky Matching Step
+                description: >
+                  Step in romancal that matches sky background levels of
+                  each input image and derives scaling factors to equalize
+                  overlapping regions.
+                allOf:
+                  - $ref: asdf://stsci.edu/datamodels/roman/schemas/cal_step_flag-1.0.0
+                archive_catalog:
+                  datatype: nvarchar(15)
+                  destination: [ScienceRefData.s_skymatch]
+              resample:
+                title: Resampling Step
+                # TODO document had no description, this was taken from l3_cal_step
+                description: >
+                  Step in ROMANCAL which resamples each input 2D image based on its WCS and
+                  WCS distortion information on a grid that allows the combination of
+                  multiple resampled images into a single, undistorted product.
+                allOf:
+                  - $ref: asdf://stsci.edu/datamodels/roman/schemas/cal_step_flag-1.0.0
+                archive_catalog:
+                  datatype: nvarchar(15)
+                  destination: [ScienceRefData.s_resample]
+            required: [flux, outlier_detection, resample, skymatch]
           resample:
-            # TODO: not an exact match: members type, descriptions
-            tag: asdf://stsci.edu/datamodels/roman/tags/resample-1.0.0
-        required: [resample]
-      - properties:
+            title: Resample Parameters
+            type: object
+            properties:
+              good_bits:
+                title: Bit Mask
+                description: >
+                  Bit mask used in the resample step. This key contains
+                  strings that correspond to bits in the data quality (DQ) arrays
+                  of calibrated rate images. Bits are combined using plus signs
+                  (+) and use the bitwise operator tilde (~) to denote exclusion.
+                  For example, the string "~DO_NOT_USE+NON_SCIENCE" means to allow
+                  all data quality bits except DO_NOT_USE and NON_SCIENCE to be
+                  included in the final product. Conversely, a string of "GOOD"
+                  would only allow pixels with DQ bits equal to 0 in the
+                  calibrated rate images to be included in the final product.
+                type: string
+              pixel_scale_ratio:
+                title: Pixel Scale Ratio
+                description: >
+                  The ratio of the pixel scale compared to the native
+                  detector pixel scale. For example, a pixel scale of 0.9 will
+                  produce a resampled image with smaller pixels compared to the
+                  input calibrated rate images.
+                type: number
+              pixfrac:
+                title: Pixel Fraction
+                description: The fraction of a pixel to use for pixel convolution.
+                type: number
+              pointings:
+                title: Number of Input Images
+                description: >
+                  The number of input images combined with resample into an output product.
+                type: integer
+              product_exposure_time:
+                title: Product Exposure Time
+                description: The total exposure time for the resampled output product.
+                type: number
+              members:
+                title: Resample Input Filenames
+                description: >
+                  Names of the calibrated rate image files input into
+                  the resample code to create the output product.
+                # TODO this is just string in the document, how are multiple values combined?
+                type: array
+                items:
+                  type: string
+              weight_type:
+                title: Weight Type
+                description: >
+                  The weight type used by the drizzle algorithm in the
+                  resample step. The two weight options available are exposure
+                  time ("exptime") and inverse variance map ("ivm") weighting.
+                type: string
+                enum: ["exptime", "ivm"]
+            required:
+              [
+                good_bits,
+                members,
+                pixel_scale_ratio,
+                pixfrac,
+                pointings,
+                product_exposure_time,
+                weight_type,
+              ]
           wcs:
             title: World Coordinate System (WCS)
             tag: tag:stsci.edu:gwcs/wcs-*
-        required: [wcs]
-      - properties:
           wcsinfo:
             title: WCS Information
-            # TODO: not a match
-            tag: asdf://stsci.edu/datamodels/roman/tags/mosaic_wcsinfo-1.0.0
-        required: [wcsinfo]
+            type: object
+            properties:
+              ra_ref:
+                title: Right Ascension of Projection Region Center (deg)
+                description: >
+                  Right ascension in units of degrees at the center of
+                  the projection region over which the world coordinate system
+                  (WCS) of this image is defined. If this product does not use the
+                  Roman sky tessellation, then this keyword will be equal to
+                  meta.wcsinfo.ra.
+                type: number
+                sdf:
+                  special_processing: VALUE_REQUIRED
+                  source:
+                    origin: TBD
+                archive_catalog:
+                  datatype: float
+                  destination: [WFIMosaic.ra_ref]
+              dec_ref:
+                title: Declination of Projection Region Center (deg)
+                description: >
+                  Declination in units of degrees at the center of the
+                  projection region over which the world coordinate system (WCS)
+                  of this image is defined. If this product does not use the Roman
+                  sky tessellation, then this keyword will be equal to
+                  meta.wcsinfo.dec.
+                type: number
+                sdf:
+                  special_processing: VALUE_REQUIRED
+                  source:
+                    origin: TBD
+                archive_catalog:
+                  datatype: float
+                  destination: [WFIMosaic.dec_ref]
+              x_ref:
+                title: X Coordinate of Projection Region Center
+                description: >
+                  Pixel X coordinate at the center of the projection
+                  region over which the world coordinate system (WCS) of this
+                  image is defined. If the projection region is larger than the
+                  image contained within this file, then the value of x_ref may or
+                  may not be contained within the boundaries of the data array in
+                  this file.
+                type: number
+                sdf:
+                  special_processing: VALUE_REQUIRED
+                  source:
+                    origin: TBD
+                archive_catalog:
+                  datatype: float
+                  destination: [WFIMosaic.x_ref]
+              y_ref:
+                title: Y Coordinate of Projection Region Center
+                description: >
+                  Pixel Y coordinate at the center of the projection
+                  region over which the world coordinate system (WCS) of this
+                  image is defined. If the projection region is larger than the
+                  image contained within this file, then the value of y_ref may or
+                  may not be contained within the boundaries of the data array in
+                  this file.
+                type: number
+                sdf:
+                  special_processing: VALUE_REQUIRED
+                  source:
+                    origin: TBD
+                archive_catalog:
+                  datatype: float
+                  destination: [WFIMosaic.y_ref]
+              pixel_scale_ref:
+                title: Pixel Scale at Projection Region Center (arcseconds per pixel)
+                description: >
+                  Pixel scale in units of arcseconds per pixel at the
+                  center of the projection region. If this product does not use
+                  the Roman sky tessellation, then this keyword will be equal to
+                  meta.wcsinfo.pixel_scale.
+                type: number
+                sdf:
+                  special_processing: VALUE_REQUIRED
+                  source:
+                    origin: TBD
+                archive_catalog:
+                  datatype: float
+                  # TODO update name?
+                  destination: [WFIMosaic.pixel_scale]
+              pixel_scale:
+                title: Pixel Scale at Image Center (arcseconds per pixel)
+                description: >
+                  Pixel scale in units of arcseconds per pixel at the center of the image in this file.
+                type: number
+                sdf:
+                  special_processing: VALUE_REQUIRED
+                  source:
+                    origin: TBD
+                archive_catalog:
+                  datatype: float
+                  # TODO update name?
+                  destination: [WFIMosaic.pixel_scale_local]
+              projection:
+                title: Projection Type
+                description: >
+                  Type of projection used for the world coordinate
+                  system (WCS). A value of "TAN" indicates a tangent plane projection.
+                type: string
+                enum: ["TAN"]
+                sdf:
+                  special_processing: VALUE_REQUIRED
+                  source:
+                    origin: TBD
+                maxLength: 50
+                archive_catalog:
+                  datatype: nvarchar(50)
+                  destination: [WFIMosaic.projection]
+              s_region:
+                title: Spatial Extent of the Image
+                description: >
+                  The region of the sky enclosed by the pixel data
+                  contained within this file. This is given as a polygon stored as
+                  a string with the vertices defined by a list of right ascension
+                  and declination pairs in units of degrees.
+                type: string
+                sdf:
+                  special_processing: VALUE_REQUIRED
+                  source:
+                    origin: TBD
+                archive_catalog:
+                  datatype: nvarchar(max)
+                  destination: [WFIMosaic.s_region]
+              image_shape:
+                title: Shape of Image (pixels)
+                description: Shape of the image (nx, ny) in units of pixels.
+                type: array
+                # TODO added these to match the description
+                minItems: 2
+                maxItems: 2
+                items:
+                  type: integer
+                sdf:
+                  special_processing: VALUE_REQUIRED
+                  source:
+                    origin: TBD
+                archive_catalog:
+                  datatype: nvarchar(50)
+                  # TODO update name?
+                  destination: [WFIMosaic.pixel_shape]
+              ra:
+                title: Right Ascension of Image Center (deg)
+                description: Right ascension in units of degrees at the center of the image.
+                type: number
+                sdf:
+                  special_processing: VALUE_REQUIRED
+                  source:
+                    origin: TBD
+                archive_catalog:
+                  datatype: float
+                  # TODO update name?
+                  destination: [WFIMosaic.ra_center]
+              dec:
+                title: Declination of Image Center (deg)
+                description: Declination in units of degrees at the center of the image.
+                type: number
+                sdf:
+                  special_processing: VALUE_REQUIRED
+                  source:
+                    origin: TBD
+                archive_catalog:
+                  datatype: float
+                  destination: [WFIMosaic.dec_center]
+              orientation:
+                title: Image Orientation (deg)
+                description: >
+                  Angle in units of degrees between celestial North and
+                  the image y-axis at the center of the image turning positive in
+                  the direction of increasing right ascension.
+                type: number
+                sdf:
+                  special_processing: VALUE_REQUIRED
+                  source:
+                    origin: TBD
+                archive_catalog:
+                  datatype: float
+                  # TODO update name?
+                  destination: [WFIMosaic.orientat_local]
+              orientation_ref:
+                title: Projection Region Orientation (deg)
+                description: >
+                  Angle in units of degrees between celestial North and
+                  the image y-axis at the center of the projection region turning
+                  positive in the direction of increasing right ascension. If this
+                  product does not use the Roman sky tessellation, then this
+                  keyword will be equal to meta.wcsinfo.orientation.
+                type: number
+                sdf:
+                  special_processing: VALUE_REQUIRED
+                  source:
+                    origin: TBD
+                archive_catalog:
+                  datatype: float
+                  destination: [WFIMosaic.orientat]
+              skycell_name:
+                title: Skycell Name
+                description: >
+                  Name of the skycell in the Roman sky tessellation to
+                  which this product corresponds. If this product is not a skycell
+                  product, this field will be None.
+                anyOf:
+                  - type: string
+                  - type: "null"
+                # TODO archive_catalog?
+            required:
+              [
+                ra_ref,
+                dec_ref,
+                x_ref,
+                y_ref,
+                pixel_scale_ref,
+                pixel_scale,
+                projection,
+                s_region,
+                image_shape,
+                ra,
+                dec,
+                orientation,
+                orientation_ref,
+                skycell_name,
+              ]
+        required: [association, cal_step, resample, wcs, wcsinfo]
   data:
     title: Science Data (MJy / steradian)
     description: |
