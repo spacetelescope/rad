@@ -355,14 +355,14 @@ properties:
                   product, this field will be None.
                 anyOf:
                   - type: string
-                    maxLength: 12
+                    maxLength: 30
                   - type: "null"
                 sdf:
                   special_processing: VALUE_REQUIRED
                   source:
                     origin: TBD
                 archive_catalog:
-                  datatype: nvarchar(12)
+                  datatype: nvarchar(30)
                   destination: [WFIMosaic.skycell_name]
             required:
               [
