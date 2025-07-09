@@ -23,7 +23,14 @@ properties:
       A label for the data release (if applicable). This keyword
       is optional and only populated for data release products.
     type: string
-    # TODO archive_catalog?
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    maxLength: 120
+    archive_catalog:
+      datatype: nvarchar(120)
+      destination: [WFIMosaic.data_release_id]
   filename:
     title: File Name
     description: >
@@ -104,7 +111,13 @@ properties:
           and transforms available. See the documentation for
           astropy.time.Time objects for more information.
         tag: tag:stsci.edu:asdf/time/time-1.*
-        # TODO archive_catalog?
+        sdf:
+          special_processing: VALUE_REQUIRED
+          source:
+            origin: TBD
+        archive_catalog:
+          datatype: datetime2
+          destination: [WFIMosaic.time_first]
       time_last:
         title: End Time of the Last Exposure
         description: >
@@ -118,7 +131,13 @@ properties:
           and transforms available. See the documentation for
           astropy.time.Time objects for more information.
         tag: tag:stsci.edu:asdf/time/time-1.*
-        # TODO archive_catalog?
+        sdf:
+          special_processing: VALUE_REQUIRED
+          source:
+            origin: TBD
+        archive_catalog:
+          datatype: datetime2
+          destination: [WFIMosaic.time_last]
       time_mean:
         title: Mean Time of the Co-Added Data Product
         description: >
@@ -132,7 +151,13 @@ properties:
           See the documentation for astropy.time.Time objects for more
           information.
         tag: tag:stsci.edu:asdf/time/time-1.*
-        # TODO archive_catalog?
+        sdf:
+          special_processing: VALUE_REQUIRED
+          source:
+            origin: TBD
+        archive_catalog:
+          datatype: datetime2
+          destination: [WFIMosaic.time_mean]
       max_exposure_time:
         title: Maximum Exposure Time (s)
         description: >
@@ -142,7 +167,13 @@ properties:
           then the maximum is computed from all output pixels with
           exposure time > 0 seconds.
         type: number
-        # TODO archive_catalog?
+        sdf:
+          special_processing: VALUE_REQUIRED
+          source:
+            origin: TBD
+        archive_catalog:
+          datatype: float
+          destination: [WFIMosaic.max_exposure_time]
       exposure_time:
         title: Exposure Time (s)
         description: >
@@ -153,9 +184,14 @@ properties:
           from all output pixels with exposure time > 0 seconds.
           Please check the keyword meta.origin for contextual
           information.
-        # TODO archive_catalog?
-        # TODO assumed number
         type: number
+        sdf:
+          special_processing: VALUE_REQUIRED
+          source:
+            origin: TBD
+        archive_catalog:
+          datatype: float
+          destination: [WFIMosaic.exposure_time]
     required: [time_first, time_last, time_mean, exposure_time]
 
   individual_image_meta:
@@ -250,16 +286,14 @@ properties:
           data. If data using multiple optical elements are combined, the
           value of optical_element will be a string indicating the
           combination (e.g., "F158, F184").
-        # TODO wfi_optical_element is no longer a match
         type: string
-        # TODO archive_catalog nvarchar is too short as values could be up to 122 chars
-        # sdf:
-        #   special_processing: VALUE_REQUIRED
-        #   source:
-        #     origin: TBD
-        # archive_catalog:
-        #   datatype: nvarchar(20)
-        #   destination: [WFIMosaic.optical_element]
+        sdf:
+          special_processing: VALUE_REQUIRED
+          source:
+            origin: TBD
+        archive_catalog:
+          datatype: nvarchar(122)
+          destination: [WFIMosaic.optical_element]
     required: [name, optical_element]
 
   observation:
@@ -274,9 +308,14 @@ properties:
           engineering investigation to be pursued using Roman Space
           Telescope mission resources. The allowed range of program
           numbers is 00001 to 18445 inclusive.
-        # TODO was integer
-        # TODO archive_catalog?
-        type: string
+        type: integer
+        sdf:
+          special_processing: VALUE_REQUIRED
+          source:
+            origin: TBD
+        archive_catalog:
+          datatype: int
+          destination: [WFIMosaic.program]
       execution_plan:
         title: Execution Plan Number
         description: >
@@ -286,10 +325,17 @@ properties:
           execution plan is required whenever there is a change in the
           program. The allowed range of execution plan numbers is 01 to 99
           inclusive.
-        # TODO archive_catalog?
         anyOf:
-          - type: string
+          - type: integer
           - type: "null"
+        type: integer
+        sdf:
+          special_processing: VALUE_REQUIRED
+          source:
+            origin: TBD
+        archive_catalog:
+          datatype: smallint
+          destination: [WFIMosaic.execution_plan]
       pass:
         title: Pass Number
         description: >
@@ -299,11 +345,16 @@ properties:
           generated from the same Pass Plan to allow repetition or execute
           at different orientations (via special requirements). The
           allowed range of pass numbers is 001 to 999 inclusive.
-        # TODO was integer
-        # TODO archive_catalog?
         anyOf:
-          - type: string
+          - type: integer
           - type: "null"
+        sdf:
+          special_processing: VALUE_REQUIRED
+          source:
+            origin: TBD
+        archive_catalog:
+          datatype: smallint
+          destination: [WFIMosaic.pass]
       segment:
         title: Segment Number
         description: >
@@ -313,11 +364,16 @@ properties:
           include multiple traversals of mosaic pattern(s), with element
           wheel moves occurring between observations. The allowed range of
           segment numbers is 001 to 999 inclusive.
-        # TODO was integer
-        # TODO archive_catalog?
         anyOf:
-          - type: string
+          - type: integer
           - type: "null"
+        sdf:
+          special_processing: VALUE_REQUIRED
+          source:
+            origin: TBD
+        archive_catalog:
+          datatype: smallint
+          destination: [WFIMosaic.segment]
       visit:
         title: Visit Number
         description: >
@@ -326,19 +382,31 @@ properties:
           including dither patterns. A visit corresponds to one tile of
           the selected mosaic pattern. The allowed range of visit numbers
           is 001 to 999 inclusive.
-        # TODO was integer
-        # TODO archive_catalog?
+        anyOf:
+          - type: integer
+          - type: "null"
+        sdf:
+          special_processing: VALUE_REQUIRED
+          source:
+            origin: TBD
+        archive_catalog:
+          datatype: smallint
+          destination: [WFIMosaic.visit]
+      exposure_grouping:
+        title: Exposure Grouping
+        description: >
+          Conceptual type of exposure grouping used to create this coadd (e.g., by visit, or full)
         anyOf:
           - type: string
           - type: "null"
-      exposure_grouping:
-        title: Exposure Grouping
-        # TODO missing description type, etc
-        # archive_catalog?
-        # TODO assumed based on examples
-        type: string
-        description: >
-          TBD
+        sdf:
+          special_processing: VALUE_REQUIRED
+          source:
+            origin: TBD
+        archive_catalog:
+          datatype: nvarchar(120)
+          destination: [WFIMosaic.exposure_grouping]
+
     required: [program, execution_plan, pass, segment, visit, exposure_grouping]
 
   program:
@@ -458,7 +526,6 @@ properties:
         description: >
           The fraction of pixels in the output image that
           are considered good.
-        # TODO document states "integer" but this is a fraction?
         type: number
     required: [image_median, image_rms, good_pixel_fraction]
 required:
