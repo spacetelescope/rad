@@ -287,6 +287,7 @@ properties:
           value of optical_element will be a string indicating the
           combination (e.g., "F158, F184").
         type: string
+        maxLength: 122
         sdf:
           special_processing: VALUE_REQUIRED
           source:
@@ -398,6 +399,7 @@ properties:
           Conceptual type of exposure grouping used to create this coadd (e.g., by visit, or full)
         anyOf:
           - type: string
+            maxLength: 120
           - type: "null"
         sdf:
           special_processing: VALUE_REQUIRED

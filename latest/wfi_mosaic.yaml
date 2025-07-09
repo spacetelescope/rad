@@ -355,6 +355,7 @@ properties:
                   product, this field will be None.
                 anyOf:
                   - type: string
+                    maxLength: 12
                   - type: "null"
                 sdf:
                   special_processing: VALUE_REQUIRED
