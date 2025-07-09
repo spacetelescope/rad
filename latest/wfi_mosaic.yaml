@@ -165,10 +165,6 @@ properties:
                   Roman sky tessellation, then this keyword will be equal to
                   meta.wcsinfo.ra.
                 type: number
-                sdf:
-                  special_processing: VALUE_REQUIRED
-                  source:
-                    origin: TBD
                 archive_catalog:
                   datatype: float
                   destination: [WFIMosaic.ra_ref]
@@ -181,10 +177,6 @@ properties:
                   sky tessellation, then this keyword will be equal to
                   meta.wcsinfo.dec.
                 type: number
-                sdf:
-                  special_processing: VALUE_REQUIRED
-                  source:
-                    origin: TBD
                 archive_catalog:
                   datatype: float
                   destination: [WFIMosaic.dec_ref]
@@ -198,10 +190,6 @@ properties:
                   may not be contained within the boundaries of the data array in
                   this file.
                 type: number
-                sdf:
-                  special_processing: VALUE_REQUIRED
-                  source:
-                    origin: TBD
                 archive_catalog:
                   datatype: float
                   destination: [WFIMosaic.x_ref]
@@ -215,10 +203,6 @@ properties:
                   may not be contained within the boundaries of the data array in
                   this file.
                 type: number
-                sdf:
-                  special_processing: VALUE_REQUIRED
-                  source:
-                    origin: TBD
                 archive_catalog:
                   datatype: float
                   destination: [WFIMosaic.y_ref]
@@ -230,10 +214,6 @@ properties:
                   the Roman sky tessellation, then this keyword will be equal to
                   meta.wcsinfo.pixel_scale.
                 type: number
-                sdf:
-                  special_processing: VALUE_REQUIRED
-                  source:
-                    origin: TBD
                 archive_catalog:
                   datatype: float
                   destination: [WFIMosaic.pixel_scale_ref]
@@ -242,10 +222,6 @@ properties:
                 description: >
                   Pixel scale in units of arcseconds per pixel at the center of the image in this file.
                 type: number
-                sdf:
-                  special_processing: VALUE_REQUIRED
-                  source:
-                    origin: TBD
                 archive_catalog:
                   datatype: float
                   destination: [WFIMosaic.pixel_scale]
@@ -256,10 +232,6 @@ properties:
                   system (WCS). A value of "TAN" indicates a tangent plane projection.
                 type: string
                 enum: ["TAN"]
-                sdf:
-                  special_processing: VALUE_REQUIRED
-                  source:
-                    origin: TBD
                 maxLength: 50
                 archive_catalog:
                   datatype: nvarchar(50)
@@ -272,10 +244,6 @@ properties:
                   a string with the vertices defined by a list of right ascension
                   and declination pairs in units of degrees.
                 type: string
-                sdf:
-                  special_processing: VALUE_REQUIRED
-                  source:
-                    origin: TBD
                 archive_catalog:
                   datatype: nvarchar(max)
                   destination: [WFIMosaic.s_region]
@@ -288,10 +256,6 @@ properties:
                 maxItems: 2
                 items:
                   type: integer
-                sdf:
-                  special_processing: VALUE_REQUIRED
-                  source:
-                    origin: TBD
                 archive_catalog:
                   datatype: nvarchar(50)
                   destination: [WFIMosaic.image_shape]
@@ -299,10 +263,6 @@ properties:
                 title: Right Ascension of Image Center (deg)
                 description: Right ascension in units of degrees at the center of the image.
                 type: number
-                sdf:
-                  special_processing: VALUE_REQUIRED
-                  source:
-                    origin: TBD
                 archive_catalog:
                   datatype: float
                   destination: [WFIMosaic.ra]
@@ -310,10 +270,6 @@ properties:
                 title: Declination of Image Center (deg)
                 description: Declination in units of degrees at the center of the image.
                 type: number
-                sdf:
-                  special_processing: VALUE_REQUIRED
-                  source:
-                    origin: TBD
                 archive_catalog:
                   datatype: float
                   destination: [WFIMosaic.dec_center]
@@ -324,10 +280,6 @@ properties:
                   the image y-axis at the center of the image turning positive in
                   the direction of increasing right ascension.
                 type: number
-                sdf:
-                  special_processing: VALUE_REQUIRED
-                  source:
-                    origin: TBD
                 archive_catalog:
                   datatype: float
                   destination: [WFIMosaic.orientation]
@@ -340,10 +292,6 @@ properties:
                   product does not use the Roman sky tessellation, then this
                   keyword will be equal to meta.wcsinfo.orientation.
                 type: number
-                sdf:
-                  special_processing: VALUE_REQUIRED
-                  source:
-                    origin: TBD
                 archive_catalog:
                   datatype: float
                   destination: [WFIMosaic.orientat]
@@ -357,10 +305,6 @@ properties:
                   - type: string
                     maxLength: 30
                   - type: "null"
-                sdf:
-                  special_processing: VALUE_REQUIRED
-                  source:
-                    origin: TBD
                 archive_catalog:
                   datatype: nvarchar(30)
                   destination: [WFIMosaic.skycell_name]

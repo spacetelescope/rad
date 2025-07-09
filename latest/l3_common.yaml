@@ -23,10 +23,6 @@ properties:
       A label for the data release (if applicable). This keyword
       is optional and only populated for data release products.
     type: string
-    sdf:
-      special_processing: VALUE_REQUIRED
-      source:
-        origin: TBD
     maxLength: 120
     archive_catalog:
       datatype: nvarchar(120)
@@ -111,10 +107,6 @@ properties:
           and transforms available. See the documentation for
           astropy.time.Time objects for more information.
         tag: tag:stsci.edu:asdf/time/time-1.*
-        sdf:
-          special_processing: VALUE_REQUIRED
-          source:
-            origin: TBD
         archive_catalog:
           datatype: datetime2
           destination: [WFIMosaic.time_first]
@@ -131,10 +123,6 @@ properties:
           and transforms available. See the documentation for
           astropy.time.Time objects for more information.
         tag: tag:stsci.edu:asdf/time/time-1.*
-        sdf:
-          special_processing: VALUE_REQUIRED
-          source:
-            origin: TBD
         archive_catalog:
           datatype: datetime2
           destination: [WFIMosaic.time_last]
@@ -151,10 +139,6 @@ properties:
           See the documentation for astropy.time.Time objects for more
           information.
         tag: tag:stsci.edu:asdf/time/time-1.*
-        sdf:
-          special_processing: VALUE_REQUIRED
-          source:
-            origin: TBD
         archive_catalog:
           datatype: datetime2
           destination: [WFIMosaic.time_mean]
@@ -167,10 +151,6 @@ properties:
           then the maximum is computed from all output pixels with
           exposure time > 0 seconds.
         type: number
-        sdf:
-          special_processing: VALUE_REQUIRED
-          source:
-            origin: TBD
         archive_catalog:
           datatype: float
           destination: [WFIMosaic.max_exposure_time]
@@ -185,10 +165,6 @@ properties:
           Please check the keyword meta.origin for contextual
           information.
         type: number
-        sdf:
-          special_processing: VALUE_REQUIRED
-          source:
-            origin: TBD
         archive_catalog:
           datatype: float
           destination: [WFIMosaic.exposure_time]
@@ -271,10 +247,6 @@ properties:
           Name of the instrument used to acquire the science data.
         type: string
         enum: [WFI]
-        sdf:
-          special_processing: VALUE_REQUIRED
-          source:
-            origin: TBD
         maxLength: 5
         archive_catalog:
           datatype: nvarchar(5)
@@ -288,10 +260,6 @@ properties:
           combination (e.g., "F158, F184").
         type: string
         maxLength: 122
-        sdf:
-          special_processing: VALUE_REQUIRED
-          source:
-            origin: TBD
         archive_catalog:
           datatype: nvarchar(122)
           destination: [WFIMosaic.optical_element]
@@ -310,10 +278,6 @@ properties:
           Telescope mission resources. The allowed range of program
           numbers is 00001 to 18445 inclusive.
         type: integer
-        sdf:
-          special_processing: VALUE_REQUIRED
-          source:
-            origin: TBD
         archive_catalog:
           datatype: int
           destination: [WFIMosaic.program]
@@ -330,10 +294,6 @@ properties:
           - type: integer
           - type: "null"
         type: integer
-        sdf:
-          special_processing: VALUE_REQUIRED
-          source:
-            origin: TBD
         archive_catalog:
           datatype: smallint
           destination: [WFIMosaic.execution_plan]
@@ -349,10 +309,6 @@ properties:
         anyOf:
           - type: integer
           - type: "null"
-        sdf:
-          special_processing: VALUE_REQUIRED
-          source:
-            origin: TBD
         archive_catalog:
           datatype: smallint
           destination: [WFIMosaic.pass]
@@ -368,10 +324,6 @@ properties:
         anyOf:
           - type: integer
           - type: "null"
-        sdf:
-          special_processing: VALUE_REQUIRED
-          source:
-            origin: TBD
         archive_catalog:
           datatype: smallint
           destination: [WFIMosaic.segment]
@@ -386,10 +338,6 @@ properties:
         anyOf:
           - type: integer
           - type: "null"
-        sdf:
-          special_processing: VALUE_REQUIRED
-          source:
-            origin: TBD
         archive_catalog:
           datatype: smallint
           destination: [WFIMosaic.visit]
@@ -401,10 +349,6 @@ properties:
           - type: string
             maxLength: 120
           - type: "null"
-        sdf:
-          special_processing: VALUE_REQUIRED
-          source:
-            origin: TBD
         archive_catalog:
           datatype: nvarchar(120)
           destination: [WFIMosaic.exposure_grouping]
@@ -418,10 +362,6 @@ properties:
         title: Proposal Title
         description: The submitted proposal title of the program.
         type: string
-        sdf:
-          special_processing: VALUE_REQUIRED
-          source:
-            origin: PSS:dms_visit.template
         maxLength: 200
         archive_catalog:
           datatype: nvarchar(200)
@@ -430,10 +370,6 @@ properties:
         title: Principle Investigator Name
         description: The name of the principle investigator (PI) of the program.
         type: string
-        sdf:
-          special_processing: VALUE_REQUIRED
-          source:
-            origin: TBD
         maxLength: 100
         archive_catalog:
           datatype: nvarchar(100)
@@ -450,10 +386,6 @@ properties:
           Administration (NASA).
         type: string
         enum: ["CAL", "CCS", "CGI", "COM", "ENG", "GAS", "GI", "NASA"]
-        sdf:
-          special_processing: VALUE_REQUIRED
-          source:
-            origin: PSS:dms_program.category
         maxLength: 6
         archive_catalog:
           datatype: nvarchar(6)
@@ -485,10 +417,6 @@ properties:
             "WFSC",
             "None",
           ]
-        sdf:
-          special_processing: VALUE_REQUIRED
-          source:
-            origin: PSS:dms_program.subcategory
         maxLength: 15
         archive_catalog:
           datatype: nvarchar(15)
@@ -498,10 +426,6 @@ properties:
         description: >
           The science category assigned during the Time Allocation Committee (TAC) review process.
         type: string
-        sdf:
-          special_processing: VALUE_REQUIRED
-          source:
-            origin: PSS:dms_program.science_category
         maxLength: 50
         archive_catalog:
           datatype: nvarchar(50)
