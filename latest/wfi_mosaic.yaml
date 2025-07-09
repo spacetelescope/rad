@@ -139,7 +139,6 @@ properties:
                   resample step. The two weight options available are exposure
                   time ("exptime") and inverse variance map ("ivm") weighting.
                 type: string
-                enum: ["exptime", "ivm"]
             required:
               [
                 good_bits,
