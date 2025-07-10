@@ -30,8 +30,7 @@ properties:
             title: Association Information
             type: object
             properties:
-              # TODO "meta.association.name" to reduce redundancy?
-              association_name:
+              name:
                 title: Association File Name
                 description: >
                   Name of the association file used to generate the data product.
