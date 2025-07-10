@@ -47,7 +47,6 @@ properties:
     description: >
       The name of the institution or organization
       responsible for creating this file.
-    # TODO the origin tag allows STSCI which is not in the enum listed in the document
     tag: asdf://stsci.edu/datamodels/roman/tags/origin-1.0.0
   product_type:
     title: Product Type Descriptor
