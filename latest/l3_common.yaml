@@ -254,8 +254,10 @@ properties:
           data. If data using multiple optical elements are combined, the
           value of optical_element will be a string indicating the
           combination (e.g., "F158, F184").
-        type: string
-        maxLength: 122
+        anyOf:
+          - type: string
+            maxLength: 122
+          - type: "null"
         archive_catalog:
           datatype: nvarchar(122)
           destination: [WFIMosaic.optical_element]
@@ -272,7 +274,9 @@ properties:
           engineering investigation to be pursued using Roman Space
           Telescope mission resources. The allowed range of program
           numbers is 00001 to 18445 inclusive.
-        type: integer
+        anyOf:
+          - type: integer
+          - type: "null"
         archive_catalog:
           datatype: int
           destination: [WFIMosaic.program]
@@ -356,16 +360,20 @@ properties:
       title:
         title: Proposal Title
         description: The submitted proposal title of the program.
-        type: string
-        maxLength: 200
+        anyOf:
+          - type: string
+            maxLength: 200
+          - type: "null"
         archive_catalog:
           datatype: nvarchar(200)
           destination: [WFIMosaic.program_title]
       investigator_name:
         title: Principle Investigator Name
         description: The name of the principle investigator (PI) of the program.
-        type: string
-        maxLength: 100
+        anyOf:
+          - type: string
+            maxLength: 100
+          - type: "null"
         archive_catalog:
           datatype: nvarchar(100)
           destination: [WFIMosaic.investigator_name]
@@ -379,9 +387,11 @@ properties:
           survey (GAS), general investigator (GI), and observing conducted
           at the direction of the National Aeronautics and Space
           Administration (NASA).
-        type: string
-        enum: ["CAL", "CCS", "CGI", "COM", "ENG", "GAS", "GI", "NASA"]
-        maxLength: 6
+        anyOf:
+          - type: string
+            enum: ["CAL", "CCS", "CGI", "COM", "ENG", "GAS", "GI", "NASA"]
+            maxLength: 6
+          - type: "null"
         archive_catalog:
           datatype: nvarchar(6)
           destination: [WFIMosaic.program_category]
@@ -397,22 +407,24 @@ properties:
           program (OR), Wide Field Instrument (WFI), and Wavefront Sensing
           and Control (WFSC). All subcategories belong to only a subset of
           the meta.program.category values.
-        type: string
-        enum:
-          [
-            "CAL",
-            "CGI",
-            "CR",
-            "DR",
-            "GBTD",
-            "HLTD",
-            "HLWA",
-            "OR",
-            "WFI",
-            "WFSC",
-            "None",
-          ]
-        maxLength: 15
+        anyOf:
+          - type: string
+            enum:
+              [
+                "CAL",
+                "CGI",
+                "CR",
+                "DR",
+                "GBTD",
+                "HLTD",
+                "HLWA",
+                "OR",
+                "WFI",
+                "WFSC",
+                "None",
+              ]
+            maxLength: 15
+          - type: "null"
         archive_catalog:
           datatype: nvarchar(15)
           destination: [WFIMosaic.program_subcategory]
@@ -420,8 +432,10 @@ properties:
         title: Science Category
         description: >
           The science category assigned during the Time Allocation Committee (TAC) review process.
-        type: string
-        maxLength: 50
+        anyOf:
+          - type: string
+            maxLength: 50
+          - type: "null"
         archive_catalog:
           datatype: nvarchar(50)
           destination: [WFIMosaic.science_category]
