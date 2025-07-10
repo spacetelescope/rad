@@ -116,10 +116,6 @@ properties:
                 description: >
                   The number of input images combined with resample into an output product.
                 type: integer
-              product_exposure_time:
-                title: Product Exposure Time
-                description: The total exposure time for the resampled output product.
-                type: number
               members:
                 title: Resample Input Filenames
                 description: >
@@ -142,7 +138,6 @@ properties:
                 pixel_scale_ratio,
                 pixfrac,
                 pointings,
-                product_exposure_time,
                 weight_type,
               ]
           wcs:
