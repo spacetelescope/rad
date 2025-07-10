@@ -74,9 +74,8 @@ properties:
               resample:
                 title: Resampling Step
                 description: >
-                  Step in ROMANCAL which resamples each input 2D image based on its WCS and
-                  WCS distortion information on a grid that allows the combination of
-                  multiple resampled images into a single, undistorted product.
+                  Step in romancal which resamples and coadds each input 2D image based on its WCS
+                  onto a grid, in order to combine multiple images into a single coadded product.
                 allOf:
                   - $ref: asdf://stsci.edu/datamodels/roman/schemas/cal_step_flag-1.0.0
                 archive_catalog:
