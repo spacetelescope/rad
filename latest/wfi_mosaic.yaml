@@ -74,7 +74,6 @@ properties:
                   destination: [ScienceRefData.s_skymatch]
               resample:
                 title: Resampling Step
-                # TODO document had no description, this was taken from l3_cal_step
                 description: >
                   Step in ROMANCAL which resamples each input 2D image based on its WCS and
                   WCS distortion information on a grid that allows the combination of
@@ -128,7 +127,6 @@ properties:
                 description: >
                   Names of the calibrated rate image files input into
                   the resample code to create the output product.
-                # TODO this is just string in the document, how are multiple values combined?
                 type: array
                 items:
                   type: string
@@ -251,7 +249,6 @@ properties:
                 title: Shape of Image (pixels)
                 description: Shape of the image (nx, ny) in units of pixels.
                 type: array
-                # TODO added these to match the description
                 minItems: 2
                 maxItems: 2
                 items:

@@ -74,7 +74,6 @@ properties:
     tag: asdf://stsci.edu/datamodels/roman/tags/cal_logs-1.0.0
 
   coordinates:
-    # TODO not required?
     title: Celestial Coordinate Reference Frame
     properties:
       reference_frame:
@@ -91,7 +90,6 @@ properties:
     required: [reference_frame]
 
   coadd_info:
-    # TODO not required?
     title: Co-Addition Information
     properties:
       time_first:
@@ -238,7 +236,6 @@ properties:
         tag: tag:astropy.org:astropy/table/table-1.*
 
   instrument:
-    # TODO not required?
     title: Wide Field Instrument (WFI) Configuration Information
     properties:
       name:
@@ -266,7 +263,6 @@ properties:
     required: [name, optical_element]
 
   observation:
-    # TODO not required?
     title: Observation Identifiers
     properties:
       program:
