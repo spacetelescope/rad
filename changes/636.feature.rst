@@ -1,1 +1,0 @@
-Remove WFI_DARK, WFI_GRISM, and WFI_PRISM from exposure types.
