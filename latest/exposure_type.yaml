@@ -22,8 +22,4 @@ enum:
   - WFI_FLAT
   - WFI_LOLO
   - WFI_WFSC
-  # These are slated for removal in the future
-  - WFI_DARK
-  - WFI_GRISM
-  - WFI_PRISM
 maxLength: 25
