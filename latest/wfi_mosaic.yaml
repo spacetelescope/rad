@@ -35,7 +35,7 @@ properties:
                 description: >
                   Name of the association file used to generate the data product.
                 type: string
-            required: [association_name]
+            required: [name]
           cal_step:
             title: Level 3 Calibration Status
             type: object
