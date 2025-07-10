@@ -389,7 +389,8 @@ properties:
           Administration (NASA).
         anyOf:
           - type: string
-            enum: ["CAL", "CCS", "CGI", "COM", "ENG", "GAS", "GI", "NASA"]
+            # TODO L2 category doesn't have this enum
+            #enum: ["CAL", "CCS", "CGI", "COM", "ENG", "GAS", "GI", "NASA"]
             maxLength: 6
           - type: "null"
         archive_catalog:
