@@ -7,6 +7,44 @@ title: WFI Imaging Photometric Flux Conversion Data Model
 
 datamodel_name: WfiImgPhotomRefModel
 
+definitions:
+  basic_phot_table_entry:
+    type: object
+    properties:
+      photmjsr:
+        title: Surface Brightness Zeropoint
+        description: |
+          Zeropoint that converts from data numbers per second (DN/s) to megaJanskys per steradian (MJy/sr).
+      uncertainty:
+        title: Surface Brightness Zeropoint Uncertainty
+        description: |
+          Uncertainty in the zeropoint that converts from units of data numbers per second (DN/s) to megaJanskys per steradian (MJy/sr).
+      pixelareasr:
+        title: Nominal Pixel Area
+        description: |
+          The nominal pixel area in units of steradians.
+      collecting_area:
+        title: Collecting Area (square meters)
+        description: |
+          Collecting area of the telescope in units of square meters (m^2) for the selected optical element. This value includes the primary mirror area and any obstructions in the optical chain.
+      wavelength:
+        title: Effective Area Wavelength Array (microns)
+        description: |
+          The wavelength array in units of microns at which the effective area has been measured.
+      effective_area:
+        title: Effective Area Array (m^2)
+        description: |
+          The effective area in units of square meters (m^2) as a function of wavelength.
+    required:
+      [
+        photmjsr,
+        uncertainty,
+        pixelareasr,
+        collecting_area,
+        wavelength,
+        effective_area,
+      ]
+
 type: object
 properties:
   meta:
@@ -24,159 +62,78 @@ properties:
     type: object
     patternProperties:
       "^(F062|F087|F106|F129|F146|F158|F184|F213)$":
-        type: object
-        properties:
-          photmjsr:
-            title: Surface Brightness Zeropoint
-            description: |
-              Zeropoint that converts from data numbers per second (DN/s) to megaJanskys per steradian (MJy/sr).
-            type: number
-            unit: "(MJy/sr) / (DN/s)"
-          uncertainty:
-            title: Surface Brightness Zeropoint Uncertainty
-            description: |
-              Uncertainty in the zeropoint that converts from units of data numbers per second (DN/s) to megaJanskys per steradian (MJy/sr).
-            type: number
-            unit: "(MJy/sr) / (DN/s)"
-          pixelareasr:
-            title: Nominal Pixel Area
-            description: |
-              The nominal pixel area in units of steradians.
-            type: number
-            unit: "sr"
-          collecting_area:
-            title: Collecting Area (square meters)
-            description: |
-              Collecting area of the telescope in units of square meters (m^2) for the selected optical element. This value includes the primary mirror area and any obstructions in the optical chain.
-            type: number
-            unit: "m^2"
-          wavelength:
-            title: Effective Area Wavelength Array (microns)
-            description: |
-              The wavelength array in units of microns at which the effective area has been measured.
-            tag: tag:stsci.edu:asdf/core/ndarray-1.*
-            datatype: float32
-            exact_datatype: true
-            ndim: 1
-            unit: "microns"
-          effective_area:
-            title: Effective Area Array (m^2)
-            description: |
-              The effective area in units of square meters (m^2) as a function of wavelength.
-            tag: tag:stsci.edu:asdf/core/ndarray-1.*
-            datatype: float32
-            exact_datatype: true
-            ndim: 1
-            unit: "m^2"
-        required:
-          [
-            photmjsr,
-            uncertainty,
-            pixelareasr,
-            collecting_area,
-            wavelength,
-            effective_area,
-          ]
+        allOf:
+          - $ref: asdf://stsci.edu/datamodels/roman/schemas/reference_files/wfi_img_photom-1.3.0#/definitions/basic_phot_table_entry
+          - type: object
+            properties:
+              photmjsr:
+                type: number
+                unit: "(MJy/sr) / (DN/s)"
+              uncertainty:
+                type: number
+                unit: "(MJy/sr) / (DN/s)"
+              pixelareasr:
+                type: number
+                unit: "sr"
+              collecting_area:
+                type: number
+                unit: "m^2"
+              wavelength:
+                tag: tag:stsci.edu:asdf/core/ndarray-1.*
+                datatype: float32
+                exact_datatype: true
+                ndim: 1
+                unit: "microns"
+              effective_area:
+                tag: tag:stsci.edu:asdf/core/ndarray-1.*
+                datatype: float32
+                exact_datatype: true
+                ndim: 1
+                unit: "m^2"
+      # GRISM_0 is a special optical element case that is only used for this reference file
       "^(GRISM|GRISM_0|PRISM)$":
-        type: object
-        properties:
-          photmjsr:
-            title: Surface Brightness Zeropoint
-            description: |
-              Zeropoint that converts from data numbers per second (DN/s) to megaJanskys per steradian (MJy/sr).
-            type: "null"
-            unit: "(MJy/sr) / (DN/s)"
-          uncertainty:
-            title: Surface Brightness Zeropoint Uncertainty
-            description: |
-              Uncertainty in the zeropoint that converts from units of data numbers per second (DN/s) to megaJanskys per steradian (MJy/sr).
-            type: "null"
-            unit: "(MJy/sr) / (DN/s)"
-          pixelareasr:
-            title: Nominal Pixel Area
-            description: |
-              The nominal pixel area in units of steradians.
-            type: "null"
-            unit: "sr"
-          collecting_area:
-            title: Collecting Area (square meters)
-            description: |
-              Collecting area of the telescope in units of square meters (m^2) for the selected optical element. This value includes the primary mirror area and any obstructions in the optical chain.
-            type: number
-            unit: "m^2"
-          wavelength:
-            title: Effective Area Wavelength Array (microns)
-            description: |
-              The wavelength array in units of microns at which the effective area has been measured.
-            tag: tag:stsci.edu:asdf/core/ndarray-1.*
-            datatype: float32
-            exact_datatype: true
-            ndim: 1
-            unit: "microns"
-          effective_area:
-            title: Effective Area Array (m^2)
-            description: |
-              The effective area in units of square meters (m^2) as a function of wavelength.
-            tag: tag:stsci.edu:asdf/core/ndarray-1.*
-            datatype: float32
-            exact_datatype: true
-            ndim: 1
-            unit: "m^2"
-        required:
-          [
-            photmjsr,
-            uncertainty,
-            pixelareasr,
-            collecting_area,
-            wavelength,
-            effective_area,
-          ]
+        allOf:
+          - $ref: asdf://stsci.edu/datamodels/roman/schemas/reference_files/wfi_img_photom-1.3.0#/definitions/basic_phot_table_entry
+          - type: object
+            properties:
+              photmjsr:
+                type: "null"
+              uncertainty:
+                type: "null"
+              pixelareasr:
+                type: "null"
+              collecting_area:
+                type: number
+                unit: "m^2"
+              wavelength:
+                tag: tag:stsci.edu:asdf/core/ndarray-1.*
+                datatype: float32
+                exact_datatype: true
+                ndim: 1
+                unit: "microns"
+              effective_area:
+                tag: tag:stsci.edu:asdf/core/ndarray-1.*
+                datatype: float32
+                exact_datatype: true
+                ndim: 1
+                unit: "m^2"
       "^(DARK|NOT_CONFIGURED)$":
-        type: object
-        properties:
-          photmjsr:
-            title: Surface Brightness
-            description: |
-              Zeropoint that converts from data numbers per second (DN/s) to megaJanskys per steradian (MJy/sr).
-            type: "null"
-            unit: "(MJy/sr) / (DN/s)"
-          uncertainty:
-            title: Surface Brightness Uncertainty
-            description: |
-              Uncertainty in the zeropoint that converts from units of data numbers per second (DN/s) to megaJanskys per steradian (MJy/sr).
-            type: "null"
-            unit: "(MJy/sr) / (DN/s)"
-          pixelareasr:
-            title: Nominal Pixel Area
-            description: |
-              The nominal pixel area in units of steradians.
-            type: "null"
-            unit: "sr"
-          collecting_area:
-            title: Collecting Area (square meters)
-            description: |
-              Collecting area of the telescope in units of square meters (m^2) for the selected optical element. This value includes the primary mirror area and any obstructions in the optical chain.
-            type: "null"
-            unit: "m^2"
-          wavelength:
-            title: Effective Area Wavelength Array (microns)
-            description: |
-              The wavelength array in units of microns at which the effective area has been measured.
-            type: "null"
-          effective_area:
-            title: Effective Area Array (m^2)
-            description: |
-              The effective area in units of square meters (m^2) as a function of wavelength.
-            type: "null"
-        required:
-          [
-            photmjsr,
-            uncertainty,
-            pixelareasr,
-            collecting_area,
-            wavelength,
-            effective_area,
-          ]
+        allOf:
+          - $ref: asdf://stsci.edu/datamodels/roman/schemas/reference_files/wfi_img_photom-1.3.0#/definitions/basic_phot_table_entry
+          - type: object
+            properties:
+              photmjsr:
+                type: "null"
+              uncertainty:
+                type: "null"
+              pixelareasr:
+                type: "null"
+              collecting_area:
+                type: "null"
+              wavelength:
+                type: "null"
+              effective_area:
+                type: "null"
     additionalProperties: false
 required: [meta, phot_table]
 flowStyle: block
