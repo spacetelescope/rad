@@ -21,6 +21,7 @@ enum:
   - F213
   - GRISM
   - PRISM
+  - GRISM_0
   - DARK
   - NOT_CONFIGURED
 maxLength: 20
