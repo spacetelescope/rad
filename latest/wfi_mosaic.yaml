@@ -298,6 +298,20 @@ properties:
                 archive_catalog:
                   datatype: nvarchar(30)
                   destination: [WFIMosaic.skycell_name]
+              rotation_matrix:
+                title: 2x2 rotation matrix
+                type: array
+                items:
+                  type: array
+                  items:
+                    type: number
+                sdf:
+                  special_processing: VALUE_REQUIRED
+                  source:
+                    origin: TBD
+                archive_catalog:
+                  datatype: nvarchar(3500)
+                  destination: [WFIMosaic.rotation_matrix]
             required:
               [
                 ra_ref,
@@ -314,6 +328,7 @@ properties:
                 orientation,
                 orientation_ref,
                 skycell_name,
+                rotation_matrix,
               ]
         required: [association, cal_step, resample, wcs, wcsinfo]
   data:
