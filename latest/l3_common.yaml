@@ -170,6 +170,14 @@ properties:
   individual_image_meta:
     title: Selected, Tabulated Input Level 2 (L2) Calibrated Rate Image Metadata
     properties:
+      background:
+        title: Table of Background Level 2 (L2) Metadata
+        description: >
+          Table of background metadata from input calibrated rate
+          image files. Background metadata contains measured
+          sky background levels, the measurement method and
+          if the file was background corrected.
+        tag: tag:astropy.org:astropy/table/table-1.*
       basic:
         title: Table of Basic Level 2 (L2) Metadata
         description: >
@@ -232,6 +240,72 @@ properties:
           rate image files. Observation metadata contain programmatic
           identifier information such as the pass number, execution plan
           number, and visit number.
+        tag: tag:astropy.org:astropy/table/table-1.*
+      photometry:
+        title: Table of Photometry Level 2 (L2) Metadata
+        description: >
+          Table of photometry metadata from input calibrated rate
+          image files. Photometry metadata contains pixel
+          area information, flux density conversion factors and
+          uncertainty.
+        tag: tag:astropy.org:astropy/table/table-1.*
+      pointing:
+        title: Table of Pointing Level 2 (L2) Metadata
+        description: >
+          Table of pointing metadata from input calibrated rate
+          image files. Pointing metadata contains information
+          about the telescope pointing.
+        tag: tag:astropy.org:astropy/table/table-1.*
+      program:
+        title: Table of Program Level 2 (L2) Metadata
+        description: >
+          Table of program metadata from input calibrated rate
+          image files. Program metadata contains information
+          about the observing program.
+        tag: tag:astropy.org:astropy/table/table-1.*
+      rcs:
+        title: Table of RCS Level 2 (L2) Metadata
+        description: >
+          Table of relative calibration system  metadata from
+          input calibrated rate image files. RCS metadata contains
+          information about state of the relative calibration system.
+        tag: tag:astropy.org:astropy/table/table-1.*
+      ref_file:
+        title: Table of Reference File Level 2 (L2) Metadata
+        description: >
+          Table of reference file metadata from input calibrated rate
+          image files. Reference file metadata contains information
+          about reference files used during calibration of the
+          L2 files.
+        tag: tag:astropy.org:astropy/table/table-1.*
+      source_catalog:
+        title: Table of Source Catalog Level 2 (L2) Metadata
+        description: >
+          Table of source catalog metadata from input calibrated rate
+          image files. Source catalog metadata contains information
+          about the measured source catalogs for the L2 files.
+        tag: tag:astropy.org:astropy/table/table-1.*
+      velocity_aberration:
+        title: Table of Velocity Aberration Level 2 (L2) Metadata
+        description: >
+          Table of velocity aberration metadata from input calibrated rate
+          image files. Velocity aberration metadata contains information
+          about the calculated velocity aberration.
+        tag: tag:astropy.org:astropy/table/table-1.*
+      visit:
+        title: Table of Visit Level 2 (L2) Metadata
+        description: >
+          Table of visit metadata from input calibrated rate
+          image files. Visit metadata contains information
+          about the dither, visit type, and planned exposures.
+        tag: tag:astropy.org:astropy/table/table-1.*
+      wcsinfo:
+        title: Table of WCS Info Level 2 (L2) Metadata
+        description: >
+          Table of World Coordinate System (WCS) info metadata from
+          input calibrated rate image files. WCS info metadata contains
+          summary information about the sky footprint and relationship
+          with the detectors.
         tag: tag:astropy.org:astropy/table/table-1.*
 
   instrument:
