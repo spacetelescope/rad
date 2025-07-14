@@ -340,20 +340,6 @@ properties:
   observation:
     title: Observation Identifiers
     properties:
-      program:
-        title: Program Number
-        description: >
-          Identifier for the observing program. A program is an
-          approved specification for a science, calibration, or
-          engineering investigation to be pursued using Roman Space
-          Telescope mission resources. The allowed range of program
-          numbers is 00001 to 18445 inclusive.
-        anyOf:
-          - type: integer
-          - type: "null"
-        archive_catalog:
-          datatype: int
-          destination: [WFIMosaic.program]
       execution_plan:
         title: Execution Plan Number
         description: >
@@ -366,10 +352,47 @@ properties:
         anyOf:
           - type: integer
           - type: "null"
-        type: integer
         archive_catalog:
           datatype: smallint
           destination: [WFIMosaic.execution_plan]
+      exposure:
+        title: Exposure Number
+        description: |
+          An exposure is a single multi-accumulation (MA) table
+          sequence of the detector array at a single dither point in the
+          dither pattern. The allowed range of exposure numbers is 0001 to
+          9999 inclusive.
+        anyOf:
+          - type: integer
+          - type: "null"
+        archive_catalog:
+          datatype: smallint
+          destination: [WFIMosaic.exposure]
+      exposure_grouping:
+        title: Exposure Grouping
+        description: >
+          Conceptual type of exposure grouping used to create this coadd (e.g., by visit, or full)
+        anyOf:
+          - type: string
+            maxLength: 120
+          - type: "null"
+        archive_catalog:
+          datatype: nvarchar(120)
+          destination: [WFIMosaic.exposure_grouping]
+      observation:
+        title: Observation Number
+        description: |
+          Identifier for the observation. An observation is a
+          single traversal of a mosaic pattern, using a single, constant
+          instrument configuration (i.e., with no element wheel moves).
+          The allowed range of observation numbers is 001 to 999
+          inclusive.
+        anyOf:
+          - type: integer
+          - type: "null"
+        archive_catalog:
+          datatype: smallint
+          destination: [WFIMosaic.observation]
       pass:
         title: Pass Number
         description: >
@@ -385,6 +408,20 @@ properties:
         archive_catalog:
           datatype: smallint
           destination: [WFIMosaic.pass]
+      program:
+        title: Program Number
+        description: >
+          Identifier for the observing program. A program is an
+          approved specification for a science, calibration, or
+          engineering investigation to be pursued using Roman Space
+          Telescope mission resources. The allowed range of program
+          numbers is 00001 to 18445 inclusive.
+        anyOf:
+          - type: integer
+          - type: "null"
+        archive_catalog:
+          datatype: int
+          destination: [WFIMosaic.program]
       segment:
         title: Segment Number
         description: >
@@ -414,19 +451,17 @@ properties:
         archive_catalog:
           datatype: smallint
           destination: [WFIMosaic.visit]
-      exposure_grouping:
-        title: Exposure Grouping
-        description: >
-          Conceptual type of exposure grouping used to create this coadd (e.g., by visit, or full)
-        anyOf:
-          - type: string
-            maxLength: 120
-          - type: "null"
-        archive_catalog:
-          datatype: nvarchar(120)
-          destination: [WFIMosaic.exposure_grouping]
-
-    required: [program, execution_plan, pass, segment, visit, exposure_grouping]
+    required:
+      [
+        execution_plan,
+        exposure,
+        exposure_grouping,
+        observation,
+        pass,
+        program,
+        segment,
+        visit,
+      ]
 
   program:
     title: Program Information
