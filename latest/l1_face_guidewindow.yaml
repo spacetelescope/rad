@@ -55,7 +55,7 @@ properties:
               source:
                 origin: TBD
             archive_catalog:
-              datatype: nvarchar(20)
+              datatype: nvarchar(max)
               destination: [GuideWindow.gw_fgs_modes_used]
           ma_table_ids_used:
             title: Used MA Table IDs
