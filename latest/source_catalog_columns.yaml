@@ -1,0 +1,664 @@
+%YAML 1.1
+---
+$schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.0.0
+id: asdf://stsci.edu/datamodels/roman/schemas/source_catalog_columns-1.0.0
+
+title: Source catalog column definitions
+
+definitions:
+  flagged_spatial_index:
+    description: Bit flag encoding the overlap flag, projection, skycell and pixel coordinates of the source
+    unit: none
+    properties:
+      data:
+        properties:
+          datatype:
+            enum: [int64]
+  bbox_xmax:
+    description: Column index of the right edge of the source bounding box (0 indexed)
+    unit: none
+    properties:
+      data:
+        properties:
+          datatype:
+            enum: [int32]
+  bbox_xmin:
+    description: Column index of the left edge of the source bounding box (0 indexed)
+    unit: none
+    properties:
+      data:
+        properties:
+          datatype:
+            enum: [int32]
+  bbox_ymax:
+    description: Row index of the top edge of the source bounding box (0 indexed)
+    unit: none
+    properties:
+      data:
+        properties:
+          datatype:
+            enum: [int32]
+  bbox_ymin:
+    description: Row index of the bottom edge of the source bounding box (0 indexed)
+    unit: none
+    properties:
+      data:
+        properties:
+          datatype:
+            enum: [int32]
+  image_flags:
+    description: Image quality bit flags (0=good)
+    unit: none
+    properties:
+      data:
+        properties:
+          datatype:
+            enum: [int32]
+  label:
+    description: Label of the source segment in the segmentation image
+    unit: none
+    properties:
+      data:
+        properties:
+          datatype:
+            enum: [int32]
+  segment_area:
+    description: Area of the source segment
+    unit: arcsec^2
+    properties:
+      data:
+        properties:
+          datatype:
+            enum: [float32]
+  dec:
+    description: Best estimate of the declination (ICRS)
+    unit: deg
+    properties:
+      data:
+        properties:
+          datatype:
+            enum: [float64]
+  dec_centroid:
+    description: Declination of the source centroid (ICRS)
+    unit: deg
+    properties:
+      data:
+        properties:
+          datatype:
+            enum: [float64]
+  dec_centroid_err:
+    description: Uncertainty in dec_centroid
+    unit: arcsec
+    properties:
+      data:
+        properties:
+          datatype:
+            enum: [float32]
+  dec_centroid_win:
+    description: Declination (ICRS) of the windowed source centroid
+    unit: deg
+    properties:
+      data:
+        properties:
+          datatype:
+            enum: [float64]
+  dec_centroid_win_err:
+    description: Uncertainty in dec_centroid_win
+    unit: arcsec
+    properties:
+      data:
+        properties:
+          datatype:
+            enum: [float32]
+  dec_psf_~band~:
+    description: Declination (ICRS) of the PSF-fitted position
+    unit: deg
+    properties:
+      data:
+        properties:
+          datatype:
+            enum: [float64]
+  dec_psf_~band~_err:
+    description: Uncertainty in dec_psf
+    unit: arcsec
+    properties:
+      data:
+        properties:
+          datatype:
+            enum: [float32]
+  psf_gof_~band~:
+    description: PSF goodness of fit metric
+    unit: none
+    properties:
+      data:
+        properties:
+          datatype:
+            enum: [float32]
+  ra:
+    description: Best estimate of the right ascension (ICRS)
+    unit: deg
+    properties:
+      data:
+        properties:
+          datatype:
+            enum: [float64]
+  ra_centroid:
+    description: Right ascension (ICRS) of the source centroid
+    unit: deg
+    properties:
+      data:
+        properties:
+          datatype:
+            enum: [float64]
+  ra_centroid_err:
+    description: Uncertainty in ra_centroid
+    unit: arcsec
+    properties:
+      data:
+        properties:
+          datatype:
+            enum: [float32]
+  ra_centroid_win:
+    description: Right ascension (ICRS) of the windowed source centroid
+    unit: deg
+    properties:
+      data:
+        properties:
+          datatype:
+            enum: [float64]
+  ra_centroid_win_err:
+    description: Uncertainty in ra_centroid_win
+    unit: arcsec
+    properties:
+      data:
+        properties:
+          datatype:
+            enum: [float32]
+  ra_psf_~band~:
+    description: Right ascension (ICRS) of the PSF-fitted position
+    unit: deg
+    properties:
+      data:
+        properties:
+          datatype:
+            enum: [float64]
+  ra_psf_~band~_err:
+    description: Uncertainty in ra_psf
+    unit: arcsec
+    properties:
+      data:
+        properties:
+          datatype:
+            enum: [float32]
+  x_centroid:
+    description: Column coordinate of the source centroid from image moments (0 indexed)
+    unit: pix
+    properties:
+      data:
+        properties:
+          datatype:
+            enum: [float32]
+  x_centroid_err:
+    description: Uncertainty x_centroid
+    unit: pix
+    properties:
+      data:
+        properties:
+          datatype:
+            enum: [float32]
+  x_centroid_win:
+    description: Column coordinate of the windowed source centroid in the detection image from image moments (0 indexed)
+    unit: pix
+    properties:
+      data:
+        properties:
+          datatype:
+            enum: [float32]
+  x_centroid_win_err:
+    description: Uncertainty on x_centroid_win
+    unit: pix
+    properties:
+      data:
+        properties:
+          datatype:
+            enum: [float32]
+  x_psf_~band~:
+    description: Column coordinate of the source from PSF fitting (0 indexed)
+    unit: pix
+    properties:
+      data:
+        properties:
+          datatype:
+            enum: [float32]
+  x_psf_~band~_err:
+    description: Uncertainty in x_psf
+    unit: pix
+    properties:
+      data:
+        properties:
+          datatype:
+            enum: [float32]
+  y_centroid:
+    description: Row coordinate of the source centroid in the detection image from image moments (0 indexed)
+    unit: pix
+    properties:
+      data:
+        properties:
+          datatype:
+            enum: [float32]
+  y_centroid_err:
+    description: Uncertainty on y_centroid
+    unit: pix
+    properties:
+      data:
+        properties:
+          datatype:
+            enum: [float32]
+  y_centroid_win:
+    description: Row coordinate of the windowed source centroid in the detection image from image moments (0 indexed)
+    unit: pix
+    properties:
+      data:
+        properties:
+          datatype:
+            enum: [float32]
+  y_centroid_win_err:
+    description: Uncertainty on y_centroid_win
+    unit: pix
+    properties:
+      data:
+        properties:
+          datatype:
+            enum: [float32]
+  y_psf_~band~:
+    description: Row coordinate of the source from PSF fitting (0 indexed)
+    unit: pix
+    properties:
+      data:
+        properties:
+          datatype:
+            enum: [float32]
+  y_psf_~band~_err:
+    description: Uncertainty on y_psf
+    unit: pix
+    properties:
+      data:
+        properties:
+          datatype:
+            enum: [float32]
+  aper_bkg_~band~_flux:
+    description: Local background estimated within a circular annulus
+    unit: nJy arcsec-2
+    properties:
+      data:
+        properties:
+          datatype:
+            enum: [float32]
+  aper_bkg_~band~_flux_err:
+    description: Uncertainty in aper_bkg_flux
+    unit: nJy
+    properties:
+      data:
+        properties:
+          datatype:
+            enum: [float32]
+  aper_bkg_~band~m~band~_flux:
+    description: Local background estimate for PSF-matched aperture photometry
+    unit: nJy/arcsec^2
+    properties:
+      data:
+        properties:
+          datatype:
+            enum: [float32]
+  aper_bkg_~band~m~band~_flux_err:
+    description: Uncertainty in aper_bkg_flux_err
+    unit: nJy/arcsec^2
+    properties:
+      data:
+        properties:
+          datatype:
+            enum: [float32]
+  aper~radius~_~band~_flux:
+    description: Flux within circular aperture (radius in tenths of arcsec)
+    unit: nJy
+    properties:
+      data:
+        properties:
+          datatype:
+            enum: [float32]
+  aper~radius~_~band~_flux_err:
+    description: Uncertainty in flux within circular aperture
+    unit: nJy
+    properties:
+      data:
+        properties:
+          datatype:
+            enum: [float32]
+  aper~radius~_~band~m~band~_flux:
+    description: PSF-matched flux within circular aperture (radius in tenths of arcsec)
+    unit: nJy
+    properties:
+      data:
+        properties:
+          datatype:
+            enum: [float32]
+  aper~radius~_~band~m~band~_flux_err:
+    description: Uncertainty in PSF-matched flux within circular aperture
+    unit: nJy
+    properties:
+      data:
+        properties:
+          datatype:
+            enum: [float32]
+  kron_~band~_abmag:
+    description: AB magnitude within the elliptical Kron aperture
+    unit: mag(AB)
+    properties:
+      data:
+        properties:
+          datatype:
+            enum: [float32]
+  kron_~band~_abmag_err:
+    description: Uncertainty in kron_abmag
+    unit: mag(AB)
+    properties:
+      data:
+        properties:
+          datatype:
+            enum: [float32]
+  kron_~band~_flux:
+    description: Flux within the elliptical Kron aperture
+    unit: nJy
+    properties:
+      data:
+        properties:
+          datatype:
+            enum: [float32]
+  kron_~band~_flux_err:
+    description: Uncertainty in kron_<band>_flux_err
+    unit: nJy
+    properties:
+      data:
+        properties:
+          datatype:
+            enum: [float32]
+  kron_~band~m~band~_abmag:
+    description: PSF-matched flux within the elliptical Kron aperture
+    unit: abmag
+    properties:
+      data:
+        properties:
+          datatype:
+            enum: [float32]
+  kron_~band~m~band~_abmag_err:
+    description: Uncertainty in kron_<band>m<band>_abmag_err
+    unit: abmag
+    properties:
+      data:
+        properties:
+          datatype:
+            enum: [float32]
+  psf_~band~_flux:
+    description: Total PSF flux
+    unit: nJy
+    properties:
+      data:
+        properties:
+          datatype:
+            enum: [float32]
+  psf_~band~_flux_err:
+    description: Uncertainty in psf_flux
+    unit: nJy
+    properties:
+      data:
+        properties:
+          datatype:
+            enum: [float32]
+  psf_flags_~band~:
+    description: PSF fitting bit flags (0 = good)
+    unit: none
+    properties:
+      data:
+        properties:
+          datatype:
+            enum: [int32]
+  segment_~band~_flux:
+    description: Isophotal flux
+    unit: nJy
+    properties:
+      data:
+        properties:
+          datatype:
+            enum: [float32]
+  segment_~band~_flux_err:
+    description: Uncertainty in segment_flux
+    unit: nJy
+    properties:
+      data:
+        properties:
+          datatype:
+            enum: [float32]
+  segment_~band~m~band~_flux:
+    description: Isophotal flux after PSF matching to a reference band
+    unit: nJy
+    properties:
+      data:
+        properties:
+          datatype:
+            enum: [float32]
+  segment_~band~m~band~_flux_err:
+    description: Isophotal flux error after PSF matching to a reference band
+    unit: nJy
+    properties:
+      data:
+        properties:
+          datatype:
+            enum: [float32]
+  warning_flags:
+    description: Warning bit flags (0=good)
+    unit: none
+    properties:
+      data:
+        properties:
+          datatype:
+            enum: [int32]
+  cxx:
+    description: Coefficient for the x**2 term in the generalized quadratic ellipse equation
+    unit: 1/arcsec2
+    properties:
+      data:
+        properties:
+          datatype:
+            enum: [float32]
+  cxy:
+    description: Coefficient for the x*y term in the generalized quadratic ellipse equation
+    unit: 1/arcsec2
+    properties:
+      data:
+        properties:
+          datatype:
+            enum: [float32]
+  cyy:
+    description: Coefficient for the y**2 term in the generalized quadratic ellipse equation
+    unit: 1/arcsec2
+    properties:
+      data:
+        properties:
+          datatype:
+            enum: [float32]
+  ellipticity:
+    description: Source ellipticity as 1 - (semimajor / semiminor)
+    unit: none
+    properties:
+      data:
+        properties:
+          datatype:
+            enum: [float32]
+  fluxfrac_radius_50_~band~:
+    description: Radius of a circle centered on the source centroid that encloses 50% of the Kron flux
+    unit: arcsec
+    properties:
+      data:
+        properties:
+          datatype:
+            enum: [float32]
+  is_extended_~band~:
+    description: Flag indicating that the source appears to be more extended than a point source
+    unit: none
+    properties:
+      data:
+        properties:
+          datatype:
+            enum: [bool8]
+  fwhm:
+    description: Circularized full width at half maximum (FWHM) calculated from the semimajor and semiminor axes as 2*sqrt(ln(2) * (semimajor**2 + semiminor**2))
+    unit: arcsec
+    properties:
+      data:
+        properties:
+          datatype:
+            enum: [float32]
+  kron_radius:
+    description: First-moment radius measured in the detection image.
+    unit: arcsec
+    properties:
+      data:
+        properties:
+          datatype:
+            enum: [float32]
+  orientation_pix:
+    description: Angle measured counter-clockwise from the positive X axis to the source major axis computed from image moments
+    unit: deg
+    properties:
+      data:
+        properties:
+          datatype:
+            enum: [float32]
+  orientation_sky:
+    description: Position angle from North of the source major axis computed from image moments
+    unit: deg
+    properties:
+      data:
+        properties:
+          datatype:
+            enum: [float32]
+  roundness1_~band~:
+    description: Photutils DAOFinder roundness1 statistic
+    unit: none
+    properties:
+      data:
+        properties:
+          datatype:
+            enum: [float32]
+  semimajor:
+    description: Length of the source semimajor axis computed from image moments
+    unit: arcsec
+    properties:
+      data:
+        properties:
+          datatype:
+            enum: [float32]
+  semiminor:
+    description: Length of the source semiminor axis computed from image moments
+    unit: arcsec
+    properties:
+      data:
+        properties:
+          datatype:
+            enum: [float32]
+  sharpness_~band~:
+    description: Photutils DAOFinder sharpness statistic
+    unit: none
+    properties:
+      data:
+        properties:
+          datatype:
+            enum: [float32]
+  nn_distance:
+    description: Distance to the nearest neighbor in this skycell
+    unit: arcsec
+    properties:
+      data:
+        properties:
+          datatype:
+            enum: [float32]
+  nn_label:
+    description: Segment label of the nearest neighbor in this skycell
+    unit: none
+    properties:
+      data:
+        properties:
+          datatype:
+            enum: [int32]
+  photoz:
+    description: Recommended point estimate of photometric redshift
+    unit: none
+    properties:
+      data:
+        properties:
+          datatype:
+            enum: [float32]
+  photoz_gof:
+    description: Photo-z goodness of fit metric
+    unit: none
+    properties:
+      data:
+        properties:
+          datatype:
+            enum: [float32]
+  photoz_high68:
+    description: 68% confidence upper bound on photometric redshift
+    unit: none
+    properties:
+      data:
+        properties:
+          datatype:
+            enum: [float32]
+  photoz_high90:
+    description: 90% confidence upper bound on photometric redshift
+    unit: none
+    properties:
+      data:
+        properties:
+          datatype:
+            enum: [float32]
+  photoz_high99:
+    description: 99% confidence upper bound on photometric redshift
+    unit: none
+    properties:
+      data:
+        properties:
+          datatype:
+            enum: [float32]
+  photoz_low68:
+    description: 68% confidence lower bound on photometric redshift
+    unit: none
+    properties:
+      data:
+        properties:
+          datatype:
+            enum: [float32]
+  photoz_low90:
+    description: 90% confidence lower bound on photometric redshift
+    unit: none
+    properties:
+      data:
+        properties:
+          datatype:
+            enum: [float32]
+  photoz_low99:
+    description: 99% confidence lower bound on photometric redshift
+    unit: none
+    properties:
+      data:
+        properties:
+          datatype:
+            enum: [float32]
+  photoz_sed:
+    description: Best-fit spectral-energy distribution for this photometric redshift
+    unit: none
+    properties:
+      data:
+        properties:
+          datatype:
+            enum: [int32]

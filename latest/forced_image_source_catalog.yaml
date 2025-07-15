@@ -1,0 +1,47 @@
+%YAML 1.1
+---
+$schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.0.0
+id: asdf://stsci.edu/datamodels/roman/schemas/forced_image_source_catalog-1.0.0
+
+title: Forced source catalog generated from a Level 2 file by the Source Catalog Step.
+
+datamodel_name: ForcedImageSourceCatalogModel
+
+archive_meta: None
+type: object
+properties:
+  meta:
+    allOf:
+      - $ref: asdf://stsci.edu/datamodels/roman/schemas/basic-1.0.0
+      - type: object
+        properties:
+          optical_element:
+            $ref: asdf://stsci.edu/datamodels/roman/schemas/wfi_optical_element-1.2.0
+          exposure:
+            title: Exposure Information
+            tag: asdf://stsci.edu/datamodels/roman/tags/exposure-1.3.0
+          photometry:
+            title: Photometry Information
+            tag: asdf://stsci.edu/datamodels/roman/tags/photometry-1.0.0
+          program:
+            title: Program Information
+            tag: asdf://stsci.edu/datamodels/roman/tags/program-1.1.0
+          ref_file:
+            title: Reference File Information
+            tag: asdf://stsci.edu/datamodels/roman/tags/ref_file-1.1.0
+          visit:
+            title: Visit Information
+            tag: asdf://stsci.edu/datamodels/roman/tags/visit-1.2.0
+        required:
+          [optical_element, exposure, photometry, program, ref_file, visit]
+  source_catalog:
+    title: Source Catalog
+    description: |
+      Photometry and astrometry computed in the Source Catalog Step.
+    allOf:
+      - tag: tag:astropy.org:astropy/table/table-1.*
+      - $ref: asdf://stsci.edu/datamodels/roman/schemas/forced_catalog_table-1.0.0
+
+required: [meta, source_catalog]
+flowStyle: block
+propertyOrder: [meta, source_catalog]

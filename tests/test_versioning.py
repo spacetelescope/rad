@@ -36,6 +36,7 @@ from contextlib import suppress
 from io import BytesIO
 from pathlib import Path
 from re import findall
+from tomllib import load
 
 import pytest
 import yaml
@@ -45,14 +46,16 @@ from semantic_version import Version
 
 # Using a python library load the actual RAD repository data into python
 # object which can be interacted with.
-REPO = Repo(Path(__file__).parent.parent)
+REPO_PATH = Path(__file__).parent.parent
 RAD_URLS = (
     "https://github.com/spacetelescope/rad",
     "git@github.com:spacetelescope/rad.git",
 )
 
 # The oldest version of RAD that is under schema versioning
-BASE_RELEASE = Version("0.25.0")
+REPO = Repo(REPO_PATH)
+with (REPO_PATH / "pyproject.toml").open("rb") as f:
+    BASE_RELEASE = Version(load(f)["tool"]["rad-versioning"]["base_release"])
 
 # Any expected versioning failures should be added here
 EXPECTED_XFAILS = (
@@ -376,11 +379,11 @@ class TestVersioning:
                 f"Resource {frozen_uri} has changed between versions {rad_version} and the current changes"
             )
 
-    @pytest.mark.parametrize(("rad_version", "frozen_uri"), EXPECTED_XFAILS)
-    def test_expected_xfails_relevance(self, rad_version, frozen_uri, rad_versions, frozen_uris):
+    @pytest.mark.parametrize(("version", "uri"), EXPECTED_XFAILS)
+    def test_expected_xfails_relevance(self, version, uri, rad_versions, frozen_uris):
         """
         Test that the expected fails are relevant to the current version of RAD
         -> Smokes out when the EXPECTED_XFAILS are no longer relevant
         """
-        assert rad_version in rad_versions, f"Version {rad_version} is not a valid version of RAD"
-        assert frozen_uri in frozen_uris, f"URI {frozen_uri} is not a valid frozen URI"
+        assert version in rad_versions, f"Version {version} is not a valid version of RAD for versioning"
+        assert uri in frozen_uris, f"URI {uri} is not a valid frozen URI"

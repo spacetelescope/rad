@@ -24,6 +24,7 @@ The following are listings of all the schemas provided by this package for ASDF.
   :maxdepth: 1
 
   schemas.rst
+  source_catalogs.rst
   reference_files.rst
   manifests.rst
   ground_tests.rst
@@ -34,6 +35,7 @@ Developer Resources
 .. toctree::
   :maxdepth: 1
 
+  helper.rst
   creating.rst
   versioning.rst
   contributing.rst

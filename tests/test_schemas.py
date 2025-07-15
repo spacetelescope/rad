@@ -13,38 +13,11 @@ from crds.config import is_crds_name
 METADATA_FORCING_REQUIRED = ("archive_catalog", "sdf")
 
 METADATA_FORCE_XFAILS = (
-    "asdf://stsci.edu/datamodels/roman/schemas/fps/ref_file-1.0.0",
-    "asdf://stsci.edu/datamodels/roman/schemas/tvac/groundtest-1.0.0",
-    "asdf://stsci.edu/datamodels/roman/schemas/tvac/ref_file-1.0.0",
+    # <resource uri>
 )
 
 VARCHAR_XFAILS = (
-    "asdf://stsci.edu/datamodels/roman/schemas/fps/cal_step-1.0.0",
-    "asdf://stsci.edu/datamodels/roman/schemas/fps/exposure-1.0.0",
-    "asdf://stsci.edu/datamodels/roman/schemas/fps/groundtest-1.0.0",
-    "asdf://stsci.edu/datamodels/roman/schemas/fps/guidestar-1.0.0",
-    "asdf://stsci.edu/datamodels/roman/schemas/fps/ref_file-1.0.0",
-    "asdf://stsci.edu/datamodels/roman/schemas/fps/tagged_scalars/calibration_software_version-1.0.0",
-    "asdf://stsci.edu/datamodels/roman/schemas/fps/tagged_scalars/filename-1.0.0",
-    "asdf://stsci.edu/datamodels/roman/schemas/fps/tagged_scalars/model_type-1.0.0",
-    "asdf://stsci.edu/datamodels/roman/schemas/fps/tagged_scalars/origin-1.0.0",
-    "asdf://stsci.edu/datamodels/roman/schemas/fps/tagged_scalars/prd_software_version-1.0.0",
-    "asdf://stsci.edu/datamodels/roman/schemas/fps/tagged_scalars/sdf_software_version-1.0.0",
-    "asdf://stsci.edu/datamodels/roman/schemas/fps/tagged_scalars/telescope-1.0.0",
-    "asdf://stsci.edu/datamodels/roman/schemas/fps/wfi_mode-1.0.0",
-    "asdf://stsci.edu/datamodels/roman/schemas/tvac/cal_step-1.0.0",
-    "asdf://stsci.edu/datamodels/roman/schemas/tvac/exposure-1.0.0",
-    "asdf://stsci.edu/datamodels/roman/schemas/tvac/groundtest-1.0.0",
-    "asdf://stsci.edu/datamodels/roman/schemas/tvac/guidestar-1.0.0",
-    "asdf://stsci.edu/datamodels/roman/schemas/tvac/ref_file-1.0.0",
-    "asdf://stsci.edu/datamodels/roman/schemas/tvac/tagged_scalars/calibration_software_version-1.0.0",
-    "asdf://stsci.edu/datamodels/roman/schemas/tvac/tagged_scalars/filename-1.0.0",
-    "asdf://stsci.edu/datamodels/roman/schemas/tvac/tagged_scalars/model_type-1.0.0",
-    "asdf://stsci.edu/datamodels/roman/schemas/tvac/tagged_scalars/origin-1.0.0",
-    "asdf://stsci.edu/datamodels/roman/schemas/tvac/tagged_scalars/prd_software_version-1.0.0",
-    "asdf://stsci.edu/datamodels/roman/schemas/tvac/tagged_scalars/sdf_software_version-1.0.0",
-    "asdf://stsci.edu/datamodels/roman/schemas/tvac/tagged_scalars/telescope-1.0.0",
-    "asdf://stsci.edu/datamodels/roman/schemas/tvac/wfi_mode-1.0.0",
+    # <resource uri>
 )
 
 REF_COMMON_XFAILS = ("asdf://stsci.edu/datamodels/roman/schemas/reference_files/skycells-1.0.0",)
@@ -52,8 +25,6 @@ REF_COMMON_XFAILS = ("asdf://stsci.edu/datamodels/roman/schemas/reference_files/
 ARRAY_TAG_XFAILS = (
     "asdf://stsci.edu/datamodels/roman/schemas/l1_detector_guidewindow-1.0.0",
     "asdf://stsci.edu/datamodels/roman/schemas/l1_detector_guidewindow-1.1.0",
-    "asdf://stsci.edu/datamodels/roman/schemas/fps/statistics-1.0.0",
-    "asdf://stsci.edu/datamodels/roman/schemas/tvac/statistics-1.0.0",
 )
 
 
@@ -142,6 +113,9 @@ class TestSchemaContent:
             if "byteorder" in node:
                 # don't check sub-dtypes
                 return
+            if isinstance(node.get("datatype"), dict):
+                # table (and old quantity containing) schemas use datatype in a different way
+                return
             if any(k in node for k in ("ndim", "datatype", "exact_datatype")):
                 tag = node.get("tag", "")
                 assert tag.startswith("tag:stsci.edu:asdf/core/ndarray-")
@@ -183,7 +157,12 @@ class TestSchemaContent:
                 return
 
             # Check that the $ref is a full URI registered with ASDF
-            assert node["$ref"] in resources
+            ref_uri = node["$ref"]
+
+            # remove a fragment if it exists
+            if "#" in ref_uri:
+                ref_uri, _ = ref_uri.split("#", maxsplit=1)
+            assert ref_uri in resources
 
         asdf.treeutil.walk(schema, callback)
 
@@ -217,12 +196,23 @@ class TestSchemaContent:
         asdf.treeutil.walk(schema, callback)
 
     @pytest.mark.parametrize("uri", METADATA_FORCE_XFAILS)
-    def test_metadata_force_xfail_relevant(self, uri, schema_uris):
+    def test_metadata_force_xfail_relevant(self, uri, latest_uris):
         """
         Test that URIS that are marked as failing the metadata are still relevant (in use).
         -> Smokes out when METADATA_FORCE_XFAILS is not relevant anymore.
         """
-        assert uri in schema_uris, f"{uri} is not in the list of schemas to be tested."
+        assert uri in latest_uris, f"{uri} is not in the list of schemas to be tested."
+
+    def test_string_max_length(self, schema):
+        """
+        Checks that if a `maxLength` is specified, that it is specified along with a `type` of `string`.
+        """
+
+        def callback(node):
+            if isinstance(node, Mapping) and "maxLength" in node:
+                assert node.get("type") == "string", "maxLength is only valid for strings"
+
+        asdf.treeutil.walk(schema, callback)
 
     def test_varchar_length(self, schema_uri, schema, request):
         """
@@ -237,30 +227,66 @@ class TestSchemaContent:
                 )
             )
 
-        def callback(node, nvarchars=None):
-            nvarchars = nvarchars or {}
-            if not isinstance(node, dict):
-                return
-            if node.get("type", "") != "string":
-                return
-            if "archive_catalog" not in node:
-                return
-            m = match(r"^nvarchar\(([0-9]+)\)$", node["archive_catalog"]["datatype"])
-            if not m:
-                return
-            v = int(m.group(1))
-            assert "maxLength" in node, f"archive_catalog has nvarchar, schema {schema_uri} is missing maxLength"
-            assert node["maxLength"] == v, f"archive_catalog nvarchar does not match maxLength in schema {schema_uri}"
+        def callback(node):
+            if (
+                isinstance(node, Mapping)
+                and "archive_catalog" in node
+                and node["archive_catalog"]["datatype"].startswith("nvarchar(")
+            ):
+                m = match(r"^nvarchar\(([0-9]+)\)$", node["archive_catalog"]["datatype"])
+                if m:
+                    length = int(m.group(1))
+
+                    def check_max_length(node):
+                        nonlocal found
+                        nonlocal ref_uri
+                        if isinstance(node, Mapping) and "type" in node:
+                            if node["type"] == "string":
+                                msg = "archive_catalog.datatype nvarchar indicates maxLength is required"
+                                msg += f" in schema {ref_uri}" if ref_uri else ""
+                                msg += ", but it is not present"
+                                assert "maxLength" in node, msg
+                                assert node["maxLength"] == length, (
+                                    f"archive_catalog.datatype nvarchar indicates maxLength={length}, but found {node['maxLength']}."
+                                )
+                                found = True
+
+                            # Arrays may have a nvarchar described for archive, but they don't have a maxLength
+                            # json-schema descriptor so we assume that we found maxLength
+                            elif node["type"] == "array":
+                                found = True
+
+                    if "type" in node:
+                        found = False
+                        ref_uri = None
+                        asdf.treeutil.walk(node, check_max_length)
+                        assert found, "archive_catalog.datatype nvarchar indicates maxLength is required, none is found"
+                        return
+
+                    if "allOf" in node or "anyOf" in node:
+                        for sub_schema in node.get("allOf", []) + node.get("anyOf", []):
+                            if isinstance(sub_schema, Mapping):
+                                found = False
+                                ref_uri = sub_schema.get("$ref")
+                                sub_node = asdf.schema.load_schema(sub_schema["$ref"]) if "$ref" in sub_schema else sub_schema
+                                asdf.treeutil.walk(sub_node, check_max_length)
+                                assert found, (
+                                    f"archive_catalog.datatype nvarchar indicates there should be a maxLength in {sub_schema['$ref']}"
+                                )
+                                return
+
+                    # Fallback failure
+                    raise AssertionError("archive_catalog.datatype is nvarchar but no maxLength found.")
 
         asdf.treeutil.walk(schema, callback)
 
     @pytest.mark.parametrize("uri", VARCHAR_XFAILS)
-    def test_varchar_xfail_relevant(self, uri, schema_uris):
+    def test_varchar_xfail_relevant(self, uri, latest_uris):
         """
         Test that URIS that are marked as failing for varchar length are still relevant (in use).
         -> Smokes out when VARCHAR_XFAILS is not relevant anymore.
         """
-        assert uri in schema_uris, f"{uri} is not in the list of schemas to be tested."
+        assert uri in latest_uris, f"{uri} is not in the list of schemas to be tested."
 
 
 class TestTaggedSchemaContent:
@@ -425,12 +451,12 @@ class TestReferenceFileSchemas:
             raise ValueError("ref_common not found in meta")
 
     @pytest.mark.parametrize("uri", REF_COMMON_XFAILS)
-    def test_ref_common_xfail_relevant(self, uri, schema_uris):
+    def test_ref_common_xfail_relevant(self, uri, latest_uris):
         """
         Test that URIS that are marked as failing the ref_common are still relevant (in use).
         -> Smokes out when REF_COMMON_XFAILS is not relevant anymore.
         """
-        assert uri in schema_uris, f"{uri} is not in the list of schemas to be tested."
+        assert uri in latest_uris, f"{uri} is not in the list of schemas to be tested."
 
 
 class TestPatternElementConsistency:
