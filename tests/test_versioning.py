@@ -49,6 +49,7 @@ from semantic_version import Version
 REPO_PATH = Path(__file__).parent.parent
 RAD_URLS = (
     "https://github.com/spacetelescope/rad",
+    "https://github.com/spacetelescope/rad.git",
     "git@github.com:spacetelescope/rad.git",
 )
 
