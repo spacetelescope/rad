@@ -1,0 +1,2 @@
+Fixed archive catalog string length for fgs_modes_used.
+
