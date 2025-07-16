@@ -326,14 +326,12 @@ properties:
         description: >
           Name of the optical element used to take the science
           data. If data using multiple optical elements are combined, the
-          value of optical_element will be a string indicating the
-          combination (e.g., "F158, F184").
+          value of optical_element will be None.
         anyOf:
-          - type: string
-            maxLength: 122
+          - $ref: asdf://stsci.edu/datamodels/roman/schemas/wfi_optical_element-1.2.0
           - type: "null"
         archive_catalog:
-          datatype: nvarchar(122)
+          datatype: nvarchar(20)
           destination: [WFIMosaic.optical_element]
     required: [name, optical_element]
 
