@@ -24,7 +24,6 @@ properties:
       destination:
         [
           WFIExposure.conversion_megajanskys,
-          WFIMosaic.conversion_megajanskys,
           SourceCatalog.conversion_megajanskys,
         ]
   conversion_megajanskys_uncertainty:
@@ -45,7 +44,6 @@ properties:
       destination:
         [
           WFIExposure.conversion_megajanskys_uncertainty,
-          WFIMosaic.conversion_megajanskys_uncertainty,
           SourceCatalog.conversion_megajanskys_uncertainty,
         ]
   pixel_area:
@@ -60,8 +58,7 @@ properties:
     unit: "uJy.arcsec**-2"
     archive_catalog:
       datatype: float
-      destination:
-        [WFIExposure.pixel_area, WFIMosaic.pixel_area, SourceCatalog.pixel_area]
+      destination: [WFIExposure.pixel_area, SourceCatalog.pixel_area]
 propertyOrder:
   [conversion_megajanskys, conversion_megajanskys_uncertainty, pixel_area]
 flowStyle: block

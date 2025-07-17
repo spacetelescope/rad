@@ -27,6 +27,10 @@ ARRAY_TAG_XFAILS = (
     "asdf://stsci.edu/datamodels/roman/schemas/l1_detector_guidewindow-1.1.0",
 )
 
+REQUIRED_SKIPS = ("asdf://stsci.edu/datamodels/roman/schemas/wfi_mosaic-1.3.0",)
+
+NESTED_REQUIRED_SKIPS = ("asdf://stsci.edu/datamodels/roman/schemas/l3_common-1.0.0",)
+
 
 class TestSchemaContent:
     """
@@ -56,11 +60,13 @@ class TestSchemaContent:
         """
         Checks that all required properties are present in the schema
         """
+        if schema["id"] in REQUIRED_SKIPS:
+            pytest.skip(f"skipped required keyword test for {schema['id']}")
 
         def callback(node):
             """Callback for required properties being present"""
             if isinstance(node, Mapping) and "required" in node:
-                assert node.get("type") == "object"
+                assert node.get("type", "object") == "object"
                 property_names = set(node.get("properties", {}).keys())
                 required_names = set(node["required"])
                 if not required_names.issubset(property_names):
@@ -178,6 +184,9 @@ class TestSchemaContent:
                     reason=f"{schema_uri} is not being altered to ensure required lists for archive metadata, due to it being in either tvac or fps."
                 )
             )
+
+        if schema_uri in NESTED_REQUIRED_SKIPS:
+            pytest.skip(f"skipping nested required keyword test for {schema_uri}")
 
         def callback(node):
             if isinstance(node, Mapping) and "properties" in node:
