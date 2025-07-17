@@ -1,2 +1,0 @@
-Remove ``fps`` and ``tvac`` schemas from the ``latest`` schemas and create a
-"static" manifest to track such removals.

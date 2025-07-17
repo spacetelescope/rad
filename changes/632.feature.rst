@@ -1,1 +1,0 @@
-Update level 3 MosaicModel schema based on new metadata structure.
