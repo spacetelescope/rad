@@ -46,7 +46,7 @@ docs = [
 rad = "rad.integration:get_resource_mappings"
 
 [build-system]
-requires = ["setuptools >=61", "setuptools_scm[toml] >=3.4"]
+requires = ["setuptools >=77", "setuptools_scm[toml] >=3.4"]
 build-backend = "setuptools.build_meta"
 
 [tool.setuptools_scm]
