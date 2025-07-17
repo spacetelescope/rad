@@ -1,1 +1,0 @@
-Fixing erroneous wsm_edge_used title in l1_detector_guidewindow and l1_face_guidewindow schemas.

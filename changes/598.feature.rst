@@ -1,1 +1,0 @@
-Refactor the ``cal_step`` schemas to use a common schema for the step flags.

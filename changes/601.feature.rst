@@ -1,2 +1,0 @@
-Move ``wfi_mosaic.cal_logs`` to ``wfi_mosaic.meta.cal_logs`` for consistency
-with ``wfi_image.meta.cal_logs``.

@@ -1,2 +1,0 @@
-Add schemas for tables in ImageSourceCatalog, MosaicSourceCatalog.
-Add new schemas for ForcedImageSourceCatalog, ForcedMosaicSourceCatalog and MultibandSourceCatalog.

@@ -1,3 +1,67 @@
+0.26.0 (2025-07-17)
+===================
+
+Bug Fixes
+---------
+
+- Bugfixes for ``maxLength`` and ``nvarchar`` issues throughout the schemas.
+  Note
+  that this includes the introduction of unit tests to check that the
+  ``maxLength``
+  is included and matches the ``nvarchar`` when applicable. (`#611
+  <https://github.com/spacetelescope/rad/issues/611>`_)
+- Add missing tag validators to l1_detector_guidewindow schema. (`#613
+  <https://github.com/spacetelescope/rad/issues/613>`_)
+- Fixing erroneous wsm_edge_used title in l1_detector_guidewindow and
+  l1_face_guidewindow schemas. (`#621
+  <https://github.com/spacetelescope/rad/issues/621>`_)
+- Fixed archive catalog string length for fgs_modes_used. (`#641
+  <https://github.com/spacetelescope/rad/issues/641>`_)
+- Added github url to versioning test. (`#644
+  <https://github.com/spacetelescope/rad/issues/644>`_)
+
+
+New Features
+------------
+
+- Add var_sky to WFI mosaic schema. (`#573
+  <https://github.com/spacetelescope/rad/issues/573>`_)
+- Add a helper script, ``scripts/rad.py`` to assist with the management of the
+  RAD resources.
+  Features include:
+  - Listing the latest versions of all the RAD resources.
+    - includes indications of which resources are "frozen" (not changeable
+  without
+      a new version) at the time of script execution.
+  - Creating (and integrating) a new RAD resource.
+    - Includes bumping the manifest version if necessary
+  - Bumping existing RAD resource versions.
+    - Includes solving the cascade of version bumps that maybe required.
+  - Editing existing RAD resources.
+    - Includes bumping the resource (and the cascade of other resources) if the
+      edits necessitate a version bump. (`#593
+  <https://github.com/spacetelescope/rad/issues/593>`_)
+- Refactor the ``cal_step`` schemas to use a common schema for the step flags.
+  (`#598 <https://github.com/spacetelescope/rad/issues/598>`_)
+- Move ``wfi_mosaic.cal_logs`` to ``wfi_mosaic.meta.cal_logs`` for consistency
+  with ``wfi_image.meta.cal_logs``. (`#601
+  <https://github.com/spacetelescope/rad/issues/601>`_)
+- Enable automatic yaml style formatting. (`#607
+  <https://github.com/spacetelescope/rad/issues/607>`_)
+- Bump manifest to 1.3.0 now that RAD 0.25.0 has been released with manifest
+  version
+  1.2.0. (`#612 <https://github.com/spacetelescope/rad/issues/612>`_)
+- Remove ``fps`` and ``tvac`` schemas from the ``latest`` schemas and create a
+  "static" manifest to track such removals. (`#617
+  <https://github.com/spacetelescope/rad/issues/617>`_)
+- Add schemas for tables in ImageSourceCatalog, MosaicSourceCatalog.
+  Add new schemas for ForcedImageSourceCatalog, ForcedMosaicSourceCatalog and
+  MultibandSourceCatalog. (`#624
+  <https://github.com/spacetelescope/rad/issues/624>`_)
+- Update level 3 MosaicModel schema based on new metadata structure. (`#632
+  <https://github.com/spacetelescope/rad/issues/632>`_)
+
+
 0.25.0 (2025-05-12)
 ===================
 
