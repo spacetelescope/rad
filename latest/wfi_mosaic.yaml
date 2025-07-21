@@ -13,18 +13,8 @@ properties:
   meta:
     allOf:
       - $ref: asdf://stsci.edu/datamodels/roman/schemas/l3_common-1.1.0
-      - required:
-          [
-            cal_logs,
-            coadd_info,
-            coordinates,
-            individual_image_meta,
-            instrument,
-            observation,
-            program,
-            statistics,
-          ]
-      - properties:
+      - type: object
+        properties:
           association:
             title: Association Information
             type: object

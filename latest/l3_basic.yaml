@@ -1,0 +1,66 @@
+%YAML 1.1
+---
+$schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.0.0
+id: asdf://stsci.edu/datamodels/roman/schemas/l3_basic-1.0.0
+
+title: Level 3 Basic
+
+type: object
+properties:
+  calibration_software_name:
+    title: Calibration Software Name
+    description: >
+      Name of the calibration software package used in processing this file.
+    tag: asdf://stsci.edu/datamodels/roman/tags/calibration_software_name-1.0.0
+  calibration_software_version:
+    title: Calibration Software Version Number
+    description: >
+      The version number or other identifier of the calibration software used in processing this file.
+    tag: asdf://stsci.edu/datamodels/roman/tags/calibration_software_version-1.0.0
+  filename:
+    title: File Name
+    description: >
+      The auto-generated name of this file.
+    tag: asdf://stsci.edu/datamodels/roman/tags/filename-1.0.0
+  file_date:
+    title: File Creation Date
+    description: >
+      The date and time this file was created.
+    tag: asdf://stsci.edu/datamodels/roman/tags/file_date-1.0.0
+  model_type:
+    title: Data Model Type
+    description: >
+      The type of data model contained within this file.
+    tag: asdf://stsci.edu/datamodels/roman/tags/model_type-1.0.0
+  origin:
+    title: Institution / Organization Name
+    description: >
+      The name of the institution or organization
+      responsible for creating this file.
+    tag: asdf://stsci.edu/datamodels/roman/tags/origin-1.0.0
+  product_type:
+    title: Product Type Descriptor
+    description: >
+      A descriptor of the type of data contained within this
+      file. A string beginning with "p" indicates a prompt data product,
+      while a string beginning with "r" indicates a data release product.
+      For example, "p_visit_coadd" indicates a prompt data product
+      containing a co-addition of exposures within a visit.
+    tag: asdf://stsci.edu/datamodels/roman/tags/product_type-1.0.0
+  telescope:
+    title: Telescope Name
+    description: >
+      The name of the telescope used to acquire the data.
+    tag: asdf://stsci.edu/datamodels/roman/tags/telescope-1.0.0
+
+required:
+  [
+    calibration_software_name,
+    calibration_software_version,
+    filename,
+    file_date,
+    model_type,
+    product_type,
+    origin,
+    telescope,
+  ]
