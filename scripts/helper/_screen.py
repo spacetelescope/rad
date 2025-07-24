@@ -319,6 +319,7 @@ class NewScreen(_Screen[tuple[_Screen.Return, bool | None, Resource | None]]):
                     disabled=True,
                 )
                 uri_input.styles.height = "100%"
+                uri_input.styles.width = "80%"
                 yield uri_input
             yield Rule()
 
