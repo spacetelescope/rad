@@ -4,3 +4,17 @@ $schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.0.0
 id: asdf://stsci.edu/datamodels/roman/schemas/CGI/keywords/cgi_visit-1.0.0
 
 title: Visit Information
+extName: SSC
+
+type: object
+properties:
+  VISTYPE:
+    title: Visit type
+    description: Placeholder
+    type: string
+    maxLength: 30
+    archive_catalog:
+      datatype: nvarchar(30)
+      destination: [CGIPlaceholder.placeholder]
+
+required: [VISTYPE]
