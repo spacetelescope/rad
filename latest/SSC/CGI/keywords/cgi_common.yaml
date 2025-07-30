@@ -1,0 +1,115 @@
+%YAML 1.1
+---
+$schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.0.0
+id: asdf://stsci.edu/datamodels/roman/schemas/SSC/CGI/keywords/cgi_common-1.0.0
+
+title: Common CGI Keyword
+extName: SSC
+
+type: object
+properties:
+  INSTRUME:
+    title: Instrument
+    description: Instrument used
+    type: string
+    maxLength: 8
+    archive_catalog:
+      datatype: nvarchar(8)
+      destination: [CGIPlaceholder.instrument_name]
+  PROGNUM:
+    title: Program number
+    description: ID number (integer) assigned to the proposal
+    type: string
+    maxLength: 16
+    archive_catalog:
+      datatype: nvarchar(16)
+      destination: [CGIPlaceholder.program]
+  SEGMENT:
+    title: Segment number
+    description: The sequence of activities produced by each iteration of a Segment Plan (Observation Sequence) in a Pass
+    type: string
+    maxLength: 16
+    archive_catalog:
+      datatype: nvarchar(16)
+      destination: [CGIPlaceholder.segment]
+  VISNUM:
+    title: Visit number
+    description: Visit number within a program
+    type: string
+    maxLength: 16
+    archive_catalog:
+      datatype: nvarchar(16)
+      destination: [CGIPlaceholder.visit]
+  DATALVL:
+    title: Product Levels
+    description: Product levels, 1 is raw uncalibrated images, 2a is calibrated images, 2b is coadded calibrated images, 3 is photometric-, astrometric-, and wavelength-calibrated images, 4 is PSF-subtracted and/or spectrally extracted data
+    type: string
+    maxLength: 16
+    archive_catalog:
+      datatype: nvarchar(16)
+      destination: [CGIPlaceholder.product_level]
+  DATASET: # SOC Proposed
+    # NOTE: The dataset field should be the string that defines the fileset at MAST, typically the first part of the file name. Work with SOC to confirm if fileset should include the timestamp part of the name or not.
+    title: Dataset ID
+    description: Dataset name
+    type: string
+    maxLength: 16
+    archive_catalog:
+      datatype: nvarchar(16)
+      destination: [CGIPlaceholder.file_set_name]
+  # The following fields are NOT required, but they would be nice to have as explicitly specified values to fill in for our cross-mission search. If not relevant or not provided these will just be null values at MAST.
+  DETECTOR: # SOC Proposed
+    title: Detector
+    description: The CGI detector name
+    type: string
+    maxLength: 16
+    archive_catalog:
+      datatype: nvarchar(16)
+      destination: [CGIPlaceholder.detector]
+  APERTURE: # SOC Proposed
+    title: Aperture
+    description: The CGI aperture name
+    type: string
+    maxLength: 16
+    archive_catalog:
+      datatype: nvarchar(16)
+      destination: [CGIPlaceholder.aperture]
+  PINAME: # SOC Proposed
+    title: PI Last Name
+    description: Principal Investigator (PI) last name; uppercase (e.g., FORD, LEMMON)
+    type: string
+    maxLength: 16
+    archive_catalog:
+      datatype: nvarchar(16)
+      destination: [CGIPlaceholder.pi_name]
+  PROGTITLE: # SOC Proposed
+    title: Program Title
+    description: The title of the program
+    type: string
+    maxLength: 16
+    archive_catalog:
+      datatype: nvarchar(16)
+      destination: [CGIPlaceholder.program_title]
+  CALVER: # SOC Proposed
+    title: Calibration Version
+    description: The version of the calibration software used
+    type: string
+    maxLength: 16
+    archive_catalog:
+      datatype: nvarchar(16)
+      destination: [CGIPlaceholder.calibration_software_version]
+
+required:
+  [
+    INSTRUME,
+    PROGNUM,
+    SEGMENT,
+    VISNUM,
+    DATALVL,
+    DATASET,
+    DETECTOR,
+    APERTURE,
+    PINAME,
+    PROGTITLE,
+    CALVER,
+  ]
