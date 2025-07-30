@@ -10,7 +10,7 @@ type: object
 properties:
   VISTYPE:
     title: Visit type
-    description: Placeholder
+    description: The visit type
     type: string
     maxLength: 30
     archive_catalog:

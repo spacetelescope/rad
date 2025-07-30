@@ -8,53 +8,50 @@ extName: SSC
 
 type: object
 properties:
-  SPAMNAME:
-    title: Closest Shaped Pupil Alignment Mechanism named setting
-    description: Placeholder
-    type: string
-    maxLength: 128
+  EXPTIME:
+    title: Exposure Time
+    description: Exposing stage duration (seconds)
+    type: number
     archive_catalog:
-      datatype: nvarchar(128)
-      destination: [CGIPlaceholder.placeholder]
-  FPAMNAME:
-    title: Closest Focal Plane Alignment Mechanism named setting
-    description: Placeholder
+      datatype: float
+      destination: [CGIPlaceholder.exposure_time]
+  ARRTYPE:
+    title: Readout size
+    description: Readout size
     type: string
-    maxLength: 128
+    maxLength: 16
     archive_catalog:
-      datatype: nvarchar(128)
-      destination: [CGIPlaceholder.placeholder]
-  LSAMNAME:
-    title: Closest Lyot Stop Alignment Mechanism named setting
-    description: Placeholder
-    type: string
-    maxLength: 128
+      datatype: nvarchar(16)
+      destination: [CGIPlaceholder.readout_size]
+  # For both the Roman CGI Search and the MAST Cross-Mission Search, sending these fields will permit time-range-based searches.
+  EXPSTART: # SOC Proposed
+    title: Start Time
+    description: Observation start time
+    tag: tag:stsci.edu:asdf/time/time-1.*
     archive_catalog:
-      datatype: nvarchar(128)
-      destination: [CGIPlaceholder.placeholder]
-  FSAMNAME:
-    title: Closest Field Stop Alignment Mechanism named setting
-    type: string
-    maxLength: 128
-    description: Placeholder
+      datatype: datetime2
+      destination: [CGIPlaceholder.visit_start_time]
+  EXPEND: # SOC Proposed
+    title: End Time
+    description: Observation end time
+    tag: tag:stsci.edu:asdf/time/time-1.*
     archive_catalog:
-      datatype: nvarchar(128)
-      destination: [CGIPlaceholder.placeholder]
-  CFAMNAME:
-    title: Closest Color Filter Alignment Mechanism named setting
-    description: Placeholder
-    type: string
-    maxLength: 128
+      datatype: datetime2
+      destination: [CGIPlaceholder.visit_end_time]
+  # NOTE: MAST uses MJD for start and end times in our cross-mission search. We can convert from datetime strings, but if they are included in the manifest separately it would eliminate the need to do the conversion on the MAST side.
+  MJDSTART: # SOC Proposed
+    title: Start Time MJD
+    description: Observation start time in MJD
+    type: number
     archive_catalog:
-      datatype: nvarchar(128)
-      destination: [CGIPlaceholder.placeholder]
-  DPAMNAME:
-    title: Closest Dispersion Polarizer Alignment Mechanism named setting
-    description: Placeholder
-    type: string
-    maxLength: 128
+      datatype: float
+      destination: [CGIPlaceholder.visit_start_time_mjd]
+  MJDEND: # SOC Proposed
+    title: End Time MJD
+    description: Observation end time in MJD
+    type: number
     archive_catalog:
-      datatype: nvarchar(128)
-      destination: [CGIPlaceholder.placeholder]
+      datatype: float
+      destination: [CGIPlaceholder.visit_end_time_mjd]
 
-required: [SPAMNAME, FPAMNAME, LSAMNAME, FSAMNAME, CFAMNAME, DPAMNAME]
+required: [EXPTIME, ARRTYPE, EXPSTART, EXPEND]

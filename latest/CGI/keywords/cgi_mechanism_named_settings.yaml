@@ -10,51 +10,51 @@ type: object
 properties:
   SPAMNAME:
     title: Closest Shaped Pupil Alignment Mechanism named setting
-    description: Placeholder
+    description: Closest shaped pupil alginment mechanism setting
     type: string
     maxLength: 128
     archive_catalog:
       datatype: nvarchar(128)
-      destination: [CGIPlaceholder.placeholder]
+      destination: [CGIPlaceholder.spamname]
   FPAMNAME:
     title: Closest Focal Plane Alignment Mechanism named setting
-    description: Placeholder
+    description: Closest focal plan alginment mechanism setting
     type: string
     maxLength: 128
     archive_catalog:
       datatype: nvarchar(128)
-      destination: [CGIPlaceholder.placeholder]
+      destination: [CGIPlaceholder.fpamname]
   LSAMNAME:
     title: Closest Lyot Stop Alignment Mechanism named setting
-    description: Placeholder
+    description: Closest Lyot stop alignment mechanism setting
     type: string
     maxLength: 128
     archive_catalog:
       datatype: nvarchar(128)
-      destination: [CGIPlaceholder.placeholder]
+      destination: [CGIPlaceholder.lsamname]
   FSAMNAME:
     title: Closest Field Stop Alignment Mechanism named setting
-    description: Placeholder
+    description: Closest field stop alignment mechanism setting
     type: string
     maxLength: 128
     archive_catalog:
       datatype: nvarchar(128)
-      destination: [CGIPlaceholder.placeholder]
+      destination: [CGIPlaceholder.fsamname]
   CFAMNAME:
     title: Closest Color Filter Alignment Mechanism named setting
-    description: Placeholder
+    description: Closest filter alignment mechanism setting
     type: string
     maxLength: 128
     archive_catalog:
       datatype: nvarchar(128)
-      destination: [CGIPlaceholder.placeholder]
+      destination: [CGIPlaceholder.cfamname]
   DPAMNAME:
     title: Closest Dispersion Polarizer Alignment Mechanism named setting
-    description: Placeholder
+    description: Closest dispersion polarizer alginment mechanism setting
     type: string
     maxLength: 128
     archive_catalog:
       datatype: nvarchar(128)
-      destination: [CGIPlaceholder.placeholder]
+      destination: [CGIPlaceholder.dpamname]
 
 required: [SPAMNAME, FPAMNAME, LSAMNAME, FSAMNAME, CFAMNAME, DPAMNAME]

@@ -1,0 +1,48 @@
+%YAML 1.1
+---
+$schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.0.0
+id: asdf://stsci.edu/datamodels/roman/schemas/CGI/keywords/ssc_basic-1.0.0
+
+title: Basic keywords across all SSC file types
+
+# Note: These keywords are automatically added to the ingest manifest
+# by the SOC's SSC file receipt lambda.  SSC does NOT need to include
+# these in the 'metadata' object of the data availability notification.
+# These are a subset of the RAD basic keywords (https://github.com/spacetelescope/rad/blob/main/latest/basic.yaml)
+
+extName: SSC
+
+type: object
+properties:
+  filename:
+    title: File Name
+    description: |
+      The filename as taken from the 'filename' property of the
+      data availability notification (https://github.com/spacetelescope/roman-soc-ssc-common/blob/main/schemas/data_availability.json#L7)
+      SSC does not need to include this in the 'metadata' object of the data availability notification.
+    type: string
+    maxLength: 1024
+    archive_catalog:
+      datatype: nvarchar(1024)
+      destination: [CGIPlaceholder.filename]
+  file_date:
+    title: File Creation Date
+    description: |
+      The file creation date as taken from the 'fileCreationTimestamp' property of the
+      data availability notification (https://github.com/spacetelescope/roman-soc-ssc-common/blob/main/schemas/data_availability.json#L76)
+      SSC does not need to include this in the 'metadata' object of the data availability notification.
+    tag: tag:stsci.edu:asdf/time/time-1.*
+    archive_catalog:
+      datatype: datetime2
+      destination: [CGIPlaceholder.filedate]
+  origin:
+    title: Institution / Organization Name
+    description: |
+      Organization responsible for creating file ("IPAC/SSC"), the Science Support Center at Caltech/IPAC.
+      SSC does not need to include this in the 'metadata' object of the data availability notification.
+      This will be added automatically by SOC ingest manifest software
+    type: string
+    maxLength: 15
+    archive_catalog:
+      datatype: nvarchar(15)
+      destination: [CGIPlaceholder.origin]

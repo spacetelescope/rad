@@ -10,19 +10,19 @@ type: object
 properties:
   OPMODE:
     title: Op Mode
-    description: Placeholder
+    description: The OP mode.
     type: string
     maxLength: 32
     archive_catalog:
       datatype: nvarchar(32)
-      destination: [CGIPlaceholder.placeholder]
+      destination: [CGIPlaceholder.opmode]
   FSMPRFL:
     title: FSM profile
-    description: Placeholder
+    description: The FSM profile
     type: string
     maxLength: 32
     archive_catalog:
       datatype: nvarchar(32)
-      destination: [CGIPlaceholder.placeholder]
+      destination: [CGIPlaceholder.fsmprofile]
 
 required: [OPMODE, FSMPRFL]

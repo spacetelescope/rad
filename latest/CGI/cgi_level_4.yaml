@@ -10,4 +10,5 @@ type: object
 properties:
   meta:
     allOf:
+      - $ref: asdf://stsci.edu/datamodels/roman/schemas/CGI/keywords/ssc_basic-1.0.0
       - $ref: asdf://stsci.edu/datamodels/roman/schemas/CGI/keywords/cgi_common-1.0.0
