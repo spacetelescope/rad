@@ -54,4 +54,4 @@ properties:
       datatype: float
       destination: [CGIPlaceholder.visit_end_time_mjd]
 
-required: [EXPTIME, ARRTYPE, EXPSTART, EXPEND]
+required: [EXPTIME, ARRTYPE, EXPSTART, EXPEND, MJDSTART, MJDEND]

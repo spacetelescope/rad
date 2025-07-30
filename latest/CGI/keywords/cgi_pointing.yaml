@@ -48,4 +48,4 @@ properties:
       datatype: float
       destination: [CGIPlaceholder.equinox]
 
-required: [RA, DEC, TARGET]
+required: [RA, DEC, TARGET, REFFRAME, EQUINOX]

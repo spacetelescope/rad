@@ -10,7 +10,7 @@ type: object
 properties:
   SPAMNAME:
     title: Closest Shaped Pupil Alignment Mechanism named setting
-    description: Closest shaped pupil alginment mechanism setting
+    description: Closest shaped pupil alignment mechanism setting
     type: string
     maxLength: 128
     archive_catalog:
@@ -18,7 +18,7 @@ properties:
       destination: [CGIPlaceholder.spamname]
   FPAMNAME:
     title: Closest Focal Plane Alignment Mechanism named setting
-    description: Closest focal plan alginment mechanism setting
+    description: Closest focal plan alignment mechanism setting
     type: string
     maxLength: 128
     archive_catalog:
@@ -50,7 +50,7 @@ properties:
       destination: [CGIPlaceholder.cfamname]
   DPAMNAME:
     title: Closest Dispersion Polarizer Alignment Mechanism named setting
-    description: Closest dispersion polarizer alginment mechanism setting
+    description: Closest dispersion polarizer alignment mechanism setting
     type: string
     maxLength: 128
     archive_catalog:

@@ -47,7 +47,7 @@ properties:
     maxLength: 16
     archive_catalog:
       datatype: nvarchar(16)
-      destination: [CGIPlaceholder.productLevel]
+      destination: [CGIPlaceholder.product_level]
   DATASET: # SOC Proposed
     # NOTE: The dataset field should be the string that defines the fileset at MAST, typically the first part of the file name. Work with SOC to confirm if fileset should include the timestamp part of the name or not.
     title: Dataset ID
@@ -56,8 +56,8 @@ properties:
     maxLength: 16
     archive_catalog:
       datatype: nvarchar(16)
-      destination: [CGIPlaceholder.fileSetName]
-# The following fields are NOT required, but they would be nice to have as explicitly specified values to fill in for our cross-mission search. If not relevant or not provided these will just be null values at MAST.
+      destination: [CGIPlaceholder.file_set_name]
+  # The following fields are NOT required, but they would be nice to have as explicitly specified values to fill in for our cross-mission search. If not relevant or not provided these will just be null values at MAST.
   DETECTOR: # SOC Proposed
     title: Detector
     description: The CGI detector name
@@ -99,4 +99,17 @@ properties:
       datatype: nvarchar(16)
       destination: [CGIPlaceholder.calibration_software_version]
 
-required: [INSTRUME, PROGNUM, SEGMENT, VISNUM, DATALVL, DATASET]
+required:
+  [
+    INSTRUME,
+    PROGNUM,
+    SEGMENT,
+    VISNUM,
+    DATALVL,
+    DATASET,
+    DETECTOR,
+    APERTURE,
+    PINAME,
+    PROGTITLE,
+    CALVER,
+  ]
