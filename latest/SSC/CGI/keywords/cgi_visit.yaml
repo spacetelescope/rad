@@ -1,7 +1,7 @@
 %YAML 1.1
 ---
 $schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.0.0
-id: asdf://stsci.edu/datamodels/roman/schemas/CGI/keywords/cgi_visit-1.0.0
+id: asdf://stsci.edu/datamodels/roman/schemas/SSC/CGI/keywords/cgi_visit-1.0.0
 
 title: Visit Information
 extName: SSC
@@ -10,7 +10,7 @@ type: object
 properties:
   VISTYPE:
     title: Visit type
-    description: Placeholder
+    description: The visit type
     type: string
     maxLength: 30
     archive_catalog:
