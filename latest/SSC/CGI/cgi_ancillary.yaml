@@ -1,0 +1,14 @@
+%YAML 1.1
+---
+$schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.0.0
+id: asdf://stsci.edu/datamodels/roman/schemas/SSC/CGI/cgi_ancillary-1.0.0
+
+title: CGI Ancillary
+archive_meta: Placeholder CGI Ancillary
+
+type: object
+properties:
+  meta:
+    allOf:
+      - $ref: asdf://stsci.edu/datamodels/roman/schemas/SSC/ssc_basic-1.0.0
+      - $ref: asdf://stsci.edu/datamodels/roman/schemas/SSC/CGI/keywords/cgi_ancillary-1.0.0
