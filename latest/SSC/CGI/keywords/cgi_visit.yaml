@@ -15,6 +15,6 @@ properties:
     maxLength: 30
     archive_catalog:
       datatype: nvarchar(30)
-      destination: [CGIPlaceholder.placeholder]
+      destination: [CGIPlaceholder.vistype]
 
 required: [VISTYPE]

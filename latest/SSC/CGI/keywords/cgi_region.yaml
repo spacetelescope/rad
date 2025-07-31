@@ -15,9 +15,8 @@ properties:
     title: Spatial Footprint
     description: The spatial footprint, represented as a polygon
     type: string
-    maxLength: 30
     archive_catalog:
-      datatype: nvarchar(30)
+      datatype: nvarchar(max)
       destination: [CGIPlaceholder.s_region]
 
 required: [S_REGION]

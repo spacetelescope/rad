@@ -26,7 +26,7 @@ properties:
       datatype: nvarchar(1024)
       destination: [CGIPlaceholder.filename]
   file_date:
-    title: File Creation Date
+    title: File Creation Date (UTC)
     description: |
       The file creation date as taken from the 'fileCreationTimestamp' property of the
       data availability notification (https://github.com/spacetelescope/roman-soc-ssc-common/blob/main/schemas/data_availability.json#L76)

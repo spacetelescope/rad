@@ -53,9 +53,9 @@ properties:
     title: Dataset ID
     description: Dataset name
     type: string
-    maxLength: 16
+    maxLength: 100
     archive_catalog:
-      datatype: nvarchar(16)
+      datatype: nvarchar(100)
       destination: [CGIPlaceholder.file_set_name]
   # The following fields are NOT required, but they would be nice to have as explicitly specified values to fill in for our cross-mission search. If not relevant or not provided these will just be null values at MAST.
   DETECTOR: # SOC Proposed
