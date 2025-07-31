@@ -3,7 +3,7 @@
 $schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.0.0
 id: asdf://stsci.edu/datamodels/roman/schemas/SSC/CGI/cgi_level_3-1.0.0
 
-title: CGI Level 3
+title: Science CGI Level 3
 archive_meta: Science CGI Level 3
 
 type: object

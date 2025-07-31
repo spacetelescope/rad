@@ -26,14 +26,14 @@ properties:
   # For both the Roman CGI Search and the MAST Cross-Mission Search, sending these fields will permit time-range-based searches.
   EXPSTART: # SOC Proposed
     title: Start Time
-    description: Observation start time
+    description: Observation start time (UTC)
     tag: tag:stsci.edu:asdf/time/time-1.*
     archive_catalog:
       datatype: datetime2
       destination: [CGIPlaceholder.visit_start_time]
   EXPEND: # SOC Proposed
     title: End Time
-    description: Observation end time
+    description: Observation end time (UTC)
     tag: tag:stsci.edu:asdf/time/time-1.*
     archive_catalog:
       datatype: datetime2
