@@ -12,3 +12,8 @@ properties:
     allOf:
       - $ref: asdf://stsci.edu/datamodels/roman/schemas/SSC/ssc_basic-1.0.0
       - $ref: asdf://stsci.edu/datamodels/roman/schemas/SSC/CGI/keywords/cgi_common-1.0.0
+      - $ref: asdf://stsci.edu/datamodels/roman/schemas/SSC/CGI/keywords/cgi_exposure-1.0.0
+      - $ref: asdf://stsci.edu/datamodels/roman/schemas/SSC/CGI/keywords/cgi_mechanism_named_settings-1.0.0
+      - $ref: asdf://stsci.edu/datamodels/roman/schemas/SSC/CGI/keywords/cgi_pointing-1.0.0
+      - $ref: asdf://stsci.edu/datamodels/roman/schemas/SSC/CGI/keywords/cgi_region-1.0.0
+      - $ref: asdf://stsci.edu/datamodels/roman/schemas/SSC/CGI/keywords/cgi_states-1.0.0
