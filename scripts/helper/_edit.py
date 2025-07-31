@@ -280,7 +280,7 @@ class EditTab(TabPane):
         self._manager.reload()
         match event.state:
             case BumpScreen.Return.BUMP:
-                if not self._manager[self._selection].frozen:
+                if not (self._selection and self._manager[self._selection].frozen):
                     self.query_one("#bump_resource", Button).disabled = True
 
             case NewScreen.Return.CREATE:

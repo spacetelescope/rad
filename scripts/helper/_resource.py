@@ -466,9 +466,17 @@ class _Resource:
         if tagged:
             body += "\nflowStyle: block\n"
 
+        # Create the parent directory(s) if they don't exist
+        if not self.path.parent.exists():
+            self.path.parent.mkdir(parents=True, exist_ok=True)
+
         # Create the resource file at its path (in latest)
         with self.path.open("w") as f:
             f.write(body)
+
+        # Create the symlink parent directory(s) if they don't exist
+        if not self.symlink.parent.exists():
+            self.symlink.parent.mkdir(parents=True, exist_ok=True)
 
         # Create the symlink for the resource
         self.symlink.symlink_to(self.symlink_target)

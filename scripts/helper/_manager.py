@@ -166,7 +166,9 @@ class _Manager:
         Resource
             The datamodels manifest resource.
         """
-        manifests = [resource for resource in self._resources.values() if resource.is_manifest and "datamodels" in resource.uri]
+        manifests = [
+            resource for resource in self._resources.values() if resource.is_manifest and "manifests/datamodels" in resource.uri
+        ]
         if len(manifests) != 1:
             raise RuntimeError("Found more than one datamodels manifest resource.")
 
@@ -313,6 +315,25 @@ class _Manager:
 
                 # Update the resource in the manager
                 self._resources[new_resource.uri] = new_resource
+
+    def add_tag_entry(self, entry: str) -> None:
+        """
+        Add a tag entry to the resource's tag URI.
+        --> This is used to add a new tag entry to the resource's tag URI.
+
+        Parameters
+        ----------
+        entry : str
+            The tag entry to add to the resource's tag URI.
+        """
+        # Update the resource with the new tag entry
+        new_manifest = self.datamodels_manifest.add_tag_entry(entry)
+
+        if new_manifest.uri != self.datamodels_manifest.uri:
+            raise RuntimeError("This method should not be used to change the URI of a manifest.")
+
+        # Update the resource in the manager
+        self._resources[new_manifest.uri] = new_manifest
 
     def _resources_to_update(self, path: Path | str) -> Generator[Bump, None, None]:
         """
