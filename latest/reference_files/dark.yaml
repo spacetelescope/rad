@@ -37,16 +37,6 @@ properties:
         required: [exposure]
       - $ref: asdf://stsci.edu/datamodels/roman/schemas/reference_files/ref_exposure_type-1.2.0
       - $ref: asdf://stsci.edu/datamodels/roman/schemas/reference_files/ref_optical_element-1.2.0
-  data:
-    title: Dark Current Array
-    description: |
-      The dark current array represents the integrated number of counts due to
-      the accumulation of dark current electrons in the pixels.
-    tag: tag:stsci.edu:asdf/core/ndarray-1.*
-    datatype: float32
-    exact_datatype: true
-    ndim: 3
-    unit: DN
   dq:
     title: 2-D Data Quality Array
     description: |
@@ -78,4 +68,4 @@ properties:
     unit: DN / s
 required: [meta, dq, dark_slope, dark_slope_error]
 flowStyle: block
-propertyOrder: [meta, data, dq, dark_slope, dark_slope_error]
+propertyOrder: [meta, dq, dark_slope, dark_slope_error]
