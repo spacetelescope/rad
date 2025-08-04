@@ -15,7 +15,7 @@ properties:
     maxLength: 128
     archive_catalog:
       datatype: nvarchar(128)
-      destination: [CGIPlaceholder.spamname]
+      destination: [CGIExposure.spamname, CGIMosaic.spamname]
   FPAMNAME:
     title: Closest Focal Plane Alignment Mechanism named setting
     description: Closest focal plan alignment mechanism setting
@@ -23,7 +23,7 @@ properties:
     maxLength: 128
     archive_catalog:
       datatype: nvarchar(128)
-      destination: [CGIPlaceholder.fpamname]
+      destination: [CGIExposure.fpamname, CGIMosaic.fpamname]
   LSAMNAME:
     title: Closest Lyot Stop Alignment Mechanism named setting
     description: Closest Lyot stop alignment mechanism setting
@@ -31,7 +31,7 @@ properties:
     maxLength: 128
     archive_catalog:
       datatype: nvarchar(128)
-      destination: [CGIPlaceholder.lsamname]
+      destination: [CGIExposure.lsamname, CGIMosaic.lsamname]
   FSAMNAME:
     title: Closest Field Stop Alignment Mechanism named setting
     description: Closest field stop alignment mechanism setting
@@ -39,7 +39,7 @@ properties:
     maxLength: 128
     archive_catalog:
       datatype: nvarchar(128)
-      destination: [CGIPlaceholder.fsamname]
+      destination: [CGIExposure.fsamname, CGIMosaic.fsamname]
   CFAMNAME:
     title: Closest Color Filter Alignment Mechanism named setting
     description: Closest filter alignment mechanism setting
@@ -47,7 +47,7 @@ properties:
     maxLength: 128
     archive_catalog:
       datatype: nvarchar(128)
-      destination: [CGIPlaceholder.cfamname]
+      destination: [CGIExposure.cfamname, CGIMosaic.cfamname]
   DPAMNAME:
     title: Closest Dispersion Polarizer Alignment Mechanism named setting
     description: Closest dispersion polarizer alignment mechanism setting
@@ -55,6 +55,6 @@ properties:
     maxLength: 128
     archive_catalog:
       datatype: nvarchar(128)
-      destination: [CGIPlaceholder.dpamname]
+      destination: [CGIExposure.dpamname, CGIMosaic.dpamname]
 
 required: [SPAMNAME, FPAMNAME, LSAMNAME, FSAMNAME, CFAMNAME, DPAMNAME]

@@ -15,7 +15,7 @@ properties:
     maxLength: 32
     archive_catalog:
       datatype: nvarchar(32)
-      destination: [CGIPlaceholder.opmode]
+      destination: [CGIExposure.opmode, CGIMosaic.opmode]
   FSMPRFL:
     title: FSM profile
     description: The FSM profile
@@ -23,6 +23,6 @@ properties:
     maxLength: 32
     archive_catalog:
       datatype: nvarchar(32)
-      destination: [CGIPlaceholder.fsmprofile]
+      destination: [CGIExposure.fsmprofile, CGIMosaic.fsmprofile]
 
 required: [OPMODE, FSMPRFL]

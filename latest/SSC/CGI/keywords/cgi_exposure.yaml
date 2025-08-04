@@ -14,7 +14,7 @@ properties:
     type: number
     archive_catalog:
       datatype: float
-      destination: [CGIPlaceholder.exposure_time]
+      destination: [CGIExposure.exposure_time, CGIMosaic.exposure_time]
   ARRTYPE:
     title: Readout size
     description: Readout size
@@ -22,7 +22,7 @@ properties:
     maxLength: 16
     archive_catalog:
       datatype: nvarchar(16)
-      destination: [CGIPlaceholder.readout_size]
+      destination: [CGIExposure.readout_size, CGIMosaic.readout_size]
   # For both the Roman CGI Search and the MAST Cross-Mission Search, sending these fields will permit time-range-based searches.
   EXPSTART: # SOC Proposed
     title: Start Time
@@ -30,14 +30,14 @@ properties:
     tag: tag:stsci.edu:asdf/time/time-1.*
     archive_catalog:
       datatype: datetime2
-      destination: [CGIPlaceholder.visit_start_time]
+      destination: [CGIExposure.visit_start_time, CGIMosaic.visit_start_time]
   EXPEND: # SOC Proposed
     title: End Time
     description: Observation end time (UTC)
     tag: tag:stsci.edu:asdf/time/time-1.*
     archive_catalog:
       datatype: datetime2
-      destination: [CGIPlaceholder.visit_end_time]
+      destination: [CGIExposure.visit_end_time, CGIMosaic.visit_end_time]
   # NOTE: MAST uses MJD for start and end times in our cross-mission search. We can convert from datetime strings, but if they are included in the manifest separately it would eliminate the need to do the conversion on the MAST side.
   MJDSTART: # SOC Proposed
     title: Start Time MJD
@@ -45,13 +45,15 @@ properties:
     type: number
     archive_catalog:
       datatype: float
-      destination: [CGIPlaceholder.visit_start_time_mjd]
+      destination:
+        [CGIExposure.visit_start_time_mjd, CGIMosaic.visit_start_time_mjd]
   MJDEND: # SOC Proposed
     title: End Time MJD
     description: Observation end time in MJD
     type: number
     archive_catalog:
       datatype: float
-      destination: [CGIPlaceholder.visit_end_time_mjd]
+      destination:
+        [CGIExposure.visit_end_time_mjd, CGIMosaic.visit_end_time_mjd]
 
 required: [EXPTIME, ARRTYPE, EXPSTART, EXPEND, MJDSTART, MJDEND]

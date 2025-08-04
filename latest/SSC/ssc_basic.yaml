@@ -24,7 +24,8 @@ properties:
     maxLength: 1024
     archive_catalog:
       datatype: nvarchar(1024)
-      destination: [CGIPlaceholder.filename]
+      destination:
+        [CGIExposure.filename, CGIMosaic.filename, CGIAncillary.filename]
   file_date:
     title: File Creation Date (UTC)
     description: |
@@ -34,7 +35,8 @@ properties:
     tag: tag:stsci.edu:asdf/time/time-1.*
     archive_catalog:
       datatype: datetime2
-      destination: [CGIPlaceholder.filedate]
+      destination:
+        [CGIExposure.filedate, CGIMosaic.filedate, CGIAncillary.filedate]
   origin:
     title: Institution / Organization Name
     description: |
@@ -45,6 +47,6 @@ properties:
     maxLength: 15
     archive_catalog:
       datatype: nvarchar(15)
-      destination: [CGIPlaceholder.origin]
+      destination: [CGIExposure.origin, CGIMosaic.origin, CGIAncillary.origin]
 
 required: [filename, file_date, origin]
