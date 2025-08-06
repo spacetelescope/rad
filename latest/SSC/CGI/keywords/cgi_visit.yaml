@@ -15,6 +15,6 @@ properties:
     maxLength: 30
     archive_catalog:
       datatype: nvarchar(30)
-      destination: [CGIPlaceholder.vistype]
+      destination: [CGIExposure.vistype]
 
 required: [VISTYPE]

@@ -15,7 +15,7 @@ properties:
     maxLength: 30
     archive_catalog:
       datatype: nvarchar(30)
-      destination: [CGIPlaceholder.ancillary_source]
+      destination: [CGIAncillary.ancillary_source]
 
   PKTUTC:
     title: Packet timestamp
@@ -23,7 +23,7 @@ properties:
     tag: tag:stsci.edu:asdf/time/time-1.*
     archive_catalog:
       datatype: datetime2
-      destination: [CGIPlaceholder.packet_timestamp]
+      destination: [CGIAncillary.packet_timestamp]
 
   INSTRUME:
     title: Instrument
@@ -32,6 +32,6 @@ properties:
     maxLength: 8
     archive_catalog:
       datatype: nvarchar(8)
-      destination: [CGIPlaceholder.instrument_name]
+      destination: [CGIAncillary.instrument_name]
 
 required: [SOURCE, PKTUTC, INSTRUME]

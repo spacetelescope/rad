@@ -17,6 +17,6 @@ properties:
     type: string
     archive_catalog:
       datatype: nvarchar(max)
-      destination: [CGIPlaceholder.s_region]
+      destination: [CGIExposure.s_region, CGIMosaic.s_region]
 
 required: [S_REGION]

@@ -14,14 +14,14 @@ properties:
     type: number
     archive_catalog:
       datatype: float
-      destination: [CGIPlaceholder.ra_ref]
+      destination: [CGIExposure.ra_ref, CGIMosaic.ra_ref]
   DEC:
     title: Dec (J2000)
     description: Declination (J2000), from -90 to +90, in degrees
     type: number
     archive_catalog:
       datatype: float
-      destination: [CGIPlaceholder.dec_ref]
+      destination: [CGIExposure.dec_ref, CGIMosaic.dec_ref]
   TARGET:
     title: Target Name
     description: Name of the source pointed at by the telescope
@@ -29,7 +29,7 @@ properties:
     maxLength: 256
     archive_catalog:
       datatype: nvarchar(256)
-      destination: [CGIPlaceholder.target_name]
+      destination: [CGIExposure.target_name, CGIMosaic.target_name]
   REFFRAME: # SOC Proposed
     # This is optional, if not provided MAST will just assume ICRS, but best to explicitly provide.
     title: Reference Frame
@@ -38,7 +38,7 @@ properties:
     maxLength: 16
     archive_catalog:
       datatype: nvarchar(16)
-      destination: [CGIPlaceholder.reference_frame]
+      destination: [CGIExposure.reference_frame, CGIMosaic.reference_frame]
   EQUINOX: # SOC Proposed
     # This is optional, if not provided MAST will just assume 2000.0, but best to explicitly provide.
     title: Equinox
@@ -46,6 +46,6 @@ properties:
     type: number
     archive_catalog:
       datatype: float
-      destination: [CGIPlaceholder.equinox]
+      destination: [CGIExposure.equinox, CGIMosaic.equinox]
 
 required: [RA, DEC, TARGET, REFFRAME, EQUINOX]
