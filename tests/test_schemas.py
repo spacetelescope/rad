@@ -27,9 +27,9 @@ ARRAY_TAG_XFAILS = (
     "asdf://stsci.edu/datamodels/roman/schemas/l1_detector_guidewindow-1.1.0",
 )
 
-REQUIRED_SKIPS = ("asdf://stsci.edu/datamodels/roman/schemas/wfi_mosaic-1.3.0",)
+REQUIRED_SKIPS = ("asdf://stsci.edu/datamodels/roman/schemas/wfi_mosaic-1.4.0",)
 
-NESTED_REQUIRED_SKIPS = ("asdf://stsci.edu/datamodels/roman/schemas/l3_common-1.0.0",)
+NESTED_REQUIRED_SKIPS = ("asdf://stsci.edu/datamodels/roman/schemas/l3_common-1.1.0",)
 
 
 class TestSchemaContent:
@@ -469,11 +469,15 @@ class TestReferenceFileSchemas:
 
 
 class TestPatternElementConsistency:
-    def test_phot_table_keys_have_optical_element_entry(self, phot_table_key_pattern, optical_element):
+    def test_phot_table_keys_have_optical_element_entry(self, phot_table_key_patterns, optical_element):
         """
         Confirm that the optical_element filter in wfi_img_photom.yaml matches optical_element
         """
-        assert phot_table_key_pattern.search(optical_element), f"phot_table_key pattern is missing {optical_element}."
+        for pattern in phot_table_key_patterns:
+            if pattern.search(optical_element):
+                return
+
+        raise AssertionError(f"phot_table_key pattern is missing {optical_element}.")
 
     def test_optical_elements_have_phot_table_key(self, phot_table_key, optical_elements):
         """
