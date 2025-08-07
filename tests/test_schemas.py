@@ -362,6 +362,18 @@ class TestSchemaContent:
 
         asdf.treeutil.walk(schema, callback)
 
+    def test_enum_has_type(self, schema):
+        """
+        Check that if a schema has an enum, then it has a type
+        """
+
+        def callback(node):
+            """Callback to check for enum type"""
+            if isinstance(node, Mapping) and "enum" in node:
+                assert "type" in node, "Schemas with an enum must have a type defined"
+
+        asdf.treeutil.walk(schema, callback)
+
 
 class TestTaggedSchemaContent:
     """
