@@ -1,0 +1,65 @@
+%YAML 1.1
+---
+$schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.0.0
+id: asdf://stsci.edu/datamodels/roman/schemas/SSC/GDPS/keywords/wavelength-1.0.0
+
+title: GDPS wavelength keywords
+extName: SSC
+type: object
+properties:
+  wl_contamination_range:
+    title: Wl Contamination Range
+    description: Placeholder.  Example value '[14000.0, 16000.0]'
+    type: string
+    maxLength: 128
+    archive_catalog:
+      datatype: nvarchar(128)
+      destination: [Placeholder.wl_contamination_range]
+  wl_reference:
+    title: Wl Reference
+    description: Placeholder.  Example value '1.55'
+    type: number
+    archive_catalog:
+      datatype: float
+      destination: [Placeholder.wl_reference]
+  wl_snr_global_range:
+    title: Wl Snr Global Range
+    description: Placeholder.  Example value '[0.0]'
+    type: string
+    maxLength: 128
+    archive_catalog:
+      datatype: nvarchar(128)
+      destination: [Placeholder.wl_snr_global_range]
+  # NOTE: I don't think people would be searching based on the unit keywords, would this not be the same for all SSC spectral products?
+  unit_flux:
+    title: Unit of flux
+    description: Placeholder.  Example value 's'
+    type: string
+    maxLength: 16
+    archive_catalog:
+      datatype: nvarchar(16)
+      destination: [Placeholder.unit_flux]
+  unit_wl:
+    title: Unit of wavelength
+    description: Placeholder.  Example value 'nm'
+    type: string
+    maxLength: 16
+    archive_catalog:
+      datatype: nvarchar(16)
+      destination: [Placeholder.unit_wl]
+  phot_filter_cut_off:
+    title: Phot Filter Cut Off
+    description: Placeholder.  Example value 'F158'
+    type: string
+    maxLength: 128
+    archive_catalog:
+      datatype: nvarchar(128)
+      destination: [Placeholder.phot_filter_cut_off]
+required:
+- wl_contamination_range
+- wl_reference
+- wl_snr_global_range
+- phot_filter_cut_off
+- unit_flux
+- unit_wl
+- phot_filter_cut_off

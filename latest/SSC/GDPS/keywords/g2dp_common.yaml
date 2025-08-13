@@ -1,0 +1,29 @@
+%YAML 1.1
+---
+$schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.0.0
+id: asdf://stsci.edu/datamodels/roman/schemas/SSC/GDPS/keywords/g2dp_common-1.0.0
+
+title: G2DP common keywords
+extName: SSC
+type: object
+properties:
+  version_g2dp_software:
+    title: G2DP Software Version
+    description: Placeholder.  Example value 'dev'
+    type: string
+    maxLength: 128
+    archive_catalog:
+      datatype: nvarchar(128)
+      destination: [Placeholder.version_g2dp_software]
+  id_g2dp_run:
+    title: G2DP Run ID
+    description: Placeholder.  Example value 'placeholder'
+    type: string
+    maxLength: 128
+    archive_catalog:
+      datatype: nvarchar(128)
+      destination: [Placeholder.id_g2dp_run]
+required:
+- version_g2dp_software
+- id_g2dp_run
+
