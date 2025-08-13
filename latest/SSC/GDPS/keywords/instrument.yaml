@@ -18,4 +18,4 @@ properties:
       datatype: nvarchar(20)
       destination: [Placeholder.optical_element]
 required:
-- optical_element
+  - optical_element

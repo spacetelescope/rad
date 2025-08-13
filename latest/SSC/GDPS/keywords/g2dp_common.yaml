@@ -24,6 +24,5 @@ properties:
       datatype: nvarchar(128)
       destination: [Placeholder.id_g2dp_run]
 required:
-- version_g2dp_software
-- id_g2dp_run
-
+  - version_g2dp_software
+  - id_g2dp_run

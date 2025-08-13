@@ -16,4 +16,4 @@ properties:
       datatype: nvarchar(128)
       destination: [Placeholder.id_catalog]
 required:
-- id_catalog
+  - id_catalog

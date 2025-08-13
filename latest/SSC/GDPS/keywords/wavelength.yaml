@@ -56,10 +56,10 @@ properties:
       datatype: nvarchar(128)
       destination: [Placeholder.phot_filter_cut_off]
 required:
-- wl_contamination_range
-- wl_reference
-- wl_snr_global_range
-- phot_filter_cut_off
-- unit_flux
-- unit_wl
-- phot_filter_cut_off
+  - wl_contamination_range
+  - wl_reference
+  - wl_snr_global_range
+  - phot_filter_cut_off
+  - unit_flux
+  - unit_wl
+  - phot_filter_cut_off

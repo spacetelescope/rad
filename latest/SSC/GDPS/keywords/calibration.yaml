@@ -16,5 +16,4 @@ properties:
       datatype: nvarchar(1024)
       destination: [Placeholder.version_cdp_cal_file]
 required:
-- version_cdp_cal_file
-
+  - version_cdp_cal_file

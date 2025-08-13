@@ -59,9 +59,9 @@ properties:
       datatype: nvarchar(8)
       destination: [Placeholder.program_complete]
 required:
-- ID_OBS
-- FILESET_ID
-- PROGNUM
-- SEGMENT
-- VISNUM
-- PROGRAM_COMPLETE
+  - ID_OBS
+  - FILESET_ID
+  - PROGNUM
+  - SEGMENT
+  - VISNUM
+  - PROGRAM_COMPLETE
