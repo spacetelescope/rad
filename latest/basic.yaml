@@ -17,6 +17,7 @@ allOf:
           file.
         type: string
         maxLength: 120
+        minimal_default_constructor: "prd_version"
         sdf:
           special_processing: VALUE_REQUIRED
           source:
@@ -41,6 +42,7 @@ allOf:
           this file.
         type: string
         maxLength: 120
+        minimal_default_constructor: "sdf_software_version"
         sdf:
           special_processing: VALUE_REQUIRED
           source:

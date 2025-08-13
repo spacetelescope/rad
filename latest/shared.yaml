@@ -14,6 +14,7 @@ properties:
       Name of the calibration software package used in processing this file.
     type: string
     maxLength: 120
+    minimal_default_constructor: "calibration_software_name"
     sdf:
       special_processing: VALUE_REQUIRED
       source:
@@ -79,6 +80,7 @@ properties:
     description: >
       The date and time this file was created.
     tag: tag:stsci.edu:asdf/time/time-1.*
+    minimal_default_constructor: "file_date"
     sdf:
       special_processing: VALUE_REQUIRED
       source:
@@ -125,6 +127,7 @@ properties:
     type: string
     maxLength: 15
     enum: ["STSCI", "STSCI/SOC", "IPAC/SSC"]
+    minimal_default_constructor: "origin"
     sdf:
       special_processing: VALUE_REQUIRED
       source:
@@ -174,6 +177,7 @@ properties:
     type: string
     maxLength: 5
     enum: [ROMAN]
+    minimal_default_constructor: "telescope"
     archive_catalog:
       datatype: nvarchar(5)
       destination:

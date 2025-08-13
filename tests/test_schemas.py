@@ -6,9 +6,13 @@ from collections.abc import Mapping
 from re import match
 
 import asdf
+import asdf.schema
 import asdf.treeutil
+import asdf.yamlutil
 import pytest
 from crds.config import is_crds_name
+
+from rad import constructors
 
 METADATA_FORCING_REQUIRED = ("archive_catalog", "sdf")
 
@@ -295,6 +299,29 @@ class TestSchemaContent:
         -> Smokes out when VARCHAR_XFAILS is not relevant anymore.
         """
         assert uri in latest_uris, f"{uri} is not in the list of schemas to be tested."
+
+    def test_default_minimal_constructor(self, schema, tmp_path):
+        """
+        Test that the minimal_default_constructor has a value defined in rad.constructors
+        -> Test that the value of that constructor satisfies the schema
+        """
+
+        def callback(node):
+            """
+            Callback to check for minimal_default_constructor
+            """
+            if isinstance(node, Mapping) and "minimal_default_constructor" in node:
+                constructor_name = node["minimal_default_constructor"]
+                assert hasattr(constructors, constructor_name), f"Constructor {constructor_name} not found in rad.constructors"
+                constructor = getattr(constructors, constructor_name)
+                assert callable(constructor), f"{constructor_name} is not callable"
+
+                # Evaluate the constructor and then validate the output as a tagged tree
+                # against the node (schema)
+                tagged_tree = asdf.yamlutil.custom_tree_to_tagged_tree(constructor(defaults=None), asdf.AsdfFile())
+                asdf.schema.validate(tagged_tree, schema=node)
+
+        asdf.treeutil.walk(schema, callback)
 
 
 class TestTaggedSchemaContent:
