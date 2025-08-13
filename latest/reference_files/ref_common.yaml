@@ -39,10 +39,8 @@ properties:
     description: |
       The telescope data used to select reference files, e.g. ROMAN for the
       Nancy Grace Roman Space Telescope.
-    anyOf:
-      - tag: asdf://stsci.edu/datamodels/roman/tags/telescope-1.0.0
-      - type: string
-        enum: [ROMAN]
+    type: string
+    enum: [ROMAN]
   origin:
     title: Organization
     description: |
