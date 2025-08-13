@@ -140,8 +140,8 @@ properties:
     type: string
     maxLength: 4
     enum:
-    - SCI
-    - ENG
+      - SCI
+      - ENG
     archive_catalog:
       datatype: nvarchar(4)
       destination: [CGIExposure.readout_size, CGIMosaic.readout_size]
@@ -158,22 +158,22 @@ properties:
     type: string
     maxLength: 16
     enum:
-    - NONE_DETON_0
-    - ACQUIRE_SCIENCE
-    - LOWFSC_STRSH
-    - TRAP_PUMPING
-    - ENGINEERING_EM
-    - ENGINEERING_CONV
-    - SPARE_1
-    - SPARE_2
-    - SPARE_3
-    - SPARE_4
-    - SPARE_5
-    - SPARE_6
-    - SPARE_7
-    - SPARE_8
-    - SPARE_9
-    - NONE_DETON_15
+      - NONE_DETON_0
+      - ACQUIRE_SCIENCE
+      - LOWFSC_STRSH
+      - TRAP_PUMPING
+      - ENGINEERING_EM
+      - ENGINEERING_CONV
+      - SPARE_1
+      - SPARE_2
+      - SPARE_3
+      - SPARE_4
+      - SPARE_5
+      - SPARE_6
+      - SPARE_7
+      - SPARE_8
+      - SPARE_9
+      - NONE_DETON_15
     archive_catalog:
       datatype: nvarchar(16)
       destination: [CGIExposure.opmode]
@@ -210,30 +210,31 @@ properties:
       destination:
         [CGIExposure.visit_end_time_mjd, CGIMosaic.visit_end_time_mjd]
 
-required: [
-  EXPTIME,
-  ARRTYPE,
-  HVCBIAS,
-  EMGAIN_C,
-  UNITYG,
-  EMGAINA1,
-  EMGAINA2,
-  EMGAINA3,
-  EMGAINA4,
-  EMGAINA5,
-  GAINTCAL,
-  EMGAIN_A,
-  KGAINPAR,
-  CYCLES,
-  LASTEXP,
-  BLNKTIME,
-  BLNKCYC,
-  EXPCYC,
-  ISPC,
-  FTIMEUTC,
-  OPMODE,
-  EXPSTART,
-  EXPEND,
-  MJDSTART,
-  MJDEND
-]
+required:
+  [
+    EXPTIME,
+    ARRTYPE,
+    HVCBIAS,
+    EMGAIN_C,
+    UNITYG,
+    EMGAINA1,
+    EMGAINA2,
+    EMGAINA3,
+    EMGAINA4,
+    EMGAINA5,
+    GAINTCAL,
+    EMGAIN_A,
+    KGAINPAR,
+    CYCLES,
+    LASTEXP,
+    BLNKTIME,
+    BLNKCYC,
+    EXPCYC,
+    ISPC,
+    FTIMEUTC,
+    OPMODE,
+    EXPSTART,
+    EXPEND,
+    MJDSTART,
+    MJDEND,
+  ]
