@@ -8,13 +8,83 @@ extName: SSC
 
 type: object
 properties:
+  VISITID:
+    title: Programmatic ID for pointing
+    description: Programmatic ID for pointing
+    type: string
+    maxLength: 16
+    archive_catalog:
+      datatype: nvarchar(16)
+      destination: [CGIExposure.visitid]
+  SEGMENT:
+    title: Segment number portion of visit ID
+    description: Segment number portion of visit ID
+    type: string
+    maxLength: 3
+    archive_catalog:
+      datatype: nvarchar(3)
+      destination: [CGIExposure.segment]
+  OBSNUM:
+    title: Observation number portion of visit ID
+    description: Observation number portion of visit ID
+    type: string
+    maxLength: 3
+    archive_catalog:
+      datatype: nvarchar(3)
+      destination: [CGIExposure.obsnum]
+  VISNUM:
+    title: Visit number portion of visit ID
+    description: Visit number portion of visit ID
+    type: string
+    maxLength: 3
+    archive_catalog:
+      datatype: nvarchar(3)
+      destination: [CGIExposure.visnum]
   VISTYPE:
     title: Visit type
     description: The visit type
     type: string
-    maxLength: 30
+    maxLength: 23
+    enum:
+    - CGIVST_TDD_SETUP_HOWFSC
+    - CGIVST_TDD_OBS
+    - CGIVST_TDD_OBS_HOWFSC
+    - CGIVST_TDD_CLEANUP
+    - CGIVST_CAL_DRK_SETUP
+    - CGIVST_CAL_DARK
+    - CGIVST_CAL_DARK_CLEANUP
+    - CGIVST_CAL_BORESIGHT
+    - CGIVST_CAL_PUPIL_IMAGING
+    - CGIVST_CAL_LOCAM_GAIN
+    - CGIVST_CAL_TGTREF_PHOT
+    - CGIVST_CAL_ABSFLUX_FAINT
+    - CGIVST_CAL_ABSFLUX_BRIGHT
+    - CGIVST_CAL_CORETHRPT
+    - CGIVST_CAL_FLAT
+    - CGIVST_ENG_OTA_WVFRNT
+    - CGIVST_ENG_PAM_RECAL
+    - CGIVST_ENG_PFAC
+    - CGIVST_ENG_PUPILCAL
+    - CGIVST_ENG_IMAGECAL
+    - CGIVST_UTI_ADVANCE_SETUP
+    - CGIVST_UTI_POINT_REFINE
+    - CGIVST_UTI_GENERIC_STAR
     archive_catalog:
-      datatype: nvarchar(30)
+      datatype: nvarchar(23)
       destination: [CGIExposure.vistype]
+  PSFREF:
+    title: This is designated a PSF reference observation
+    description: This is designated a PSF reference observation
+    type: boolean
+    archive_catalog:
+      datatype: nchar(1)
+      destination: [CGIExposure.psfref]
 
-required: [VISTYPE]
+required: [
+  VISITID,
+  SEGMENT,
+  OBSNUM,
+  VISNUM,
+  VISTYPE,
+  PSFREF
+]

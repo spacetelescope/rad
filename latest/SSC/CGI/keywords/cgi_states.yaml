@@ -20,9 +20,111 @@ properties:
     title: FSM profile
     description: The FSM profile
     type: string
+    maxLength: 20
+    enum:
+    - NFOV
+    - EFOV
+    - SPEC660
+    - SPEC730
+    - EXCAM
+    - SPARE
+    - FSM_PROFILE_UNKNOWN
+    archive_catalog:
+      datatype: nvarchar(20)
+      destination: [CGIExposure.fsmprofile, CGIMosaic.fsmprofile]
+  OPGAIN:
+    title: The commanded gain (can be designated "Auto" to be calculated after HOWFSC)
+    description: The commanded gain (can be designated "Auto" to be calculated after
+      HOWFSC)
+    type: string
     maxLength: 32
     archive_catalog:
       datatype: nvarchar(32)
-      destination: [CGIExposure.fsmprofile, CGIMosaic.fsmprofile]
+      destination: [CGIExposure.opgain, CGIMosaic.opgain]
+  FRAMET:
+    title: Commanded time for EXCAM frames
+    description: Commanded time for EXCAM frames (s)
+    type: number
+    archive_catalog:
+      datatype: float
+      destination: [CGIExposure.framet, CGIMosaic.framet]
+  SATSPOTS:
+    title: Satellite spots are commanded
+    description: Satellite spots are commanded
+    type: boolean
+    archive_catalog:
+      datatype: nchar(1)
+      destination: [CGIExposure.satspots, CGIMosaic.satspots]
+  ISHOWFSC:
+    title: Collected as a part of HOWFSC
+    description: Collected as a part of HOWFSC
+    type: boolean
+    archive_catalog:
+      datatype: nchar(1)
+      destination: [CGIExposure.ishowfsc, CGIMosaic.ishowfsc]
+  HOWFSLNK:
+    title: Linked to HOWFSC (e.g., TDD observations)
+    description: Linked to HOWFSC (e.g., TDD observations)
+    type: boolean
+    archive_catalog:
+      datatype: nchar(1)
+      destination: [CGIExposure.howfslnk, CGIMosaic.howfslnk]
+  FCMLOOP:
+    title: FCMLOOP
+    description: FCMLOOP
+    type: string
+    maxLength: 8
+    enum:
+    - OPEN
+    - CLOSED
+    archive_catalog:
+      datatype: nvarchar(8)
+      destination: [CGIExposure.fcmloop, CGIMosaic.fcmloop]
+  FMLOS:
+    title: FMLOS
+    description: FMLOS
+    type: string
+    maxLength: 8
+    enum:
+    - OPEN
+    - CLOSED
+    - UNKNOWN
+    archive_catalog:
+      datatype: nvarchar(8)
+      destination: [CGIExposure.fmlos, CGIMosaic.fmlos]
+  FSMRASTER:
+    title: FSM Raster 0 (False), 1 (True), 2 (Unknown)
+    description: FSM Raster 0 (False), 1 (True), 2 (Unknown)
+    type: string
+    maxLength: 2
+    enum:
+    - '0'
+    - '1'
+    - '2'
+    archive_catalog:
+      datatype: nvarchar(2)
+      destination: [CGIExposure.fsmraster, CGIMosaic.fsmraster]
+  DMZLOOP:
+    title: Control state of DM zernike loop
+    description: Control state of DM zernike loop
+    type: string
+    maxLength: 128
+    enum:
+    - TODO
+    archive_catalog:
+      datatype: nvarchar(128)
+      destination: [CGIExposure.dmzloop, CGIMosaic.dmzloop]
 
-required: [OPMODE, FSMPRFL]
+required: [
+  OPMODE,
+  FSMPRFL,
+  OPGAIN,
+  FRAMET,
+  SATSPOTS,
+  ISHOWFSC,
+  HOWFSLNK,
+  FCMLOOP,
+  FMLOS,
+  FSMRASTER,
+  DMZLOOP
+]
