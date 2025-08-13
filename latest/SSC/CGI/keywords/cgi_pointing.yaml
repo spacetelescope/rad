@@ -22,6 +22,20 @@ properties:
     archive_catalog:
       datatype: float
       destination: [CGIExposure.dec_ref, CGIMosaic.dec_ref]
+  RAPM:
+    title: RA proper motion
+    description: RA proper motion
+    type: number
+    archive_catalog:
+      datatype: float
+      destination: [CGIExposure.rapm, CGIMosaic.rapm]
+  DECPM:
+    title: Dec proper motion
+    description: Dec proper motion
+    type: number
+    archive_catalog:
+      datatype: float
+      destination: [CGIExposure.decpm, CGIMosaic.decpm]
   TARGET:
     title: Target Name
     description: Name of the source pointed at by the telescope
@@ -39,13 +53,20 @@ properties:
     archive_catalog:
       datatype: nvarchar(16)
       destination: [CGIExposure.reference_frame, CGIMosaic.reference_frame]
-  EQUINOX: # SOC Proposed
-    # This is optional, if not provided MAST will just assume 2000.0, but best to explicitly provide.
+  EQUINOX:
     title: Equinox
-    description: The equinox of the coordinates
+    description: The equinox of the coordinates J2000 (yr)
     type: number
     archive_catalog:
       datatype: float
       destination: [CGIExposure.equinox, CGIMosaic.equinox]
 
-required: [RA, DEC, TARGET, REFFRAME, EQUINOX]
+required: [
+  RA,
+  DEC,
+  RAPM,
+  DECPM,
+  TARGET,
+  REFFRAME,
+  EQUINOX
+]

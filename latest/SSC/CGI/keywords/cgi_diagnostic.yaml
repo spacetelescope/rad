@@ -1,0 +1,365 @@
+%YAML 1.1
+---
+$schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.0.0
+id: asdf://stsci.edu/datamodels/roman/schemas/SSC/CGI/keywords/cgi_diagnostic-1.0.0
+
+title: Diagnostic Information
+extName: SSC
+
+type: object
+properties:
+  EXCAMT:
+    title: EXCAM temperature
+    description: EXCAM temperature (degC)
+    type: number
+    archive_catalog:
+      datatype: float
+      destination: [CGIExposure.excamt]
+  LOCAMT:
+    title: LOCAM temperature
+    description: LOCAM temperature (degC)
+    type: number
+    archive_catalog:
+      datatype: float
+      destination: [CGIExposure.locamt]
+  OVEREXP:
+    title: Over-illumination flag
+    description: Over-illumination flag
+    type: boolean
+    archive_catalog:
+      datatype: nchar(1)
+      destination: [CGIExposure.overexp]
+  NOVEREXP:
+    title: Number of pixels exposed /100
+    description: Number of pixels exposed /100 (pixels/100)
+    type: number
+    archive_catalog:
+      datatype: float
+      destination: [CGIExposure.noverexp]
+  PROXET:
+    title: EXCAM ProxE heater
+    description: EXCAM ProxE heater (degC)
+    type: number
+    archive_catalog:
+      datatype: float
+      destination: [CGIExposure.proxet]
+  FSMSG1:
+    title: Fast Steering Mirror average voltage SG1
+    description: Fast Steering Mirror average voltage SG1 (V)
+    type: number
+    archive_catalog:
+      datatype: float
+      destination: [CGIExposure.fsmsg1]
+  FSMSG2:
+    title: Fast Steering Mirror average voltage SG2
+    description: Fast Steering Mirror average voltage SG2 (V)
+    type: number
+    archive_catalog:
+      datatype: float
+      destination: [CGIExposure.fsmsg2]
+  FSMSG3:
+    title: Fast Steering Mirror average voltage SG3
+    description: Fast Steering Mirror average voltage SG3 (V)
+    type: number
+    archive_catalog:
+      datatype: float
+      destination: [CGIExposure.fsmsg3]
+  FSMX:
+    title: Fast Steering mirror average X
+    description: Fast Steering mirror average X (mas)
+    type: number
+    archive_catalog:
+      datatype: float
+      destination: [CGIExposure.fsmx]
+  FSMY:
+    title: Fast Steering mirror average Y
+    description: Fast Steering mirror average Y (mas)
+    type: number
+    archive_catalog:
+      datatype: float
+      destination: [CGIExposure.fsmy]
+  EACQ_ROW:
+    title: Desired Pixel row for acquisition
+    description: Desired Pixel row for acquisition (pixel)
+    type: number
+    archive_catalog:
+      datatype: float
+      destination: [CGIExposure.eacq_row]
+  EACQ_COL:
+    title: Desired Pixel col for acquisition
+    description: Desired Pixel col for acquisition (pixel)
+    type: number
+    archive_catalog:
+      datatype: float
+      destination: [CGIExposure.eacq_col]
+  SB_FP_DX:
+    title: X pix offset from EXCAM center, FPAM alignment
+    description: X pix offset from EXCAM center, FPAM alignment (pixel)
+    type: number
+    archive_catalog:
+      datatype: float
+      destination: [CGIExposure.sb_fp_dx]
+  SB_FP_DY:
+    title: Y pix offset from EXCAM center, FPAM alignment
+    description: Y pix offset from EXCAM center, FPAM alignment (pixel)
+    type: number
+    archive_catalog:
+      datatype: float
+      destination: [CGIExposure.sb_fp_dy]
+  SB_FS_DX:
+    title: X pix offset from EXCAM center, FSAM alignment
+    description: X pix offset from EXCAM center, FSAM alignment (pixel)
+    type: number
+    archive_catalog:
+      datatype: float
+      destination: [CGIExposure.sb_fs_dx]
+  SB_FS_DY:
+    title: Y pix offset from EXCAM center, FSAM alignment
+    description: Y pix offset from EXCAM center, FSAM alignment (pixel)
+    type: number
+    archive_catalog:
+      datatype: float
+      destination: [CGIExposure.sb_fs_dy]
+  1SVALID:
+    title: 1s calculated values validity flag
+    description: 1s calculated values validity flag
+    type: boolean
+    archive_catalog:
+      datatype: nchar(1)
+      destination: [CGIExposure.1svalid]
+  Z2AVG:
+    title: Average Z2 (tip) from previous second
+    description: Average Z2 (tip) from previous second (nm)
+    type: number
+    archive_catalog:
+      datatype: float
+      destination: [CGIExposure.z2avg]
+  Z2RES:
+    title: Average Z2 (tip) residual  from previous second
+    description: Average Z2 (tip) residual  from previous second (nm)
+    type: number
+    archive_catalog:
+      datatype: float
+      destination: [CGIExposure.z2res]
+  Z2VAR:
+    title: Variance  Z2 (tip) from previous second
+    description: Variance  Z2 (tip) from previous second (nm^2)
+    type: number
+    archive_catalog:
+      datatype: float
+      destination: [CGIExposure.z2var]
+  Z3AVG:
+    title: Average Z3  (tilt) from previous second
+    description: Average Z3  (tilt) from previous second (nm)
+    type: number
+    archive_catalog:
+      datatype: float
+      destination: [CGIExposure.z3avg]
+  Z3RES:
+    title: Average Z3 (tilt) residual  from previous second
+    description: Average Z3 (tilt) residual  from previous second (nm)
+    type: number
+    archive_catalog:
+      datatype: float
+      destination: [CGIExposure.z3res]
+  Z3VAR:
+    title: Variance  Z3 (tilt) from previous second
+    description: Variance  Z3 (tilt) from previous second (nm^2)
+    type: number
+    archive_catalog:
+      datatype: float
+      destination: [CGIExposure.z3var]
+  10SVALID:
+    title: 10s calculated values validity flag
+    description: 10s calculated values validity flag
+    type: boolean
+    archive_catalog:
+      datatype: nchar(1)
+      destination: [CGIExposure.10svalid]
+  Z4AVG:
+    title: Z4 (focus) coeff for 10000 frames
+    description: Z4 (focus) coeff for 10000 frames (nm)
+    type: number
+    archive_catalog:
+      datatype: float
+      destination: [CGIExposure.z4avg]
+  Z4RES:
+    title: Z4 (focus) coeff residual  for 10000 frames
+    description: Z4 (focus) coeff residual  for 10000 frames (nm)
+    type: number
+    archive_catalog:
+      datatype: float
+      destination: [CGIExposure.z4res]
+  Z5AVG:
+    title: Z5 (astigmatism) coeff for 10000 frames
+    description: Z5 (astigmatism) coeff for 10000 frames (nm)
+    type: number
+    archive_catalog:
+      datatype: float
+      destination: [CGIExposure.z5avg]
+  Z5RES:
+    title: Z5 (astigmatism) coeff residual  for 10000 frames
+    description: Z5 (astigmatism) coeff residual  for 10000 frames (nm)
+    type: number
+    archive_catalog:
+      datatype: float
+      destination: [CGIExposure.z5res]
+  Z6AVG:
+    title: Z6 (astigmatism) coeff for 10000 frames
+    description: Z6 (astigmatism) coeff for 10000 frames (nm)
+    type: number
+    archive_catalog:
+      datatype: float
+      destination: [CGIExposure.z6avg]
+  Z6ARES:
+    title: Z6 (astigmatism) coeff residual  for 10000 frames
+    description: Z6 (astigmatism) coeff residual  for 10000 frames (nm)
+    type: number
+    archive_catalog:
+      datatype: float
+      destination: [CGIExposure.z6ares]
+  Z7AVG:
+    title: Z7 (coma) coeff for 10000 frames
+    description: Z7 (coma) coeff for 10000 frames (nm)
+    type: number
+    archive_catalog:
+      datatype: float
+      destination: [CGIExposure.z7avg]
+  Z7RES:
+    title: Z7 (coma) coeff residual  for 10000 frames
+    description: Z7 (coma) coeff residual  for 10000 frames (nm)
+    type: number
+    archive_catalog:
+      datatype: float
+      destination: [CGIExposure.z7res]
+  Z8AVG:
+    title: Z8 (coma) coeff for 10000 frames
+    description: Z8 (coma) coeff for 10000 frames (nm)
+    type: number
+    archive_catalog:
+      datatype: float
+      destination: [CGIExposure.z8avg]
+  Z8RES:
+    title: Z8 (coma) coeff residual  for 10000 frames
+    description: Z8 (coma) coeff residual  for 10000 frames (nm)
+    type: number
+    archive_catalog:
+      datatype: float
+      destination: [CGIExposure.z8res]
+  Z9AVG:
+    title: Z9 (trefoil) coeff for 10000 frames
+    description: Z9 (trefoil) coeff for 10000 frames (nm)
+    type: number
+    archive_catalog:
+      datatype: float
+      destination: [CGIExposure.z9avg]
+  Z9RES:
+    title: Z9 (trefoil) coeff residual  for 10000 frames
+    description: Z9 (trefoil) coeff residual  for 10000 frames (nm)
+    type: number
+    archive_catalog:
+      datatype: float
+      destination: [CGIExposure.z9res]
+  Z10AVG:
+    title: Z10 (trefoil) coeff for 10000 frames
+    description: Z10 (trefoil) coeff for 10000 frames (nm)
+    type: number
+    archive_catalog:
+      datatype: float
+      destination: [CGIExposure.z10avg]
+  Z10RES:
+    title: Z10 (trefoil) coeff residual  for 10000 frames
+    description: Z10 (trefoil) coeff residual  for 10000 frames (nm)
+    type: number
+    archive_catalog:
+      datatype: float
+      destination: [CGIExposure.z10res]
+  Z11AVG:
+    title: Z11 (spherical) coeff for 10000 frames
+    description: Z11 (spherical) coeff for 10000 frames (nm)
+    type: number
+    archive_catalog:
+      datatype: float
+      destination: [CGIExposure.z11avg]
+  Z11RES:
+    title: Z11 (spherical) coeff residual  for 10000 frames
+    description: Z11 (spherical) coeff residual  for 10000 frames (nm)
+    type: number
+    archive_catalog:
+      datatype: float
+      destination: [CGIExposure.z11res]
+  Z12AVG:
+    title: Z12 (flux ref) coeff for 10000 frames
+    description: Z12 (flux ref) coeff for 10000 frames (percent)
+    type: number
+    archive_catalog:
+      datatype: float
+      destination: [CGIExposure.z12avg]
+  Z13AVG:
+    title: Z13 (shear X) coeff for 10000 frames
+    description: Z13 (shear X) coeff for 10000 frames (um)
+    type: number
+    archive_catalog:
+      datatype: float
+      destination: [CGIExposure.z13avg]
+  Z14AVG:
+    title: Z14 (shear Y) coeff for 10000 frames
+    description: Z14 (shear Y) coeff for 10000 frames (um)
+    type: number
+    archive_catalog:
+      datatype: float
+      destination: [CGIExposure.z14avg]
+  MISSING:
+    title: Missing Data
+    description: Missing data flag
+    type: boolean
+    archive_catalog:
+      datatype: nchar(1)
+      destination: [CGIExposure.missing]
+
+required: [
+  EXCAMT,
+  LOCAMT,
+  OVEREXP,
+  NOVEREXP,
+  PROXET,
+  FSMSG1,
+  FSMSG2,
+  FSMSG3,
+  FSMX,
+  FSMY,
+  EACQ_ROW,
+  EACQ_COL,
+  SB_FP_DX,
+  SB_FP_DY,
+  SB_FS_DX,
+  SB_FS_DY,
+  1SVALID,
+  Z2AVG,
+  Z2RES,
+  Z2VAR,
+  Z3AVG,
+  Z3RES,
+  Z3VAR,
+  10SVALID,
+  Z4AVG,
+  Z4RES,
+  Z5AVG,
+  Z5RES,
+  Z6AVG,
+  Z6ARES,
+  Z7AVG,
+  Z7RES,
+  Z8AVG,
+  Z8RES,
+  Z9AVG,
+  Z9RES,
+  Z10AVG,
+  Z10RES,
+  Z11AVG,
+  Z11RES,
+  Z12AVG,
+  Z13AVG,
+  Z14AVG,
+  MISSING
+]
