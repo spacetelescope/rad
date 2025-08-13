@@ -22,19 +22,20 @@ properties:
     type: string
     maxLength: 20
     enum:
-    - NFOV
-    - EFOV
-    - SPEC660
-    - SPEC730
-    - EXCAM
-    - SPARE
-    - FSM_PROFILE_UNKNOWN
+      - NFOV
+      - EFOV
+      - SPEC660
+      - SPEC730
+      - EXCAM
+      - SPARE
+      - FSM_PROFILE_UNKNOWN
     archive_catalog:
       datatype: nvarchar(20)
       destination: [CGIExposure.fsmprofile, CGIMosaic.fsmprofile]
   OPGAIN:
     title: The commanded gain (can be designated "Auto" to be calculated after HOWFSC)
-    description: The commanded gain (can be designated "Auto" to be calculated after
+    description:
+      The commanded gain (can be designated "Auto" to be calculated after
       HOWFSC)
     type: string
     maxLength: 32
@@ -75,8 +76,8 @@ properties:
     type: string
     maxLength: 8
     enum:
-    - OPEN
-    - CLOSED
+      - OPEN
+      - CLOSED
     archive_catalog:
       datatype: nvarchar(8)
       destination: [CGIExposure.fcmloop, CGIMosaic.fcmloop]
@@ -86,9 +87,9 @@ properties:
     type: string
     maxLength: 8
     enum:
-    - OPEN
-    - CLOSED
-    - UNKNOWN
+      - OPEN
+      - CLOSED
+      - UNKNOWN
     archive_catalog:
       datatype: nvarchar(8)
       destination: [CGIExposure.fmlos, CGIMosaic.fmlos]
@@ -98,9 +99,9 @@ properties:
     type: string
     maxLength: 2
     enum:
-    - '0'
-    - '1'
-    - '2'
+      - "0"
+      - "1"
+      - "2"
     archive_catalog:
       datatype: nvarchar(2)
       destination: [CGIExposure.fsmraster, CGIMosaic.fsmraster]
@@ -110,21 +111,22 @@ properties:
     type: string
     maxLength: 128
     enum:
-    - TODO
+      - TODO
     archive_catalog:
       datatype: nvarchar(128)
       destination: [CGIExposure.dmzloop, CGIMosaic.dmzloop]
 
-required: [
-  OPMODE,
-  FSMPRFL,
-  OPGAIN,
-  FRAMET,
-  SATSPOTS,
-  ISHOWFSC,
-  HOWFSLNK,
-  FCMLOOP,
-  FMLOS,
-  FSMRASTER,
-  DMZLOOP
-]
+required:
+  [
+    OPMODE,
+    FSMPRFL,
+    OPGAIN,
+    FRAMET,
+    SATSPOTS,
+    ISHOWFSC,
+    HOWFSLNK,
+    FCMLOOP,
+    FMLOS,
+    FSMRASTER,
+    DMZLOOP,
+  ]

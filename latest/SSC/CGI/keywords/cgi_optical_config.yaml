@@ -28,7 +28,7 @@ properties:
     type: string
     maxLength: 128
     enum:
-    - TODO
+      - TODO
     archive_catalog:
       datatype: nvarchar(128)
       destination: [CGIExposure.spamname, CGIMosaic.spamname]
@@ -52,7 +52,7 @@ properties:
     type: string
     maxLength: 128
     enum:
-    - TODO
+      - TODO
     archive_catalog:
       datatype: nvarchar(128)
       destination: [CGIExposure.fpamname, CGIMosaic.fpamname]
@@ -76,7 +76,7 @@ properties:
     type: string
     maxLength: 128
     enum:
-    - TODO
+      - TODO
     archive_catalog:
       datatype: nvarchar(128)
       destination: [CGIExposure.lsamname, CGIMosaic.lsamname]
@@ -100,7 +100,7 @@ properties:
     type: string
     maxLength: 128
     enum:
-    - TODO
+      - TODO
     archive_catalog:
       datatype: nvarchar(128)
       destination: [CGIExposure.fsamname, CGIMosaic.fsamname]
@@ -124,7 +124,7 @@ properties:
     type: string
     maxLength: 128
     enum:
-    - TODO
+      - TODO
     archive_catalog:
       datatype: nvarchar(128)
       destination: [CGIExposure.cfamname, CGIMosaic.cfamname]
@@ -148,28 +148,29 @@ properties:
     type: string
     maxLength: 128
     enum:
-    - TODO
+      - TODO
     archive_catalog:
       datatype: nvarchar(128)
       destination: [CGIExposure.dpamname, CGIMosaic.dpamname]
 
-required: [
-  SPAM_H,
-  SPAM_V,
-  SPAMNAME,
-  FPAM_H,
-  FPAM_V,
-  FPAMNAME,
-  LSAM_H,
-  LSAM_V,
-  LSAMNAME,
-  FSAM_H,
-  FSAM_V,
-  FSAMNAME,
-  CFAM_H,
-  CFAM_V,
-  CFAMNAME,
-  DPAM_H,
-  DPAM_V,
-  DPAMNAME
-]
+required:
+  [
+    SPAM_H,
+    SPAM_V,
+    SPAMNAME,
+    FPAM_H,
+    FPAM_V,
+    FPAMNAME,
+    LSAM_H,
+    LSAM_V,
+    LSAMNAME,
+    FSAM_H,
+    FSAM_V,
+    FSAMNAME,
+    CFAM_H,
+    CFAM_V,
+    CFAMNAME,
+    DPAM_H,
+    DPAM_V,
+    DPAMNAME,
+  ]
