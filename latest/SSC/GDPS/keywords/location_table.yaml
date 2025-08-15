@@ -36,8 +36,4 @@ properties:
     archive_catalog:
       datatype: float
       destination: [Placeholder.v3yangle]
-required:
-  - dither
-  - nsrc
-  - optical_model
-  - v3yangle
+required: [dither, nsrc, optical_model, v3yangle]

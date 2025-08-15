@@ -15,5 +15,4 @@ properties:
     archive_catalog:
       datatype: nvarchar(128)
       destination: [Placeholder.id_catalog]
-required:
-  - id_catalog
+required: [id_catalog]

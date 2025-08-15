@@ -17,5 +17,4 @@ properties:
     archive_catalog:
       datatype: nvarchar(20)
       destination: [Placeholder.optical_element]
-required:
-  - optical_element
+required: [optical_element]

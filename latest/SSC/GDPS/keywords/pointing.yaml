@@ -21,6 +21,4 @@ properties:
     archive_catalog:
       datatype: float
       destination: [Placeholder.pos_wcs_field_center_dec]
-required:
-  - pos_wcs_field_center_ra
-  - pos_wcs_field_center_dec
+required: [pos_wcs_field_center_ra, pos_wcs_field_center_dec]
