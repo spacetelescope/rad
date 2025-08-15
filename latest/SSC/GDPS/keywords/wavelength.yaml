@@ -18,7 +18,7 @@ properties:
   wl_reference:
     title: Wl Reference
     description: Placeholder.  Example value '1.55'
-    type: number
+    type: string
     archive_catalog:
       datatype: float
       destination: [Placeholder.wl_reference]
@@ -30,7 +30,6 @@ properties:
     archive_catalog:
       datatype: nvarchar(128)
       destination: [Placeholder.wl_snr_global_range]
-  # NOTE: I don't think people would be searching based on the unit keywords, would this not be the same for all SSC spectral products?
   unit_flux:
     title: Unit of flux
     description: Placeholder.  Example value 's'
