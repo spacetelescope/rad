@@ -1,1 +1,0 @@
-Fill in the placeholder values in the archive desinatations for the CGI schemas.

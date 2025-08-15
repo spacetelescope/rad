@@ -1,3 +1,22 @@
+0.27.0 (2025-08-15)
+===================
+
+New Features
+------------
+
+- Introduce first draft of the CGI schemas into the RAD repository. (`#651
+  <https://github.com/spacetelescope/rad/issues/651>`_)
+- Fill in the placeholder values in the archive desinatations for the CGI
+  schemas. (`#655 <https://github.com/spacetelescope/rad/issues/655>`_)
+
+
+Misc
+----
+
+- Made dark data cube optional. (`#653
+  <https://github.com/spacetelescope/rad/issues/653>`_)
+
+
 0.26.0 (2025-07-17)
 ===================
 
