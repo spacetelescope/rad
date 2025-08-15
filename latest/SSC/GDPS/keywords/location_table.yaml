@@ -1,0 +1,39 @@
+%YAML 1.1
+---
+$schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.0.0
+id: asdf://stsci.edu/datamodels/roman/schemas/SSC/GDPS/keywords/location_table-1.0.0
+
+title: GDPS location_table keywords
+extName: SSC
+type: object
+properties:
+  dither:
+    title: Dither
+    description: Placeholder.  Example value '1'
+    type: number
+    archive_catalog:
+      datatype: float
+      destination: [Placeholder.dither]
+  nsrc:
+    title: Nsrc
+    description: Placeholder.  Example value '360'
+    type: number
+    archive_catalog:
+      datatype: float
+      destination: [Placeholder.nsrc]
+  optical_model:
+    title: Optical Model
+    description: Placeholder.  Example value 'roman_gdps_grism_optmodel_ctx00002.yaml'
+    type: string
+    maxLength: 1024
+    archive_catalog:
+      datatype: nvarchar(1024)
+      destination: [Placeholder.optical_model]
+  v3yangle:
+    title: V3Yangle
+    description: Placeholder.  Example value '-60.0'
+    type: number
+    archive_catalog:
+      datatype: float
+      destination: [Placeholder.v3yangle]
+required: [dither, nsrc, optical_model, v3yangle]

@@ -1,0 +1,1 @@
+Introduce first draft of the SSC/GDPS schemas into the RAD repository.

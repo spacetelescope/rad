@@ -1,0 +1,18 @@
+%YAML 1.1
+---
+$schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.0.0
+id: asdf://stsci.edu/datamodels/roman/schemas/SSC/GDPS/keywords/calibration-1.0.0
+
+title: GDPS calibration keywords
+extName: SSC
+type: object
+properties:
+  version_cdp_cal_file:
+    title: CDP calibration reference file
+    description: Placeholder.  Example value 'roman_wfi_skycells_0003.asdf'
+    type: string
+    maxLength: 1024
+    archive_catalog:
+      datatype: nvarchar(1024)
+      destination: [Placeholder.version_cdp_cal_file]
+required: [version_cdp_cal_file]

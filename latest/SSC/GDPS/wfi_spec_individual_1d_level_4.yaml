@@ -1,0 +1,21 @@
+%YAML 1.1
+---
+$schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.0.0
+id: asdf://stsci.edu/datamodels/roman/schemas/SSC/GDPS/wfi_spec_individual_1d_level_4-1.0.0
+
+# https://outerspace.stsci.edu/display/RSEC/Grism-Prism+Data+Products#GrismPrismDataProducts-Level4DataProduct-1DDerivedSpectrumforeachSource
+# Initial keyword list is based on Box manifest example 'wfi_spec_individual_1d_r0000101001001001001_0001_WFI01_ingest.json'
+
+title: Level 4 Grism/Prism - 1D Derived Spectrum for each Source
+archive_meta: Placeholder SOC file type
+type: object
+properties:
+  meta:
+    allOf:
+      - $ref: asdf://stsci.edu/datamodels/roman/schemas/SSC/ssc_basic-1.0.0
+      - $ref: asdf://stsci.edu/datamodels/roman/schemas/SSC/GDPS/keywords/observation-1.0.0
+      - $ref: asdf://stsci.edu/datamodels/roman/schemas/SSC/GDPS/keywords/instrument-1.0.0
+      - $ref: asdf://stsci.edu/datamodels/roman/schemas/SSC/GDPS/keywords/calibration-1.0.0
+      - $ref: asdf://stsci.edu/datamodels/roman/schemas/SSC/GDPS/keywords/wavelength-1.0.0
+      - $ref: asdf://stsci.edu/datamodels/roman/schemas/SSC/GDPS/keywords/pointing-1.0.0
+      - $ref: asdf://stsci.edu/datamodels/roman/schemas/SSC/GDPS/keywords/g2dp_common-1.0.0
