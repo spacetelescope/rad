@@ -524,7 +524,11 @@ class TestPatternElementConsistency:
         """
         Confirm that the optical_element filter in wfi_img_photom.yaml matches optical_element
         """
-        assert phot_table_key in optical_elements, f"phot_table_key {phot_table_key} not found in optical_elements."
+        # NOTE: GRISM_0 is a special case that will only ever be used in the photom table,
+        #   It is due to a special photom measurement only relevant for calibration purposes
+        #   so it will never appear anywhere else, so it is excluded from the optical elements
+        #   in general.
+        assert phot_table_key in (*optical_elements, "GRISM_0"), f"phot_table_key {phot_table_key} not found in optical_elements."
 
     def test_p_exptype_entries_have_exposure_type(self, p_exptype_pattern, exposure_type):
         """Confirm that the p_keyword version of exposure type match the enum version."""
