@@ -14,7 +14,7 @@ properties:
     maxLength: 8
     archive_catalog:
       datatype: nvarchar(8)
-      destination: [WFIReferenceFrame.FLIP]
+      destination: [WFIReferenceFrame.flip]
   FIELD:
     title: Field
     description: Placeholder.  Example value '5'
