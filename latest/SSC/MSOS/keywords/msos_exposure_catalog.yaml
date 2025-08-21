@@ -37,15 +37,13 @@ properties:
     type: number
     archive_catalog:
       datatype: float
-      destination:
-        [MSOSCatalog.start_time_mjd]
+      destination: [MSOSCatalog.start_time_mjd]
   MJDEND: # SOC Proposed
     title: End Time MJD
     description: Last timestamp in the light curve (MJD)
     type: number
     archive_catalog:
       datatype: float
-      destination:
-        [MSOSCatalog.end_time_mjd]
+      destination: [MSOSCatalog.end_time_mjd]
 
 required: [EXPTIME, EXPSTART, EXPEND, MJDSTART, MJDEND]

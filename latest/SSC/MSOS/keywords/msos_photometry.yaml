@@ -26,4 +26,8 @@ properties:
       datatype: float
       destination: [MSOSCatalog.conversion_megajanskys_uncertainty]
 
-required: [photometry.conversion_megajanskys, photometry.conversion_megajanskys_uncertainty]
+required:
+  [
+    photometry.conversion_megajanskys,
+    photometry.conversion_megajanskys_uncertainty,
+  ]

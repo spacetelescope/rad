@@ -18,7 +18,7 @@ properties:
       destination: [MSOSCatalog.time_mean]
   observation.max_exposure_time:
     title: Maximum Exposure Time (s)
-    description:  >
+    description: >
       Maximum exposure time of all pixels in the
       product in units of seconds.
     type: number
@@ -27,7 +27,7 @@ properties:
       destination: [Placeholder.max_exposure_time]
   observation.mean_exposure_time:
     title: Mean Exposure Time (s)
-    description:  >
+    description: >
       Mean of component image exposure times
     type: number
     archive_catalog:
@@ -35,7 +35,7 @@ properties:
       destination: [Placeholder.mean_exposure_time]
 
 required: [
-  observation.time_mean
-  observation.max_exposure_time
-  observation.mean_exposure_time
-]
+    observation.time_mean
+    observation.max_exposure_time
+    observation.mean_exposure_time,
+  ]

@@ -16,13 +16,13 @@ properties:
       datatype: nvarchar(16)
       destination: [WFIReferenceFrame.program, MSOSCatalog.program]
   PINAME:
-    title: PI Last Name 
-    description:  |
+    title: PI Last Name
+    description: |
       Principal Investigator (PI) last name; uppercase (e.g., FORD, LEMMON)
-    type: string 
-    maxLength: 16 
-    archive_catalog: 
-      datatype: nvarchar(16) 
+    type: string
+    maxLength: 16
+    archive_catalog:
+      datatype: nvarchar(16)
       destination: [WFIReferenceFrame.pi_name, MSOSCatalog.pi_name]
   PROGTITLE:
     title: Program Title
@@ -63,7 +63,8 @@ properties:
     maxLength: 15
     archive_catalog:
       datatype: nvarchar(15)
-      destination: [WFIReferenceFrame.program_subcategory, MSOSCatalog.program_subcategory]
+      destination:
+        [WFIReferenceFrame.program_subcategory, MSOSCatalog.program_subcategory]
   SCIENCE_CATEGORY:
     title: Science Category
     description: |
@@ -73,13 +74,7 @@ properties:
     maxLength: 50
     archive_catalog:
       datatype: nvarchar(50)
-      destination: [WFIReferenceFrame.science_category, MSOSCatalog.science_category]
+      destination:
+        [WFIReferenceFrame.science_category, MSOSCatalog.science_category]
 
-required: [
-  PROGRAM, 
-  PINAME, 
-  PROGTITLE,
-  CATEGORY,
-  SUBCATEGORY,
-  SCIENCE_CATEGORY,
-]
+required: [PROGRAM, PINAME, PROGTITLE, CATEGORY, SUBCATEGORY, SCIENCE_CATEGORY]
