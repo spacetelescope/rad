@@ -40,9 +40,4 @@ properties:
       datatype: nvarchar(10)
       destination: [WFIReferenceFrame.tile_id]
 
-required: [
-    FLIP,
-    FIELD,
-    SEQUENCE,
-    TILE_ID,
-  ]
+required: [FLIP, FIELD, SEQUENCE, TILE_ID]

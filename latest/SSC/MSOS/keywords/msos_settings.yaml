@@ -64,7 +64,8 @@ properties:
       datatype: nvarchar(8)
       destination: [MSOSCatalog.galactic_center_flag]
 
-required: [
+required:
+  [
     msos.msos_photometry_version,
     msos.msos_events_version,
     msos.msos_detection_efficiency_version,
