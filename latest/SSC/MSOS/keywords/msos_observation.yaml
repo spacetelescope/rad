@@ -35,7 +35,7 @@ properties:
       destination: [Placeholder.mean_exposure_time]
 
 required: [
-    observation.time_mean
-    observation.max_exposure_time
+    observation.time_mean,
+    observation.max_exposure_time,
     observation.mean_exposure_time,
   ]

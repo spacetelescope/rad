@@ -41,8 +41,8 @@ properties:
       destination: [WFIReferenceFrame.tile_id]
 
 required: [
-    FLIP
-    FIELD
-    SEQUENCE
+    FLIP,
+    FIELD,
+    SEQUENCE,
     TILE_ID,
   ]

@@ -65,11 +65,11 @@ properties:
       destination: [MSOSCatalog.galactic_center_flag]
 
 required: [
-    msos.msos_photometry_version
-    msos.msos_events_version
-    msos.msos_detection_efficiency_version
-    msos.sequence
-    msos.season
-    msos.flip_flag
+    msos.msos_photometry_version,
+    msos.msos_events_version,
+    msos.msos_detection_efficiency_version,
+    msos.sequence,
+    msos.season,
+    msos.flip_flag,
     msos.galactic_center_flag,
   ]
