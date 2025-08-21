@@ -77,4 +77,4 @@ properties:
       destination:
         [WFIReferenceFrame.science_category, MSOSCatalog.science_category]
 
-required: [PROGRAM, PINAME, PROGTITLE, CATEGORY, SUBCATEGORY, SCIENCE_CATEGORY]
+required: [PROGNUM, PINAME, PROGTITLE, CATEGORY, SUBCATEGORY, SCIENCE_CATEGORY]
