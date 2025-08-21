@@ -1,0 +1,42 @@
+%YAML 1.1
+---
+$schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.0.0
+id: asdf://stsci.edu/datamodels/roman/schemas/SSC/MSOS/keywords/msos_observation-1.0.0
+
+title: MSOS observation keywords
+extName: SSC
+type: object
+properties:
+  observation.time_mean:
+    title: Mean Time of the Product
+    description: >
+      The Universal Coordinated Time (UTC) mean start
+      time of the exposures used to create the product.
+    tag: tag:stsci.edu:asdf/time/time-1.*
+    archive_catalog:
+      datatype: datetime2
+      destination: [MSOSCatalog.time_mean]
+  observation.max_exposure_time:
+    title: Maximum Exposure Time (s)
+    description: >
+      Maximum exposure time of all pixels in the
+      product in units of seconds.
+    type: number
+    archive_catalog:
+      datatype: float
+      destination: [Placeholder.max_exposure_time]
+  observation.mean_exposure_time:
+    title: Mean Exposure Time (s)
+    description: >
+      Mean of component image exposure times
+    type: number
+    archive_catalog:
+      datatype: float
+      destination: [Placeholder.mean_exposure_time]
+
+required:
+  [
+    observation.time_mean,
+    observation.max_exposure_time,
+    observation.mean_exposure_time,
+  ]
