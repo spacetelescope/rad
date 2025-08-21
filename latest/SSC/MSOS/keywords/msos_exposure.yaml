@@ -37,15 +37,13 @@ properties:
     type: number
     archive_catalog:
       datatype: float
-      destination:
-        [WFIReferenceFrame.start_time_mjd]
+      destination: [WFIReferenceFrame.start_time_mjd]
   MJDEND: # SOC Proposed
     title: End Time MJD
     description: End time of last observation that went into the stack (MJD)
     type: number
     archive_catalog:
       datatype: float
-      destination:
-        [WFIReferenceFrame.end_time_mjd]
+      destination: [WFIReferenceFrame.end_time_mjd]
 
 required: [EXPTIME, EXPSTART, EXPEND, MJDSTART, MJDEND]
