@@ -1,7 +1,7 @@
 %YAML 1.1
 ---
 $schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.0.0
-id: asdf://stsci.edu/datamodels/roman/schemas/SSC/CGI/keywords/msos_region-1.0.0
+id: asdf://stsci.edu/datamodels/roman/schemas/SSC/MSOS/keywords/msos_region-1.0.0
 
 title: Footprint Information
 extName: SSC
