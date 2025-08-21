@@ -1,0 +1,51 @@
+%YAML 1.1
+---
+$schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.0.0
+id: asdf://stsci.edu/datamodels/roman/schemas/SSC/CGI/keywords/msos_pointing-1.0.0
+
+title: Spacecraft Pointing Information
+extName: SSC
+
+type: object
+properties:
+  RA:
+    title: RA (J2000)
+    description: Right Ascension (J2000), from 0 to 360, in degrees
+    type: number
+    archive_catalog:
+      datatype: float
+      destination: [WFIReferenceFrame.ra_ref]
+  DEC:
+    title: Dec (J2000)
+    description: Declination (J2000), from -90 to +90, in degrees
+    type: number
+    archive_catalog:
+      datatype: float
+      destination: [WFIReferenceFrame.dec_ref]
+  TARGET:
+    title: Target Name
+    description: Name of the source pointed at by the telescope
+    type: string
+    maxLength: 256
+    archive_catalog:
+      datatype: nvarchar(256)
+      destination: [WFIReferenceFrame.target_name]
+  REFFRAME: # SOC Proposed
+    # This is optional, if not provided MAST will just assume ICRS, but best to explicitly provide.
+    title: Reference Frame
+    description: The coordinate system used to define the reference frame
+    type: string
+    maxLength: 16
+    archive_catalog:
+      datatype: nvarchar(16)
+      destination: [WFIReferenceFrame.reference_frame]
+  EQUINOX: # SOC Proposed
+    # This is optional, if not provided MAST will just assume 2000.0, but best to explicitly provide.
+    title: Equinox
+    description: The equinox of the coordinates
+    type: number
+    archive_catalog:
+      datatype: float
+      destination: [WFIReferenceFrame.equinox]
+
+required: [RA, DEC, TARGET, REFFRAME, EQUINOX]

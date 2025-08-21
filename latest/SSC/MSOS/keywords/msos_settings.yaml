@@ -1,0 +1,75 @@
+%YAML 1.1
+---
+$schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.0.0
+id: asdf://stsci.edu/datamodels/roman/schemas/SSC/MSOS/keywords/msos_settings-1.0.0
+
+title: MSOS setting keywords
+extName: SSC
+type: object
+properties:
+  msos.msos_photometry_version:
+    title: Msos Photometry Version
+    description: Placeholder.  Example value '3.3.0'
+    type: string
+    maxLength: 128
+    archive_catalog:
+      datatype: nvarchar(128)
+      destination: [MSOSCatalog.msos_photometry_version]
+  msos.msos_events_version:
+    title: Msos Events Version
+    description: Placeholder.  Example value '3.3.0'
+    type: string
+    maxLength: 128
+    archive_catalog:
+      datatype: nvarchar(128)
+      destination: [MSOSCatalog.msos_events_version]
+  msos.msos_detection_efficiency_version:
+    title: Msos Detection Efficiency Version
+    description: Placeholder.
+    type: string
+    maxLength: 128
+    archive_catalog:
+      datatype: nvarchar(128)
+      destination: [MSOSCatalog.msos_detection_efficiency_version]
+  msos.sequence:
+    title: Sequence
+    description: Placeholder.
+    type: string
+    maxLength: 128
+    archive_catalog:
+      datatype: nvarchar(128)
+      destination: [MSOSCatalog.sequence]
+  msos.season:
+    title: Season
+    description: Placeholder.  Example value '0'
+    type: string
+    maxLength: 8
+    archive_catalog:
+      datatype: nvarchar(8)
+      destination: [MSOSCatalog.season]
+  msos.flip_flag:
+    title: Flip Flag
+    description: Placeholder.  Example value 'False'
+    type: string
+    maxLength: 8
+    archive_catalog:
+      datatype: nvarchar(8)
+      destination: [MSOSCatalog.flip_flag]
+  msos.galactic_center_flag:
+    title: Galactic Center Flag
+    description: Placeholder.  Example value 'False'
+    type: string
+    maxLength: 8
+    archive_catalog:
+      datatype: nvarchar(8)
+      destination: [MSOSCatalog.galactic_center_flag]
+
+required: [
+  msos.msos_photometry_version
+  msos.msos_events_version
+  msos.msos_detection_efficiency_version
+  msos.sequence
+  msos.season
+  msos.flip_flag
+  msos.galactic_center_flag
+]
