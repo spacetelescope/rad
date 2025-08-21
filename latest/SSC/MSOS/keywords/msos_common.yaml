@@ -41,6 +41,7 @@ properties:
     maxLength: 16
     archive_catalog:
       datatype: nvarchar(16)
+      destination: [WFIReferenceFrame.detector, MSOSCatalog.detector]
   OPTICAL_ELEMENT:
     allOf:
       - $ref: asdf://stsci.edu/datamodels/roman/schemas/wfi_optical_element-1.2.0

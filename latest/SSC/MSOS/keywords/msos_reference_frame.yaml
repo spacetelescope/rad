@@ -22,7 +22,7 @@ properties:
     maxLength: 128
     archive_catalog:
       datatype: nvarchar(128)
-      destination: [WFIReferenceFrame.FIELD]
+      destination: [WFIReferenceFrame.field]
   SEQUENCE:
     title: Sequence
     description: Placeholder.  Example value '3'
