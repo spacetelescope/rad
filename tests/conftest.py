@@ -43,6 +43,22 @@ _LATEST_DATAMODELS_URI = next(uri for uri in _LATEST_MANIFEST_URIS if "static" n
 _LATEST_STATIC_URI = next(uri for uri in _LATEST_MANIFEST_URIS if "static" in uri)
 
 
+def _find_latest(uris):
+    version = Version("0.0.0")
+    uri = None
+    latest_uri = None
+    for uri in uris:
+        if version < (new := Version("1.0.0" if (v := uri.split("-")[-1]) == "1.0" else v)):
+            version = new
+            latest_uri = uri
+    return latest_uri
+
+
+_PREVIOUS_DATAMODELS_URI = _find_latest(
+    [uri for uri in _MANIFEST_URIS if "static" not in uri and "datamodels" in uri and uri != _LATEST_DATAMODELS_URI]
+)
+
+
 ### Fixtures for directly accessing resources via Python
 @pytest.fixture(scope="session", params=(importlib_resources.files(resources) / "manifests").glob("**/*.yaml"))
 def manifest_path(request):
@@ -162,6 +178,14 @@ def latest_schemas(latest_paths, latest_uris):
     return {latest_uri: latest_path.read_text() for latest_uri, latest_path in zip(latest_uris, latest_paths, strict=True)}
 
 
+@pytest.fixture(scope="session", params=tuple(entry["tag_uri"] for entry in _CURRENT_RESOURCES[_PREVIOUS_DATAMODELS_URI]["tags"]))
+def previous_datamodels_tag(request):
+    """
+    Get a tag in the previous datamodel
+    """
+    return request.param
+
+
 @pytest.fixture(scope="session")
 def latest_schema_tags(latest_datamodels_uri, latest_schemas):
     """
@@ -171,6 +195,14 @@ def latest_schema_tags(latest_datamodels_uri, latest_schemas):
     schema_tags = {entry["schema_uri"]: entry["tag_uri"] for entry in tag_entries}
     assert len(schema_tags) == len(tag_entries), "There should be no duplicate tags for a schema"
     return schema_tags
+
+
+@pytest.fixture(scope="session")
+def latest_schema_tag_prefixes(latest_schema_tags):
+    """
+    Get the prefixes of the latest schema tags from the latest manifest.
+    """
+    return set(value.split("-")[0] for value in latest_schema_tags.values())
 
 
 ### Fixtures for working with the schema URIs directly
@@ -436,14 +468,7 @@ def _get_latest_uri(prefix):
 
     assert len(uris) > 0, "There should be at least one exposure type URI"
 
-    version = Version("0.0.0")
-    uri = None
-    latest_uri = None
-    for uri in uris:
-        if version < (new := Version(uri.split("-")[-1])):
-            version = new
-            latest_uri = uri
-    return latest_uri
+    return _find_latest(uris)
 
 
 _PHOT_TABLE_KEY_PATTERN = next(

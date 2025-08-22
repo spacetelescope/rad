@@ -95,3 +95,13 @@ def test_manifest_entries(manifest_entry, schema_uri_prefix, tag_uri_prefix):
         schema_uri = schema_uri.replace("tagged_scalars/", "")
     assert schema_uri.endswith(uri_suffix)
     assert schema_uri.startswith(schema_uri_prefix)
+
+
+def test_no_lost_tags(latest_schema_tag_prefixes, latest_static_tags, previous_datamodels_tag):
+    """
+    Check that all tags in the previous datamodels manifest are present in the current tags
+    """
+    if previous_datamodels_tag.split("-")[0] not in latest_schema_tag_prefixes:
+        assert previous_datamodels_tag in latest_static_tags, (
+            f"Tag: {previous_datamodels_tag} is missing from the latest tags and is not static."
+        )
