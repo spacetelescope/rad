@@ -136,7 +136,7 @@ properties:
       destination: [CGIExposure.ftimeutc]
   ARRTYPE:
     title: Type of detector readout
-    description: Type of detector readout; SCI=1200x1200 pixels, ENG=1200x2200 pixels
+    description: Type of detector readout; SCI=2200x1200 pixels, ENG=2200x2200 pixels
     type: string
     maxLength: 4
     enum:
