@@ -22,14 +22,11 @@ VARCHAR_XFAILS = (
 
 REF_COMMON_XFAILS = ("asdf://stsci.edu/datamodels/roman/schemas/reference_files/skycells-1.0.0",)
 
-ARRAY_TAG_XFAILS = (
-    "asdf://stsci.edu/datamodels/roman/schemas/l1_detector_guidewindow-1.0.0",
-    "asdf://stsci.edu/datamodels/roman/schemas/l1_detector_guidewindow-1.1.0",
-)
+ARRAY_TAG_XFAILS = ("asdf://stsci.edu/datamodels/roman/schemas/l1_detector_guidewindow-1.1.0",)
 
-REQUIRED_SKIPS = ("asdf://stsci.edu/datamodels/roman/schemas/wfi_mosaic-1.3.0",)
+REQUIRED_SKIPS = ("asdf://stsci.edu/datamodels/roman/schemas/wfi_mosaic-1.4.0",)
 
-NESTED_REQUIRED_SKIPS = ("asdf://stsci.edu/datamodels/roman/schemas/l3_common-1.0.0",)
+NESTED_REQUIRED_SKIPS = ("asdf://stsci.edu/datamodels/roman/schemas/l3_common-1.1.0",)
 
 
 class TestSchemaContent:
@@ -296,6 +293,82 @@ class TestSchemaContent:
         -> Smokes out when VARCHAR_XFAILS is not relevant anymore.
         """
         assert uri in latest_uris, f"{uri} is not in the list of schemas to be tested."
+
+    def test_type_object_insurance(self, schema):
+        """
+        Check that if a schema has a properties key or patternProperties key, then
+        it has type: object
+        """
+        object_keywords = (
+            "properties",
+            "patternProperties",
+            "required",
+            "additionalProperties",
+            "maxProperties",
+            "minProperties",
+            "dependencies",
+        )
+
+        def callback(node):
+            """Callback to check for object type"""
+            if isinstance(node, Mapping) and any(keyword in node for keyword in object_keywords):
+                assert node.get("type") == "object", f"Schemas with any of {object_keywords} must have type: object"
+
+        asdf.treeutil.walk(schema, callback)
+
+    def test_type_string(self, schema):
+        """
+        Check that if a schema has a pattern, then it has type: string
+        """
+
+        string_keywords = ("pattern", "minLength", "maxLength")
+
+        def callback(node):
+            """Callback to check for string type"""
+            if isinstance(node, Mapping) and any(keyword in node for keyword in string_keywords):
+                assert node.get("type") == "string", f"Schemas with any of {string_keywords} must have type: string"
+
+        asdf.treeutil.walk(schema, callback)
+
+    def test_type_array(self, schema):
+        """
+        Check that if a schema has an items key, then it has type: array
+        """
+        array_keywords = ("items", "additionalItems", "maxItems", "minItems", "uniqueItems")
+
+        def callback(node):
+            """Callback to check for array type"""
+            if isinstance(node, Mapping) and any(keyword in node for keyword in array_keywords):
+                assert node.get("type") == "array", f"Schemas with any of {array_keywords} must have type: array"
+
+        asdf.treeutil.walk(schema, callback)
+
+    def test_type_numeric(self, schema):
+        """
+        Check that if a schema has a minimum, maximum, exclusiveMinimum, or exclusiveMaximum,
+        then it has type: number
+        """
+        numeric_keywords = ("multipleOf", "maximum", "exclusiveMaximum", "minimum", "exclusiveMinimum")
+
+        def callback(node):
+            """Callback to check for array type"""
+            if isinstance(node, Mapping) and any(keyword in node for keyword in numeric_keywords):
+                type_ = node.get("type")
+                assert type_ in ("integer", "number"), f"Schemas with any of {numeric_keywords} must have type: number or integer"
+
+        asdf.treeutil.walk(schema, callback)
+
+    def test_enum_has_type(self, schema):
+        """
+        Check that if a schema has an enum, then it has a type
+        """
+
+        def callback(node):
+            """Callback to check for enum type"""
+            if isinstance(node, Mapping) and "enum" in node:
+                assert "type" in node, "Schemas with an enum must have a type defined"
+
+        asdf.treeutil.walk(schema, callback)
 
 
 class TestTaggedSchemaContent:
