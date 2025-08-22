@@ -7,7 +7,7 @@ title: MSOS basic keywords
 extName: SSC
 type: object
 properties:
-  basic.model_type:
+  model_type:
     title: Data Model Type
     description: The type of data model used for the file.  Example value 'MicrolensingEventCatalogSchema'
     type: string
@@ -15,7 +15,7 @@ properties:
     archive_catalog:
       datatype: nvarchar(50)
       destination: [MSOSCatalog.model_type]
-  basic.product_type:
+  product_type:
     title: Product Type Descriptor
     description: |
       A descriptor for the type of data contained within the
@@ -28,4 +28,4 @@ properties:
       datatype: nvarchar(120)
       destination: [MSOSCatalog.product_type]
 
-required: [basic.model_type, basic.product_type]
+required: [model_type, product_type]

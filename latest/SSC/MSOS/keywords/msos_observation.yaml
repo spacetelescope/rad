@@ -7,7 +7,7 @@ title: MSOS observation keywords
 extName: SSC
 type: object
 properties:
-  observation.time_mean:
+  time_mean:
     title: Mean Time of the Product
     description: >
       The Universal Coordinated Time (UTC) mean start
@@ -16,7 +16,7 @@ properties:
     archive_catalog:
       datatype: datetime2
       destination: [MSOSCatalog.time_mean]
-  observation.max_exposure_time:
+  max_exposure_time:
     title: Maximum Exposure Time (s)
     description: >
       Maximum exposure time of all pixels in the
@@ -25,7 +25,7 @@ properties:
     archive_catalog:
       datatype: float
       destination: [Placeholder.max_exposure_time]
-  observation.mean_exposure_time:
+  mean_exposure_time:
     title: Mean Exposure Time (s)
     description: >
       Mean of component image exposure times
@@ -36,7 +36,7 @@ properties:
 
 required:
   [
-    observation.time_mean,
-    observation.max_exposure_time,
-    observation.mean_exposure_time,
+    time_mean,
+    max_exposure_time,
+    mean_exposure_time,
   ]
