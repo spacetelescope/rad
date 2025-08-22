@@ -34,9 +34,4 @@ properties:
       datatype: float
       destination: [Placeholder.mean_exposure_time]
 
-required:
-  [
-    time_mean,
-    max_exposure_time,
-    mean_exposure_time,
-  ]
+required: [time_mean, max_exposure_time, mean_exposure_time]

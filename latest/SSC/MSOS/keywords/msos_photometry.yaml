@@ -26,8 +26,4 @@ properties:
       datatype: float
       destination: [MSOSCatalog.conversion_megajanskys_uncertainty]
 
-required:
-  [
-    conversion_megajanskys,
-    conversion_megajanskys_uncertainty,
-  ]
+required: [conversion_megajanskys, conversion_megajanskys_uncertainty]
