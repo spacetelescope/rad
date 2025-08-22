@@ -27,8 +27,8 @@ properties:
     description: Closest SPAM named position
     type: string
     maxLength: 128
-    enum:
-      - TODO
+    # Waiting on specific enum values
+    # enum: []
     archive_catalog:
       datatype: nvarchar(128)
       destination: [CGIExposure.spamname, CGIMosaic.spamname]
@@ -51,8 +51,8 @@ properties:
     description: Closest FPAM named position
     type: string
     maxLength: 128
-    enum:
-      - TODO
+    # Waiting on specific enum values
+    # enum: []
     archive_catalog:
       datatype: nvarchar(128)
       destination: [CGIExposure.fpamname, CGIMosaic.fpamname]
@@ -75,8 +75,8 @@ properties:
     description: Closest LSAM named position
     type: string
     maxLength: 128
-    enum:
-      - TODO
+    # Waiting on specific enum values
+    # enum: []
     archive_catalog:
       datatype: nvarchar(128)
       destination: [CGIExposure.lsamname, CGIMosaic.lsamname]
@@ -99,8 +99,8 @@ properties:
     description: Closest FSAM named position
     type: string
     maxLength: 128
-    enum:
-      - TODO
+    # Waiting on specific enum values
+    # enum: []
     archive_catalog:
       datatype: nvarchar(128)
       destination: [CGIExposure.fsamname, CGIMosaic.fsamname]
@@ -123,8 +123,8 @@ properties:
     description: Closest CFAM named position
     type: string
     maxLength: 128
-    enum:
-      - TODO
+    # Waiting on specific enum values
+    # enum: []
     archive_catalog:
       datatype: nvarchar(128)
       destination: [CGIExposure.cfamname, CGIMosaic.cfamname]
@@ -147,8 +147,8 @@ properties:
     description: Closest DPAM named position
     type: string
     maxLength: 128
-    enum:
-      - TODO
+    # Waiting on specific enum values
+    # enum: []
     archive_catalog:
       datatype: nvarchar(128)
       destination: [CGIExposure.dpamname, CGIMosaic.dpamname]

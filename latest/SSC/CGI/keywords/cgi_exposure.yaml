@@ -100,14 +100,14 @@ properties:
       datatype: int
       destination: [CGIExposure.lastexp]
   BLNKTIME:
-    title: Commanded blanking time
+    title: Commanded blanking time in seconds
     description: Commanded blanking time (s)
     type: number
     archive_catalog:
       datatype: float
       destination: [CGIExposure.blnktime]
   BLNKCYC:
-    title: Commanded blanking time
+    title: Commanded blanking time in cycles
     description: Commanded blanking time (clock cycles)
     type: integer
     archive_catalog:
