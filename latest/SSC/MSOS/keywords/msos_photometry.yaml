@@ -7,7 +7,7 @@ title: MSOS photometry keywords
 extName: SSC
 type: object
 properties:
-  photometry.conversion_megajanskys:
+  conversion_megajanskys:
     title: Zeropoint Flux (MJy/sr)
     description: |
       The flux density (in units of megaJanskys per
@@ -16,7 +16,7 @@ properties:
     archive_catalog:
       datatype: float
       destination: [MSOSCatalog.conversion_megajanskys]
-  photometry.conversion_megajanskys_uncertainty:
+  conversion_megajanskys_uncertainty:
     title: Zeropoint Flux Uncertainty (MJy/sr)
     description: |
       The uncertainty in the flux density (in units of
@@ -26,8 +26,4 @@ properties:
       datatype: float
       destination: [MSOSCatalog.conversion_megajanskys_uncertainty]
 
-required:
-  [
-    photometry.conversion_megajanskys,
-    photometry.conversion_megajanskys_uncertainty,
-  ]
+required: [conversion_megajanskys, conversion_megajanskys_uncertainty]

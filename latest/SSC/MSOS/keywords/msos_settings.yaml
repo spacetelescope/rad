@@ -7,7 +7,7 @@ title: MSOS setting keywords
 extName: SSC
 type: object
 properties:
-  msos.msos_photometry_version:
+  msos_photometry_version:
     title: Msos Photometry Version
     description: Placeholder.  Example value '3.3.0'
     type: string
@@ -15,7 +15,7 @@ properties:
     archive_catalog:
       datatype: nvarchar(128)
       destination: [MSOSCatalog.msos_photometry_version]
-  msos.msos_events_version:
+  msos_events_version:
     title: Msos Events Version
     description: Placeholder.  Example value '3.3.0'
     type: string
@@ -23,7 +23,7 @@ properties:
     archive_catalog:
       datatype: nvarchar(128)
       destination: [MSOSCatalog.msos_events_version]
-  msos.msos_detection_efficiency_version:
+  msos_detection_efficiency_version:
     title: Msos Detection Efficiency Version
     description: Placeholder.
     type: string
@@ -31,7 +31,7 @@ properties:
     archive_catalog:
       datatype: nvarchar(128)
       destination: [MSOSCatalog.msos_detection_efficiency_version]
-  msos.sequence:
+  sequence:
     title: Sequence
     description: Placeholder.
     type: string
@@ -39,7 +39,7 @@ properties:
     archive_catalog:
       datatype: nvarchar(128)
       destination: [MSOSCatalog.sequence]
-  msos.season:
+  season:
     title: Season
     description: Placeholder.  Example value '0'
     type: string
@@ -47,7 +47,7 @@ properties:
     archive_catalog:
       datatype: nvarchar(8)
       destination: [MSOSCatalog.season]
-  msos.flip_flag:
+  flip_flag:
     title: Flip Flag
     description: Placeholder.  Example value 'False'
     type: string
@@ -55,7 +55,7 @@ properties:
     archive_catalog:
       datatype: nvarchar(8)
       destination: [MSOSCatalog.flip_flag]
-  msos.galactic_center_flag:
+  galactic_center_flag:
     title: Galactic Center Flag
     description: Placeholder.  Example value 'False'
     type: string
@@ -66,11 +66,11 @@ properties:
 
 required:
   [
-    msos.msos_photometry_version,
-    msos.msos_events_version,
-    msos.msos_detection_efficiency_version,
-    msos.sequence,
-    msos.season,
-    msos.flip_flag,
-    msos.galactic_center_flag,
+    msos_photometry_version,
+    msos_events_version,
+    msos_detection_efficiency_version,
+    sequence,
+    season,
+    flip_flag,
+    galactic_center_flag,
   ]
