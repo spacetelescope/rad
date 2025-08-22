@@ -142,7 +142,7 @@ properties:
       datatype: float
       destination: [CGIExposure.z2res]
   Z2VAR:
-    title: Variance  Z2 (tip) from previous second
+    title: Variance Z2 (tip) from previous second
     description: Variance  Z2 (tip) from previous second (nm^2)
     type: number
     archive_catalog:
