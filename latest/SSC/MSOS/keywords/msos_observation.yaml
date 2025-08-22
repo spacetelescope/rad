@@ -24,7 +24,7 @@ properties:
     type: number
     archive_catalog:
       datatype: float
-      destination: [Placeholder.max_exposure_time]
+      destination: [MSOSCatalog.max_exposure_time]
   mean_exposure_time:
     title: Mean Exposure Time (s)
     description: >
@@ -32,6 +32,6 @@ properties:
     type: number
     archive_catalog:
       datatype: float
-      destination: [Placeholder.mean_exposure_time]
+      destination: [MSOSCatalog.mean_exposure_time]
 
 required: [time_mean, max_exposure_time, mean_exposure_time]
