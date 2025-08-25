@@ -14,7 +14,7 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  check:
+  changelog-check:
     if: ${{ !contains(github.event.pull_request.labels.*.name, 'no-changelog-entry-needed') }}
     runs-on: ubuntu-latest
     steps:
