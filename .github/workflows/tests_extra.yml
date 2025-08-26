@@ -1,4 +1,4 @@
-name: Weekly cron
+name: extra tests
 
 on:
   schedule:
