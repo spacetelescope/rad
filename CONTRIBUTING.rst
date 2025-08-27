@@ -162,8 +162,24 @@ Typically the review process will require the following:
 .. note::
 
    Note that maintainers generally will not review a pull request until it is
-   open for review (not draft) and the CI
-   checks have passed (or have been explained by linked PRs). This is to minimize
-   the amount of time maintainers need to spend reviewing incomplete pull requests.
-   If you need help getting the CI checks to pass, please ask for help by making
-   a comment on your pull request.
+   open for review (not draft) and the CI checks have passed (or have been
+   explained by linked PRs). This is to minimize the amount of time maintainers
+   need to spend reviewing incomplete pull requests.  If you need help getting
+   the CI checks to pass, please ask for help by making a comment on your pull
+   request.
+
+Useful Contribution Tool
+************************
+
+RAD has a useful helper script that is `fully documented in the RAD docs <https://rad.readthedocs.io/en/latest/helper.html>`_.
+We recommend that you use this script to assist you with:
+
+- Creating new schemas
+- Bumping schema versions
+
+This script will handle all the tedious tasks associated with these actions,
+for example it makes sure that all the relevant files have had their URIs updated
+correctly, and that all of the symbolic links have been created correctly. If you
+use a terminal editor such as ``vim`` you can also launch your editor for a particular
+schema directly from the helper script, and it will make sure that you bump
+schema versions if necessary.
