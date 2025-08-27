@@ -8,7 +8,7 @@ respectful to others.
 
 Note that RAD is the meeting and synchronization point for a number of different
 sub-projects of the Nancy Grace Roman Space Telescope project. Due to this,
-contributions many need to be reviewed by multiple teams or have slightly
+contributions may need to be reviewed by multiple teams or have slightly
 different requirements or development workflows. Please do not let this
 discourage you from contributing! The RAD maintainers will help guide you
 through the process, though it may take some time.
@@ -16,14 +16,14 @@ through the process, though it may take some time.
 Weekly RAD meeting
 ------------------
 
-Approximately weekly, the RAD maintainers and stakeholdes meet to discuss new
+Approximately weekly, the RAD maintainers and stakeholders meet to discuss new
 issues, pull requests, and other topics related to RAD. This meeting is when we
 usually decided how to move forward on newly reported external issues. Please
 be aware that this meeting is the main decision-making point for RAD, so if you
 have a complex issue or feature request, it may take at least a week for us to
 to discuss and decide how to move forward.
 
-Most pull requests will need to be reviewed and then discussed at one of these
+Similarly, most pull requests will need to be reviewed and then discussed at one of these
 meetings before they can receive final apporovals and be merged. Please be aware
 of this when submitting pull requests, as it may take at least a week for your
 contributed code to be fully reviewed and merged.
@@ -36,7 +36,7 @@ questestions by `opening an issue on GitHub <https://github.com/spacetelescope/r
 When in doubt, open an issue! We would rather you open an issue than lose your
 valuable contributions and feedback.
 
-Note we ask STScI employees to use the internal JIRA system to report bugs and
+Note: we ask STScI employees to use the internal JIRA system to report bugs and
 request features under the RAD project. Your JIRA issue will be synced to GitHub
 automatically by the STScI GitHub bot. All others should use GitHub issues
 directly, a maintainer will triage your issue and set the STScI GitHub bot to
@@ -82,7 +82,7 @@ used by many open-source projects. The workflow is as follows:
    .. note::
 
        We recommend that you make sure your main branch is up to date with the
-       upstream, main RAD, repository's main branch before creating your feature
+       upstream (STScI RAD) repository's main branch before creating your feature
        branch. There are several ways to do this, but one simple way is to use
        the ``Sync fork`` button on your fork's GitHub page, then pull the changes
        from your fork on gitHub to your local machine.
