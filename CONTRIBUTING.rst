@@ -31,7 +31,7 @@ contributed code to be fully reviewed and merged.
 Reporting Issues
 ----------------
 
-We incourage users to report bugs, request features, start discussions, or ask
+We encourage users to report bugs, request features, start discussions, or ask
 questestions by `opening an issue on GitHub <https://github.com/spacetelescope/rad/issues/new>`_.
 When in doubt, open an issue! We would rather you open an issue than lose your
 valuable contributions and feedback.
@@ -67,7 +67,7 @@ used by many open-source projects. The workflow is as follows:
 
    .. note::
 
-      We encourage you to make your initial clode using SSH, as shown above.
+      We encourage you to make your initial clone using SSH, as shown above.
       Rather than HTTPS. This will make it easier for you to push any changes
       you make back to your fork later. If you need help setting up SSH keys,
       see the `GitHub documentation on SSH keys <https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account>`_.
@@ -161,7 +161,8 @@ Typically the review process will require the following:
 
 .. note::
 
-   Note that maintainers will generally ignore a pull request until all the CI
+   Note that maintainers generally will not review a pull request until it is
+   open for review (not draft) and the CI
    checks have passed (or have been explained by linked PRs). This is to minimize
    the amount of time maintainers need to spend reviewing incomplete pull requests.
    If you need help getting the CI checks to pass, please ask for help by making
