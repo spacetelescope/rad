@@ -125,7 +125,10 @@ used by many open-source projects. The workflow is as follows:
    the template to the best of your ability.
 
 8. **Code Review**: Wait for the maintainers to review your contribution. They
-   may suggest changes or improvements.
+   may suggest changes or improvements. Once your CI checks start passing, the
+   maintainers will try to provide an initial triage review of your pull request
+   within a week of submission, and if all goes well it will be passed on to the
+   next stage of review at the next weekly RAD meeting.
 
 9. **Revision**: Make any requested changes to your code and push them to your
    branch.
@@ -174,8 +177,12 @@ Useful Contribution Tool
 RAD has a useful helper script that is `fully documented in the RAD docs <https://rad.readthedocs.io/en/latest/helper.html>`_.
 We recommend that you use this script to assist you with:
 
-- Creating new schemas
-- Bumping schema versions
+- Creating new schemas. The script will create all the necessary files and symbolic
+   links with a minimal viable schema. For more information on what to do next, see
+   the `Creating New Schemas <https://rad.readthedocs.io/en/latest/creating.html>`_.
+- Bumping schema versions. When you make changes to an existing schema, you will
+   often need to bump the schema version. This script will help you do that
+   correctly.
 
 This script will handle all the tedious tasks associated with these actions,
 for example it makes sure that all the relevant files have had their URIs updated
