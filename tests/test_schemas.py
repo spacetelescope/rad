@@ -24,16 +24,15 @@ VARCHAR_XFAILS = (
     # <resource uri>
 )
 
-REF_COMMON_XFAILS = ("asdf://stsci.edu/datamodels/roman/schemas/reference_files/skycells-1.0.0",)
+REF_COMMON_XFAILS = ("asdf://stsci.edu/datamodels/roman/schemas/reference_files/skycells-1.1.0",)
 
 ARRAY_TAG_XFAILS = (
-    "asdf://stsci.edu/datamodels/roman/schemas/l1_detector_guidewindow-1.0.0",
-    "asdf://stsci.edu/datamodels/roman/schemas/l1_detector_guidewindow-1.1.0",
+    # <resource uri>
 )
 
-REQUIRED_SKIPS = ("asdf://stsci.edu/datamodels/roman/schemas/wfi_mosaic-1.3.0",)
+REQUIRED_SKIPS = ("asdf://stsci.edu/datamodels/roman/schemas/wfi_mosaic-1.4.0",)
 
-NESTED_REQUIRED_SKIPS = ("asdf://stsci.edu/datamodels/roman/schemas/l3_common-1.0.0",)
+NESTED_REQUIRED_SKIPS = ("asdf://stsci.edu/datamodels/roman/schemas/l3_common-1.1.0",)
 
 
 class TestSchemaContent:
@@ -300,6 +299,40 @@ class TestSchemaContent:
         -> Smokes out when VARCHAR_XFAILS is not relevant anymore.
         """
         assert uri in latest_uris, f"{uri} is not in the list of schemas to be tested."
+
+    def test_no_static_tags(self, schema, latest_static_tags):
+        """
+        Check that the schema does not contain any static tags
+        """
+
+        def callback(node):
+            """Callback to check for static tags"""
+            if isinstance(node, Mapping) and "tag" in node:
+                assert node["tag"] not in latest_static_tags
+
+        asdf.treeutil.walk(schema, callback)
+
+    def test_latest_refs(self, schema, latest_uris, current_resources):
+        """
+        Check that all $ref in the schema point to the latest version of the referenced schema
+        """
+
+        def callback(node):
+            """Callback to check for latest refs"""
+            if isinstance(node, Mapping) and "$ref" in node:
+                ref_uri = node["$ref"]
+                if "#/" in ref_uri:
+                    ref_uri, part_path = ref_uri.split("#/")
+
+                    def_schema = current_resources[ref_uri]
+                    for part in part_path.split("/"):
+                        if part in def_schema:
+                            def_schema = def_schema[part]
+                        else:
+                            raise ValueError(f"Could not find part {part} in schema {ref_uri}")
+                assert ref_uri in latest_uris, f"$ref {node['$ref']} does not point to the latest version of the schema"
+
+        asdf.treeutil.walk(schema, callback)
 
 
 class TestTaggedSchemaContent:
