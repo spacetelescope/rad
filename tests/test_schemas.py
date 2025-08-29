@@ -23,13 +23,8 @@ VARCHAR_XFAILS = (
 REF_COMMON_XFAILS = ("asdf://stsci.edu/datamodels/roman/schemas/reference_files/skycells-1.0.0",)
 
 ARRAY_TAG_XFAILS = (
-    "asdf://stsci.edu/datamodels/roman/schemas/l1_detector_guidewindow-1.0.0",
-    "asdf://stsci.edu/datamodels/roman/schemas/l1_detector_guidewindow-1.1.0",
+    # <resource uri>
 )
-
-REQUIRED_SKIPS = ("asdf://stsci.edu/datamodels/roman/schemas/wfi_mosaic-1.3.0",)
-
-NESTED_REQUIRED_SKIPS = ("asdf://stsci.edu/datamodels/roman/schemas/l3_common-1.0.0",)
 
 
 class TestSchemaContent:
@@ -60,8 +55,6 @@ class TestSchemaContent:
         """
         Checks that all required properties are present in the schema
         """
-        if schema["id"] in REQUIRED_SKIPS:
-            pytest.skip(f"skipped required keyword test for {schema['id']}")
 
         def callback(node):
             """Callback for required properties being present"""
@@ -129,12 +122,12 @@ class TestSchemaContent:
         asdf.treeutil.walk(schema, callback)
 
     @pytest.mark.parametrize("uri", ARRAY_TAG_XFAILS)
-    def test_array_tag_xfail_relevant(self, uri, schema_uris):
+    def test_array_tag_xfail_relevant(self, uri, latest_uris):
         """
         Test that URIS that are marked as failing the array tagging are still relevant (in use).
         -> Smokes out when ARRAY_TAG_XFAILS is not relevant anymore.
         """
-        assert uri in schema_uris, f"{uri} is not in the list of schemas to be tested."
+        assert uri in latest_uris, f"{uri} is not in the list of schemas to be tested."
 
     def test_ref_loneliness(self, schema):
         """
@@ -184,9 +177,6 @@ class TestSchemaContent:
                     reason=f"{schema_uri} is not being altered to ensure required lists for archive metadata, due to it being in either tvac or fps."
                 )
             )
-
-        if schema_uri in NESTED_REQUIRED_SKIPS:
-            pytest.skip(f"skipping nested required keyword test for {schema_uri}")
 
         def callback(node):
             if isinstance(node, Mapping) and "properties" in node:
