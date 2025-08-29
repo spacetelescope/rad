@@ -39,8 +39,8 @@ properties:
       HOWFSC)
     anyOf:
       - type: string
-      - type: float
-    maxLength: 32
+        maxLength: 32
+      - type: number
     archive_catalog:
       datatype: nvarchar(32)
       destination: [CGIExposure.opgain, CGIMosaic.opgain]
