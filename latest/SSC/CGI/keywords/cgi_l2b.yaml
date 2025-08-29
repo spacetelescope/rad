@@ -22,32 +22,32 @@ properties:
       datatype: nchar(1)
       destination: [CGIExposure.frmsel02]
   FMRSEL03:
-    title: Tip rms (Z2VAR) threshold abov which frame is declared bad
-    description: Tip rms (Z2VAR) threshold abov which frame is declared bad (nm)
+    title: Tip rms (Z2VAR) threshold above which frame is declared bad
+    description: Tip rms (Z2VAR) threshold above which frame is declared bad (nm)
     type: string
     maxLength: 32
     archive_catalog:
       datatype: nvarchar(32)
       destination: [CGIExposure.fmrsel03]
   FRMSEL04:
-    title: Tilt rms (Z3VAR) threshold abov which frame is declared bad
-    description: Tilt rms (Z3VAR) threshold abov which frame is declared bad (nm)
+    title: Tilt rms (Z3VAR) threshold above which frame is declared bad
+    description: Tilt rms (Z3VAR) threshold above which frame is declared bad (nm)
     type: string
     maxLength: 32
     archive_catalog:
       datatype: nvarchar(32)
       destination: [CGIExposure.frmsel04]
   FRMSEL05:
-    title: Tip bias (Z2RES) threshold abov which frame is declared bad
-    description: Tip bias (Z2RES) threshold abov which frame is declared bad (nm)
+    title: Tip bias (Z2RES) threshold above which frame is declared bad
+    description: Tip bias (Z2RES) threshold above which frame is declared bad (nm)
     type: string
     maxLength: 32
     archive_catalog:
       datatype: nvarchar(32)
       destination: [CGIExposure.frmsel05]
   FRMSEL06:
-    title: Tilt bias (Z3RES) threshold abov which frame is declared bad
-    description: Tilt bias (Z3RES) threshold abov which frame is declared bad (nm)
+    title: Tilt bias (Z3RES) threshold above which frame is declared bad
+    description: Tilt bias (Z3RES) threshold above which frame is declared bad (nm)
     type: string
     maxLength: 32
     archive_catalog:
@@ -89,22 +89,24 @@ properties:
       destination: [CGIExposure.pcthresh]
   NUM_FR:
     title: Number of frames in each subset (only for photon-counted frames)
-    description: Number of frames in each subset (only for photon-counted frames)
+    description:
+      Number of frames in each subset (only for photon-counted frames)
       (frames)
     type: integer
     archive_catalog:
       datatype: int
       destination: [CGIExposure.num_fr]
-required: [
-  FRMSEL01,
-  FRMSEL02,
-  FMRSEL03,
-  FRMSEL04,
-  FRMSEL05,
-  FRMSEL06,
-  KGAIN_ER,
-  RN,
-  RN_ERR,
-  PCTHRESH,
-  NUM_FR
-]
+required:
+  [
+    FRMSEL01,
+    FRMSEL02,
+    FMRSEL03,
+    FRMSEL04,
+    FRMSEL05,
+    FRMSEL06,
+    KGAIN_ER,
+    RN,
+    RN_ERR,
+    PCTHRESH,
+    NUM_FR,
+  ]
