@@ -19,6 +19,8 @@ properties:
         properties:
           groundtest:
             tag: asdf://stsci.edu/datamodels/roman/tags/fps/groundtest-1.0.0
+          statistics:
+            tag: asdf://stsci.edu/datamodels/roman/tags/fps/statistics-1.0.0
         required: [groundtest]
 
   data:
