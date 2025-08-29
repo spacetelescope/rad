@@ -120,3 +120,229 @@ class TestLastestResources:
                 assert schema == re.sub(base_tag_uri_regex, tag_uri, schema), (
                     f"Schema {schema_uri} has references to {tag_uri} that have not been updated!"
                 )
+
+
+@pytest.fixture(scope="module")
+def manager():
+    """
+    Fixture to create a Manager instance for testing.
+    """
+    from rad.reader._manager import Manager
+
+    return Manager.from_rad()
+
+
+class TestRadReader:
+    def test_schema(self, manager, current_resources, schema_uri_prefix, latest_uri):
+        """
+        Test that the schema information from a schema can be extracted correctly.
+        """
+        from rad.reader._link import Ref, Tag
+        from rad.reader._schema import AllOf, AnyOf, Not, OneOf, Schema
+        from rad.reader._type import Array, Boolean, Null, Numeric, Object, String, Type
+
+        def check_basic(extract, schema):
+            assert extract.id == schema.get("id")
+            assert extract.schema == schema.get("$schema")
+
+            assert extract.title == schema.get("title")
+            assert extract.description == schema.get("description")
+            assert extract.default == schema.get("default")
+
+            assert extract.unit == schema.get("unit")
+            assert extract.datamodel_name == schema.get("datamodel_name")
+            assert extract.archive_meta == schema.get("archive_meta")
+
+            if extract.archive_catalog is None:
+                assert schema.get("archive_catalog") is None
+            else:
+                assert extract.archive_catalog.datatype == schema["archive_catalog"]["datatype"]
+                assert extract.archive_catalog.destination == schema["archive_catalog"]["destination"]
+
+        def check_array(schema, extract):
+            check_basic(extract, schema)
+            assert extract.type == schema["type"]
+
+            assert extract.additional_items is schema.get("additionalItems")
+            assert extract.min_items == schema.get("minItems")
+            assert extract.max_items == schema.get("maxItems")
+            assert extract.unique_items == schema.get("uniqueItems")
+
+            if extract.items is None:
+                assert schema.get("items") is None
+            else:
+                assert schema.get("items") is not None
+
+                if isinstance(schema["items"], list):
+                    for schema_item, extract_item in zip(schema["items"], extract.items, strict=True):
+                        check_schema(schema_item, extract_item)
+                elif isinstance(schema["items"], dict):
+                    assert len(extract.items) == 1
+                    check_schema(schema["items"], extract.items[0])
+
+        def check_numeric(schema, extract):
+            check_basic(extract, schema)
+            assert extract.type == schema["type"]
+
+            assert extract.minimum == schema.get("minimum")
+            assert extract.maximum == schema.get("maximum")
+            assert extract.exclusive_minimum == schema.get("exclusiveMinimum")
+            assert extract.exclusive_maximum == schema.get("exclusiveMaximum")
+            assert extract.multiple_of == schema.get("multipleOf")
+
+        def check_object(schema, extract):
+            check_basic(extract, schema)
+            assert extract.type == schema["type"]
+
+            assert extract.additional_properties == schema.get("additionalProperties")
+            assert extract.max_properties == schema.get("maxProperties")
+            assert extract.min_properties == schema.get("minProperties")
+            assert extract.dependencies == schema.get("dependencies")
+
+            assert extract.required == schema.get("required")
+
+            if extract.properties is None:
+                assert schema.get("properties") is None
+            else:
+                for (schema_key, schema_property), (extract_key, extract_property) in zip(
+                    schema["properties"].items(), extract.properties.items(), strict=True
+                ):
+                    assert extract_key == schema_key
+                    check_schema(schema_property, extract_property)
+
+            if extract.pattern_properties is None:
+                assert schema.get("patternProperties") is None
+            else:
+                for (schema_key, schema_property), (extract_key, extract_property) in zip(
+                    schema["patternProperties"].items(), extract.pattern_properties.items(), strict=True
+                ):
+                    assert extract_key == schema_key
+                    check_schema(schema_property, extract_property)
+
+        def check_string(schema, extract):
+            check_basic(extract, schema)
+            assert extract.type == schema["type"]
+
+            assert extract.pattern == schema.get("pattern")
+            assert extract.min_length == schema.get("minLength")
+            assert extract.max_length == schema.get("maxLength")
+
+        def check_type(schema, extract):
+            check_basic(extract, schema)
+
+            match extract.type:
+                case "array":
+                    assert isinstance(extract, Array)
+
+                    check_array(schema, extract)
+                case "boolean":
+                    assert isinstance(extract, Boolean)
+                case "null":
+                    assert isinstance(extract, Null)
+                case "number" | "integer":
+                    assert isinstance(extract, Numeric)
+                    check_numeric(schema, extract)
+                case "object":
+                    assert isinstance(extract, Object)
+                    check_object(schema, extract)
+                case "string":
+                    assert isinstance(extract, String)
+                    check_string(schema, extract)
+                case _:
+                    raise TypeError(f"Unknown type: {extract.type}")
+
+        def check_all_of(schema, extract):
+            check_basic(extract, schema)
+
+            for schema_item, extract_item in zip(schema["allOf"], extract.all_of, strict=True):
+                check_schema(schema_item, extract_item)
+
+        def check_any_of(schema, extract):
+            check_basic(extract, schema)
+
+            for schema_item, extract_item in zip(schema["anyOf"], extract.any_of, strict=True):
+                check_schema(schema_item, extract_item)
+
+        def check_not(schema, extract):
+            check_basic(extract, schema)
+            check_schema(schema["not"], extract.not_)
+
+        def check_one_of(schema, extract):
+            check_basic(extract, schema)
+
+            for schema_item, extract_item in zip(schema["oneOf"], extract.one_of, strict=True):
+                check_schema(schema_item, extract_item)
+
+        def check_ref(schema, extract):
+            check_basic(extract, schema)
+
+            assert extract.ref == schema["$ref"]
+
+        def check_tag(schema, extract):
+            check_basic(extract, schema)
+
+            assert extract.tag == schema["tag"]
+
+        def check_schema(schema, extract):
+            check_basic(extract, schema)
+            assert isinstance(extract, Schema)
+
+            if extract.definitions is None:
+                assert schema.get("definitions") is None
+            else:
+                for (schema_key, schema_definition), (extract_key, extract_definition) in zip(
+                    schema["definitions"].items(), extract.definitions.items(), strict=True
+                ):
+                    assert extract_key == schema_key
+                    check_schema(schema_definition, extract_definition)
+
+            if extract.enum is None:
+                assert schema.get("enum") is None
+            else:
+                assert extract.enum == schema["enum"]
+
+            if "type" in schema:
+                assert isinstance(extract, Type)
+                check_type(schema, extract)
+
+            elif "allOf" in schema:
+                assert isinstance(extract, AllOf)
+                check_all_of(schema, extract)
+
+            elif "anyOf" in schema:
+                assert isinstance(extract, AnyOf)
+                check_any_of(schema, extract)
+
+            elif "not" in schema:
+                assert isinstance(extract, Not)
+                check_not(schema, extract)
+
+            elif "oneOf" in schema:
+                assert isinstance(extract, OneOf)
+                check_one_of(schema, extract)
+
+            elif "$ref" in schema:
+                assert isinstance(extract, Ref)
+                check_ref(schema, extract)
+
+            elif "tag" in schema:
+                assert isinstance(extract, Tag)
+                check_tag(schema, extract)
+
+            else:
+                assert type(extract) is Schema
+                assert "definitions" in schema, "Cannot identify the schema"
+
+        if latest_uri.startswith(schema_uri_prefix):
+            schema = current_resources[latest_uri]
+            extract = manager[latest_uri]
+
+            check_schema(schema, extract)
+
+    def test_meta_uris(self, manager, archive_meta_uri):
+        """
+        Test that we can extract the archive information output from the archive_meta schemas
+        --> This is a simple smoke test to ensure we can generate the expected output without
+            code failures. This does not check the correctness of the output.
+        """
+        manager.archive_data(archive_meta_uri)
