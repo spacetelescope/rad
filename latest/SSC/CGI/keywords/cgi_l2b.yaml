@@ -1,0 +1,112 @@
+%YAML 1.1
+---
+$schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.0.0
+id: asdf://stsci.edu/datamodels/roman/schemas/SSC/CGI/keywords/cgi_l2b-1.0.0
+
+title: CGI L2b specific keywords
+extName: SSC
+type: object
+properties:
+  FRMSEL01:
+    title: Fraction bad pixels above which frame is declared bad
+    description: Fraction bad pixels above which frame is declared bad
+    type: number
+    archive_catalog:
+      datatype: float
+      destination: [CGIExposure.frmsel01]
+  FRMSEL02:
+    title: Throwing away frames with OVEREXP=True
+    description: Throwing away frames with OVEREXP=True
+    type: boolean
+    archive_catalog:
+      datatype: nchar(1)
+      destination: [CGIExposure.frmsel02]
+  FMRSEL03:
+    title: Tip rms (Z2VAR) threshold above which frame is declared bad
+    description: Tip rms (Z2VAR) threshold above which frame is declared bad (nm)
+    type: string
+    maxLength: 32
+    archive_catalog:
+      datatype: nvarchar(32)
+      destination: [CGIExposure.fmrsel03]
+  FRMSEL04:
+    title: Tilt rms (Z3VAR) threshold above which frame is declared bad
+    description: Tilt rms (Z3VAR) threshold above which frame is declared bad (nm)
+    type: string
+    maxLength: 32
+    archive_catalog:
+      datatype: nvarchar(32)
+      destination: [CGIExposure.frmsel04]
+  FRMSEL05:
+    title: Tip bias (Z2RES) threshold above which frame is declared bad
+    description: Tip bias (Z2RES) threshold above which frame is declared bad (nm)
+    type: string
+    maxLength: 32
+    archive_catalog:
+      datatype: nvarchar(32)
+      destination: [CGIExposure.frmsel05]
+  FRMSEL06:
+    title: Tilt bias (Z3RES) threshold above which frame is declared bad
+    description: Tilt bias (Z3RES) threshold above which frame is declared bad (nm)
+    type: string
+    maxLength: 32
+    archive_catalog:
+      datatype: nvarchar(32)
+      destination: [CGIExposure.frmsel06]
+  KGAIN_ER:
+    title: K-Gain error
+    description: K-Gain error (electrons)
+    type: number
+    archive_catalog:
+      datatype: float
+      destination: [CGIExposure.kgain_er]
+  RN:
+    title: Read noise
+    description: Read noise (electrons), "" for no value
+    anyOf:
+      - type: string
+        maxLength: 32
+      - type: number
+    archive_catalog:
+      datatype: nvarchar(32)
+      destination: [CGIExposure.rn]
+  RN_ERR:
+    title: Read noise error
+    description: Read noise error (electrons), "" for no value
+    anyOf:
+      - type: string
+        maxLength: 32
+      - type: number
+    archive_catalog:
+      datatype: nvarchar(32)
+      destination: [CGIExposure.rn_err]
+  PCTHRESH:
+    title: photon-counting threshold (only for photon-counted frames)
+    description: photon-counting threshold (only for photon-counted frames) (electrons)
+    type: number
+    archive_catalog:
+      datatype: float
+      destination: [CGIExposure.pcthresh]
+  NUM_FR:
+    title: Number of frames in each subset (only for photon-counted frames)
+    description:
+      Number of frames in each subset (only for photon-counted frames)
+      (frames)
+    type: integer
+    archive_catalog:
+      datatype: int
+      destination: [CGIExposure.num_fr]
+required:
+  [
+    FRMSEL01,
+    FRMSEL02,
+    FMRSEL03,
+    FRMSEL04,
+    FRMSEL05,
+    FRMSEL06,
+    KGAIN_ER,
+    RN,
+    RN_ERR,
+    PCTHRESH,
+    NUM_FR,
+  ]
