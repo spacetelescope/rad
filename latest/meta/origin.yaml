@@ -4,15 +4,18 @@ $schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.0.0
 id: asdf://stsci.edu/datamodels/roman/schemas/meta/origin-1.0.0
 
 title: Institution / Organization Name
+description: |
+  The name of the institution or organization
+  responsible for creating this file.
 
 type: string
+maxLength: 15
 enum: ["STSCI", "STSCI/SOC", "IPAC/SSC"]
 
 sdf:
   special_processing: VALUE_REQUIRED
   source:
     origin: TBD
-maxLength: 15
 archive_catalog:
   datatype: nvarchar(15)
   destination:
