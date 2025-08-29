@@ -3,12 +3,16 @@ Test features of the schemas not covered by the metaschema.
 """
 
 from collections.abc import Mapping
+from importlib.resources import files
 from re import match
 
 import asdf
+import asdf.schema
 import asdf.treeutil
 import pytest
 from crds.config import is_crds_name
+
+from rad import resources
 
 METADATA_FORCING_REQUIRED = ("archive_catalog", "sdf")
 
@@ -488,3 +492,40 @@ class TestPatternElementConsistency:
     def test_exposure_types_have_p_exptype_entry(self, p_exptype, exposure_types):
         """Confirm that the p_exptype entry is in the exposure_types enum."""
         assert p_exptype in exposure_types, f"p_exptype {p_exptype} not found in exposure_types."
+
+
+@pytest.fixture(scope="class")
+def asdf_ssc_config():
+    """
+    Fixture to load the SSC schemas into asdf for testing
+    """
+    with asdf.config_context() as config:
+        resource_mapping = asdf.resource.DirectoryResourceMapping(
+            files(resources) / "schemas" / "SSC", "asdf://stsci.edu/datamodels/roman/schemas/SSC/", recursive=True
+        )
+        config.add_resource_mapping(resource_mapping)
+
+        yield config
+
+    # Clear the schema cache to avoid issues with other tests
+    #   ASDF normally caches the loaded schemas so they don't have to be relo
+    #   but this creates a problem for the asdf-pytest-plugin, if those tests
+    #   are run after these tests because the loaded schemas will then be cached
+    #   and not fail. But if they are run before these tests then asdf-pytest-plugin
+    #   will fail because the references cannot be resolved through ASDF.
+    asdf.schema._load_schema_cached.cache_clear()
+
+
+class TestSSCSchemas:
+    @pytest.mark.usefixtures("asdf_ssc_config")
+    def test_metaschema(self, ssc_schema_path, ssc_schema_uri):
+        """
+        Test that the SSC Schemas are valid against the metaschema. This has to be done
+        outside the normal asdf-pytest-plugin because we are purposefully excluding them
+        from ASDF by default so they need to be manually loaded into asdf and then validated
+        against the metaschema.
+        """
+        schema = asdf.schema.load_schema(ssc_schema_path, resolve_references=True)
+        assert schema["id"] == ssc_schema_uri
+
+        asdf.schema.check_schema(schema)
