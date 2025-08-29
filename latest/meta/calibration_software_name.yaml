@@ -1,7 +1,7 @@
 %YAML 1.1
 ---
 $schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.0.0
-id: asdf://stsci.edu/datamodels/roman/schemas/tagged_scalars/calibration_software_name-1.0.0
+id: asdf://stsci.edu/datamodels/roman/schemas/meta/calibration_software_name-1.0.0
 
 title: Calibration Software Name
 type: string
@@ -21,5 +21,3 @@ archive_catalog:
       SourceCatalog.calibration_software_name,
       SegmentationMap.calibration_software_name,
     ]
-
-flowStyle: block
