@@ -1,0 +1,2 @@
+Remove direct ASDF packaging of the SSC schemas, and modify the versioning tests
+so that they no longer apply to the SSC schemas.
