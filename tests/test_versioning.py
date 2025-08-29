@@ -303,6 +303,10 @@ def _get_frozen_schemas_for_all_versions():
         version_schemas = _get_frozen_schemas(version)
         schemas[version] = version_schemas
         for uri in version_schemas:
+            if "SSC" in uri:
+                # SSC schemas are not under versioning
+                continue
+
             if uri not in uris:
                 uris.append(uri)
 
