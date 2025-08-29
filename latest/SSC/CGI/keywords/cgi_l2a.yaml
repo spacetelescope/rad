@@ -64,13 +64,5 @@ properties:
     archive_catalog:
       datatype: float
       destination: [CGIExposure.sat_dn]
-required: [
-  DESMEAR,
-  CTI_CORR,
-  IS_BAD,
-  RECIPE,
-  DRPCTIME,
-  FWC_PP_E,
-  FWC_EM_E,
-  SAT_DN
-]
+required:
+  [DESMEAR, CTI_CORR, IS_BAD, RECIPE, DRPCTIME, FWC_PP_E, FWC_EM_E, SAT_DN]
