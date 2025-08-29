@@ -508,7 +508,7 @@ def asdf_ssc_config():
         yield config
 
     # Clear the schema cache to avoid issues with other tests
-    #   ASDF normally caches the loaded schemas so they don't have to be relo
+    #   ASDF normally caches the loaded schemas so they don't have to be reloaded
     #   but this creates a problem for the asdf-pytest-plugin, if those tests
     #   are run after these tests because the loaded schemas will then be cached
     #   and not fail. But if they are run before these tests then asdf-pytest-plugin
