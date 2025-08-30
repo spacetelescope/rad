@@ -1,10 +1,9 @@
 %YAML 1.1
 ---
 $schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.0.0
-id: asdf://stsci.edu/datamodels/roman/schemas/statistics-1.0.0
+id: asdf://stsci.edu/datamodels/roman/schemas/meta/statistics-1.0.0
 
-title: |
-  Basic Statistical Information
+title: Basic Statistical Information
 
 type: object
 properties:
@@ -62,6 +61,4 @@ properties:
     archive_catalog:
       datatype: float
       destination: [WFIExposure.good_pixel_fraction]
-propertyOrder: [zodiacal_light, image_median, image_rms, good_pixel_fraction]
-flowStyle: block
 required: [zodiacal_light, image_median, image_rms, good_pixel_fraction]

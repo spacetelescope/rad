@@ -1,7 +1,7 @@
 %YAML 1.1
 ---
 $schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.0.0
-id: asdf://stsci.edu/datamodels/roman/schemas/velocity_aberration-1.0.0
+id: asdf://stsci.edu/datamodels/roman/schemas/meta/velocity_aberration-1.0.0
 
 title: Velocity Aberration Correction Information
 type: object
@@ -45,6 +45,4 @@ properties:
     archive_catalog:
       datatype: float
       destination: [WFIExposure.scale_factor, GuideWindow.scale_factor]
-flowStyle: block
-propertyOrder: [ra_reference, dec_reference, scale_factor]
 required: [ra_reference, dec_reference, scale_factor]
