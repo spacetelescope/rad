@@ -16,7 +16,7 @@ from semantic_version import Version
 from yaml import safe_load
 
 _RAD_URLS = (
-    "https://github.com/spacetelescope/rad",
+    "https://github.com/spacetelescope/rad.git",
     "git@github.com:spacetelescope/rad.git",
 )
 

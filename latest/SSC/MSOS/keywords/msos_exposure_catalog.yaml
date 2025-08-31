@@ -1,0 +1,49 @@
+%YAML 1.1
+---
+$schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.0.0
+id: asdf://stsci.edu/datamodels/roman/schemas/SSC/MSOS/keywords/msos_exposure_catalog-1.0.0
+
+title: Exposure Information For MSOS Catalogs
+extName: SSC
+
+type: object
+properties:
+  EXPTIME:
+    title: Exposure Time
+    description: Cadence of photometric measurements for light curve (seconds)
+    type: number
+    archive_catalog:
+      datatype: float
+      destination: [MSOSCatalog.exposure_time]
+  # For both the Roman WFI Search and the MAST Cross-Mission Search, sending these fields will permit time-range-based searches.
+  EXPSTART: # SOC Proposed
+    title: Start Time
+    description: First timestamp in the light curve (UTC)
+    tag: tag:stsci.edu:asdf/time/time-1.*
+    archive_catalog:
+      datatype: datetime2
+      destination: [MSOSCatalog.start_time]
+  EXPEND: # SOC Proposed
+    title: End Time
+    description: Last timestamp in the light curve (UTC)
+    tag: tag:stsci.edu:asdf/time/time-1.*
+    archive_catalog:
+      datatype: datetime2
+      destination: [MSOSCatalog.end_time]
+  # NOTE: MAST uses MJD for start and end times in our cross-mission search. We can convert from datetime strings, but if they are included in the manifest separately it would eliminate the need to do the conversion on the MAST side.
+  MJDSTART: # SOC Proposed
+    title: Start Time MJD
+    description: First timestamp in the light curve (MJD)
+    type: number
+    archive_catalog:
+      datatype: float
+      destination: [MSOSCatalog.start_time_mjd]
+  MJDEND: # SOC Proposed
+    title: End Time MJD
+    description: Last timestamp in the light curve (MJD)
+    type: number
+    archive_catalog:
+      datatype: float
+      destination: [MSOSCatalog.end_time_mjd]
+
+required: [EXPTIME, EXPSTART, EXPEND, MJDSTART, MJDEND]

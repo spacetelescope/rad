@@ -1,0 +1,28 @@
+%YAML 1.1
+---
+$schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.0.0
+id: asdf://stsci.edu/datamodels/roman/schemas/SSC/CGI/keywords/cgi_states-1.0.0
+
+title: State Information
+extName: SSC
+
+type: object
+properties:
+  OPMODE:
+    title: Op Mode
+    description: The OP mode.
+    type: string
+    maxLength: 32
+    archive_catalog:
+      datatype: nvarchar(32)
+      destination: [CGIExposure.opmode, CGIMosaic.opmode]
+  FSMPRFL:
+    title: FSM profile
+    description: The FSM profile
+    type: string
+    maxLength: 32
+    archive_catalog:
+      datatype: nvarchar(32)
+      destination: [CGIExposure.fsmprofile, CGIMosaic.fsmprofile]
+
+required: [OPMODE, FSMPRFL]

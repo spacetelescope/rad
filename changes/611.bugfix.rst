@@ -1,3 +1,0 @@
-Bugfixes for ``maxLength`` and ``nvarchar`` issues throughout the schemas. Note
-that this includes the introduction of unit tests to check that the ``maxLength``
-is included and matches the ``nvarchar`` when applicable.

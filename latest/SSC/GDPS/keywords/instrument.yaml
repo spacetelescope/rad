@@ -1,0 +1,20 @@
+%YAML 1.1
+---
+$schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.0.0
+id: asdf://stsci.edu/datamodels/roman/schemas/SSC/GDPS/keywords/instrument-1.0.0
+
+title: GDPS instrument keywords
+extName: SSC
+type: object
+properties:
+  optical_element:
+    title: WFI Optical Element
+    description: |
+      Name of the optical element used to take the science
+      data ("GRISM" or "PRISM").
+    type: string
+    maxLength: 20
+    archive_catalog:
+      datatype: nvarchar(20)
+      destination: [Placeholder.optical_element]
+required: [optical_element]

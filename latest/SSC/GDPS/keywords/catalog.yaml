@@ -1,0 +1,18 @@
+%YAML 1.1
+---
+$schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.0.0
+id: asdf://stsci.edu/datamodels/roman/schemas/SSC/GDPS/keywords/catalog-1.0.0
+
+title: GDPS catalog keywords
+extName: SSC
+type: object
+properties:
+  id_catalog:
+    title: Catalog ID
+    description: Placeholder.  Example value '0001'
+    type: string
+    maxLength: 128
+    archive_catalog:
+      datatype: nvarchar(128)
+      destination: [Placeholder.id_catalog]
+required: [id_catalog]

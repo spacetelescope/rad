@@ -1,0 +1,22 @@
+%YAML 1.1
+---
+$schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.0.0
+id: asdf://stsci.edu/datamodels/roman/schemas/SSC/CGI/keywords/cgi_region-1.0.0
+
+title: Footprint Information
+extName: SSC
+
+# For cone searches to work (one of the most popular search criteria) a footprint must be defined. It is best if this is sent along from SSC in the manifest, rather than attempted to be computed by MAST.
+# This is a polygon represented as a string, max length should be adjusted based on actual values and needs.
+# Example: POLYGON ICRS 270.319355102 65.974344371 270.322525221 66.097218677 270.012545446 66.097236236 270.012492360 65.974274943
+type: object
+properties:
+  S_REGION: # SOC Proposed
+    title: Spatial Footprint
+    description: The spatial footprint, represented as a polygon
+    type: string
+    archive_catalog:
+      datatype: nvarchar(max)
+      destination: [CGIExposure.s_region, CGIMosaic.s_region]
+
+required: [S_REGION]
