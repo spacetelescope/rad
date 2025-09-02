@@ -204,13 +204,13 @@ class RadApp(App):
 
         if tagged:
             if self._manager.datamodels_manifest.frozen:
-                match await self._bump_resources(BumpScreen(self._manager.init_bump(self._manager.datamodels_manifest))):
+                match await self._bump_resources(BumpScreen(self._manager.init_bump(self._manager.datamodels_manifest.path))):
                     case BumpScreen.Return.BUMP:
                         self.notify("Resources bumped successfully.", severity="success")
                     case BumpScreen.Return.RETURN:
                         self.notify("Could not bump the manifest, aborting resource creation", severity="error")
                         return
-            self._manager.datamodels_manifest.add_tag_entry(new_resource.tag_entry)
+            self._manager.add_tag_entry(new_resource.tag_entry)
 
         self._manager.add_new_resource(state, new_resource.create(tagged))
 
