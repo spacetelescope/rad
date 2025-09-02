@@ -5,6 +5,7 @@ Test that the asdf library integration is working properly.
 import importlib.resources as importlib_resources
 
 import asdf
+import pytest
 import yaml
 
 from rad import resources
@@ -30,8 +31,15 @@ def test_schema_integration(schema_path, schema_uris, metaschema_uri):
     schema = yaml.safe_load(content)
     uri = schema["id"]
 
-    assert uri in schema_uris or uri == metaschema_uri
-    assert content == asdf.get_config().resource_manager[uri]
+    # If the schema is in the SSC directory then it should not be available through
+    # ASDF
+    if "SSC" in str(schema_path):
+        assert uri not in schema_uris and uri != metaschema_uri
+        with pytest.raises(KeyError, match=r"Resource unavailable for URI: .*"):
+            asdf.get_config().resource_manager[uri]
+    else:
+        assert uri in schema_uris or uri == metaschema_uri
+        assert content == asdf.get_config().resource_manager[uri]
 
 
 def test_schema_filename(schema_path):

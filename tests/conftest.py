@@ -60,6 +60,24 @@ def schema_path(request):
     return request.param
 
 
+@pytest.fixture(scope="session", params=(importlib_resources.files(resources) / "schemas" / "SSC").glob("**/*.yaml"))
+def ssc_schema_path(request):
+    """
+    Get a path to an SSC schema file directly from the python package, rather than ASDF
+    """
+    return request.param
+
+
+@pytest.fixture(scope="session")
+def ssc_schema_uri(ssc_schema_path):
+    """
+    Get a URI for an SSC schema
+    """
+    content = ssc_schema_path.read_bytes()
+    schema = yaml.safe_load(content)
+    return schema["id"]
+
+
 ### Fixtures for working with only the latest schemas
 @pytest.fixture(scope="session")
 def latest_paths():
