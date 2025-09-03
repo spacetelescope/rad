@@ -149,7 +149,7 @@ Typically the review process will require the following:
 - Passing all continuous integration (CI) checks, or if downstream CI checks are
   failing due to the changes, linked PRs on the upstream repositories resolving
   those issues which have also been approved.
-- The regression tests pass or failures explained by the changes. If you do not
+- The regression tests passes or failures explained by the changes. If you do not
   have access to the regression test repository, please ask a maintainer to help
   you with this step.
 - If necessary, a discussion may occur at the weekly RAD meetting concerning the
