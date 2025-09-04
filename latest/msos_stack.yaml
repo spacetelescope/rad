@@ -49,6 +49,14 @@ properties:
     datatype: uint8
     exact_datatype: true
     ndim: 2
-propertyOrder: [meta, data, uncertainty, mask, coverage]
+  psf:
+    title: Point Spread Function
+    description: |
+      PSF array of stacked image data.
+    tag: tag:stsci.edu:asdf/core/ndarray-1.*
+    datatype: float64
+    exact_datatype: true
+    ndim: 2
+propertyOrder: [meta, data, uncertainty, mask, coverage, psf]
 flowStyle: block
-required: [meta, data, uncertainty, mask, coverage]
+required: [meta, data, uncertainty, mask, coverage, psf]
