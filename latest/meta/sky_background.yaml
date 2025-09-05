@@ -1,0 +1,29 @@
+%YAML 1.1
+---
+$schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.0.0
+id: asdf://stsci.edu/datamodels/roman/schemas/meta/sky_background-1.0.0
+
+title: Sky Background Information
+type: object
+properties:
+  level:
+    title: Sky Background Level
+    description: |
+      The sky background level in DN / s or MJy.sr**-1.
+    anyOf:
+      - type: number
+      - type: "null"
+    unit: ["DN / s", "MJy.sr**-1"]
+  method:
+    title: Sky Background Method
+    description: |
+      The method by which the sky background was determined.
+    type: string
+    enum: ["None", "local", "global+match", "match", "global"]
+  subtracted:
+    title: Sky Background Subtraction Flag
+    description: |
+      A boolean value which indicates whether the sky background has
+      been subtracted form the image or not.
+    type: boolean
+required: [level, method, subtracted]
