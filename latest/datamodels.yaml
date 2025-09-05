@@ -141,8 +141,8 @@ tags:
     title: Sky Background Information
     description: |-
       Sky Background Information
-  - tag_uri: asdf://stsci.edu/datamodels/roman/tags/mosaic_basic-1.2.0
-    schema_uri: asdf://stsci.edu/datamodels/roman/schemas/mosaic_basic-1.2.0
+  - tag_uri: asdf://stsci.edu/datamodels/roman/tags/mosaic_basic-1.3.0
+    schema_uri: asdf://stsci.edu/datamodels/roman/schemas/mosaic_basic-1.3.0
     title: Basic mosaic metadata keywords
     description: |-
       Basic mosaic metadata keywords
