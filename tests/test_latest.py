@@ -120,3 +120,12 @@ class TestLastestResources:
                 assert schema == re.sub(base_tag_uri_regex, tag_uri, schema), (
                     f"Schema {schema_uri} has references to {tag_uri} that have not been updated!"
                 )
+
+    def test_no_internal_tags(self, latest_tagged_schema_uri, current_resources):
+        """
+        Check that tagged entries in the latest manifest are all datamodels and not internal schemas.
+        """
+
+        assert "datamodel_name" in current_resources[latest_tagged_schema_uri], (
+            f"{latest_tagged_schema_uri} is tagged but not a datamodel."
+        )
