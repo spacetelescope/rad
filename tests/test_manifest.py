@@ -4,6 +4,9 @@ to schemas that exist.
 """
 
 import asdf
+import pytest
+
+from rad._tag_associations import _INTERNAL_TAG_REMOVAL_MAP
 
 
 def test_manifest_valid(manifest):
@@ -104,4 +107,33 @@ def test_no_lost_tags(latest_schema_tag_prefixes, latest_static_tags, previous_d
     if previous_datamodels_tag.split("-")[0] not in latest_schema_tag_prefixes:
         assert previous_datamodels_tag in latest_static_tags, (
             f"Tag: {previous_datamodels_tag} is missing from the latest tags and is not static."
+        )
+
+
+class TestTagAssociation:
+    """Tests for associating tags across different manifest versions for equivalency"""
+
+    @pytest.mark.parametrize("old_tag, new_tag", _INTERNAL_TAG_REMOVAL_MAP.items())
+    def test_internal_tag_removal_map(self, old_tag, new_tag, pre_removal_datamodel_tag_uris, post_removal_datamodel_tag_uris):
+        """
+        Check that the internal tag removal map is correct
+        """
+
+        assert old_tag in pre_removal_datamodel_tag_uris, f"Old tag {old_tag} not in pre-removal tags"
+        assert new_tag in post_removal_datamodel_tag_uris, f"New tag {new_tag} not in post-removal tags"
+
+    def test_pre_removal_datamodel_tags(self, pre_removal_datamodel_tag_uri):
+        """
+        Check that the pre-removal datamodel tags are all present
+        """
+        assert pre_removal_datamodel_tag_uri in _INTERNAL_TAG_REMOVAL_MAP, (
+            f"Pre-removal tag {pre_removal_datamodel_tag_uri} not in internal tag removal map"
+        )
+
+    def test_post_removal_datamodel_tags(self, post_removal_datamodel_tag_uri):
+        """
+        Check that the post-removal datamodel tags are all present
+        """
+        assert post_removal_datamodel_tag_uri in set(_INTERNAL_TAG_REMOVAL_MAP.values()), (
+            f"Post-removal tag {post_removal_datamodel_tag_uri} not in internal tag removal map"
         )
