@@ -130,7 +130,8 @@ properties:
   FTIMEUTC:
     title: Frame date/time at readout
     description: Frame date/time at readout (s)
-    tag: tag:stsci.edu:asdf/time/time-1.*
+    allOf:
+      - $ref: http://stsci.edu/schemas/asdf/time/time-1.3.0#/definitions/iso_time
     archive_catalog:
       datatype: datetime2
       destination: [CGIExposure.ftimeutc]
@@ -181,14 +182,16 @@ properties:
   EXPSTART: # SOC Proposed
     title: Start Time
     description: Observation start time (UTC)
-    tag: tag:stsci.edu:asdf/time/time-1.*
+    allOf:
+      - $ref: http://stsci.edu/schemas/asdf/time/time-1.3.0#/definitions/iso_time
     archive_catalog:
       datatype: datetime2
       destination: [CGIExposure.visit_start_time, CGIMosaic.visit_start_time]
   EXPEND: # SOC Proposed
     title: End Time
     description: Observation end time (UTC)
-    tag: tag:stsci.edu:asdf/time/time-1.*
+    allOf:
+      - $ref: http://stsci.edu/schemas/asdf/time/time-1.3.0#/definitions/iso_time
     archive_catalog:
       datatype: datetime2
       destination: [CGIExposure.visit_end_time, CGIMosaic.visit_end_time]

@@ -8,14 +8,6 @@ extName: SSC
 
 type: object
 properties:
-  OPMODE:
-    title: Op Mode
-    description: The OP mode.
-    type: string
-    maxLength: 32
-    archive_catalog:
-      datatype: nvarchar(32)
-      destination: [CGIExposure.opmode, CGIMosaic.opmode]
   FSMPRFL:
     title: FSM profile
     description: The FSM profile
@@ -120,7 +112,6 @@ properties:
 
 required:
   [
-    OPMODE,
     FSMPRFL,
     OPGAIN,
     FRAMET,

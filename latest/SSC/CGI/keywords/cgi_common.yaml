@@ -48,22 +48,6 @@ properties:
     archive_catalog:
       datatype: nvarchar(3)
       destination: [CGIExposure.campaign, CGIMosaic.campaign]
-  SEGMENT:
-    title: Segment number
-    description: The sequence of activities produced by each iteration of a Segment Plan (Observation Sequence) in a Pass
-    type: string
-    maxLength: 16
-    archive_catalog:
-      datatype: nvarchar(16)
-      destination: [CGIExposure.segment, CGIMosaic.segment]
-  VISNUM:
-    title: Visit number
-    description: Visit number within a program
-    type: string
-    maxLength: 16
-    archive_catalog:
-      datatype: nvarchar(16)
-      destination: [CGIExposure.visit, CGIMosaic.visit]
   # The following fields are NOT required, but they would be nice to have as explicitly specified values to fill in for our cross-mission search. If not relevant or not provided these will just be null values at MAST.
   DETECTOR: # SOC Proposed
     title: Detector
@@ -117,8 +101,6 @@ required:
     PROGNUM,
     EXECNUM,
     CAMPAIGN,
-    SEGMENT,
-    VISNUM,
     DETECTOR,
     APERTURE,
     PINAME,
