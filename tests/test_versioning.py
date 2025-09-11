@@ -60,7 +60,11 @@ with (REPO_PATH / "pyproject.toml").open("rb") as f:
 
 # Any expected versioning failures should be added here
 EXPECTED_XFAILS = (
-    # ("<version>", "<uri>"),
+    # FPS schema change has been requested, investigation of RITA data indicates
+    # that the change made will not effect any existing data, so this should be safe
+    ("0.25.0", "asdf://stsci.edu/datamodels/roman/schemas/fps-1.0.0"),
+    ("0.26.0", "asdf://stsci.edu/datamodels/roman/schemas/fps-1.0.0"),
+    ("0.27.0", "asdf://stsci.edu/datamodels/roman/schemas/fps-1.0.0"),
 )
 
 # The keywords in the schemas that we claim don't matter for schema versioning
