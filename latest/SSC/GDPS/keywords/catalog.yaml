@@ -7,12 +7,12 @@ title: GDPS catalog keywords
 extName: SSC
 type: object
 properties:
-  id_catalog:
+  catalog_id:
     title: Catalog ID
     description: Placeholder.  Example value '0001'
     type: string
     maxLength: 128
     archive_catalog:
       datatype: nvarchar(128)
-      destination: [Placeholder.id_catalog]
-required: [id_catalog]
+      destination: [Placeholder.catalog_id]
+required: [catalog_id]
