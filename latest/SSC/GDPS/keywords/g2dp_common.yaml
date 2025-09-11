@@ -58,4 +58,5 @@ properties:
     archive_catalog:
       datatype: nvarchar(28)
       destination: [Placeholder.fileset_id]
-required: [version_g2dp_software, id_g2dp_run, SEGMENT, VISNUM, ID_OBS, FILESET_ID]
+required:
+  [version_g2dp_software, id_g2dp_run, SEGMENT, VISNUM, ID_OBS, FILESET_ID]
