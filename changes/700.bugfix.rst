@@ -1,0 +1,2 @@
+Removed 'meta' nesting from MSOS archive search schemas.
+Switched asdf/time tagging to references to asdf/time iso_time
