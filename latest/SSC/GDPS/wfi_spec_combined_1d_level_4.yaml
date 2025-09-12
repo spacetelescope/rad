@@ -9,13 +9,11 @@ id: asdf://stsci.edu/datamodels/roman/schemas/SSC/GDPS/wfi_spec_combined_1d_leve
 title: Level 4 Grism/Prism - 1D Combined Spectrum for each Source
 archive_meta: Placeholder SOC file type
 type: object
-properties:
-  meta:
-    allOf:
-      - $ref: asdf://stsci.edu/datamodels/roman/schemas/SSC/ssc_basic-1.0.0
-      - $ref: asdf://stsci.edu/datamodels/roman/schemas/SSC/GDPS/keywords/observation-1.0.0
-      - $ref: asdf://stsci.edu/datamodels/roman/schemas/SSC/GDPS/keywords/instrument-1.0.0
-      - $ref: asdf://stsci.edu/datamodels/roman/schemas/SSC/GDPS/keywords/calibration-1.0.0
-      - $ref: asdf://stsci.edu/datamodels/roman/schemas/SSC/GDPS/keywords/wavelength-1.0.0
-      - $ref: asdf://stsci.edu/datamodels/roman/schemas/SSC/GDPS/keywords/pointing-1.0.0
-      - $ref: asdf://stsci.edu/datamodels/roman/schemas/SSC/GDPS/keywords/g2dp_common-1.0.0
+allOf:
+  - $ref: asdf://stsci.edu/datamodels/roman/schemas/SSC/ssc_basic-1.0.0
+  - $ref: asdf://stsci.edu/datamodels/roman/schemas/SSC/GDPS/keywords/observation-1.0.0
+  - $ref: asdf://stsci.edu/datamodels/roman/schemas/SSC/GDPS/keywords/instrument-1.0.0
+  - $ref: asdf://stsci.edu/datamodels/roman/schemas/SSC/GDPS/keywords/calibration-1.0.0
+  - $ref: asdf://stsci.edu/datamodels/roman/schemas/SSC/GDPS/keywords/wavelength-1.0.0
+  - $ref: asdf://stsci.edu/datamodels/roman/schemas/SSC/GDPS/keywords/pointing-1.0.0
+  - $ref: asdf://stsci.edu/datamodels/roman/schemas/SSC/GDPS/keywords/g2dp_common-1.0.0
