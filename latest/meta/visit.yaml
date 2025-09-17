@@ -1,7 +1,7 @@
 %YAML 1.1
 ---
 $schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.0.0
-id: asdf://stsci.edu/datamodels/roman/schemas/visit-1.2.0
+id: asdf://stsci.edu/datamodels/roman/schemas/meta/visit-1.0.0
 
 title: Visit Information
 type: object
@@ -183,6 +183,4 @@ properties:
           SourceCatalog.visit_internal_target,
           SegmentationMap.visit_internal_target,
         ]
-propertyOrder: [dither, type, start_time, nexposures, internal_target]
-flowStyle: block
 required: [dither, type, start_time, nexposures, internal_target]
