@@ -17,6 +17,7 @@ _RAD_URI_PREFIX = "asdf://stsci.edu/datamodels/roman/"
 _MANIFEST_URI_PREFIX = f"{_RAD_URI_PREFIX}manifests/"
 _SCHEMA_URI_PREFIX = f"{_RAD_URI_PREFIX}schemas/"
 _METASCHEMA_URI = f"{_SCHEMA_URI_PREFIX}rad_schema-1.0.0"
+_BASE_INDIVIDUAL_IMAGE_META_URI = f"{_SCHEMA_URI_PREFIX}meta/individual_image_meta"
 
 
 # Get all the schema URIs from the ASDF resource manager cached to the current session
@@ -41,6 +42,14 @@ _LATEST_MANIFEST_TAGS = MappingProxyType(
 )
 _LATEST_DATAMODELS_URI = next(uri for uri in _LATEST_MANIFEST_URIS if "static" not in uri)
 _LATEST_STATIC_URI = next(uri for uri in _LATEST_MANIFEST_URIS if "static" in uri)
+
+
+for uri in _LATEST_URIS:
+    if uri.startswith(_BASE_INDIVIDUAL_IMAGE_META_URI):
+        _BASE_INDIVIDUAL_IMAGE_META_URI = uri
+        break
+else:
+    raise ValueError("Could not find an individual image meta schema URI in the latest URIs")
 
 
 def _find_latest(uris):
@@ -550,4 +559,15 @@ def p_exptype(request):
     """
     Get the exposure type from the request.
     """
+    return request.param
+
+
+@pytest.fixture(
+    scope="session", params=tuple(uri for uri in _CURRENT_RESOURCES[_BASE_INDIVIDUAL_IMAGE_META_URI]["properties"].items())
+)
+def individual_image_meta_entry(request):
+    """
+    Get the individual image meta schema entry.
+    """
+
     return request.param
