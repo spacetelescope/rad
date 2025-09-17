@@ -31,9 +31,9 @@ ARRAY_TAG_XFAILS = (
     "asdf://stsci.edu/datamodels/roman/schemas/l1_detector_guidewindow-1.1.0",
 )
 
-REQUIRED_SKIPS = ("asdf://stsci.edu/datamodels/roman/schemas/wfi_mosaic-1.3.0",)
+REQUIRED_SKIPS = ("asdf://stsci.edu/datamodels/roman/schemas/wfi_mosaic-1.4.0",)
 
-NESTED_REQUIRED_SKIPS = ("asdf://stsci.edu/datamodels/roman/schemas/l3_common-1.0.0",)
+NESTED_REQUIRED_SKIPS = ("asdf://stsci.edu/datamodels/roman/schemas/l3_common-1.1.0",)
 
 
 class TestSchemaContent:
@@ -300,6 +300,14 @@ class TestSchemaContent:
         -> Smokes out when VARCHAR_XFAILS is not relevant anymore.
         """
         assert uri in latest_uris, f"{uri} is not in the list of schemas to be tested."
+
+    def test_individual_image_meta(self, individual_image_meta_entry, current_resources):
+        """
+        Check that the individual image meta schema entries all point to a valid individual data schema
+        """
+        key, entry = individual_image_meta_entry
+        assert "individual_schema" in entry, f"individual_schema missing for {key}"
+        assert entry["individual_schema"] in current_resources, f"individual_schema {entry['individual_schema']} not found"
 
 
 class TestTaggedSchemaContent:
