@@ -1,0 +1,156 @@
+%YAML 1.1
+---
+$schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.0.0
+id: asdf://stsci.edu/datamodels/roman/schemas/meta/pointing-1.0.0
+
+title: Spacecraft Pointing Information
+type: object
+properties:
+  pa_aperture:
+    title: Aperture Position Angle (deg)
+    description: |
+      Position angle in degrees of the aperture ideal Y axis
+      relative to the V3 axis of the spacecraft. This information
+      comes from the Science Instrument Aperture File (SIAF) in the
+      Science Operations Center (SOC) Project Reference Database
+      (PRD).
+    type: number
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    archive_catalog:
+      datatype: float
+      destination: [WFIExposure.pa_aperture, GuideWindow.pa_aperture]
+  pointing_engineering_source:
+    title: Pointing Engineering Source
+    description: |
+      The source type of the pointing information in the
+      metadata may be set to either "PLANNED" or "CALCULATED". If the
+      value is "PLANNED", then pointing mnemonics were not found in
+      the engineering database, and the pointing data were taken from
+      the observation planning information. If the value is
+      "CALCULATED", then the pointing data were determined using the
+      information in the engineering database.
+    type: string
+    enum: [CALCULATED, PLANNED]
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    maxLength: 10
+    archive_catalog:
+      datatype: nvarchar(10)
+      destination:
+        [
+          WFIExposure.pointing_engineering_source,
+          GuideWindow.pointing_engineering_source,
+        ]
+  ra_v1:
+    title: Right Ascension of the Telescope V1 Axis (deg)
+    description: |
+      The right ascension coordinate of the V1 axis in units
+      of degrees. This may be considered the right ascension
+      coordinate of the telescope boresight. The telescope V
+      coordinate system is defined with its origin at the vertex of
+      the primary mirror. The V1 axis is orthogonal to the primary
+      mirror, parallel to the telescope boresight, and increasing
+      positively through the telescope aperture. See
+      Roman-STScI-000143 "Description of the Roman SIAF and Coordinate
+      Frames" for more information.
+    type: number
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    archive_catalog:
+      datatype: float
+      destination: [WFIExposure.ra_v1, GuideWindow.ra_v1]
+  dec_v1:
+    title: Declination of the Telescope V1 Axis (deg)
+    description: |
+      The declination coordinate of the V1 axis in units of
+      degrees. This may be considered the declination coordinate of
+      the telescope boresight. The telescope V coordinate system is
+      defined with its origin at the vertex of the primary mirror. The
+      +V1 axis is orthogonal to the primary mirror, parallel to the
+      telescope boresight, and increasing positively through the
+      telescope aperture. See Roman-STScI-000143 "Description of the
+      Roman SIAF and Coordinate Frames" for more information.
+    type: number
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    archive_catalog:
+      datatype: float
+      destination: [WFIExposure.dec_v1, GuideWindow.dec_v1]
+  pa_v3:
+    title: Position Angle of the Telescope V3 Axis (deg)
+    description: |
+      The position angle of the V3 axis (in units of
+      degrees) is defined as the projection of the V3 axis on the sky
+      measured from North to East. The telescope V coordinate system
+      is defined with its origin at the vertex of the primary mirror.
+      The +V3 axis is defined to be orthogonal to the sunshield. See
+      Roman-STScI-000143 "Description of the Roman SIAF and Coordinate
+      Frames" for more information.
+    type: number
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    archive_catalog:
+      datatype: float
+      destination: [WFIExposure.pa_v3, GuideWindow.pa_v3]
+  target_aperture:
+    title: Aperture Name Used for Pointing
+    description: |
+      Name of the aperture used to align the instrument to a
+      position on the sky.
+    type: string
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    maxLength: 100
+    archive_catalog:
+      datatype: nvarchar(100)
+      destination: [WFIExposure.target_aperture, GuideWindow.target_aperture]
+  target_ra:
+    title: Right Ascension of the Target Aperture (deg)
+    description: |
+      Right ascension in units of degrees at the location of
+      the target aperture.
+    type: number
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    archive_catalog:
+      datatype: float
+      destination: [WFIExposure.target_ra, GuideWindow.target_ra]
+  target_dec:
+    title: Declination of the Target Aperture
+    description: |
+      Declination in units of degrees at the location of the
+      target aperture.
+    type: number
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    archive_catalog:
+      datatype: float
+      destination: [WFIExposure.target_dec, GuideWindow.target_dec]
+required:
+  [
+    pa_aperture,
+    pointing_engineering_source,
+    ra_v1,
+    dec_v1,
+    pa_v3,
+    target_aperture,
+    target_ra,
+    target_dec,
+  ]

@@ -41,6 +41,34 @@ _LATEST_MANIFEST_TAGS = MappingProxyType(
 )
 _LATEST_DATAMODELS_URI = next(uri for uri in _LATEST_MANIFEST_URIS if "static" not in uri)
 _LATEST_STATIC_URI = next(uri for uri in _LATEST_MANIFEST_URIS if "static" in uri)
+_LATEST_DATAMODEL_URIS = tuple(uri["schema_uri"] for uri in _CURRENT_RESOURCES[_LATEST_DATAMODELS_URI]["tags"])
+
+_PRE_REMOVAL_MANIFEST_URI = "asdf://stsci.edu/datamodels/roman/manifests/datamodels-1.4.0"
+_POST_REMOVAL_MANIFEST_URI = "asdf://stsci.edu/datamodels/roman/manifests/datamodels-1.5.0"
+
+
+def _find_datamodel_tags(uri, ignore: set[str] | None = None):
+    """Find the datamodel tags for a given manifest URI"""
+
+    tags = []
+    for entry in _CURRENT_RESOURCES[uri]["tags"]:
+        if "datamodel_name" in _CURRENT_RESOURCES[entry["schema_uri"]]:
+            tags.append(entry["tag_uri"])
+
+    tags = set(tags)
+    if ignore:
+        tags = tags - ignore
+
+    return frozenset(tags)
+
+
+_PRE_REMOVAL_DATAMODEL_TAGS = _find_datamodel_tags(
+    _PRE_REMOVAL_MANIFEST_URI,
+    {"asdf://stsci.edu/datamodels/roman/tags/guidewindow-1.3.0", "asdf://stsci.edu/datamodels/roman/tags/associations-1.0.0"},
+)
+_POST_REMOVAL_DATAMODEL_TAGS = _find_datamodel_tags(
+    _POST_REMOVAL_MANIFEST_URI, {"asdf://stsci.edu/datamodels/roman/tags/associations-1.0.0"}
+)
 
 
 def _find_latest(uris):
@@ -134,6 +162,12 @@ def latest_datamodels_uri():
     """
     assert len(_LATEST_MANIFEST_URIS) == 2, f"There should be exactly two latest manifests, found {len(_LATEST_MANIFEST_URIS)}"
     return _LATEST_DATAMODELS_URI
+
+
+@pytest.fixture(scope="session", params=_LATEST_DATAMODEL_URIS)
+def latest_tagged_schema_uri(request):
+    """Get a latest tagged schema URI"""
+    return request.param
 
 
 @pytest.fixture(scope="session", params=_LATEST_MANIFEST_TAGS[_LATEST_DATAMODELS_URI])
@@ -549,5 +583,37 @@ def p_exptype_pattern():
 def p_exptype(request):
     """
     Get the exposure type from the request.
+    """
+    return request.param
+
+
+@pytest.fixture(scope="session")
+def pre_removal_datamodel_tag_uris():
+    """
+    Get the tags from the pre-removal manifest
+    """
+    return _PRE_REMOVAL_DATAMODEL_TAGS
+
+
+@pytest.fixture(scope="session", params=_PRE_REMOVAL_DATAMODEL_TAGS)
+def pre_removal_datamodel_tag_uri(request):
+    """
+    Get a tag from the pre-removal manifest
+    """
+    return request.param
+
+
+@pytest.fixture(scope="session")
+def post_removal_datamodel_tag_uris():
+    """
+    Get the tags from the post-removal manifest
+    """
+    return _POST_REMOVAL_DATAMODEL_TAGS
+
+
+@pytest.fixture(scope="session", params=_POST_REMOVAL_DATAMODEL_TAGS)
+def post_removal_datamodel_tag_uri(request):
+    """
+    Get a tag from the post-removal manifest
     """
     return request.param
