@@ -1,0 +1,2 @@
+Removed 'meta' nesting from GDPS archive search schemas.
+Switched asdf/time tagging to references to asdf/time iso_time
