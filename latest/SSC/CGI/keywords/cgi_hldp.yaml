@@ -1,0 +1,18 @@
+%YAML 1.1
+---
+$schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.0.0
+id: asdf://stsci.edu/datamodels/roman/schemas/SSC/CGI/keywords/cgi_hldp-1.0.0
+
+title: Keywords specific to CGI L2-L4
+extName: SSC
+type: object
+properties:
+  DRPVERSN:
+    title: Version of DRP software
+    description: Version of DRP software
+    type: string
+    maxLength: 128
+    archive_catalog:
+      datatype: nvarchar(128)
+      destination: [CGIExposure.drpversn, CGIMosaic.drpversn]
+required: [DRPVERSN]
