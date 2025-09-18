@@ -9,13 +9,11 @@ id: asdf://stsci.edu/datamodels/roman/schemas/SSC/MSOS/wfi_microlensing_referenc
 title: GBTDS L3 Reference Frame
 archive_meta: Placeholder SOC file type
 type: object
-properties:
-  meta:
-    allOf:
-      - $ref: asdf://stsci.edu/datamodels/roman/schemas/SSC/ssc_basic-1.0.0
-      - $ref: asdf://stsci.edu/datamodels/roman/schemas/SSC/MSOS/keywords/msos_common-1.0.0
-      - $ref: asdf://stsci.edu/datamodels/roman/schemas/SSC/MSOS/keywords/msos_exposure-1.0.0
-      - $ref: asdf://stsci.edu/datamodels/roman/schemas/SSC/MSOS/keywords/msos_pointing-1.0.0
-      - $ref: asdf://stsci.edu/datamodels/roman/schemas/SSC/MSOS/keywords/msos_program-1.0.0
-      - $ref: asdf://stsci.edu/datamodels/roman/schemas/SSC/MSOS/keywords/msos_reference_frame-1.0.0
-      - $ref: asdf://stsci.edu/datamodels/roman/schemas/SSC/MSOS/keywords/msos_region-1.0.0
+allOf:
+  - $ref: asdf://stsci.edu/datamodels/roman/schemas/SSC/ssc_basic-1.0.0
+  - $ref: asdf://stsci.edu/datamodels/roman/schemas/SSC/MSOS/keywords/msos_common-1.0.0
+  - $ref: asdf://stsci.edu/datamodels/roman/schemas/SSC/MSOS/keywords/msos_exposure-1.0.0
+  - $ref: asdf://stsci.edu/datamodels/roman/schemas/SSC/MSOS/keywords/msos_pointing-1.0.0
+  - $ref: asdf://stsci.edu/datamodels/roman/schemas/SSC/MSOS/keywords/msos_program-1.0.0
+  - $ref: asdf://stsci.edu/datamodels/roman/schemas/SSC/MSOS/keywords/msos_reference_frame-1.0.0
+  - $ref: asdf://stsci.edu/datamodels/roman/schemas/SSC/MSOS/keywords/msos_region-1.0.0
