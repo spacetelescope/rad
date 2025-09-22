@@ -18,9 +18,9 @@ properties:
   program_complete:
     title: Program Complete
     description: Placeholder.  Example value 'False'
-    type: string
+    type: boolean
     maxLength: 8
     archive_catalog:
-      datatype: nvarchar(8)
+      datatype: nchar(1)
       destination: [Placeholder.program_complete]
 required: [program, program_complete]
