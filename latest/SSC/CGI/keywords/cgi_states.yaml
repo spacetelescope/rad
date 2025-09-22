@@ -12,7 +12,7 @@ properties:
     title: FSM profile
     description: The FSM profile
     type: string
-    maxLength: 20
+    maxLength: 50
     enum:
       - NFOV
       - EFOV
@@ -22,7 +22,7 @@ properties:
       - SPARE
       - FSM_PROFILE_UNKNOWN
     archive_catalog:
-      datatype: nvarchar(20)
+      datatype: nvarchar(50)
       destination: [CGIExposure.fsmprofile, CGIMosaic.fsmprofile]
   OPGAIN:
     title: The commanded gain (can be designated "Auto" to be calculated after HOWFSC)

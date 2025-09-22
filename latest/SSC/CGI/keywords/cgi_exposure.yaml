@@ -145,7 +145,7 @@ properties:
       - ENG
     archive_catalog:
       datatype: nvarchar(4)
-      destination: [CGIExposure.readout_size, CGIMosaic.readout_size]
+      destination: [CGIExposure.arrtype, CGIMosaic.arrtype]
   HVCBIAS:
     title: HV Clock Bias Voltage
     description: HV Clock Bias Voltage (V)
@@ -157,7 +157,7 @@ properties:
     title: EXCAM readout operational mode
     description: EXCAM readout operational mode
     type: string
-    maxLength: 16
+    maxLength: 50
     enum:
       - NONE_DETON_0
       - ACQUIRE_SCIENCE
@@ -176,7 +176,7 @@ properties:
       - SPARE_9
       - NONE_DETON_15
     archive_catalog:
-      datatype: nvarchar(16)
+      datatype: nvarchar(50)
       destination: [CGIExposure.opmode]
   # For both the Roman CGI Search and the MAST Cross-Mission Search, sending these fields will permit time-range-based searches.
   EXPSTART: # SOC Proposed

@@ -27,19 +27,17 @@ properties:
   PROGNUM:
     title: Program number
     description: ID number (integer) assigned to the proposal
-    type: string
-    maxLength: 16
+    type: integer
     archive_catalog:
-      datatype: nvarchar(16)
+      datatype: int
       destination: [CGIExposure.program, CGIMosaic.program]
   EXECNUM:
     title: Execution number portion of visit ID
     description: Execution number portion of visit ID
-    type: string
-    maxLength: 2
+    type: integer
     archive_catalog:
-      datatype: nvarchar(2)
-      destination: [CGIExposure.execnum, CGIMosaic.execnum]
+      datatype: smallint
+      destination: [CGIExposure.execution_plan, CGIMosaic.execution_plan]
   CAMPAIGN:
     title: Campaign number portion of visit ID
     description: Campaign number portion of visit ID

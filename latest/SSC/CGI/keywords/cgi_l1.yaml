@@ -12,9 +12,9 @@ properties:
     title: Version of CDMS software
     description: Version of CDMS software
     type: string
-    maxLength: 8
+    maxLength: 128
     archive_catalog:
-      datatype: nvarchar(8)
+      datatype: nvarchar(128)
       destination: [CGIExposure.cdmsvers]
 
 required: [CDMSVERS]

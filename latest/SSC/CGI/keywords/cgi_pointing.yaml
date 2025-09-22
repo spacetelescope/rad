@@ -24,7 +24,7 @@ properties:
       destination: [CGIExposure.dec_ref, CGIMosaic.dec_ref]
   RAPM:
     title: RA proper motion
-    description: RA proper motion
+    description: RA proper motion (mas/yr)
     type: number
     archive_catalog:
       datatype: float
