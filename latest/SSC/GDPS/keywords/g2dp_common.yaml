@@ -23,40 +23,28 @@ properties:
     archive_catalog:
       datatype: nvarchar(128)
       destination: [Placeholder.id_g2dp_run]
-  # NOTE: Including SEGMENT and VISNUM will permit better checking that the SSC spectral catalogs match the FILESET_ID it gets associated with
-  SEGMENT:
+  # NOTE: Including segment and visit will permit better checking that the SSC spectral catalogs match the FILESET_ID it gets associated with
+  segment:
     title: Segment number
     description: The sequence of activities produced by each iteration of a Segment Plan (Observation Sequence) in a Pass
-    type: string
-    maxLength: 16
+    type: integer
     archive_catalog:
-      datatype: nvarchar(16)
-      destination: [CGIExposure.segment, CGIMosaic.segment]
-  VISNUM:
+      datatype: smallint
+      destination: [Placeholder.segment]
+  visit:
     title: Visit number
     description: Visit number within a program
-    type: string
-    maxLength: 16
+    type: integer
     archive_catalog:
-      datatype: nvarchar(16)
-      destination: [CGIExposure.visit, CGIMosaic.visit]
-  ID_OBS:
-    title: Observation ID
+      datatype: smallint
+      destination: [Placeholder.visit]
+  observation_id:
+    title: Programmatic Observation Identifier
     description: Placeholder.  Example value '0000101001001001001'
     type: string
     maxLength: 28
     archive_catalog:
       datatype: nvarchar(28)
       destination: [Placeholder.observation_id]
-  # NOTE: fileset_id permits SOC to place the file into the correct SOC fileset
-  # NOTE: SOC uses "fileset" internally and "dataset" exposed to users, hence the mixed use
-  FILESET_ID:
-    title: Dataset ID
-    description: The Level 2 WFI dataset ID, e.g., 'r0017001001001001006_0002_wfi16_f087'
-    type: string
-    maxLength: 28
-    archive_catalog:
-      datatype: nvarchar(28)
-      destination: [Placeholder.fileset_id]
 required:
-  [version_g2dp_software, id_g2dp_run, SEGMENT, VISNUM, ID_OBS, FILESET_ID]
+  [version_g2dp_software, id_g2dp_run, segment, visit, observation_id]

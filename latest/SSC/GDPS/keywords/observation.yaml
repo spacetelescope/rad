@@ -10,16 +10,14 @@ properties:
   program:
     title: Program number
     description: ID number assigned to the proposal
-    type: string
-    maxLength: 16
+    type: integer
     archive_catalog:
-      datatype: nvarchar(16)
+      datatype: int
       destination: [Placeholder.program]
   program_complete:
     title: Program Complete
     description: Placeholder.  Example value 'False'
     type: boolean
-    maxLength: 8
     archive_catalog:
       datatype: nchar(1)
       destination: [Placeholder.program_complete]
