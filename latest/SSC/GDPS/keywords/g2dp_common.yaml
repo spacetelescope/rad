@@ -46,5 +46,4 @@ properties:
     archive_catalog:
       datatype: nvarchar(28)
       destination: [Placeholder.observation_id]
-required:
-  [version_g2dp_software, id_g2dp_run, segment, visit, observation_id]
+required: [version_g2dp_software, id_g2dp_run, segment, visit, observation_id]
