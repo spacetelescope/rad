@@ -1,8 +1,8 @@
 # Roman Attribute Dictionary
 
-[![CI](https://github.com/spacetelescope/rad/actions/workflows/ci.yml/badge.svg)](https://github.com/spacetelescope/rad/actions/workflows/ci.yml)
+[![Tests](https://github.com/spacetelescope/rad/actions/workflows/tests.yml/badge.svg)](https://github.com/spacetelescope/rad/actions/workflows/tests.yml)
 [![Documentation Status](https://readthedocs.org/projects/rad/badge/?version=latest)](https://rad.readthedocs.io/en/latest/?badge=latest)
-[![Weekly CI](https://github.com/spacetelescope/rad/actions/workflows/ci_cron.yml/badge.svg)](https://github.com/spacetelescope/rad/actions/workflows/ci_cron.yml)
+[![Extra Tests](https://github.com/spacetelescope/rad/actions/workflows/tests_extra.yml/badge.svg)](https://github.com/spacetelescope/rad/actions/workflows/tests_extra.yml)
 [![Powered by STScI Badge](https://img.shields.io/badge/powered%20by-STScI-blue.svg?colorA=707170&colorB=3e8ddd&style=flat)](http://www.stsci.edu)
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.16048573.svg)](https://doi.org/10.5281/zenodo.16048573)
 
