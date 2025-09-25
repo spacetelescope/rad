@@ -1,12 +1,13 @@
 %YAML 1.1
 ---
 $schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.0.0
-id: asdf://stsci.edu/datamodels/roman/schemas/tagged_scalars/file_date-1.0.0
+id: asdf://stsci.edu/datamodels/roman/schemas/meta/file_date-1.0.0
 
 title: File Creation Date
+description: |
+  The date and time this file was created.
 
-allOf:
-  - $ref: http://stsci.edu/schemas/asdf/time/time-1.1.0
+tag: tag:stsci.edu:asdf/time/time-1.*
 
 sdf:
   special_processing: VALUE_REQUIRED
@@ -23,5 +24,3 @@ archive_catalog:
       SourceCatalog.filedate,
       SegmentationMap.filedate,
     ]
-
-flowStyle: block

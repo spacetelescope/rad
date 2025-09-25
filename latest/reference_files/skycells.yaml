@@ -1,7 +1,7 @@
 %YAML 1.1
 ---
 $schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.0.0
-id: asdf://stsci.edu/datamodels/roman/schemas/reference_files/skycells-1.0.0
+id: asdf://stsci.edu/datamodels/roman/schemas/reference_files/skycells-1.1.0
 
 title: Skycells Reference File Schema
 
@@ -45,14 +45,7 @@ properties:
               matching.
             tag: tag:stsci.edu:asdf/time/time-1.*
           telescope:
-            title: Telescope
-            description: |
-              The telescope data used to select reference files, e.g. ROMAN for the
-              Nancy Grace Roman Space Telescope.
-            anyOf:
-              - tag: asdf://stsci.edu/datamodels/roman/tags/telescope-1.0.0
-              - type: string
-                enum: [ROMAN]
+            $ref: asdf://stsci.edu/datamodels/roman/schemas/meta/telescope-1.0.0
           origin:
             title: Organization
             description: |
