@@ -12,10 +12,6 @@ type: object
 allOf:
   - $ref: asdf://stsci.edu/datamodels/roman/schemas/SSC/ssc_basic-1.0.0
   - $ref: asdf://stsci.edu/datamodels/roman/schemas/SSC/MSOS/keywords/msos_basic-1.0.0
-  - $ref: asdf://stsci.edu/datamodels/roman/schemas/SSC/MSOS/keywords/msos_common-1.0.0
-  - $ref: asdf://stsci.edu/datamodels/roman/schemas/SSC/MSOS/keywords/msos_exposure_catalog-1.0.0
-  - $ref: asdf://stsci.edu/datamodels/roman/schemas/SSC/MSOS/keywords/msos_observation-1.0.0
-  - $ref: asdf://stsci.edu/datamodels/roman/schemas/SSC/MSOS/keywords/msos_photometry-1.0.0
   - $ref: asdf://stsci.edu/datamodels/roman/schemas/SSC/MSOS/keywords/msos_program-1.0.0
   - $ref: asdf://stsci.edu/datamodels/roman/schemas/SSC/MSOS/keywords/msos_reference_frame-1.0.0
   - $ref: asdf://stsci.edu/datamodels/roman/schemas/SSC/MSOS/keywords/msos_settings-1.0.0
