@@ -4,7 +4,7 @@ $schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.0.0
 id: asdf://stsci.edu/datamodels/roman/schemas/SSC/CGI/cgi_level_2b-1.0.0
 
 title: Science CGI Level 2b
-archive_meta: Science CGI Level 2
+archive_meta: Science CGI Level 2b
 
 type: object
 allOf:
