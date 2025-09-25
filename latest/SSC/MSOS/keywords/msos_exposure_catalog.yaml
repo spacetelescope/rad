@@ -8,7 +8,7 @@ extName: SSC
 
 type: object
 properties:
-  EXPTIME:
+  exptime:
     title: Exposure Time
     description: Cadence of photometric measurements for light curve (seconds)
     type: number
@@ -16,7 +16,7 @@ properties:
       datatype: float
       destination: [MSOSCatalog.exposure_time]
   # For both the Roman WFI Search and the MAST Cross-Mission Search, sending these fields will permit time-range-based searches.
-  EXPSTART: # SOC Proposed
+  expstart: # SOC Proposed
     title: Start Time
     description: First timestamp in the light curve (UTC)
     allOf:
@@ -24,7 +24,7 @@ properties:
     archive_catalog:
       datatype: datetime2
       destination: [MSOSCatalog.start_time]
-  EXPEND: # SOC Proposed
+  expend: # SOC Proposed
     title: End Time
     description: Last timestamp in the light curve (UTC)
     allOf:
@@ -33,14 +33,14 @@ properties:
       datatype: datetime2
       destination: [MSOSCatalog.end_time]
   # NOTE: MAST uses MJD for start and end times in our cross-mission search. We can convert from datetime strings, but if they are included in the manifest separately it would eliminate the need to do the conversion on the MAST side.
-  MJDSTART: # SOC Proposed
+  mjdstart: # SOC Proposed
     title: Start Time MJD
     description: First timestamp in the light curve (MJD)
     type: number
     archive_catalog:
       datatype: float
       destination: [MSOSCatalog.start_time_mjd]
-  MJDEND: # SOC Proposed
+  mjdend: # SOC Proposed
     title: End Time MJD
     description: Last timestamp in the light curve (MJD)
     type: number
@@ -48,4 +48,4 @@ properties:
       datatype: float
       destination: [MSOSCatalog.end_time_mjd]
 
-required: [EXPTIME, EXPSTART, EXPEND, MJDSTART, MJDEND]
+required: [exptime, expstart, expend, mjdstart, mjdend]

@@ -7,7 +7,7 @@ title: MSOS Reference Frame keywords
 extName: SSC
 type: object
 properties:
-  FLIP:
+  flip:
     title: Flip
     description: Placeholder.  Example value '1'
     type: string
@@ -15,7 +15,7 @@ properties:
     archive_catalog:
       datatype: nvarchar(8)
       destination: [WFIReferenceFrame.flip]
-  FIELD:
+  field:
     title: Field
     description: Placeholder.  Example value '5'
     type: string
@@ -23,7 +23,7 @@ properties:
     archive_catalog:
       datatype: nvarchar(128)
       destination: [WFIReferenceFrame.field]
-  SEQUENCE:
+  ref_frame_sequence:
     title: Sequence
     description: Placeholder.  Example value '3'
     type: string
@@ -31,7 +31,7 @@ properties:
     archive_catalog:
       datatype: nvarchar(10)
       destination: [WFIReferenceFrame.sequence]
-  TILE_ID:
+  tile_id:
     title: Tile Id
     description: Placeholder.  Example value '35'
     type: string
@@ -40,4 +40,4 @@ properties:
       datatype: nvarchar(10)
       destination: [WFIReferenceFrame.tile_id]
 
-required: [FLIP, FIELD, SEQUENCE, TILE_ID]
+required: [flip, field, ref_frame_sequence, tile_id]

@@ -8,21 +8,21 @@ extName: SSC
 
 type: object
 properties:
-  RA:
+  ra:
     title: RA (J2000)
     description: Right Ascension (J2000), from 0 to 360, in degrees
     type: number
     archive_catalog:
       datatype: float
       destination: [WFIReferenceFrame.ra_ref]
-  DEC:
+  dec:
     title: Dec (J2000)
     description: Declination (J2000), from -90 to +90, in degrees
     type: number
     archive_catalog:
       datatype: float
       destination: [WFIReferenceFrame.dec_ref]
-  TARGET:
+  target:
     title: Target Name
     description: Name of the source pointed at by the telescope
     type: string
@@ -30,7 +30,7 @@ properties:
     archive_catalog:
       datatype: nvarchar(256)
       destination: [WFIReferenceFrame.target_name]
-  REFFRAME: # SOC Proposed
+  refframe: # SOC Proposed
     # This is optional, if not provided MAST will just assume ICRS, but best to explicitly provide.
     title: Reference Frame
     description: The coordinate system used to define the reference frame
@@ -39,7 +39,7 @@ properties:
     archive_catalog:
       datatype: nvarchar(16)
       destination: [WFIReferenceFrame.reference_frame]
-  EQUINOX: # SOC Proposed
+  equinox: # SOC Proposed
     # This is optional, if not provided MAST will just assume 2000.0, but best to explicitly provide.
     title: Equinox
     description: The equinox of the coordinates
@@ -48,4 +48,4 @@ properties:
       datatype: float
       destination: [WFIReferenceFrame.equinox]
 
-required: [RA, DEC, TARGET, REFFRAME, EQUINOX]
+required: [ra, dec, target, refframe, equinox]
