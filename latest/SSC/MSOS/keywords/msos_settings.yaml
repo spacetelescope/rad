@@ -31,14 +31,6 @@ properties:
     archive_catalog:
       datatype: nvarchar(128)
       destination: [MSOSCatalog.msos_detection_efficiency_version]
-  sequence:
-    title: Sequence
-    description: Placeholder.
-    type: string
-    maxLength: 128
-    archive_catalog:
-      datatype: nvarchar(128)
-      destination: [MSOSCatalog.sequence]
   season:
     title: Season
     description: Placeholder.  Example value '0'
@@ -49,19 +41,17 @@ properties:
       destination: [MSOSCatalog.season]
   flip_flag:
     title: Flip Flag
-    description: Placeholder.  Example value 'False'
-    type: string
-    maxLength: 8
+    description: Placeholder
+    type: boolean
     archive_catalog:
-      datatype: nvarchar(8)
+      datatype: nchar(1)
       destination: [MSOSCatalog.flip_flag]
   galactic_center_flag:
     title: Galactic Center Flag
-    description: Placeholder.  Example value 'False'
-    type: string
-    maxLength: 8
+    description: Placeholder
+    type: boolean
     archive_catalog:
-      datatype: nvarchar(8)
+      datatype: nchar(1)
       destination: [MSOSCatalog.galactic_center_flag]
 
 required:
@@ -69,7 +59,6 @@ required:
     msos_photometry_version,
     msos_events_version,
     msos_detection_efficiency_version,
-    sequence,
     season,
     flip_flag,
     galactic_center_flag,

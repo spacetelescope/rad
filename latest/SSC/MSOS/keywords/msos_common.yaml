@@ -8,7 +8,7 @@ extName: SSC
 
 type: object
 properties:
-  INSTRUME:
+  instrume:
     title: Instrument
     description: Instrument used
     type: string
@@ -18,7 +18,7 @@ properties:
       destination:
         [WFIReferenceFrame.instrument_name, MSOSCatalog.instrument_name]
   # The following fields are NOT required, but they would be nice to have as explicitly specified values to fill in for our cross-mission search. If not relevant or not provided these will just be null values at MAST.
-  DETECTOR: # SOC Proposed
+  detector: # SOC Proposed
     title: Detector
     description: The WFI detector name
     type: string
@@ -26,7 +26,7 @@ properties:
     archive_catalog:
       datatype: nvarchar(16)
       destination: [WFIReferenceFrame.detector, MSOSCatalog.detector]
-  APERTURE: # SOC Proposed
+  aperture: # SOC Proposed
     title: Aperture
     description: The WFI aperture name
     type: string
@@ -34,7 +34,7 @@ properties:
     archive_catalog:
       datatype: nvarchar(16)
       destination: [WFIReferenceFrame.aperture, MSOSCatalog.aperture]
-  CALVER: # SOC Proposed
+  calver: # SOC Proposed
     title: Calibration Version
     description: The version of the calibration software used
     type: string
@@ -42,7 +42,7 @@ properties:
     archive_catalog:
       datatype: nvarchar(16)
       destination: [WFIReferenceFrame.detector, MSOSCatalog.detector]
-  OPTICAL_ELEMENT:
+  optical_element:
     allOf:
       - $ref: asdf://stsci.edu/datamodels/roman/schemas/wfi_optical_element-1.2.0
     title: Wide Field Instrument (WFI) Optical Element
@@ -54,4 +54,4 @@ properties:
       destination:
         [WFIReferenceFrame.optical_element, MSOSCatalog.optical_element]
 
-required: [INSTRUME, DETECTOR, APERTURE, CALVER, OPTICAL_ELEMENT]
+required: [instrume, detector, aperture, calver, optical_element]
