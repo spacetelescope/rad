@@ -1,0 +1,19 @@
+%YAML 1.1
+---
+$schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.0.0
+id: asdf://stsci.edu/datamodels/roman/schemas/SSC/MSOS/keywords/msos_weekly-1.0.0
+
+title: MSOS keywords relevant to weekly deliveries
+extName: SSC
+type: object
+properties:
+  sequence:
+    title: Sequence
+    description: Delivery sequence
+    type: string
+    maxLength: 10
+    archive_catalog:
+      datatype: nvarchar(10)
+      destination: [MSOSCatalog.sequence, WFIReferenceFrame.sequence]
+
+required: [sequence]

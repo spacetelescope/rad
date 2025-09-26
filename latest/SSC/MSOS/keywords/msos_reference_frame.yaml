@@ -9,11 +9,10 @@ type: object
 properties:
   flip:
     title: Flip
-    description: Placeholder.  Example value '1'
-    type: string
-    maxLength: 8
+    description: Placeholder
+    type: boolean
     archive_catalog:
-      datatype: nvarchar(8)
+      datatype: nchar(1)
       destination: [WFIReferenceFrame.flip]
   field:
     title: Field
@@ -23,14 +22,6 @@ properties:
     archive_catalog:
       datatype: nvarchar(128)
       destination: [WFIReferenceFrame.field]
-  ref_frame_sequence:
-    title: Sequence
-    description: Placeholder.  Example value '3'
-    type: string
-    maxLength: 10
-    archive_catalog:
-      datatype: nvarchar(10)
-      destination: [WFIReferenceFrame.sequence]
   tile_id:
     title: Tile Id
     description: Placeholder.  Example value '35'
@@ -40,4 +31,4 @@ properties:
       datatype: nvarchar(10)
       destination: [WFIReferenceFrame.tile_id]
 
-required: [flip, field, ref_frame_sequence, tile_id]
+required: [flip, field, tile_id]

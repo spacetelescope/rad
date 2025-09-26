@@ -10,10 +10,9 @@ properties:
   prognum:
     title: Program number
     description: ID number (integer) assigned to the proposal
-    type: string
-    maxLength: 16
+    type: integer
     archive_catalog:
-      datatype: nvarchar(16)
+      datatype: int
       destination: [WFIReferenceFrame.program, MSOSCatalog.program]
   piname:
     title: PI Last Name
