@@ -1,7 +1,7 @@
 %YAML 1.1
 ---
 $schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.0.0
-id: asdf://stsci.edu/datamodels/roman/schemas/observation-1.1.0
+id: asdf://stsci.edu/datamodels/roman/schemas/meta/observation-1.0.0
 
 title: Observation Identifiers
 type: object
@@ -206,22 +206,6 @@ properties:
       datatype: int
       destination:
         [WFIExposure.observation_exposure, GuideWindow.observation_exposure]
-propertyOrder:
-  [
-    observation_id,
-    visit_id,
-    program,
-    execution_plan,
-    pass,
-    segment,
-    observation,
-    visit,
-    visit_file_group,
-    visit_file_sequence,
-    visit_file_activity,
-    exposure,
-  ]
-flowStyle: block
 required:
   [
     observation_id,

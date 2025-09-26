@@ -1,7 +1,7 @@
 %YAML 1.1
 ---
 $schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.0.0
-id: asdf://stsci.edu/datamodels/roman/schemas/sky_background-1.0.0
+id: asdf://stsci.edu/datamodels/roman/schemas/meta/sky_background-1.0.0
 
 title: Sky Background Information
 type: object
@@ -26,6 +26,4 @@ properties:
       A boolean value which indicates whether the sky background has
       been subtracted form the image or not.
     type: boolean
-propertyOrder: [level, method, subtracted]
-flowStyle: block
 required: [level, method, subtracted]

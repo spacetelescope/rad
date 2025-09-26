@@ -16,19 +16,19 @@ properties:
       - type: object
         properties:
           background:
-            tag: asdf://stsci.edu/datamodels/roman/tags/sky_background-1.0.0
+            $ref: asdf://stsci.edu/datamodels/roman/schemas/meta/sky_background-1.0.0
           cal_logs:
-            tag: asdf://stsci.edu/datamodels/roman/tags/cal_logs-1.0.0
+            $ref: asdf://stsci.edu/datamodels/roman/schemas/meta/cal_logs-1.0.0
           cal_step:
-            tag: asdf://stsci.edu/datamodels/roman/tags/l2_cal_step-1.2.0
+            $ref: asdf://stsci.edu/datamodels/roman/schemas/meta/l2_cal_step-1.0.0
           outlier_detection:
-            tag: asdf://stsci.edu/datamodels/roman/tags/outlier_detection-1.0.0
+            $ref: asdf://stsci.edu/datamodels/roman/schemas/meta/outlier_detection-1.0.0
           photometry:
-            tag: asdf://stsci.edu/datamodels/roman/tags/photometry-1.0.0
+            $ref: asdf://stsci.edu/datamodels/roman/schemas/meta/photometry-1.0.0
           source_catalog:
-            tag: asdf://stsci.edu/datamodels/roman/tags/source_catalog-1.0.0
+            $ref: asdf://stsci.edu/datamodels/roman/schemas/meta/source_catalog-1.0.0
           statistics:
-            tag: asdf://stsci.edu/datamodels/roman/tags/statistics-1.0.0
+            $ref: asdf://stsci.edu/datamodels/roman/schemas/meta/statistics-1.0.0
           wcs:
             title: WCS object
             anyOf:
