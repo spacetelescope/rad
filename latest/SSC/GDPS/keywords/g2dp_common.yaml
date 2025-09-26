@@ -23,4 +23,27 @@ properties:
     archive_catalog:
       datatype: nvarchar(128)
       destination: [Placeholder.id_g2dp_run]
-required: [version_g2dp_software, id_g2dp_run]
+  # NOTE: Including segment and visit will permit better checking that the SSC spectral catalogs match the FILESET_ID it gets associated with
+  segment:
+    title: Segment number
+    description: The sequence of activities produced by each iteration of a Segment Plan (Observation Sequence) in a Pass
+    type: integer
+    archive_catalog:
+      datatype: smallint
+      destination: [Placeholder.segment]
+  visit:
+    title: Visit number
+    description: Visit number within a program
+    type: integer
+    archive_catalog:
+      datatype: smallint
+      destination: [Placeholder.visit]
+  observation_id:
+    title: Programmatic Observation Identifier
+    description: Placeholder.  Example value '0000101001001001001'
+    type: string
+    maxLength: 28
+    archive_catalog:
+      datatype: nvarchar(28)
+      destination: [Placeholder.observation_id]
+required: [version_g2dp_software, id_g2dp_run, segment, visit, observation_id]
