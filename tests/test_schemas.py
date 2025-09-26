@@ -334,6 +334,14 @@ class TestSchemaContent:
 
         asdf.treeutil.walk(schema, callback)
 
+    def test_individual_image_meta(self, individual_image_meta_entry, current_resources):
+        """
+        Check that the individual image meta schema entries all point to a valid individual data schema
+        """
+        key, entry = individual_image_meta_entry
+        assert "individual_schema" in entry, f"individual_schema missing for {key}"
+        assert entry["individual_schema"] in current_resources, f"individual_schema {entry['individual_schema']} not found"
+
 
 class TestTaggedSchemaContent:
     """
