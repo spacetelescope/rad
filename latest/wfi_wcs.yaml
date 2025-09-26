@@ -15,35 +15,25 @@ properties:
       - type: object
         properties:
           coordinates:
-            title: Name Of The Coordinate Reference Frame
-            tag: asdf://stsci.edu/datamodels/roman/tags/coordinates-1.0.0
+            $ref: asdf://stsci.edu/datamodels/roman/schemas/meta/coordinates-1.0.0
           ephemeris:
-            title: Ephemeris Data Information
-            tag: asdf://stsci.edu/datamodels/roman/tags/ephemeris-1.1.0
+            $ref: asdf://stsci.edu/datamodels/roman/schemas/meta/ephemeris-1.0.0
           exposure:
-            title: Exposure Information
-            tag: asdf://stsci.edu/datamodels/roman/tags/exposure-1.3.0
+            $ref: asdf://stsci.edu/datamodels/roman/schemas/meta/exposure-1.0.0
           instrument:
-            title: WFI Observing Configuration
-            tag: asdf://stsci.edu/datamodels/roman/tags/wfi_mode-1.2.0
+            $ref: asdf://stsci.edu/datamodels/roman/schemas/meta/wfi_mode-1.0.0
           observation:
-            title: Observation Identifiers
-            tag: asdf://stsci.edu/datamodels/roman/tags/observation-1.1.0
+            $ref: asdf://stsci.edu/datamodels/roman/schemas/meta/observation-1.0.0
           pointing:
-            title: Spacecraft Pointing Information
-            tag: asdf://stsci.edu/datamodels/roman/tags/pointing-1.1.0
+            $ref: asdf://stsci.edu/datamodels/roman/schemas/meta/pointing-1.0.0
           program:
-            title: Program Information
-            tag: asdf://stsci.edu/datamodels/roman/tags/program-1.1.0
+            $ref: asdf://stsci.edu/datamodels/roman/schemas/meta/program-1.0.0
           velocity_aberration:
-            title: Velocity Aberration Correction Information
-            tag: asdf://stsci.edu/datamodels/roman/tags/velocity_aberration-1.0.0
+            $ref: asdf://stsci.edu/datamodels/roman/schemas/meta/velocity_aberration-1.0.0
           visit:
-            title: Visit Information
-            tag: asdf://stsci.edu/datamodels/roman/tags/visit-1.2.0
+            $ref: asdf://stsci.edu/datamodels/roman/schemas/meta/visit-1.0.0
           wcsinfo:
-            title: World Coordinate System (WCS) Parameters
-            tag: asdf://stsci.edu/datamodels/roman/tags/wcsinfo-1.1.0
+            $ref: asdf://stsci.edu/datamodels/roman/schemas/meta/wcsinfo-1.0.0
           wcs_fit_results:
             title: tweakreg/GAIA fit results
             description: |

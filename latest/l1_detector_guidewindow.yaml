@@ -17,8 +17,7 @@ properties:
       - type: object
         properties:
           instrument:
-            title: WFI Observing Configuration
-            tag: asdf://stsci.edu/datamodels/roman/tags/wfi_mode-1.2.0
+            $ref: asdf://stsci.edu/datamodels/roman/schemas/meta/wfi_mode-1.0.0
           fgs_modes_used:
             title: FGS Guiding Modes
             description: |
