@@ -93,3 +93,8 @@ installed too:
 Need other useful packages in your development environment?
 
     pip install ipython pytest-xdist
+
+## Contributing
+
+Please refer to [CONTRIBUTING.rst](https://github.com/spacetelescope/rad/blob/main/CONTRIBUTING.rst) for details on
+how to contribute to this repository.
