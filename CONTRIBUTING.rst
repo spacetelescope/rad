@@ -60,8 +60,7 @@ if you are unsure, just ask by opening an issue first.
       and then open a pull request implementing your changes. However, we ask that
       you make those changes in your own pull request rather than asking a maintainer
       because that makes it harder to follow the history of who requested what changes.
-      Moreover, it separates you in the review process from your requested changes and
-      places a maintainer as a middleman, which is not ideal.
+      Moreover, it separates you from your requested changes in the review process, which is not ideal.
 
 RAD Contribution Workflow
 *************************
