@@ -1,0 +1,20 @@
+%YAML 1.1
+---
+$schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.0.0
+id: asdf://stsci.edu/datamodels/roman/schemas/SSC/CGI/keywords/cgi_l1-1.0.0
+
+title: CGI L1 specific keywords
+extName: SSC
+
+type: object
+properties:
+  CDMSVERS:
+    title: Version of CDMS software
+    description: Version of CDMS software
+    type: string
+    maxLength: 128
+    archive_catalog:
+      datatype: nvarchar(128)
+      destination: [CGIExposure.cdmsvers]
+
+required: [CDMSVERS]
