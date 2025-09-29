@@ -1,0 +1,6 @@
+Refactor the ``individual_image_meta`` tables schema to be its own metadata schema, and
+updating the contents of the schema so that it provides purely informational links to the
+schemas defining the tables within the ``individual_image_meta`` schema. This is to help
+document the contents of those tables, without us having to explicitly define the table
+columns which would necessitate partial duplications of the schemas that are now linked
+to in the table with minor changes to enable compatibility with how tables function.
