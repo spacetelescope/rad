@@ -9,10 +9,8 @@ id: asdf://stsci.edu/datamodels/roman/schemas/SSC/GDPS/wfi_spec_data_quality_lev
 title: Level 4 Grism/Prism - Data Quality
 archive_meta: Placeholder SOC file type
 type: object
-properties:
-  meta:
-    allOf:
-      - $ref: asdf://stsci.edu/datamodels/roman/schemas/SSC/ssc_basic-1.0.0
-      - $ref: asdf://stsci.edu/datamodels/roman/schemas/SSC/GDPS/keywords/observation-1.0.0
-      - $ref: asdf://stsci.edu/datamodels/roman/schemas/SSC/GDPS/keywords/instrument-1.0.0
-      - $ref: asdf://stsci.edu/datamodels/roman/schemas/SSC/GDPS/keywords/catalog-1.0.0
+allOf:
+  - $ref: asdf://stsci.edu/datamodels/roman/schemas/SSC/ssc_basic-1.0.0
+  - $ref: asdf://stsci.edu/datamodels/roman/schemas/SSC/GDPS/keywords/observation-1.0.0
+  - $ref: asdf://stsci.edu/datamodels/roman/schemas/SSC/GDPS/keywords/instrument-1.0.0
+  - $ref: asdf://stsci.edu/datamodels/roman/schemas/SSC/GDPS/keywords/catalog-1.0.0
