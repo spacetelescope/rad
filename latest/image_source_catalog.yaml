@@ -7,7 +7,7 @@ title: Source catalog generated from a Level 2 file by the Source Catalog Step.
 
 datamodel_name: ImageSourceCatalogModel
 
-archive_meta: None
+archive_meta: Science WFI Level 4 Source Catalog L2 Product
 type: object
 properties:
   meta:
