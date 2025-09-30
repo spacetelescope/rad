@@ -1,0 +1,1 @@
+Remove the use of internal tags within RAD schemas and replace with standard schema $refs.
