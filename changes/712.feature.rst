@@ -1,0 +1,2 @@
+Make the ``patternProperties`` used for optical elements in the reference file schemas explicit.
+and add tests to ensure all optical elements in these schemas are accounted for.
