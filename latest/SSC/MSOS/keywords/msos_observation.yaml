@@ -8,7 +8,7 @@ extName: SSC
 type: object
 properties:
   time_mean:
-    title: Mean Time of the Product
+    title: Mean Time of the Product (UTC)
     description: >
       The Universal Coordinated Time (UTC) mean start
       time of the exposures used to create the product.
@@ -17,6 +17,15 @@ properties:
     archive_catalog:
       datatype: datetime2
       destination: [MSOSCatalog.time_mean]
+  time_mean_mjd:
+    title: Mean Time of the Product (MJD)
+    description: >
+      The MJD mean start
+      time of the exposures used to create the product.
+    type: number
+    archive_catalog:
+      datatype: float
+      destination: [MSOSCatalog.time_mean_mjd]
   max_exposure_time:
     title: Maximum Exposure Time (s)
     description: >
@@ -35,4 +44,4 @@ properties:
       datatype: float
       destination: [MSOSCatalog.mean_exposure_time]
 
-required: [time_mean, max_exposure_time, mean_exposure_time]
+required: [time_mean, time_mean_mjd, max_exposure_time, mean_exposure_time]

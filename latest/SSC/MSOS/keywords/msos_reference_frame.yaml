@@ -7,13 +7,6 @@ title: MSOS Reference Frame keywords
 extName: SSC
 type: object
 properties:
-  flip:
-    title: Flip
-    description: Placeholder
-    type: boolean
-    archive_catalog:
-      datatype: nchar(1)
-      destination: [WFIReferenceFrame.flip]
   field:
     title: Field
     description: Placeholder.  Example value '5'
@@ -31,4 +24,4 @@ properties:
       datatype: nvarchar(10)
       destination: [WFIReferenceFrame.tile_id]
 
-required: [flip, field, tile_id]
+required: [field, tile_id]

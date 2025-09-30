@@ -17,6 +17,6 @@ properties:
     type: string
     archive_catalog:
       datatype: nvarchar(max)
-      destination: [WFIReferenceFrame.s_region]
+      destination: [WFIReferenceFrame.s_region, MSOSCatalog.s_region]
 
 required: [s_region]

@@ -10,10 +10,9 @@ properties:
   sequence:
     title: Sequence
     description: Delivery sequence
-    type: string
-    maxLength: 10
+    type: integer
     archive_catalog:
-      datatype: nvarchar(10)
+      datatype: smallint
       destination: [MSOSCatalog.sequence, WFIReferenceFrame.sequence]
 
 required: [sequence]
