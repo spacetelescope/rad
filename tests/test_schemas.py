@@ -520,25 +520,45 @@ class TestReferenceFileSchemas:
 
 
 class TestPatternElementConsistency:
-    def test_phot_table_keys_have_optical_element_entry(self, phot_table_key_patterns, optical_element):
+    def test_phot_table_keys_have_optical_element_entry(self, phot_table_keys, optical_element):
         """
-        Confirm that the optical_element filter in wfi_img_photom.yaml matches optical_element
+        Confirm that each optical_element corresponds to a phot_table_key in wfi_img_photom
         """
-        for pattern in phot_table_key_patterns:
-            if pattern.search(optical_element):
-                return
-
-        raise AssertionError(f"phot_table_key pattern is missing {optical_element}.")
+        assert optical_element in phot_table_keys, f"optical_element {optical_element} not found in phot_table_keys."
 
     def test_optical_elements_have_phot_table_key(self, phot_table_key, optical_elements):
         """
-        Confirm that the optical_element filter in wfi_img_photom.yaml matches optical_element
+        Confirm that each phot_table_key corresponds to an optical_element in wfi_img_photom
         """
         # NOTE: GRISM_0 is a special case that will only ever be used in the photom table,
         #   It is due to a special photom measurement only relevant for calibration purposes
         #   so it will never appear anywhere else, so it is excluded from the optical elements
         #   in general.
         assert phot_table_key in (*optical_elements, "GRISM_0"), f"phot_table_key {phot_table_key} not found in optical_elements."
+
+    def test_abvegaoffset_keys_have_optical_element_entry(self, abvegaoffset_keys, optical_element):
+        """
+        Confirm that each optical_element corresponds to an abvegaoffset data key in abvegaoffset.yaml
+        """
+        assert optical_element in abvegaoffset_keys, f"optical_element {optical_element} not found in abvegaoffset_keys."
+
+    def test_optical_elements_have_abvegaoffset_key(self, abvegaoffset_key, optical_elements):
+        """
+        Confirm that abvegaoffset data keys in abvegaoffset.yaml correspond to an optical_element
+        """
+        assert abvegaoffset_key in optical_elements, f"abvegaoffset_key {abvegaoffset_key} not found in optical_elements."
+
+    def test_apcorr_keys_have_optical_element_entry(self, apcorr_keys, optical_element):
+        """
+        Confirm that each optical_element corresponds to an apcorr data key in apcorr.yaml
+        """
+        assert optical_element in apcorr_keys, f"optical_element {optical_element} not found in apcorr_keys."
+
+    def test_optical_elements_have_apcorr_key(self, apcorr_key, optical_elements):
+        """
+        Confirm that apcorr data keys in apcorr.yaml correspond to an optical_element
+        """
+        assert apcorr_key in optical_elements, f"apcorr_key {apcorr_key} not found in optical_elements."
 
     def test_p_exptype_entries_have_exposure_type(self, p_exptype_pattern, exposure_type):
         """Confirm that the p_keyword version of exposure type match the enum version."""

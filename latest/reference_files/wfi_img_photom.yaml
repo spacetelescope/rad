@@ -44,6 +44,78 @@ definitions:
         wavelength,
         effective_area,
       ]
+  filter_phot_table_entry:
+    allOf:
+      - $ref: asdf://stsci.edu/datamodels/roman/schemas/reference_files/wfi_img_photom-1.3.0#/definitions/basic_phot_table_entry
+      - type: object
+        properties:
+          photmjsr:
+            type: number
+            unit: "(MJy/sr) / (DN/s)"
+          uncertainty:
+            type: number
+            unit: "(MJy/sr) / (DN/s)"
+          pixelareasr:
+            type: number
+            unit: "sr"
+          collecting_area:
+            type: number
+            unit: "m^2"
+          wavelength:
+            tag: tag:stsci.edu:asdf/core/ndarray-1.*
+            datatype: float32
+            exact_datatype: true
+            ndim: 1
+            unit: "microns"
+          effective_area:
+            tag: tag:stsci.edu:asdf/core/ndarray-1.*
+            datatype: float32
+            exact_datatype: true
+            ndim: 1
+            unit: "m^2"
+  spectral_phot_table_entry:
+    allOf:
+      - $ref: asdf://stsci.edu/datamodels/roman/schemas/reference_files/wfi_img_photom-1.3.0#/definitions/basic_phot_table_entry
+      - type: object
+        properties:
+          photmjsr:
+            type: "null"
+          uncertainty:
+            type: "null"
+          pixelareasr:
+            type: "null"
+          collecting_area:
+            type: number
+            unit: "m^2"
+          wavelength:
+            tag: tag:stsci.edu:asdf/core/ndarray-1.*
+            datatype: float32
+            exact_datatype: true
+            ndim: 1
+            unit: "microns"
+          effective_area:
+            tag: tag:stsci.edu:asdf/core/ndarray-1.*
+            datatype: float32
+            exact_datatype: true
+            ndim: 1
+            unit: "m^2"
+  empty_phot_table_entry:
+    allOf:
+      - $ref: asdf://stsci.edu/datamodels/roman/schemas/reference_files/wfi_img_photom-1.3.0#/definitions/basic_phot_table_entry
+      - type: object
+        properties:
+          photmjsr:
+            type: "null"
+          uncertainty:
+            type: "null"
+          pixelareasr:
+            type: "null"
+          collecting_area:
+            type: "null"
+          wavelength:
+            type: "null"
+          effective_area:
+            type: "null"
 
 type: object
 properties:
@@ -60,80 +132,49 @@ properties:
     description: |
       Table containing photometric properties of the WFI optical elements.
     type: object
-    patternProperties:
-      "^(F062|F087|F106|F129|F146|F158|F184|F213)$":
-        allOf:
-          - $ref: asdf://stsci.edu/datamodels/roman/schemas/reference_files/wfi_img_photom-1.3.0#/definitions/basic_phot_table_entry
-          - type: object
-            properties:
-              photmjsr:
-                type: number
-                unit: "(MJy/sr) / (DN/s)"
-              uncertainty:
-                type: number
-                unit: "(MJy/sr) / (DN/s)"
-              pixelareasr:
-                type: number
-                unit: "sr"
-              collecting_area:
-                type: number
-                unit: "m^2"
-              wavelength:
-                tag: tag:stsci.edu:asdf/core/ndarray-1.*
-                datatype: float32
-                exact_datatype: true
-                ndim: 1
-                unit: "microns"
-              effective_area:
-                tag: tag:stsci.edu:asdf/core/ndarray-1.*
-                datatype: float32
-                exact_datatype: true
-                ndim: 1
-                unit: "m^2"
+    properties:
+      F062:
+        $ref: asdf://stsci.edu/datamodels/roman/schemas/reference_files/wfi_img_photom-1.3.0#/definitions/filter_phot_table_entry
+      F087:
+        $ref: asdf://stsci.edu/datamodels/roman/schemas/reference_files/wfi_img_photom-1.3.0#/definitions/filter_phot_table_entry
+      F106:
+        $ref: asdf://stsci.edu/datamodels/roman/schemas/reference_files/wfi_img_photom-1.3.0#/definitions/filter_phot_table_entry
+      F129:
+        $ref: asdf://stsci.edu/datamodels/roman/schemas/reference_files/wfi_img_photom-1.3.0#/definitions/filter_phot_table_entry
+      F146:
+        $ref: asdf://stsci.edu/datamodels/roman/schemas/reference_files/wfi_img_photom-1.3.0#/definitions/filter_phot_table_entry
+      F158:
+        $ref: asdf://stsci.edu/datamodels/roman/schemas/reference_files/wfi_img_photom-1.3.0#/definitions/filter_phot_table_entry
+      F184:
+        $ref: asdf://stsci.edu/datamodels/roman/schemas/reference_files/wfi_img_photom-1.3.0#/definitions/filter_phot_table_entry
+      F213:
+        $ref: asdf://stsci.edu/datamodels/roman/schemas/reference_files/wfi_img_photom-1.3.0#/definitions/filter_phot_table_entry
+      GRISM:
+        $ref: asdf://stsci.edu/datamodels/roman/schemas/reference_files/wfi_img_photom-1.3.0#/definitions/spectral_phot_table_entry
       # GRISM_0 is a special optical element case that is only used for this reference file
-      "^(GRISM|GRISM_0|PRISM)$":
-        allOf:
-          - $ref: asdf://stsci.edu/datamodels/roman/schemas/reference_files/wfi_img_photom-1.3.0#/definitions/basic_phot_table_entry
-          - type: object
-            properties:
-              photmjsr:
-                type: "null"
-              uncertainty:
-                type: "null"
-              pixelareasr:
-                type: "null"
-              collecting_area:
-                type: number
-                unit: "m^2"
-              wavelength:
-                tag: tag:stsci.edu:asdf/core/ndarray-1.*
-                datatype: float32
-                exact_datatype: true
-                ndim: 1
-                unit: "microns"
-              effective_area:
-                tag: tag:stsci.edu:asdf/core/ndarray-1.*
-                datatype: float32
-                exact_datatype: true
-                ndim: 1
-                unit: "m^2"
-      "^(DARK|NOT_CONFIGURED)$":
-        allOf:
-          - $ref: asdf://stsci.edu/datamodels/roman/schemas/reference_files/wfi_img_photom-1.3.0#/definitions/basic_phot_table_entry
-          - type: object
-            properties:
-              photmjsr:
-                type: "null"
-              uncertainty:
-                type: "null"
-              pixelareasr:
-                type: "null"
-              collecting_area:
-                type: "null"
-              wavelength:
-                type: "null"
-              effective_area:
-                type: "null"
+      GRISM_0:
+        $ref: asdf://stsci.edu/datamodels/roman/schemas/reference_files/wfi_img_photom-1.3.0#/definitions/spectral_phot_table_entry
+      PRISM:
+        $ref: asdf://stsci.edu/datamodels/roman/schemas/reference_files/wfi_img_photom-1.3.0#/definitions/spectral_phot_table_entry
+      DARK:
+        $ref: asdf://stsci.edu/datamodels/roman/schemas/reference_files/wfi_img_photom-1.3.0#/definitions/empty_phot_table_entry
+      NOT_CONFIGURED:
+        $ref: asdf://stsci.edu/datamodels/roman/schemas/reference_files/wfi_img_photom-1.3.0#/definitions/empty_phot_table_entry
+    required:
+      [
+        F062,
+        F087,
+        F106,
+        F129,
+        F146,
+        F158,
+        F184,
+        F213,
+        GRISM,
+        GRISM_0,
+        PRISM,
+        DARK,
+      ]
     additionalProperties: false
 required: [meta, phot_table]
 flowStyle: block

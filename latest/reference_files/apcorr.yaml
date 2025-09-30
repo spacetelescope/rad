@@ -7,6 +7,66 @@ title: Aperture Correction Reference File Schema
 
 datamodel_name: ApcorrRefModel
 
+definitions:
+  data_entry:
+    type: object
+    properties:
+      ap_corrections:
+        title: Aperture Corrections
+        description: The aperture correction for each enclosed energy
+          fraction, corresponding to 1 / ee_fractions.
+        anyOf:
+          - type: "null"
+          - tag: tag:stsci.edu:asdf/core/ndarray-1.*
+            datatype: float64
+            exact_datatype: true
+            ndim: 1
+      ee_fractions:
+        title: Enclosed Energy Fractions
+        description: Fractions of the enclosed energy of the PSF at which
+          to estimate the aperture correction and enclosed energy radii.
+        anyOf:
+          - type: "null"
+          - tag: tag:stsci.edu:asdf/core/ndarray-1.*
+            datatype: float64
+            exact_datatype: true
+            ndim: 1
+      ee_radii:
+        title: Enclosed Energy Radii
+        description: Radius, in pixels, within which the enclosed energy
+          fractions are met. The indexing matches that of
+          "ee_fractions".
+        anyOf:
+          - type: "null"
+          - tag: tag:stsci.edu:asdf/core/ndarray-1.*
+            datatype: float64
+            exact_datatype: true
+            ndim: 1
+      sky_background_rin:
+        title: Inner Radius for the Sky Background
+        description: Inner radius, in pixels, to use when estimating the
+          local sky background within an annulus between this
+          radius and "sky_background_rout".
+        anyOf:
+          - type: number
+          - type: "null"
+      sky_background_rout:
+        title: Outer Radius for the Sky Background
+        description: Outer radius, in pixels, to use when estimating the
+          local sky background within an annulus between this
+          radius and "sky_background_rin".
+        anyOf:
+          - type: number
+          - type: "null"
+    required:
+      [
+        ap_corrections,
+        ee_fractions,
+        ee_radii,
+        sky_background_rin,
+        sky_background_rout,
+      ]
+
 type: object
 properties:
   meta:
@@ -19,65 +79,33 @@ properties:
             enum: [APCORR]
   data:
     type: object
-    patternProperties:
-      "^(F062|F087|F106|F129|F146|F158|F184|F213|GRISM|PRISM|DARK)$":
-        type: object
-        properties:
-          ap_corrections:
-            title: Aperture Corrections
-            description: The aperture correction for each enclosed energy
-              fraction, corresponding to 1 / ee_fractions.
-            anyOf:
-              - type: "null"
-              - tag: tag:stsci.edu:asdf/core/ndarray-1.*
-                datatype: float64
-                exact_datatype: true
-                ndim: 1
-          ee_fractions:
-            title: Enclosed Energy Fractions
-            description: Fractions of the enclosed energy of the PSF at which
-              to estimate the aperture correction and enclosed energy radii.
-            anyOf:
-              - type: "null"
-              - tag: tag:stsci.edu:asdf/core/ndarray-1.*
-                datatype: float64
-                exact_datatype: true
-                ndim: 1
-          ee_radii:
-            title: Enclosed Energy Radii
-            description: Radius, in pixels, within which the enclosed energy
-              fractions are met. The indexing matches that of
-              "ee_fractions".
-            anyOf:
-              - type: "null"
-              - tag: tag:stsci.edu:asdf/core/ndarray-1.*
-                datatype: float64
-                exact_datatype: true
-                ndim: 1
-          sky_background_rin:
-            title: Inner Radius for the Sky Background
-            description: Inner radius, in pixels, to use when estimating the
-              local sky background within an annulus between this
-              radius and "sky_background_rout".
-            anyOf:
-              - type: number
-              - type: "null"
-          sky_background_rout:
-            title: Outer Radius for the Sky Background
-            description: Outer radius, in pixels, to use when estimating the
-              local sky background within an annulus between this
-              radius and "sky_background_rin".
-            anyOf:
-              - type: number
-              - type: "null"
-        required:
-          [
-            ap_corrections,
-            ee_fractions,
-            ee_radii,
-            sky_background_rin,
-            sky_background_rout,
-          ]
+    properties:
+      F062:
+        $ref: asdf://stsci.edu/datamodels/roman/schemas/reference_files/apcorr-1.2.0#/definitions/data_entry
+      F087:
+        $ref: asdf://stsci.edu/datamodels/roman/schemas/reference_files/apcorr-1.2.0#/definitions/data_entry
+      F106:
+        $ref: asdf://stsci.edu/datamodels/roman/schemas/reference_files/apcorr-1.2.0#/definitions/data_entry
+      F129:
+        $ref: asdf://stsci.edu/datamodels/roman/schemas/reference_files/apcorr-1.2.0#/definitions/data_entry
+      F146:
+        $ref: asdf://stsci.edu/datamodels/roman/schemas/reference_files/apcorr-1.2.0#/definitions/data_entry
+      F158:
+        $ref: asdf://stsci.edu/datamodels/roman/schemas/reference_files/apcorr-1.2.0#/definitions/data_entry
+      F184:
+        $ref: asdf://stsci.edu/datamodels/roman/schemas/reference_files/apcorr-1.2.0#/definitions/data_entry
+      F213:
+        $ref: asdf://stsci.edu/datamodels/roman/schemas/reference_files/apcorr-1.2.0#/definitions/data_entry
+      GRISM:
+        $ref: asdf://stsci.edu/datamodels/roman/schemas/reference_files/apcorr-1.2.0#/definitions/data_entry
+      PRISM:
+        $ref: asdf://stsci.edu/datamodels/roman/schemas/reference_files/apcorr-1.2.0#/definitions/data_entry
+      DARK:
+        $ref: asdf://stsci.edu/datamodels/roman/schemas/reference_files/apcorr-1.2.0#/definitions/data_entry
+      NOT_CONFIGURED:
+        $ref: asdf://stsci.edu/datamodels/roman/schemas/reference_files/apcorr-1.2.0#/definitions/data_entry
+    required:
+      [F062, F087, F106, F129, F146, F158, F184, F213, GRISM, PRISM, DARK]
 required: [meta, data]
 flowStyle: block
 propertyOrder: [meta, data]

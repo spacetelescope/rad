@@ -7,6 +7,20 @@ title: AB Vega Offset Reference File Schema
 
 datamodel_name: AbvegaoffsetRefModel
 
+definitions:
+  data_entry:
+    type: object
+    properties:
+      abvega_offset:
+        title: AB-Vega Magntiude Offset
+        description: Magnitude difference between the AB and Vega magnitude
+          systems. Found by calculating the AB magnitude of Vega within
+          the optical element bandpass.
+        anyOf:
+          - type: number
+          - type: "null"
+    required: [abvega_offset]
+
 type: object
 properties:
   meta:
@@ -19,19 +33,34 @@ properties:
             enum: [ABVEGAOFFSET]
   data:
     type: object
-    patternProperties:
-      "^(F062|F087|F106|F129|F146|F158|F184|F213|GRISM|PRISM|DARK)$":
-        type: object
-        properties:
-          abvega_offset:
-            title: AB-Vega Magntiude Offset
-            description: Magnitude difference between the AB and Vega magnitude
-              systems. Found by calculating the AB magnitude of Vega within
-              the optical element bandpass.
-            anyOf:
-              - type: number
-              - type: "null"
-        required: [abvega_offset]
+    properties:
+      F062:
+        $ref: asdf://stsci.edu/datamodels/roman/schemas/reference_files/abvegaoffset-1.2.0#/definitions/data_entry
+      F087:
+        $ref: asdf://stsci.edu/datamodels/roman/schemas/reference_files/abvegaoffset-1.2.0#/definitions/data_entry
+      F106:
+        $ref: asdf://stsci.edu/datamodels/roman/schemas/reference_files/abvegaoffset-1.2.0#/definitions/data_entry
+      F129:
+        $ref: asdf://stsci.edu/datamodels/roman/schemas/reference_files/abvegaoffset-1.2.0#/definitions/data_entry
+      F146:
+        $ref: asdf://stsci.edu/datamodels/roman/schemas/reference_files/abvegaoffset-1.2.0#/definitions/data_entry
+      F158:
+        $ref: asdf://stsci.edu/datamodels/roman/schemas/reference_files/abvegaoffset-1.2.0#/definitions/data_entry
+      F184:
+        $ref: asdf://stsci.edu/datamodels/roman/schemas/reference_files/abvegaoffset-1.2.0#/definitions/data_entry
+      F213:
+        $ref: asdf://stsci.edu/datamodels/roman/schemas/reference_files/abvegaoffset-1.2.0#/definitions/data_entry
+      GRISM:
+        $ref: asdf://stsci.edu/datamodels/roman/schemas/reference_files/abvegaoffset-1.2.0#/definitions/data_entry
+      PRISM:
+        $ref: asdf://stsci.edu/datamodels/roman/schemas/reference_files/abvegaoffset-1.2.0#/definitions/data_entry
+      DARK:
+        $ref: asdf://stsci.edu/datamodels/roman/schemas/reference_files/abvegaoffset-1.2.0#/definitions/data_entry
+      NOT_CONFIGURED:
+        $ref: asdf://stsci.edu/datamodels/roman/schemas/reference_files/abvegaoffset-1.2.0#/definitions/data_entry
+    required:
+      [F062, F087, F106, F129, F146, F158, F184, F213, GRISM, PRISM, DARK]
+
 required: [meta, data]
 flowStyle: block
 propertyOrder: [meta, data]
