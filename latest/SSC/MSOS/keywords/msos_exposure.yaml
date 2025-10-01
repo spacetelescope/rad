@@ -23,7 +23,7 @@ properties:
       - $ref: http://stsci.edu/schemas/asdf/time/time-1.3.0#/definitions/iso_time
     archive_catalog:
       datatype: datetime2
-      destination: [WFIReferenceFrame.start_time]
+      destination: [WFIReferenceFrame.exposure_start_time]
   expend: # SOC Proposed
     title: End Time
     description: End time of last observation that went into stack (UTC)
@@ -31,7 +31,7 @@ properties:
       - $ref: http://stsci.edu/schemas/asdf/time/time-1.3.0#/definitions/iso_time
     archive_catalog:
       datatype: datetime2
-      destination: [WFIReferenceFrame.end_time]
+      destination: [WFIReferenceFrame.exposure_end_time]
   # NOTE: MAST uses MJD for start and end times in our cross-mission search. We can convert from datetime strings, but if they are included in the manifest separately it would eliminate the need to do the conversion on the MAST side.
   mjdstart: # SOC Proposed
     title: Start Time MJD
@@ -39,13 +39,13 @@ properties:
     type: number
     archive_catalog:
       datatype: float
-      destination: [WFIReferenceFrame.start_time_mjd]
+      destination: [WFIReferenceFrame.exposure_start_time_mjd]
   mjdend: # SOC Proposed
     title: End Time MJD
     description: End time of last observation that went into the stack (MJD)
     type: number
     archive_catalog:
       datatype: float
-      destination: [WFIReferenceFrame.end_time_mjd]
+      destination: [WFIReferenceFrame.exposure_end_time_mjd]
 
 required: [exptime, expstart, expend, mjdstart, mjdend]
