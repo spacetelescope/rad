@@ -6,7 +6,7 @@ id: asdf://stsci.edu/datamodels/roman/schemas/wfi_image-1.4.0
 title: Level 2 (L2) Calibrated Roman Wide Field Instrument (WFI) Rate Image.
 
 datamodel_name: ImageModel
-archive_meta: None
+archive_meta: Science WFI Level 2
 
 type: object
 properties:

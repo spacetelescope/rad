@@ -7,7 +7,7 @@ title: Level 1 FACE Guide Star Window Information schema
 
 datamodel_name: L1FaceGuidewindowModel
 
-archive_meta: None
+archive_meta: Guide Window Level 1 Face
 
 type: object
 properties:

@@ -7,7 +7,7 @@ title: Segmentation map generated from a Level 3 file by the Source Catalog Step
 
 datamodel_name: MosaicSegmentationMapModel
 
-archive_meta: None
+archive_meta: Science WFI Level 4 Segmentation Map L3 Product
 type: object
 properties:
   meta:
