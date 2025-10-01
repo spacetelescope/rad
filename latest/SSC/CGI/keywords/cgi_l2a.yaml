@@ -1,0 +1,68 @@
+%YAML 1.1
+---
+$schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.0.0
+id: asdf://stsci.edu/datamodels/roman/schemas/SSC/CGI/keywords/cgi_l2a-1.0.0
+
+title: CGI L2a specific keywords
+extName: SSC
+type: object
+properties:
+  DESMEAR:
+    title: Desmearing method was used in L1->L2a
+    description: Desmearing method was used in L1->L2a
+    type: boolean
+    archive_catalog:
+      datatype: nchar(1)
+      destination: [CGIExposure.desmear]
+  CTI_CORR:
+    title: CTI correction applied to this frame
+    description: CTI correction applied to this frame
+    type: boolean
+    archive_catalog:
+      datatype: nchar(1)
+      destination: [CGIExposure.cti_corr]
+  IS_BAD:
+    title: Frame deemed bad
+    description: Frame deemed bad
+    type: boolean
+    archive_catalog:
+      datatype: nchar(1)
+      destination: [CGIExposure.is_bad]
+  RECIPE:
+    title: DRP recipe to generate this data
+    description: DRP recipe to generate this data
+    type: string
+    archive_catalog:
+      datatype: nvarchar(max)
+      destination: [CGIExposure.recipe]
+  DRPCTIME:
+    title: DRP clock time
+    description: DRP clock time
+    type: string
+    maxLength: 32
+    archive_catalog:
+      datatype: nvarchar(32)
+      destination: [CGIExposure.drpctime]
+  FWC_PP_E:
+    title: Full well capacity of detector EM gain register
+    description: Full well capacity of detector EM gain register (electrons)
+    type: number
+    archive_catalog:
+      datatype: float
+      destination: [CGIExposure.fwc_pp_e]
+  FWC_EM_E:
+    title: Full well capacity of detector image area pixels
+    description: Full well capacity of detector image area pixels (electrons)
+    type: number
+    archive_catalog:
+      datatype: float
+      destination: [CGIExposure.fwc_em_e]
+  SAT_DN:
+    title: DN saturation
+    description: DN saturation (DN)
+    type: number
+    archive_catalog:
+      datatype: float
+      destination: [CGIExposure.sat_dn]
+required:
+  [DESMEAR, CTI_CORR, IS_BAD, RECIPE, DRPCTIME, FWC_PP_E, FWC_EM_E, SAT_DN]
