@@ -49,6 +49,19 @@ We love and appreciate contributions of code and documentation from the communit
 Always feel free to open a pull request with your code or documentation changes,
 if you are unsure, just ask by opening an issue first.
 
+   .. note::
+
+      We kindly ask that you try to open a pull request that contains your changes.
+      This is especially true when you are wanting specific explicit changes such
+      as updating keyword values in the metadata contained within the schemas.
+
+      This is important because we want to keep a clear history of who made what
+      changes and why. You are free to open an issue first to discuss your changes
+      and then open a pull request implementing your changes. However, we ask that
+      you make those changes in your own pull request rather than asking a maintainer
+      because that makes it harder to follow the history of who requested what changes.
+      Moreover, it separates you from your requested changes in the review process, which is not ideal.
+
 RAD Contribution Workflow
 *************************
 
