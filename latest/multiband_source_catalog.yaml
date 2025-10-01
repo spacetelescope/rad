@@ -7,7 +7,6 @@ title: Multiband source catalog generated from a Level 3 file by the Source Cata
 
 datamodel_name: MultibandSourceCatalogModel
 
-archive_meta: None
 type: object
 properties:
   meta:
