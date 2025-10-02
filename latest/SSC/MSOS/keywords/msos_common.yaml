@@ -48,7 +48,7 @@ properties:
         ]
   optical_element:
     allOf:
-      - $ref: asdf://stsci.edu/datamodels/roman/schemas/wfi_optical_element-1.2.0
+      - $ref: asdf://stsci.edu/datamodels/roman/schemas/enums/wfi_optical_element-1.0.0
     title: Wide Field Instrument (WFI) Optical Element
     description: |
       Name of the optical element used to take the science

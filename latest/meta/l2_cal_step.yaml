@@ -12,7 +12,7 @@ properties:
       Step in romancal that assigns a World Coordinate
       System (WCS) object to a science image.
     allOf:
-      - $ref: asdf://stsci.edu/datamodels/roman/schemas/cal_step_flag-1.0.0
+      - $ref: asdf://stsci.edu/datamodels/roman/schemas/enums/cal_step_flag-1.0.0
     archive_catalog:
       datatype: nvarchar(15)
       destination: [ScienceRefData.s_assign_wcs]
@@ -24,7 +24,7 @@ properties:
       the same signal for the same illumination based on the pixel
       response.
     allOf:
-      - $ref: asdf://stsci.edu/datamodels/roman/schemas/cal_step_flag-1.0.0
+      - $ref: asdf://stsci.edu/datamodels/roman/schemas/enums/cal_step_flag-1.0.0
     archive_catalog:
       datatype: nvarchar(15)
       destination: [ScienceRefData.s_flat_field]
@@ -35,7 +35,7 @@ properties:
       dark current by subtracting the dark reference data from the
       science data.
     allOf:
-      - $ref: asdf://stsci.edu/datamodels/roman/schemas/cal_step_flag-1.0.0
+      - $ref: asdf://stsci.edu/datamodels/roman/schemas/enums/cal_step_flag-1.0.0
     archive_catalog:
       datatype: nvarchar(15)
       destination: [ScienceRefData.s_dark]
@@ -45,7 +45,7 @@ properties:
       Step in romancal that initializes the data quality
       array and masks known bad pixels.
     allOf:
-      - $ref: asdf://stsci.edu/datamodels/roman/schemas/cal_step_flag-1.0.0
+      - $ref: asdf://stsci.edu/datamodels/roman/schemas/enums/cal_step_flag-1.0.0
     archive_catalog:
       datatype: nvarchar(15)
       destination: [ScienceRefData.s_dq_init]
@@ -55,7 +55,7 @@ properties:
       Step in ROMANCAL which applies the scaling factors determined in the Photom calibrations step.
       The data are converted from DN/s to MJy/sr.
     allOf:
-      - $ref: asdf://stsci.edu/datamodels/roman/schemas/cal_step_flag-1.0.0
+      - $ref: asdf://stsci.edu/datamodels/roman/schemas/enums/cal_step_flag-1.0.0
     archive_catalog:
       datatype: nvarchar(15)
       destination: [ScienceRefData.s_flux]
@@ -65,7 +65,7 @@ properties:
       Step in romancal that linearizes the ramp data to
       correct for deviations from a linear response.
     allOf:
-      - $ref: asdf://stsci.edu/datamodels/roman/schemas/cal_step_flag-1.0.0
+      - $ref: asdf://stsci.edu/datamodels/roman/schemas/enums/cal_step_flag-1.0.0
     archive_catalog:
       datatype: nvarchar(15)
       destination: [ScienceRefData.s_linearity]
@@ -75,7 +75,7 @@ properties:
       Step in romancal that populates photometric
       calibration information in the metadata of the science file.
     allOf:
-      - $ref: asdf://stsci.edu/datamodels/roman/schemas/cal_step_flag-1.0.0
+      - $ref: asdf://stsci.edu/datamodels/roman/schemas/enums/cal_step_flag-1.0.0
     archive_catalog:
       datatype: nvarchar(15)
       destination: [ScienceRefData.s_photom]
@@ -85,7 +85,7 @@ properties:
       Step in romancal that detects point sources in an
       image for use in astrometric alignment.
     allOf:
-      - $ref: asdf://stsci.edu/datamodels/roman/schemas/cal_step_flag-1.0.0
+      - $ref: asdf://stsci.edu/datamodels/roman/schemas/enums/cal_step_flag-1.0.0
     archive_catalog:
       datatype: nvarchar(15)
       destination: [ScienceRefData.s_source_catalog]
@@ -95,7 +95,7 @@ properties:
       Step in romancal that fits a slope to each pixel to
       compute the count rate.
     allOf:
-      - $ref: asdf://stsci.edu/datamodels/roman/schemas/cal_step_flag-1.0.0
+      - $ref: asdf://stsci.edu/datamodels/roman/schemas/enums/cal_step_flag-1.0.0
     archive_catalog:
       datatype: nvarchar(15)
       destination: [ScienceRefData.s_ramp_fit]
@@ -106,7 +106,7 @@ properties:
       additional signal from the readout electronics (e.g., 1/f noise)
       using the reference pixels.
     allOf:
-      - $ref: asdf://stsci.edu/datamodels/roman/schemas/cal_step_flag-1.0.0
+      - $ref: asdf://stsci.edu/datamodels/roman/schemas/enums/cal_step_flag-1.0.0
     archive_catalog:
       datatype: nvarchar(15)
       destination: [ScienceRefData.s_refpix]
@@ -116,7 +116,7 @@ properties:
       Step in romancal that sets data quality flags for
       pixels at or above the saturation threshold.
     allOf:
-      - $ref: asdf://stsci.edu/datamodels/roman/schemas/cal_step_flag-1.0.0
+      - $ref: asdf://stsci.edu/datamodels/roman/schemas/enums/cal_step_flag-1.0.0
     archive_catalog:
       datatype: nvarchar(15)
       destination: [ScienceRefData.s_saturation]
@@ -125,7 +125,7 @@ properties:
     description: |
       Step in ROMANCAL which detects and flags outliers in a science image.
     allOf:
-      - $ref: asdf://stsci.edu/datamodels/roman/schemas/cal_step_flag-1.0.0
+      - $ref: asdf://stsci.edu/datamodels/roman/schemas/enums/cal_step_flag-1.0.0
     archive_catalog:
       datatype: nvarchar(15)
       destination: [ScienceRefData.s_outlier_detection]
@@ -137,7 +137,7 @@ properties:
       catalog and, if necessary, corrects the World Coordinate System
       (WCS) alignment.
     allOf:
-      - $ref: asdf://stsci.edu/datamodels/roman/schemas/cal_step_flag-1.0.0
+      - $ref: asdf://stsci.edu/datamodels/roman/schemas/enums/cal_step_flag-1.0.0
     archive_catalog:
       datatype: nvarchar(15)
       destination: [ScienceRefData.s_tweakreg]
@@ -147,7 +147,7 @@ properties:
       Step in ROMANCAL that computes sky background values of each input image
       and derives scalings to equalize overlapping regions.
     allOf:
-      - $ref: asdf://stsci.edu/datamodels/roman/schemas/cal_step_flag-1.0.0
+      - $ref: asdf://stsci.edu/datamodels/roman/schemas/enums/cal_step_flag-1.0.0
     archive_catalog:
       datatype: nvarchar(15)
       destination: [ScienceRefData.s_skymatch]

@@ -16,7 +16,7 @@ properties:
       - type: object
         properties:
           optical_element:
-            $ref: asdf://stsci.edu/datamodels/roman/schemas/wfi_optical_element-1.2.0
+            $ref: asdf://stsci.edu/datamodels/roman/schemas/enums/wfi_optical_element-1.0.0
           exposure:
             $ref: asdf://stsci.edu/datamodels/roman/schemas/meta/exposure-1.0.0
           photometry:

@@ -46,7 +46,7 @@ properties:
                   necessary to convert from units of data numbers per second
                   (DN/s) to megaJanskys per steradian (MJy/sr).
                 allOf:
-                  - $ref: asdf://stsci.edu/datamodels/roman/schemas/cal_step_flag-1.0.0
+                  - $ref: asdf://stsci.edu/datamodels/roman/schemas/enums/cal_step_flag-1.0.0
                 archive_catalog:
                   datatype: nvarchar(15)
                   destination: [ScienceRefData.s_flux]
@@ -55,7 +55,7 @@ properties:
                 description: >
                   Step in romancal that detects and flags outliers in a stack of rate images.
                 allOf:
-                  - $ref: asdf://stsci.edu/datamodels/roman/schemas/cal_step_flag-1.0.0
+                  - $ref: asdf://stsci.edu/datamodels/roman/schemas/enums/cal_step_flag-1.0.0
                 archive_catalog:
                   datatype: nvarchar(15)
                   destination: [ScienceRefData.s_outlier_detection]
@@ -66,7 +66,7 @@ properties:
                   each input image and derives scaling factors to equalize
                   overlapping regions.
                 allOf:
-                  - $ref: asdf://stsci.edu/datamodels/roman/schemas/cal_step_flag-1.0.0
+                  - $ref: asdf://stsci.edu/datamodels/roman/schemas/enums/cal_step_flag-1.0.0
                 archive_catalog:
                   datatype: nvarchar(15)
                   destination: [ScienceRefData.s_skymatch]
@@ -76,7 +76,7 @@ properties:
                   Step in romancal which resamples and coadds each input 2D image based on its WCS
                   onto a grid, in order to combine multiple images into a single coadded product.
                 allOf:
-                  - $ref: asdf://stsci.edu/datamodels/roman/schemas/cal_step_flag-1.0.0
+                  - $ref: asdf://stsci.edu/datamodels/roman/schemas/enums/cal_step_flag-1.0.0
                 archive_catalog:
                   datatype: nvarchar(15)
                   destination: [ScienceRefData.s_resample]
