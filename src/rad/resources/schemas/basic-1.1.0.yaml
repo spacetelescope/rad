@@ -1,1 +1,42 @@
-../../../../latest/basic.yaml
+%YAML 1.1
+---
+$schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.0.0
+id: asdf://stsci.edu/datamodels/roman/schemas/basic-1.1.0
+
+title: Basic Information
+
+type: object
+properties:
+  # Meta Variables
+  calibration_software_name:
+    $ref: asdf://stsci.edu/datamodels/roman/schemas/meta/calibration_software_name-1.0.0
+  calibration_software_version:
+    $ref: asdf://stsci.edu/datamodels/roman/schemas/meta/calibration_software_version-1.0.0
+  product_type:
+    $ref: asdf://stsci.edu/datamodels/roman/schemas/meta/product_type-1.0.0
+  filename:
+    $ref: asdf://stsci.edu/datamodels/roman/schemas/meta/filename-1.0.0
+  file_date:
+    $ref: asdf://stsci.edu/datamodels/roman/schemas/meta/file_date-1.0.0
+  model_type:
+    $ref: asdf://stsci.edu/datamodels/roman/schemas/meta/model_type-1.0.0
+  origin:
+    $ref: asdf://stsci.edu/datamodels/roman/schemas/meta/origin-1.0.0
+  prd_version:
+    $ref: asdf://stsci.edu/datamodels/roman/schemas/meta/prd_version-1.0.0
+  sdf_software_version:
+    $ref: asdf://stsci.edu/datamodels/roman/schemas/meta/sdf_software_version-1.0.0
+  telescope:
+    $ref: asdf://stsci.edu/datamodels/roman/schemas/meta/telescope-1.0.0
+required:
+  [
+    calibration_software_name,
+    calibration_software_version,
+    filename,
+    file_date,
+    model_type,
+    origin,
+    prd_version,
+    sdf_software_version,
+    telescope,
+  ]

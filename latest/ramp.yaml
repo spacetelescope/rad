@@ -11,7 +11,7 @@ type: object
 properties:
   meta:
     allOf:
-      - $ref: asdf://stsci.edu/datamodels/roman/schemas/common-1.4.0
+      - $ref: asdf://stsci.edu/datamodels/roman/schemas/meta/common-1.0.0
       - type: object
         properties:
           cal_step:

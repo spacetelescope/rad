@@ -11,7 +11,7 @@ type: object
 properties:
   meta:
     allOf:
-      - $ref: asdf://stsci.edu/datamodels/roman/schemas/basic-1.1.0
+      - $ref: asdf://stsci.edu/datamodels/roman/schemas/meta/basic-1.0.0
       - type: object
         properties:
           basic:
