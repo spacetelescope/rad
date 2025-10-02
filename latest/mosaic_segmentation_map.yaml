@@ -16,10 +16,9 @@ properties:
       - type: object
         properties:
           basic:
-            tag: asdf://stsci.edu/datamodels/roman/tags/mosaic_basic-1.3.0
+            $ref: asdf://stsci.edu/datamodels/roman/schemas/meta/mosaic_basic-1.0.0
           program:
-            title: Program Information
-            tag: asdf://stsci.edu/datamodels/roman/tags/program-1.1.0
+            $ref: asdf://stsci.edu/datamodels/roman/schemas/meta/program-1.0.0
         required: [basic, program]
   data:
     title: Segmentation map

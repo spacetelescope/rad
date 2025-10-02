@@ -41,6 +41,7 @@ _LATEST_MANIFEST_TAGS = MappingProxyType(
 )
 _LATEST_DATAMODELS_URI = next(uri for uri in _LATEST_MANIFEST_URIS if "static" not in uri)
 _LATEST_STATIC_URI = next(uri for uri in _LATEST_MANIFEST_URIS if "static" in uri)
+_LATEST_DATAMODEL_URIS = tuple(uri["schema_uri"] for uri in _CURRENT_RESOURCES[_LATEST_DATAMODELS_URI]["tags"])
 
 
 def _find_latest(uris):
@@ -134,6 +135,12 @@ def latest_datamodels_uri():
     """
     assert len(_LATEST_MANIFEST_URIS) == 2, f"There should be exactly two latest manifests, found {len(_LATEST_MANIFEST_URIS)}"
     return _LATEST_DATAMODELS_URI
+
+
+@pytest.fixture(scope="session", params=_LATEST_DATAMODEL_URIS)
+def latest_tagged_schema_uri(request):
+    """Get a latest tagged schema URI"""
+    return request.param
 
 
 @pytest.fixture(scope="session", params=_LATEST_MANIFEST_TAGS[_LATEST_DATAMODELS_URI])

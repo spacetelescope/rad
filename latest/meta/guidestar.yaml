@@ -1,7 +1,7 @@
 %YAML 1.1
 ---
 $schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.0.0
-id: asdf://stsci.edu/datamodels/roman/schemas/guidestar-1.2.0
+id: asdf://stsci.edu/datamodels/roman/schemas/meta/guidestar-1.0.0
 
 title: Guide Star and Guide Window Information
 
@@ -116,17 +116,6 @@ properties:
     archive_catalog:
       datatype: nvarchar(10)
       destination: [WFIExposure.epoch, GuideWindow.epoch]
-propertyOrder:
-  [
-    guide_window_id,
-    guide_mode,
-    window_xstart,
-    window_ystart,
-    window_xstop,
-    window_ystop,
-    guide_star_id,
-    epoch,
-  ]
 required:
   [
     guide_window_id,
@@ -138,4 +127,3 @@ required:
     guide_star_id,
     epoch,
   ]
-flowStyle: block

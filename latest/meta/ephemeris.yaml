@@ -1,7 +1,7 @@
 %YAML 1.1
 ---
 $schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.0.0
-id: asdf://stsci.edu/datamodels/roman/schemas/ephemeris-1.1.0
+id: asdf://stsci.edu/datamodels/roman/schemas/meta/ephemeris-1.0.0
 
 title: Ephemeris Data Information
 type: object
@@ -131,19 +131,6 @@ properties:
     archive_catalog:
       datatype: float
       destination: [WFIExposure.velocity_z, GuideWindow.velocity_z]
-propertyOrder:
-  [
-    type,
-    time,
-    ephemeris_reference_frame,
-    spatial_x,
-    spatial_y,
-    spatial_z,
-    velocity_x,
-    velocity_y,
-    velocity_z,
-  ]
-flowStyle: block
 required:
   [
     type,
