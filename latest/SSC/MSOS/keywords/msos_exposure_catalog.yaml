@@ -33,14 +33,14 @@ properties:
       datatype: datetime2
       destination: [MSOSCatalog.exposure_end_time]
   # NOTE: MAST uses MJD for start and end times in our cross-mission search. We can convert from datetime strings, but if they are included in the manifest separately it would eliminate the need to do the conversion on the MAST side.
-  mjdstart: # SOC Proposed
+  expstart_mjd: # SOC Proposed
     title: Start Time MJD
     description: First timestamp in the light curve (MJD)
     type: number
     archive_catalog:
       datatype: float
       destination: [MSOSCatalog.exposure_start_time_mjd]
-  mjdend: # SOC Proposed
+  expend_mjd: # SOC Proposed
     title: End Time MJD
     description: Last timestamp in the light curve (MJD)
     type: number
@@ -48,4 +48,4 @@ properties:
       datatype: float
       destination: [MSOSCatalog.exposure_end_time_mjd]
 
-required: [exptime, expstart, expend, mjdstart, mjdend]
+required: [exptime, expstart, expend, expstart_mjd, expend_mjd]

@@ -10,18 +10,16 @@ properties:
   field:
     title: Field
     description: Placeholder.  Example value '5'
-    type: string
-    maxLength: 128
+    type: integer
     archive_catalog:
-      datatype: nvarchar(128)
+      datatype: int
       destination: [WFIReferenceFrame.field]
   tile_id:
     title: Tile Id
     description: Placeholder.  Example value '35'
-    type: string
-    maxLength: 10
+    type: integer
     archive_catalog:
-      datatype: nvarchar(10)
+      datatype: int
       destination: [WFIReferenceFrame.tile_id]
 
 required: [field, tile_id]
