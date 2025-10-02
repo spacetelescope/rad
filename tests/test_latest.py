@@ -129,3 +129,24 @@ class TestLastestResources:
         assert "datamodel_name" in current_resources[latest_tagged_schema_uri], (
             f"{latest_tagged_schema_uri} is tagged but not a datamodel."
         )
+
+    def test_tagged_schema_path(self, latest_tagged_schema_uri, latest_dir, latest_reference_files_dir, latest_uri_paths):
+        """
+        Check that all datamodels are in the top-level directory and all reference files are in the reference_files directory.
+        """
+        path = latest_uri_paths[latest_tagged_schema_uri]
+        if "reference_file" in latest_tagged_schema_uri:
+            assert path.parent == latest_reference_files_dir, (
+                f"{latest_tagged_schema_uri} is a reference file that is not in the reference_files directory."
+            )
+        else:
+            assert path.parent == latest_dir, f"{latest_tagged_schema_uri} is a datamodel that is not in the top-level directory."
+
+    def test_top_level_schema(self, latest_top_level_path, metaschema_uri, latest_paths):
+        """
+        Check that a schema located directly under the `latest` directory are datamodels (or the single metaschema).
+        """
+        schema = latest_paths[latest_top_level_path]
+
+        if schema["id"] != metaschema_uri:
+            assert "datamodel_name" in schema, f"{schema['id']} is a top level schema but not a datamodel."
