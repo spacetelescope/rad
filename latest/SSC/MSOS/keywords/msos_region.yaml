@@ -11,12 +11,12 @@ extName: SSC
 # Example: POLYGON ICRS 270.319355102 65.974344371 270.322525221 66.097218677 270.012545446 66.097236236 270.012492360 65.974274943
 type: object
 properties:
-  S_REGION: # SOC Proposed
+  s_region: # SOC Proposed
     title: Spatial Footprint
     description: The spatial footprint, represented as a polygon
     type: string
     archive_catalog:
       datatype: nvarchar(max)
-      destination: [WFIReferenceFrame.s_region]
+      destination: [WFIReferenceFrame.s_region, MSOSCatalog.s_region]
 
-required: [S_REGION]
+required: [s_region]

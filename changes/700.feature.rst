@@ -1,0 +1,3 @@
+More complete archive search keyword definitions for MSOS catalogs and reference frame level 3
+Removed 'meta' nesting from MSOS archive search schemas.
+Switched asdf/time tagging to references to asdf/time iso_time

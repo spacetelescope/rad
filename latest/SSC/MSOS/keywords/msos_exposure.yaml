@@ -8,7 +8,7 @@ extName: SSC
 
 type: object
 properties:
-  EXPTIME:
+  exptime:
     title: Exposure Time
     description: Effective (total) exposure time (seconds)
     type: number
@@ -16,34 +16,36 @@ properties:
       datatype: float
       destination: [WFIReferenceFrame.exposure_time]
   # For both the Roman WFI Search and the MAST Cross-Mission Search, sending these fields will permit time-range-based searches.
-  EXPSTART: # SOC Proposed
+  expstart: # SOC Proposed
     title: Start Time
     description: Start time of first observation that went into the stack (UTC)
-    tag: tag:stsci.edu:asdf/time/time-1.*
+    allOf:
+      - $ref: http://stsci.edu/schemas/asdf/time/time-1.3.0#/definitions/iso_time
     archive_catalog:
       datatype: datetime2
-      destination: [WFIReferenceFrame.start_time]
-  EXPEND: # SOC Proposed
+      destination: [WFIReferenceFrame.exposure_start_time]
+  expend: # SOC Proposed
     title: End Time
     description: End time of last observation that went into stack (UTC)
-    tag: tag:stsci.edu:asdf/time/time-1.*
+    allOf:
+      - $ref: http://stsci.edu/schemas/asdf/time/time-1.3.0#/definitions/iso_time
     archive_catalog:
       datatype: datetime2
-      destination: [WFIReferenceFrame.end_time]
+      destination: [WFIReferenceFrame.exposure_end_time]
   # NOTE: MAST uses MJD for start and end times in our cross-mission search. We can convert from datetime strings, but if they are included in the manifest separately it would eliminate the need to do the conversion on the MAST side.
-  MJDSTART: # SOC Proposed
+  expstart_mjd: # SOC Proposed
     title: Start Time MJD
     description: Start time of first observation that went into the stack (MJD)
     type: number
     archive_catalog:
       datatype: float
-      destination: [WFIReferenceFrame.start_time_mjd]
-  MJDEND: # SOC Proposed
+      destination: [WFIReferenceFrame.exposure_start_time_mjd]
+  expend_mjd: # SOC Proposed
     title: End Time MJD
     description: End time of last observation that went into the stack (MJD)
     type: number
     archive_catalog:
       datatype: float
-      destination: [WFIReferenceFrame.end_time_mjd]
+      destination: [WFIReferenceFrame.exposure_end_time_mjd]
 
-required: [EXPTIME, EXPSTART, EXPEND, MJDSTART, MJDEND]
+required: [exptime, expstart, expend, expstart_mjd, expend_mjd]

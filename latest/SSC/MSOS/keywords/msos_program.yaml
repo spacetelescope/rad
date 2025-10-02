@@ -7,15 +7,14 @@ title: MSOS program keywords
 extName: SSC
 type: object
 properties:
-  PROGNUM:
+  prognum:
     title: Program number
     description: ID number (integer) assigned to the proposal
-    type: string
-    maxLength: 16
+    type: integer
     archive_catalog:
-      datatype: nvarchar(16)
+      datatype: int
       destination: [WFIReferenceFrame.program, MSOSCatalog.program]
-  PINAME:
+  piname:
     title: PI Last Name
     description: |
       Principal Investigator (PI) last name; uppercase (e.g., FORD, LEMMON)
@@ -24,7 +23,7 @@ properties:
     archive_catalog:
       datatype: nvarchar(16)
       destination: [WFIReferenceFrame.pi_name, MSOSCatalog.pi_name]
-  PROGTITLE:
+  progtitle:
     title: Program Title
     description: The title of the program
     type: string
@@ -32,7 +31,7 @@ properties:
     archive_catalog:
       datatype: nvarchar(16)
       destination: [WFIReferenceFrame.program_title, MSOSCatalog.program_title]
-  CATEGORY:
+  category:
     title: Program Category
     description: |
       The submitted proposal category of the program. The
@@ -47,7 +46,7 @@ properties:
     archive_catalog:
       datatype: nvarchar(6)
       destination: [WFIReferenceFrame.category, MSOSCatalog.category]
-  SUBCATEGORY:
+  subcategory:
     title: Program Subcategory
     description: |
       The submitted proposal subcategory of the program. The
@@ -65,7 +64,7 @@ properties:
       datatype: nvarchar(15)
       destination:
         [WFIReferenceFrame.program_subcategory, MSOSCatalog.program_subcategory]
-  SCIENCE_CATEGORY:
+  science_category:
     title: Science Category
     description: |
       The science category assigned during the Time
@@ -77,4 +76,4 @@ properties:
       destination:
         [WFIReferenceFrame.science_category, MSOSCatalog.science_category]
 
-required: [PROGNUM, PINAME, PROGTITLE, CATEGORY, SUBCATEGORY, SCIENCE_CATEGORY]
+required: [prognum, piname, progtitle, category, subcategory, science_category]

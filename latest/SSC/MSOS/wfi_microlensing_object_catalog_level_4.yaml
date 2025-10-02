@@ -4,20 +4,15 @@ $schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.0.0
 id: asdf://stsci.edu/datamodels/roman/schemas/SSC/MSOS/wfi_microlensing_object_catalog_level_4-1.0.0
 
 # https://outerspace.stsci.edu/display/RSEC/Level+4+Microlensing+Data+Products#Level4MicrolensingDataProducts-Level4-MicrolensingObjectCatalogDataProduct
-# Initial keyword list is based on Box manifest example 'r00000_periodic_r3_season0.parquet.manifest.json'
 
 title: GBTDS Level 4 Microlensing Object Catalog
 archive_meta: Placeholder SOC file type
 type: object
-properties:
-  meta:
-    allOf:
-      - $ref: asdf://stsci.edu/datamodels/roman/schemas/SSC/ssc_basic-1.0.0
-      - $ref: asdf://stsci.edu/datamodels/roman/schemas/SSC/MSOS/keywords/msos_basic-1.0.0
-      - $ref: asdf://stsci.edu/datamodels/roman/schemas/SSC/MSOS/keywords/msos_common-1.0.0
-      - $ref: asdf://stsci.edu/datamodels/roman/schemas/SSC/MSOS/keywords/msos_exposure_catalog-1.0.0
-      - $ref: asdf://stsci.edu/datamodels/roman/schemas/SSC/MSOS/keywords/msos_observation-1.0.0
-      - $ref: asdf://stsci.edu/datamodels/roman/schemas/SSC/MSOS/keywords/msos_photometry-1.0.0
-      - $ref: asdf://stsci.edu/datamodels/roman/schemas/SSC/MSOS/keywords/msos_program-1.0.0
-      - $ref: asdf://stsci.edu/datamodels/roman/schemas/SSC/MSOS/keywords/msos_reference_frame-1.0.0
-      - $ref: asdf://stsci.edu/datamodels/roman/schemas/SSC/MSOS/keywords/msos_settings-1.0.0
+allOf:
+  - $ref: asdf://stsci.edu/datamodels/roman/schemas/SSC/ssc_basic-1.0.0
+  - $ref: asdf://stsci.edu/datamodels/roman/schemas/SSC/MSOS/keywords/msos_basic-1.0.0
+  - $ref: asdf://stsci.edu/datamodels/roman/schemas/SSC/MSOS/keywords/msos_common-1.0.0
+  - $ref: asdf://stsci.edu/datamodels/roman/schemas/SSC/MSOS/keywords/msos_observation-1.0.0
+  - $ref: asdf://stsci.edu/datamodels/roman/schemas/SSC/MSOS/keywords/msos_program-1.0.0
+  - $ref: asdf://stsci.edu/datamodels/roman/schemas/SSC/MSOS/keywords/msos_settings-1.0.0
+  - $ref: asdf://stsci.edu/datamodels/roman/schemas/SSC/MSOS/keywords/msos_weekly-1.0.0
