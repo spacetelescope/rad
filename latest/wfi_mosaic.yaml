@@ -6,7 +6,7 @@ id: asdf://stsci.edu/datamodels/roman/schemas/wfi_mosaic-1.4.0
 title: The schema for WFI Level 3 mosaics.
 
 datamodel_name: MosaicModel
-archive_meta: None
+archive_meta: Science WFI Level 3
 
 type: object
 properties:

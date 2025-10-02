@@ -7,7 +7,7 @@ title: Source catalog generated from a Level 3 file by the Source Catalog Step.
 
 datamodel_name: MosaicSourceCatalogModel
 
-archive_meta: None
+archive_meta: Science WFI Level 4 Source Catalog L3 Product
 type: object
 properties:
   meta:

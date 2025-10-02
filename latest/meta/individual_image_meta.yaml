@@ -1,0 +1,146 @@
+%YAML 1.1
+---
+$schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.0.0
+id: asdf://stsci.edu/datamodels/roman/schemas/meta/individual_image_meta-1.0.0
+
+title: Selected, Tabulated Input Level 2 (L2) Calibrated Rate Image Metadata
+
+type: object
+properties:
+  background:
+    title: Table of Background Level 2 (L2) Metadata
+    description: >
+      Table of background metadata from input calibrated rate
+      image files. Background metadata contains measured
+      sky background levels, the measurement method and
+      if the file was background corrected.
+    tag: tag:astropy.org:astropy/table/table-1.*
+  basic:
+    title: Table of Basic Level 2 (L2) Metadata
+    description: >
+      Table of basic metadata from input calibrated rate
+      image files. Basic metadata encompass a wide variety of
+      information such as pipeline version numbers and origin of the
+      file.
+    tag: tag:astropy.org:astropy/table/table-1.*
+  cal_step:
+    title: Table of Calibration Step Level 2 (L2) Metadata
+    description: >
+      Table of calibration step metadata from input
+      calibrated rate image files. Calibration step metadata indicate
+      which calibration steps were applied to the data during
+      detector-level processing.
+    tag: tag:astropy.org:astropy/table/table-1.*
+  coordinates:
+    title: Table of Coordinates Level 2 (L2) Metadata
+    description: >
+      Table of coordinates metadata from input calibrated
+      rate image files. Coordinates metadata indicate the type of
+      coordinate system used (e.g., the International Celestial
+      Reference System or ICRS).
+    tag: tag:astropy.org:astropy/table/table-1.*
+  ephemeris:
+    title: Table of Ephemeris Level 2 (L2) Metadata
+    description: >
+      Table of ephemeris metadata from input calibrated rate
+      image files. Ephemeris metadata describe the location and
+      movement of the spacecraft during the observations.
+    tag: tag:astropy.org:astropy/table/table-1.*
+  exposure:
+    title: Table of Exposure Level 2 (L2) Metadata
+    description: >
+      Table of exposure metadata from input calibrated rate
+      image files. Exposure metadata contain information about the
+      exposure such as start time and readout pattern.
+    tag: tag:astropy.org:astropy/table/table-1.*
+  guide_star:
+    title: Table of Guide Star Level 2 (L2) Metadata
+    description: >
+      Table of guide star metadata from input calibrated
+      rate image files. Guide star metadata describe the star and
+      window used for guiding on that particular Wide Field Instrument
+      (WFI) detector.
+    tag: tag:astropy.org:astropy/table/table-1.*
+  instrument:
+    title: Table of Instrument Level 2 (L2) Metadata
+    description: >
+      Table of instrument metadata from input calibrated
+      rate image files. Instrument metadata contain information about
+      the Wide Field Instrument (WFI) detector that the data
+      correspond to as well as the optical element used during the
+      observation.
+    tag: tag:astropy.org:astropy/table/table-1.*
+  observation:
+    title: Table of Observation Level 2 (L2) Metadata
+    description: >
+      Table of observation metadata from input calibrated
+      rate image files. Observation metadata contain programmatic
+      identifier information such as the pass number, execution plan
+      number, and visit number.
+    tag: tag:astropy.org:astropy/table/table-1.*
+  photometry:
+    title: Table of Photometry Level 2 (L2) Metadata
+    description: >
+      Table of photometry metadata from input calibrated rate
+      image files. Photometry metadata contains pixel
+      area information, flux density conversion factors and
+      uncertainty.
+    tag: tag:astropy.org:astropy/table/table-1.*
+  pointing:
+    title: Table of Pointing Level 2 (L2) Metadata
+    description: >
+      Table of pointing metadata from input calibrated rate
+      image files. Pointing metadata contains information
+      about the telescope pointing.
+    tag: tag:astropy.org:astropy/table/table-1.*
+  program:
+    title: Table of Program Level 2 (L2) Metadata
+    description: >
+      Table of program metadata from input calibrated rate
+      image files. Program metadata contains information
+      about the observing program.
+    tag: tag:astropy.org:astropy/table/table-1.*
+  rcs:
+    title: Table of RCS Level 2 (L2) Metadata
+    description: >
+      Table of relative calibration system  metadata from
+      input calibrated rate image files. RCS metadata contains
+      information about state of the relative calibration system.
+    tag: tag:astropy.org:astropy/table/table-1.*
+  ref_file:
+    title: Table of Reference File Level 2 (L2) Metadata
+    description: >
+      Table of reference file metadata from input calibrated rate
+      image files. Reference file metadata contains information
+      about reference files used during calibration of the
+      L2 files.
+    tag: tag:astropy.org:astropy/table/table-1.*
+  source_catalog:
+    title: Table of Source Catalog Level 2 (L2) Metadata
+    description: >
+      Table of source catalog metadata from input calibrated rate
+      image files. Source catalog metadata contains information
+      about the measured source catalogs for the L2 files.
+    tag: tag:astropy.org:astropy/table/table-1.*
+  velocity_aberration:
+    title: Table of Velocity Aberration Level 2 (L2) Metadata
+    description: >
+      Table of velocity aberration metadata from input calibrated rate
+      image files. Velocity aberration metadata contains information
+      about the calculated velocity aberration.
+    tag: tag:astropy.org:astropy/table/table-1.*
+  visit:
+    title: Table of Visit Level 2 (L2) Metadata
+    description: >
+      Table of visit metadata from input calibrated rate
+      image files. Visit metadata contains information
+      about the dither, visit type, and planned exposures.
+    tag: tag:astropy.org:astropy/table/table-1.*
+  wcsinfo:
+    title: Table of WCS Info Level 2 (L2) Metadata
+    description: >
+      Table of World Coordinate System (WCS) info metadata from
+      input calibrated rate image files. WCS info metadata contains
+      summary information about the sky footprint and relationship
+      with the detectors.
+    tag: tag:astropy.org:astropy/table/table-1.*

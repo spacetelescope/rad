@@ -1,0 +1,176 @@
+%YAML 1.1
+---
+$schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.0.0
+id: asdf://stsci.edu/datamodels/roman/schemas/SSC/CGI/keywords/cgi_optical_config-1.0.0
+
+title: Optical configuration
+extName: SSC
+
+type: object
+properties:
+  SPAM_H:
+    title: SPAM +H position
+    description: SPAM +H position (um)
+    type: number
+    archive_catalog:
+      datatype: float
+      destination: [CGIExposure.spam_h, CGIMosiac.spam_h]
+  SPAM_V:
+    title: SPAM +V Position
+    description: SPAM +V Position (um)
+    type: number
+    archive_catalog:
+      datatype: float
+      destination: [CGIExposure.spam_v, CGIMosaic.spam_v]
+  SPAMNAME:
+    title: Closest SPAM named position
+    description: Closest SPAM named position
+    type: string
+    maxLength: 128
+    # Waiting on specific enum values
+    # enum: []
+    archive_catalog:
+      datatype: nvarchar(128)
+      destination: [CGIExposure.spamname, CGIMosaic.spamname]
+  FPAM_H:
+    title: FPAM +H position
+    description: FPAM +H position (um)
+    type: number
+    archive_catalog:
+      datatype: float
+      destination: [CGIExposure.fpam_h, CGIMosaic.fpam_h]
+  FPAM_V:
+    title: FPAM +V Position
+    description: FPAM +V Position (um)
+    type: number
+    archive_catalog:
+      datatype: float
+      destination: [CGIExposure.fpam_v, CGIMosaic.fpam_v]
+  FPAMNAME:
+    title: Closest FPAM named position
+    description: Closest FPAM named position
+    type: string
+    maxLength: 128
+    # Waiting on specific enum values
+    # enum: []
+    archive_catalog:
+      datatype: nvarchar(128)
+      destination: [CGIExposure.fpamname, CGIMosaic.fpamname]
+  LSAM_H:
+    title: LSAM +H position
+    description: LSAM +H position (um)
+    type: number
+    archive_catalog:
+      datatype: float
+      destination: [CGIExposure.lsam_h, CGIMosaic.lsam_h]
+  LSAM_V:
+    title: LSAM +V Position
+    description: LSAM +V Position (um)
+    type: number
+    archive_catalog:
+      datatype: float
+      destination: [CGIExposure.lsam_v, CGIMosaic.lsam_v]
+  LSAMNAME:
+    title: Closest LSAM named position
+    description: Closest LSAM named position
+    type: string
+    maxLength: 128
+    # Waiting on specific enum values
+    # enum: []
+    archive_catalog:
+      datatype: nvarchar(128)
+      destination: [CGIExposure.lsamname, CGIMosaic.lsamname]
+  FSAM_H:
+    title: FSAM +H position
+    description: FSAM +H position (um)
+    type: number
+    archive_catalog:
+      datatype: float
+      destination: [CGIExposure.fsam_h, CGIMosaic.fsam_h]
+  FSAM_V:
+    title: FSAM +V Position
+    description: FSAM +V Position (um)
+    type: number
+    archive_catalog:
+      datatype: float
+      destination: [CGIExposure.fsam_v, CGIMosaic.fsam_v]
+  FSAMNAME:
+    title: Closest FSAM named position
+    description: Closest FSAM named position
+    type: string
+    maxLength: 128
+    # Waiting on specific enum values
+    # enum: []
+    archive_catalog:
+      datatype: nvarchar(128)
+      destination: [CGIExposure.fsamname, CGIMosaic.fsamname]
+  CFAM_H:
+    title: CFAM +H position
+    description: CFAM +H position (um)
+    type: number
+    archive_catalog:
+      datatype: float
+      destination: [CGIExposure.cfam_h, CGIMosaic.cfam_h]
+  CFAM_V:
+    title: CFAM +V Position
+    description: CFAM +V Position (um)
+    type: number
+    archive_catalog:
+      datatype: float
+      destination: [CGIExposure.cfam_v, CGIMosaic.cfam_v]
+  CFAMNAME:
+    title: Closest CFAM named position
+    description: Closest CFAM named position
+    type: string
+    maxLength: 128
+    # Waiting on specific enum values
+    # enum: []
+    archive_catalog:
+      datatype: nvarchar(128)
+      destination: [CGIExposure.cfamname, CGIMosaic.cfamname]
+  DPAM_H:
+    title: DPAM +H position
+    description: DPAM +H position (um)
+    type: number
+    archive_catalog:
+      datatype: float
+      destination: [CGIExposure.dpam_h, CGIMosaic.dpam_h]
+  DPAM_V:
+    title: DPAM +V Position
+    description: DPAM +V Position (um)
+    type: number
+    archive_catalog:
+      datatype: float
+      destination: [CGIExposure.dpam_v, CGIMosaic.dpam_v]
+  DPAMNAME:
+    title: Closest DPAM named position
+    description: Closest DPAM named position
+    type: string
+    maxLength: 128
+    # Waiting on specific enum values
+    # enum: []
+    archive_catalog:
+      datatype: nvarchar(128)
+      destination: [CGIExposure.dpamname, CGIMosaic.dpamname]
+
+required:
+  [
+    SPAM_H,
+    SPAM_V,
+    SPAMNAME,
+    FPAM_H,
+    FPAM_V,
+    FPAMNAME,
+    LSAM_H,
+    LSAM_V,
+    LSAMNAME,
+    FSAM_H,
+    FSAM_V,
+    FSAMNAME,
+    CFAM_H,
+    CFAM_V,
+    CFAMNAME,
+    DPAM_H,
+    DPAM_V,
+    DPAMNAME,
+  ]

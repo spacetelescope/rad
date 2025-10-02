@@ -7,7 +7,7 @@ title: Level 1 Detector Guide Star Window Information
 
 datamodel_name: L1DetectorGuidewindowModel
 
-archive_meta: None
+archive_meta: Guide Window Level 1
 
 type: object
 properties:

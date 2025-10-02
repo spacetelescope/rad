@@ -7,7 +7,6 @@ title: Forced source catalog generated from a Level 2 file by the Source Catalog
 
 datamodel_name: ForcedImageSourceCatalogModel
 
-archive_meta: None
 type: object
 properties:
   meta:

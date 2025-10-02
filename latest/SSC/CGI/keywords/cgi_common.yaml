@@ -8,9 +8,17 @@ extName: SSC
 
 type: object
 properties:
+  FSWDVERS:
+    title: Version of CGI flight software telemetry dictionaries
+    description: Version of CGI flight software telemetry dictionaries
+    type: string
+    maxLength: 8
+    archive_catalog:
+      datatype: nvarchar(8)
+      destination: [CGIExposure.fswdvers, CGIMosaic.fswdvers]
   INSTRUME:
     title: Instrument
-    description: Instrument used
+    description: Instrument shorthand
     type: string
     maxLength: 8
     archive_catalog:
@@ -19,31 +27,29 @@ properties:
   PROGNUM:
     title: Program number
     description: ID number (integer) assigned to the proposal
-    type: string
-    maxLength: 16
+    type: integer
     archive_catalog:
-      datatype: nvarchar(16)
+      datatype: int
       destination: [CGIExposure.program, CGIMosaic.program]
-  SEGMENT:
-    title: Segment number
-    description: The sequence of activities produced by each iteration of a Segment Plan (Observation Sequence) in a Pass
-    type: string
-    maxLength: 16
+  EXECNUM:
+    title: Execution number portion of visit ID
+    description: Execution number portion of visit ID
+    type: integer
     archive_catalog:
-      datatype: nvarchar(16)
-      destination: [CGIExposure.segment, CGIMosaic.segment]
-  VISNUM:
-    title: Visit number
-    description: Visit number within a program
+      datatype: smallint
+      destination: [CGIExposure.execution_plan, CGIMosaic.execution_plan]
+  CAMPAIGN:
+    title: Campaign number portion of visit ID
+    description: Campaign number portion of visit ID
     type: string
-    maxLength: 16
+    maxLength: 3
     archive_catalog:
-      datatype: nvarchar(16)
-      destination: [CGIExposure.visit, CGIMosaic.visit]
+      datatype: nvarchar(3)
+      destination: [CGIExposure.campaign, CGIMosaic.campaign]
   # The following fields are NOT required, but they would be nice to have as explicitly specified values to fill in for our cross-mission search. If not relevant or not provided these will just be null values at MAST.
   DETECTOR: # SOC Proposed
     title: Detector
-    description: The CGI detector name
+    description: Name of detector "EXoplanetaryCAMera"
     type: string
     maxLength: 16
     archive_catalog:
@@ -88,10 +94,11 @@ properties:
 
 required:
   [
+    FSWDVERS,
     INSTRUME,
     PROGNUM,
-    SEGMENT,
-    VISNUM,
+    EXECNUM,
+    CAMPAIGN,
     DETECTOR,
     APERTURE,
     PINAME,

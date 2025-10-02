@@ -38,7 +38,7 @@ jobs:
           git push origin ${{ steps.set_release_date.outputs.version }}
 
       - name: Create GitHub release (triggers publish-to-pypi workflow)
-        uses: zendesk/action-create-release@746afbc52c1d78025a1a55b59ccd4f89208d4474 # master
+        uses: zendesk/action-create-release@d533b73f28ddc0218cc4952c86af1c2d1ca2dde0 # master
         env:
           GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
         with:
