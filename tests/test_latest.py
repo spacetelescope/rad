@@ -35,7 +35,12 @@ class TestLastestResources:
         # Check that the file name is consistent with the schema ID
         uri = yaml.safe_load(latest_path.read_bytes())["id"]
         uri = uri.split("/schemas/")[-1] if "/schemas/" in uri else uri.split("/manifests/")[-1]
-        assert uri.split("-")[0] == str(latest_path.parent / latest_path.stem).split("/latest/")[-1].split("-")[0]
+
+        # Find the filename without the version number suffix
+        filename = str(latest_path.parent / latest_path.stem).split("/latest/")[-1].split("-")[0]
+
+        # Note that the manifests are nested in the manifests directory
+        assert uri.split("-")[0] == filename.split("manifests/")[-1] if "manifests/" in filename else filename
 
     @pytest.mark.skipif(not IS_EDITABLE, reason="Symbolic links are resolved in non-editable installs")
     def test_latest_symlink(self, latest_path):
