@@ -9,7 +9,11 @@ import asdf.schema
 import asdf.treeutil
 
 if TYPE_CHECKING:
-    from typing import Any
+    from typing import Any, TypedDict
+
+    class ArchiveInfo(TypedDict):
+        datatype: str
+        destination: list[str]
 
 
 @functools.cache
@@ -136,14 +140,12 @@ def archive_schema(schema: dict[str, Any]) -> dict[str, Any]:
         The processed schema.
     """
     if isinstance(schema, abc.Mapping):
-        schema.pop("required", None)
-        schema.pop("type", None)
-        schema.pop("anyOf", None)
-        schema.pop("additionalProperties", None)
-        schema.pop("$schema", None)
-        schema.pop("flowStyle", None)
-        schema.pop("propertyOrder", None)
-        schema.pop("datamodel_name", None)
+        new_schema = copy.deepcopy(schema)
+        for key in schema:
+            if key not in ("properties", "archive_catalog", "archive_meta"):
+                new_schema.pop(key)
+
+        schema = new_schema
 
     if isinstance(schema, abc.Mapping) and "properties" in schema:
         properties = {}
@@ -159,13 +161,132 @@ def archive_schema(schema: dict[str, Any]) -> dict[str, Any]:
 
     if isinstance(schema, abc.Mapping):
         if "archive_catalog" in schema:
-            new_node = {"archive_catalog": schema["archive_catalog"]}
-            if "title" in schema:
-                new_node["title"] = schema["title"]
-            if "description" in schema:
-                new_node["description"] = schema["description"]
-            return new_node
+            return {"archive_catalog": schema["archive_catalog"]}
         else:
             return None
 
     return schema
+
+
+def _flatten_dict(data: dict[str, Any], parent_key: str | None = None) -> dict[str, Any]:
+    """
+    Flatten a nested dictionary structure into a single-level dictionary.
+
+    Parameters
+    ----------
+    d : dict[str, Any]
+        The dictionary to flatten.
+    parent_key : str, optional
+        The parent key for the current recursion level, by default "".
+
+    Returns
+    -------
+    dict[str, Any]
+        A flattened dictionary where nested keys are joined with the separator.
+    """
+    parent_key = parent_key or ""
+
+    items = []
+    for key, value in data.items():
+        new_key = f"{parent_key}.{key}" if parent_key else key
+
+        if isinstance(value, abc.Mapping):
+            items.extend(_flatten_dict(value, new_key).items())
+        else:
+            items.append((new_key, value))
+
+    return dict(items)
+
+
+def _path_archive(schema: dict[str, Any]) -> dict[str, ArchiveInfo]:
+    """
+    Produce a data path in schema to archive information mapping
+
+    Parameters
+    ----------
+    schema : dict[str, Any]
+        Schema to process
+
+    Returns
+    -------
+    dict[str, Any]
+        data-path: archive information
+    """
+    archive_filter = archive_schema(schema)
+    archive_filter.pop("archive_meta")
+
+    flat_schema = _flatten_dict(archive_filter)
+
+    data = {}
+    for key_path, value in flat_schema.items():
+        base_path, archive_key = key_path.rsplit(".", 1)
+
+        path = ".".join(
+            item for item in base_path.split(".") if item != "properties" and item != "archive_catalog" and item != "meta"
+        )
+
+        if path not in data:
+            data[path] = {}
+
+        data[path][archive_key] = value
+
+    return data
+
+
+def _archive_string(path: str, datatype: str | None, destination: list[str]) -> list[str]:
+    """
+    Produce a string representation of an archive mapping
+
+    Parameters
+    ----------
+    path : str
+        Data path
+    datatype : str | None
+        Datatype of the data
+    destination : list[str]
+
+    Returns
+    -------
+    str
+        String representation of the archive mapping
+    """
+    if len(path.split(".")) == 1:
+        path = f"top.{path}"
+
+    # Re append meta to the front of the path and add | to the end
+    schema_path = f"meta.{path}|"
+
+    # Last two components of the path, reversed and joined by |
+    archive_path = "|".join(path.split(".")[-2:][::-1])
+
+    if datatype is not None:
+        if "char" in datatype.lower() or "str" in datatype.lower():
+            schema_path = f"1||{schema_path}"
+        else:
+            schema_path = f"0||{schema_path}"
+
+    return ["|".join([archive_path, *(dest.split(".")), schema_path]) for dest in destination]
+
+
+def archive_data(schema: dict[str, Any]) -> list[str]:
+    """
+    Produce a list of archive mapping strings from a schema
+
+    Parameters
+    ----------
+    schema : dict[str, Any]
+        Schema to process
+
+    Returns
+    -------
+    list[str]
+        List of archive mapping strings
+    """
+    archive_meta = schema.get("archive_meta")
+    path_info = _path_archive(schema)
+
+    archive_strings = []
+    for path, archive_info in path_info.items():
+        archive_strings.extend([f"{archive_meta}|{dest}" for dest in _archive_string(path, **archive_info)])
+
+    return archive_strings
