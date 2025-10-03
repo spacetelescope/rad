@@ -515,12 +515,20 @@ def _get_latest_uri(prefix):
     return _find_latest(uris)
 
 
-_PHOT_TABLE_KEY_PATTERN = next(
-    iter(
-        _CURRENT_RESOURCES[_get_latest_uri("asdf://stsci.edu/datamodels/roman/schemas/reference_files/wfi_img_photom")][
-            "properties"
-        ]["phot_table"]["patternProperties"]
-    )
+_PHOT_TABLE_KEYS = tuple(
+    _CURRENT_RESOURCES[_get_latest_uri("asdf://stsci.edu/datamodels/roman/schemas/reference_files/wfi_img_photom")]["properties"][
+        "phot_table"
+    ]["properties"].keys()
+)
+_ABVEGAOFFSET_KEYS = tuple(
+    _CURRENT_RESOURCES[_get_latest_uri("asdf://stsci.edu/datamodels/roman/schemas/reference_files/abvegaoffset")]["properties"][
+        "data"
+    ]["properties"].keys()
+)
+_APCORR_KEYS = tuple(
+    _CURRENT_RESOURCES[_get_latest_uri("asdf://stsci.edu/datamodels/roman/schemas/reference_files/apcorr")]["properties"]["data"][
+        "properties"
+    ].keys()
 )
 _OPTICAL_ELEMENTS = tuple(
     _CURRENT_RESOURCES[_get_latest_uri("asdf://stsci.edu/datamodels/roman/schemas/wfi_optical_element")]["enum"]
@@ -534,17 +542,49 @@ _P_EXPTYPE_PATTERN = _CURRENT_RESOURCES[
 
 
 @pytest.fixture(scope="session")
-def phot_table_key_pattern():
+def phot_table_keys():
     """
     Get the pattern for the photometry table key used by the reference files.
     """
-    return compile(_PHOT_TABLE_KEY_PATTERN)
+    return _PHOT_TABLE_KEYS
 
 
-@pytest.fixture(scope="session", params=_PHOT_TABLE_KEY_PATTERN.split(")$")[0].split("(")[-1].split("|"))
+@pytest.fixture(scope="session", params=_PHOT_TABLE_KEYS)
 def phot_table_key(request):
     """
     Get the photometry table key from the request.
+    """
+    return request.param
+
+
+@pytest.fixture(scope="session")
+def abvegaoffset_keys():
+    """
+    Get the keys for the abvegaoffset reference file.
+    """
+    return _ABVEGAOFFSET_KEYS
+
+
+@pytest.fixture(scope="session", params=_ABVEGAOFFSET_KEYS)
+def abvegaoffset_key(request):
+    """
+    Get the abvegaoffset key from the request.
+    """
+    return request.param
+
+
+@pytest.fixture(scope="session")
+def apcorr_keys():
+    """
+    Get the keys for the apcorr reference file.
+    """
+    return _APCORR_KEYS
+
+
+@pytest.fixture(scope="session", params=_APCORR_KEYS)
+def apcorr_key(request):
+    """
+    Get the apcorr key from the request.
     """
     return request.param
 
