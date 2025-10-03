@@ -35,7 +35,12 @@ class TestLastestResources:
         # Check that the file name is consistent with the schema ID
         uri = yaml.safe_load(latest_path.read_bytes())["id"]
         uri = uri.split("/schemas/")[-1] if "/schemas/" in uri else uri.split("/manifests/")[-1]
-        assert uri.split("-")[0] == str(latest_path.parent / latest_path.stem).split("/latest/")[-1].split("-")[0]
+
+        # Find the filename without the version number suffix
+        filename = str(latest_path.parent / latest_path.stem).split("/latest/")[-1].split("-")[0]
+
+        # Note that the manifests are nested in the manifests directory
+        assert uri.split("-")[0] == filename.split("manifests/")[-1] if "manifests/" in filename else filename
 
     @pytest.mark.skipif(not IS_EDITABLE, reason="Symbolic links are resolved in non-editable installs")
     def test_latest_symlink(self, latest_path):
@@ -129,3 +134,24 @@ class TestLastestResources:
         assert "datamodel_name" in current_resources[latest_tagged_schema_uri], (
             f"{latest_tagged_schema_uri} is tagged but not a datamodel."
         )
+
+    def test_tagged_schema_path(self, latest_tagged_schema_uri, latest_dir, latest_reference_files_dir, latest_uri_paths):
+        """
+        Check that all datamodels are in the top-level directory and all reference files are in the reference_files directory.
+        """
+        path = latest_uri_paths[latest_tagged_schema_uri]
+        if "reference_file" in latest_tagged_schema_uri:
+            assert path.parent == latest_reference_files_dir, (
+                f"{latest_tagged_schema_uri} is a reference file that is not in the reference_files directory."
+            )
+        else:
+            assert path.parent == latest_dir, f"{latest_tagged_schema_uri} is a datamodel that is not in the top-level directory."
+
+    def test_top_level_schema(self, latest_top_level_path, metaschema_uri, latest_paths):
+        """
+        Check that a schema located directly under the `latest` directory are datamodels (or the single metaschema).
+        """
+        schema = latest_paths[latest_top_level_path]
+
+        if schema["id"] != metaschema_uri:
+            assert "datamodel_name" in schema, f"{schema['id']} is a top level schema but not a datamodel."

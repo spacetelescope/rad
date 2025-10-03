@@ -33,8 +33,13 @@ _MANIFEST_ENTRIES = tuple(chain(*[_CURRENT_RESOURCES[uri]["tags"] for uri in _MA
 
 
 # Look directly at the latest schemas storage directory to infer latest schemas
-_LATEST_PATHS = tuple((Path(__file__).parent.parent.absolute() / "latest").glob("**/*.yaml"))
-_LATEST_URIS = tuple(yaml.safe_load(latest_path.read_bytes())["id"] for latest_path in _LATEST_PATHS)
+_LATEST_DIR = Path(__file__).parent.parent.absolute() / "latest"
+_LATEST_PATHS = MappingProxyType(
+    {latest_path: yaml.safe_load(latest_path.read_bytes()) for latest_path in _LATEST_DIR.glob("**/*.yaml")}
+)
+_LATEST_TOP_LEVEL_PATHS = tuple(latest_path for latest_path in _LATEST_PATHS if latest_path.parent == _LATEST_DIR)
+_LATEST_URI_PATHS = MappingProxyType({schema["id"]: path for path, schema in _LATEST_PATHS.items()})
+_LATEST_URIS = tuple(_LATEST_URI_PATHS.keys())
 _LATEST_MANIFEST_URIS = tuple(uri for uri in _LATEST_URIS if "manifests" in uri)
 _LATEST_MANIFEST_TAGS = MappingProxyType(
     {uri: tuple(entry["tag_uri"] for entry in _CURRENT_RESOURCES[uri]["tags"]) for uri in _LATEST_MANIFEST_URIS}
@@ -110,6 +115,38 @@ def latest_path(request):
     Get a latest resource path
     """
     return request.param
+
+
+@pytest.fixture(scope="session")
+def latest_dir():
+    """
+    Get the path to the latest directory.
+    """
+    return _LATEST_DIR
+
+
+@pytest.fixture(scope="session")
+def latest_reference_files_dir(latest_dir):
+    """
+    Get the path to the latest reference files directory.
+    """
+    return latest_dir / "reference_files"
+
+
+@pytest.fixture(scope="session", params=_LATEST_TOP_LEVEL_PATHS)
+def latest_top_level_path(request):
+    """
+    Get a path to one of the top level latest schemas.
+    """
+    return request.param
+
+
+@pytest.fixture(scope="session")
+def latest_uri_paths():
+    """
+    Get the mapping of latest URIs to their paths.
+    """
+    return _LATEST_URI_PATHS
 
 
 @pytest.fixture(scope="session")

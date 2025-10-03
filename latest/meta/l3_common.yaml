@@ -1,7 +1,7 @@
 %YAML 1.1
 ---
 $schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.0.0
-id: asdf://stsci.edu/datamodels/roman/schemas/l3_common-1.1.0
+id: asdf://stsci.edu/datamodels/roman/schemas/meta/l3_common-1.0.0
 
 title: Common Level 3 Metadata
 
@@ -155,7 +155,7 @@ properties:
           data. If data using multiple optical elements are combined, the
           value of optical_element will be None.
         anyOf:
-          - $ref: asdf://stsci.edu/datamodels/roman/schemas/wfi_optical_element-1.2.0
+          - $ref: asdf://stsci.edu/datamodels/roman/schemas/enums/wfi_optical_element-1.0.0
           - type: "null"
         archive_catalog:
           datatype: nvarchar(20)

@@ -16,7 +16,7 @@ properties:
         properties:
           reftype:
             enum: [READNOISE]
-      - $ref: asdf://stsci.edu/datamodels/roman/schemas/reference_files/ref_exposure_type-1.2.0
+      - $ref: asdf://stsci.edu/datamodels/roman/schemas/reference_files/ref_exposure_type-1.3.0
   data:
     title: Read Noise Data Array
     description: |

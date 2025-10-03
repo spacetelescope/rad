@@ -1,0 +1,2 @@
+The remaining parts of reorganizing RAD schemas. This moves all the non-datamodels
+schemas out of the ``latest`` directory except the metaschema ``rad_schema``.

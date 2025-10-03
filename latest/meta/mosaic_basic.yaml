@@ -113,7 +113,7 @@ properties:
       destination: [SourceCatalog.survey, SegmentationMap.survey]
   optical_element:
     allOf:
-      - $ref: asdf://stsci.edu/datamodels/roman/schemas/wfi_optical_element-1.2.0
+      - $ref: asdf://stsci.edu/datamodels/roman/schemas/enums/wfi_optical_element-1.0.0
     sdf:
       special_processing: VALUE_REQUIRED
       source:

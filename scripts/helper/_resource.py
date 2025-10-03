@@ -192,7 +192,7 @@ class _Resource:
         """
         uri = f"{cls.MANIFEST_URI_PREFIX}{uri_suffix}"
         extension_uri = sub(r"manifests", r"extensions", uri)
-        path = repository / "latest" / f"{uri_suffix.split('-')[0]}.yaml"
+        path = repository / "latest" / "manifests" / f"{uri_suffix.split('-')[0]}.yaml"
 
         body = dedent(
             f"""
@@ -308,7 +308,11 @@ class _Resource:
         Path
             The path to the symlink for the resource.
         """
-        base_path = path.relative_to(self.latest_path)
+        if "schemas" in uri:
+            base_path = path.relative_to(self.latest_path)
+        elif "manifest" in uri:
+            base_path = path.relative_to(self.latest_path / "manifests")
+
         parent_path = base_path.parent
         filename = f"{base_path.stem}-{version}.yaml"
 

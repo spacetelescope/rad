@@ -35,8 +35,8 @@ properties:
                 type: integer
             required: [ma_table_name, ma_table_number]
         required: [exposure]
-      - $ref: asdf://stsci.edu/datamodels/roman/schemas/reference_files/ref_exposure_type-1.2.0
-      - $ref: asdf://stsci.edu/datamodels/roman/schemas/reference_files/ref_optical_element-1.2.0
+      - $ref: asdf://stsci.edu/datamodels/roman/schemas/reference_files/ref_exposure_type-1.3.0
+      - $ref: asdf://stsci.edu/datamodels/roman/schemas/reference_files/ref_optical_element-1.3.0
   dq:
     title: 2-D Data Quality Array
     description: |

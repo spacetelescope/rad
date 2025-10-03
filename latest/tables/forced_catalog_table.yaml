@@ -1,12 +1,12 @@
 %YAML 1.1
 ---
 $schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.0.0
-id: asdf://stsci.edu/datamodels/roman/schemas/forced_catalog_table-1.0.0
+id: asdf://stsci.edu/datamodels/roman/schemas/tables/forced_catalog_table-1.0.0
 
 title: Forced source catalog table schema
 
 definitions:
-  $ref: "asdf://stsci.edu/datamodels/roman/schemas/source_catalog_columns-1.0.0#/definitions"
+  $ref: "asdf://stsci.edu/datamodels/roman/schemas/tables/source_catalog_columns-1.0.0#/definitions"
 
 type: object
 properties:
@@ -16,7 +16,7 @@ properties:
           items:
             not:
               allOf:
-                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/source_catalog_columns-1.0.0#/definitions/flagged_spatial_index"
+                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/tables/source_catalog_columns-1.0.0#/definitions/flagged_spatial_index"
                 - properties:
                     name:
                       pattern: ^flagged_spatial_index$
@@ -24,7 +24,7 @@ properties:
           items:
             not:
               allOf:
-                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/source_catalog_columns-1.0.0#/definitions/bbox_xmax"
+                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/tables/source_catalog_columns-1.0.0#/definitions/bbox_xmax"
                 - properties:
                     name:
                       pattern: ^bbox_xmax$
@@ -32,7 +32,7 @@ properties:
           items:
             not:
               allOf:
-                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/source_catalog_columns-1.0.0#/definitions/bbox_xmin"
+                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/tables/source_catalog_columns-1.0.0#/definitions/bbox_xmin"
                 - properties:
                     name:
                       pattern: ^bbox_xmin$
@@ -40,7 +40,7 @@ properties:
           items:
             not:
               allOf:
-                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/source_catalog_columns-1.0.0#/definitions/bbox_ymax"
+                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/tables/source_catalog_columns-1.0.0#/definitions/bbox_ymax"
                 - properties:
                     name:
                       pattern: ^bbox_ymax$
@@ -48,7 +48,7 @@ properties:
           items:
             not:
               allOf:
-                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/source_catalog_columns-1.0.0#/definitions/bbox_ymin"
+                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/tables/source_catalog_columns-1.0.0#/definitions/bbox_ymin"
                 - properties:
                     name:
                       pattern: ^bbox_ymin$
@@ -56,7 +56,7 @@ properties:
           items:
             not:
               allOf:
-                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/source_catalog_columns-1.0.0#/definitions/image_flags"
+                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/tables/source_catalog_columns-1.0.0#/definitions/image_flags"
                 - properties:
                     name:
                       pattern: ^image_flags$
@@ -64,7 +64,7 @@ properties:
           items:
             not:
               allOf:
-                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/source_catalog_columns-1.0.0#/definitions/label"
+                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/tables/source_catalog_columns-1.0.0#/definitions/label"
                 - properties:
                     name:
                       pattern: ^label$
@@ -72,7 +72,7 @@ properties:
           items:
             not:
               allOf:
-                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/source_catalog_columns-1.0.0#/definitions/segment_area"
+                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/tables/source_catalog_columns-1.0.0#/definitions/segment_area"
                 - properties:
                     name:
                       pattern: ^segment_area$
@@ -80,7 +80,7 @@ properties:
           items:
             not:
               allOf:
-                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/source_catalog_columns-1.0.0#/definitions/dec"
+                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/tables/source_catalog_columns-1.0.0#/definitions/dec"
                 - properties:
                     name:
                       pattern: ^forced_dec$
@@ -88,7 +88,7 @@ properties:
           items:
             not:
               allOf:
-                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/source_catalog_columns-1.0.0#/definitions/dec_centroid"
+                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/tables/source_catalog_columns-1.0.0#/definitions/dec_centroid"
                 - properties:
                     name:
                       pattern: ^dec_centroid$
@@ -96,7 +96,7 @@ properties:
           items:
             not:
               allOf:
-                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/source_catalog_columns-1.0.0#/definitions/dec_centroid_err"
+                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/tables/source_catalog_columns-1.0.0#/definitions/dec_centroid_err"
                 - properties:
                     name:
                       pattern: ^dec_centroid_err$
@@ -104,7 +104,7 @@ properties:
           items:
             not:
               allOf:
-                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/source_catalog_columns-1.0.0#/definitions/dec_centroid_win"
+                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/tables/source_catalog_columns-1.0.0#/definitions/dec_centroid_win"
                 - properties:
                     name:
                       pattern: ^dec_centroid_win$
@@ -112,7 +112,7 @@ properties:
           items:
             not:
               allOf:
-                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/source_catalog_columns-1.0.0#/definitions/dec_centroid_win_err"
+                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/tables/source_catalog_columns-1.0.0#/definitions/dec_centroid_win_err"
                 - properties:
                     name:
                       pattern: ^dec_centroid_win_err$
@@ -120,7 +120,7 @@ properties:
           items:
             not:
               allOf:
-                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/source_catalog_columns-1.0.0#/definitions/ra"
+                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/tables/source_catalog_columns-1.0.0#/definitions/ra"
                 - properties:
                     name:
                       pattern: ^ra$
@@ -128,7 +128,7 @@ properties:
           items:
             not:
               allOf:
-                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/source_catalog_columns-1.0.0#/definitions/ra_centroid"
+                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/tables/source_catalog_columns-1.0.0#/definitions/ra_centroid"
                 - properties:
                     name:
                       pattern: ^ra_centroid$
@@ -136,7 +136,7 @@ properties:
           items:
             not:
               allOf:
-                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/source_catalog_columns-1.0.0#/definitions/ra_centroid_err"
+                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/tables/source_catalog_columns-1.0.0#/definitions/ra_centroid_err"
                 - properties:
                     name:
                       pattern: ^ra_centroid_err$
@@ -144,7 +144,7 @@ properties:
           items:
             not:
               allOf:
-                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/source_catalog_columns-1.0.0#/definitions/ra_centroid_win"
+                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/tables/source_catalog_columns-1.0.0#/definitions/ra_centroid_win"
                 - properties:
                     name:
                       pattern: ^ra_centroid_win$
@@ -152,7 +152,7 @@ properties:
           items:
             not:
               allOf:
-                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/source_catalog_columns-1.0.0#/definitions/ra_centroid_win_err"
+                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/tables/source_catalog_columns-1.0.0#/definitions/ra_centroid_win_err"
                 - properties:
                     name:
                       pattern: ^ra_centroid_win_err$
@@ -160,7 +160,7 @@ properties:
           items:
             not:
               allOf:
-                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/source_catalog_columns-1.0.0#/definitions/x_centroid"
+                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/tables/source_catalog_columns-1.0.0#/definitions/x_centroid"
                 - properties:
                     name:
                       pattern: ^x_centroid$
@@ -168,7 +168,7 @@ properties:
           items:
             not:
               allOf:
-                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/source_catalog_columns-1.0.0#/definitions/x_centroid_err"
+                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/tables/source_catalog_columns-1.0.0#/definitions/x_centroid_err"
                 - properties:
                     name:
                       pattern: ^x_centroid_err$
@@ -176,7 +176,7 @@ properties:
           items:
             not:
               allOf:
-                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/source_catalog_columns-1.0.0#/definitions/x_centroid_win"
+                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/tables/source_catalog_columns-1.0.0#/definitions/x_centroid_win"
                 - properties:
                     name:
                       pattern: ^x_centroid_win$
@@ -184,7 +184,7 @@ properties:
           items:
             not:
               allOf:
-                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/source_catalog_columns-1.0.0#/definitions/x_centroid_win_err"
+                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/tables/source_catalog_columns-1.0.0#/definitions/x_centroid_win_err"
                 - properties:
                     name:
                       pattern: ^x_centroid_win_err$
@@ -192,7 +192,7 @@ properties:
           items:
             not:
               allOf:
-                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/source_catalog_columns-1.0.0#/definitions/y_centroid"
+                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/tables/source_catalog_columns-1.0.0#/definitions/y_centroid"
                 - properties:
                     name:
                       pattern: ^y_centroid$
@@ -200,7 +200,7 @@ properties:
           items:
             not:
               allOf:
-                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/source_catalog_columns-1.0.0#/definitions/y_centroid_err"
+                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/tables/source_catalog_columns-1.0.0#/definitions/y_centroid_err"
                 - properties:
                     name:
                       pattern: ^y_centroid_err$
@@ -208,7 +208,7 @@ properties:
           items:
             not:
               allOf:
-                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/source_catalog_columns-1.0.0#/definitions/y_centroid_win"
+                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/tables/source_catalog_columns-1.0.0#/definitions/y_centroid_win"
                 - properties:
                     name:
                       pattern: ^y_centroid_win$
@@ -216,7 +216,7 @@ properties:
           items:
             not:
               allOf:
-                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/source_catalog_columns-1.0.0#/definitions/y_centroid_win_err"
+                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/tables/source_catalog_columns-1.0.0#/definitions/y_centroid_win_err"
                 - properties:
                     name:
                       pattern: ^y_centroid_win_err$
@@ -224,7 +224,7 @@ properties:
           items:
             not:
               allOf:
-                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/source_catalog_columns-1.0.0#/definitions/aper_bkg_~band~_flux"
+                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/tables/source_catalog_columns-1.0.0#/definitions/aper_bkg_~band~_flux"
                 - properties:
                     name:
                       pattern: ^forced_aper_bkg_flux$
@@ -232,7 +232,7 @@ properties:
           items:
             not:
               allOf:
-                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/source_catalog_columns-1.0.0#/definitions/aper_bkg_~band~_flux_err"
+                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/tables/source_catalog_columns-1.0.0#/definitions/aper_bkg_~band~_flux_err"
                 - properties:
                     name:
                       pattern: ^forced_aper_bkg_flux_err$
@@ -240,7 +240,7 @@ properties:
           items:
             not:
               allOf:
-                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/source_catalog_columns-1.0.0#/definitions/aper~radius~_~band~_flux"
+                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/tables/source_catalog_columns-1.0.0#/definitions/aper~radius~_~band~_flux"
                 - properties:
                     name:
                       pattern: ^forced_aper[0-9]{2}_flux$
@@ -248,7 +248,7 @@ properties:
           items:
             not:
               allOf:
-                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/source_catalog_columns-1.0.0#/definitions/aper~radius~_~band~_flux_err"
+                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/tables/source_catalog_columns-1.0.0#/definitions/aper~radius~_~band~_flux_err"
                 - properties:
                     name:
                       pattern: ^forced_aper[0-9]{2}_flux_err$
@@ -256,7 +256,7 @@ properties:
           items:
             not:
               allOf:
-                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/source_catalog_columns-1.0.0#/definitions/kron_~band~_abmag"
+                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/tables/source_catalog_columns-1.0.0#/definitions/kron_~band~_abmag"
                 - properties:
                     name:
                       pattern: ^forced_kron_abmag$
@@ -264,7 +264,7 @@ properties:
           items:
             not:
               allOf:
-                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/source_catalog_columns-1.0.0#/definitions/kron_~band~_abmag_err"
+                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/tables/source_catalog_columns-1.0.0#/definitions/kron_~band~_abmag_err"
                 - properties:
                     name:
                       pattern: ^forced_kron_abmag_err$
@@ -272,7 +272,7 @@ properties:
           items:
             not:
               allOf:
-                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/source_catalog_columns-1.0.0#/definitions/kron_~band~_flux"
+                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/tables/source_catalog_columns-1.0.0#/definitions/kron_~band~_flux"
                 - properties:
                     name:
                       pattern: ^forced_kron_flux$
@@ -280,7 +280,7 @@ properties:
           items:
             not:
               allOf:
-                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/source_catalog_columns-1.0.0#/definitions/kron_~band~_flux_err"
+                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/tables/source_catalog_columns-1.0.0#/definitions/kron_~band~_flux_err"
                 - properties:
                     name:
                       pattern: ^forced_kron_flux_err$
@@ -288,7 +288,7 @@ properties:
           items:
             not:
               allOf:
-                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/source_catalog_columns-1.0.0#/definitions/segment_~band~_flux"
+                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/tables/source_catalog_columns-1.0.0#/definitions/segment_~band~_flux"
                 - properties:
                     name:
                       pattern: ^forced_segment_flux$
@@ -296,7 +296,7 @@ properties:
           items:
             not:
               allOf:
-                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/source_catalog_columns-1.0.0#/definitions/segment_~band~_flux_err"
+                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/tables/source_catalog_columns-1.0.0#/definitions/segment_~band~_flux_err"
                 - properties:
                     name:
                       pattern: ^forced_segment_flux_err$
@@ -304,7 +304,7 @@ properties:
           items:
             not:
               allOf:
-                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/source_catalog_columns-1.0.0#/definitions/warning_flags"
+                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/tables/source_catalog_columns-1.0.0#/definitions/warning_flags"
                 - properties:
                     name:
                       pattern: ^forced_warning_flags$
@@ -312,7 +312,7 @@ properties:
           items:
             not:
               allOf:
-                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/source_catalog_columns-1.0.0#/definitions/cxx"
+                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/tables/source_catalog_columns-1.0.0#/definitions/cxx"
                 - properties:
                     name:
                       pattern: ^cxx$
@@ -320,7 +320,7 @@ properties:
           items:
             not:
               allOf:
-                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/source_catalog_columns-1.0.0#/definitions/cxy"
+                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/tables/source_catalog_columns-1.0.0#/definitions/cxy"
                 - properties:
                     name:
                       pattern: ^cxy$
@@ -328,7 +328,7 @@ properties:
           items:
             not:
               allOf:
-                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/source_catalog_columns-1.0.0#/definitions/cyy"
+                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/tables/source_catalog_columns-1.0.0#/definitions/cyy"
                 - properties:
                     name:
                       pattern: ^cyy$
@@ -336,7 +336,7 @@ properties:
           items:
             not:
               allOf:
-                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/source_catalog_columns-1.0.0#/definitions/ellipticity"
+                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/tables/source_catalog_columns-1.0.0#/definitions/ellipticity"
                 - properties:
                     name:
                       pattern: ^ellipticity$
@@ -344,7 +344,7 @@ properties:
           items:
             not:
               allOf:
-                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/source_catalog_columns-1.0.0#/definitions/fluxfrac_radius_50_~band~"
+                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/tables/source_catalog_columns-1.0.0#/definitions/fluxfrac_radius_50_~band~"
                 - properties:
                     name:
                       pattern: ^forced_fluxfrac_radius_50$
@@ -352,7 +352,7 @@ properties:
           items:
             not:
               allOf:
-                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/source_catalog_columns-1.0.0#/definitions/is_extended_~band~"
+                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/tables/source_catalog_columns-1.0.0#/definitions/is_extended_~band~"
                 - properties:
                     name:
                       pattern: ^forced_is_extended$
@@ -360,7 +360,7 @@ properties:
           items:
             not:
               allOf:
-                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/source_catalog_columns-1.0.0#/definitions/fwhm"
+                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/tables/source_catalog_columns-1.0.0#/definitions/fwhm"
                 - properties:
                     name:
                       pattern: ^fwhm$
@@ -368,7 +368,7 @@ properties:
           items:
             not:
               allOf:
-                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/source_catalog_columns-1.0.0#/definitions/kron_radius"
+                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/tables/source_catalog_columns-1.0.0#/definitions/kron_radius"
                 - properties:
                     name:
                       pattern: ^kron_radius$
@@ -376,7 +376,7 @@ properties:
           items:
             not:
               allOf:
-                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/source_catalog_columns-1.0.0#/definitions/orientation_pix"
+                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/tables/source_catalog_columns-1.0.0#/definitions/orientation_pix"
                 - properties:
                     name:
                       pattern: ^orientation_pix$
@@ -384,7 +384,7 @@ properties:
           items:
             not:
               allOf:
-                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/source_catalog_columns-1.0.0#/definitions/orientation_sky"
+                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/tables/source_catalog_columns-1.0.0#/definitions/orientation_sky"
                 - properties:
                     name:
                       pattern: ^orientation_sky$
@@ -392,7 +392,7 @@ properties:
           items:
             not:
               allOf:
-                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/source_catalog_columns-1.0.0#/definitions/roundness1_~band~"
+                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/tables/source_catalog_columns-1.0.0#/definitions/roundness1_~band~"
                 - properties:
                     name:
                       pattern: ^forced_roundness1$
@@ -400,7 +400,7 @@ properties:
           items:
             not:
               allOf:
-                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/source_catalog_columns-1.0.0#/definitions/semimajor"
+                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/tables/source_catalog_columns-1.0.0#/definitions/semimajor"
                 - properties:
                     name:
                       pattern: ^semimajor$
@@ -408,7 +408,7 @@ properties:
           items:
             not:
               allOf:
-                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/source_catalog_columns-1.0.0#/definitions/semiminor"
+                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/tables/source_catalog_columns-1.0.0#/definitions/semiminor"
                 - properties:
                     name:
                       pattern: ^semiminor$
@@ -416,7 +416,7 @@ properties:
           items:
             not:
               allOf:
-                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/source_catalog_columns-1.0.0#/definitions/sharpness_~band~"
+                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/tables/source_catalog_columns-1.0.0#/definitions/sharpness_~band~"
                 - properties:
                     name:
                       pattern: ^forced_sharpness$
@@ -424,7 +424,7 @@ properties:
           items:
             not:
               allOf:
-                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/source_catalog_columns-1.0.0#/definitions/nn_distance"
+                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/tables/source_catalog_columns-1.0.0#/definitions/nn_distance"
                 - properties:
                     name:
                       pattern: ^nn_distance$
@@ -432,7 +432,7 @@ properties:
           items:
             not:
               allOf:
-                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/source_catalog_columns-1.0.0#/definitions/nn_label"
+                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/tables/source_catalog_columns-1.0.0#/definitions/nn_label"
                 - properties:
                     name:
                       pattern: ^nn_label$
