@@ -1,0 +1,1 @@
+SSC ROMAN-3912 Update G2DP keywords in ``/latest/SSC`` directory
