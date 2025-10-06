@@ -10,17 +10,7 @@ datamodel_name: ForcedMosaicSourceCatalogModel
 type: object
 properties:
   meta:
-    allOf:
-      - $ref: asdf://stsci.edu/datamodels/roman/schemas/meta/basic-1.0.0
-      - type: object
-        properties:
-          basic:
-            $ref: asdf://stsci.edu/datamodels/roman/schemas/meta/mosaic_basic-1.0.0
-          photometry:
-            $ref: asdf://stsci.edu/datamodels/roman/schemas/meta/photometry-1.0.0
-          program:
-            $ref: asdf://stsci.edu/datamodels/roman/schemas/meta/program-1.0.0
-        required: [basic, photometry, program]
+    $ref: asdf://stsci.edu/datamodels/roman/schemas/meta/l3_catalog_common-1.0.0
   source_catalog:
     title: Source Catalog
     description: |

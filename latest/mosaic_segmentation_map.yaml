@@ -11,15 +11,7 @@ archive_meta: Science WFI Level 4 Segmentation Map L3 Product
 type: object
 properties:
   meta:
-    allOf:
-      - $ref: asdf://stsci.edu/datamodels/roman/schemas/meta/basic-1.0.0
-      - type: object
-        properties:
-          basic:
-            $ref: asdf://stsci.edu/datamodels/roman/schemas/meta/mosaic_basic-1.0.0
-          program:
-            $ref: asdf://stsci.edu/datamodels/roman/schemas/meta/program-1.0.0
-        required: [basic, program]
+    $ref: asdf://stsci.edu/datamodels/roman/schemas/meta/l3_catalog_common-1.0.0
   data:
     title: Segmentation map
     description: |
