@@ -10,24 +10,7 @@ datamodel_name: ForcedImageSourceCatalogModel
 type: object
 properties:
   meta:
-    allOf:
-      - $ref: asdf://stsci.edu/datamodels/roman/schemas/meta/basic-1.0.0
-      - type: object
-        properties:
-          optical_element:
-            $ref: asdf://stsci.edu/datamodels/roman/schemas/enums/wfi_optical_element-1.0.0
-          exposure:
-            $ref: asdf://stsci.edu/datamodels/roman/schemas/meta/exposure-1.0.0
-          photometry:
-            $ref: asdf://stsci.edu/datamodels/roman/schemas/meta/photometry-1.0.0
-          program:
-            $ref: asdf://stsci.edu/datamodels/roman/schemas/meta/program-1.0.0
-          ref_file:
-            $ref: asdf://stsci.edu/datamodels/roman/schemas/meta/ref_file-1.0.0
-          visit:
-            $ref: asdf://stsci.edu/datamodels/roman/schemas/meta/visit-1.0.0
-        required:
-          [optical_element, exposure, photometry, program, ref_file, visit]
+    $ref: asdf://stsci.edu/datamodels/roman/schemas/meta/l2_catalog_common-1.0.0
   source_catalog:
     title: Source Catalog
     description: |

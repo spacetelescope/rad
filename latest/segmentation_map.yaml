@@ -11,17 +11,7 @@ archive_meta: Science WFI Level 4 Segmentation Map L2 Product
 type: object
 properties:
   meta:
-    allOf:
-      - $ref: asdf://stsci.edu/datamodels/roman/schemas/meta/basic-1.0.0
-      - type: object
-        properties:
-          optical_element:
-            $ref: asdf://stsci.edu/datamodels/roman/schemas/enums/wfi_optical_element-1.0.0
-          program:
-            $ref: asdf://stsci.edu/datamodels/roman/schemas/meta/program-1.0.0
-          visit:
-            $ref: asdf://stsci.edu/datamodels/roman/schemas/meta/visit-1.0.0
-        required: [optical_element, program, visit]
+    $ref: asdf://stsci.edu/datamodels/roman/schemas/meta/l2_catalog_common-1.0.0
   data:
     title: Segmentation map
     description: |

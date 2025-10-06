@@ -1,0 +1,14 @@
+%YAML 1.1
+---
+$schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.0.0
+id: asdf://stsci.edu/datamodels/roman/schemas/meta/catalog_image-1.0.0
+
+title: Catalog-related image metadata
+
+type: object
+properties:
+  filename:
+    $ref: asdf://stsci.edu/datamodels/roman/schemas/meta/filename-1.0.0
+  file_date:
+    $ref: asdf://stsci.edu/datamodels/roman/schemas/meta/file_date-1.0.0
+required: [filename, file_date]
