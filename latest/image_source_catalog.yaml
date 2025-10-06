@@ -15,12 +15,18 @@ properties:
       - $ref: asdf://stsci.edu/datamodels/roman/schemas/meta/basic-1.0.0
       - type: object
         properties:
-          optical_element:
-            $ref: asdf://stsci.edu/datamodels/roman/schemas/enums/wfi_optical_element-1.0.0
+          coordinates:
+            $ref: asdf://stsci.edu/datamodels/roman/schemas/meta/coordinates-1.0.0
           exposure:
             $ref: asdf://stsci.edu/datamodels/roman/schemas/meta/exposure-1.0.0
+          instrument:
+            $ref: asdf://stsci.edu/datamodels/roman/schemas/meta/wfi_mode-1.0.0
+          observation:
+            $ref: asdf://stsci.edu/datamodels/roman/schemas/meta/observation-1.0.0
           photometry:
             $ref: asdf://stsci.edu/datamodels/roman/schemas/meta/photometry-1.0.0
+          pointing:
+            $ref: asdf://stsci.edu/datamodels/roman/schemas/meta/pointing-1.0.0
           program:
             $ref: asdf://stsci.edu/datamodels/roman/schemas/meta/program-1.0.0
           ref_file:
@@ -28,7 +34,17 @@ properties:
           visit:
             $ref: asdf://stsci.edu/datamodels/roman/schemas/meta/visit-1.0.0
         required:
-          [optical_element, exposure, photometry, program, ref_file, visit]
+          [
+            coordinates,
+            exposure,
+            instrument,
+            observation,
+            photometry,
+            pointing,
+            program,
+            ref_file,
+            visit,
+          ]
   source_catalog:
     title: Source Catalog
     description: |
