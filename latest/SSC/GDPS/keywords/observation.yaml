@@ -8,7 +8,7 @@ extName: SSC
 type: object
 properties:
   program:
-    title: Program number
+    title: Program
     description: ID number assigned to the proposal
     type: integer
     archive_catalog:

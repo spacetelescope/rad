@@ -14,13 +14,13 @@ properties:
     archive_catalog:
       datatype: float
       destination: [Placeholder.dither]
-  nsrc:
+  num_src:
     title: Nsrc
     description: Placeholder.  Example value '360'
     type: number
     archive_catalog:
-      datatype: float
-      destination: [Placeholder.nsrc]
+      datatype: int
+      destination: [Placeholder.num_src]
   optical_model:
     title: Optical Model
     description: Placeholder.  Example value 'roman_gdps_grism_optmodel_ctx00002.yaml'
@@ -36,4 +36,4 @@ properties:
     archive_catalog:
       datatype: float
       destination: [Placeholder.v3yangle]
-required: [dither, nsrc, optical_model, v3yangle]
+required: [dither, num_src, optical_model, v3yangle]

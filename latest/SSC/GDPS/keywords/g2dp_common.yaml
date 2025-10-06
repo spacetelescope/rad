@@ -15,14 +15,14 @@ properties:
     archive_catalog:
       datatype: nvarchar(128)
       destination: [Placeholder.version_g2dp_software]
-  id_g2dp_run:
+  g2dp_run_id:
     title: G2DP Run ID
     description: Placeholder.  Example value 'placeholder'
     type: string
     maxLength: 128
     archive_catalog:
       datatype: nvarchar(128)
-      destination: [Placeholder.id_g2dp_run]
+      destination: [Placeholder.g2dp_run_id]
   # NOTE: Including segment and visit will permit better checking that the SSC spectral catalogs match the FILESET_ID it gets associated with
   segment:
     title: Segment number
@@ -46,4 +46,4 @@ properties:
     archive_catalog:
       datatype: nvarchar(28)
       destination: [Placeholder.observation_id]
-required: [version_g2dp_software, id_g2dp_run, segment, visit, observation_id]
+required: [version_g2dp_software, g2dp_run_id, segment, visit, observation_id]
