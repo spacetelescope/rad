@@ -1,109 +1,111 @@
 %YAML 1.1
 ---
 $schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.0.0
-id: asdf://stsci.edu/datamodels/roman/schemas/PIT/HLIS/shear_image-1.4.0
+id: asdf://stsci.edu/datamodels/roman/schemas/PIT/HLIS/shear_image-1.0.0
 
 title: Shear image HLIS PIT product
 
 datamodel_name: ShearImageModel
 
-type: object
-properties:
-  meta:
+allOf:
+  - $ref: asdf://stsci.edu/datamodels/roman/schemas/PIT/ccsp_mast_metadata-1.0.0
+  - type: object
     properties:
-      source_file:
+      meta:
         properties:
-          filename_stem:
-            type: string
-            title: Input filename stem used to construct input mosaic
-          block:
-            title: Input block coordinates
+          source_file:
             properties:
-              x:
-                type: integer
-              y:
-                type: integer
-            required: [x, y]
-        required: [filename_stem, block]
-      interpolation:
-        properties:
-          leakage:
-            type: number
-          noise:
-            type: number
-        required: [leakage, noise]
-      shear:
-        properties:
-          oversampling:
-            type: number
-          applied_amplification:
-            type: number
-          component_1:
-            type: number
-          component_2:
-            type: number
-          rotation_angle:
-            title: Rotation angle
-            description: CCW in to out.
-            type: number
-          reduced_component_1:
-            type: number
-          reduced_component_2:
-            type: number
-          convergence_kappa:
-            type: number
-          jacobian:
-            tag: tag:stsci.edu:asdf/core/ndarray-1.*
-          covariance:
-            tag: tag:stsci.edu:asdf/core/ndarray-1.*
-          sigma_out:
-            tag: tag:stsci.edu:asdf/unit/quantity-1.*
-          pixel_scale:
-            tag: tag:stsci.edu:asdf/unit/quantity-1.*
-        required: [
-          oversampling,
-          applied_amplification,
-          component_1,
-          component_2,
-          rotation_angle,
-          reduced_component_1,
-          reduced_component_2,
-          convergence_kappa,
-          covariance,
-          jacobian,
-          sigma_out,
-          pixel_scale,
-        ]
-      wcs:
-        title: WCS object
-        tag: tag:stsci.edu:gwcs/wcs-*
-    required: [source_file, interpolation, shear, wcs]
-  data:
-    title: Shear applied mosaic image
-    description: |
-      A description of the image contents.
-    tag: tag:stsci.edu:asdf/core/ndarray-1.*
-    datatype: float32
-    exact_datatype: true
-    ndim: 3
-  mask:
-    title: Image mask
-    description: |
-      A description of the mask contents.
-    tag: tag:stsci.edu:asdf/core/ndarray-1.*
-    datatype: uint8
-    exact_datatype: true
-    ndim: 2
-propertyOrder:
-  [
-    meta,
-    data,
-    mask,
-  ]
-flowStyle: block
-required:
-  [
-    meta,
-    data,
-    mask,
-  ]
+              filename_stem:
+                type: string
+                title: Input filename stem used to construct input mosaic
+              block:
+                title: Input block coordinates
+                properties:
+                  x:
+                    type: integer
+                  y:
+                    type: integer
+                required: [x, y]
+            required: [filename_stem, block]
+          interpolation:
+            properties:
+              leakage:
+                type: number
+              noise:
+                type: number
+            required: [leakage, noise]
+          shear:
+            properties:
+              oversampling:
+                type: number
+              applied_amplification:
+                type: number
+              component_1:
+                type: number
+              component_2:
+                type: number
+              rotation_angle:
+                title: Rotation angle
+                description: CCW in to out.
+                type: number
+              reduced_component_1:
+                type: number
+              reduced_component_2:
+                type: number
+              convergence_kappa:
+                type: number
+              jacobian:
+                tag: tag:stsci.edu:asdf/core/ndarray-1.*
+              covariance:
+                tag: tag:stsci.edu:asdf/core/ndarray-1.*
+              sigma_out:
+                tag: tag:stsci.edu:asdf/unit/quantity-1.*
+              pixel_scale:
+                tag: tag:stsci.edu:asdf/unit/quantity-1.*
+            required: [
+              oversampling,
+              applied_amplification,
+              component_1,
+              component_2,
+              rotation_angle,
+              reduced_component_1,
+              reduced_component_2,
+              convergence_kappa,
+              covariance,
+              jacobian,
+              sigma_out,
+              pixel_scale,
+            ]
+          wcs:
+            title: WCS object
+            tag: tag:stsci.edu:gwcs/wcs-*
+        required: [source_file, interpolation, shear, wcs]
+      data:
+        title: Shear applied mosaic image
+        description: |
+          A description of the image contents.
+        tag: tag:stsci.edu:asdf/core/ndarray-1.*
+        datatype: float32
+        exact_datatype: true
+        ndim: 3
+      mask:
+        title: Image mask
+        description: |
+          A description of the mask contents.
+        tag: tag:stsci.edu:asdf/core/ndarray-1.*
+        datatype: uint8
+        exact_datatype: true
+        ndim: 2
+    propertyOrder:
+      [
+        meta,
+        data,
+        mask,
+      ]
+    flowStyle: block
+    required:
+      [
+        meta,
+        data,
+        mask,
+      ]

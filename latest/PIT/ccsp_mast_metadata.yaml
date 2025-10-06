@@ -1,0 +1,52 @@
+%YAML 1.1
+---
+$schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.0.0
+id: asdf://stsci.edu/datamodels/roman/schemas/PIT/ccsp_mast_metadata-1.0.0
+
+title: Roman PIT common metadata
+type: object
+properties:
+  mast_metadata:
+    properties:
+      ccsp_id:
+        type: string
+        title: PIT name
+      ccsp_pi:
+        type: string
+        title: Principle Investigator of the PIT
+      doi:
+        type: string
+      file_version:
+        type: string
+      file_date:
+        tag: tag:stsci.edu:asdf/time/time-1.*
+      license:
+        type: string
+      license_url:
+        type: string
+      start_time:
+        tag: tag:stsci.edu:asdf/time/time-1.*
+      end_time:
+        tag: tag:stsci.edu:asdf/time/time-1.*
+      start_time_mjd:
+        tag: tag:stsci.edu:asdf/time/time-1.*
+      end_time_mjd:
+        tag: tag:stsci.edu:asdf/time/time-1.*
+      effective_exposure_time:
+        title: Exposure Time (s)
+        type: number
+    required: [
+      ccsp_id,
+      ccsp_pi,
+      doi,
+      file_version,
+      file_date,
+      license,
+      license_url,
+      start_time,
+      end_time,
+      start_time_mjd,
+      end_time_mjd,
+      effective_exposure_time,
+    ]
+required: [mast_metadata]
