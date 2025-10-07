@@ -72,7 +72,8 @@ def _repo_branch(repo: Repo, hexsha: str) -> Generator[None, None, None]:
     repo.git.checkout(hexsha, "--", "latest")
 
     # Apply the stashed changes back to the working directory
-    repo.git.stash("apply")
+    if file_diffs:
+        repo.git.stash("apply")
 
     yield
 
@@ -196,7 +197,8 @@ if __name__ == "__main__":
         if differences:
             pp = pprint.PrettyPrinter(stream=f)
             pp.pprint(differences)
-            print("Differences found. See diff.txt for details.")
+            pp = pprint.PrettyPrinter()
+            pp.pprint(differences)
 
         else:
             f.write("No differences found.")
