@@ -29,6 +29,8 @@ allOf:
         $ref: asdf://stsci.edu/datamodels/roman/schemas/meta/ref_file-1.0.0
       visit:
         $ref: asdf://stsci.edu/datamodels/roman/schemas/meta/visit-1.0.0
+      wcsinfo:
+        $ref: asdf://stsci.edu/datamodels/roman/schemas/meta/wcsinfo-1.0.0
     required:
       [
         coordinates,
@@ -40,4 +42,5 @@ allOf:
         program,
         ref_file,
         visit,
+        wcsinfo,
       ]
