@@ -10,4 +10,15 @@ allOf:
   - properties:
       image:
         $ref: asdf://stsci.edu/datamodels/roman/schemas/meta/catalog_image-1.0.0
-  - required: [coordinates, coadd_info, image, instrument, observation, program]
+      wcsinfo:
+        $ref: asdf://stsci.edu/datamodels/roman/schemas/meta/l3_wcsinfo-1.0.0
+  - required:
+      [
+        coordinates,
+        coadd_info,
+        image,
+        instrument,
+        observation,
+        program,
+        wcsinfo,
+      ]
