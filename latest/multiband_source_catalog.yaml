@@ -3,7 +3,7 @@
 $schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.0.0
 id: asdf://stsci.edu/datamodels/roman/schemas/multiband_source_catalog-1.1.0
 
-title: Multiband source catalog generated from a Level 3 file by the Source Catalog Step.
+title: Multiband source catalog generated from a Level 3 file by the Multiband Catalog Step.
 
 datamodel_name: MultibandSourceCatalogModel
 
