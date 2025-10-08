@@ -11,7 +11,18 @@ archive_meta: Science WFI Level 4 Source Catalog L3 Product
 type: object
 properties:
   meta:
-    $ref: asdf://stsci.edu/datamodels/roman/schemas/meta/l3_catalog_common-1.0.0
+    allOf:
+      - $ref: asdf://stsci.edu/datamodels/roman/schemas/meta/l3_catalog_common-1.0.0
+      - properties:
+          association:
+            $ref: asdf://stsci.edu/datamodels/roman/schemas/meta/l3_association-1.0.0
+          cal_step:
+            $ref: asdf://stsci.edu/datamodels/roman/schemas/meta/l3_cal_step-1.0.0
+          resample:
+            $ref: asdf://stsci.edu/datamodels/roman/schemas/meta/l3_resample-1.0.0
+          wcsinfo:
+            $ref: asdf://stsci.edu/datamodels/roman/schemas/meta/l3_wcsinfo-1.0.0
+        required: [association, cal_step, resample, wcsinfo]
   source_catalog:
     title: Source Catalog
     description: |
