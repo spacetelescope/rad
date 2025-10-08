@@ -1,0 +1,55 @@
+%YAML 1.1
+---
+$schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.0.0
+id: asdf://stsci.edu/datamodels/roman/schemas/meta/l3_resample-1.0.0
+
+title: Resample Parameters
+type: object
+properties:
+  good_bits:
+    title: Bit Mask
+    description: >
+      Bit mask used in the resample step. This key contains
+      strings that correspond to bits in the data quality (DQ) arrays
+      of calibrated rate images. Bits are combined using plus signs
+      (+) and use the bitwise operator tilde (~) to denote exclusion.
+      For example, the string "~DO_NOT_USE+NON_SCIENCE" means to allow
+      all data quality bits except DO_NOT_USE and NON_SCIENCE to be
+      included in the final product. Conversely, a string of "GOOD"
+      would only allow pixels with DQ bits equal to 0 in the
+      calibrated rate images to be included in the final product.
+    type: string
+  pixel_scale_ratio:
+    title: Pixel Scale Ratio
+    description: >
+      The ratio of the pixel scale compared to the native
+      detector pixel scale. For example, a pixel scale of 0.9 will
+      produce a resampled image with smaller pixels compared to the
+      input calibrated rate images.
+    type: number
+  pixfrac:
+    title: Pixel Fraction
+    description: The fraction of a pixel to use for pixel convolution.
+    type: number
+  pointings:
+    title: Number of Input Images
+    description: >
+      The number of input images combined with resample into an output product.
+    type: integer
+  members:
+    title: Resample Input Filenames
+    description: >
+      Names of the calibrated rate image files input into
+      the resample code to create the output product.
+    type: array
+    items:
+      type: string
+  weight_type:
+    title: Weight Type
+    description: >
+      The weight type used by the drizzle algorithm in the
+      resample step. The two weight options available are exposure
+      time ("exptime") and inverse variance map ("ivm") weighting.
+    type: string
+required:
+  [good_bits, members, pixel_scale_ratio, pixfrac, pointings, weight_type]
