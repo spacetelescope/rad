@@ -9,8 +9,9 @@ type: object
 properties:
   wl_contamination_range:
     title: Wl Contamination Range
-    description: Observed wavelength range that the contamination is estimated from
-        overlapping spectra.  Example value '[14000.0, 16000.0]'
+    description:
+      Observed wavelength range that the contamination is estimated from
+      overlapping spectra.  Example value '[14000.0, 16000.0]'
     type: string
     maxLength: 128
     archive_catalog:
@@ -18,8 +19,9 @@ properties:
       destination: [Placeholder.wl_contamination_range]
   wl_reference:
     title: Wl Reference
-    description: Reference wavelength that the optical model adopts for its calculation
-        Used to define a single pixel location of each spectrum coadded.  Example value '1.55'
+    description:
+      Reference wavelength that the optical model adopts for its calculation
+      Used to define a single pixel location of each spectrum coadded.  Example value '1.55'
     type: number
     archive_catalog:
       datatype: float

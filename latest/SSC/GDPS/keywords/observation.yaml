@@ -16,7 +16,7 @@ properties:
       destination: [Placeholder.program]
   program_complete:
     title: Program Complete
-    description: Example value 'False|True' 
+    description: Example value 'False|True'
     type: boolean
     archive_catalog:
       datatype: nchar(1)
