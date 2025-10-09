@@ -172,6 +172,11 @@ tags:
     title: Mosaic segmentation map
     description: |-
       Segmentation map computed by the Source Catalog Step
+  - tag_uri: asdf://stsci.edu/datamodels/roman/tags/multiband_segmentation_map-1.0.0
+    schema_uri: asdf://stsci.edu/datamodels/roman/schemas/multiband_segmentation_map-1.0.0
+    title: Multiband segmentation map
+    description: |-
+      Segmentation map computed by the Multiband Catalog Step
   - tag_uri: asdf://stsci.edu/datamodels/roman/tags/forced_image_source_catalog-1.1.0
     schema_uri: asdf://stsci.edu/datamodels/roman/schemas/forced_image_source_catalog-1.1.0
     title: Forced image source catalog

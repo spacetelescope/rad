@@ -1,0 +1,50 @@
+%YAML 1.1
+---
+$schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.0.0
+id: asdf://stsci.edu/datamodels/roman/schemas/meta/l3_cal_step-1.0.0
+
+title: Level 3 Calibration Status
+type: object
+properties:
+  flux:
+    title: Flux Scale Application Step
+    description: >
+      Step in romancal that applies the scaling factor(s)
+      necessary to convert from units of data numbers per second
+      (DN/s) to megaJanskys per steradian (MJy/sr).
+    allOf:
+      - $ref: asdf://stsci.edu/datamodels/roman/schemas/enums/cal_step_flag-1.0.0
+    archive_catalog:
+      datatype: nvarchar(15)
+      destination: [ScienceRefData.s_flux]
+  outlier_detection:
+    title: Outlier Detection Step
+    description: >
+      Step in romancal that detects and flags outliers in a stack of rate images.
+    allOf:
+      - $ref: asdf://stsci.edu/datamodels/roman/schemas/enums/cal_step_flag-1.0.0
+    archive_catalog:
+      datatype: nvarchar(15)
+      destination: [ScienceRefData.s_outlier_detection]
+  skymatch:
+    title: Sky Matching Step
+    description: >
+      Step in romancal that matches sky background levels of
+      each input image and derives scaling factors to equalize
+      overlapping regions.
+    allOf:
+      - $ref: asdf://stsci.edu/datamodels/roman/schemas/enums/cal_step_flag-1.0.0
+    archive_catalog:
+      datatype: nvarchar(15)
+      destination: [ScienceRefData.s_skymatch]
+  resample:
+    title: Resampling Step
+    description: >
+      Step in romancal which resamples and coadds each input 2D image based on its WCS
+      onto a grid, in order to combine multiple images into a single coadded product.
+    allOf:
+      - $ref: asdf://stsci.edu/datamodels/roman/schemas/enums/cal_step_flag-1.0.0
+    archive_catalog:
+      datatype: nvarchar(15)
+      destination: [ScienceRefData.s_resample]
+required: [flux, outlier_detection, resample, skymatch]
