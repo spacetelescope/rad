@@ -9,7 +9,7 @@ type: object
 properties:
   version_g2dp_software:
     title: G2DP Software Version
-    description: Placeholder.  Example value 'dev'
+    description: Version of the G2DP software (roman-gdps-g2dp repo).  Example value 'v3.3.0'
     type: string
     maxLength: 128
     archive_catalog:
@@ -17,7 +17,7 @@ properties:
       destination: [Placeholder.version_g2dp_software]
   g2dp_run_id:
     title: G2DP Run ID
-    description: Placeholder.  Example value 'placeholder'
+    description: ID of the G2DP run that created the G2DP file(s).  Example value '42'
     type: string
     maxLength: 128
     archive_catalog:
@@ -40,7 +40,7 @@ properties:
       destination: [Placeholder.visit]
   observation_id:
     title: Programmatic Observation Identifier
-    description: Placeholder.  Example value '0000101001001001001'
+    description: Observation ID of the last SOC-provided L2 spectral image used to create the file. Example value '0000101001001001001'
     type: string
     maxLength: 28
     archive_catalog:

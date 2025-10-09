@@ -9,7 +9,7 @@ type: object
 properties:
   cdp_ctx:
     title: CDP calibration reference file version
-    description: Placeholder.  Example value 'ctx00002'
+    description: Version of the CDP Calibration file set.  Example value 'ctx00002'
     type: string
     maxLength: 1024
     archive_catalog:

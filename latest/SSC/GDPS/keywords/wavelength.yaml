@@ -9,7 +9,8 @@ type: object
 properties:
   wl_contamination_range:
     title: Wl Contamination Range
-    description: Placeholder.  Example value '[14000.0, 16000.0]'
+    description: Observed wavelength range that the contamination is estimated from
+        overlapping spectra.  Example value '[14000.0, 16000.0]'
     type: string
     maxLength: 128
     archive_catalog:
@@ -17,14 +18,15 @@ properties:
       destination: [Placeholder.wl_contamination_range]
   wl_reference:
     title: Wl Reference
-    description: Placeholder.  Example value '1.55'
+    description: Reference wavelength that the optical model adopts for its calculation
+        Used to define a single pixel location of each spectrum coadded.  Example value '1.55'
     type: number
     archive_catalog:
       datatype: float
       destination: [Placeholder.wl_reference]
   wl_snr_global_range:
     title: Wl Snr Global Range
-    description: Placeholder.  Example value '[0.0]'
+    description: The wavelength range that the global SNR measurement.  Example value '[0.0]'
     type: string
     maxLength: 128
     archive_catalog:
@@ -32,7 +34,7 @@ properties:
       destination: [Placeholder.wl_snr_global_range]
   unit_flux:
     title: Unit of flux
-    description: Placeholder.  Example value 's'
+    description: Example value 'DN/s'
     type: string
     maxLength: 16
     archive_catalog:
@@ -40,7 +42,7 @@ properties:
       destination: [Placeholder.unit_flux]
   unit_wl:
     title: Unit of wavelength
-    description: Placeholder.  Example value 'nm'
+    description: Example value 'nm'
     type: string
     maxLength: 16
     archive_catalog:
@@ -48,7 +50,7 @@ properties:
       destination: [Placeholder.unit_wl]
   phot_filter_cut_off:
     title: Phot Filter Cut Off
-    description: Placeholder.  Example value 'F158'
+    description: The filter used for the G2DP magnitude cut off.  Example value 'F158'
     type: string
     maxLength: 128
     archive_catalog:

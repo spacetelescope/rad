@@ -9,21 +9,21 @@ type: object
 properties:
   dither:
     title: Dither
-    description: Placeholder.  Example value '1'
+    description: Dither position id.  Example value '1'
     type: number
     archive_catalog:
       datatype: float
       destination: [Placeholder.dither]
   num_src:
     title: Nsrc
-    description: Placeholder.  Example value '360'
+    description: The number of sources in the Spectra Location Table file.  Example value '500'
     type: integer
     archive_catalog:
       datatype: int
       destination: [Placeholder.num_src]
   optical_model:
     title: Optical Model
-    description: Placeholder.  Example value 'roman_gdps_grism_optmodel_ctx00002.yaml'
+    description: The name of the optical model file used for the SLT calculation.  Example value 'roman_gdps_grism_optmodel_ctx00002.yaml'
     type: string
     maxLength: 1024
     archive_catalog:
@@ -31,7 +31,7 @@ properties:
       destination: [Placeholder.optical_model]
   v3yangle:
     title: V3Yangle
-    description: Placeholder.  Example value '-60.0'
+    description: v3yangle, copied from the input L2 file.  Example value '-60.0'
     type: number
     archive_catalog:
       datatype: float
