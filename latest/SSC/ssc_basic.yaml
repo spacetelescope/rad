@@ -25,6 +25,23 @@ properties:
     archive_catalog:
       datatype: nvarchar(1024)
       destination:
+        [
+          CGIExposure.filename,
+          CGIMosaic.filename,
+          CGIAncillary.filename,
+          Foo.bar,
+        ]
+  filename2:
+    title: File Name
+    description: |
+      The filename as taken from the 'filename' property of the
+      data availability notification (https://github.com/spacetelescope/roman-soc-ssc-common/blob/main/schemas/data_availability.json#L7)
+      SSC does not need to include this in the 'metadata' object of the data availability notification.
+    type: string
+    maxLength: 1024
+    archive_catalog:
+      datatype: nvarchar(1024)
+      destination:
         [CGIExposure.filename, CGIMosaic.filename, CGIAncillary.filename]
   file_date:
     title: File Creation Date (UTC)
@@ -36,8 +53,7 @@ properties:
       - $ref: http://stsci.edu/schemas/asdf/time/time-1.3.0#/definitions/iso_time
     archive_catalog:
       datatype: datetime2
-      destination:
-        [CGIExposure.filedate, CGIMosaic.filedate, CGIAncillary.filedate]
+      destination: [CGIExposure.filedate, CGIMosaic.filedate, Foo.filedate]
   origin:
     title: Institution / Organization Name
     description: |
