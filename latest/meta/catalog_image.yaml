@@ -8,7 +8,12 @@ title: Catalog-related image metadata
 type: object
 properties:
   filename:
-    $ref: asdf://stsci.edu/datamodels/roman/schemas/meta/filename-1.0.0
+    title: Filename of image used to generate this catalog
+    type: string
   file_date:
-    $ref: asdf://stsci.edu/datamodels/roman/schemas/meta/file_date-1.0.0
+    title: Creation date of the image used to generate this catalog
+    tag: tag:stsci.edu:asdf/time/time-1.*
+  forced_segmentation:
+    title: Segmentation map used for generation of this catalog
+    type: string
 required: [filename, file_date]
