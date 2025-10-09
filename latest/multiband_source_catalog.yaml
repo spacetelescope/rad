@@ -17,9 +17,7 @@ properties:
             type: array
             items:
               $ref: asdf://stsci.edu/datamodels/roman/schemas/meta/l3_common-1.0.0
-          wcsinfo:
-            $ref: asdf://stsci.edu/datamodels/roman/schemas/meta/l3_wcsinfo-1.0.0
-        required: [image_metas, wcsinfo]
+        required: [image_metas]
   source_catalog:
     title: Source Catalog
     description: |

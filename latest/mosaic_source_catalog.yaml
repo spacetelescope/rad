@@ -20,9 +20,7 @@ properties:
             $ref: asdf://stsci.edu/datamodels/roman/schemas/meta/l3_cal_step-1.0.0
           resample:
             $ref: asdf://stsci.edu/datamodels/roman/schemas/meta/l3_resample-1.0.0
-          wcsinfo:
-            $ref: asdf://stsci.edu/datamodels/roman/schemas/meta/l3_wcsinfo-1.0.0
-        required: [association, cal_step, resample, wcsinfo]
+        required: [association, cal_step, resample]
   source_catalog:
     title: Source Catalog
     description: |
