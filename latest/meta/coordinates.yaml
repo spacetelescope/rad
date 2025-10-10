@@ -14,7 +14,6 @@ properties:
     type: string
     default: ICRS
     enum: [ICRS]
-    maxLength: 10
     archive_catalog:
       datatype: nvarchar(10)
       destination: [WFIExposure.reference_frame, GuideWindow.reference_frame]

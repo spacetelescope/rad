@@ -110,7 +110,6 @@ properties:
       special_processing: VALUE_REQUIRED
       source:
         origin: PSS:dms_visit.visit_type
-    maxLength: 30
     archive_catalog:
       datatype: nvarchar(30)
       destination:

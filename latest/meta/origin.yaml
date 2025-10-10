@@ -9,7 +9,6 @@ description: |
   responsible for creating this file.
 
 type: string
-maxLength: 15
 enum: ["STSCI", "STSCI/SOC", "IPAC/SSC"]
 
 sdf:

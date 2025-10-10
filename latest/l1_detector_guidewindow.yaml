@@ -38,7 +38,6 @@ properties:
                   "WSM_TRK",
                   "WIM_DFC",
                 ]
-              maxLength: 20
             sdf:
               special_processing: VALUE_REQUIRED
               source:
@@ -161,7 +160,6 @@ properties:
               Spectral edge used for guiding with the prism or grism. Either "red" or "blue".
             type: string
             enum: ["blue", "red"]
-            maxLength: 5
           guide_window:
             type: object
             properties:
@@ -368,7 +366,6 @@ properties:
                   Guide Star Catalog. Set to N for a real star.
                 type: string
                 enum: ["Y", "N"]
-                maxLength: 1
             required:
               [
                 "gsc_id",
