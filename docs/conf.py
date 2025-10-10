@@ -77,7 +77,7 @@ rst_epilog += """"""  # noqa: F405
 
 # This does not *have* to match the package name, but typically does
 project = configuration["name"]
-author = f"{configuration['authors'][0]['name']} <{configuration['authors'][0]['email']}>"
+author = configuration["authors"][0]["name"]
 copyright = f"{datetime.datetime.now().year}, {configuration['authors'][0]['name']}"
 
 release = distribution(configuration["name"]).version
