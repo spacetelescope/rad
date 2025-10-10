@@ -1,0 +1,1 @@
+Allow longer ref_file filenames (required for some user-supplied reference files).
