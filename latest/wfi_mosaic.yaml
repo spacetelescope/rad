@@ -222,7 +222,6 @@ properties:
                   system (WCS). A value of "TAN" indicates a tangent plane projection.
                 type: string
                 enum: ["TAN"]
-                maxLength: 50
                 archive_catalog:
                   datatype: nvarchar(50)
                   destination: [WFIMosaic.projection]

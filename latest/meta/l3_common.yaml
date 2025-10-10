@@ -46,7 +46,6 @@ properties:
           Name of the celestial coordinate reference frame used
           for the World Coordinate System (WCS).
         type: string
-        maxLength: 10
         archive_catalog:
           datatype: nvarchar(10)
           destination: [WFIMosaic.reference_frame]
@@ -144,7 +143,6 @@ properties:
           Name of the instrument used to acquire the science data.
         type: string
         enum: [WFI]
-        maxLength: 5
         archive_catalog:
           datatype: nvarchar(5)
           destination: [WFIMosaic.instrument_name]
@@ -356,7 +354,6 @@ properties:
                 "WFSC",
                 "None",
               ]
-            maxLength: 15
           - type: "null"
         archive_catalog:
           datatype: nvarchar(15)

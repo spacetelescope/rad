@@ -15,7 +15,6 @@ properties:
       Science Instrument Aperture File (SIAF) in the Science
       Operations Center (SOC) Project Reference Database (PRD).
     type: string
-    maxLength: 20
     enum:
       [
         "WFI01_FULL",

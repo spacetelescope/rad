@@ -83,7 +83,6 @@ properties:
       special_processing: VALUE_REQUIRED
       source:
         origin: TBD
-    maxLength: 10
     archive_catalog:
       datatype: nvarchar(10)
       destination:
