@@ -9,14 +9,14 @@ type: object
 properties:
   pos_wcs_field_center_ra:
     title: Field Center RA
-    description: Placeholder.  Example value '270.0'
+    description: Right Ascension, position of the center of the field.  Example value '270.0'
     type: number
     archive_catalog:
       datatype: float
       destination: [Placeholder.pos_wcs_field_center_ra]
   pos_wcs_field_center_dec:
     title: Field Center Dec
-    description: Placeholder.  Example value '66.0'
+    description: Declination, position of the center of the field.  Example value '66.0'
     type: number
     archive_catalog:
       datatype: float
