@@ -2,7 +2,7 @@
 name = "rad"
 description = "Roman Attribute Dictionary"
 requires-python = ">=3.11"
-authors = [{ name = "STScI", email = "help@stsci.edu" }]
+authors = [{ name = "STScI" }]
 classifiers = [
   "Intended Audience :: Science/Research",
   "Topic :: Scientific/Engineering :: Astronomy",
