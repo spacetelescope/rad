@@ -22,6 +22,7 @@ METADATA_FORCE_XFAILS = (
 
 VARCHAR_XFAILS = (
     # <resource uri>
+    "asdf://stsci.edu/datamodels/roman/schemas/meta/ref_file-1.0.0",
 )
 
 REF_COMMON_XFAILS = ("asdf://stsci.edu/datamodels/roman/schemas/reference_files/skycells-1.1.0",)
@@ -233,11 +234,7 @@ class TestSchemaContent:
         """
         # Apply the xfail marker if we expect the test to fail
         if schema_uri in VARCHAR_XFAILS:
-            request.applymarker(
-                pytest.mark.xfail(
-                    reason=f"{schema_uri} is not being altered to ensure varchar consistency, due to it being in either tvac or fps."
-                )
-            )
+            request.applymarker(pytest.mark.xfail(reason=f"{schema_uri} not checked for maxLength/varchar consistency."))
 
         def callback(node):
             if (
