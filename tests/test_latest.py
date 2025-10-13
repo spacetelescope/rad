@@ -30,7 +30,7 @@ class TestLastestResources:
         Check that the file name of the schema matches the schema ID WITHOUT the version number suffix.
         """
         # Check that the file name does not contain a version number
-        assert len(str(latest_path).split("/rad/resources/")[-1].split("-")) == 1
+        assert len(str(latest_path).split("/rad/latest/")[-1].split("-")) == 1
 
         # Check that the file name is consistent with the schema ID
         uri = yaml.safe_load(latest_path.read_bytes())["id"]
