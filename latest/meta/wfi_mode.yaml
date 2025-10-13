@@ -17,7 +17,6 @@ properties:
       special_processing: VALUE_REQUIRED
       source:
         origin: TBD
-    maxLength: 5
     archive_catalog:
       datatype: nvarchar(5)
       destination:

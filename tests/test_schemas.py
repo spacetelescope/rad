@@ -252,6 +252,13 @@ class TestSchemaContent:
                     def check_max_length(node):
                         nonlocal found
                         nonlocal ref_uri
+                        if isinstance(node, Mapping) and "enum" in node:
+                            max_enum_length = max(len(v) for v in node["enum"])
+                            assert max_enum_length <= length, (
+                                f"archive_catalog.datatype nvarchar indicates maxLength={length}, but enum of length {max_enum_length} found."
+                            )
+                            found = True
+                            return
                         if isinstance(node, Mapping) and "type" in node:
                             if node["type"] == "string":
                                 msg = "archive_catalog.datatype nvarchar indicates maxLength is required"

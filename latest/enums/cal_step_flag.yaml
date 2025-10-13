@@ -13,4 +13,3 @@ enum:
   - FAILED
   - SKIPPED
   - INCOMPLETE
-maxLength: 15
