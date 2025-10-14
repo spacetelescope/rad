@@ -59,7 +59,6 @@ properties:
       Name of the calibration reference file used to apply
       the aperture correction to the science data.
     type: string
-    maxLength: 120
     archive_catalog:
       datatype: nvarchar(120)
       destination:
@@ -71,7 +70,6 @@ properties:
       pixel-to-pixel estimates of the area of each detector pixel on
       the sky.
     type: string
-    maxLength: 120
     archive_catalog:
       datatype: nvarchar(120)
       destination: [ScienceRefData.r_area, GuideWindow.r_area, WFICommon.r_area]
@@ -81,7 +79,6 @@ properties:
       Name of the calibration reference file used to correct
       for dark current signal in the science data.
     type: string
-    maxLength: 120
     archive_catalog:
       datatype: nvarchar(120)
       destination: [ScienceRefData.r_dark, GuideWindow.r_dark, WFICommon.r_dark]
@@ -92,7 +89,6 @@ properties:
       the geometric distortion model in the world coordinate system
       (WCS) of the science data.
     type: string
-    maxLength: 120
     archive_catalog:
       datatype: nvarchar(120)
       destination:
@@ -107,7 +103,6 @@ properties:
       Name of the calibration reference file used to apply
       the ePSF model to the science data.
     type: string
-    maxLength: 120
     archive_catalog:
       datatype: nvarchar(120)
       destination: [ScienceRefData.r_epsf, GuideWindow.r_epsf, WFICommon.r_epsf]
@@ -117,7 +112,6 @@ properties:
       Name of the calibration reference file used to mark
       bad pixels in the data quality array of the science data.
     type: string
-    maxLength: 120
     archive_catalog:
       datatype: nvarchar(120)
       destination: [ScienceRefData.r_mask, GuideWindow.r_mask, WFICommon.r_mask]
@@ -128,7 +122,6 @@ properties:
       for element-dependent, spatially-variable sensitivity in the
       science data.
     type: string
-    maxLength: 120
     archive_catalog:
       datatype: nvarchar(120)
       destination: [ScienceRefData.r_flat, GuideWindow.r_flat, WFICommon.r_flat]
@@ -139,7 +132,6 @@ properties:
       between data numbers (DN) and photo-electrons in the science
       data.
     type: string
-    maxLength: 120
     archive_catalog:
       datatype: nvarchar(120)
       destination: [ScienceRefData.r_gain, GuideWindow.r_gain, WFICommon.r_gain]
@@ -150,7 +142,6 @@ properties:
       simulations of Level 1 data products to imprint the effect of
       classical non-linearity in the science data.
     type: string
-    maxLength: 120
     archive_catalog:
       datatype: nvarchar(120)
       destination:
@@ -165,7 +156,6 @@ properties:
       Name of the calibration reference file used to correct
       for classical linearity in the science data.
     type: string
-    maxLength: 120
     archive_catalog:
       datatype: nvarchar(120)
       destination:
@@ -181,7 +171,6 @@ properties:
       photometric zeropoints and related information populated into
       the science product metadata.
     type: string
-    maxLength: 120
     archive_catalog:
       datatype: nvarchar(120)
       destination:
@@ -192,7 +181,6 @@ properties:
       Name of the calibration reference file that estimates
       the pixel-to-pixel read noise in the science data.
     type: string
-    maxLength: 120
     archive_catalog:
       datatype: nvarchar(120)
       destination:
@@ -207,7 +195,6 @@ properties:
       Name of the calibration reference file used to correct
       for 1/f noise using the reference pixels.
     type: string
-    maxLength: 120
     archive_catalog:
       datatype: nvarchar(120)
       destination:
@@ -218,7 +205,6 @@ properties:
       Information about the saturation reference file used with the science
       data.
     type: string
-    maxLength: 120
     archive_catalog:
       datatype: nvarchar(120)
       destination:

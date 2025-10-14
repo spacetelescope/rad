@@ -103,7 +103,6 @@ properties:
       special_processing: VALUE_REQUIRED
       source:
         origin: PSS:dms_program.subcategory
-    maxLength: 15
     archive_catalog:
       datatype: nvarchar(15)
       destination:

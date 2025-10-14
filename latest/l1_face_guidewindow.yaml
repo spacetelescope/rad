@@ -49,7 +49,6 @@ properties:
                   "WSM_TRK",
                   "WIM_DFC",
                 ]
-              maxLength: 20
             sdf:
               special_processing: VALUE_REQUIRED
               source:
@@ -147,7 +146,6 @@ properties:
               Spectral edge used for guiding with the prism or grism. Either "red" or "blue".
             type: string
             enum: ["blue", "red"]
-            maxLength: 5
         required:
           [
             fgs_modes_used,
@@ -315,7 +313,6 @@ properties:
               "WSM_TRK",
               "WIM_DFC",
             ]
-          maxLength: 20
     required:
       [
         delta,
