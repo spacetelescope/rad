@@ -11,16 +11,15 @@ type: object
 properties:
   meta:
     allOf:
-      - $ref: asdf://stsci.edu/datamodels/roman/schemas/meta/basic-1.0.0
-      - type: object
-        properties:
-          basic:
-            $ref: asdf://stsci.edu/datamodels/roman/schemas/meta/mosaic_basic-1.0.0
-          photometry:
-            $ref: asdf://stsci.edu/datamodels/roman/schemas/meta/photometry-1.0.0
-          program:
-            $ref: asdf://stsci.edu/datamodels/roman/schemas/meta/program-1.0.0
-        required: [basic, photometry, program]
+      - $ref: asdf://stsci.edu/datamodels/roman/schemas/meta/l3_catalog_common-1.0.0
+      - properties:
+          association:
+            $ref: asdf://stsci.edu/datamodels/roman/schemas/meta/l3_association-1.0.0
+          cal_step:
+            $ref: asdf://stsci.edu/datamodels/roman/schemas/meta/l3_cal_step-1.0.0
+          resample:
+            $ref: asdf://stsci.edu/datamodels/roman/schemas/meta/l3_resample-1.0.0
+        required: [association, cal_step, resample]
   source_catalog:
     title: Source Catalog
     description: |

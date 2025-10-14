@@ -1,0 +1,19 @@
+%YAML 1.1
+---
+$schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.0.0
+id: asdf://stsci.edu/datamodels/roman/schemas/meta/catalog_image-1.0.0
+
+title: Catalog-related image metadata
+
+type: object
+properties:
+  filename:
+    title: Filename of image used to generate this catalog
+    type: string
+  file_date:
+    title: Creation date of the image used to generate this catalog
+    tag: tag:stsci.edu:asdf/time/time-1.*
+  forced_segmentation:
+    title: Segmentation map used for generation of this catalog
+    type: string
+required: [filename, file_date]

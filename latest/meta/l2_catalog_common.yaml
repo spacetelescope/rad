@@ -1,0 +1,46 @@
+%YAML 1.1
+---
+$schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.0.0
+id: asdf://stsci.edu/datamodels/roman/schemas/meta/l2_catalog_common-1.0.0
+
+title: Common Level 2 Catalog Metadata
+
+allOf:
+  - $ref: asdf://stsci.edu/datamodels/roman/schemas/meta/basic-1.0.0
+  - type: object
+    properties:
+      coordinates:
+        $ref: asdf://stsci.edu/datamodels/roman/schemas/meta/coordinates-1.0.0
+      exposure:
+        $ref: asdf://stsci.edu/datamodels/roman/schemas/meta/exposure-1.0.0
+      image:
+        $ref: asdf://stsci.edu/datamodels/roman/schemas/meta/catalog_image-1.0.0
+      instrument:
+        $ref: asdf://stsci.edu/datamodels/roman/schemas/meta/wfi_mode-1.0.0
+      observation:
+        $ref: asdf://stsci.edu/datamodels/roman/schemas/meta/observation-1.0.0
+      photometry:
+        $ref: asdf://stsci.edu/datamodels/roman/schemas/meta/photometry-1.0.0
+      pointing:
+        $ref: asdf://stsci.edu/datamodels/roman/schemas/meta/pointing-1.0.0
+      program:
+        $ref: asdf://stsci.edu/datamodels/roman/schemas/meta/program-1.0.0
+      ref_file:
+        $ref: asdf://stsci.edu/datamodels/roman/schemas/meta/ref_file-1.0.0
+      visit:
+        $ref: asdf://stsci.edu/datamodels/roman/schemas/meta/visit-1.0.0
+      wcsinfo:
+        $ref: asdf://stsci.edu/datamodels/roman/schemas/meta/wcsinfo-1.0.0
+    required:
+      [
+        coordinates,
+        exposure,
+        instrument,
+        observation,
+        photometry,
+        pointing,
+        program,
+        ref_file,
+        visit,
+        wcsinfo,
+      ]
