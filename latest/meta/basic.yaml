@@ -37,7 +37,6 @@ required:
     model_type,
     origin,
     prd_version,
-    product_type,
     sdf_software_version,
     telescope,
   ]
