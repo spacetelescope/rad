@@ -516,10 +516,6 @@ properties:
             datatype: [ucs4, 40]
             exact_datatype: true
             ndim: 2
-        # tag: tag:stsci.edu:asdf/core/ndarray-1.*
-        # ndim: 2
-        # datatype: [ucs4, 40]
-        # exact_datatype: true
       acq_centroid_times:
         title: Acquisition Centroid Times
         description: |
