@@ -17,7 +17,6 @@ properties:
     description: |
       The pedigree of the reference file (e.g., GROUND).
     type: string
-    enum: [GROUND, MODEL, DUMMY, SIMULATION]
   description:
     title: Description
     description: |

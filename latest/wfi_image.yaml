@@ -203,29 +203,6 @@ properties:
     datatype: uint32
     exact_datatype: true
     ndim: 2
-
-  reset_read:
-    title: Reset Read (DN)
-    description: |
-      Reset read in units of data numbers (DNs) subtracted
-      from subsequent reads up-the-ramp. This array is only present
-      if a reset read was used and downlinked.
-    tag: tag:stsci.edu:asdf/core/ndarray-1.*
-    ndim: 2
-    datatype: uint16
-    unit: "DN"
-    exact_datatype: true
-  reset_amp33:
-    title: Amplifier 33 Reference Pixel Data for the Reset Read (DN)
-    description: |
-      Reference pixel data from amplifier 33 in units of data numbers (DNs)
-      for the reset read. This array is only present if a reset
-      read was used and downlinked.
-    tag: tag:stsci.edu:asdf/core/ndarray-1.*
-    ndim: 2
-    datatype: uint16
-    unit: "DN"
-    exact_datatype: true
 propertyOrder:
   [
     meta,
@@ -244,8 +221,6 @@ propertyOrder:
     dq_border_ref_pix_right,
     dq_border_ref_pix_top,
     dq_border_ref_pix_bottom,
-    reset_read,
-    reset_amp33,
   ]
 flowStyle: block
 required:
