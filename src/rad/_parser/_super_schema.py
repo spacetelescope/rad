@@ -93,7 +93,16 @@ def super_schema(schema_uri: str) -> dict[str, Any]:
             del node["$schema"]
         if isinstance(node, abc.Mapping) and "id" in node:
             del node["id"]
-        if isinstance(node, abc.Mapping) and "allOf" in node and "not" not in node["allOf"][0]:
+        if isinstance(node, abc.Mapping) and "allOf" in node:
+            # Special case for table columns, we want them to remain in the super schema
+            # for display purposes, but remove the allOf combiner as it cannot be merged
+            # easily. This is fine as the super schema is not used for validation. Only
+            # for informational reference.
+            if "not" in node["allOf"][0]:
+                node["all_of_columns"] = node["allOf"]
+                del node["allOf"]
+                return node
+
             target = copy.deepcopy(node["allOf"][0])
             for item in node["allOf"][1:]:
                 if isinstance(item, abc.Mapping):
