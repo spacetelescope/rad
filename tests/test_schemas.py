@@ -158,6 +158,15 @@ class TestSchemaContent:
 
         asdf.treeutil.walk(schema, callback)
 
+    def test_no_default(self, schema):
+        """
+        Test that schemas do not contain the default keyword
+        """
+
+        for node in asdf.treeutil.iter_tree(schema):
+            if isinstance(node, dict):
+                assert "default" not in node
+
     def test_absolute_ref(self, schema):
         """
         Test that all $ref are absolute URIs matching those registered with ASDF

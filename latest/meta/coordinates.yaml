@@ -12,7 +12,6 @@ properties:
       Name of the celestial coordinate reference frame used
       for the World Coordinate System (WCS).
     type: string
-    default: ICRS
     enum: [ICRS]
     archive_catalog:
       datatype: nvarchar(10)
