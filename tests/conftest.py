@@ -610,20 +610,7 @@ def asdf_ssc_config():
     """
     Fixture to load the SSC schemas into asdf for testing
     """
-    with asdf.config_context() as config:
-        resource_mapping = asdf.resource.DirectoryResourceMapping(
-            importlib_resources.files(resources) / "schemas" / "SSC",
-            "asdf://stsci.edu/datamodels/roman/schemas/SSC/",
-            recursive=True,
-        )
-        config.add_resource_mapping(resource_mapping)
+    from rad._parser._ssc import asdf_ssc_config
 
-        yield config
-
-    # Clear the schema cache to avoid issues with other tests
-    #   ASDF normally caches the loaded schemas so they don't have to be reloaded
-    #   but this creates a problem for the asdf-pytest-plugin, if those tests
-    #   are run after these tests because the loaded schemas will then be cached
-    #   and not fail. But if they are run before these tests then asdf-pytest-plugin
-    #   will fail because the references cannot be resolved through ASDF.
-    asdf.schema._load_schema_cached.cache_clear()
+    with asdf_ssc_config():
+        yield
