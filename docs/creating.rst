@@ -7,6 +7,14 @@ This is intended to be a quick guide to how to create a new schema in RAD. It is
 not intended to be a comprehensive guide, but rather a quick guide that
 highlights all the important considerations for RAD schema creation.
 
+
+.. note::
+    We strongly recommend that you use the :ref:`RAD Helper Tool <rad_helper>`
+    to help you set up your schemas. This will take care of things such as creating
+    the necessary symbolic links and checking that your selected URIs follow outward
+    conventions. It will also help you with bumping the version of your schema
+    when you make changes to it.
+
 Before you begin
 ----------------
 
@@ -16,15 +24,109 @@ RAD supports a hierarchical data model, so you can topically organize your data
 under headings and subheadings (or even deeper) as you see fit. In particular,
 you should have a clear idea of the following:
 
-    #. The name of the schema you wish to use. Be sure to determine the version
-       number of the schema. Typically, if the schema is new, it will be
-       ``1.0.0``. So the schema name will be ``<name>-1.0.0.yaml``.
+    #. The base name of the schema you which to create. This should be a short
+       descriptive name that should only include lower case letters and underscores.
+       No spaces or hyphens should be used. For example, ``dark``, ``aperture``,
+       ``wcsinfo``, ``cal_logs``, etc. Typically, this name will form the base name
+       that the object you are describing will be called in Python. For example,
+       ``aperture`` may correspond to an ``Aperture`` object in Python. This is not
+       always the case, but it is a good rule of thumb. Form now on we will use
+       ``<name>`` to refer to this base name.
 
-    #. Where in RAD you wish to locate your schema. For example if it is for a
-       reference file then it should be located in the ``reference_files``
-       directory.
+    #. Now we need to determine the version number of the schema.  Typically, if
+       the schema is new, it will be ``1.0.0``. This means that your schema will
+       often be referenced with ``<name>-<version>``. The version number should
+       follow standard semantic versioning, see `semver.org <https://semver.org/>`_
+       for more details.
+
+       .. note::
+          The URI for your schema will include this version number, so it will
+          look like ``asdf://stsci.edu/datamodels/roman/schemas/<path>/<name>-<version>``.
+          The version number will not typically be included in the file name itself,
+          but will appear in the symbolic link to the schema file that you will need
+          to create.
+
+    #. Next you will need to decided where in RAD to locate your schema. Look inside
+       the ``latest`` directory in the top of your working copy of RAD to see the
+       organization of the existing schemas.
+
+       .. note::
+        In the end you will have something like: ``latest/<path/to/your/schema>``,
+        where ``<path/to/your/schema>`` is the path to the directory inside ``latest``
+        that your schema will be located. This means you now have the URI
+        fragment ``<path/to/your/schema>/<name>-<version>``, which can be formed
+        into the full RAD schema URI by prefixing it with
+        ``asdf://stsci.edu/datamodels/roman/schemas/``. E.G.
+
+        .. code::yaml
+
+            asdf://stsci.edu/datamodels/roman/schemas/<path/to/your/schema>/<name>-<version>
+
+       * If your schema is not for the SOC then it should be located within a
+         directory that corresponds to the origin of the data. For example, the
+         IPAC/SSC schemas are located in ``latest/SSC``. Items located within
+         those directories should follow the organisational structure of the
+         schemas already in that directory. These directory names be in ALL CAPS.
+
+       * If your schema is for the SOC, then it will follow a different convention.
+
+          #. The only schemas allowed in ``latest`` are those that correspond to
+             the outputs of the Romancal pipeline. For example ``latest/wfi_image.yaml``,
+             is the output of the exposure level Romancal Pipeline.
+
+          #. If your schema is for a reference file, then it should be located
+             in ``latest/reference_files/``. For example, ``latest/reference_files/dark.yaml``,
+             ``latest/reference_files/flat.yaml``, etc. All represent reference
+             files that are made available via CRDS.
+
+          #. If your schema describes some data that is part of the ``meta`` attribute
+             of a Romancal pipeline output, then it should be located in
+             ``latest/meta/``. For example, ``latest/meta/exposure.yaml`` is the
+             schema for the ``meta.exposure`` attribute of Romancal pipeline outputs.
+
+          #. If your schema provides some enumerated object which is used in multiple
+             places, then it should be located in ``latest/enums/``. For example,
+             ``latest/enums/wfi_detector.yaml`` is the schema which lists all the
+             possible WFI detectors that can be used in Romancal pipeline outputs.
+
+          #. If your schema works to describe the columns of a table, then it should be
+             located in ``latest/tables/``. For example, ``latest/tables/prompt_catalog_table.yaml``
+             describes the columns for the prompt source catalog table that is created by
+             the Romancal pipeline.
+
+          #. If your schema does not fit into one of the above categories, then it should
+             be discussed with the RAD maintainers to determine the best location.
 
     #. The keywords for your fields and their hierarchical organization.
+
+       * *Keywords* are the key in the key-value pairs for information. For example,
+         it may refer to a specific value like ``ra_ref`` for the right ascention
+         of the reference position for the WCS. Or it may refer to an entire group
+         of related information like ``wcsinfo`` contains keywords that point at
+         information about the WCS.
+
+       * *Hierarchical organization* refers to how you organize your keywords. In
+         the WCS example for keywords, ``ra_ref`` is a keyword that is organized
+         under the ``wcsinfo`` keyword. If you were using the Roman Datamodels objects
+         you might reference the ``ra_ref`` data via ``model.meta.wcsinfo.ra_ref``.
+
+       .. note::
+            Unlike FITS headers, RAD and ASDF place no restrictions on the length
+            or composition of the keywords. We do ask that you use keywords that will
+            not conflict with the reserved words for the Python programming language.
+            Simply to avoid confusion when developing code that interacts with the
+            data.
+
+            This means that we strongly recommend that you use descriptive keywords
+            that are easy to understand. For example, ``start_time`` is a much
+            better keyword than ``st_tm``. While ``st_tm`` may save a few characters
+            it is not immediately clear what it means.
+
+            We also recommend that you nest your keywords in a logical manner. For example,
+            if you find your self doing ``thing_keyword1``, ``thing_keyword2``,
+            ``thing_keyword3``, etc. then you should consider creating a ``thing``
+            keyword and nesting ``keyword1``, ``keyword2``, ``keyword3`` under
+            it. This will make it much easier to find and understand the data.
 
     #. The data types of all the fields that you wish to store. In particular,
        you need to pay attention to the following:
@@ -34,21 +136,49 @@ you should have a clear idea of the following:
           ``number``, ``string``, and ``boolean`` respectively.
 
         * Which fields will require using an ASDF tag to reference another
-          schema corresponding to a non-primitive type. In particular, you need
-          to know if that tag is a RAD tag or an external ASDF tag.
+          schema corresponding to a non-primitive type.
 
-    #. Which fields will be required and which will be optional.
+          .. note::
+            We only currently do not allow internal tag references within RAD,
+            meaning that all the structures you are creating will essentially act
+            as nested dictionaries/mappings.  The RDM library can give life to
+            these as something that looks like a Python object.
 
-    #. What order you want your fields to appear in the ASDF file.
+          .. note::
+            We currently only allow for the use of the following external tags:
+
+                * ``tag:stsci.edu:asdf/core/ndarray-1.*`` for numpy arrays.
+                * ``tag:stsci.edu:asdf/time/time-1.*`` for astropy time objects.
+                * ``tag:astropy.org:astropy/table/table-1.*`` for astropy tables.
+                * ``tag:stsci.edu:gwcs/wcs-*`` for gwcs WCS objects.
+
+            We also allow the following tags, but their use should be limited as
+            there are code performance implications:
+
+                * ``tag:stsci.edu:asdf/unit/quantity-1.*"`` for astropy quantities.
+                * ``tag:stsci.edu:asdf/unit/unit-1.*`` for VO standard units.
+                * ``tag:astropy.org:astropy/units/unit-1.*`` for units that astropy
+                  defines that are not VO standard units.
+
+            If you wish to use other external tags, please discuss this with the RAD
+            maintainers. This limited subset of tags is to make it easier for us to
+            provide support for opening and using the RAD data in languages other than
+            Python. The more external tags we allow, the more burden it places on the
+            ASDF maintainers to support these tags in other languages.
+
+    #. Which keywords will be required and which will be optional. When you create
+       your schema you will need to specify at each level in the hierarchy which
+       keywords will be required. Any keywords that are not listed as required
+       will be considered optional and will require the user to check that they exist
+       prior to using them.
 
 .. note::
 
-    An ASDF tag will be defined within the tag manifest for the schema package,
-    which adds ASDF support for the type you wish to use. For example,
-    :ref:`manifests/datamodels-1.0` is the tag manifest for the RAD package.
-    The tag itself will be the value under ``tag_uri`` and the schema it
-    references will be under ``schema_uri``.
-
+    We only allow the tagging of the schemas that describe the top-level objects
+    (datamodels) that RAD describes. Each of these *tags* is an *ASDF tag* that
+    you will need to define in the RAD manifest. This is the file located
+    in ``latest/manifests/datamodels.yaml``. See :ref:`tag-your-schema` for more
+    information
 
 .. note::
 
@@ -61,27 +191,40 @@ you should have a clear idea of the following:
 Create the Schema Boilerplate
 -----------------------------
 
-After you have created your new schema file in the location under the name you
-have chosen, you should add the following to your blank file
+We suggest that you use the :ref:`RAD Helper Tool <rad_helper>` to help you create
+a new schema. This can be done via clicking the ``New`` button once the helper has
+been started. It will require you to enter the following information:
+
+#. The title of the schema.
+#. (Optional) A short description of the schema.
+#. Selecting that this is a schema for RAD.
+#. Entering the path, name and version that you have
+   selected for your schema: ``<path/to/schema>/<name>-<version>``.
+
+This will create a new schema file at ``latest/<path/to/schema>/<name>.yaml``
+with the contents:
 
 .. code:: yaml
 
     YAML 1.1
     ---
     $schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.0.0
-    id: asdf://stsci.edu/datamodels/roman/schemas/<file name of schema>  # No .yaml
+    id: asdf://stsci.edu/datamodels/roman/schemas/<path/to/schema>/<name>-<version>  # Note the lack of .yaml
 
     title: <Title of the schema>
     description: |
         <A long description of the schema>
+    # description portion will be missing if not proveded by the tool.
 
-    ...
 
+If you do not wish to use the RAD Helper Tool, can create a file at ``latest/<path/to/schema>/<name>.yaml``
+with the boiler plate above. You will need to create an additional symbolic link from
+``src/rad/resources/schemas/<path/to/schema>/<name>-<version>.yaml`` to this file. Without this
+link RAD will not be able to find your schema.
 
-The ``YAML 1.1`` needs to be on the very first line of the file, while the
-``...`` needs to be on the second to last line of the file with the final line
-being completely empty.
-
+.. note::
+    The ``YAML 1.1`` needs to be on the very first line of the file, this defines
+    the start of the YAML file and its version.
 
 Add Your Fields
 ---------------
@@ -201,13 +344,18 @@ when creating your schema:
 
         enum: [<value1>, <value2>, <value3>]
 
+    .. note::
+        The ``enum`` only works for very primitive types like ``string``, ``integer``,
+        and ``number``. You should specify the ``type`` of the field when using ``enum``
+        as it gets ambiguous about if something like ``1`` is a ``string``, an ``integer``, or a ``number``.
+
 * Multiple Possibilities.
-    If a field can take on multiple different types, you can use the ``oneOf``
+    If a field can take on multiple different types, you can use the ``anyOf``
     combiner to specify the different possibilities. For example:
 
     .. code:: yaml
 
-        oneOf:
+        anyOf:
           - type: <type1>
           - type: <type2>
           - type: <type3>
@@ -218,7 +366,7 @@ when creating your schema:
 
         Sometimes you might want to have a field which is required, but which
         may not take on any values at all. In this case you can use the
-        ``null`` type as one of the possibilities in the ``oneOf`` combiner.
+        ``null`` type as one of the possibilities in the ``anyOf`` combiner.
 
 
 Add Required and Ordering Information
@@ -226,56 +374,49 @@ Add Required and Ordering Information
 
 After you have added all of your fields, you will want to add the required
 and ordering information. This is done at the same indentation level as the
-``properties`` keyword, at the end of the right before the ``...``. This looks
-like the following:
+``properties`` keyword.
 
 .. code:: yaml
 
     required: [<required field 1>, <required field 2>, <required field 3>]
-    order: [<field 1>, <field 2>, <field 3>]
+    propertyOrder: [<field 1>, <field 2>, <field 3>]
 
+.. warning::
+    The ``propertyOrder`` can only be included in schemas that are tagged. using
+    it outside of a tagged context will cause ASDF to fail to validate things using
+    the schema, that might otherwise be valid.
+
+.. _tag-your-schema:
 
 Tag Your Schema
 ---------------
 
-In most cases, you will want to tag your schema with the RAD tag manifest. This
-performs several useful tasks:
+.. warning::
+    You should only tag your top-level schema, the one that describes an entire product.
 
-    #. It makes the object your schema represents independently (from any other
-       RAD objects) serializable and de-serializable to ASDF.
+We suggest that when using the :ref:`RAD Helper Tool <rad_helper>` to create your schema, you
+also use it to tag your schema. This can be done via selecting the ``tag`` option to on.
 
-    #. It flags the object within the human-readable header of the ASDF file
-       using the tag. This is useful for quickly identifying the type of object
-       and differentiating otherwise identical objects.
+.. note::
+    If you wish to tag your schema manually, you will need to add an entry to the RAD tag
+    manifest, in ``latest/manifests/datamodels.yaml``.  To do this you will need to add
+    the following after the ``tags:`` keyword in the manifest file:
 
-    #. It allows ASDF to easily search back into the schema from a data file to
-       read out metadata about the object contained within the schema.
+    .. code:: yaml
 
-    #. Allows for the use of "tag", ``tag:`` references as opposed to
-       JSON-schema references. This type of reference adds additional data
-       validation.
+        - tag_uri: <tag_uri>
+          schema_uri: <schema_uri>
+          title: <Title of the schema>
+          description: |-
+              <A long description of the schema>
 
-To tag your schema, you will need to add an entry to the RAD tag manifest,
-:ref:`manifests/datamodels-1.0`. To do this you will need to add the following
-after the ``tags:`` keyword in the manifest file (before the end ``...``):
+    Where ``<tag_uri>`` is the tag you wish to use and ``<schema_uri>`` matches the
+    ``id`` in your schema file. If a schema is tagged, it should have (the tool will
+    automatically do this for you if you use it to create a tagged schema):
 
-.. code:: yaml
+    .. code:: yaml
 
-    - tag_uri: <tag_uri>
-      schema_uri: <schema_uri>
-      title: <Title of the schema>
-      description: |-
-        <A long description of the schema>
-
-Where ``<tag_uri>`` is the tag you wish to use and ``<schema_uri>`` matches the
-``id`` in your schema file. If a schema is tagged, it should have
-
-.. code:: yaml
-
-    flowStyle: block
-
-Added on the line before the ``...`` in the schema file. This is to ensure that
-ASDF will write the human-readable in the file in a human-readable format.
+        flowStyle: block
 
 .. warning::
 
@@ -284,33 +425,39 @@ ASDF will write the human-readable in the file in a human-readable format.
     This is to avoid confusion and to make it easier to find the schema and tag
     and determine the associations between them. The convention is to use:
 
-    #. Ignoring the file handle (which should always be ``.yaml``), the file
-       name should be the path to the schema file with root being the
-       ``rad/resources`` directory. E.g. ``schemas/reference_files/dark-1.0.0``
-       or ``schemas/aperture-1.0.0``.
+    #. Start with formulating the file name. It should always be located in the ``latest``
+       directory. The version number should not be included as part of the file name
+       and it should always end with a ``.yaml`` file extension. E.g. relative to ``latest\``
+       ``reference_files/dark.yaml``, ``meta/exposure.yaml``, or ``wfi_image.yaml``.
 
     #. The "version" of the schema should be the suffix of the file name having
        the form ``-<major>.<minor>.<patch>``. E.g. ``-1.0.0``.
 
-    #. The ``schema_uri`` should be the same as the file name file name described
-       above with the RAD URI prefix ``asdf://stsci.edu/datamodels/roman/``.
+    #. Next formulate the ``schema_uri`` from the file name by dropping the ``.yaml``
+       file extension and prefixing the result with the RAD schema URI prefix
+       ``asdf://stsci.edu/datamodels/roman/``. Then finally appinding ``-<version>``
        E.g.
-       ``asdf://stsci.edu/datamodels/roman/schemas/reference_files/dark-1.0.0``
+       ``asdf://stsci.edu/datamodels/roman/schemas/reference_files/dark-1.0.0``,
+       ``asdf://stsci.edu/datamodels/roman/schemas/meta/exposure-1.0.0``,
        or
-       ``asdf://stsci.edu/datamodels/roman/schemas/aperture-1.0.0``.
+       ``asdf://stsci.edu/datamodels/roman/schemas/wfi_image-1.0.0``,
 
     #. The ``tag_uri`` should match the ``schema_uri`` with the ``schemas``
        replaced with ``tags``. E.g.
-       ``asdf://stsci.edu/datamodels/roman/tags/reference_files/dark-1.0.0``
+       ``asdf://stsci.edu/datamodels/roman/tags/reference_files/dark-1.0.0``,
+       ``asdf://stsci.edu/datamodels/roman/tags/meta/exposure-1.0.0``, (in reality this is untagged)
        or
-       ``asdf://stsci.edu/datamodels/roman/tags/aperture-1.0.0``.
+       ``asdf://stsci.edu/datamodels/roman/tags/wfi_image-1.0.0``,
+
+    All of these conventions are enforced by the helper tool as it will check that
+    you have correctly formulated the ``schema_uri`` and then use these conventions
+    to automatically create the ``tag_uri`` and filename/location for you.
 
 .. note::
 
-    There are some cases where you might not want to tag a schema. These are
-    generally, when the schema is not intended to be used as a standalone
-    object. This can be the case when the schema is intended to be extended by
-    another schema, see :ref:`pseudo-inheritance` for more information.
+    In most cases you will not tag a schema. These are generally, when the schema
+    is not intended to be used as a datamodel. This allows for easy reuse of schemas
+    and extending another schema, see :ref:`pseudo-inheritance` for more information.
 
 
 .. _alternate-fields:
@@ -332,59 +479,6 @@ search and find efforts in the schemas. These combiners are largely the results
 of :ref:`pseudo-inheritance`. By having a ``tag`` ASDf is able to
 bypass the recursive search and jump directly to the schema that is being
 referenced.
-
-Tagged List
-***********
-
-Currently, there is only one case where the RAD schemas tag a list, the
-:ref:`schemas/cal_logs-1.0.0` schema. Just as in this case, the top level of the
-schema will be:
-
-.. code:: yaml
-
-    type: array
-    items:
-      - <sub-schema(s) describing items>
-
-The ``items`` simply contains a bulleted list of the sub-schemas that describe
-possibilities for the items in the list.
-
-Tagged Scalar
-*************
-
-The other case is when one needs to tag a scalar type. This is mostly to help
-with the ASDF metadata searching. All such schemas need to be inside the
-``schemas/tagged_scalars`` directory so that the correct Python data nodes can
-be automatically constructed for the data models.
-
-In this case, you add the following after the schema description if the type of
-the scalar is a primitive type:
-
-.. code:: yaml
-
-    type: <primitive type>
-
-However, if the scalar is planned to be represented by a non-primitive type such
-as a time or some other special type, then you will need to use a ``$ref`` back
-to the ``schema_uri`` not ``tag_uri`` for the schema that describes this type.
-It is important to use the ``schema_uri`` because referencing a ``tag_uri`` will
-cause ASDF validation to not only check that the data is valid for the schema,
-but also that the type being used is exactly one of the types associated with
-that tag (sub-classes will fail validation in this case). Since the ASDF
-extension supporting that type is outside of RAD's control, it is not possible
-for it to even know about RAD's sub-classes and so this will not work. Hence,
-a ``$ref`` to the ``schema_uri`` is necessary. This needs to be added after the
-description of the schema using:
-
-.. code:: yaml
-
-    allOf:
-      - $ref: <schema_uri>
-
-The ``allOf`` combiner is necessary because of quirks in how JSON-schema
-actually functions; meaning that for ASDF 3.0+ to correctly handle the schema
-without issues, the ``allOf`` combiner is necessary, see
-`PR 222 <https://github.com/spacetelescope/rad/pull/222>`_ for more details.
 
 Testing Schemas
 ---------------
@@ -426,7 +520,7 @@ following should be added:
 .. code:: yaml
 
     datamodel_name: <name of the datamodel in Python>
-    archive_meta: None
+    archive_meta: <archive meta table information>
 
 The ``datamodel_name`` field is simply so that we can test that a
 `~roman_datamodels.datamodels.DataModel` exists for each "top-level" schema and
@@ -437,10 +531,11 @@ always completely clear due to the fact that the schema names and
 `~roman_datamodels.datamodels.DataModel` names do not follow a strict naming
 pattern.
 
-The ``archive_meta`` field is a placeholder for future use. It is intended to
-allow the archive to add additional metadata about specific Roman ASDF files,
-which do not fit neatly into the metadata structures it uses for describing
-the fields of in the schemas, see :ref:`external-metadata` for more details.
+The ``archive_meta`` field is used by the archive to define some meta table
+information. This should only be included if the schema describes a datamodel
+which will be archived. The value of this field should be determined by the archive
+for you. Start with adding ``archive_meta: None`` and then update it when you
+have the correct information from the archive team.
 
 .. _pseudo-inheritance:
 
