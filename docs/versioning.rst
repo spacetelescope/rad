@@ -60,10 +60,12 @@ for the resources. This directory is organized into two subdirectories:
 
 While ``src/rad/resources`` is where the resources are located for the ASDF extension,
 not all of the resources are directly located in this directory. Instead, the *latest*
-version of any resource (schema or manifest) is instead located within the ``latest``
-directory in the top level of the RAD repository. These files are linked to from
-the ``src/rad/resources`` directory. Note that the path relative to the ``latest``
-directory is the same as the path to the respective symlink relative to the ``src/rad/resources``.
+version of any schema is instead located within the ``latest`` directory in the top
+level of the RAD repository, while the *latest* version of any manifest is located within
+the ``latest/manifests`` directory. These files are linked to from the ``src/rad/resources``
+directory. Note that the path relative to the ``latest`` directory for schemas (``latest/manifests``
+for manifests) is the same as the path to the respective symlink relative to the ``src/rad/resources/schemas`` for schemas
+(``src/rad/resources/manifests`` for manifests).
 
 The naming conventions for resources follows two different patterns:
 
@@ -90,6 +92,15 @@ The naming conventions for resources follows two different patterns:
 
 Workflow for Updating a Resource Version
 ----------------------------------------
+
+.. note::
+
+   We strongly recommend using the :ref:`RAD Helper Tool's <rad_helper>` Bump function
+   to update the version of a given resource. In addition, the tool will also tell you
+   if you need to bump the version of a resource when you attempt to edit it.
+
+   The tool will take care of updating all the references to the new version number within
+   the ``latest``.
 
 To update the version of a given resource the following steps should be taken:
 

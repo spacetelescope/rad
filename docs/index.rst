@@ -27,6 +27,7 @@ The following are listings of all the schemas provided by this package for ASDF.
   reference_files.rst
   manifests.rst
   ground_tests.rst
+  ssc.rst
 
 Developer Resources
 ===================
