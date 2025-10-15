@@ -1,0 +1,187 @@
+%YAML 1.1
+---
+$schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.0.0
+id: asdf://stsci.edu/datamodels/roman/schemas/pit/pit_common-1.0.0
+
+title: Union of all Roman PIT common metadata
+type: object
+allOf:
+  - $ref: asdf://stsci.edu/datamodels/roman/schemas/pit/pit_basic-1.0.0
+  - type: object
+    properties:
+      file_date:
+        title: File creation date
+        description: |
+          File creation date-time in ISO 8601 format with UTC time
+          scale.
+        tag: tag:stsci.edu:asdf/time/time-1.*
+      start_time:
+        title: Start time
+        description: |
+          Start time of data acquisition in ISO 8601 format.
+          tag: tag:stsci.edu:asdf/time/time-1.*
+      end_time:
+        title: End time
+        description: |
+          End time of data acquisition in ISO 8601 format.
+        tag: tag:stsci.edu:asdf/time/time-1.*
+      exposure_time:
+        # Optional
+        title: Exposure time (s)
+        description: |
+          The amount of time elapsed between the start and the end
+          of the observation or data stream.
+        type: float
+        unit: "s"
+      effective_exposure_time:
+        title: Effective exposure time (s)
+        description: |
+          The total accumulated effective exposure duration for this
+          data product, excluding dead time and lost time.
+        type: float
+        unit: "s"
+      instrument:
+        title: Instrument observing configuration
+        type: object
+        properties:
+          name:
+            title: Instrument name
+            anyOf:
+              - type: string
+              - type: "null"
+          detector:
+            title: Detector
+            anyOf: 
+              - type: string
+              - type: "null" 
+          optical_element:
+            title: Optical element
+            description: |
+              Name of filter, disperser, or other optical element.
+            anyOf: 
+              - type: string
+              - type: "null"
+        required: [name, detector, optical_element]
+      telescope:
+        title: Telescope name
+        description: |
+          Name of telescope, typically Roman.
+        anyOf:
+          - type: string
+          - type: "null"
+      target_coordinates:
+        title: Position and region for this product
+        type: object
+        properties:
+          reference_frame:
+            anyOf: 
+              - type: string
+              - type: "null"
+          ra:
+            title: Right ascension (deg)
+            description: |
+              Characteristic right ascension in degrees; typically
+              the coordinate of the source of interest, or the
+              center of the spatial image. May be null for large
+              survey images, simulated data, etc.
+            anyOf: 
+              - type: float
+              - type: "null"
+            unit: "deg"
+          dec:
+            title: Declination (deg)
+            description: |
+              Characteristic declination in degrees; typically the
+              coordinate of the source of interest, or the center
+              of the spatial image. May be null for large survey
+              images, simulated data, etc.
+            anyOf: 
+              - type: float
+              - type: "null"
+            unit: "deg"
+          s_region:
+            title: STC-S formatted sky footprint
+            description: |
+              Sky footprint for this data product, formatted as an
+              IVOA Space-Time Coordinate Metadata Linear String
+              (STC-S) in units of degrees.
+            anyOf:
+              - type: string
+              - type: "null"
+        required: [reference_frame, ra, dec, s_region]
+      pixel_scale:
+        # Optional
+        title: Pixel scale of spatial axes (arcsec/pixel)
+        type: float
+        unit: "arcsec/pixel"
+      spatial_dimensions:
+        # Optional
+        title: Pixel dimensions of spatial axes
+        description: |
+          Pixel dimensions of spatial axes for this data
+          product. Used to improve archival searches in the
+          Virtual Observatory (VO).
+        type: object
+        properties:
+          naxis1:
+            # Optional
+            title: Number of pixels along spatial axis 1
+            type: integer
+          naxis2:
+            # Optional
+            title: Number of pixels along spatial axis 2
+            type: integer
+      waveband:
+        title: Waveband
+        description: |
+          Waveband of this data product, used to enable
+          archival searches. Select from: RADIO, MILLIMETER,
+          INFRARED, OPTICAL, UV, EUV, XRAY, GAMMARAY.
+        anyOf:
+          - type: "null"
+          - type: string
+          - type: array
+            items:
+              type: string
+      wave_min:
+        title: Minimum wavelength (units in documentation)
+        description: |
+          Minimum wavelength bound of this data product,
+          used to enable archival searches. Specify units
+          in MAST documentation.
+        anyOf:
+          - type: float
+          - type: "null"
+      wave_max:
+        title: Maximum wavelength (units in documentation)
+        description: |
+          Maximum wavelength bound of this data product,
+          used to enable archival searches. Specify units
+          in MAST documentation.
+        anyOf:
+          - type: float
+          - type: "null"
+      source_observations_id:
+        # Optional
+        title: Roman observations from which this product was derived
+        description: |
+          Roman observation identifier(s) (PPPPPCCAAASSSOOOVVVggsaaeee)
+          from which this PIT product was derived. 
+        oneOf:
+          - type: string
+          - type: array
+            items:
+              type: string
+    required:
+      [
+        file_date,
+        start_time,
+        end_time,
+        effective_exposure_time,
+        instrument,
+        telescope,
+        target_coordinates,
+        waveband,
+        wave_min,
+        wave_max
+     ]
