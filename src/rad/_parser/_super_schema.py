@@ -4,11 +4,20 @@ import copy
 from collections import abc
 from typing import TYPE_CHECKING
 
+import asdf
 import asdf.schema
 import asdf.treeutil
+from astropy.utils import minversion
 
 if TYPE_CHECKING:
     from typing import Any
+
+if not minversion("asdf", "5.0.0"):
+    from functools import partial
+
+    _safe_resolve = partial(asdf.schema._safe_resolve, None)
+else:
+    _safe_resolve = asdf.schema._safe_resolve
 
 
 __all__ = ["super_schema"]
@@ -36,13 +45,13 @@ def _get_schema_from_uri(schema_uri: str) -> dict[str, Any]:
             json_id = schema_uri
 
         if isinstance(node, dict) and "$ref" in node:
-            suburl_base, suburl_fragment = asdf.schema._safe_resolve(json_id, node["$ref"])
+            suburl_base, suburl_fragment = _safe_resolve(json_id, node["$ref"])
 
             if suburl_base == schema_uri or suburl_base == schema.get("id"):
                 # This is a local ref, which we'll resolve in both cases.
                 subschema = schema
             else:
-                subschema = asdf.schema.load_schema(suburl_base, True)
+                subschema = asdf.schema.load_schema(suburl_base, resolve_references=True)
 
             return asdf.treeutil.walk_and_modify(asdf.reference.resolve_fragment(subschema, suburl_fragment), resolve_refs)
 
