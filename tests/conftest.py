@@ -47,6 +47,7 @@ _LATEST_MANIFEST_TAGS = MappingProxyType(
 _LATEST_DATAMODELS_URI = next(uri for uri in _LATEST_MANIFEST_URIS if "static" not in uri)
 _LATEST_STATIC_URI = next(uri for uri in _LATEST_MANIFEST_URIS if "static" in uri)
 _LATEST_DATAMODEL_URIS = tuple(uri["schema_uri"] for uri in _CURRENT_RESOURCES[_LATEST_DATAMODELS_URI]["tags"])
+_LATEST_ARCHIVE_URIS = tuple(schema["id"] for schema in _LATEST_PATHS.values() if "archive_meta" in schema)
 
 
 def _find_latest(uris):
@@ -113,6 +114,14 @@ def latest_paths():
 def latest_path(request):
     """
     Get a latest resource path
+    """
+    return request.param
+
+
+@pytest.fixture(scope="session", params=_LATEST_ARCHIVE_URIS)
+def latest_archive_uri(request):
+    """
+    Get a latest archive resource URI
     """
     return request.param
 
@@ -594,3 +603,14 @@ def p_exptype(request):
     Get the exposure type from the request.
     """
     return request.param
+
+
+@pytest.fixture(scope="class")
+def asdf_ssc_config():
+    """
+    Fixture to load the SSC schemas into asdf for testing
+    """
+    from rad._parser._ssc import asdf_ssc_config
+
+    with asdf_ssc_config():
+        yield

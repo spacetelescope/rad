@@ -5,12 +5,15 @@ Test that the latest schemas are up to date and properly linked into rest of the
 import importlib.resources as importlib_resources
 import json
 import re
+from collections.abc import Mapping
 from importlib.metadata import Distribution
 
+import asdf.treeutil
 import pytest
 import yaml
 
 from rad import resources
+from rad._parser import archive_schema, super_schema
 
 DIRECT_URL = json.loads(Distribution.from_name("rad").read_text("direct_url.json"))
 # Needs to be a bit complicated because tox still creates a wheel, it just does it a bit differently
@@ -155,3 +158,43 @@ class TestLastestResources:
 
         if schema["id"] != metaschema_uri:
             assert "datamodel_name" in schema, f"{schema['id']} is a top level schema but not a datamodel."
+
+    @pytest.mark.usefixtures("asdf_ssc_config")
+    def test_super_schema(self, latest_uri, metaschema_uri):
+        """
+        Check that the super_schema function can process all latest schemas without error.
+        """
+        if latest_uri == metaschema_uri:
+            pytest.skip("Skipping metaschema as have no need to super schema it.")
+
+        schema = super_schema(latest_uri)  # smoke out if a schema does not parse
+
+        def callback(node):
+            if isinstance(node, Mapping):
+                assert "allOf" not in node, f"Schema {latest_uri} still has an allOf that was not resolved!"
+                assert "$ref" not in node, f"Schema {latest_uri} still has a $ref that was not resolved!"
+
+        asdf.treeutil.walk(schema, callback)
+
+    @pytest.mark.usefixtures("asdf_ssc_config")
+    def test_archive_schema(self, latest_archive_uri):
+        """
+        Check that the super_schema function can process all latest archive schemas without error.
+        """
+        schema = super_schema(latest_archive_uri)  # smoke out if a schema does not parse
+        archive = archive_schema(schema)
+
+        def callback(node):
+            if isinstance(node, Mapping):
+                if "properties" in node or "archive_meta" in node:
+                    for key in node:
+                        if key not in ("properties", "archive_meta"):
+                            raise ValueError(f"Schema {latest_archive_uri} has non-archive property {key} in archive schema!")
+                elif "archive_catalog" in node:
+                    assert len(node) == 1, f"Schema {latest_archive_uri} has non-archive keywords in archive schema!"
+
+                    assert {"datatype", "destination"} == set(node["archive_catalog"]), (
+                        f"Schema {latest_archive_uri} has unexpected keywords in archive_catalog!"
+                    )
+
+        asdf.treeutil.walk(archive, callback)
