@@ -15,7 +15,7 @@ using the command:
 
 .. code:: bash
 
-    python scripts/rad.py
+    python scripts/rad_helper.py
 
 .. note::
 
