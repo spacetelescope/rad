@@ -344,7 +344,7 @@ when creating your schema:
         enum: [<value1>, <value2>, <value3>]
 
     .. note::
-        The ``enum`` only works for very primitive types like ``string``, ``integer``,
+       ``enum`` only works for very primitive types like ``string``, ``integer``,
         and ``number``. You should specify the ``type`` of the field when using ``enum``
         as it gets ambiguous about if something like ``1`` is a ``string``, an ``integer``, or a ``number``.
 
