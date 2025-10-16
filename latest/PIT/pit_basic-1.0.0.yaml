@@ -5,8 +5,8 @@ id: asdf://stsci.edu/datamodels/roman/schemas/pit/pit_basic-1.0.0
 
 title: PIT-specific common metadata
 description: |
-  This schema contains PIT-specific common metadata, excluding metadata that can
-  typically be found in a Roman mission science product schema.
+  This schema contains PIT-specific common metadata, excluding metadata
+  that can typically be found in a Roman mission science product schema.
 type: object
 properties:
   community_product_id:
@@ -26,8 +26,8 @@ properties:
     # Optional
     title: PIT staff lead for MAST ingest
     description: |
-      The name(s) of PIT staff members who led coordination with
-      MAST on archival ingest.
+      The name(s) of PIT staff members who led coordination with MAST
+      on archival ingest.
     type: string
   doi:
     title: PIT Digital Object Identifier
@@ -47,8 +47,7 @@ properties:
   data_release:
     title: PIT collection data release
     description: |
-      The PIT data release of which this file is a part (e.g.,
-      DR1).
+      The PIT data release of which this file is a part (e.g., DR1).
     type: string
   license:
     title: License for use of these data.
@@ -111,8 +110,8 @@ properties:
     title: UAT keyword IDs
     description: |
       Numerical IDs from the Unified Astronomy Thesaurus (UAT),
-      corresponding to the human-readable keywords in
-      target_keywords. Integer or array of integers.
+      corresponding to the human-readable keywords in target_keywords.
+      Integer or array of integers.
     oneOf:
       - type: integer
       - type: array

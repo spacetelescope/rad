@@ -5,8 +5,8 @@ id: asdf://stsci.edu/datamodels/roman/schemas/pit/pit_common-1.0.0
 
 title: All PIT common metadata
 description: |
-  This schema is the union of all Roman PIT common metadata, including those
-  found in the referenced pit_basic schema.
+  This schema is the union of all Roman PIT common metadata, including
+  those found in the referenced pit_basic schema.
 type: object
 allOf:
   - $ref: asdf://stsci.edu/datamodels/roman/schemas/pit/pit_basic-1.0.0
@@ -32,8 +32,8 @@ allOf:
         # Optional
         title: Exposure time (s)
         description: |
-          The amount of time elapsed between the start and the end
-          of the observation or data stream.
+          The amount of time elapsed between the start and the end of
+          the observation or data stream.
         type: number
         unit: "s"
       effective_exposure_time:
@@ -83,10 +83,10 @@ allOf:
           ra:
             title: Right ascension (deg)
             description: |
-              Characteristic right ascension in degrees; typically
-              the coordinate of the source of interest, or the
-              center of the spatial image. May be null for large
-              survey images, simulated data, etc.
+              Characteristic right ascension in degrees; typically the
+              coordinate of the source of interest, or the center of
+              the spatial image. May be null for large survey images,
+              simulated data, etc.
             anyOf: 
               - type: number
               - type: "null"
@@ -95,9 +95,9 @@ allOf:
             title: Declination (deg)
             description: |
               Characteristic declination in degrees; typically the
-              coordinate of the source of interest, or the center
-              of the spatial image. May be null for large survey
-              images, simulated data, etc.
+              coordinate of the source of interest, or the center of
+              the spatial image. May be null for large survey images,
+              simulated data, etc.
             anyOf: 
               - type: number
               - type: "null"
@@ -121,9 +121,9 @@ allOf:
         # Optional
         title: Pixel dimensions of spatial axes
         description: |
-          Pixel dimensions of spatial axes for this data
-          product. Used to improve archival searches in the
-          Virtual Observatory (VO).
+          Pixel dimensions of spatial axes for this data product. Used
+          to improve archival searches in the Virtual Observatory
+          (VO).
         type: object
         properties:
           naxis1:
@@ -137,9 +137,9 @@ allOf:
       waveband:
         title: Waveband
         description: |
-          Waveband of this data product, used to enable
-          archival searches. Select from: RADIO, MILLIMETER,
-          INFRARED, OPTICAL, UV, EUV, XRAY, GAMMARAY.
+          Waveband of this data product, used to enable archival
+          searches. Select from: RADIO, MILLIMETER, INFRARED, OPTICAL,
+          UV, EUV, XRAY, GAMMARAY.
         anyOf:
           - type: "null"
           - type: string
@@ -149,18 +149,16 @@ allOf:
       wave_min:
         title: Minimum wavelength (units in documentation)
         description: |
-          Minimum wavelength bound of this data product,
-          used to enable archival searches. Specify units
-          in MAST documentation.
+          Minimum wavelength bound of this data product, used to
+          enable archival searches. Specify units in MAST documentation.
         anyOf:
           - type: number
           - type: "null"
       wave_max:
         title: Maximum wavelength (units in documentation)
         description: |
-          Maximum wavelength bound of this data product,
-          used to enable archival searches. Specify units
-          in MAST documentation.
+          Maximum wavelength bound of this data product, used to
+          enable archival searches. Specify units in MAST documentation.
         anyOf:
           - type: number
           - type: "null"
