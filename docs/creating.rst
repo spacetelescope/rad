@@ -176,8 +176,7 @@ you should have a clear idea of the following:
 
     We only allow the tagging of schemas that describe the top-level objects
     (datamodels) that RAD outlines. Each of these *tags* is an *ASDF tag* that
-    you will need to define in the RAD manifest. This is the file located
-    in ``latest/manifests/datamodels.yaml``. See :ref:`tag-your-schema` for more
+    you will need to define in the RAD manifest. This file is ``latest/manifests/datamodels.yaml``. See :ref:`tag-your-schema` for more
     information
 
 .. note::
