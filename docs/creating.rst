@@ -26,7 +26,7 @@ you should have a clear idea of the following:
 
     #. The base name of the schema you which to create. This should be a short
        descriptive name that should only include lower case letters and underscores.
-       No spaces or hyphens should be used. For example, ``dark``, ``aperture``,
+       No spaces or hyphens should be used in the name or path. For example, ``dark``, ``aperture``,
        ``wcsinfo``, ``cal_logs``, etc. Typically, this name will form the base name
        that the object you are describing will be called in Python. For example,
        ``aperture`` may correspond to an ``Aperture`` object in Python. This is not
