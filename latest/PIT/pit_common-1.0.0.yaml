@@ -31,14 +31,14 @@ allOf:
         description: |
           The amount of time elapsed between the start and the end
           of the observation or data stream.
-        type: float
+        type: number
         unit: "s"
       effective_exposure_time:
         title: Effective exposure time (s)
         description: |
           The total accumulated effective exposure duration for this
           data product, excluding dead time and lost time.
-        type: float
+        type: number
         unit: "s"
       instrument:
         title: Instrument observing configuration
@@ -85,7 +85,7 @@ allOf:
               center of the spatial image. May be null for large
               survey images, simulated data, etc.
             anyOf: 
-              - type: float
+              - type: number
               - type: "null"
             unit: "deg"
           dec:
@@ -96,7 +96,7 @@ allOf:
               of the spatial image. May be null for large survey
               images, simulated data, etc.
             anyOf: 
-              - type: float
+              - type: number
               - type: "null"
             unit: "deg"
           s_region:
@@ -112,7 +112,7 @@ allOf:
       pixel_scale:
         # Optional
         title: Pixel scale of spatial axes (arcsec/pixel)
-        type: float
+        type: number
         unit: "arcsec/pixel"
       spatial_dimensions:
         # Optional
@@ -150,7 +150,7 @@ allOf:
           used to enable archival searches. Specify units
           in MAST documentation.
         anyOf:
-          - type: float
+          - type: number
           - type: "null"
       wave_max:
         title: Maximum wavelength (units in documentation)
@@ -159,7 +159,7 @@ allOf:
           used to enable archival searches. Specify units
           in MAST documentation.
         anyOf:
-          - type: float
+          - type: number
           - type: "null"
       source_observations_id:
         # Optional
