@@ -393,7 +393,7 @@ Tag Your Schema
     You should tag only your top-level schema, the one that describes an entire product.
 
 We suggest that when using the :ref:`RAD Helper Tool <rad_helper>` to create your schema, you
-also use it to tag your schema. This can be done via selecting the ``tag`` option to on.
+also use it to tag your schema. This can be done via selecting the ``tag`` option.
 
 .. note::
     If you wish to tag your schema manually, you will need to add an entry to the RAD tag
