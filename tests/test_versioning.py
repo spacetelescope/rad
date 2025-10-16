@@ -121,7 +121,11 @@ def _get_versions():
         A tuple of all the release versions for RAD that are under schema versioning
         in order of the version number.
     """
-    _update_tags()
+    try:
+        _update_tags()
+    except ValueError:
+        return ()
+
     # Note that the `$` means that it will only match if the version number is the
     # end of the string, this eliminates the possibility of detecting `dev` tags
     #     That is this will match `0.23.1` and `0.24.0` but not `0.25.0.dev`
@@ -389,10 +393,13 @@ class TestVersioning:
             )
 
     @pytest.mark.parametrize(("version", "uri"), EXPECTED_XFAILS)
-    def test_expected_xfails_relevance(self, version, uri, rad_versions, frozen_uris):
+    def test_expected_xfails_relevance(self, version, uri, rad_versions, frozen_uris, request):
         """
         Test that the expected fails are relevant to the current version of RAD
         -> Smokes out when the EXPECTED_XFAILS are no longer relevant
         """
+        if not _VERSIONS:
+            request.applymarker(pytest.mark.xfail(reason="Unable to get RAD versions from upstream git repository"))
+
         assert version in rad_versions, f"Version {version} is not a valid version of RAD for versioning"
         assert uri in frozen_uris, f"URI {uri} is not a valid frozen URI"
