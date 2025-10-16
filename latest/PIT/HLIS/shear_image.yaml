@@ -70,20 +70,21 @@ allOf:
                 tag: tag:stsci.edu:asdf/core/ndarray-1.*
                 datatype: float64
                 exact_datatype: true
-            required: [
-              oversampling,
-              applied_amplification,
-              component_1,
-              component_2,
-              rotation_angle,
-              reduced_component_1,
-              reduced_component_2,
-              convergence_kappa,
-              covariance,
-              jacobian,
-              sigma_out,
-              pixel_scale,
-            ]
+            required:
+              [
+                oversampling,
+                applied_amplification,
+                component_1,
+                component_2,
+                rotation_angle,
+                reduced_component_1,
+                reduced_component_2,
+                convergence_kappa,
+                covariance,
+                jacobian,
+                sigma_out,
+                pixel_scale,
+              ]
           wcs:
             title: WCS object
             tag: tag:stsci.edu:gwcs/wcs-*
@@ -104,16 +105,6 @@ allOf:
         datatype: uint8
         exact_datatype: true
         ndim: 2
-    propertyOrder:
-      [
-        meta,
-        data,
-        mask,
-      ]
+    propertyOrder: [meta, data, mask]
     flowStyle: block
-    required:
-      [
-        meta,
-        data,
-        mask,
-      ]
+    required: [meta, data, mask]

@@ -54,14 +54,14 @@ allOf:
               - type: "null"
           detector:
             title: Detector
-            anyOf: 
+            anyOf:
               - type: string
-              - type: "null" 
+              - type: "null"
           optical_element:
             title: Optical element
             description: |
               Name of filter, disperser, or other optical element.
-            anyOf: 
+            anyOf:
               - type: string
               - type: "null"
         required: [name, detector, optical_element]
@@ -77,7 +77,7 @@ allOf:
         type: object
         properties:
           reference_frame:
-            anyOf: 
+            anyOf:
               - type: string
               - type: "null"
           ra:
@@ -87,7 +87,7 @@ allOf:
               coordinate of the source of interest, or the center of
               the spatial image. May be null for large survey images,
               simulated data, etc.
-            anyOf: 
+            anyOf:
               - type: number
               - type: "null"
             unit: "deg"
@@ -98,7 +98,7 @@ allOf:
               coordinate of the source of interest, or the center of
               the spatial image. May be null for large survey images,
               simulated data, etc.
-            anyOf: 
+            anyOf:
               - type: number
               - type: "null"
             unit: "deg"
@@ -167,7 +167,7 @@ allOf:
         title: Roman observations from which this product was derived
         description: |
           Roman observation identifier(s) (PPPPPCCAAASSSOOOVVVggsaaeee)
-          from which this PIT product was derived. 
+          from which this PIT product was derived.
         oneOf:
           - type: string
           - type: array
@@ -184,6 +184,5 @@ allOf:
         target_coordinates,
         waveband,
         wave_min,
-        wave_max
-     ]
-...
+        wave_max,
+      ]
