@@ -433,7 +433,7 @@ also use it to tag your schema. This can be done via selecting the ``tag`` optio
 
     #. Next formulate the ``schema_uri`` from the file name by dropping the ``.yaml``
        file extension and prefixing the result with the RAD schema URI prefix
-       ``asdf://stsci.edu/datamodels/roman/``. Then finally appinding ``-<version>``
+       ``asdf://stsci.edu/datamodels/roman/``. Then appending ``-<version>``
        E.g.
        ``asdf://stsci.edu/datamodels/roman/schemas/reference_files/dark-1.0.0``,
        ``asdf://stsci.edu/datamodels/roman/schemas/meta/exposure-1.0.0``,
