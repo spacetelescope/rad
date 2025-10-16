@@ -100,7 +100,7 @@ you should have a clear idea of the following:
     #. The keywords for your fields and their hierarchical organization.
 
        * *Keywords* are the key in the key-value pairs for information. For example,
-         it may refer to a specific value like ``ra_ref`` for the right ascention
+         the keyword may refer to a specific value like ``ra_ref`` for the right ascension
          of the reference position for the WCS. Or it may refer to an entire group
          of related information like ``wcsinfo`` contains keywords that point at
          information about the WCS.
