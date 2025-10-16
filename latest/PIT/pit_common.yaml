@@ -1,7 +1,7 @@
 %YAML 1.1
 ---
 $schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.0.0
-id: asdf://stsci.edu/datamodels/roman/schemas/pit/pit_common-1.0.0
+id: asdf://stsci.edu/datamodels/roman/schemas/PIT/pit_common-1.0.0
 
 title: All PIT common metadata
 description: |
@@ -9,7 +9,7 @@ description: |
   those found in the referenced pit_basic schema.
 type: object
 allOf:
-  - $ref: asdf://stsci.edu/datamodels/roman/schemas/pit/pit_basic-1.0.0
+  - $ref: asdf://stsci.edu/datamodels/roman/schemas/PIT/pit_basic-1.0.0
   - type: object
     properties:
       file_date:
