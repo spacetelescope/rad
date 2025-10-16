@@ -66,7 +66,7 @@ you should have a clear idea of the following:
          directory that corresponds to the origin of the data. For example, the
          IPAC/SSC schemas are located in ``latest/SSC``. Items located within
          those directories should follow the organisational structure of the
-         schemas already in that directory. These directory names be in ALL CAPS.
+         schemas already in that directory. These directory names must be in ALL CAPS.
 
        * If your schema is for the SOC, then it will follow a different convention.
 
