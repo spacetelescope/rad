@@ -425,7 +425,7 @@ also use it to tag your schema. This can be done via selecting the ``tag`` optio
 
     #. Start with formulating the file name. It should always be located in the ``latest``
        directory. The version number should not be included as part of the file name
-       and it should always end with a ``.yaml`` file extension. E.g. relative to ``latest\``
+       and it should always end with a ``.yaml`` file extension. E.g. relative to ``latest/``
        ``reference_files/dark.yaml``, ``meta/exposure.yaml``, or ``wfi_image.yaml``.
 
     #. The "version" of the schema should be the suffix of the file name having
