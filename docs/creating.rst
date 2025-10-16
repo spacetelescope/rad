@@ -102,7 +102,7 @@ you should have a clear idea of the following:
        * *Keywords* are the key in the key-value pairs for information. For example,
          the keyword may refer to a specific value like ``ra_ref`` for the right ascension
          of the reference position for the WCS. Or it may refer to an entire group
-         of related information like ``wcsinfo`` contains keywords that point at
+         of related information like ``wcsinfo``, which contains keywords that point at
          information about the WCS.
 
        * *Hierarchical organization* refers to how you organize your keywords. In
