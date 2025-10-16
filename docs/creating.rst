@@ -222,7 +222,7 @@ with the boiler plate above. You will need to create an additional symbolic link
 link, RAD will not be able to find your schema.
 
 .. note::
-    The ``YAML 1.1`` needs to be on the very first line of the file, this defines
+    The ``YAML 1.1`` needs to be the very first line of the file, as this defines
     the start of the YAML file and its version.
 
 Add Your Fields
