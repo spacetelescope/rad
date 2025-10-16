@@ -16,6 +16,7 @@ if TYPE_CHECKING:
     from deepdiff import DeepDiff
 
 _RAD_URLS = (
+    "https://github.com/spacetelescope/rad",
     "https://github.com/spacetelescope/rad.git",
     "git@github.com:spacetelescope/rad.git",
 )
