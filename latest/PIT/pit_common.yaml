@@ -164,9 +164,11 @@ allOf:
           - type: "null"
       source_observations_id:
         # Optional
-        title: Roman observations from which this product was derived
+        title: List of observation_ids used to construct this product
         description: |
-          Roman observation identifier(s) (PPPPPCCAAASSSOOOVVVggsaaeee)
+          A list of observation_ids (PPPPPCCAAASSSOOOVVVggsaaeee) used
+          to construct this product. If only one observation_id is was used this
+          will be string instead of a list of strings.
           from which this PIT product was derived.
         oneOf:
           - type: string
