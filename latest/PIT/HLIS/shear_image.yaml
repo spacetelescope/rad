@@ -56,12 +56,20 @@ allOf:
                 type: number
               jacobian:
                 tag: tag:stsci.edu:asdf/core/ndarray-1.*
+                datatype: float64
+                exact_datatype: true
               covariance:
                 tag: tag:stsci.edu:asdf/core/ndarray-1.*
+                datatype: float64
+                exact_datatype: true
               sigma_out:
-                tag: tag:stsci.edu:asdf/unit/quantity-1.*
+                tag: tag:stsci.edu:asdf/core/ndarray-1.*
+                datatype: float64
+                exact_datatype: true
               pixel_scale:
-                tag: tag:stsci.edu:asdf/unit/quantity-1.*
+                tag: tag:stsci.edu:asdf/core/ndarray-1.*
+                datatype: float64
+                exact_datatype: true
             required: [
               oversampling,
               applied_amplification,

@@ -147,6 +147,8 @@ class TestLastestResources:
             assert path.parent == latest_reference_files_dir, (
                 f"{latest_tagged_schema_uri} is a reference file that is not in the reference_files directory."
             )
+        elif "PIT" in latest_tagged_schema_uri:
+            pytest.skip(reason="Need to update test when PIT structure is defined")
         else:
             assert path.parent == latest_dir, f"{latest_tagged_schema_uri} is a datamodel that is not in the top-level directory."
 

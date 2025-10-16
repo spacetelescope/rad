@@ -197,3 +197,4 @@ tags:
   - tag_uri: asdf://stsci.edu/datamodels/roman/tags/PIT/HLIS/shear_image-1.0.0
     schema_uri: asdf://stsci.edu/datamodels/roman/schemas/PIT/HLIS/shear_image-1.0.0
     title: Shear image HLIS PIT product
+    description: TBD
