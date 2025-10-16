@@ -382,8 +382,7 @@ and ordering information. This is done at the same indentation level as the
 
 .. warning::
     The ``propertyOrder`` can only be included in schemas that are tagged. using
-    it outside of a tagged context will cause ASDF to fail to validate things using
-    the schema, that might otherwise be valid.
+    it outside of a tagged context will cause ASDF to fail to validate the schema, even if it might otherwise be valid.
 
 .. _tag-your-schema:
 
