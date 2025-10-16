@@ -219,7 +219,7 @@ with the contents:
 If you do not wish to use the RAD Helper Tool, can create a file at ``latest/<path/to/schema>/<name>.yaml``
 with the boiler plate above. You will need to create an additional symbolic link from
 ``src/rad/resources/schemas/<path/to/schema>/<name>-<version>.yaml`` to this file. Without this
-link RAD will not be able to find your schema.
+link, RAD will not be able to find your schema.
 
 .. note::
     The ``YAML 1.1`` needs to be on the very first line of the file, this defines
