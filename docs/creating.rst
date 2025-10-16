@@ -453,8 +453,8 @@ also use it to tag your schema. This can be done via selecting the ``tag`` optio
 
 .. note::
 
-    In most cases you will not tag a schema. These are generally, when the schema
-    is not intended to be used as a datamodel. This allows for easy reuse of schemas
+    In most cases you will not tag a schema. Tags are generally used only when the schema
+    is intended to be used as a datamodel. This allows for easy reuse of schemas
     and extending another schema, see :ref:`pseudo-inheritance` for more information.
 
 
