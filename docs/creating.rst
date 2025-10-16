@@ -145,7 +145,7 @@ you should have a clear idea of the following:
             these as something that looks like a Python object.
 
           .. note::
-            We currently only allow for the use of the following external tags:
+            We currently only allow the use of the following external tags:
 
                 * ``tag:stsci.edu:asdf/core/ndarray-1.*`` for numpy arrays.
                 * ``tag:stsci.edu:asdf/time/time-1.*`` for astropy time objects.
