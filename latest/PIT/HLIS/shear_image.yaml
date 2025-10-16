@@ -7,12 +7,12 @@ title: Shear image HLIS PIT product
 
 datamodel_name: ShearImageModel
 
-allOf:
-  - $ref: asdf://stsci.edu/datamodels/roman/schemas/PIT/pit_common-1.0.0
-  - type: object
-    properties:
-      meta:
-        properties:
+type: object
+properties:
+  meta:
+    allOf:
+      - $ref: asdf://stsci.edu/datamodels/roman/schemas/PIT/pit_common-1.0.0
+      - properties:
           source_file:
             properties:
               filename_stem:
@@ -89,22 +89,22 @@ allOf:
             title: WCS object
             tag: tag:stsci.edu:gwcs/wcs-*
         required: [source_file, interpolation, shear, wcs]
-      data:
-        title: Shear applied mosaic image
-        description: |
-          A description of the image contents.
-        tag: tag:stsci.edu:asdf/core/ndarray-1.*
-        datatype: float32
-        exact_datatype: true
-        ndim: 3
-      mask:
-        title: Image mask
-        description: |
-          A description of the mask contents.
-        tag: tag:stsci.edu:asdf/core/ndarray-1.*
-        datatype: uint8
-        exact_datatype: true
-        ndim: 2
-    propertyOrder: [meta, data, mask]
-    flowStyle: block
-    required: [meta, data, mask]
+  data:
+    title: Shear applied mosaic image
+    description: |
+      A description of the image contents.
+    tag: tag:stsci.edu:asdf/core/ndarray-1.*
+    datatype: float32
+    exact_datatype: true
+    ndim: 3
+  mask:
+    title: Image mask
+    description: |
+      A description of the mask contents.
+    tag: tag:stsci.edu:asdf/core/ndarray-1.*
+    datatype: uint8
+    exact_datatype: true
+    ndim: 2
+propertyOrder: [meta, data, mask]
+flowStyle: block
+required: [meta, data, mask]
