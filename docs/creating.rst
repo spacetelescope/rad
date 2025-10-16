@@ -30,7 +30,7 @@ you should have a clear idea of the following:
        ``wcsinfo``, ``cal_logs``, etc. Typically, this name will form the base name
        that the object you are describing will be called in Python. For example,
        ``aperture`` may correspond to an ``Aperture`` object in Python. This is not
-       always the case, but it is a good rule of thumb. Form now on we will use
+       always the case, but it is a good rule of thumb. From now on we will use
        ``<name>`` to refer to this base name.
 
     #. Now we need to determine the version number of the schema.  Typically, if
