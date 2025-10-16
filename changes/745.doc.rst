@@ -1,1 +1,1 @@
-Update the RAD docs to reflect all the changes within RAD reciently.
+Update the RAD docs to reflect all the changes within RAD recently.
