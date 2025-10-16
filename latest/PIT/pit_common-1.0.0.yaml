@@ -3,7 +3,10 @@
 $schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.0.0
 id: asdf://stsci.edu/datamodels/roman/schemas/pit/pit_common-1.0.0
 
-title: Union of all Roman PIT common metadata
+title: All PIT common metadata
+description: |
+  This schema is the union of all Roman PIT common metadata, including those
+  found in the referenced pit_basic schema.
 type: object
 allOf:
   - $ref: asdf://stsci.edu/datamodels/roman/schemas/pit/pit_basic-1.0.0
