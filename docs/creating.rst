@@ -139,7 +139,7 @@ you should have a clear idea of the following:
           schema corresponding to a non-primitive type.
 
           .. note::
-            We only currently do not allow internal tag references within RAD,
+            We currently do not allow internal tag references within RAD,
             meaning that all the structures you are creating will essentially act
             as nested dictionaries/mappings.  The RDM library can give life to
             these as something that looks like a Python object.
