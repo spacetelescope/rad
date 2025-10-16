@@ -8,7 +8,7 @@ title: Shear image HLIS PIT product
 datamodel_name: ShearImageModel
 
 allOf:
-  - $ref: asdf://stsci.edu/datamodels/roman/schemas/PIT/ccsp_mast_metadata-1.0.0
+  - $ref: asdf://stsci.edu/datamodels/roman/schemas/PIT/pit_common-1.0.0
   - type: object
     properties:
       meta:
