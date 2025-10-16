@@ -390,7 +390,7 @@ Tag Your Schema
 ---------------
 
 .. warning::
-    You should only tag your top-level schema, the one that describes an entire product.
+    You should tag only your top-level schema, the one that describes an entire product.
 
 We suggest that when using the :ref:`RAD Helper Tool <rad_helper>` to create your schema, you
 also use it to tag your schema. This can be done via selecting the ``tag`` option to on.
