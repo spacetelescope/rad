@@ -1,1 +1,0 @@
-Update fps schema to include reference to the statistics tag in its ``meta`` section.

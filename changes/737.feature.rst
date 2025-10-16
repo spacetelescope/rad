@@ -1,1 +1,0 @@
-Added "null" as a possible value for `acq_centroid_quality` in the L1 Detector Guide Window schema.

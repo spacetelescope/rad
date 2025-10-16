@@ -1,1 +1,0 @@
-SSC ROMAN-3776 feedback from SSC GDPS G1DP on the wfi_spec_catalog_level_4.yaml and wfi_spec_data_quality_level_4.yaml data models

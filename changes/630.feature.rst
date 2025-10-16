@@ -1,1 +1,0 @@
-Add effective area to the photom reference file schema.

@@ -1,1 +1,0 @@
-Remove active use of the tagged scalars in the latest schemas.

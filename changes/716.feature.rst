@@ -1,1 +1,0 @@
-Move ``individual_image_meta`` schema information into its own distinct schema file.

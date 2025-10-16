@@ -1,1 +1,0 @@
-Removed the "." prefix for MSOS keyword names to match their archive catalog column counterparts.

@@ -1,1 +1,0 @@
-Renamed the reset read variables to reference read in `wfi_science_raw` and removed them from `wfi_image`.

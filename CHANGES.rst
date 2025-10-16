@@ -1,3 +1,102 @@
+0.28.0 (2025-10-16)
+===================
+
+Bug Fixes
+---------
+
+- Update fps schema to include reference to the statistics tag in its ``meta``
+  section. (`#685 <https://github.com/spacetelescope/rad/issues/685>`_)
+- Allow longer ref_file filenames (required for some user-supplied reference
+  files). (`#729 <https://github.com/spacetelescope/rad/issues/729>`_)
+- Remove redundant maxLength keywords for enum checking subschemas. (`#731
+  <https://github.com/spacetelescope/rad/issues/731>`_)
+- Remove unused default from coordinates schemas. (`#740
+  <https://github.com/spacetelescope/rad/issues/740>`_)
+
+
+Documentation
+-------------
+
+- Update the contributing docs to reflect the current contribution and review
+  process. (`#682 <https://github.com/spacetelescope/rad/issues/682>`_)
+- Update the RAD docs to reflect all the changes within RAD recently. (`#745
+  <https://github.com/spacetelescope/rad/issues/745>`_)
+
+
+New Features
+------------
+
+- Add effective area to the photom reference file schema. (`#630
+  <https://github.com/spacetelescope/rad/issues/630>`_)
+- Added complete set of CGI L1, L2a, and L2b archive search keywords (`#664
+  <https://github.com/spacetelescope/rad/issues/664>`_)
+- Introduce first draft of the SSC/GDPS schemas into the RAD repository. (`#665
+  <https://github.com/spacetelescope/rad/issues/665>`_)
+- Added first draft of the SSC/MSOS schemas into the RAD repository. (`#671
+  <https://github.com/spacetelescope/rad/issues/671>`_)
+- Make the previously deprecated guidewindow schema a static schema. (`#687
+  <https://github.com/spacetelescope/rad/issues/687>`_)
+- Remove active use of the tagged scalars in the latest schemas. (`#688
+  <https://github.com/spacetelescope/rad/issues/688>`_)
+- Remove the use of internal tags within RAD schemas and replace with standard
+  schema $refs. (`#691 <https://github.com/spacetelescope/rad/issues/691>`_)
+- Add psf field to msos_stack schema. (`#692
+  <https://github.com/spacetelescope/rad/issues/692>`_)
+- More complete archive search keyword definitions for MSOS catalogs and
+  reference frame level 3
+  Removed 'meta' nesting from MSOS archive search schemas.
+  Switched asdf/time tagging to references to asdf/time iso_time (`#700
+  <https://github.com/spacetelescope/rad/issues/700>`_)
+- Move ``individual_image_meta`` schema information into its own distinct
+  schema file. (`#716 <https://github.com/spacetelescope/rad/issues/716>`_)
+- The remaining parts of reorganizing RAD schemas. This moves all the
+  non-datamodels
+  schemas out of the ``latest`` directory except the metaschema ``rad_schema``.
+  (`#719 <https://github.com/spacetelescope/rad/issues/719>`_)
+- Add super schema and archive schema parsers for the rad schemas. (`#721
+  <https://github.com/spacetelescope/rad/issues/721>`_)
+- Update L4 (catalog) metadata to better match input/image file metadata.
+  (`#724 <https://github.com/spacetelescope/rad/issues/724>`_)
+- Added "null" as a possible value for `acq_centroid_quality` in the L1
+  Detector Guide Window schema. (`#737
+  <https://github.com/spacetelescope/rad/issues/737>`_)
+
+
+Misc
+----
+
+- Removed the "." prefix for MSOS keyword names to match their archive catalog
+  column counterparts. (`#674
+  <https://github.com/spacetelescope/rad/issues/674>`_)
+- Remove direct ASDF packaging of the SSC schemas, and modify the versioning
+  tests
+  so that they no longer apply to the SSC schemas. (`#686
+  <https://github.com/spacetelescope/rad/issues/686>`_)
+- SSC ROMAN-3776 feedback from SSC GDPS G1DP on the
+  wfi_spec_catalog_level_4.yaml and wfi_spec_data_quality_level_4.yaml data
+  models (`#701 <https://github.com/spacetelescope/rad/issues/701>`_)
+- Updates the archive_meta tag as necessary (`#711
+  <https://github.com/spacetelescope/rad/issues/711>`_)
+- Fixes typo WFICommon.telescopes to telescope (`#718
+  <https://github.com/spacetelescope/rad/issues/718>`_)
+- SSC ROMAN-3912 Update G2DP keywords in ``/latest/SSC`` directory (`#722
+  <https://github.com/spacetelescope/rad/issues/722>`_)
+- Made the `product_type` keyword required. (`#733
+  <https://github.com/spacetelescope/rad/issues/733>`_)
+- Removed the enum list for `pedigree` in `ref_common`. (`#734
+  <https://github.com/spacetelescope/rad/issues/734>`_)
+- Renamed the reset read variables to reference read in `wfi_science_raw` and
+  removed them from `wfi_image`. (`#735
+  <https://github.com/spacetelescope/rad/issues/735>`_)
+
+
+Deprecations and Removals
+-------------------------
+
+- Make unused associations schema static. (`#702
+  <https://github.com/spacetelescope/rad/issues/702>`_)
+
+
 0.27.0 (2025-08-15)
 ===================
 

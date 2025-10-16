@@ -1,1 +1,0 @@
-Made the `product_type` keyword required.
