@@ -121,10 +121,9 @@ properties:
     # Optional
     title: List of observation_ids used to construct this product
     description: |
-      A list of observation_ids (PPPPPCCAAASSSOOOVVVggsaaeee) used
-      to construct this product. If only one observation_id is was used this
-      will be string instead of a list of strings.
-      from which this PIT product was derived.
+      A list of observation_ids (PPPPPCCAAASSSOOOVVVggsaaeee) used to
+      construct this product. If only one observation_id is was used,
+      this will be a string instead of a list of strings.
     oneOf:
       - type: string
       - type: array
