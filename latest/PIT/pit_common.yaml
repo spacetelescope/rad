@@ -52,11 +52,17 @@ allOf:
             anyOf:
               - type: string
               - type: "null"
+              - type: array
+                items:
+                  type: string
           detector:
             title: Detector
             anyOf:
               - type: string
               - type: "null"
+              - type: array
+                items:
+                  type: string
           optical_element:
             title: Optical element
             description: |
@@ -64,6 +70,9 @@ allOf:
             anyOf:
               - type: string
               - type: "null"
+              - type: array
+                items:
+                  type: string
         required: [name, detector, optical_element]
       telescope:
         title: Telescope name
