@@ -92,7 +92,8 @@ properties:
         description: |
           Human-readable keyword(s) from the Unified Astronomy Thesaurus
           (UAT), corresponding to astronomical object types targeted by
-          this file. String or array of strings.
+          this file. String or array of strings. Selected from:
+          https://astrothesaurus.org/concept-select/
         oneOf:
           - type: string
           - type: array
@@ -104,7 +105,8 @@ properties:
         description: |
           Numerical IDs from the Unified Astronomy Thesaurus (UAT),
           corresponding to the human-readable keywords in target_keywords.
-          Integer or array of integers.
+          Integer or array of integers. Selected from:
+          https://astrothesaurus.org/concept-select/
         oneOf:
           - type: integer
           - type: array
