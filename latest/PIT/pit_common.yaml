@@ -18,31 +18,36 @@ allOf:
           File creation date-time in ISO 8601 format with UTC time
           scale.
         tag: tag:stsci.edu:asdf/time/time-1.*
-      start_time:
-        title: Start time
-        description: |
-          Start time of data acquisition in ISO 8601 format.
-          tag: tag:stsci.edu:asdf/time/time-1.*
-      end_time:
-        title: End time
-        description: |
-          End time of data acquisition in ISO 8601 format.
-        tag: tag:stsci.edu:asdf/time/time-1.*
-      exposure_time:
-        # Optional
-        title: Exposure time (s)
-        description: |
-          The amount of time elapsed between the start and the end of
-          the observation or data stream.
-        type: number
-        unit: "s"
-      effective_exposure_time:
-        title: Effective exposure time (s)
-        description: |
-          The total accumulated effective exposure duration for this
-          data product, excluding dead time and lost time.
-        type: number
-        unit: "s"
+      exposure:
+        title: Exposure information
+        type: object
+        properties:
+          start_time:
+            title: Start time
+            description: |
+              Start time of data acquisition in ISO 8601 format.
+            tag: tag:stsci.edu:asdf/time/time-1.*
+          end_time:
+            title: End time
+            description: |
+              End time of data acquisition in ISO 8601 format.
+            tag: tag:stsci.edu:asdf/time/time-1.*
+          exposure_time:
+            # Optional
+            title: Exposure time (s)
+            description: |
+              The amount of time elapsed between the start and the end
+              of the observation or data stream.
+            type: number
+            unit: "s"
+          effective_exposure_time:
+            title: Effective exposure time (s)
+            description: |
+              The total accumulated effective exposure duration for
+              this data product, excluding dead time and lost time.
+            type: number
+            unit: "s"
+        required: [start_time, end_time, effective_exposure_time]
       instrument:
         title: Instrument observing configuration
         type: object
@@ -78,17 +83,14 @@ allOf:
         title: Telescope name
         description: |
           Name of telescope, typically Roman.
-        anyOf:
-          - type: string
-          - type: "null"
+        type: string
       target_coordinates:
-        title: Position and region for this product
+        title: Position for this data product
         type: object
         properties:
           reference_frame:
-            anyOf:
-              - type: string
-              - type: "null"
+            type: string
+            enum: ["ICRS"]
           ra:
             title: Right ascension (deg)
             description: |
@@ -96,9 +98,7 @@ allOf:
               coordinate of the source of interest, or the center of
               the spatial image. May be null for large survey images,
               simulated data, etc.
-            anyOf:
-              - type: number
-              - type: "null"
+            type: number
             unit: "deg"
           dec:
             title: Declination (deg)
@@ -107,63 +107,53 @@ allOf:
               coordinate of the source of interest, or the center of
               the spatial image. May be null for large survey images,
               simulated data, etc.
-            anyOf:
-              - type: number
-              - type: "null"
+            type: number
             unit: "deg"
-          s_region:
-            title: STC-S formatted sky footprint
-            description: |
-              Sky footprint for this data product, formatted as an
-              IVOA Space-Time Coordinate Metadata Linear String
-              (STC-S) in units of degrees.
-            anyOf:
-              - type: string
-              - type: "null"
-        required: [reference_frame, ra, dec, s_region]
+        required: [reference_frame, ra, dec]
+      s_region:
+        title: STC-S formatted sky footprint
+        description: |
+          Sky footprint for this data product, formatted as an IVOA
+          Space-Time Coordinate Metadata Linear String (STC-S) in units
+          of degrees.
+        type: string
       pixel_scale:
         # Optional
         title: Pixel scale of spatial axes (arcsec/pixel)
         type: number
         unit: "arcsec/pixel"
-      waveband:
-        title: Waveband
-        description: |
-          Waveband of this data product, used to enable archival
-          searches. Select from: RADIO, MILLIMETER, INFRARED, OPTICAL,
-          UV, EUV, XRAY, GAMMARAY.
-        anyOf:
-          - type: "null"
-          - type: string
-          - type: array
-            items:
-              type: string
-      wave_min:
-        title: Minimum wavelength (units in documentation)
-        description: |
-          Minimum wavelength bound of this data product, used to
-          enable archival searches. Specify units in MAST documentation.
-        anyOf:
-          - type: number
-          - type: "null"
-      wave_max:
-        title: Maximum wavelength (units in documentation)
-        description: |
-          Maximum wavelength bound of this data product, used to
-          enable archival searches. Specify units in MAST documentation.
-        anyOf:
-          - type: number
-          - type: "null"
-    required:
-      [
-        file_date,
-        start_time,
-        end_time,
-        effective_exposure_time,
-        instrument,
-        telescope,
-        target_coordinates,
-        waveband,
-        wave_min,
-        wave_max,
-      ]
+      wavelength:
+        title: Wavelength information
+        type: object
+        properties:
+          band:
+            title: Waveband
+            description: |
+              Waveband of this data product, used to enable archival
+              searches. Select from: RADIO, MILLIMETER, INFRARED,
+              OPTICAL, UV, EUV, XRAY, GAMMARAY.
+            anyOf:
+              - type: string
+              - type: array
+                items:
+                  type: string
+          minimum:
+            title: Minimum wavelength (units in documentation)
+            description: |
+              Minimum wavelength bound of this data product, used to
+              enable archival searches. Specify units in MAST
+              documentation.
+            anyOf:
+              - type: number
+              - type: "null"
+          maximum:
+            title: Maximum wavelength (units in documentation)
+            description: |
+              Maximum wavelength bound of this data product, used to
+              enable archival searches. Specify units in MAST
+              documentation.
+            anyOf:
+              - type: number
+              - type: "null"
+        required: [band, minimum, maximum]
+    required: [file_date]

@@ -58,11 +58,10 @@ properties:
   target_name:
     title: Target name
     description: |
-      Designation of the target(s) or field(s) for this file.
-      May be null for some survey data.
-    anyOf:
-      - type: string
-      - type: "null"
+      Designation of the target(s) or field(s) for this file. May be
+      general term like "Field" or "Sky" for some survey or simulated
+      data.
+    type: string
   intent:
     # Optional
     title: Observation intent
@@ -121,7 +120,5 @@ required:
     data_release,
     license,
     license_url,
-    target_name,
-    start_time_mjd,
-    end_time_mjd,
+    target_name
   ]
