@@ -1,15 +1,20 @@
 %YAML 1.1
 ---
 $schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.0.0
-id: asdf://stsci.edu/datamodels/roman/schemas/PIT/pit_common-1.0.0
+id: asdf://stsci.edu/datamodels/roman/schemas/CCSP/ccsp_custom_product-1.0.0
 
-title: All PIT common metadata
+title: CCSP custom product metadata
 description: |
-  This schema is the union of all Roman PIT common metadata, including
-  those found in the referenced pit_basic schema.
+  This schema is the union of all shared metadata for Roman Community
+  Contributed Science Product (CCSP) data. It should be referenced in
+  the schemas of custom data products which do not closely mimic the
+  metadata of Roman SOC mission products. Otherwise, for data products
+  whose schemas reference or closely mimic SOC schemas, reference the
+  ccsp_minimal schema directly instead.
+
 type: object
 allOf:
-  - $ref: asdf://stsci.edu/datamodels/roman/schemas/PIT/pit_basic-1.0.0
+  - $ref: asdf://stsci.edu/datamodels/roman/schemas/CCSP/ccsp_minimal-1.0.0
   - type: object
     properties:
       file_date:
