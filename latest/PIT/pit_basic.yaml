@@ -63,23 +63,6 @@ properties:
     anyOf:
       - type: string
       - type: "null"
-  start_time_mjd:
-    title: MJD start time
-    description: |
-      Start time of data acquisition in MJD format.
-    tag: tag:stsci.edu:asdf/time/time-1.*
-  end_time_mjd:
-    title: MJD end time
-    description: |
-      Start time of data acquisition in MJD format.
-    tag: tag:stsci.edu:asdf/time/time-1.*
-  mid_time_mjd:
-    # Optional
-    title: MJD midpoint time
-    description: |
-      Midpoint time of data acquisition in MJD format. Omitted for
-      combined products with disjoint time footprints.
-    tag: tag:stsci.edu:asdf/time/time-1.*
   intent:
     # Optional
     title: Observation intent
