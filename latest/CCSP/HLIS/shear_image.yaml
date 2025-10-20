@@ -11,7 +11,7 @@ type: object
 properties:
   meta:
     allOf:
-      - $ref: asdf://stsci.edu/datamodels/roman/schemas/PIT/pit_common-1.0.0
+      - $ref: asdf://stsci.edu/datamodels/roman/schemas/CCSP/ccsp_custom_schema-1.0.0
       - properties:
           source_file:
             properties:
@@ -88,7 +88,19 @@ properties:
           wcs:
             title: WCS object
             tag: tag:stsci.edu:gwcs/wcs-*
-        required: [source_file, interpolation, shear, wcs]
+        required:
+          [
+            source_file,
+            interpolation,
+            shear,
+            wcs,
+            exposure,
+            instrument,
+            telescope,
+            target_coordinates,
+            s_region,
+            wavelength
+          ]
   data:
     title: Shear applied mosaic image
     description: |
