@@ -126,23 +126,6 @@ allOf:
         title: Pixel scale of spatial axes (arcsec/pixel)
         type: number
         unit: "arcsec/pixel"
-      spatial_dimensions:
-        # Optional
-        title: Pixel dimensions of spatial axes
-        description: |
-          Pixel dimensions of spatial axes for this data product. Used
-          to improve archival searches in the Virtual Observatory
-          (VO).
-        type: object
-        properties:
-          naxis1:
-            # Optional
-            title: Number of pixels along spatial axis 1
-            type: integer
-          naxis2:
-            # Optional
-            title: Number of pixels along spatial axis 2
-            type: integer
       waveband:
         title: Waveband
         description: |
