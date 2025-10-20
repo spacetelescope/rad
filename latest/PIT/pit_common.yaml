@@ -162,19 +162,6 @@ allOf:
         anyOf:
           - type: number
           - type: "null"
-      source_observations_id:
-        # Optional
-        title: List of observation_ids used to construct this product
-        description: |
-          A list of observation_ids (PPPPPCCAAASSSOOOVVVggsaaeee) used
-          to construct this product. If only one observation_id is was used this
-          will be string instead of a list of strings.
-          from which this PIT product was derived.
-        oneOf:
-          - type: string
-          - type: array
-            items:
-              type: string
     required:
       [
         file_date,
