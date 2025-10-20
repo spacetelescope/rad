@@ -100,18 +100,18 @@ allOf:
             title: Right ascension (deg)
             description: |
               Characteristic right ascension in degrees; typically the
-              coordinate of the source of interest, or the center of
-              the spatial image. May be null for large survey images,
-              simulated data, etc.
+              center of the spatial image, or the target coordinates
+              of a spectrum or light curve. May be null for large
+              survey images, simulated data, etc.
             type: number
             unit: "deg"
           dec:
             title: Declination (deg)
             description: |
               Characteristic declination in degrees; typically the
-              coordinate of the source of interest, or the center of
-              the spatial image. May be null for large survey images,
-              simulated data, etc.
+              center of the spatial image, or the target coordinates
+              of a spectrum or light curve. May be null for large
+              survey images, simulated data, etc.
             type: number
             unit: "deg"
         required: [reference_frame, ra, dec]
