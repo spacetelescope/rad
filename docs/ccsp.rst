@@ -64,7 +64,7 @@ that reference ``ccsp_custom_product`` as in the following example.
     properties:
       meta:
         allOf:
-          - $ref: asdf://stsci.edu/datamodels/roman/schemas/CCSP/ccsp_custom_product-1.4.0
+          - $ref: asdf://stsci.edu/datamodels/roman/schemas/CCSP/ccsp_custom_product-1.0.0
     required: [meta]
 
 This will check that the produced file contains:
@@ -89,7 +89,7 @@ about those additional product contents.
     properties:
       meta:
         allOf:
-          - $ref: asdf://stsci.edu/datamodels/roman/schemas/CCSP/ccsp_custom_product-1.4.0
+          - $ref: asdf://stsci.edu/datamodels/roman/schemas/CCSP/ccsp_custom_product-1.0.0
           - type: object
             properties:
               wcs:
@@ -120,7 +120,7 @@ about those additional product contents.
         unit: "DN"
     required: [data, meta]
 
-During interaction with the SOC and RAD maintainers you may be asked to add requirements
+During interaction with SOC and RAD maintainers you may be asked to add requirements
 for some optional contents in ``ccsp_custom_product``. For our example the WCS can
 be used to generate a single reference RA and DEC for this file and the optional
 ``target_coordinates`` sections of ``ccsp_custom_product`` can be made required
@@ -131,7 +131,7 @@ by modifying the schema to include:
     properties:
       meta:
         allOf:
-          - $ref: asdf://stsci.edu/datamodels/roman/schemas/CCSP/ccsp_custom_product-1.4.0
+          - $ref: asdf://stsci.edu/datamodels/roman/schemas/CCSP/ccsp_custom_product-1.0.0
           - required: [target_coordinates]
 
 
@@ -161,7 +161,7 @@ metadata that conforms to the SOC ``wfi_mosaic`` schema. The CCSP schema could c
         properties:
           meta:
             allOf:
-              - $ref: asdf://stsci.edu/datamodels/roman/schemas/CCSP/ccsp_minimal-1.4.0
+              - $ref: asdf://stsci.edu/datamodels/roman/schemas/CCSP/ccsp_minimal-1.0.0
 
 This schema will check that the file conforms to the ``wfi_mosaic`` schema
 and contains the metadata required by ``ccsp_minimal``. Additional schema
