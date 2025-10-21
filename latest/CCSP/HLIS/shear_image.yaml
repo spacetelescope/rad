@@ -3,7 +3,7 @@
 $schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.0.0
 id: asdf://stsci.edu/datamodels/roman/schemas/CCSP/HLIS/shear_image-1.0.0
 
-title: Shear image HLIS PIT product
+title: Shear image HLIS product
 
 datamodel_name: ShearImageModel
 
@@ -11,7 +11,7 @@ type: object
 properties:
   meta:
     allOf:
-      - $ref: asdf://stsci.edu/datamodels/roman/schemas/CCSP/ccsp_custom_schema-1.0.0
+      - $ref: asdf://stsci.edu/datamodels/roman/schemas/CCSP/ccsp_custom_product-1.0.0
       - required:
           [
             exposure,
@@ -19,7 +19,7 @@ properties:
             telescope,
             target_coordinates,
             s_region,
-            wavelength
+            wavelength,
           ]
       - properties:
           source_file:
@@ -97,13 +97,7 @@ properties:
           wcs:
             title: WCS object
             tag: tag:stsci.edu:gwcs/wcs-*
-        required:
-          [
-            source_file,
-            interpolation,
-            shear,
-            wcs
-          ]
+        required: [source_file, interpolation, shear, wcs]
   data:
     title: Shear applied mosaic image
     description: |

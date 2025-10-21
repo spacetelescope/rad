@@ -32,7 +32,6 @@ properties:
           Principal Investigator.
         type: string
       archive_lead:
-        # Optional
         title: CCSP staff lead for MAST ingest
         description: |
           The name(s) of CCSP team's staff member(s) who led coordination
@@ -74,12 +73,10 @@ properties:
           survey or simulated data.
         type: string
       intent:
-        # Optional
         title: Observation intent
         type: string
         enum: ["SCIENCE", "CALIBRATION"]
       simulated_flag:
-        # Optional
         title: Simulated data product flag
         description: |
           Boolean indicating whether this data product is simulated
@@ -87,7 +84,6 @@ properties:
           from a real observation).
         type: boolean
       target_keywords:
-        # Optional
         title: UAT keywords
         description: |
           Human-readable keyword(s) from the Unified Astronomy Thesaurus
@@ -100,7 +96,6 @@ properties:
             items:
               type: string
       target_keywords_id:
-        # Optional
         title: UAT keyword IDs
         description: |
           Numerical IDs from the Unified Astronomy Thesaurus (UAT),
@@ -113,7 +108,6 @@ properties:
             items:
               type: integer
       source_observations_id:
-        # Optional
         title: List of observation_ids used to construct this product
         description: |
           A list of observation_ids (PPPPPCCAAASSSOOOVVVggsaaeee) used
@@ -124,14 +118,15 @@ properties:
           - type: array
             items:
               type: string
-    required: [
-      community_product_id,
-      community_product_investigator,
-      doi,
-      file_version,
-      data_release,
-      license,
-      license_url,
-      target_name
-    ]
+    required:
+      [
+        name,
+        investigator,
+        doi,
+        file_version,
+        data_release_id,
+        license,
+        license_url,
+        target_name,
+      ]
 required: [ccsp]

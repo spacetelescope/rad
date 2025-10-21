@@ -1,7 +1,7 @@
 %YAML 1.1
 ---
-id: asdf://stsci.edu/datamodels/roman/manifests/datamodels-1.5.0
-extension_uri: asdf://stsci.edu/datamodels/roman/extensions/datamodels-1.5.0
+id: asdf://stsci.edu/datamodels/roman/manifests/datamodels-1.6.0
+extension_uri: asdf://stsci.edu/datamodels/roman/extensions/datamodels-1.6.0
 title: Datamodels extension
 description: |-
   A set of tags for serializing STScI Roman datamodels.
@@ -193,3 +193,8 @@ tags:
     title: MSOS Stack Level 3 Schema
     description: |-
       Level 3 schema for SSC's MSOS stack products
+  # CCSP data models
+  - tag_uri: asdf://stsci.edu/datamodels/roman/tags/CCSP/HLIS/shear_image-1.0.0
+    schema_uri: asdf://stsci.edu/datamodels/roman/schemas/CCSP/HLIS/shear_image-1.0.0
+    title: Shear image HLIS product
+    description: Shear image HLIS product

@@ -38,7 +38,6 @@ allOf:
               End time of data acquisition in ISO 8601 format.
             tag: tag:stsci.edu:asdf/time/time-1.*
           exposure_time:
-            # Optional
             title: Exposure time (s)
             description: |
               The amount of time elapsed between the start and the end
@@ -123,7 +122,6 @@ allOf:
           of degrees.
         type: string
       pixel_scale:
-        # Optional
         title: Pixel scale of spatial axes (arcsec/pixel)
         type: number
         unit: "arcsec/pixel"
