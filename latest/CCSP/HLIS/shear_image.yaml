@@ -12,6 +12,15 @@ properties:
   meta:
     allOf:
       - $ref: asdf://stsci.edu/datamodels/roman/schemas/CCSP/ccsp_custom_schema-1.0.0
+      - required:
+          [
+            exposure,
+            instrument,
+            telescope,
+            target_coordinates,
+            s_region,
+            wavelength
+          ]
       - properties:
           source_file:
             properties:
@@ -93,13 +102,7 @@ properties:
             source_file,
             interpolation,
             shear,
-            wcs,
-            exposure,
-            instrument,
-            telescope,
-            target_coordinates,
-            s_region,
-            wavelength
+            wcs
           ]
   data:
     title: Shear applied mosaic image
