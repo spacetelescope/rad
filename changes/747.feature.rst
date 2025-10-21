@@ -1,0 +1,1 @@
+Add initial schemas and docs for community contributed science product (CCSP) schemas.
