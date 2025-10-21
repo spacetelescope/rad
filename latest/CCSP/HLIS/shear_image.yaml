@@ -1,7 +1,7 @@
 %YAML 1.1
 ---
 $schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.0.0
-id: asdf://stsci.edu/datamodels/roman/schemas/PIT/HLIS/shear_image-1.0.0
+id: asdf://stsci.edu/datamodels/roman/schemas/CCSP/HLIS/shear_image-1.0.0
 
 title: Shear image HLIS PIT product
 
