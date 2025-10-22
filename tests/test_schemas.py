@@ -523,6 +523,42 @@ class TestReferenceFileSchemas:
         assert uri in latest_uris, f"{uri} is not in the list of schemas to be tested."
 
 
+class TestCCSPSchemas:
+    def test_ref_to_ccsp(self, ccsp_model_schema):
+        """
+        Test that the schema contains a reference to ccsp_minimal or ccsp_custom_product
+        """
+        targets = (
+            "asdf://stsci.edu/datamodels/roman/schemas/CCSP/ccsp_custom_product-",
+            "asdf://stsci.edu/datamodels/roman/schemas/CCSP/ccsp_minimal-",
+        )
+
+        def iter_path_value_pairs(value, path=()):
+            """
+            Generator returning (path, value) pairs for a nested schema.
+            """
+            if isinstance(value, dict):
+                for key, subvalue in value.items():
+                    yield from iter_path_value_pairs(subvalue, path=(*path, key))
+            elif isinstance(value, list):
+                for index, subvalue in enumerate(value):
+                    yield from iter_path_value_pairs(subvalue, path=(*path, index))
+            else:
+                yield path, value
+
+        for path, value in iter_path_value_pairs(ccsp_model_schema):
+            for target in targets:
+                if isinstance(value, str) and value.startswith(target):
+                    # check that this path is under "meta"
+                    target_path = ["properties", "meta", "$ref"]
+                    for sub_path in path:
+                        if sub_path == target_path[0]:
+                            target_path.pop(0)
+                    assert not target_path
+                    return
+        raise AssertionError("missing ref")
+
+
 class TestPatternElementConsistency:
     def test_phot_table_keys_have_optical_element_entry(self, phot_table_key_patterns, optical_element):
         """
