@@ -119,6 +119,7 @@ about those additional product contents.
         exact_datatype: true
         unit: "DN"
     required: [data, meta]
+    flowStyle: block
 
 During interaction with SOC and RAD maintainers you may be asked to add requirements
 for some optional contents in ``ccsp_custom_product``. For our example the WCS can
