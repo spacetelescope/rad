@@ -524,10 +524,11 @@ class TestReferenceFileSchemas:
 
 
 class TestCCSPSchemas:
-    def test_ref_to_ccsp(self, ccsp_model_schema):
+    def test_ref_to_ccsp(self, ccsp_model_schema, rad_uri_prefix):
         """
         Test that the schema contains a reference to ccsp_minimal or ccsp_custom_product
         """
+        # all CCSP model schemas should ref one of these
         targets = (
             "asdf://stsci.edu/datamodels/roman/schemas/CCSP/ccsp_custom_product-",
             "asdf://stsci.edu/datamodels/roman/schemas/CCSP/ccsp_minimal-",
@@ -546,17 +547,37 @@ class TestCCSPSchemas:
             else:
                 yield path, value
 
+        soc_ref = None
+        ccsp_ref = None
+        schema_uri = ccsp_model_schema["id"]
+
         for path, value in iter_path_value_pairs(ccsp_model_schema):
-            for target in targets:
-                if isinstance(value, str) and value.startswith(target):
-                    # check that this path is under "meta"
-                    target_path = ["properties", "meta", "$ref"]
-                    for sub_path in path:
-                        if sub_path == target_path[0]:
-                            target_path.pop(0)
-                    assert not target_path
-                    return
-        raise AssertionError("missing ref")
+            if path[-1] != "$ref":
+                continue
+            if any(value.startswith(target) for target in targets):
+                assert ccsp_ref is None, f"{schema_uri} contains multiple ccsp references: {((path, value), ccsp_ref)}"
+                ccsp_ref = (path, value)
+            elif "CCSP" not in value and value.startswith(rad_uri_prefix):
+                soc_ref = (path, value)
+
+        assert ccsp_ref, f"{schema_uri} does not contain a '$ref' to either ccsp_minimal or ccsp_custom_product"
+
+        if soc_ref:
+            assert "ccsp_minimal" in ccsp_ref[1], (
+                f"{schema_uri} contains a '$ref' to a SOC schema ({soc_ref}) but does not use ccsp_minimal"
+            )
+        else:
+            assert "ccsp_custom_product" in ccsp_ref[1], (
+                f"{schema_uri} does not contain a '$ref' to a SOC schema but does not use ccsp_custom_product"
+            )
+
+        # Check that the ccsp schema is referenced within meta
+        # This won't catch all schema structures but checks for the common one.
+        target_path = ["properties", "meta", "$ref"]
+        for sub_path in ccsp_ref[0]:
+            if sub_path == target_path[0]:
+                target_path.pop(0)
+        assert not target_path, f"{schema_uri} ccsp '$ref' is not under 'meta': {ccsp_ref[0]}"
 
 
 class TestPatternElementConsistency:
