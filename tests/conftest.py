@@ -142,6 +142,14 @@ def latest_reference_files_dir(latest_dir):
     return latest_dir / "reference_files"
 
 
+@pytest.fixture(scope="session")
+def latest_ccsp_dir(latest_dir):
+    """
+    Get the path to the latest CCSP schemas directory.
+    """
+    return latest_dir / "CCSP"
+
+
 @pytest.fixture(scope="session", params=_LATEST_TOP_LEVEL_PATHS)
 def latest_top_level_path(request):
     """
