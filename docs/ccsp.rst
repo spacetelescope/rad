@@ -58,7 +58,11 @@ that reference ``ccsp_custom_product`` as in the following example.
     YAML 1.1
     ---
     $schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.0.0
-    id: asdf://stsci.edu/datamodels/roman/schemas/CCSP/example_product-1.0.0
+    id: asdf://stsci.edu/datamodels/roman/schemas/CCSP/EXAMPLE/custom_product-1.0.0
+
+    title: Example CCSP custom product
+
+    datamodel_name: CustomProductModel
 
     type: object
     properties:
@@ -66,6 +70,7 @@ that reference ``ccsp_custom_product`` as in the following example.
         allOf:
           - $ref: asdf://stsci.edu/datamodels/roman/schemas/CCSP/ccsp_custom_product-1.0.0
     required: [meta]
+    flowStyle: block
 
 This will check that the produced file contains:
 
@@ -104,17 +109,19 @@ about those additional product contents.
                   count:
                     title: Widget count
                     type: integer
-              required: [state, count]
+                required: [state, count]
             required: [wcs, widget]
       data:
         title: My data
         description: Described here
+        tag: tag:stsci.edu:asdf/core/ndarray-1.*
         datatype: float32
         exact_datatype: true
         unit: "DN"
       err:
         title: Optional err
         description: Described here
+        tag: tag:stsci.edu:asdf/core/ndarray-1.*
         datatype: float32
         exact_datatype: true
         unit: "DN"
@@ -154,7 +161,11 @@ metadata that conforms to the SOC ``wfi_mosaic`` schema. The CCSP schema could c
     YAML 1.1
     ---
     $schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.0.0
-    id: asdf://stsci.edu/datamodels/roman/schemas/CCSP/example_mosaic-1.0.0
+    id: asdf://stsci.edu/datamodels/roman/schemas/CCSP/EXAMPLE/derived_mosaic-1.0.0
+
+    title: Example CCSP mosaic derived product
+
+    datamodel_name: DerivedMosaicModel
 
     allOf:
       - $ref: asdf://stsci.edu/datamodels/roman/schemas/wfi_mosaic-1.4.0
@@ -163,6 +174,8 @@ metadata that conforms to the SOC ``wfi_mosaic`` schema. The CCSP schema could c
           meta:
             allOf:
               - $ref: asdf://stsci.edu/datamodels/roman/schemas/CCSP/ccsp_minimal-1.0.0
+
+    flowStyle: block
 
 This schema will check that the file conforms to the ``wfi_mosaic`` schema
 and contains the metadata required by ``ccsp_minimal``. Additional schema

@@ -3,7 +3,7 @@
 $schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.0.0
 id: asdf://stsci.edu/datamodels/roman/schemas/CCSP/EXAMPLE/custom_product-1.0.0
 
-title: Shear image HLIS product
+title: Example CCSP custom product
 
 datamodel_name: CustomProductModel
 
@@ -31,15 +31,15 @@ properties:
         required: [wcs, widget]
   data:
     title: My data
-    tag: tag:stsci.edu:asdf/core/ndarray-1.*
     description: Described here
+    tag: tag:stsci.edu:asdf/core/ndarray-1.*
     datatype: float32
     exact_datatype: true
     unit: "DN"
   err:
     title: Optional err
-    tag: tag:stsci.edu:asdf/core/ndarray-1.*
     description: Described here
+    tag: tag:stsci.edu:asdf/core/ndarray-1.*
     datatype: float32
     exact_datatype: true
     unit: "DN"
