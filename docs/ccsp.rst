@@ -11,7 +11,7 @@ CCSP Schemas
 Creating a New CCSP Schema
 --------------------------
 
-Please start a conversation with SOC and RAD maintainers by creating
+Please start a conversation MAST and RAD maintainers by creating
 a `issue <https://github.com/spacetelescope/rad/issues/new>`_. Any
 details that you can provide are helpful. We are happy to help guide
 you through the process and fill in any gaps in the following documentation.
@@ -58,11 +58,11 @@ that reference ``ccsp_custom_product`` as in the following example.
     YAML 1.1
     ---
     $schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.0.0
-    id: asdf://stsci.edu/datamodels/roman/schemas/CCSP/EXAMPLE/custom_product-1.0.0
+    id: asdf://stsci.edu/datamodels/roman/schemas/CCSP/EXAMPLE/example_custom_product-1.0.0
 
     title: Example CCSP custom product
 
-    datamodel_name: CustomProductModel
+    datamodel_name: ExampleCustomProductModel
 
     type: object
     properties:
@@ -161,11 +161,11 @@ metadata that conforms to the SOC ``wfi_mosaic`` schema. The CCSP schema could c
     YAML 1.1
     ---
     $schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.0.0
-    id: asdf://stsci.edu/datamodels/roman/schemas/CCSP/EXAMPLE/derived_mosaic-1.0.0
+    id: asdf://stsci.edu/datamodels/roman/schemas/CCSP/EXAMPLE/example_derived_mosaic-1.0.0
 
     title: Example CCSP mosaic derived product
 
-    datamodel_name: DerivedMosaicModel
+    datamodel_name: ExampleDerivedMosaicModel
 
     allOf:
       - $ref: asdf://stsci.edu/datamodels/roman/schemas/wfi_mosaic-1.4.0
