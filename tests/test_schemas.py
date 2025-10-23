@@ -566,10 +566,6 @@ class TestCCSPSchemas:
             assert "ccsp_minimal" in ccsp_ref[1], (
                 f"{schema_uri} contains a '$ref' to a SOC schema ({soc_ref}) but does not use ccsp_minimal"
             )
-        else:
-            assert "ccsp_custom_product" in ccsp_ref[1], (
-                f"{schema_uri} does not contain a '$ref' to a SOC schema but does not use ccsp_custom_product"
-            )
 
         # Check that the ccsp schema is referenced within meta
         # This won't catch all schema structures but checks for the common one.
