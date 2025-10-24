@@ -123,7 +123,7 @@ about those additional product contents.
     required: [data, meta]
     flowStyle: block
 
-During interaction with SOC and RAD maintainers you may be asked to add requirements
+During interaction with MAST and the RAD maintainers, you may be asked to add requirements
 for some optional contents in ``ccsp_custom_product``. For our example the WCS can
 be used to generate a single reference RA and DEC for this file and the optional
 ``target_coordinates`` sections of ``ccsp_custom_product`` can be made required
@@ -143,13 +143,15 @@ Extending SOC Products
 
 If the contributed product largely (or entirely) matches a SOC product
 it may make sense, through conversation with SOC,
-to extend the corresponding SOC schema. This has some benefits and
-some downsides. Extending a SOC schema enforces consistentcy for
+to extend the corresponding SOC schema. 
+
+One way to do this is by referencing the SOC schema using a ``$ref``. This has some benefits and
+some downsides. Extending a SOC schema enforces consistency for
 the CCSP and SOC products but also requires that the CCSP product follow
 any changes made to SOC schemas.
 
-Let's consider an example for a community developed coadd (Level 3) product with
-metadata that conforms to the SOC ``wfi_mosaic`` schema. The CCSP schema could contain:
+Let's consider an example for a community developed coadd product with
+data and metadata that conforms to the SOC ``wfi_mosaic`` schema. The CCSP schema could contain:
 
 .. code:: yaml
 

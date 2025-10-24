@@ -140,20 +140,20 @@ allOf:
                 items:
                   type: string
           minimum:
-            title: Minimum wavelength (units in documentation)
+            title: Minimum wavelength
             description: |
               Minimum wavelength bound of this data product, used to
               enable archival searches. Specify units in MAST
-              documentation.
+              documentation or a higher-level schema.
             anyOf:
               - type: number
               - type: "null"
           maximum:
-            title: Maximum wavelength (units in documentation)
+            title: Maximum wavelength
             description: |
               Maximum wavelength bound of this data product, used to
               enable archival searches. Specify units in MAST
-              documentation.
+              documentation or a higher-level schema.
             anyOf:
               - type: number
               - type: "null"
