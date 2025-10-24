@@ -118,7 +118,6 @@ about those additional product contents.
         title: Science Data (MJy/sr)
         description: |
           Described here
-        description: Described here
         tag: tag:stsci.edu:asdf/core/ndarray-1.*
         datatype: float32
         exact_datatype: true
