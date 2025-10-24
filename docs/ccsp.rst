@@ -46,7 +46,7 @@ Custom Products
 """""""""""""""
 
 Products that don't closely match a SOC product should have schemas
-that reference ``ccsp_custom_product`` as in the following example.
+that reference ``ccsp_custom_product``, as in the following example.
 
 .. code:: yaml
 
