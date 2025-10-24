@@ -6,7 +6,7 @@ id: asdf://stsci.edu/datamodels/roman/schemas/SSC/MSOS/wfi_microlensing_light_cu
 # https://outerspace.stsci.edu/display/RSEC/Level+4+Microlensing+Data+Products#Level4MicrolensingDataProducts-Level4-LightCurveCatalogDataProduct
 
 title: GBTDS Level 4 Light Curve Catalog
-archive_meta: Placeholder SOC file type
+archive_meta: Science WFI Level 4 MSOS Light Curve Catalog
 type: object
 allOf:
   - $ref: asdf://stsci.edu/datamodels/roman/schemas/SSC/ssc_basic-1.0.0
