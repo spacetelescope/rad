@@ -42,10 +42,10 @@ Instead CCSP schemas must contain a reference to either:
    CCSP/ccsp_minimal-1.0.0
    CCSP/ccsp_custom_product-1.0.0
 
-Which schema to use will depend on the details of the product as described
-below. In both cases these schemas will require the addition of a new
-ASDF subtree ``meta.ccsp`` which will contain information necessary
-for accurate archival of CCSP files.
+Which schema to use will depend on the details of the product, as described
+below. In both cases, these schemas will require the addition of a new
+ASDF subtree ``meta.ccsp``, which will contain information necessary
+to archive CCSP files.
 
 Custom Products
 """""""""""""""
