@@ -143,7 +143,7 @@ Extending SOC Products
 
 If the contributed product largely (or entirely) matches a SOC product
 it may make sense, through conversation with SOC,
-to extend the corresponding SOC schema. 
+to extend the corresponding SOC schema.
 
 One way to do this is by referencing the SOC schema using a ``$ref``. This has some benefits and
 some downsides. Extending a SOC schema enforces consistency for

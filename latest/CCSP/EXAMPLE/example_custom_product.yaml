@@ -20,7 +20,7 @@ properties:
             target_coordinates,
             s_region,
             pixel_scale,
-            wavelength
+            wavelength,
           ]
       - type: object
         properties:
