@@ -150,7 +150,16 @@ can be made required by modifying your schema to include:
       meta:
         allOf:
           - $ref: asdf://stsci.edu/datamodels/roman/schemas/CCSP/ccsp_custom_product-1.0.0
-          - required: [target_coordinates]
+          - required:
+              [
+                exposure,
+                instrument,
+                telescope,
+                target_coordinates,
+                s_region,
+                pixel_scale,
+                wavelength,
+              ]
 
 
 Extending SOC Products
