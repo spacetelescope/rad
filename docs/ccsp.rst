@@ -94,32 +94,45 @@ about those additional product contents.
             properties:
               wcs:
                 title: World Coordinate System (WCS)
+                description: |
+                  WCS for the data array, and for the err array if present
                 tag: tag:stsci.edu:gwcs/wcs-*
               widget:
                 title: Widget metadata
+                description: |
+                  Metadata describing the state of whatever the "widget" is
                 properties:
                   state:
                     title: Widget state
+                    description: |
+                      Explanation of what widget state means
                     type: string
                   count:
                     title: Widget count
+                    description: |
+                      Explanation of what widget count means
                     type: integer
                 required: [state, count]
             required: [wcs, widget]
       data:
-        title: My data
+        title: Science Data (MJy/sr)
+        description: |
+          Described here
         description: Described here
         tag: tag:stsci.edu:asdf/core/ndarray-1.*
         datatype: float32
         exact_datatype: true
-        unit: "DN"
+        ndim: 2
+        unit: "MJy/sr"
       err:
-        title: Optional err
-        description: Described here
+        title: Error (MJy/sr)
+        description: |
+          Total error array corresponding to Science Data
         tag: tag:stsci.edu:asdf/core/ndarray-1.*
         datatype: float32
         exact_datatype: true
-        unit: "DN"
+        ndim: 2
+        unit: "MJy/sr"
     required: [data, meta]
     flowStyle: block
 
