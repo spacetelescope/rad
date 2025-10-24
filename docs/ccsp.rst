@@ -11,8 +11,8 @@ CCSP Schemas
 Creating a New CCSP Schema
 --------------------------
 
-Please start a conversation MAST and RAD maintainers by creating
-a `issue <https://github.com/spacetelescope/rad/issues/new>`_. Any
+Please start a conversation with MAST and the RAD maintainers by creating
+an `issue <https://github.com/spacetelescope/rad/issues/new>`_. Any
 details that you can provide are helpful. We are happy to help guide
 you through the process and fill in any gaps in the following documentation.
 Opening the issue allows us to know that there is interest in a contribution
