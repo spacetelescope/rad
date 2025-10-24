@@ -124,10 +124,12 @@ about those additional product contents.
     flowStyle: block
 
 During interaction with MAST and the RAD maintainers, you may be asked to add requirements
-for some optional contents in ``ccsp_custom_product``. For our example the WCS can
-be used to generate a single reference RA and DEC for this file and the optional
-``target_coordinates`` sections of ``ccsp_custom_product`` can be made required
-by modifying the schema to include:
+for some optional contents in ``ccsp_custom_product``. For example, for targeted
+observational data with a relatively small sky footprint, MAST will typically ask for a set of
+predefined metadata sub-trees to be populated with information about the exposure,
+instrument, telescope, target coordinates, sky footprint, pixel scale, and
+wavelength information. These previously optional sections of ``ccsp_custom_product``
+can be made required by modifying your schema to include:
 
 .. code:: yaml
 
