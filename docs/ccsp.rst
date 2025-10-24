@@ -16,7 +16,7 @@ an `issue <https://github.com/spacetelescope/rad/issues/new>`_. Any
 details that you can provide are helpful. We are happy to help guide
 you through the process and fill in any gaps in the following documentation.
 Opening the issue allows us to know that there is interest in a contribution
-to RAD and help us to plan development and releases.
+to RAD, and helps us to plan development and releases.
 
 Please review the :ref:`creating` documentation to understand the process
 for creating new SOC schemas. The process for CCSP schemas is very similar
