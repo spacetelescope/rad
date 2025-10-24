@@ -67,9 +67,9 @@ that reference ``ccsp_custom_product``, as in the following example.
     required: [meta]
     flowStyle: block
 
-This will check that the produced file contains:
+This will check that:
 
-- a ``meta`` key
+- the produced file contains a ``meta`` key
 - the contents of ``meta`` conform to ``ccsp_custom_product``
 
 The schema should be expanded to include descriptions and constraints on the
