@@ -28,12 +28,7 @@ Archival Metadata
 ^^^^^^^^^^^^^^^^^
 
 The archival process for CCSP files differs from the process used for SOC
-products. As a result, CCSP schemas should not add the keywords
-described at :ref:`external-metadata`
-
-- ``sdf``
-- ``archive_catalog``
-- ``archive_meta``
+products. As a result, CCSP teams should entirely ignore the  :ref:`external-metadata` section, and should not add the keywords described therein.
 
 Instead CCSP schemas must contain a reference to either:
 
