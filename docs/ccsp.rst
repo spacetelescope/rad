@@ -22,9 +22,9 @@ Please review the :ref:`creating` documentation to understand the process
 for creating new SOC schemas. The process for CCSP schemas is very similar
 with a few differences noted here.
 
-.. _ccsp-external_metadata:
+.. _ccsp-archival_metadata:
 
-External Metadata
+Archival Metadata
 ^^^^^^^^^^^^^^^^^
 
 The archival process for CCSP files differs from the process used for SOC
