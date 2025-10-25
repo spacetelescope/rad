@@ -6,7 +6,7 @@ id: asdf://stsci.edu/datamodels/roman/schemas/SSC/MSOS/wfi_microlensing_referenc
 # https://outerspace.stsci.edu/display/RSEC/Level+3+Microlensing+Data+Products#Level3MicrolensingDataProducts-Level3ReferenceFrame
 
 title: GBTDS L3 Reference Frame
-archive_meta: Placeholder SOC file type
+archive_meta: Science WFI Level 3 MSOS Reference Frame
 type: object
 allOf:
   - $ref: asdf://stsci.edu/datamodels/roman/schemas/SSC/ssc_basic-1.0.0
