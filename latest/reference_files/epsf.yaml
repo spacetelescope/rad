@@ -64,7 +64,8 @@ properties:
             title: Jitter Position Angle (deg)
             description: Position angle (in degrees) of the jitter kernel in the science coordinate system.
             type: number
-        required: [pixel_x, pixel_y, jitter_major, jitter_minor, jitter_position_angle]
+        required:
+          [pixel_x, pixel_y, jitter_major, jitter_minor, jitter_position_angle]
   psf:
     title: ePSF Stamps
     description: Postage stamps of ePSF models. The 5-dimensional array is
