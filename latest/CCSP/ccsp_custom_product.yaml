@@ -99,8 +99,7 @@ allOf:
             description: |
               Characteristic right ascension in degrees; typically the
               center of the spatial image, or the target coordinates
-              of a spectrum or light curve. May be null for large
-              survey images, simulated data, etc.
+              of a spectrum or light curve.
             type: number
             unit: "deg"
           dec:
@@ -108,8 +107,7 @@ allOf:
             description: |
               Characteristic declination in degrees; typically the
               center of the spatial image, or the target coordinates
-              of a spectrum or light curve. May be null for large
-              survey images, simulated data, etc.
+              of a spectrum or light curve.
             type: number
             unit: "deg"
         required: [reference_frame, ra, dec]
