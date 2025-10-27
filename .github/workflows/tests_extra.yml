@@ -22,6 +22,7 @@ jobs:
       envs: |
         - macos: py311-xdist
         - macos: py312-xdist
+        - macos: py313-xdist
         - linux: py311-oldestdeps-xdist
-        - linux: py313-devdeps-xdist
-        - macos: py313-devdeps-xdist
+        - linux: py3-devdeps-xdist
+        - macos: py3-devdeps-xdist
