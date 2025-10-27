@@ -6,7 +6,7 @@ id: asdf://stsci.edu/datamodels/roman/schemas/SSC/MSOS/wfi_microlensing_variabil
 # https://outerspace.stsci.edu/display/RSEC/Level+4+Microlensing+Data+Products#Level4MicrolensingDataProducts-Level4-VariabilityCatalogDataProduct
 
 title: GBTDS Level 4 Variability Catalog
-archive_meta: Placeholder SOC file type
+archive_meta: Science WFI Level 4 MSOS Variability Catalog
 type: object
 allOf:
   - $ref: asdf://stsci.edu/datamodels/roman/schemas/SSC/ssc_basic-1.0.0

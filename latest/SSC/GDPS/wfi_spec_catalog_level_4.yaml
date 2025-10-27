@@ -7,7 +7,7 @@ id: asdf://stsci.edu/datamodels/roman/schemas/SSC/GDPS/wfi_spec_catalog_level_4-
 # Initial keyword list is based on Box manifest example 'wfi_spec_catalog_l4_manifest.json'
 
 title: Level 4 Grism/Prism - Catalog
-archive_meta: Placeholder SOC file type
+archive_meta: Science WFI Level 4 Spec Catalog
 type: object
 allOf:
   - $ref: asdf://stsci.edu/datamodels/roman/schemas/SSC/ssc_basic-1.0.0

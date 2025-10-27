@@ -6,7 +6,7 @@ id: asdf://stsci.edu/datamodels/roman/schemas/SSC/MSOS/wfi_microlensing_event_ca
 # https://outerspace.stsci.edu/display/RSEC/Level+4+Microlensing+Data+Products#Level4MicrolensingDataProducts-Level4-MicrolensingEventCatalogDataProduct
 
 title: GBTDS Level 4 Microlensing Event Catalog
-archive_meta: Placeholder SOC file type
+archive_meta: Science WFI Level 4 MSOS Event Catalog
 type: object
 allOf:
   - $ref: asdf://stsci.edu/datamodels/roman/schemas/SSC/ssc_basic-1.0.0
