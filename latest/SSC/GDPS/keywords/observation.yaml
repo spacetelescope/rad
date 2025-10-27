@@ -13,12 +13,12 @@ properties:
     type: integer
     archive_catalog:
       datatype: int
-      destination: [Placeholder.program]
+      destination: [WFISpec.program]
   program_complete:
     title: Program Complete
     description: Example value 'False|True'
     type: boolean
     archive_catalog:
       datatype: nchar(1)
-      destination: [Placeholder.program_complete]
+      destination: [WFISpec.program_complete]
 required: [program, program_complete]

@@ -14,7 +14,7 @@ properties:
     type: number
     archive_catalog:
       datatype: float
-      destination: [CGIExposure.spam_h, CGIMosiac.spam_h]
+      destination: [CGIExposure.spam_h, CGIMosaic.spam_h]
   SPAM_V:
     title: SPAM +V Position
     description: SPAM +V Position (um)

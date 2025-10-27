@@ -14,14 +14,14 @@ properties:
     type: number
     archive_catalog:
       datatype: float
-      destination: [WFIReferenceFrame.ra_ref]
+      destination: [WFIMSOSReferenceFrame.ra_ref]
   dec:
     title: Dec (J2000)
     description: Declination (J2000), from -90 to +90, in degrees
     type: number
     archive_catalog:
       datatype: float
-      destination: [WFIReferenceFrame.dec_ref]
+      destination: [WFIMSOSReferenceFrame.dec_ref]
   target:
     title: Target Name
     description: Name of the source pointed at by the telescope
@@ -29,7 +29,7 @@ properties:
     maxLength: 256
     archive_catalog:
       datatype: nvarchar(256)
-      destination: [WFIReferenceFrame.target_name]
+      destination: [WFIMSOSReferenceFrame.target_name]
   refframe: # SOC Proposed
     # This is optional, if not provided MAST will just assume ICRS, but best to explicitly provide.
     title: Reference Frame
@@ -38,7 +38,7 @@ properties:
     maxLength: 16
     archive_catalog:
       datatype: nvarchar(16)
-      destination: [WFIReferenceFrame.reference_frame]
+      destination: [WFIMSOSReferenceFrame.reference_frame]
   equinox: # SOC Proposed
     # This is optional, if not provided MAST will just assume 2000.0, but best to explicitly provide.
     title: Equinox
@@ -46,6 +46,6 @@ properties:
     type: number
     archive_catalog:
       datatype: float
-      destination: [WFIReferenceFrame.equinox]
+      destination: [WFIMSOSReferenceFrame.equinox]
 
 required: [ra, dec, target, refframe, equinox]

@@ -13,6 +13,6 @@ properties:
     type: integer
     archive_catalog:
       datatype: smallint
-      destination: [MSOSCatalog.sequence, WFIReferenceFrame.sequence]
+      destination: [WFIMSOSCatalog.sequence, WFIMSOSReferenceFrame.sequence]
 
 required: [sequence]

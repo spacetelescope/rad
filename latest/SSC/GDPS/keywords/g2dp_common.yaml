@@ -14,7 +14,7 @@ properties:
     maxLength: 128
     archive_catalog:
       datatype: nvarchar(128)
-      destination: [Placeholder.version_g2dp_software]
+      destination: [WFISpec.version_g2dp_software]
   g2dp_run_id:
     title: G2DP Run ID
     description: ID of the G2DP run that created the G2DP file(s).  Example value '42'
@@ -22,7 +22,7 @@ properties:
     maxLength: 128
     archive_catalog:
       datatype: nvarchar(128)
-      destination: [Placeholder.g2dp_run_id]
+      destination: [WFISpec.g2dp_run_id]
   # NOTE: Including segment and visit will permit better checking that the SSC spectral catalogs match the FILESET_ID it gets associated with
   segment:
     title: Segment number
@@ -30,14 +30,14 @@ properties:
     type: integer
     archive_catalog:
       datatype: smallint
-      destination: [Placeholder.segment]
+      destination: [WFISpec.segment]
   visit:
     title: Visit number
     description: Visit number within a program
     type: integer
     archive_catalog:
       datatype: smallint
-      destination: [Placeholder.visit]
+      destination: [WFISpec.visit]
   observation_id:
     title: Programmatic Observation Identifier
     description: Observation ID of the last SOC-provided L2 spectral image used to create the file. Example value '0000101001001001001'
@@ -45,5 +45,5 @@ properties:
     maxLength: 28
     archive_catalog:
       datatype: nvarchar(28)
-      destination: [Placeholder.observation_id]
+      destination: [WFISpec.observation_id]
 required: [version_g2dp_software, g2dp_run_id, segment, visit, observation_id]

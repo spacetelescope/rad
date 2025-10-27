@@ -9,50 +9,50 @@ type: object
 properties:
   msos_photometry_version:
     title: Msos Photometry Version
-    description: Placeholder.  Example value '3.3.0'
+    description: WFISpec.  Example value '3.3.0'
     type: string
     maxLength: 128
     archive_catalog:
       datatype: nvarchar(128)
-      destination: [MSOSCatalog.msos_photometry_version]
+      destination: [WFIMSOSCatalog.msos_photometry_version]
   msos_events_version:
     title: Msos Events Version
-    description: Placeholder.  Example value '3.3.0'
+    description: WFISpec.  Example value '3.3.0'
     type: string
     maxLength: 128
     archive_catalog:
       datatype: nvarchar(128)
-      destination: [MSOSCatalog.msos_events_version]
+      destination: [WFIMSOSCatalog.msos_events_version]
   msos_detection_efficiency_version:
     title: Msos Detection Efficiency Version
-    description: Placeholder.
+    description: WFISpec.
     type: string
     maxLength: 128
     archive_catalog:
       datatype: nvarchar(128)
-      destination: [MSOSCatalog.msos_detection_efficiency_version]
+      destination: [WFIMSOSCatalog.msos_detection_efficiency_version]
   season:
     title: Season
-    description: Placeholder.  Example value '0'
+    description: WFISpec.  Example value '0'
     type: string
     maxLength: 8
     archive_catalog:
       datatype: nvarchar(8)
-      destination: [MSOSCatalog.season]
+      destination: [WFIMSOSCatalog.season]
   flip_flag:
     title: Flip Flag
     description: Placeholder
     type: boolean
     archive_catalog:
       datatype: nchar(1)
-      destination: [MSOSCatalog.flip_flag]
+      destination: [WFIMSOSCatalog.flip_flag]
   galactic_center_flag:
     title: Galactic Center Flag
     description: Placeholder
     type: boolean
     archive_catalog:
       datatype: nchar(1)
-      destination: [MSOSCatalog.galactic_center_flag]
+      destination: [WFIMSOSCatalog.galactic_center_flag]
 
 required:
   [
