@@ -39,8 +39,14 @@ allOf:
           exposure_time:
             title: Exposure time (s)
             description: |
-              The amount of time elapsed between the start and the end
-              of the observation or data stream.
+              For individual exposures, the amount of time elapsed
+              between the start and end of the observation or data
+              stream. For time series, the total accumulated exposure
+              time summed over all time slices. For co-adds, a
+              representative exposure time (or representative effective
+              exposure time) signifying the depth of the combined
+              product, such as the mean of the net exposure time
+              from each pixel with non-zero exposure.
             type: number
             unit: "s"
           effective_exposure_time:
@@ -48,9 +54,11 @@ allOf:
             description: |
               The total accumulated effective exposure duration for
               this data product, excluding dead time and lost time.
+              For time series, the total accumulated effective exposure
+              time summed over all time slices.
             type: number
             unit: "s"
-        required: [start_time, end_time, effective_exposure_time]
+        required: [start_time, end_time, exposure_time]
       instrument:
         title: Instrument observing configuration
         type: object
