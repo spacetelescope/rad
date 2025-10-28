@@ -19,12 +19,7 @@ properties:
         origin: TBD
     archive_catalog:
       datatype: nvarchar(5)
-      destination:
-        [
-          WFIExposure.instrument_name,
-          GuideWindow.instrument_name,
-          WFICommon.instrument_name,
-        ]
+      destination: [WFIExposure.instrument_name, GuideWindow.instrument_name]
   detector:
     allOf:
       - $ref: asdf://stsci.edu/datamodels/roman/schemas/enums/wfi_detector-1.0.0
@@ -38,8 +33,7 @@ properties:
         origin: TBD
     archive_catalog:
       datatype: nvarchar(10)
-      destination:
-        [WFIExposure.detector, GuideWindow.detector, WFICommon.detector]
+      destination: [WFIExposure.detector, GuideWindow.detector]
   optical_element:
     allOf:
       - $ref: asdf://stsci.edu/datamodels/roman/schemas/enums/wfi_optical_element-1.0.0
@@ -53,10 +47,5 @@ properties:
         origin: TBD
     archive_catalog:
       datatype: nvarchar(20)
-      destination:
-        [
-          WFIExposure.optical_element,
-          GuideWindow.optical_element,
-          WFICommon.optical_element,
-        ]
+      destination: [WFIExposure.optical_element, GuideWindow.optical_element]
 required: [detector, optical_element, name]
