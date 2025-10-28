@@ -19,7 +19,6 @@ archive_catalog:
     [
       WFIExposure.filedate,
       GuideWindow.filedate,
-      WFICommon.filedate,
       WFIMosaic.filedate,
       SourceCatalog.filedate,
       SegmentationMap.filedate,
