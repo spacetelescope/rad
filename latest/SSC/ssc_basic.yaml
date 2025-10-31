@@ -25,7 +25,14 @@ properties:
     archive_catalog:
       datatype: nvarchar(1024)
       destination:
-        [CGIExposure.filename, CGIMosaic.filename, CGIAncillary.filename]
+        [
+          CGIExposure.filename,
+          CGIMosaic.filename,
+          CGIAncillary.filename,
+          WFIMSOSReferenceFrame.filename,
+          WFIMSOSCatalog.filename,
+          WFISpec.filename,
+        ]
   file_date:
     title: File Creation Date (UTC)
     description: |
@@ -37,7 +44,14 @@ properties:
     archive_catalog:
       datatype: datetime2
       destination:
-        [CGIExposure.filedate, CGIMosaic.filedate, CGIAncillary.filedate]
+        [
+          CGIExposure.filedate,
+          CGIMosaic.filedate,
+          CGIAncillary.filedate,
+          WFIMSOSReferenceFrame.filedate,
+          WFIMSOSCatalog.filedate,
+          WFISpec.filedate,
+        ]
   origin:
     title: Institution / Organization Name
     description: |
@@ -48,6 +62,14 @@ properties:
     maxLength: 15
     archive_catalog:
       datatype: nvarchar(15)
-      destination: [CGIExposure.origin, CGIMosaic.origin, CGIAncillary.origin]
+      destination:
+        [
+          CGIExposure.origin,
+          CGIMosaic.origin,
+          CGIAncillary.origin,
+          WFIMSOSReferenceFrame.origin,
+          WFIMSOSCatalog.origin,
+          WFISpec.origin,
+        ]
 
 required: [filename, file_date, origin]

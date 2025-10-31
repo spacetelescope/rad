@@ -126,7 +126,7 @@ properties:
     type: boolean
     archive_catalog:
       datatype: nchar(1)
-      destination: [CGIExposure.1svalid]
+      destination: [CGIExposure._1svalid]
   Z2AVG:
     title: Average Z2 (tip) from previous second
     description: Average Z2 (tip) from previous second (nm)
@@ -175,7 +175,7 @@ properties:
     type: boolean
     archive_catalog:
       datatype: nchar(1)
-      destination: [CGIExposure.10svalid]
+      destination: [CGIExposure._10svalid]
   Z4AVG:
     title: Z4 (focus) coeff for 10000 frames
     description: Z4 (focus) coeff for 10000 frames (nm)
