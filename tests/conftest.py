@@ -25,7 +25,6 @@ _MANIFEST_URIS = tuple(uri for uri in asdf.get_config().resource_manager if uri.
 _SCHEMA_URIS = tuple(u for u in asdf.get_config().resource_manager if u.startswith(_SCHEMA_URI_PREFIX) and u != _METASCHEMA_URI)
 _URIS = _SCHEMA_URIS + _MANIFEST_URIS + (_METASCHEMA_URI,)
 
-
 # load all the schemas from the ASDF resource manager
 _CURRENT_CONTENT = MappingProxyType({uri: asdf.get_config().resource_manager[uri] for uri in _URIS})
 _CURRENT_RESOURCES = MappingProxyType({uri: yaml.safe_load(content) for uri, content in _CURRENT_CONTENT.items()})
@@ -140,6 +139,14 @@ def latest_reference_files_dir(latest_dir):
     Get the path to the latest reference files directory.
     """
     return latest_dir / "reference_files"
+
+
+@pytest.fixture(scope="session")
+def latest_ccsp_dir(latest_dir):
+    """
+    Get the path to the latest CCSP schemas directory.
+    """
+    return latest_dir / "CCSP"
 
 
 @pytest.fixture(scope="session", params=_LATEST_TOP_LEVEL_PATHS)
@@ -363,6 +370,22 @@ def ref_file_uri(request):
     return request.param
 
 
+@pytest.fixture(scope="session", params=tuple(uri for uri in _LATEST_URIS if "/CCSP" in uri and uri in _SCHEMA_URIS))
+def ccsp_uri(request):
+    """
+    Get a URI related to the RAD CCSP schemas.
+    """
+    return request.param
+
+
+@pytest.fixture(scope="session", params=tuple(uri for uri in _LATEST_DATAMODEL_URIS if "/CCSP" in uri))
+def ccsp_model_uri(request):
+    """
+    Get a URI related to the RAD CCSP modelschemas.
+    """
+    return request.param
+
+
 ### Fixtures for working with the information within the resources
 @pytest.fixture(scope="session")
 def current_content(uri):
@@ -402,6 +425,22 @@ def ref_file_schema(ref_file_uri, current_resources):
     Get a reference file schema resource for RAD from the ASDF resource manager.
     """
     return current_resources[ref_file_uri]
+
+
+@pytest.fixture(scope="session")
+def ccsp_schema(ccsp_uri, current_resources):
+    """
+    Get a CCSP schema.
+    """
+    return current_resources[ccsp_uri]
+
+
+@pytest.fixture(scope="session")
+def ccsp_model_schema(ccsp_model_uri, current_resources):
+    """
+    Get a CCSP model schema.
+    """
+    return current_resources[ccsp_model_uri]
 
 
 ### Fixtures for working with the content within the manifests like tags
