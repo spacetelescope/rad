@@ -23,7 +23,7 @@ allOf:
           scale.
         tag: tag:stsci.edu:asdf/time/time-1.*
       exposure:
-        title: Exposure information
+        title: Exposure time summary information
         type: object
         properties:
           start_time:
@@ -94,7 +94,11 @@ allOf:
         title: Telescope name
         description: |
           Name of telescope, typically Roman.
-        type: string
+        anyOf:
+          - type: string
+          - type: array
+            items:
+              type: string
       target_coordinates:
         title: Position for this data product
         type: object

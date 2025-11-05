@@ -23,8 +23,13 @@ properties:
         description: |
           The abbreviated name of the Roman Community Contributed Science
           Product team who created this product (e.g., 'RAPID').
-        type: string
-        maxLength: 10
+        anyOf:
+          - type: string
+            maxLength: 10
+          - type: array
+            items:
+              type: string
+              maxLength: 10
       investigator:
         title: CCSP Principal Investigator
         description: |
@@ -36,7 +41,11 @@ properties:
         description: |
           The name(s) of CCSP team's staff member(s) who led coordination
           with MAST on archival ingest.
-        type: string
+        anyOf:
+          - type: string
+          - type: array
+            items:
+              type: string
       doi:
         title: CCSP Digital Object Identifier
         description: |
