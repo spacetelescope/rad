@@ -159,5 +159,4 @@ can be made required by modifying your schema to include:
                 wavelength,
               ]
 
-If your product closely resembles a SOC product another option would be to
-largely copy the SOC schema and instead reference ``ccsp_minimal``.
+If your product closely resembles a SOC product, another option is to largely copy the contents of a SOC schema, and reference the ``ccsp_minimal`` schema instead of ``ccsp_custom_product``. The ``ccsp_minimal`` schema contains only archival metadata which cannot be found in a typical SOC schema, allowing you to avoid duplicating metadata. Consult with MAST and the RAD maintainers for further advice on this approach.
