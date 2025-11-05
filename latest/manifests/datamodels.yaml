@@ -193,12 +193,3 @@ tags:
     title: MSOS Stack Level 3 Schema
     description: |-
       Level 3 schema for SSC's MSOS stack products
-  # CCSP data models
-  - tag_uri: asdf://stsci.edu/datamodels/roman/tags/CCSP/EXAMPLE/example_custom_product-1.0.0
-    schema_uri: asdf://stsci.edu/datamodels/roman/schemas/CCSP/EXAMPLE/example_custom_product-1.0.0
-    title: Example custom CCSP product
-    description: Example custom CCSP product
-  - tag_uri: asdf://stsci.edu/datamodels/roman/tags/CCSP/EXAMPLE/example_derived_mosaic-1.0.0
-    schema_uri: asdf://stsci.edu/datamodels/roman/schemas/CCSP/EXAMPLE/example_derived_mosaic-1.0.0
-    title: Example mosaic derived CCSP product
-    description: Example mosaic derived CCSP product
