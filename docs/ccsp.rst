@@ -158,3 +158,6 @@ can be made required by modifying your schema to include:
                 pixel_scale,
                 wavelength,
               ]
+
+If your product closely resembles a SOC product another option would be to
+largely copy the SOC schema and instead reference ``ccsp_minimal``.
