@@ -45,7 +45,7 @@ to archive CCSP files.
 CCSP Products
 """""""""""""
 
-CCSP products should have schemas that reference ``ccsp_custom_product``, as in the following example.
+CCSP products that aren't closely mimicking a SOC product should have schemas that reference ``ccsp_custom_product``, as in the following example.
 
 .. code:: yaml
 
