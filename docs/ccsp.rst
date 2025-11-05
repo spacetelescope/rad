@@ -42,11 +42,10 @@ below. In both cases, these schemas will require the addition of a new
 ASDF subtree ``meta.ccsp``, which will contain information necessary
 to archive CCSP files.
 
-Custom Products
-"""""""""""""""
+CCSP Products
+"""""""""""""
 
-Products that don't closely match a SOC product should have schemas
-that reference ``ccsp_custom_product``, as in the following example.
+CCSP products should have schemas that reference ``ccsp_custom_product``, as in the following example.
 
 .. code:: yaml
 
@@ -159,45 +158,3 @@ can be made required by modifying your schema to include:
                 pixel_scale,
                 wavelength,
               ]
-
-
-Extending SOC Products
-""""""""""""""""""""""
-
-If the contributed product largely (or entirely) matches a SOC product
-it may make sense, through conversation with SOC,
-to extend the corresponding SOC schema.
-
-One way to do this is by referencing the SOC schema using a ``$ref``. This has some benefits and
-some downsides. Extending a SOC schema enforces consistency for
-the CCSP and SOC products but also requires that the CCSP product follow
-any changes made to SOC schemas.
-
-Let's consider an example for a community developed coadd product with
-data and metadata that conforms to the SOC ``wfi_mosaic`` schema. The CCSP schema could contain:
-
-.. code:: yaml
-
-    YAML 1.1
-    ---
-    $schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.0.0
-    id: asdf://stsci.edu/datamodels/roman/schemas/CCSP/EXAMPLE/example_derived_mosaic-1.0.0
-
-    title: Example CCSP mosaic derived product
-
-    datamodel_name: ExampleDerivedMosaicModel
-
-    allOf:
-      - $ref: asdf://stsci.edu/datamodels/roman/schemas/wfi_mosaic-1.4.0
-      - type: object
-        properties:
-          meta:
-            allOf:
-              - $ref: asdf://stsci.edu/datamodels/roman/schemas/CCSP/ccsp_minimal-1.0.0
-
-    flowStyle: block
-
-This schema will check that the file conforms to the ``wfi_mosaic`` schema
-and contains the metadata required by ``ccsp_minimal``. Additional schema
-contents should be added to document and constrain any file contents
-added that aren't described in the linked schemas (see :ref:`creating` for more details).
