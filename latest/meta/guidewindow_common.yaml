@@ -35,7 +35,7 @@ allOf:
             origin: TBD
         archive_catalog:
           datatype: nvarchar(max)
-          destination: [GuideWindow.gw_fgs_modes_used]
+          destination: [GuideWindow.fgs_modes_used]
       guide_star_acq_num:
         title: Guide Star Acquisition Number
         description: |
@@ -47,7 +47,7 @@ allOf:
             origin: TBD
         archive_catalog:
           datatype: int
-          destination: [GuideWindow.gw_guide_star_acq_num]
+          destination: [GuideWindow.guide_star_acq_num]
       guide_window_id:
         $ref: asdf://stsci.edu/datamodels/roman/schemas/meta/guide_window_id-1.0.0
     required: [fgs_modes_used, guide_star_acq_num, guide_window_id]
