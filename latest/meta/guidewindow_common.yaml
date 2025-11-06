@@ -49,20 +49,5 @@ allOf:
           datatype: int
           destination: [GuideWindow.gw_guide_star_acq_num]
       guide_window_id:
-        title: Guide Window ID
-        description: |
-          A unique identification number of the guide window. This identifier combines the
-          visit identifier and guide star acquisition number, and is set in the visit information
-          uplinked to the observatory. As the number may be zero-padded, this value is saved as
-          a string. See technical report Roman-STScI-000193 "Roman Programmatic Data
-          Identification" for more information.
-        type: string
-        maxLength: 120
-        sdf:
-          special_processing: VALUE_REQUIRED
-          source:
-            origin: TBD
-        archive_catalog:
-          datatype: nvarchar(120)
-          destination: [GuideWindow.gw_guide_window_id]
+        $ref: asdf://stsci.edu/datamodels/roman/schemas/meta/guide_window_id-1.0.0
     required: [fgs_modes_used, guide_star_acq_num, guide_window_id]
