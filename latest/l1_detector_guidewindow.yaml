@@ -229,7 +229,7 @@ properties:
                     origin: TBD
                 archive_catalog:
                   datatype: nvarchar(11)
-                  destination: [GuideWindow.gw_gsc_id]
+                  destination: [GuideWindow.gsc_id]
               predicted_ra:
                 title: Right Ascension (deg)
                 description: |
@@ -242,7 +242,7 @@ properties:
                     origin: TBD
                 archive_catalog:
                   datatype: float
-                  destination: [GuideWindow.gw_predicted_ra]
+                  destination: [GuideWindow.predicted_ra]
               predicted_dec:
                 title: Declination (deg)
                 description: |
@@ -255,7 +255,7 @@ properties:
                     origin: TBD
                 archive_catalog:
                   datatype: float
-                  destination: [GuideWindow.gw_predicted_dec]
+                  destination: [GuideWindow.predicted_dec]
               gaia_parallax:
                 title: Gaia Parallax
                 description: |
