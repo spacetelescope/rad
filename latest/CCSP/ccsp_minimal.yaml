@@ -1,0 +1,141 @@
+%YAML 1.1
+---
+$schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.0.0
+id: asdf://stsci.edu/datamodels/roman/schemas/CCSP/ccsp_minimal-1.0.0
+
+title: CCSP minimal metadata
+description: |
+  This schema defines metadata for Roman Community Contributed Science
+  Product (CCSP) data. It should be referenced directly in the schemas
+  of data products that are reprocessed versions of Roman SOC mission
+  products, and which already include required metadata defined in
+  existing SOC schemas. Otherwise, for CCSP products which do not so
+  closely mimic SOC products, use the ccsp_custom_product schema instead.
+
+type: object
+properties:
+  ccsp:
+    title: Community Contributed Science Product (CCSP) information
+    type: object
+    properties:
+      name:
+        title: CCSP name
+        description: |
+          The abbreviated name of the Roman Community Contributed Science
+          Product team who created this product (e.g., 'RAPID').
+        anyOf:
+          - type: string
+            maxLength: 10
+          - type: array
+            items:
+              type: string
+              maxLength: 10
+      investigator:
+        title: CCSP Principal Investigator
+        description: |
+          The name of the Community Contributed Science Product's
+          Principal Investigator.
+        type: string
+      archive_lead:
+        title: CCSP staff lead for MAST ingest
+        description: |
+          The name(s) of CCSP team's staff member(s) who led coordination
+          with MAST on archival ingest.
+        anyOf:
+          - type: string
+          - type: array
+            items:
+              type: string
+      doi:
+        title: CCSP Digital Object Identifier
+        description: |
+          The Digital Object Identifier (DOI) for this Community
+          Contributed Science Product collection's presence in MAST.
+        type: string
+      file_version:
+        title: Version of this file
+        description: |
+          Version of this file, to be incremented with any delivery
+          that replaces this file. Usually not tied to data release
+          identifiers or software version. Should match version field
+          of the file name.
+        type: string
+        maxLength: 9
+      data_release_id:
+        title: CCSP collection data release
+        description: |
+          Identifier for the Community Contributed Science Product
+          data release identifier of which this file is a part (e.g.,
+          DR1). Distinct from Roman mission data releases.
+        type: string
+      license:
+        title: License for use of these data.
+        type: string
+      license_url:
+        title: URL of license for use of these data.
+        type: string
+      target_name:
+        title: Target name
+        description: |
+          Designation of the target(s) or field(s) for this file. May
+          be general term like "Field", "Sky", or "Simulated" for some
+          survey or simulated data.
+        type: string
+      intent:
+        title: Observation intent
+        type: string
+        enum: ["SCIENCE", "CALIBRATION"]
+      simulated_flag:
+        title: Simulated data product flag
+        description: |
+          Boolean indicating whether this data product is simulated
+          (True if simulated, False if a real observation or derived
+          from a real observation).
+        type: boolean
+      target_keywords:
+        title: UAT keywords
+        description: |
+          Human-readable keyword(s) from the Unified Astronomy Thesaurus
+          (UAT), corresponding to astronomical object types targeted by
+          this file. String or array of strings. Selected from:
+          https://astrothesaurus.org/concept-select/
+        oneOf:
+          - type: string
+          - type: array
+            items:
+              type: string
+      target_keywords_id:
+        title: UAT keyword IDs
+        description: |
+          Numerical IDs from the Unified Astronomy Thesaurus (UAT),
+          corresponding to the human-readable keywords in target_keywords.
+          Integer or array of integers. Selected from:
+          https://astrothesaurus.org/concept-select/
+        oneOf:
+          - type: integer
+          - type: array
+            items:
+              type: integer
+      source_observations_id:
+        title: List of observation_ids used to construct this product
+        description: |
+          A list of observation_ids (PPPPPCCAAASSSOOOVVVggsaaeee) used
+          to construct this product. If only one observation_id was
+          used, this will be a string instead of a list of strings.
+        oneOf:
+          - type: string
+          - type: array
+            items:
+              type: string
+    required:
+      [
+        name,
+        investigator,
+        doi,
+        file_version,
+        data_release_id,
+        license,
+        license_url,
+        target_name,
+      ]
+required: [ccsp]

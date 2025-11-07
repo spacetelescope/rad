@@ -32,9 +32,13 @@ REQUIRED_SKIPS = (
     "asdf://stsci.edu/datamodels/roman/schemas/wfi_mosaic-1.4.0",
     "asdf://stsci.edu/datamodels/roman/schemas/meta/l3_catalog_common-1.0.0",
     "asdf://stsci.edu/datamodels/roman/schemas/multiband_source_catalog-1.1.0",
+    "asdf://stsci.edu/datamodels/roman/schemas/CCSP/EXAMPLE/example_custom_product-1.0.0",
 )
 
-NESTED_REQUIRED_SKIPS = ("asdf://stsci.edu/datamodels/roman/schemas/meta/l3_common-1.0.0",)
+NESTED_REQUIRED_SKIPS = (
+    "asdf://stsci.edu/datamodels/roman/schemas/meta/l3_common-1.0.0",
+    "asdf://stsci.edu/datamodels/roman/schemas/CCSP/ccsp_custom_product-1.0.0",
+)
 
 
 class TestSchemaContent:
@@ -517,6 +521,59 @@ class TestReferenceFileSchemas:
         -> Smokes out when REF_COMMON_XFAILS is not relevant anymore.
         """
         assert uri in latest_uris, f"{uri} is not in the list of schemas to be tested."
+
+
+class TestCCSPSchemas:
+    def test_ref_to_ccsp(self, ccsp_model_schema, rad_uri_prefix):
+        """
+        Test that the schema contains a reference to ccsp_minimal or ccsp_custom_product
+        """
+        # all CCSP model schemas should ref one of these
+        targets = (
+            "asdf://stsci.edu/datamodels/roman/schemas/CCSP/ccsp_custom_product-",
+            "asdf://stsci.edu/datamodels/roman/schemas/CCSP/ccsp_minimal-",
+        )
+
+        def iter_path_value_pairs(value, path=()):
+            """
+            Generator returning (path, value) pairs for a nested schema.
+            """
+            if isinstance(value, dict):
+                for key, subvalue in value.items():
+                    yield from iter_path_value_pairs(subvalue, path=(*path, key))
+            elif isinstance(value, list):
+                for index, subvalue in enumerate(value):
+                    yield from iter_path_value_pairs(subvalue, path=(*path, index))
+            else:
+                yield path, value
+
+        soc_ref = None
+        ccsp_ref = None
+        schema_uri = ccsp_model_schema["id"]
+
+        for path, value in iter_path_value_pairs(ccsp_model_schema):
+            if path[-1] != "$ref":
+                continue
+            if any(value.startswith(target) for target in targets):
+                assert ccsp_ref is None, f"{schema_uri} contains multiple ccsp references: {((path, value), ccsp_ref)}"
+                ccsp_ref = (path, value)
+            elif "CCSP" not in value and value.startswith(rad_uri_prefix):
+                soc_ref = (path, value)
+
+        assert ccsp_ref, f"{schema_uri} does not contain a '$ref' to either ccsp_minimal or ccsp_custom_product"
+
+        if soc_ref:
+            assert "ccsp_minimal" in ccsp_ref[1], (
+                f"{schema_uri} contains a '$ref' to a SOC schema ({soc_ref}) but does not use ccsp_minimal"
+            )
+
+        # Check that the ccsp schema is referenced within meta
+        # This won't catch all schema structures but checks for the common one.
+        target_path = ["properties", "meta", "$ref"]
+        for sub_path in ccsp_ref[0]:
+            if sub_path == target_path[0]:
+                target_path.pop(0)
+        assert not target_path, f"{schema_uri} ccsp '$ref' is not under 'meta': {ccsp_ref[0]}"
 
 
 class TestPatternElementConsistency:
