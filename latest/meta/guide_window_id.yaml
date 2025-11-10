@@ -1,0 +1,22 @@
+%YAML 1.1
+---
+$schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.0.0
+id: asdf://stsci.edu/datamodels/roman/schemas/meta/guide_window_id-1.0.0
+
+title: Guide Window Identifier
+description: |
+  A unique identification number of the guide window.
+  This identifier combines the visit identifier and guide star
+  acquisition number, and is set in the visit information uplinked
+  to the observatory. As the number may be zero-padded, this value
+  is saved as a string. See technical report Roman-STScI-000193
+  "Roman Programmatic Data Identification" for more information.
+type: string
+sdf:
+  special_processing: VALUE_REQUIRED
+  source:
+    origin: TBD
+maxLength: 20
+archive_catalog:
+  datatype: nvarchar(20)
+  destination: [WFIExposure.guide_window_id, GuideWindow.guide_window_id]
