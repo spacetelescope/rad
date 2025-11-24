@@ -6,11 +6,14 @@ id: asdf://stsci.edu/datamodels/roman/schemas/SSC/GDPS/wfi_spec_data_quality_lev
 # https://outerspace.stsci.edu/display/RSEC/Grism-Prism+Data+Products#GrismPrismDataProducts-Level4DataProduct-DataQualityInformation
 # Initial keyword list is based on Box manifest example 'wfi_spec_catalog_l4_manifest.json'
 
-title: Level 4 Grism/Prism - Data Quality
-archive_meta: Science WFI Level 4 Spec Data Quality
+title: Level 4 Grism/Prism - DQA 2D
+archive_meta: Placeholder SOC file type
 type: object
 allOf:
   - $ref: asdf://stsci.edu/datamodels/roman/schemas/SSC/ssc_basic-1.0.0
   - $ref: asdf://stsci.edu/datamodels/roman/schemas/SSC/GDPS/keywords/observation-1.0.0
   - $ref: asdf://stsci.edu/datamodels/roman/schemas/SSC/GDPS/keywords/instrument-1.0.0
-  - $ref: asdf://stsci.edu/datamodels/roman/schemas/SSC/GDPS/keywords/catalog-1.0.0
+  - $ref: asdf://stsci.edu/datamodels/roman/schemas/SSC/GDPS/keywords/calibration-1.0.0
+  - $ref: asdf://stsci.edu/datamodels/roman/schemas/SSC/GDPS/keywords/wavelength-1.0.0
+  - $ref: asdf://stsci.edu/datamodels/roman/schemas/SSC/GDPS/keywords/pointing-1.0.0
+  - $ref: asdf://stsci.edu/datamodels/roman/schemas/SSC/GDPS/keywords/g2dp_common-1.0.0
