@@ -7,18 +7,18 @@ title: GDPS pointing keywords
 extName: SSC
 type: object
 properties:
-  pos_wcs_field_center_ra:
+  wcs_field_center_ra:
     title: Field Center RA
     description: Right Ascension, position of the center of the field.  Example value '270.0'
     type: number
     archive_catalog:
       datatype: float
-      destination: [WFISpec.pos_wcs_field_center_ra]
-  pos_wcs_field_center_dec:
+      destination: [WFISpec.wcs_field_center_ra]
+  wcs_field_center_dec:
     title: Field Center Dec
     description: Declination, position of the center of the field.  Example value '66.0'
     type: number
     archive_catalog:
       datatype: float
-      destination: [WFISpec.pos_wcs_field_center_dec]
-required: [pos_wcs_field_center_ra, pos_wcs_field_center_dec]
+      destination: [WFISpec.wcs_field_center_dec]
+required: [wcs_field_center_ra, wcs_field_center_dec]
