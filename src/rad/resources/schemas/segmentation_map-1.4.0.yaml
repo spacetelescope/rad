@@ -1,1 +1,25 @@
-../../../../latest/segmentation_map.yaml
+%YAML 1.1
+---
+$schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.0.0
+id: asdf://stsci.edu/datamodels/roman/schemas/segmentation_map-1.4.0
+
+title: Segmentation map generated from a Level 2 file by the Source Catalog Step.
+
+datamodel_name: SegmentationMapModel
+
+archive_meta: Science WFI Level 4 Segmentation Map L2 Product
+type: object
+properties:
+  meta:
+    $ref: asdf://stsci.edu/datamodels/roman/schemas/meta/l2_catalog_common-1.0.0
+  data:
+    title: Segmentation map
+    description: |
+      Segmentation map of an image model, zeros correspond to background.
+    tag: tag:stsci.edu:asdf/core/ndarray-1.*
+    ndim: 2
+    datatype: uint32
+    exact_datatype: true
+required: [meta, data]
+flowStyle: block
+propertyOrder: [meta, data]
