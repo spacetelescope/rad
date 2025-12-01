@@ -1,0 +1,53 @@
+%YAML 1.1
+---
+$schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.0.0
+id: asdf://stsci.edu/datamodels/roman/schemas/meta/guidewindow_common-1.0.0
+
+title: Guide Window Common Metadata
+
+allOf:
+  - $ref: asdf://stsci.edu/datamodels/roman/schemas/meta/basic-1.0.0
+  - type: object
+    properties:
+      fgs_modes_used:
+        title: FGS Guiding Modes
+        description: |
+          List of unique FGS guiding modes used during the guide window exposure.
+        type: array
+        items:
+          type: string
+          enum:
+            [
+              "NOT_CONFIGURED",
+              "STANDBY",
+              "WIM_ACQ_VW",
+              "WIM_ACQ_NA",
+              "WIM_TRK",
+              "WIM_TRK_S",
+              "WSM_ACQ_HC",
+              "WSM_ACQ_VC",
+              "WSM_TRK",
+              "WIM_DFC",
+            ]
+        sdf:
+          special_processing: VALUE_REQUIRED
+          source:
+            origin: TBD
+        archive_catalog:
+          datatype: nvarchar(max)
+          destination: [GuideWindow.fgs_modes_used]
+      guide_star_acq_num:
+        title: Guide Star Acquisition Number
+        description: |
+          Guide star acquisition number (1-9) for the guide window exposure.
+        type: integer
+        sdf:
+          special_processing: VALUE_REQUIRED
+          source:
+            origin: TBD
+        archive_catalog:
+          datatype: int
+          destination: [GuideWindow.guide_star_acq_num]
+      guide_window_id:
+        $ref: asdf://stsci.edu/datamodels/roman/schemas/meta/guide_window_id-1.0.0
+    required: [fgs_modes_used, guide_star_acq_num, guide_window_id]
