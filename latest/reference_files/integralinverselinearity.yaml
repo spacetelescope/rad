@@ -16,7 +16,7 @@ properties:
         properties:
           reftype:
             type: string
-            enum: [INTEGRALNONLINEARITY]
+            enum: [INTEGRALINVERSELINEARITY]
           n_channels:
             title: Number of channels
             description: |
