@@ -44,11 +44,11 @@ properties:
             description: |
               Channel Correction
             anyOf:
-            - type: "null"
-            - tag: tag:stsci.edu:asdf/core/ndarray-1.*
-              datatype: float64
-              exact_datatype: true
-              ndim: 1
+              - type: "null"
+              - tag: tag:stsci.edu:asdf/core/ndarray-1.*
+                datatype: float64
+                exact_datatype: true
+                ndim: 1
         required: [channel, correction]
   value:
     title: Integral Inverse Linearity
