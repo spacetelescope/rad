@@ -7,7 +7,6 @@ title: Dark Decay Signal Reference File Schema
 
 datamodel_name: DarkdecaysignalRefModel
 
-
 type: object
 properties:
   meta:
