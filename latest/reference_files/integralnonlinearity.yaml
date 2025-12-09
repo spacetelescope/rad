@@ -1,11 +1,11 @@
 %YAML 1.1
 ---
 $schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.0.0
-id: asdf://stsci.edu/datamodels/roman/schemas/reference_files/integralinverselinearity-1.0.0
+id: asdf://stsci.edu/datamodels/roman/schemas/reference_files/integralnonlinearity-1.0.0
 
-title: Integral Inverse Linearity Correction Reference Schema
+title: Integral Nonlinearity Correction Reference Schema
 
-datamodel_name: IntegralinverselinearityRefModel
+datamodel_name: IntegralnonlinearityRefModel
 
 type: object
 properties:
@@ -16,7 +16,7 @@ properties:
         properties:
           reftype:
             type: string
-            enum: [INTEGRALINVERSELINEARITY]
+            enum: [INTEGRALNONLINEARITY]
           n_channels:
             title: Number of channels
             description: |
@@ -30,14 +30,19 @@ properties:
         required: [n_channels, n_pixels_per_channel]
   inl_table:
     type: object
+    description: |
+      Science channel refers to the channel number in the science coordinate reference frame.
+      One-based indexing. reference frames are outlined at:
+      https://roman-docs.stsci.edu/data-handbook-home/wfi-data-format/coordinate-systems
     patternProperties:
-      "^[0-9]{,2}$":
+      "^science_channel_(0[1-9]|[1-2][0-9]|3[0-2])$":
         type: object
         properties:
-          channel:
-            title: Channel Number
+          instrument_channel:
+            title: Instrument Channel Number
             description: |
-              Channel Number
+              Instrument channel refers to the channel number in the detector coordinate reference frame.
+              Zero-based indexing.
             type: integer
           correction:
             title: Channel Correction
@@ -49,7 +54,8 @@ properties:
                 datatype: float64
                 exact_datatype: true
                 ndim: 1
-        required: [channel, correction]
+        required: [instrument_channel, correction]
+    additionalProperties: false
   value:
     title: Integral Inverse Linearity
     description: |
