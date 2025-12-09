@@ -70,7 +70,8 @@ tags:
     schema_uri: asdf://stsci.edu/datamodels/roman/schemas/reference_files/darkdecaysignal-1.0.0
     title: Dark Decay Signal Reference File Schema
     description: |-
-      Dark Decay Signal Reference File Schema
+      Dark decay reference file contains the residual signal properties for each WFI detector
+      that can be removed by an exponentially decreasing signal of DN with respect to time.
   - tag_uri: asdf://stsci.edu/datamodels/roman/tags/reference_files/distortion-1.3.0
     schema_uri: asdf://stsci.edu/datamodels/roman/schemas/reference_files/distortion-1.3.0
     title: Distortion reference schema

@@ -26,14 +26,14 @@ properties:
           amplitude:
             title: Decay Amplitude
             description: |
-              Decay Amplitude
+              The exponential amplitude of the dark decay signal in DN at time t=0.
             anyOf:
               - type: number
               - type: "null"
           time_constant:
             title: Time Constant
             description: |
-              Time Constant
+              The exponential time constant by which the amplitude of the residual decreases with time.
             anyOf:
               - type: number
               - type: "null"
