@@ -19,6 +19,8 @@ properties:
             enum: [DETECTORSTATUS]
   status_info:
     type: object
+    description: |
+      The status info dictionary lists each WFI detector as enabled if True or False if not enabled for prompt processing.
     patternProperties:
       "^WFI(0[1-9]|1[0-8])$":
         type: object
@@ -26,7 +28,7 @@ properties:
           enabled:
             title: Detector Status
             description: |
-              Detector Status
+              WFI detector status for prompt processing. Enabled if True or False if not enabled.
             type: boolean
         required: [enabled]
     additionalProperties: false
