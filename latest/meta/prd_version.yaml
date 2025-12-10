@@ -20,7 +20,6 @@ archive_catalog:
     [
       WFIExposure.prd_version,
       GuideWindow.prd_version,
-      WFICommon.prd_version,
       WFIMosaic.prd_version,
       SourceCatalog.prd_version,
       SegmentationMap.prd_version,

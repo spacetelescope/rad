@@ -9,17 +9,17 @@ type: object
 properties:
   field:
     title: Field
-    description: Placeholder.  Example value '5'
+    description: WFISpec.  Example value '5'
     type: integer
     archive_catalog:
       datatype: int
-      destination: [WFIReferenceFrame.field]
+      destination: [WFIMSOSReferenceFrame.field]
   tile_id:
     title: Tile Id
-    description: Placeholder.  Example value '35'
+    description: WFISpec.  Example value '35'
     type: integer
     archive_catalog:
       datatype: int
-      destination: [WFIReferenceFrame.tile_id]
+      destination: [WFIMSOSReferenceFrame.tile_id]
 
 required: [field, tile_id]

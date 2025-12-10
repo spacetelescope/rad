@@ -13,7 +13,7 @@ properties:
     type: integer
     archive_catalog:
       datatype: int
-      destination: [WFIReferenceFrame.program, MSOSCatalog.program]
+      destination: [WFIMSOSReferenceFrame.program, WFIMSOSCatalog.program]
   piname:
     title: PI Last Name
     description: |
@@ -22,7 +22,7 @@ properties:
     maxLength: 16
     archive_catalog:
       datatype: nvarchar(16)
-      destination: [WFIReferenceFrame.pi_name, MSOSCatalog.pi_name]
+      destination: [WFIMSOSReferenceFrame.pi_name, WFIMSOSCatalog.pi_name]
   progtitle:
     title: Program Title
     description: The title of the program
@@ -30,7 +30,8 @@ properties:
     maxLength: 16
     archive_catalog:
       datatype: nvarchar(16)
-      destination: [WFIReferenceFrame.program_title, MSOSCatalog.program_title]
+      destination:
+        [WFIMSOSReferenceFrame.program_title, WFIMSOSCatalog.program_title]
   category:
     title: Program Category
     description: |
@@ -45,7 +46,7 @@ properties:
     maxLength: 6
     archive_catalog:
       datatype: nvarchar(6)
-      destination: [WFIReferenceFrame.category, MSOSCatalog.category]
+      destination: [WFIMSOSReferenceFrame.category, WFIMSOSCatalog.category]
   subcategory:
     title: Program Subcategory
     description: |
@@ -63,7 +64,10 @@ properties:
     archive_catalog:
       datatype: nvarchar(15)
       destination:
-        [WFIReferenceFrame.program_subcategory, MSOSCatalog.program_subcategory]
+        [
+          WFIMSOSReferenceFrame.program_subcategory,
+          WFIMSOSCatalog.program_subcategory,
+        ]
   science_category:
     title: Science Category
     description: |
@@ -74,6 +78,9 @@ properties:
     archive_catalog:
       datatype: nvarchar(50)
       destination:
-        [WFIReferenceFrame.science_category, MSOSCatalog.science_category]
+        [
+          WFIMSOSReferenceFrame.science_category,
+          WFIMSOSCatalog.science_category,
+        ]
 
 required: [prognum, piname, progtitle, category, subcategory, science_category]

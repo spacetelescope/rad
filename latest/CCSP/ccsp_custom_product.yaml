@@ -1,0 +1,171 @@
+%YAML 1.1
+---
+$schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.0.0
+id: asdf://stsci.edu/datamodels/roman/schemas/CCSP/ccsp_custom_product-1.0.0
+
+title: CCSP custom product metadata
+description: |
+  This schema is the union of all shared metadata for Roman Community
+  Contributed Science Product (CCSP) data. It should be referenced in
+  the schemas of custom data products which do not closely mimic the
+  metadata of Roman SOC mission products. Otherwise, for data products
+  whose schemas reference or closely mimic SOC schemas, reference the
+  ccsp_minimal schema directly instead.
+
+allOf:
+  - $ref: asdf://stsci.edu/datamodels/roman/schemas/CCSP/ccsp_minimal-1.0.0
+  - type: object
+    properties:
+      file_date:
+        title: File creation date
+        description: |
+          File creation date-time in ISO 8601 format with UTC time
+          scale.
+        tag: tag:stsci.edu:asdf/time/time-1.*
+      exposure:
+        title: Exposure time summary information
+        type: object
+        properties:
+          start_time:
+            title: Start time
+            description: |
+              Start time of data acquisition in ISO 8601 format.
+            tag: tag:stsci.edu:asdf/time/time-1.*
+          end_time:
+            title: End time
+            description: |
+              End time of data acquisition in ISO 8601 format.
+            tag: tag:stsci.edu:asdf/time/time-1.*
+          exposure_time:
+            title: Exposure time (s)
+            description: |
+              For individual exposures, the amount of time elapsed
+              between the start and end of the observation or data
+              stream. For time series, the total accumulated exposure
+              time summed over all time slices. For co-adds, a
+              representative exposure time (or representative effective
+              exposure time) signifying the depth of the combined
+              product, such as the mean of the net exposure time
+              from each pixel with non-zero exposure.
+            type: number
+            unit: "s"
+          effective_exposure_time:
+            title: Effective exposure time (s)
+            description: |
+              The total accumulated effective exposure duration for
+              this data product, excluding dead time and lost time.
+              For time series, the total accumulated effective exposure
+              time summed over all time slices.
+            type: number
+            unit: "s"
+        required: [start_time, end_time, exposure_time]
+      instrument:
+        title: Instrument observing configuration
+        type: object
+        properties:
+          name:
+            title: Instrument name
+            anyOf:
+              - type: string
+              - type: "null"
+              - type: array
+                items:
+                  type: string
+          detector:
+            title: Detector
+            anyOf:
+              - type: string
+              - type: "null"
+              - type: array
+                items:
+                  type: string
+          optical_element:
+            title: Optical element
+            description: |
+              Name of filter, disperser, or other optical element.
+            anyOf:
+              - type: string
+              - type: "null"
+              - type: array
+                items:
+                  type: string
+        required: [name, detector, optical_element]
+      telescope:
+        title: Telescope name
+        description: |
+          Name of telescope, typically Roman.
+        anyOf:
+          - type: string
+          - type: array
+            items:
+              type: string
+      target_coordinates:
+        title: Position for this data product
+        type: object
+        properties:
+          reference_frame:
+            type: string
+            enum: ["ICRS"]
+          ra:
+            title: Right ascension (deg)
+            description: |
+              Characteristic right ascension in degrees; typically the
+              center of the spatial image, or the target coordinates
+              of a spectrum or light curve.
+            type: number
+            unit: "deg"
+          dec:
+            title: Declination (deg)
+            description: |
+              Characteristic declination in degrees; typically the
+              center of the spatial image, or the target coordinates
+              of a spectrum or light curve.
+            type: number
+            unit: "deg"
+        required: [reference_frame, ra, dec]
+      s_region:
+        title: STC-S formatted sky footprint
+        description: |
+          Sky footprint for this data product, formatted as an IVOA
+          Space-Time Coordinate Metadata Linear String (STC-S) in units
+          of degrees.
+        type: string
+      pixel_scale:
+        title: Pixel scale of spatial axes (arcsec/pixel)
+        type: number
+        unit: "arcsec/pixel"
+      wavelength:
+        title: Wavelength information
+        type: object
+        properties:
+          band:
+            title: Waveband
+            description: |
+              Waveband of this data product, used to enable archival
+              searches. Select from: RADIO, MILLIMETER, INFRARED,
+              OPTICAL, UV, EUV, XRAY, GAMMARAY.
+            anyOf:
+              - type: string
+              - type: array
+                items:
+                  type: string
+          minimum:
+            title: Minimum wavelength
+            description: |
+              Minimum wavelength bound of this data product, used to
+              enable archival searches. Specify units in MAST
+              documentation or a higher-level schema.
+            anyOf:
+              - type: number
+              - type: "null"
+          maximum:
+            title: Maximum wavelength
+            description: |
+              Maximum wavelength bound of this data product, used to
+              enable archival searches. Specify units in MAST
+              documentation or a higher-level schema.
+            anyOf:
+              - type: number
+              - type: "null"
+        required: [band, minimum, maximum]
+    required: [file_date]

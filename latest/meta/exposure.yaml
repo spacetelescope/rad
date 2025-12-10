@@ -16,12 +16,7 @@ properties:
         origin: PSS:dms_visit.template
     archive_catalog:
       datatype: nvarchar(25)
-      destination:
-        [
-          WFIExposure.exposure_type,
-          GuideWindow.exposure_type,
-          WFICommon.exposure_type,
-        ]
+      destination: [WFIExposure.exposure_type, GuideWindow.exposure_type]
   start_time:
     title: Exposure Start Time (UTC)
     description: |
@@ -40,11 +35,7 @@ properties:
     archive_catalog:
       datatype: datetime2
       destination:
-        [
-          WFIExposure.exposure_start_time,
-          GuideWindow.exposure_start_time,
-          WFICommon.exposure_start_time,
-        ]
+        [WFIExposure.exposure_start_time, GuideWindow.exposure_start_time]
   end_time:
     title: Exposure End Time (UTC)
     description: |
@@ -124,11 +115,7 @@ properties:
     archive_catalog:
       datatype: int
       destination:
-        [
-          WFIExposure.exposure_nresultants,
-          GuideWindow.exposure_nresultants,
-          WFICommon.exposure_nresultants,
-        ]
+        [WFIExposure.exposure_nresultants, GuideWindow.exposure_nresultants]
   data_problem:
     title: Data Problem
     description: |
@@ -145,11 +132,7 @@ properties:
     archive_catalog:
       datatype: nvarchar(max)
       destination:
-        [
-          WFIExposure.exposure_data_problem,
-          GuideWindow.exposure_data_problem,
-          WFICommon.exposure_data_problem,
-        ]
+        [WFIExposure.exposure_data_problem, GuideWindow.exposure_data_problem]
   frame_time:
     title: Detector Readout Time (s)
     description: |
@@ -164,11 +147,7 @@ properties:
     archive_catalog:
       datatype: float
       destination:
-        [
-          WFIExposure.exposure_frame_time,
-          GuideWindow.exposure_frame_time,
-          WFICommon.exposure_frame_time,
-        ]
+        [WFIExposure.exposure_frame_time, GuideWindow.exposure_frame_time]
   exposure_time:
     title: Exposure Time (s)
     description: |
@@ -182,12 +161,7 @@ properties:
         origin: TBD
     archive_catalog:
       datatype: float
-      destination:
-        [
-          WFIExposure.exposure_time,
-          GuideWindow.exposure_time,
-          WFICommon.exposure_time,
-        ]
+      destination: [WFIExposure.exposure_time, GuideWindow.exposure_time]
   effective_exposure_time:
     title: Effective Exposure Time (s)
     description: |
@@ -222,12 +196,7 @@ properties:
     maxLength: 50
     archive_catalog:
       datatype: nvarchar(50)
-      destination:
-        [
-          WFIExposure.ma_table_name,
-          GuideWindow.ma_table_name,
-          WFICommon.ma_table_name,
-        ]
+      destination: [WFIExposure.ma_table_name, GuideWindow.ma_table_name]
   ma_table_number:
     title: Multi-Accumulation Table Identification Number
     description: |
@@ -242,12 +211,7 @@ properties:
         origin: PSS:dms_visit.multi_accum_table_number
     archive_catalog:
       datatype: smallint
-      destination:
-        [
-          WFIExposure.ma_table_number,
-          GuideWindow.ma_table_number,
-          WFICommon.ma_table_number,
-        ]
+      destination: [WFIExposure.ma_table_number, GuideWindow.ma_table_number]
   read_pattern:
     title: Read Pattern
     description: |
@@ -268,12 +232,7 @@ properties:
         origin: TBD
     archive_catalog:
       datatype: nvarchar(3500)
-      destination:
-        [
-          WFIExposure.read_pattern,
-          GuideWindow.read_pattern,
-          WFICommon.read_pattern,
-        ]
+      destination: [WFIExposure.read_pattern, GuideWindow.read_pattern]
   truncated:
     title: Truncated MA Table
     description: |
