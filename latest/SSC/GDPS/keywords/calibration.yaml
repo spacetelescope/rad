@@ -14,5 +14,5 @@ properties:
     maxLength: 1024
     archive_catalog:
       datatype: nvarchar(1024)
-      destination: [Placeholder.cdp_ctx]
+      destination: [WFISpec.cdp_ctx]
 required: [cdp_ctx]

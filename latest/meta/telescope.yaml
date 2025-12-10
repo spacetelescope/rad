@@ -17,7 +17,6 @@ archive_catalog:
       WFIExposure.telescope,
       WFIMosaic.telescope,
       GuideWindow.telescope,
-      WFICommon.telescope,
       SourceCatalog.telescope,
       SegmentationMap.telescope,
     ]

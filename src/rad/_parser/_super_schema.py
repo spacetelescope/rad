@@ -66,7 +66,9 @@ def _deep_merge(target: dict[str, Any], source: dict[str, Any]) -> dict[str, Any
             elif key in ("title", "description"):
                 target[key] += f"\n- {value}"
             elif target[key] != value:
-                raise ValueError(f"{key} has conflicting values: {target[key]} and {value}")
+                # special case for datamodel_name to allow CCSP derived products
+                if key != "datamodel_name":
+                    raise ValueError(f"{key} has conflicting values: {target[key]} and {value}")
         else:
             target[key] = value
 

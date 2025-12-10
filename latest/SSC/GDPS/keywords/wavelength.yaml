@@ -16,7 +16,7 @@ properties:
     maxLength: 128
     archive_catalog:
       datatype: nvarchar(128)
-      destination: [Placeholder.wl_contamination_range]
+      destination: [WFISpec.wl_contamination_range]
   wl_reference:
     title: Wl Reference
     description:
@@ -25,7 +25,7 @@ properties:
     type: number
     archive_catalog:
       datatype: float
-      destination: [Placeholder.wl_reference]
+      destination: [WFISpec.wl_reference]
   wl_snr_global_range:
     title: Wl Snr Global Range
     description: The wavelength range that the global SNR measurement.  Example value '[0.0]'
@@ -33,7 +33,7 @@ properties:
     maxLength: 128
     archive_catalog:
       datatype: nvarchar(128)
-      destination: [Placeholder.wl_snr_global_range]
+      destination: [WFISpec.wl_snr_global_range]
   unit_flux:
     title: Unit of flux
     description: Example value 'DN/s'
@@ -41,7 +41,7 @@ properties:
     maxLength: 16
     archive_catalog:
       datatype: nvarchar(16)
-      destination: [Placeholder.unit_flux]
+      destination: [WFISpec.unit_flux]
   unit_wl:
     title: Unit of wavelength
     description: Example value 'nm'
@@ -49,7 +49,7 @@ properties:
     maxLength: 16
     archive_catalog:
       datatype: nvarchar(16)
-      destination: [Placeholder.unit_wl]
+      destination: [WFISpec.unit_wl]
   phot_filter_cut_off:
     title: Phot Filter Cut Off
     description: The filter used for the G2DP magnitude cut off.  Example value 'F158'
@@ -57,7 +57,7 @@ properties:
     maxLength: 128
     archive_catalog:
       datatype: nvarchar(128)
-      destination: [Placeholder.phot_filter_cut_off]
+      destination: [WFISpec.phot_filter_cut_off]
 required:
   [
     wl_contamination_range,

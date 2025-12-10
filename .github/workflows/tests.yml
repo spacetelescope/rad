@@ -15,25 +15,24 @@ on:
 
 jobs:
   test:
-    uses: OpenAstronomy/github-actions-workflows/.github/workflows/tox.yml@28e947497bed4d6ec3fa1d66d198e95a1d17bc63 # v2.2.1
+    uses: OpenAstronomy/github-actions-workflows/.github/workflows/tox.yml@9f1fedda61294df4c004c05519a3fbf3b8e1f32f # v2.3.1
     with:
       envs: |
         - linux: py311-xdist
         - linux: py312-xdist
-        # `tox` does not currently respect `requires-python` versions when creating testing environments;
-        # if this breaks, add an upper pin to `requires-python` and revert this py3 to the latest working version
-        - linux: py3-cov-xdist
+        - linux: py313-xdist
+        - linux: py314-cov-xdist
           coverage: codecov
-        - macos: py3-xdist
+        - macos: py314-xdist
 
   roman_datamodels:
-    uses: OpenAstronomy/github-actions-workflows/.github/workflows/tox.yml@28e947497bed4d6ec3fa1d66d198e95a1d17bc63 # v2.2.1
+    uses: OpenAstronomy/github-actions-workflows/.github/workflows/tox.yml@9f1fedda61294df4c004c05519a3fbf3b8e1f32f # v2.3.1
     with:
       envs: |
         - linux: roman_datamodels-xdist
 
   romancal:
-    uses: OpenAstronomy/github-actions-workflows/.github/workflows/tox.yml@28e947497bed4d6ec3fa1d66d198e95a1d17bc63 # v2.2.1
+    uses: OpenAstronomy/github-actions-workflows/.github/workflows/tox.yml@9f1fedda61294df4c004c05519a3fbf3b8e1f32f # v2.3.1
     with:
       envs: |
-        - linux: romancal
+        - linux: py313-romancal

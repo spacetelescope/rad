@@ -9,10 +9,10 @@ type: object
 properties:
   catalog_id:
     title: Catalog ID
-    description: Placeholder.  Example value '0001'
+    description: WFISpec.  Example value '0001'
     type: string
     maxLength: 128
     archive_catalog:
       datatype: nvarchar(128)
-      destination: [Placeholder.catalog_id]
+      destination: [WFISpec.catalog_id]
 required: [catalog_id]

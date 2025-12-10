@@ -26,12 +26,7 @@ properties:
         maxLength: 120
         archive_catalog:
           datatype: nvarchar(120)
-          destination:
-            [
-              WFIExposure.crds_version,
-              GuideWindow.crds_version,
-              WFICommon.crds_version,
-            ]
+          destination: [WFIExposure.crds_version, GuideWindow.crds_version]
       context:
         title: CRDS Context
         description: |
@@ -46,12 +41,7 @@ properties:
         maxLength: 120
         archive_catalog:
           datatype: nvarchar(120)
-          destination:
-            [
-              WFIExposure.crds_context,
-              GuideWindow.crds_context,
-              WFICommon.crds_context,
-            ]
+          destination: [WFIExposure.crds_context, GuideWindow.crds_context]
     required: [version, context]
   apcorr:
     title: Aperture Correction Reference File Schema
@@ -61,8 +51,7 @@ properties:
     type: string
     archive_catalog:
       datatype: nvarchar(120)
-      destination:
-        [ScienceRefData.r_apcorr, GuideWindow.r_apcorr, WFICommon.r_apcorr]
+      destination: [ScienceRefData.r_apcorr, GuideWindow.r_apcorr]
   area:
     title: Pixel Area Reference File Information
     description: |
@@ -72,7 +61,7 @@ properties:
     type: string
     archive_catalog:
       datatype: nvarchar(120)
-      destination: [ScienceRefData.r_area, GuideWindow.r_area, WFICommon.r_area]
+      destination: [ScienceRefData.r_area, GuideWindow.r_area]
   dark:
     title: Dark Reference File Information
     description: |
@@ -81,7 +70,7 @@ properties:
     type: string
     archive_catalog:
       datatype: nvarchar(120)
-      destination: [ScienceRefData.r_dark, GuideWindow.r_dark, WFICommon.r_dark]
+      destination: [ScienceRefData.r_dark, GuideWindow.r_dark]
   distortion:
     title: Distortion Reference File Information
     description: |
@@ -91,12 +80,7 @@ properties:
     type: string
     archive_catalog:
       datatype: nvarchar(120)
-      destination:
-        [
-          ScienceRefData.r_distortion,
-          GuideWindow.r_distortion,
-          WFICommon.r_distortion,
-        ]
+      destination: [ScienceRefData.r_distortion, GuideWindow.r_distortion]
   epsf:
     title: ePSF Reference File Information
     description: |
@@ -105,7 +89,7 @@ properties:
     type: string
     archive_catalog:
       datatype: nvarchar(120)
-      destination: [ScienceRefData.r_epsf, GuideWindow.r_epsf, WFICommon.r_epsf]
+      destination: [ScienceRefData.r_epsf, GuideWindow.r_epsf]
   mask:
     title: Bad Pixel Mask Reference File Information
     description: |
@@ -114,7 +98,7 @@ properties:
     type: string
     archive_catalog:
       datatype: nvarchar(120)
-      destination: [ScienceRefData.r_mask, GuideWindow.r_mask, WFICommon.r_mask]
+      destination: [ScienceRefData.r_mask, GuideWindow.r_mask]
   flat:
     title: Flat Reference File Information
     description: |
@@ -124,7 +108,7 @@ properties:
     type: string
     archive_catalog:
       datatype: nvarchar(120)
-      destination: [ScienceRefData.r_flat, GuideWindow.r_flat, WFICommon.r_flat]
+      destination: [ScienceRefData.r_flat, GuideWindow.r_flat]
   gain:
     title: Gain Reference Rile Information
     description: |
@@ -134,7 +118,7 @@ properties:
     type: string
     archive_catalog:
       datatype: nvarchar(120)
-      destination: [ScienceRefData.r_gain, GuideWindow.r_gain, WFICommon.r_gain]
+      destination: [ScienceRefData.r_gain, GuideWindow.r_gain]
   inverse_linearity:
     title: Inverse Linearity Reference File Information
     description: |
@@ -145,11 +129,7 @@ properties:
     archive_catalog:
       datatype: nvarchar(120)
       destination:
-        [
-          ScienceRefData.r_inverse_linearity,
-          GuideWindow.r_inverse_linearity,
-          WFICommon.r_inverse_linearity,
-        ]
+        [ScienceRefData.r_inverse_linearity, GuideWindow.r_inverse_linearity]
   linearity:
     title: Linearity Reference File Information
     description: |
@@ -158,12 +138,7 @@ properties:
     type: string
     archive_catalog:
       datatype: nvarchar(120)
-      destination:
-        [
-          ScienceRefData.r_linearity,
-          GuideWindow.r_linearity,
-          WFICommon.r_linearity,
-        ]
+      destination: [ScienceRefData.r_linearity, GuideWindow.r_linearity]
   photom:
     title: Photometry Reference File Information
     description: |
@@ -173,8 +148,7 @@ properties:
     type: string
     archive_catalog:
       datatype: nvarchar(120)
-      destination:
-        [ScienceRefData.r_photom, GuideWindow.r_photom, WFICommon.r_photom]
+      destination: [ScienceRefData.r_photom, GuideWindow.r_photom]
   readnoise:
     title: Read Noise Reference File Information
     description: |
@@ -183,12 +157,7 @@ properties:
     type: string
     archive_catalog:
       datatype: nvarchar(120)
-      destination:
-        [
-          ScienceRefData.r_readnoise,
-          GuideWindow.r_readnoise,
-          WFICommon.r_readnoise,
-        ]
+      destination: [ScienceRefData.r_readnoise, GuideWindow.r_readnoise]
   refpix:
     title: Reference Pixel Reference File Information
     description: |
@@ -197,8 +166,7 @@ properties:
     type: string
     archive_catalog:
       datatype: nvarchar(120)
-      destination:
-        [ScienceRefData.r_refpix, GuideWindow.r_refpix, WFICommon.r_refpix]
+      destination: [ScienceRefData.r_refpix, GuideWindow.r_refpix]
   saturation:
     title: Saturation Reference File Information
     description: |
@@ -207,12 +175,7 @@ properties:
     type: string
     archive_catalog:
       datatype: nvarchar(120)
-      destination:
-        [
-          ScienceRefData.r_saturation,
-          GuideWindow.r_saturation,
-          WFICommon.r_saturation,
-        ]
+      destination: [ScienceRefData.r_saturation, GuideWindow.r_saturation]
 required:
   [
     apcorr,

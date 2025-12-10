@@ -138,7 +138,9 @@ class TestLastestResources:
             f"{latest_tagged_schema_uri} is tagged but not a datamodel."
         )
 
-    def test_tagged_schema_path(self, latest_tagged_schema_uri, latest_dir, latest_reference_files_dir, latest_uri_paths):
+    def test_tagged_schema_path(
+        self, latest_tagged_schema_uri, latest_dir, latest_reference_files_dir, latest_ccsp_dir, latest_uri_paths
+    ):
         """
         Check that all datamodels are in the top-level directory and all reference files are in the reference_files directory.
         """
@@ -146,6 +148,15 @@ class TestLastestResources:
         if "reference_file" in latest_tagged_schema_uri:
             assert path.parent == latest_reference_files_dir, (
                 f"{latest_tagged_schema_uri} is a reference file that is not in the reference_files directory."
+            )
+        elif "CCSP" in latest_tagged_schema_uri:
+            assert path.parent.parent == latest_ccsp_dir, (
+                f"{latest_tagged_schema_uri} is a CCSP file that is not in the CCSP directory."
+            )
+            ccsp_id_dir = path.parent.name
+            ccsp_id_prefix = latest_tagged_schema_uri.split("/")[-1].split("_")[0]
+            assert ccsp_id_prefix.upper() == ccsp_id_dir, (
+                f"{latest_tagged_schema_uri} is not prefixed with '{ccsp_id_dir.lower()}_'"
             )
         else:
             assert path.parent == latest_dir, f"{latest_tagged_schema_uri} is a datamodel that is not in the top-level directory."

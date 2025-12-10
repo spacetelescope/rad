@@ -18,7 +18,7 @@ allOf:
       exposure:
         $ref: asdf://stsci.edu/datamodels/roman/schemas/meta/exposure-1.0.0
       guide_star:
-        $ref: asdf://stsci.edu/datamodels/roman/schemas/meta/guidestar-1.0.0
+        $ref: asdf://stsci.edu/datamodels/roman/schemas/meta/guidestar-1.1.0
       instrument:
         $ref: asdf://stsci.edu/datamodels/roman/schemas/meta/wfi_mode-1.0.0
       observation:

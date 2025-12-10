@@ -16,7 +16,7 @@ properties:
     archive_catalog:
       datatype: nvarchar(8)
       destination:
-        [WFIReferenceFrame.instrument_name, MSOSCatalog.instrument_name]
+        [WFIMSOSReferenceFrame.instrument_name, WFIMSOSCatalog.instrument_name]
   # The following fields are NOT required, but they would be nice to have as explicitly specified values to fill in for our cross-mission search. If not relevant or not provided these will just be null values at MAST.
   detector: # SOC Proposed
     title: Detector
@@ -25,7 +25,7 @@ properties:
     maxLength: 16
     archive_catalog:
       datatype: nvarchar(16)
-      destination: [WFIReferenceFrame.detector, MSOSCatalog.detector]
+      destination: [WFIMSOSReferenceFrame.detector, WFIMSOSCatalog.detector]
   aperture: # SOC Proposed
     title: Aperture
     description: The WFI aperture name
@@ -33,7 +33,7 @@ properties:
     maxLength: 16
     archive_catalog:
       datatype: nvarchar(16)
-      destination: [WFIReferenceFrame.aperture, MSOSCatalog.aperture]
+      destination: [WFIMSOSReferenceFrame.aperture, WFIMSOSCatalog.aperture]
   calver: # SOC Proposed
     title: Calibration Version
     description: The version of the calibration software used
@@ -43,8 +43,8 @@ properties:
       datatype: nvarchar(16)
       destination:
         [
-          WFIReferenceFrame.calibration_software_version,
-          MSOSCatalog.calibration_software_version,
+          WFIMSOSReferenceFrame.calibration_software_version,
+          WFIMSOSCatalog.calibration_software_version,
         ]
   optical_element:
     allOf:
@@ -56,6 +56,6 @@ properties:
     archive_catalog:
       datatype: nvarchar(20)
       destination:
-        [WFIReferenceFrame.optical_element, MSOSCatalog.optical_element]
+        [WFIMSOSReferenceFrame.optical_element, WFIMSOSCatalog.optical_element]
 
 required: [instrume, detector, aperture, calver, optical_element]

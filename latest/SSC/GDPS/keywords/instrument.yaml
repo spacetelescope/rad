@@ -16,5 +16,5 @@ properties:
     maxLength: 20
     archive_catalog:
       datatype: nvarchar(20)
-      destination: [Placeholder.optical_element]
+      destination: [WFISpec.optical_element]
 required: [optical_element]
