@@ -61,8 +61,8 @@ tags:
     title: Aperture correction reference schema
     description: |-
       Aperture correction reference schema
-  - tag_uri: asdf://stsci.edu/datamodels/roman/tags/reference_files/dark-1.4.0
-    schema_uri: asdf://stsci.edu/datamodels/roman/schemas/reference_files/dark-1.4.0
+  - tag_uri: asdf://stsci.edu/datamodels/roman/tags/reference_files/dark-1.5.0
+    schema_uri: asdf://stsci.edu/datamodels/roman/schemas/reference_files/dark-1.5.0
     title: Dark reference schema
     description: |-
       Dark reference schema
