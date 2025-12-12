@@ -1,6 +1,6 @@
 [project]
 name = "rad"
-description = "Roman Attribute Dictionary"
+description = "Test run PR"
 requires-python = ">=3.11"
 authors = [{ name = "STScI" }]
 classifiers = [
