@@ -20,7 +20,7 @@ properties:
           cal_logs:
             $ref: asdf://stsci.edu/datamodels/roman/schemas/meta/cal_logs-1.0.0
           cal_step:
-            $ref: asdf://stsci.edu/datamodels/roman/schemas/meta/l2_cal_step-1.0.0
+            $ref: asdf://stsci.edu/datamodels/roman/schemas/meta/l2_cal_step-1.1.0
           outlier_detection:
             $ref: asdf://stsci.edu/datamodels/roman/schemas/meta/outlier_detection-1.0.0
           photometry:

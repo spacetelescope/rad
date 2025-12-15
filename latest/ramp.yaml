@@ -15,7 +15,7 @@ properties:
       - type: object
         properties:
           cal_step:
-            $ref: asdf://stsci.edu/datamodels/roman/schemas/meta/l2_cal_step-1.0.0
+            $ref: asdf://stsci.edu/datamodels/roman/schemas/meta/l2_cal_step-1.1.0
   data:
     title: Science Data Including Border Reference Pixels (DN, electrons)
     description: |
