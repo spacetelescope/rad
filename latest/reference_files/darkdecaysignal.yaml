@@ -1,0 +1,44 @@
+%YAML 1.1
+---
+$schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.0.0
+id: asdf://stsci.edu/datamodels/roman/schemas/reference_files/darkdecaysignal-1.0.0
+
+title: Dark Decay Signal Reference File Schema
+
+datamodel_name: DarkdecaysignalRefModel
+
+type: object
+properties:
+  meta:
+    allOf:
+      - $ref: asdf://stsci.edu/datamodels/roman/schemas/reference_files/ref_common-1.2.0
+      - type: object
+        properties:
+          reftype:
+            type: string
+            enum: [DARKDECAYSIGNAL]
+  decay_table:
+    type: object
+    patternProperties:
+      "^WFI(0[1-9]|1[0-8])$":
+        type: object
+        properties:
+          amplitude:
+            title: Decay Amplitude
+            description: |
+              The exponential amplitude of the dark decay signal in DN at time t=0.
+            anyOf:
+              - type: number
+              - type: "null"
+          time_constant:
+            title: Time Constant
+            description: |
+              The exponential time constant by which the amplitude of the residual decreases with time.
+            anyOf:
+              - type: number
+              - type: "null"
+        required: [amplitude, time_constant]
+    additionalProperties: false
+required: [meta, decay_table]
+flowStyle: block
+propertyOrder: [meta, decay_table]
