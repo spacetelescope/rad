@@ -1,0 +1,1 @@
+Removed the MA Table keywords from the dark current reference schema.
