@@ -66,6 +66,11 @@ tags:
     title: Dark reference schema
     description: |-
       Dark reference schema
+  - tag_uri: asdf://stsci.edu/datamodels/roman/tags/reference_files/detectorstatus-1.0.0
+    schema_uri: asdf://stsci.edu/datamodels/roman/schemas/reference_files/detectorstatus-1.0.0
+    title: Detector Status reference schema
+    description: |-
+      Reference file that is a summary for the current status of each WFI detector to support prompt processing.
   - tag_uri: asdf://stsci.edu/datamodels/roman/tags/reference_files/darkdecaysignal-1.0.0
     schema_uri: asdf://stsci.edu/datamodels/roman/schemas/reference_files/darkdecaysignal-1.0.0
     title: Dark Decay Signal Reference File Schema
