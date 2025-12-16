@@ -1,0 +1,1 @@
+Added a wfi_parallel keyword block to the observation schema.
