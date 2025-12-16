@@ -152,4 +152,7 @@ required:
     window_ystop,
     guide_star_id,
     epoch,
+    jitter_major,
+    jitter_minor,
+    jitter_position_angle,
   ]
