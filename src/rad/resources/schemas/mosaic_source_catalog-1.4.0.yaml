@@ -1,1 +1,34 @@
-../../../../latest/mosaic_source_catalog.yaml
+%YAML 1.1
+---
+$schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.0.0
+id: asdf://stsci.edu/datamodels/roman/schemas/mosaic_source_catalog-1.4.0
+
+title: Source catalog generated from a Level 3 file by the Source Catalog Step.
+
+datamodel_name: MosaicSourceCatalogModel
+
+archive_meta: Science WFI Level 4 Source Catalog L3 Product
+type: object
+properties:
+  meta:
+    allOf:
+      - $ref: asdf://stsci.edu/datamodels/roman/schemas/meta/l3_catalog_common-1.0.0
+      - properties:
+          association:
+            $ref: asdf://stsci.edu/datamodels/roman/schemas/meta/l3_association-1.0.0
+          cal_step:
+            $ref: asdf://stsci.edu/datamodels/roman/schemas/meta/l3_cal_step-1.0.0
+          resample:
+            $ref: asdf://stsci.edu/datamodels/roman/schemas/meta/l3_resample-1.0.0
+        required: [association, cal_step, resample]
+  source_catalog:
+    title: Source Catalog
+    description: |
+      Photometry and astrometry computed in the Source Catalog Step.
+    allOf:
+      - tag: tag:astropy.org:astropy/table/table-1.*
+      - $ref: asdf://stsci.edu/datamodels/roman/schemas/tables/prompt_catalog_table-1.0.0
+
+required: [meta, source_catalog]
+flowStyle: block
+propertyOrder: [meta, source_catalog]
