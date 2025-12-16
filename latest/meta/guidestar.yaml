@@ -100,6 +100,28 @@ properties:
     archive_catalog:
       datatype: nvarchar(10)
       destination: [WFIExposure.epoch, GuideWindow.epoch]
+  jitter_major:
+    title: Major Axis Jitter (milliarcseconds)
+    description: Estimate of the guidestar jitter kernel width (in
+      milliarcseconds) along the major axis of the jitter kernel.
+      When no guidestar was observed with this detector, a default
+      value will be used.
+    type: number
+  jitter_minor:
+    title: Minor Axis Jitter (milliarcseconds)
+    description: Estimate of the guidestar jitter kernel width (in
+      milliarcseconds) along the minor axis of the jitter kernel.
+      When no guidestar was observed with this detector, a default
+      value will be used.
+    type: number
+  jitter_position_angle:
+    title: Jitter Position Angle (deg)
+    description: Position angle (in degrees) of the jitter kernel in the
+      science coordinate system. The position angle is the angle of the
+      major axis relative to the +Y axis, with PA increasing as the
+      major axis moves toward the +X axis. When no guidestar was
+      observed with this detector, a default value will be used.
+    type: number
 required:
   [
     guide_window_id,
