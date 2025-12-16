@@ -107,13 +107,6 @@ properties:
       When no guidestar was observed with this detector, a default
       value will be used.
     type: number
-    sdf:
-      special_processing: VALUE_REQUIRED
-      source:
-        origin: TBD
-    archive_catalog:
-      datatype: float
-      destination: [WFIExposure.jitter_major, GuideWindow.jitter_major]
   jitter_minor:
     title: Minor Axis Jitter (milliarcseconds)
     description: Estimate of the guidestar jitter kernel width (in
@@ -121,27 +114,12 @@ properties:
       When no guidestar was observed with this detector, a default
       value will be used.
     type: number
-    sdf:
-      special_processing: VALUE_REQUIRED
-      source:
-        origin: TBD
-    archive_catalog:
-      datatype: float
-      destination: [WFIExposure.jitter_minor, GuideWindow.jitter_minor]
   jitter_position_angle:
     title: Jitter Position Angle (deg)
     description: Position angle (in degrees) of the jitter kernel in the
       science coordinate system. When no guidestar was observed with this
       detector, a default value will be used.
     type: number
-    sdf:
-      special_processing: VALUE_REQUIRED
-      source:
-        origin: TBD
-    archive_catalog:
-      datatype: float
-      destination:
-        [WFIExposure.jitter_position_angle, GuideWindow.jitter_position_angle]
 required:
   [
     guide_window_id,
@@ -152,7 +130,4 @@ required:
     window_ystop,
     guide_star_id,
     epoch,
-    jitter_major,
-    jitter_minor,
-    jitter_position_angle,
   ]
