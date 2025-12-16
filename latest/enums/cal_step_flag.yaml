@@ -8,8 +8,8 @@ description: |
   The flag used to indicate the status of a calibration step.
 type: string
 enum:
+  - INCOMPLETE
   - N/A
   - COMPLETE
   - FAILED
   - SKIPPED
-  - INCOMPLETE
