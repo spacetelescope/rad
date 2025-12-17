@@ -158,9 +158,9 @@ properties:
       the first read of a WFI18 exposure.
     allOf:
       - $ref: asdf://stsci.edu/datamodels/roman/schemas/enums/cal_step_flag-1.1.0
-    archive_catalog:
-      datatype: nvarchar(15)
-      destination: [ScienceRefData.s_wfi18_transient]
+    # archive_catalog:
+    #   datatype: nvarchar(15)
+    #   destination: [ScienceRefData.s_wfi18_transient]
 required:
   [
     assign_wcs,
@@ -177,6 +177,6 @@ required:
     saturation,
     skymatch,
     tweakreg,
-    wfi18_transient,
+    # wfi18_transient,
   ]
 additionalProperties: true
