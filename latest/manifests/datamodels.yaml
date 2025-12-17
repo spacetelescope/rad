@@ -44,8 +44,8 @@ tags:
     title: Wfi level 3 mosaic information
     description: |-
       Wfi level 3 mosaic information
-  - tag_uri: asdf://stsci.edu/datamodels/roman/tags/wfi_wcs-1.4.0
-    schema_uri: asdf://stsci.edu/datamodels/roman/schemas/wfi_wcs-1.4.0
+  - tag_uri: asdf://stsci.edu/datamodels/roman/tags/wfi_wcs-1.3.0
+    schema_uri: asdf://stsci.edu/datamodels/roman/schemas/wfi_wcs-1.3.0
     title: Roman Wide Field Instrument (WFI) Level 2 (L2) WCS
     description: |-
       Roman Wide Field Instrument (WFI) Level 2 (L2) WCS and
@@ -163,13 +163,13 @@ tags:
     description: |-
       Multiple Accumulation Table Reference File Schema
   # Misc
-  - tag_uri: asdf://stsci.edu/datamodels/roman/tags/image_source_catalog-1.5.0
-    schema_uri: asdf://stsci.edu/datamodels/roman/schemas/image_source_catalog-1.5.0
+  - tag_uri: asdf://stsci.edu/datamodels/roman/tags/image_source_catalog-1.4.0
+    schema_uri: asdf://stsci.edu/datamodels/roman/schemas/image_source_catalog-1.4.0
     title: Image source catalog
     description: |-
       Photometry and astrometry computed by the Source Catalog Step
-  - tag_uri: asdf://stsci.edu/datamodels/roman/tags/segmentation_map-1.5.0
-    schema_uri: asdf://stsci.edu/datamodels/roman/schemas/segmentation_map-1.5.0
+  - tag_uri: asdf://stsci.edu/datamodels/roman/tags/segmentation_map-1.4.0
+    schema_uri: asdf://stsci.edu/datamodels/roman/schemas/segmentation_map-1.4.0
     title: Segmentation map
     description: |-
       Segmentation map computed by the Source Catalog Step
@@ -193,8 +193,8 @@ tags:
     title: Multiband segmentation map
     description: |-
       Segmentation map computed by the Multiband Catalog Step
-  - tag_uri: asdf://stsci.edu/datamodels/roman/tags/forced_image_source_catalog-1.2.0
-    schema_uri: asdf://stsci.edu/datamodels/roman/schemas/forced_image_source_catalog-1.2.0
+  - tag_uri: asdf://stsci.edu/datamodels/roman/tags/forced_image_source_catalog-1.1.0
+    schema_uri: asdf://stsci.edu/datamodels/roman/schemas/forced_image_source_catalog-1.1.0
     title: Forced image source catalog
     description: |-
       Photometry and astrometry computed by the Source Catalog Step
