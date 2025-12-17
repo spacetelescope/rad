@@ -161,8 +161,7 @@ properties:
     # archive_catalog:
     #   datatype: nvarchar(15)
     #   destination: [ScienceRefData.s_wfi18_transient]
-required:
-  [
+required: [
     assign_wcs,
     dark,
     dq_init,
