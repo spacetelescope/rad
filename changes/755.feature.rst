@@ -1,1 +1,0 @@
-Added jitter keywords to l1, l2, and epsf schemas.

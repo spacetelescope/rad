@@ -1,1 +1,0 @@
-Removes WFICommon from archive destinations under latest for B20
