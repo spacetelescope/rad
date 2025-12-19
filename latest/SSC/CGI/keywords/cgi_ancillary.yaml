@@ -23,8 +23,7 @@ properties:
     type: number
     archive_catalog:
       datatype: float
-      destination:
-        [CGIAncillary.start_time_mjd]
+      destination: [CGIAncillary.start_time_mjd]
 
   MJDEND:
     title: End Time MJD
@@ -32,8 +31,7 @@ properties:
     type: number
     archive_catalog:
       datatype: float
-      destination:
-        [CGIAncillary.end_time_mjd]
+      destination: [CGIAncillary.end_time_mjd]
 
   INSTRUME:
     title: Instrument
