@@ -1,2 +1,0 @@
-Refactor the guide window related schemas to combine common fields and create
-a common guide_window_id schema that all schemas can reference.

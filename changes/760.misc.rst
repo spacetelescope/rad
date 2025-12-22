@@ -1,1 +1,0 @@
-Updates archive_destination details after interim RAD B20 testing

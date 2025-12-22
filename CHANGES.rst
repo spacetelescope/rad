@@ -1,3 +1,47 @@
+0.29.0 (2025-12-18)
+===================
+
+New Features
+------------
+
+- Add initial schemas and docs for community contributed science product (CCSP)
+  schemas. (`#747 <https://github.com/spacetelescope/rad/issues/747>`_)
+- Added jitter keywords to l1, l2, and epsf schemas. (`#755
+  <https://github.com/spacetelescope/rad/issues/755>`_)
+- Add new Integral Non-Linearity reference file schema. (`#777
+  <https://github.com/spacetelescope/rad/issues/777>`_)
+- Added a schema for the Detector Status reference file. (`#778
+  <https://github.com/spacetelescope/rad/issues/778>`_)
+- Added a schema for Dark Decay Signal reference files. (`#779
+  <https://github.com/spacetelescope/rad/issues/779>`_)
+- Add wfi18_transient step to l2_cal_step schema. (`#780
+  <https://github.com/spacetelescope/rad/issues/780>`_)
+- Update ``ramp`` datamodel to require ``meta.cal_step`` entries. (`#782
+  <https://github.com/spacetelescope/rad/issues/782>`_)
+
+
+Misc
+----
+
+- Add correct types for archive_meta. (`#750
+  <https://github.com/spacetelescope/rad/issues/750>`_)
+- Updates archive destinations for B20 (`#754
+  <https://github.com/spacetelescope/rad/issues/754>`_)
+- Removes WFICommon from archive destinations under latest for B20 (`#757
+  <https://github.com/spacetelescope/rad/issues/757>`_)
+- Updates archive_destination details after interim RAD B20 testing (`#760
+  <https://github.com/spacetelescope/rad/issues/760>`_)
+- Refactor the guide window related schemas to combine common fields and create
+  a common guide_window_id schema that all schemas can reference. (`#765
+  <https://github.com/spacetelescope/rad/issues/765>`_)
+- Removed the MA Table keywords from the dark current reference schema. (`#776
+  <https://github.com/spacetelescope/rad/issues/776>`_)
+- Make ``INCOMPLETE`` the first enum value for ``cal_step_flag``, this sets it
+  as the
+  default value when RDM creates nodes using this flag. (`#784
+  <https://github.com/spacetelescope/rad/issues/784>`_)
+
+
 0.28.0 (2025-10-16)
 ===================
 

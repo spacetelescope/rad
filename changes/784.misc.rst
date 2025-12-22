@@ -1,2 +1,0 @@
-Make ``INCOMPLETE`` the first enum value for ``cal_step_flag``, this sets it as the
-default value when RDM creates nodes using this flag.
