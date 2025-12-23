@@ -33,8 +33,7 @@ properties:
     title: Spatial Region
     description: Spatial region of the file
     type: string
-    maxLength: 1024
     archive_catalog:
-      datatype: nvarchar(1024)
+      datatype: nvarchar(max)
       destination: [WFISpec.s_region]
 required: [program, program_complete, data_release_id, s_region]
