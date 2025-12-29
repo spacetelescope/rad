@@ -36,13 +36,6 @@ properties:
     archive_catalog:
       datatype: nvarchar(32)
       destination: [CGIExposure.opgain, CGIMosaic.opgain]
-  FRAMET:
-    title: Commanded time for EXCAM frames
-    description: Commanded time for EXCAM frames (s)
-    type: number
-    archive_catalog:
-      datatype: float
-      destination: [CGIExposure.framet, CGIMosaic.framet]
   SATSPOTS:
     title: Satellite spots are commanded
     description: Satellite spots are commanded
@@ -57,13 +50,6 @@ properties:
     archive_catalog:
       datatype: nchar(1)
       destination: [CGIExposure.ishowfsc, CGIMosaic.ishowfsc]
-  HOWFSLNK:
-    title: Linked to HOWFSC (e.g., TDD observations)
-    description: Linked to HOWFSC (e.g., TDD observations)
-    type: boolean
-    archive_catalog:
-      datatype: nchar(1)
-      destination: [CGIExposure.howfslnk, CGIMosaic.howfslnk]
   FCMLOOP:
     title: FCMLOOP
     description: FCMLOOP
@@ -75,30 +61,6 @@ properties:
     archive_catalog:
       datatype: nvarchar(8)
       destination: [CGIExposure.fcmloop, CGIMosaic.fcmloop]
-  FMLOS:
-    title: FMLOS
-    description: FMLOS
-    type: string
-    maxLength: 8
-    enum:
-      - OPEN
-      - CLOSED
-      - UNKNOWN
-    archive_catalog:
-      datatype: nvarchar(8)
-      destination: [CGIExposure.fmlos, CGIMosaic.fmlos]
-  FSMRASTER:
-    title: FSM Raster 0 (False), 1 (True), 2 (Unknown)
-    description: FSM Raster 0 (False), 1 (True), 2 (Unknown)
-    type: string
-    maxLength: 2
-    enum:
-      - "0"
-      - "1"
-      - "2"
-    archive_catalog:
-      datatype: nvarchar(2)
-      destination: [CGIExposure.fsmraster, CGIMosaic.fsmraster]
   DMZLOOP:
     title: Control state of DM zernike loop
     description: Control state of DM zernike loop
@@ -114,12 +76,8 @@ required:
   [
     FSMPRFL,
     OPGAIN,
-    FRAMET,
     SATSPOTS,
     ISHOWFSC,
-    HOWFSLNK,
     FCMLOOP,
-    FMLOS,
-    FSMRASTER,
     DMZLOOP,
   ]
