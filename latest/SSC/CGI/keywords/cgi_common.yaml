@@ -55,42 +55,6 @@ properties:
     archive_catalog:
       datatype: nvarchar(16)
       destination: [CGIExposure.detector, CGIMosaic.detector]
-  APERTURE: # SOC Proposed
-    title: Aperture
-    description: The CGI aperture name
-    type: string
-    maxLength: 16
-    archive_catalog:
-      datatype: nvarchar(16)
-      destination: [CGIExposure.aperture, CGIMosaic.aperture]
-  PINAME: # SOC Proposed
-    title: PI Last Name
-    description: Principal Investigator (PI) last name; uppercase (e.g., FORD, LEMMON)
-    type: string
-    maxLength: 16
-    archive_catalog:
-      datatype: nvarchar(16)
-      destination: [CGIExposure.pi_name, CGIMosaic.pi_name]
-  PROGTITLE: # SOC Proposed
-    title: Program Title
-    description: The title of the program
-    type: string
-    maxLength: 16
-    archive_catalog:
-      datatype: nvarchar(16)
-      destination: [CGIExposure.program_title, CGIMosaic.program_title]
-  CALVER: # SOC Proposed
-    title: Calibration Version
-    description: The version of the calibration software used
-    type: string
-    maxLength: 16
-    archive_catalog:
-      datatype: nvarchar(16)
-      destination:
-        [
-          CGIExposure.calibration_software_version,
-          CGIMosaic.calibration_software_version,
-        ]
 
 required:
   [
@@ -100,8 +64,4 @@ required:
     EXECNUM,
     CAMPAIGN,
     DETECTOR,
-    APERTURE,
-    PINAME,
-    PROGTITLE,
-    CALVER,
   ]

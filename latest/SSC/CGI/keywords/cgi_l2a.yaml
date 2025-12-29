@@ -28,13 +28,6 @@ properties:
     archive_catalog:
       datatype: nchar(1)
       destination: [CGIExposure.is_bad]
-  RECIPE:
-    title: DRP recipe to generate this data
-    description: DRP recipe to generate this data
-    type: string
-    archive_catalog:
-      datatype: nvarchar(max)
-      destination: [CGIExposure.recipe]
   DRPCTIME:
     title: DRP clock time
     description: DRP clock time
@@ -43,26 +36,5 @@ properties:
     archive_catalog:
       datatype: nvarchar(32)
       destination: [CGIExposure.drpctime]
-  FWC_PP_E:
-    title: Full well capacity of detector EM gain register
-    description: Full well capacity of detector EM gain register (electrons)
-    type: number
-    archive_catalog:
-      datatype: float
-      destination: [CGIExposure.fwc_pp_e]
-  FWC_EM_E:
-    title: Full well capacity of detector image area pixels
-    description: Full well capacity of detector image area pixels (electrons)
-    type: number
-    archive_catalog:
-      datatype: float
-      destination: [CGIExposure.fwc_em_e]
-  SAT_DN:
-    title: DN saturation
-    description: DN saturation (DN)
-    type: number
-    archive_catalog:
-      datatype: float
-      destination: [CGIExposure.sat_dn]
 required:
-  [DESMEAR, CTI_CORR, IS_BAD, RECIPE, DRPCTIME, FWC_PP_E, FWC_EM_E, SAT_DN]
+  [DESMEAR, CTI_CORR, IS_BAD, DRPCTIME]
