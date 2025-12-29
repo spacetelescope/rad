@@ -36,5 +36,4 @@ properties:
     archive_catalog:
       datatype: nvarchar(32)
       destination: [CGIExposure.drpctime]
-required:
-  [DESMEAR, CTI_CORR, IS_BAD, DRPCTIME]
+required: [DESMEAR, CTI_CORR, IS_BAD, DRPCTIME]

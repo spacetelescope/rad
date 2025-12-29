@@ -56,12 +56,4 @@ properties:
       datatype: nvarchar(16)
       destination: [CGIExposure.detector, CGIMosaic.detector]
 
-required:
-  [
-    FSWDVERS,
-    INSTRUME,
-    PROGNUM,
-    EXECNUM,
-    CAMPAIGN,
-    DETECTOR,
-  ]
+required: [FSWDVERS, INSTRUME, PROGNUM, EXECNUM, CAMPAIGN, DETECTOR]
