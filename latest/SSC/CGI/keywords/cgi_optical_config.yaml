@@ -205,7 +205,7 @@ properties:
       - HLC34_R7C2
       - HLC34_R8C1
       - HLC12_C1R3_FFT
-     archive_catalog:
+    archive_catalog:
       datatype: nvarchar(128)
       destination: [CGIExposure.fpamname, CGIMosaic.fpamname]
   LSAM_H:
