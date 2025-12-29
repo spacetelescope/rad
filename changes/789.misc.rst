@@ -1,0 +1,1 @@
+Updated schemas for CGI L1, L2a, L2b, L3, and L4 Data Products to remove unneeded keywords, added missing enum values for those keywords that have them.
