@@ -72,12 +72,4 @@ properties:
       datatype: nvarchar(128)
       destination: [CGIExposure.dmzloop, CGIMosaic.dmzloop]
 
-required:
-  [
-    FSMPRFL,
-    OPGAIN,
-    SATSPOTS,
-    ISHOWFSC,
-    FCMLOOP,
-    DMZLOOP,
-  ]
+required: [FSMPRFL, OPGAIN, SATSPOTS, ISHOWFSC, FCMLOOP, DMZLOOP]
