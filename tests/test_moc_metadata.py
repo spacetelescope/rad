@@ -30,6 +30,88 @@ import pytest
 
 _L2_SCHEMA_PATH = Path(__file__).parent.parent.absolute() / "latest" / "wfi_image.yaml"
 
+TRUTH = {
+    "data": {
+        "datatype": "float32",
+        "exact_datatype": True,
+        "ndim": 2,
+    },
+    "dq": {
+        "datatype": "uint32",
+        "exact_datatype": True,
+        "ndim": 2,
+    },
+    "meta.filename": {
+        "type": "string",
+    },
+    "meta.observation.execution_plan": {
+        "type": "integer",
+    },
+    "meta.observation.segment": {
+        "type": "integer",
+    },
+    "meta.observation.program": {
+        "type": "integer",
+    },
+    "meta.observation.pass": {
+        "type": "integer",
+    },
+    "meta.observation.exposure": {
+        "type": "integer",
+    },
+    "meta.observation.visit": {
+        "type": "integer",
+    },
+    "meta.instrument.detector": {
+        "type": "string",
+        "enum": set([f"WFI{i:02}" for i in range(1, 19)]),
+    },
+    "meta.instrument.optical_element": {
+        "type": "string",
+        "enum": {
+            "F062",
+            "F087",
+            "F106",
+            "F129",
+            "F146",
+            "F158",
+            "F184",
+            "F213",
+            "GRISM",
+            "PRISM",
+            "DARK",
+            "NOT_CONFIGURED",
+        },
+    },
+    "meta.exposure.start_time": {
+        "tag": "tag:stsci.edu:asdf/time/time-1.*",
+    },
+}
+
+REQUIRED = {
+    "": {
+        "data",
+        "dq",
+    },
+    "meta": {
+        "filename",
+    },
+    "meta.observation": {
+        "execution_plan",
+        "segment",
+        "program",
+        "pass",
+        "exposure",
+    },
+    "meta.instrument": {
+        "detector",
+        "optical_element",
+    },
+    "meta.exposure": {
+        "start_time",
+    },
+}
+
 
 @pytest.fixture(scope="session")
 def l2_schema():
@@ -38,9 +120,9 @@ def l2_schema():
 
 @pytest.fixture()
 def subschema(l2_schema, request):
-    path = request.param
     schema = l2_schema
-    if not path:
+
+    if not (path := request.param):
         return schema
     for subpath in path.split("."):
         if "allOf" in schema:
@@ -76,96 +158,24 @@ def _find_key(schema, key):
     return values[0]
 
 
-@pytest.mark.parametrize("subschema", ["data"], indirect=True)
-def test_data(subschema):
-    assert subschema["datatype"] == "float32"
-    assert subschema["exact_datatype"]
-    assert subschema["ndim"] == 2
+@pytest.mark.parametrize("subschema, truth", TRUTH.items(), indirect=["subschema"])
+def test_check_schema(subschema, truth):
+    """Test that the schema matches the expected checks."""
+
+    for key, value in truth.items():
+        schema_value = _find_key(subschema, key)
+        # Turn lists into sets for comparison
+        if isinstance(value, set):
+            schema_value = set(schema_value)
+
+        assert schema_value == value
+
+        # Check that boolean values are exactly the same
+        if isinstance(value, bool):
+            assert schema_value is value
 
 
-@pytest.mark.parametrize("subschema", ["dq"], indirect=True)
-def test_dq(subschema):
-    assert subschema["datatype"] == "uint32"
-    assert subschema["exact_datatype"]
-    assert subschema["ndim"] == 2
-
-
-@pytest.mark.parametrize("subschema", ["meta.filename"], indirect=True)
-def test_meta_filename(subschema):
-    assert subschema["type"] == "string"
-
-
-@pytest.mark.parametrize("subschema", ["meta.observation.execution_plan"], indirect=True)
-def test_meta_observation_execution_plan(subschema):
-    assert subschema["type"] == "integer"
-
-
-@pytest.mark.parametrize("subschema", ["meta.observation.segment"], indirect=True)
-def test_meta_observation_segment(subschema):
-    assert subschema["type"] == "integer"
-
-
-@pytest.mark.parametrize("subschema", ["meta.observation.program"], indirect=True)
-def test_meta_observation_program(subschema):
-    assert subschema["type"] == "integer"
-
-
-@pytest.mark.parametrize("subschema", ["meta.observation.pass"], indirect=True)
-def test_meta_observation_pass(subschema):
-    assert subschema["type"] == "integer"
-
-
-@pytest.mark.parametrize("subschema", ["meta.observation.exposure"], indirect=True)
-def test_meta_observation_exposure(subschema):
-    assert subschema["type"] == "integer"
-
-
-@pytest.mark.parametrize("subschema", ["meta.observation.visit"], indirect=True)
-def test_meta_observation_visit(subschema):
-    assert subschema["type"] == "integer"
-
-
-@pytest.mark.parametrize("subschema", ["meta.instrument.detector"], indirect=True)
-def test_meta_instrument_detector(subschema):
-    assert _find_key(subschema, "type") == "string"
-    assert set(_find_key(subschema, "enum")) == set([f"WFI{i:02}" for i in range(1, 19)])
-
-
-@pytest.mark.parametrize("subschema", ["meta.instrument.optical_element"], indirect=True)
-def test_meta_instrument_optical_element(subschema):
-    assert _find_key(subschema, "type") == "string"
-    assert set(_find_key(subschema, "enum")) == {
-        "F062",
-        "F087",
-        "F106",
-        "F129",
-        "F146",
-        "F158",
-        "F184",
-        "F213",
-        "GRISM",
-        "PRISM",
-        "DARK",
-        "NOT_CONFIGURED",
-    }
-
-
-@pytest.mark.parametrize("subschema", ["meta.exposure.start_time"], indirect=True)
-def test_meta_exposure_start_time(subschema):
-    assert subschema["tag"] == "tag:stsci.edu:asdf/time/time-1.*"
-
-
-@pytest.mark.parametrize(
-    "subschema, required",
-    [
-        ("", {"data", "dq"}),
-        ("meta", {"filename"}),
-        ("meta.observation", {"execution_plan", "segment", "program", "pass", "exposure"}),
-        ("meta.instrument", {"detector", "optical_element"}),
-        ("meta.exposure", {"start_time"}),
-    ],
-    indirect=["subschema"],
-)
+@pytest.mark.parametrize("subschema, required", REQUIRED.items(), indirect=["subschema"])
 def test_required(subschema, required):
     if "allOf" in subschema:
         schema_values = set()
