@@ -66,8 +66,11 @@ properties:
     description: Control state of DM zernike loop
     type: string
     maxLength: 128
-    # Waiting on specific enum values
-    # enum: []
+    enum:
+      - OPEN
+      - CLOSED
+      - 0
+      - 1
     archive_catalog:
       datatype: nvarchar(128)
       destination: [CGIExposure.dmzloop, CGIMosaic.dmzloop]
