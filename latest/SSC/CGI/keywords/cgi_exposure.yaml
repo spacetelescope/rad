@@ -101,7 +101,7 @@ properties:
     archive_catalog:
       datatype: nvarchar(50)
       destination: [CGIExposure.opmode]
-  MJDSTART: # SOC Proposed
+  MJDSRT:
     title: Start Time MJD
     description: Observation start time in MJD
     type: number
@@ -109,7 +109,7 @@ properties:
       datatype: float
       destination:
         [CGIExposure.visit_start_time_mjd, CGIMosaic.visit_start_time_mjd]
-  MJDEND: # SOC Proposed
+  MJDEND:
     title: End Time MJD
     description: Observation end time in MJD
     type: number
@@ -130,6 +130,6 @@ required:
     ISPC,
     FTIMEUTC,
     OPMODE,
-    MJDSTART,
+    MJDSRT,
     MJDEND,
   ]

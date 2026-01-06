@@ -183,13 +183,13 @@ properties:
     archive_catalog:
       datatype: float
       destination: [CGIExposure.z6avg]
-  Z6ARES:
+  Z6RES:
     title: Z6 (astigmatism) coeff residual  for 10000 frames
     description: Z6 (astigmatism) coeff residual  for 10000 frames (nm)
     type: number
     archive_catalog:
       datatype: float
-      destination: [CGIExposure.z6ares]
+      destination: [CGIExposure.z6res]
   Z7AVG:
     title: Z7 (coma) coeff for 10000 frames
     description: Z7 (coma) coeff for 10000 frames (nm)
