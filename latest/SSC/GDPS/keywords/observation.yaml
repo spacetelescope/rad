@@ -36,4 +36,18 @@ properties:
     archive_catalog:
       datatype: nvarchar(max)
       destination: [WFISpec.s_region]
-required: [program, program_complete, data_release_id, s_region]
+  visit_start_time_mjd:
+    title: Start Time MJD
+    description: Observation start time in MJD
+    type: number
+    archive_catalog:
+      datatype: float
+      destination: [WFISpec.visit_start_time_mjd]
+  visit_end_time_mjd:
+    title: End Time MJD
+    description: Observation end time in MJD
+    type: number
+    archive_catalog:
+      datatype: float
+      destination: [WFISpec.visit_end_time_mjd]
+required: [program, program_complete, data_release_id, s_region, visit_start_time_mjd, visit_end_time_mjd]

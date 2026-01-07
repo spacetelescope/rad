@@ -52,6 +52,22 @@ properties:
           WFIMSOSCatalog.filedate,
           WFISpec.filedate,
         ]
+  instrument:
+    title: Instrument
+    description: Instrument shorthand
+    type: string
+    maxLength: 8
+    archive_catalog:
+      datatype: nvarchar(8)
+      destination:
+        [
+          CGIExposure.instrument,
+          CGIMosaic.instrument,
+          CGIAncillary.instrument,
+          WFIMSOSReferenceFrame.instrument,
+          WFIMSOSCatalog.instrument,
+          WFISpec.instrument,
+        ]
   origin:
     title: Institution / Organization Name
     description: |
@@ -71,5 +87,6 @@ properties:
           WFIMSOSCatalog.origin,
           WFISpec.origin,
         ]
+  
 
-required: [filename, file_date, origin]
+required: [filename, file_date, instrument, origin]
