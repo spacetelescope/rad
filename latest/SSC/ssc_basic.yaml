@@ -87,6 +87,5 @@ properties:
           WFIMSOSCatalog.origin,
           WFISpec.origin,
         ]
-  
 
 required: [filename, file_date, instrument, origin]

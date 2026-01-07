@@ -50,4 +50,12 @@ properties:
     archive_catalog:
       datatype: float
       destination: [WFISpec.visit_end_time_mjd]
-required: [program, program_complete, data_release_id, s_region, visit_start_time_mjd, visit_end_time_mjd]
+required:
+  [
+    program,
+    program_complete,
+    data_release_id,
+    s_region,
+    visit_start_time_mjd,
+    visit_end_time_mjd,
+  ]
