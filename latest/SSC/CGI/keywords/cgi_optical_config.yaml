@@ -380,7 +380,7 @@ properties:
       destination: [CGIExposure.dpam_v, CGIMosaic.dpam_v]
   DPAMNAME:
     title: Closest DPAM named position
-    description: Closest DPAM named position or possible positions 
+    description: Closest DPAM named position or possible positions
     type: string
     maxLength: 32
     enum:
