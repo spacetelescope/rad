@@ -58,7 +58,7 @@ def _repo_branch(repo: Repo, hexsha: str) -> Generator[None, None, None]:
 
     if file_diffs:
         for file_diff in file_diffs:
-            if file_diff.a_path.startswith("latest/"):
+            if file_diff.a_path.startswith("latest/") or file_diff.a_path.startswith("src/rad/resources/"):
                 changed_latest.append(file_diff.a_path)
 
         # Only want to change the latest files during this context the other changes should be preserved
@@ -71,6 +71,7 @@ def _repo_branch(repo: Repo, hexsha: str) -> Generator[None, None, None]:
 
     # Checkout checkout the latest files from hexshaw in the primary repo.
     repo.git.checkout(hexsha, "--", "latest")
+    repo.git.checkout(hexsha, "--", "src/rad/resources")
 
     # Apply the stashed changes back to the working directory
     if file_diffs:
@@ -128,8 +129,8 @@ def _diff_repo(
         verbose=True,
     )["archive_schemas"]
 
+    print("Generating archive files for the main branch...")
     with _repo_branch(repo, hexsha):
-        print("Generating archive files for the current staged state...")
         main_schemas = dump(
             base_dir, super_schema=False, archive_json=False, archive_txt=False, archive_yaml=False, verbose=True
         )["archive_schemas"]

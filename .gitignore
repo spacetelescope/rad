@@ -144,3 +144,6 @@ _version.py
 
 # uv
 uv.lock
+
+# archive script default write directory
+archive_dump/
