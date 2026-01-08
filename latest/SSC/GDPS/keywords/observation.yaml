@@ -65,5 +65,5 @@ required:
     s_region,
     visit_start_time_mjd,
     visit_end_time_mjd,
-    exptime
+    exptime,
   ]
