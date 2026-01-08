@@ -61,12 +61,12 @@ properties:
       datatype: nvarchar(8)
       destination:
         [
-          CGIExposure.instrument,
-          CGIMosaic.instrument,
-          CGIAncillary.instrument,
-          WFIMSOSReferenceFrame.instrument,
-          WFIMSOSCatalog.instrument,
-          WFISpec.instrument,
+          CGIExposure.instrument_name,
+          CGIMosaic.instrument_name,
+          CGIAncillary.instrument_name,
+          WFIMSOSReferenceFrame.instrument_name,
+          WFIMSOSCatalog.instrument_name,
+          WFISpec.instrument_name,
         ]
   origin:
     title: Institution / Organization Name
