@@ -380,9 +380,9 @@ properties:
       destination: [CGIExposure.dpam_v, CGIMosaic.dpam_v]
   DPAMNAME:
     title: Closest DPAM named position
-    description: Closest DPAM named position
+    description: Closest DPAM named position or possible positions 
     type: string
-    maxLength: 128
+    maxLength: 32
     enum:
       - LAUNCH
       - LUBENEG
@@ -402,7 +402,7 @@ properties:
       - IMAGING_FFT
       - PUPIL_FFT
     archive_catalog:
-      datatype: nvarchar(128)
+      datatype: nvarchar(32)
       destination: [CGIExposure.dpamname, CGIMosaic.dpamname]
 
 required:

@@ -39,14 +39,12 @@ properties:
       datatype: smallint
       destination: [CGIExposure.execution_plan, CGIMosaic.execution_plan]
   CAMPAIGN:
-    title: Campaign number portion of visit ID
-    description: Campaign number portion of visit ID
-    type: string
-    maxLength: 3
+    title: Campaign (Pass) number portion of visit ID
+    description: Campaign (Pass) number portion of visit ID
+    type: integer
     archive_catalog:
-      datatype: nvarchar(3)
+      datatype: int
       destination: [CGIExposure.campaign, CGIMosaic.campaign]
-  # The following fields are NOT required, but they would be nice to have as explicitly specified values to fill in for our cross-mission search. If not relevant or not provided these will just be null values at MAST.
   DETECTOR: # SOC Proposed
     title: Detector
     description: Name of detector "EXoplanetaryCAMera"
