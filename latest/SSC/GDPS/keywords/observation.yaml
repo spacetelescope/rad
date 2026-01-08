@@ -50,13 +50,6 @@ properties:
     archive_catalog:
       datatype: float
       destination: [WFISpec.visit_end_time_mjd]
-  exptime:
-    title: Exposure time
-    description: Exposure time in seconds
-    type: number
-    archive_catalog:
-      datatype: float
-      destination: [WFISpec.visit_exptime]
 required:
   [
     program,
@@ -65,5 +58,4 @@ required:
     s_region,
     visit_start_time_mjd,
     visit_end_time_mjd,
-    exptime,
   ]

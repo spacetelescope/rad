@@ -46,4 +46,11 @@ properties:
     archive_catalog:
       datatype: nvarchar(28)
       destination: [WFISpec.observation_id]
-required: [version_g2dp_software, g2dp_run_id, segment, visit, observation_id]
+  exptime:
+    title: Exposure time
+    description: Exposure time in seconds
+    type: number
+    archive_catalog:
+      datatype: float
+      destination: [WFISpec.visit_exptime]
+required: [version_g2dp_software, g2dp_run_id, segment, visit, observation_id, exptime]
