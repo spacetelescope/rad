@@ -44,4 +44,4 @@ properties:
     archive_catalog:
       datatype: float
       destination: [WFISpec.v3yangle]
-required: [dither, num_src, optical_model, v3yangle, detector]
+required: [dither, detector, num_src, optical_model, v3yangle]
