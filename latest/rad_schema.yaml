@@ -9,7 +9,7 @@ description: |
   Data Formatting and archive catalog-related properties.
 
 allOf:
-  - $ref: http://stsci.edu/schemas/asdf/asdf-schema-1.0.0
+  - $ref: http://stsci.edu/schemas/asdf/asdf-schema-1.1.0
   - type: object
     properties:
       datamodel_name:

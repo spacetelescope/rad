@@ -6,7 +6,7 @@ title: Datamodels extension
 description: |-
   A set of tags for serializing STScI Roman datamodels.
 asdf_standard_requirement:
-  gte: 1.1.0
+  gte: 1.6.0
 tags:
   # Object Modules
   - tag_uri: asdf://stsci.edu/datamodels/roman/tags/l1_face_guidewindow-1.5.0
