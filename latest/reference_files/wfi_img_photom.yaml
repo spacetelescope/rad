@@ -1,7 +1,7 @@
 %YAML 1.1
 ---
-$schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.0.0
-id: asdf://stsci.edu/datamodels/roman/schemas/reference_files/wfi_img_photom-1.3.0
+$schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.1.0
+id: asdf://stsci.edu/datamodels/roman/schemas/reference_files/wfi_img_photom-1.4.0
 
 title: WFI Imaging Photometric Flux Conversion Data Model
 
@@ -49,7 +49,7 @@ type: object
 properties:
   meta:
     allOf:
-      - $ref: asdf://stsci.edu/datamodels/roman/schemas/reference_files/ref_common-1.2.0
+      - $ref: asdf://stsci.edu/datamodels/roman/schemas/reference_files/ref_common-1.3.0
       - type: object
         properties:
           reftype:
@@ -63,7 +63,7 @@ properties:
     patternProperties:
       "^(F062|F087|F106|F129|F146|F158|F184|F213)$":
         allOf:
-          - $ref: asdf://stsci.edu/datamodels/roman/schemas/reference_files/wfi_img_photom-1.3.0#/definitions/basic_phot_table_entry
+          - $ref: asdf://stsci.edu/datamodels/roman/schemas/reference_files/wfi_img_photom-1.4.0#/definitions/basic_phot_table_entry
           - type: object
             properties:
               photmjsr:
@@ -93,7 +93,7 @@ properties:
       # GRISM_0 is a special optical element case that is only used for this reference file
       "^(GRISM|GRISM_0|PRISM)$":
         allOf:
-          - $ref: asdf://stsci.edu/datamodels/roman/schemas/reference_files/wfi_img_photom-1.3.0#/definitions/basic_phot_table_entry
+          - $ref: asdf://stsci.edu/datamodels/roman/schemas/reference_files/wfi_img_photom-1.4.0#/definitions/basic_phot_table_entry
           - type: object
             properties:
               photmjsr:
@@ -119,7 +119,7 @@ properties:
                 unit: "m^2"
       "^(DARK|NOT_CONFIGURED)$":
         allOf:
-          - $ref: asdf://stsci.edu/datamodels/roman/schemas/reference_files/wfi_img_photom-1.3.0#/definitions/basic_phot_table_entry
+          - $ref: asdf://stsci.edu/datamodels/roman/schemas/reference_files/wfi_img_photom-1.4.0#/definitions/basic_phot_table_entry
           - type: object
             properties:
               photmjsr:
