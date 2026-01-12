@@ -32,12 +32,12 @@ REQUIRED_SKIPS = (
     "asdf://stsci.edu/datamodels/roman/schemas/wfi_mosaic-1.6.0",
     "asdf://stsci.edu/datamodels/roman/schemas/meta/l3_catalog_common-1.1.0",
     "asdf://stsci.edu/datamodels/roman/schemas/multiband_source_catalog-1.2.0",
-    "asdf://stsci.edu/datamodels/roman/schemas/CCSP/EXAMPLE/example_custom_product-1.0.0",
+    "asdf://stsci.edu/datamodels/roman/schemas/CCSP/EXAMPLE/example_custom_product-1.1.0",
 )
 
 NESTED_REQUIRED_SKIPS = (
     "asdf://stsci.edu/datamodels/roman/schemas/meta/l3_common-1.1.0",
-    "asdf://stsci.edu/datamodels/roman/schemas/CCSP/ccsp_custom_product-1.0.0",
+    "asdf://stsci.edu/datamodels/roman/schemas/CCSP/ccsp_custom_product-1.1.0",
 )
 
 
