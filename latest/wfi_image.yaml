@@ -60,7 +60,7 @@ properties:
       Total error array in units of data numbers per second
       (DN/s) or megaJanskys per steradian (MJy/sr).
     tag: tag:stsci.edu:asdf/core/ndarray-1.*
-    datatype: float32
+    datatype: float16
     exact_datatype: true
     ndim: 2
     unit: ["DN / s", "MJy.sr**-1"]
@@ -100,6 +100,25 @@ properties:
     exact_datatype: true
     ndim: 2
     unit: ["DN2 / s2", "MJy**2.sr**-2"]
+  chisq:
+    title: Chi-squared of Ramp Fit
+    description: |
+      Chi-squared statistic of the ramp fit (unitless).
+    tag: tag:stsci.edu:asdf/core/ndarray-1.*
+    datatype: float16
+    exact_datatype: true
+    ndim: 2
+  dumo:
+    title: Difference Uniform Minus Optimal (DN / s) or (MJy / sr)
+    description: |
+      Ramp fit with uniform weights minus ramp fit with optimal weights
+      in units of data numbers per second (DN/s) or megaJanskys per
+      steradian (MJy/sr).
+    tag: tag:stsci.edu:asdf/core/ndarray-1.*
+    datatype: float16
+    exact_datatype: true
+    ndim: 2
+    unit: ["DN / s", "MJy.sr**-1"]
   amp33:
     title: Amplifier 33 Reference Pixel Data (DN)
     description: |
@@ -212,6 +231,8 @@ propertyOrder:
     var_poisson,
     var_rnoise,
     var_flat,
+    chisq,
+    dumo,
     amp33,
     border_ref_pix_left,
     border_ref_pix_right,
@@ -230,7 +251,8 @@ required:
     dq,
     err,
     var_poisson,
-    var_rnoise,
+    chisq,
+    dumo,
     amp33,
     border_ref_pix_left,
     border_ref_pix_right,
