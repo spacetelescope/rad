@@ -1,7 +1,7 @@
 %YAML 1.1
 ---
 $schema: http://stsci.edu/schemas/yaml-schema/draft-01
-id: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.0.0
+id: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.1.0
 
 title: RAD Metaschema
 description: |
@@ -9,7 +9,7 @@ description: |
   Data Formatting and archive catalog-related properties.
 
 allOf:
-  - $ref: http://stsci.edu/schemas/asdf/asdf-schema-1.0.0
+  - $ref: http://stsci.edu/schemas/asdf/asdf-schema-1.1.0
   - type: object
     properties:
       datamodel_name:

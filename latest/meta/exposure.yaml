@@ -1,7 +1,7 @@
 %YAML 1.1
 ---
-$schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.0.0
-id: asdf://stsci.edu/datamodels/roman/schemas/meta/exposure-1.0.0
+$schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.1.0
+id: asdf://stsci.edu/datamodels/roman/schemas/meta/exposure-1.1.0
 
 title: Exposure Information
 
@@ -9,7 +9,7 @@ type: object
 properties:
   type:
     allOf:
-      - $ref: asdf://stsci.edu/datamodels/roman/schemas/enums/exposure_type-1.0.0
+      - $ref: asdf://stsci.edu/datamodels/roman/schemas/enums/exposure_type-1.1.0
     sdf:
       special_processing: VALUE_REQUIRED
       source:

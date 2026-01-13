@@ -1,6 +1,6 @@
 %YAML 1.1
 ---
-$schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.0.0
+$schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.1.0
 id: asdf://stsci.edu/datamodels/roman/schemas/SSC/MSOS/keywords/msos_common-1.0.0
 
 title: Common MSOS Keyword
@@ -48,7 +48,7 @@ properties:
         ]
   optical_element:
     allOf:
-      - $ref: asdf://stsci.edu/datamodels/roman/schemas/enums/wfi_optical_element-1.0.0
+      - $ref: asdf://stsci.edu/datamodels/roman/schemas/enums/wfi_optical_element-1.1.0
     title: Wide Field Instrument (WFI) Optical Element
     description: |
       Name of the optical element used to take the science
