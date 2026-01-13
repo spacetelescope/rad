@@ -94,7 +94,8 @@ asdf_schema_xfail_tests = [
   "src/rad/resources/schemas/SSC/GDPS/wfi_spec_location_table_level_4-1.0.0.yaml",
   "src/rad/resources/schemas/SSC/MSOS/wfi_microlensing_event_catalog_level_4-1.0.0.yaml",
   "src/rad/resources/schemas/SSC/MSOS/wfi_microlensing_light_curve_catalog_level_4-1.0.0.yaml",
-  "src/rad/resources/schemas/SSC/MSOS/wfi_microlensing_object_catalog_level_4-1.0.0.yaml",
+  "src/rad/resources/schemas/SSC/MSOS/wfi_microlensing_object_periodic_catalog_level_4-1.0.0.yaml",
+  "src/rad/resources/schemas/SSC/MSOS/wfi_microlensing_object_fiducial_catalog_level_4-1.0.0.yaml",
   "src/rad/resources/schemas/SSC/MSOS/wfi_microlensing_reference_frame_level_3-1.0.0.yaml",
   "src/rad/resources/schemas/SSC/MSOS/wfi_microlensing_variability_catalog_level_4-1.0.0.yaml",
 ]
