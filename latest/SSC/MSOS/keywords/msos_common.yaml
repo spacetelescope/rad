@@ -8,15 +8,6 @@ extName: SSC
 
 type: object
 properties:
-  instrume:
-    title: Instrument
-    description: Instrument used
-    type: string
-    maxLength: 8
-    archive_catalog:
-      datatype: nvarchar(8)
-      destination:
-        [WFIMSOSReferenceFrame.instrument_name, WFIMSOSCatalog.instrument_name]
   # The following fields are NOT required, but they would be nice to have as explicitly specified values to fill in for our cross-mission search. If not relevant or not provided these will just be null values at MAST.
   detector: # SOC Proposed
     title: Detector
@@ -58,4 +49,4 @@ properties:
       destination:
         [WFIMSOSReferenceFrame.optical_element, WFIMSOSCatalog.optical_element]
 
-required: [instrume, detector, aperture, calver, optical_element]
+required: [detector, aperture, calver, optical_element]
