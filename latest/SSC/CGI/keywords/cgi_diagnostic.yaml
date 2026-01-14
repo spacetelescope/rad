@@ -1,6 +1,6 @@
 %YAML 1.1
 ---
-$schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.0.0
+$schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.1.0
 id: asdf://stsci.edu/datamodels/roman/schemas/SSC/CGI/keywords/cgi_diagnostic-1.0.0
 
 title: Diagnostic Information
@@ -29,13 +29,6 @@ properties:
     archive_catalog:
       datatype: nchar(1)
       destination: [CGIExposure.overexp]
-  NOVEREXP:
-    title: Number of pixels exposed /100
-    description: Number of pixels exposed /100 (pixels/100)
-    type: number
-    archive_catalog:
-      datatype: float
-      destination: [CGIExposure.noverexp]
   PROXET:
     title: EXCAM ProxE heater
     description: EXCAM ProxE heater (degC)
@@ -43,27 +36,6 @@ properties:
     archive_catalog:
       datatype: float
       destination: [CGIExposure.proxet]
-  FSMSG1:
-    title: Fast Steering Mirror average voltage SG1
-    description: Fast Steering Mirror average voltage SG1 (V)
-    type: number
-    archive_catalog:
-      datatype: float
-      destination: [CGIExposure.fsmsg1]
-  FSMSG2:
-    title: Fast Steering Mirror average voltage SG2
-    description: Fast Steering Mirror average voltage SG2 (V)
-    type: number
-    archive_catalog:
-      datatype: float
-      destination: [CGIExposure.fsmsg2]
-  FSMSG3:
-    title: Fast Steering Mirror average voltage SG3
-    description: Fast Steering Mirror average voltage SG3 (V)
-    type: number
-    archive_catalog:
-      datatype: float
-      destination: [CGIExposure.fsmsg3]
   FSMX:
     title: Fast Steering mirror average X
     description: Fast Steering mirror average X (mas)
@@ -211,13 +183,13 @@ properties:
     archive_catalog:
       datatype: float
       destination: [CGIExposure.z6avg]
-  Z6ARES:
+  Z6RES:
     title: Z6 (astigmatism) coeff residual  for 10000 frames
     description: Z6 (astigmatism) coeff residual  for 10000 frames (nm)
     type: number
     archive_catalog:
       datatype: float
-      destination: [CGIExposure.z6ares]
+      destination: [CGIExposure.z6res]
   Z7AVG:
     title: Z7 (coma) coeff for 10000 frames
     description: Z7 (coma) coeff for 10000 frames (nm)
@@ -322,11 +294,7 @@ required:
     EXCAMT,
     LOCAMT,
     OVEREXP,
-    NOVEREXP,
     PROXET,
-    FSMSG1,
-    FSMSG2,
-    FSMSG3,
     FSMX,
     FSMY,
     EACQ_ROW,
@@ -348,7 +316,7 @@ required:
     Z5AVG,
     Z5RES,
     Z6AVG,
-    Z6ARES,
+    Z6RES,
     Z7AVG,
     Z7RES,
     Z8AVG,

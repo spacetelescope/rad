@@ -1,1 +1,100 @@
-../../../../latest/wfi_mosaic.yaml
+%YAML 1.1
+---
+$schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.0.0
+id: asdf://stsci.edu/datamodels/roman/schemas/wfi_mosaic-1.5.0
+
+title: The schema for WFI Level 3 mosaics.
+
+datamodel_name: MosaicModel
+archive_meta: Science WFI Level 3
+
+type: object
+properties:
+  meta:
+    allOf:
+      - $ref: asdf://stsci.edu/datamodels/roman/schemas/meta/l3_common-1.0.0
+      - required:
+          [
+            cal_logs,
+            coadd_info,
+            coordinates,
+            individual_image_meta,
+            instrument,
+            observation,
+            program,
+            statistics,
+          ]
+      - properties:
+          association:
+            $ref: asdf://stsci.edu/datamodels/roman/schemas/meta/l3_association-1.0.0
+          cal_step:
+            $ref: asdf://stsci.edu/datamodels/roman/schemas/meta/l3_cal_step-1.1.0
+          resample:
+            $ref: asdf://stsci.edu/datamodels/roman/schemas/meta/l3_resample-1.0.0
+          wcs:
+            title: World Coordinate System (WCS)
+            tag: tag:stsci.edu:gwcs/wcs-*
+          wcsinfo:
+            $ref: asdf://stsci.edu/datamodels/roman/schemas/meta/l3_wcsinfo-1.0.0
+        required: [association, cal_step, resample, wcs, wcsinfo]
+  data:
+    title: Science Data (MJy / steradian)
+    description: |
+      The science data array, excluding the border reference pixels in units of
+      MJy / steradian.
+    tag: tag:stsci.edu:asdf/core/ndarray-1.*
+    datatype: float32
+    exact_datatype: true
+    ndim: 2
+    unit: "MJy.sr**-1"
+  err:
+    title: Error Data (MJy / steradian)
+    tag: tag:stsci.edu:asdf/core/ndarray-1.*
+    datatype: float32
+    exact_datatype: true
+    ndim: 2
+    unit: "MJy.sr**-1"
+  context:
+    title: Context Data
+    tag: tag:stsci.edu:asdf/core/ndarray-1.*
+    datatype: uint32
+    exact_datatype: true
+    ndim: 3
+  weight:
+    title: Weight Data
+    tag: tag:stsci.edu:asdf/core/ndarray-1.*
+    datatype: float32
+    exact_datatype: true
+    ndim: 2
+  var_poisson:
+    title: Poisson Variability (MJy^2 / steradian^2)
+    tag: tag:stsci.edu:asdf/core/ndarray-1.*
+    datatype: float32
+    exact_datatype: true
+    ndim: 2
+    unit: "MJy**2.sr**-2"
+  var_rnoise:
+    title: Read Noise Variance (MJy^2 / steradian^2
+    tag: tag:stsci.edu:asdf/core/ndarray-1.*
+    datatype: float32
+    exact_datatype: true
+    ndim: 2
+    unit: "MJy**2.sr**-2"
+  var_flat:
+    title: Flat Field Variance (MJy^2 / steradian^2)
+    tag: tag:stsci.edu:asdf/core/ndarray-1.*
+    datatype: float32
+    exact_datatype: true
+    ndim: 2
+    unit: "MJy**2.sr**-2"
+  var_sky:
+    title: Sky Variance (MJy^2 / steradian^2)
+    tag: tag:stsci.edu:asdf/core/ndarray-1.*
+    datatype: float32
+    exact_datatype: true
+    ndim: 2
+    unit: "MJy**2.sr**-2"
+propertyOrder:
+  [meta, data, context, err, weight, var_poisson, var_rnoise, var_flat, var_sky]
+flowStyle: block
+required: [meta, data, context, err, weight, var_poisson, var_rnoise]

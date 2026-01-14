@@ -1,6 +1,6 @@
 %YAML 1.1
 ---
-$schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.0.0
+$schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.1.0
 id: asdf://stsci.edu/datamodels/roman/schemas/SSC/CGI/keywords/cgi_pointing-1.0.0
 
 title: Spacecraft Pointing Information
@@ -44,15 +44,6 @@ properties:
     archive_catalog:
       datatype: nvarchar(256)
       destination: [CGIExposure.target_name, CGIMosaic.target_name]
-  REFFRAME: # SOC Proposed
-    # This is optional, if not provided MAST will just assume ICRS, but best to explicitly provide.
-    title: Reference Frame
-    description: The coordinate system used to define the reference frame
-    type: string
-    maxLength: 16
-    archive_catalog:
-      datatype: nvarchar(16)
-      destination: [CGIExposure.reference_frame, CGIMosaic.reference_frame]
   EQUINOX:
     title: Equinox
     description: The equinox of the coordinates J2000 (yr)
@@ -61,4 +52,4 @@ properties:
       datatype: float
       destination: [CGIExposure.equinox, CGIMosaic.equinox]
 
-required: [RA, DEC, RAPM, DECPM, TARGET, REFFRAME, EQUINOX]
+required: [RA, DEC, RAPM, DECPM, TARGET, EQUINOX]
