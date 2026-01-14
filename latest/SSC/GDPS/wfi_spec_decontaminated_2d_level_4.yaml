@@ -1,6 +1,6 @@
 %YAML 1.1
 ---
-$schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.0.0
+$schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.1.0
 id: asdf://stsci.edu/datamodels/roman/schemas/SSC/GDPS/wfi_spec_decontaminated_2d_level_4-1.0.0
 
 # https://outerspace.stsci.edu/display/RSEC/Grism-Prism+Data+Products#GrismPrismDataProducts-Level4DataProduct-2DDecontaminatedSpectra

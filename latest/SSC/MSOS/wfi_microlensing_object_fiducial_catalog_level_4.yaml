@@ -1,0 +1,18 @@
+%YAML 1.1
+---
+$schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.1.0
+id: asdf://stsci.edu/datamodels/roman/schemas/SSC/MSOS/wfi_microlensing_object_fiducial_catalog_level_4-1.0.0
+
+# https://outerspace.stsci.edu/spaces/RSEC/pages/245072239/Level+4+Microlensing+Data+Products#Level4MicrolensingDataProducts-Level4-MicrolensingObjectCatalogDataProduct-Fiducial
+
+title: GBTDS Level 4 Microlensing Object Fiducial Catalog
+archive_meta: Science WFI Level 4 MSOS Object Fiducial Catalog
+type: object
+allOf:
+  - $ref: asdf://stsci.edu/datamodels/roman/schemas/SSC/ssc_basic-1.0.0
+  - $ref: asdf://stsci.edu/datamodels/roman/schemas/SSC/MSOS/keywords/msos_basic-1.0.0
+  - $ref: asdf://stsci.edu/datamodels/roman/schemas/SSC/MSOS/keywords/msos_common-1.0.0
+  - $ref: asdf://stsci.edu/datamodels/roman/schemas/SSC/MSOS/keywords/msos_observation-1.0.0
+  - $ref: asdf://stsci.edu/datamodels/roman/schemas/SSC/MSOS/keywords/msos_program-1.0.0
+  - $ref: asdf://stsci.edu/datamodels/roman/schemas/SSC/MSOS/keywords/msos_settings-1.0.0
+  - $ref: asdf://stsci.edu/datamodels/roman/schemas/SSC/MSOS/keywords/msos_weekly-1.0.0

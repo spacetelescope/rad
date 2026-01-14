@@ -11,12 +11,27 @@ from semantic_version import Version
 
 from rad import resources
 
+
+def _find_latest(uris):
+    version = Version("0.0.0")
+    uri = None
+    latest_uri = None
+    for uri in uris:
+        if version < (new := Version("1.0.0" if (v := uri.split("-")[-1]) == "1.0" else v)):
+            version = new
+            latest_uri = uri
+    return latest_uri
+
+
 # Defined directly so that the value can be reused to find the URIs from the ASDF resource manager
 # outside of a pytest fixture
 _RAD_URI_PREFIX = "asdf://stsci.edu/datamodels/roman/"
 _MANIFEST_URI_PREFIX = f"{_RAD_URI_PREFIX}manifests/"
 _SCHEMA_URI_PREFIX = f"{_RAD_URI_PREFIX}schemas/"
-_METASCHEMA_URI = f"{_SCHEMA_URI_PREFIX}rad_schema-1.0.0"
+
+_BASE_METASCHEMA_URI = f"{_SCHEMA_URI_PREFIX}rad_schema"
+_METASCHEMA_URIS = tuple(u for u in asdf.get_config().resource_manager if u.startswith(_BASE_METASCHEMA_URI))
+_METASCHEMA_URI = _find_latest(_METASCHEMA_URIS)
 
 
 # Get all the schema URIs from the ASDF resource manager cached to the current session
@@ -47,17 +62,6 @@ _LATEST_DATAMODELS_URI = next(uri for uri in _LATEST_MANIFEST_URIS if "static" n
 _LATEST_STATIC_URI = next(uri for uri in _LATEST_MANIFEST_URIS if "static" in uri)
 _LATEST_DATAMODEL_URIS = tuple(uri["schema_uri"] for uri in _CURRENT_RESOURCES[_LATEST_DATAMODELS_URI]["tags"])
 _LATEST_ARCHIVE_URIS = tuple(schema["id"] for schema in _LATEST_PATHS.values() if "archive_meta" in schema)
-
-
-def _find_latest(uris):
-    version = Version("0.0.0")
-    uri = None
-    latest_uri = None
-    for uri in uris:
-        if version < (new := Version("1.0.0" if (v := uri.split("-")[-1]) == "1.0" else v)):
-            version = new
-            latest_uri = uri
-    return latest_uri
 
 
 _PREVIOUS_DATAMODELS_URI = _find_latest(
