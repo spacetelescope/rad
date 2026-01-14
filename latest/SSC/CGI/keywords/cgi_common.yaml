@@ -16,14 +16,6 @@ properties:
     archive_catalog:
       datatype: nvarchar(8)
       destination: [CGIExposure.fswdvers, CGIMosaic.fswdvers]
-  INSTRUME:
-    title: Instrument
-    description: Instrument shorthand.
-    type: string
-    maxLength: 3
-    archive_catalog:
-      datatype: nvarchar(3)
-      destination: [CGIExposure.instrument_name, CGIMosaic.instrument_name]
   PROGNUM:
     title: Program number
     description: ID number (integer) assigned to the proposal
@@ -70,5 +62,4 @@ properties:
       destination:
         [CGIExposure.visit_end_time_mjd, CGIMosaic.visit_end_time_mjd]
 
-required:
-  [FSWDVERS, INSTRUME, PROGNUM, EXECNUM, CAMPAIGN, DETECTOR, MJDSRT, MJDEND]
+required: [FSWDVERS, PROGNUM, EXECNUM, CAMPAIGN, DETECTOR, MJDSRT, MJDEND]
