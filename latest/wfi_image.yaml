@@ -72,7 +72,7 @@ properties:
       (DN^2/s^2) or megaJanskys squared per square steradian
       (MJy^2/sr^2).
     tag: tag:stsci.edu:asdf/core/ndarray-1.*
-    datatype: float32
+    datatype: float16
     exact_datatype: true
     ndim: 2
     unit: ["DN2 / s2", "MJy**2.sr**-2"]
@@ -84,7 +84,7 @@ properties:
       (DN^2/s^2) or megaJanskys squared per square steradian
       (MJy^2/sr^2).
     tag: tag:stsci.edu:asdf/core/ndarray-1.*
-    datatype: float32
+    datatype: float16
     exact_datatype: true
     ndim: 2
     unit: ["DN2 / s2", "MJy**2.sr**-2"]
@@ -96,7 +96,7 @@ properties:
       (DN^2/s^2) or megaJanskys squared per square steradian
       (MJy^2/sr^2).
     tag: tag:stsci.edu:asdf/core/ndarray-1.*
-    datatype: float32
+    datatype: float16
     exact_datatype: true
     ndim: 2
     unit: ["DN2 / s2", "MJy**2.sr**-2"]
