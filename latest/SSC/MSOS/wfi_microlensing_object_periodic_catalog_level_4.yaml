@@ -1,12 +1,12 @@
 %YAML 1.1
 ---
-$schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.0.0
-id: asdf://stsci.edu/datamodels/roman/schemas/SSC/MSOS/wfi_microlensing_object_catalog_level_4-1.0.0
+$schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.1.0
+id: asdf://stsci.edu/datamodels/roman/schemas/SSC/MSOS/wfi_microlensing_object_periodic_catalog_level_4-1.0.0
 
-# https://outerspace.stsci.edu/display/RSEC/Level+4+Microlensing+Data+Products#Level4MicrolensingDataProducts-Level4-MicrolensingObjectCatalogDataProduct
+# https://outerspace.stsci.edu/spaces/RSEC/pages/245072239/Level+4+Microlensing+Data+Products#Level4MicrolensingDataProducts-Level4-MicrolensingObjectCatalogDataProduct-Periodic
 
-title: GBTDS Level 4 Microlensing Object Catalog
-archive_meta: Science WFI Level 4 MSOS Object Catalog
+title: GBTDS Level 4 Microlensing Object Periodic Catalog
+archive_meta: Science WFI Level 4 MSOS Object Periodic Catalog
 type: object
 allOf:
   - $ref: asdf://stsci.edu/datamodels/roman/schemas/SSC/ssc_basic-1.0.0

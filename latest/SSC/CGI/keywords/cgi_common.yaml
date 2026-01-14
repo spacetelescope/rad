@@ -1,6 +1,6 @@
 %YAML 1.1
 ---
-$schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.0.0
+$schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.1.0
 id: asdf://stsci.edu/datamodels/roman/schemas/SSC/CGI/keywords/cgi_common-1.0.0
 
 title: Common CGI Keyword
@@ -18,11 +18,11 @@ properties:
       destination: [CGIExposure.fswdvers, CGIMosaic.fswdvers]
   INSTRUME:
     title: Instrument
-    description: Instrument shorthand
+    description: Instrument shorthand.
     type: string
-    maxLength: 8
+    maxLength: 3
     archive_catalog:
-      datatype: nvarchar(8)
+      datatype: nvarchar(3)
       destination: [CGIExposure.instrument_name, CGIMosaic.instrument_name]
   PROGNUM:
     title: Program number
