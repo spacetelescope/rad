@@ -9,10 +9,16 @@ type: object
 properties:
   catalog_id:
     title: Catalog ID
-    description: WFISpec.  Example value '0001'
-    type: string
-    maxLength: 128
+    description: Unique ID number for this catalog
+    type: integer
     archive_catalog:
-      datatype: nvarchar(128)
+      datatype: int
       destination: [WFISpec.catalog_id]
-required: [catalog_id]
+  file_number:
+    title: File Number
+    description: File number for this catalog file (e.g., 1)
+    type: integer
+    archive_catalog:
+      datatype: int
+      destination: [WFISpec.file_number]
+required: [catalog_id, file_number]
