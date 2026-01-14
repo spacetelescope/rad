@@ -36,7 +36,7 @@ properties:
       destination: [WFISpec.wl_snr_global_range]
   unit_flux:
     title: Unit of flux
-    description: Example value 'DN/s'
+    description: Example value 'W m**(-2) nm**(-1)'
     type: string
     maxLength: 16
     archive_catalog:

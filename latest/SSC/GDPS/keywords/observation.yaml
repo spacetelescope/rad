@@ -16,9 +16,46 @@ properties:
       destination: [WFISpec.program]
   program_complete:
     title: Program Complete
-    description: Example value 'False|True'
+    description: Identifies if this observation program is finished.  Example value 'False'
     type: boolean
     archive_catalog:
       datatype: nchar(1)
       destination: [WFISpec.program_complete]
-required: [program, program_complete]
+  data_release_id:
+    title: Data Release ID
+    description: Data release ID. Equal to 'p' for prompt files and 'r##' (e.g., 'r05') for Data Releases.
+    type: string
+    maxLength: 3
+    archive_catalog:
+      datatype: nvarchar(3)
+      destination: [WFISpec.data_release_id]
+  s_region:
+    title: Spatial Region
+    description: Spatial region of the file
+    type: string
+    archive_catalog:
+      datatype: nvarchar(max)
+      destination: [WFISpec.s_region]
+  visit_start_time_mjd:
+    title: Start Time MJD
+    description: Observation start time in MJD
+    type: number
+    archive_catalog:
+      datatype: float
+      destination: [WFISpec.visit_start_time_mjd]
+  visit_end_time_mjd:
+    title: End Time MJD
+    description: Observation end time in MJD
+    type: number
+    archive_catalog:
+      datatype: float
+      destination: [WFISpec.visit_end_time_mjd]
+required:
+  [
+    program,
+    program_complete,
+    data_release_id,
+    s_region,
+    visit_start_time_mjd,
+    visit_end_time_mjd,
+  ]
