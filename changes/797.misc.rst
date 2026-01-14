@@ -1,0 +1,1 @@
+Introduced SSC MSOS periodic and fiducial object catalogs
