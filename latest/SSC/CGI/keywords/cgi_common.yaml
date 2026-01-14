@@ -53,5 +53,22 @@ properties:
     archive_catalog:
       datatype: nvarchar(16)
       destination: [CGIExposure.detector, CGIMosaic.detector]
+  MJDSRT:
+    title: Start Time MJD
+    description: Observation start time in MJD
+    type: number
+    archive_catalog:
+      datatype: float
+      destination:
+        [CGIExposure.visit_start_time_mjd, CGIMosaic.visit_start_time_mjd]
+  MJDEND:
+    title: End Time MJD
+    description: Observation end time in MJD
+    type: number
+    archive_catalog:
+      datatype: float
+      destination:
+        [CGIExposure.visit_end_time_mjd, CGIMosaic.visit_end_time_mjd]
 
-required: [FSWDVERS, INSTRUME, PROGNUM, EXECNUM, CAMPAIGN, DETECTOR]
+required:
+  [FSWDVERS, INSTRUME, PROGNUM, EXECNUM, CAMPAIGN, DETECTOR, MJDSRT, MJDEND]
