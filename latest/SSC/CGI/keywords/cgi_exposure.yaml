@@ -22,55 +22,6 @@ properties:
     archive_catalog:
       datatype: float
       destination: [CGIExposure.emgain_c]
-  UNITYG:
-    title: DAC value corresponding to unity gain
-    description: DAC value corresponding to unity gain (V)
-    type: number
-    archive_catalog:
-      datatype: float
-      destination: [CGIExposure.unityg]
-  EMGAINA1:
-    title: Gain voltage conversion coefficient A1
-    description: Gain voltage conversion coefficient A1
-    type: number
-    archive_catalog:
-      datatype: float
-      destination: [CGIExposure.emgaina1]
-  EMGAINA2:
-    title: Gain voltage conversion coefficient A2
-    description: Gain voltage conversion coefficient A2
-    type: number
-    archive_catalog:
-      datatype: float
-      destination: [CGIExposure.emgaina2]
-  EMGAINA3:
-    title: Gain voltage conversion coefficient A3
-    description: Gain voltage conversion coefficient A3
-    type: number
-    archive_catalog:
-      datatype: float
-      destination: [CGIExposure.emgaina3]
-  EMGAINA4:
-    title: Gain voltage conversion coefficient A4
-    description: Gain voltage conversion coefficient A4
-    type: number
-    archive_catalog:
-      datatype: float
-      destination: [CGIExposure.emgaina4]
-  EMGAINA5:
-    title: Gain voltage conversion coefficient A5
-    description: Gain voltage conversion coefficient A5
-    type: number
-    archive_catalog:
-      datatype: float
-      destination: [CGIExposure.emgaina5]
-  GAINTCAL:
-    title: Gain temperature  calibration point
-    description: Gain temperature  calibration point (degC)
-    type: number
-    archive_catalog:
-      datatype: float
-      destination: [CGIExposure.gaintcal]
   EMGAIN_A:
     title: Actual EM gain
     description: Actual EM gain
@@ -92,34 +43,6 @@ properties:
     archive_catalog:
       datatype: int
       destination: [CGIExposure.cycles]
-  LASTEXP:
-    title: Clock cycles in last exposure stage of readout
-    description: Clock cycles in last exposure stage of readout (clock cycles)
-    type: integer
-    archive_catalog:
-      datatype: int
-      destination: [CGIExposure.lastexp]
-  BLNKTIME:
-    title: Commanded blanking time in seconds
-    description: Commanded blanking time (s)
-    type: number
-    archive_catalog:
-      datatype: float
-      destination: [CGIExposure.blnktime]
-  BLNKCYC:
-    title: Commanded blanking time in cycles
-    description: Commanded blanking time (clock cycles)
-    type: integer
-    archive_catalog:
-      datatype: int
-      destination: [CGIExposure.blnkcyc]
-  EXPCYC:
-    title: Exposing stage duration
-    description: Exposing stage duration (clock cycles)
-    type: integer
-    archive_catalog:
-      datatype: int
-      destination: [CGIExposure.expcyc]
   ISPC:
     title: Photon counting flag
     description: Photon counting flag
@@ -178,25 +101,7 @@ properties:
     archive_catalog:
       datatype: nvarchar(50)
       destination: [CGIExposure.opmode]
-  # For both the Roman CGI Search and the MAST Cross-Mission Search, sending these fields will permit time-range-based searches.
-  EXPSTART: # SOC Proposed
-    title: Start Time
-    description: Observation start time (UTC)
-    allOf:
-      - $ref: http://stsci.edu/schemas/asdf/time/time-1.3.0#/definitions/iso_time
-    archive_catalog:
-      datatype: datetime2
-      destination: [CGIExposure.visit_start_time, CGIMosaic.visit_start_time]
-  EXPEND: # SOC Proposed
-    title: End Time
-    description: Observation end time (UTC)
-    allOf:
-      - $ref: http://stsci.edu/schemas/asdf/time/time-1.3.0#/definitions/iso_time
-    archive_catalog:
-      datatype: datetime2
-      destination: [CGIExposure.visit_end_time, CGIMosaic.visit_end_time]
-  # NOTE: MAST uses MJD for start and end times in our cross-mission search. We can convert from datetime strings, but if they are included in the manifest separately it would eliminate the need to do the conversion on the MAST side.
-  MJDSTART: # SOC Proposed
+  MJDSRT:
     title: Start Time MJD
     description: Observation start time in MJD
     type: number
@@ -204,7 +109,7 @@ properties:
       datatype: float
       destination:
         [CGIExposure.visit_start_time_mjd, CGIMosaic.visit_start_time_mjd]
-  MJDEND: # SOC Proposed
+  MJDEND:
     title: End Time MJD
     description: Observation end time in MJD
     type: number
@@ -219,25 +124,12 @@ required:
     ARRTYPE,
     HVCBIAS,
     EMGAIN_C,
-    UNITYG,
-    EMGAINA1,
-    EMGAINA2,
-    EMGAINA3,
-    EMGAINA4,
-    EMGAINA5,
-    GAINTCAL,
     EMGAIN_A,
     KGAINPAR,
     CYCLES,
-    LASTEXP,
-    BLNKTIME,
-    BLNKCYC,
-    EXPCYC,
     ISPC,
     FTIMEUTC,
     OPMODE,
-    EXPSTART,
-    EXPEND,
-    MJDSTART,
+    MJDSRT,
     MJDEND,
   ]

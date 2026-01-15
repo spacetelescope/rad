@@ -8,11 +8,10 @@ extName: SSC
 type: object
 properties:
   cdp_ctx:
-    title: CDP calibration reference file version
-    description: Version of the CDP Calibration file set.  Example value 'ctx00002'
-    type: string
-    maxLength: 1024
+    title: CDP Context
+    description: CDP Context for calibration files
+    type: integer
     archive_catalog:
-      datatype: nvarchar(1024)
+      datatype: int
       destination: [WFISpec.cdp_ctx]
 required: [cdp_ctx]

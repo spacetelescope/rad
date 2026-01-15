@@ -11,7 +11,7 @@ properties:
     title: WFI Optical Element
     description: |
       Name of the optical element used to take the science
-      data ("GRISM" or "PRISM").
+      data ("grism" or "prism").
     type: string
     maxLength: 20
     archive_catalog:

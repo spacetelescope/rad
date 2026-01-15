@@ -14,6 +14,14 @@ properties:
     archive_catalog:
       datatype: float
       destination: [WFISpec.dither]
+  detector:
+    title: Detector
+    description: Detector name (e.g., 'wfi01')
+    type: string
+    maxLength: 5
+    archive_catalog:
+      datatype: nvarchar(5)
+      destination: [WFISpec.detector]
   num_src:
     title: Nsrc
     description: The number of sources in the Spectra Location Table file.  Example value '500'
@@ -36,4 +44,4 @@ properties:
     archive_catalog:
       datatype: float
       destination: [WFISpec.v3yangle]
-required: [dither, num_src, optical_model, v3yangle]
+required: [dither, detector, num_src, optical_model, v3yangle]
