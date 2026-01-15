@@ -10,43 +10,43 @@ type: object
 properties:
   SPAMNAME:
     title: Closest SPAM named position
-    description: Closest SPAM named position
+    description: Closest SPAM named position or possible positions
     type: string
-    maxLength: 128
+    maxLength: 32
     archive_catalog:
-      datatype: nvarchar(128)
+      datatype: nvarchar(32)
       destination: [CGIExposure.spamname, CGIMosaic.spamname]
   FPAMNAME:
     title: Closest FPAM named position
-    description: Closest FPAM named position
+    description: Closest FPAM named position or possible positions
     type: string
-    maxLength: 128
+    maxLength: 32
     archive_catalog:
-      datatype: nvarchar(128)
+      datatype: nvarchar(32)
       destination: [CGIExposure.fpamname, CGIMosaic.fpamname]
   LSAMNAME:
     title: Closest LSAM named position
-    description: Closest LSAM named position
+    description: Closest LSAM named position or possible positions
     type: string
-    maxLength: 128
+    maxLength: 32
     archive_catalog:
-      datatype: nvarchar(128)
+      datatype: nvarchar(32)
       destination: [CGIExposure.lsamname, CGIMosaic.lsamname]
   FSAMNAME:
     title: Closest FSAM named position
-    description: Closest FSAM named position
+    description: Closest FSAM named position or possible positions
     type: string
-    maxLength: 128
+    maxLength: 32
     archive_catalog:
-      datatype: nvarchar(128)
+      datatype: nvarchar(32)
       destination: [CGIExposure.fsamname, CGIMosaic.fsamname]
   CFAMNAME:
     title: Closest CFAM named position
-    description: Closest CFAM named position
+    description: Closest CFAM named position or possible positions
     type: string
-    maxLength: 128
+    maxLength: 32
     archive_catalog:
-      datatype: nvarchar(128)
+      datatype: nvarchar(32)
       destination: [CGIExposure.cfamname, CGIMosaic.cfamname]
   DPAMNAME:
     title: Closest DPAM named position
