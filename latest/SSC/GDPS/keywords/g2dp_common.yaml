@@ -23,35 +23,6 @@ properties:
     archive_catalog:
       datatype: nvarchar(128)
       destination: [WFISpec.g2dp_run_id]
-  # NOTE: Including segment and visit will permit better checking that the SSC spectral catalogs match the FILESET_ID it gets associated with
-  segment:
-    title: Segment number
-    description: The sequence of activities produced by each iteration of a Segment Plan (Observation Sequence) in a Pass
-    type: integer
-    archive_catalog:
-      datatype: smallint
-      destination: [WFISpec.segment]
-  visit:
-    title: Visit number
-    description: Visit number within a program
-    type: integer
-    archive_catalog:
-      datatype: smallint
-      destination: [WFISpec.visit]
-  observation_id:
-    title: Programmatic Observation Identifier
-    description: Observation ID of the last SOC-provided L2 spectral image used to create the file. Example value '0000101001001001001'
-    type: string
-    maxLength: 28
-    archive_catalog:
-      datatype: nvarchar(28)
-      destination: [WFISpec.observation_id]
-  exptime:
-    title: Exposure time
-    description: Exposure time in seconds
-    type: number
-    archive_catalog:
-      datatype: float
-      destination: [WFISpec.visit_exptime]
+
 required:
-  [version_g2dp_software, g2dp_run_id, segment, visit, observation_id, exptime]
+  [version_g2dp_software, g2dp_run_id]

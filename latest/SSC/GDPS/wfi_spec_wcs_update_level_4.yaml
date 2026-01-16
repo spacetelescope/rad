@@ -1,0 +1,18 @@
+%YAML 1.1
+---
+$schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.0.0
+id: asdf://stsci.edu/datamodels/roman/schemas/SSC/GDPS/wfi_spec_wcs_update_level_4-1.0.0
+
+# https://outerspace.stsci.edu/display/RSEC/Grism-Prism+Data+Products#GrismPrismDataProducts-Level4DataProduct-SpectraLocationTable
+# Initial keyword list is based on Box manifest example 'wfi_spec_location_table_r0000101001001001001_0001_WFI01_ingest.json'
+
+title: Level 4 Grism/Prism - WCS Update
+archive_meta: Science WFI Level 4 WCS Update
+type: object
+allOf:
+  - $ref: asdf://stsci.edu/datamodels/roman/schemas/SSC/ssc_basic-1.0.0
+  - $ref: asdf://stsci.edu/datamodels/roman/schemas/SSC/GDPS/keywords/observation-1.0.0
+  - $ref: asdf://stsci.edu/datamodels/roman/schemas/SSC/GDPS/keywords/instrument-1.0.0
+  - $ref: asdf://stsci.edu/datamodels/roman/schemas/SSC/GDPS/keywords/wcs_update-1.0.0
+  - $ref: asdf://stsci.edu/datamodels/roman/schemas/SSC/GDPS/keywords/g2dp_common-1.0.0
+  - $ref: asdf://stsci.edu/datamodels/roman/schemas/SSC/GDPS/keywords/meta-l2-1.0.0
