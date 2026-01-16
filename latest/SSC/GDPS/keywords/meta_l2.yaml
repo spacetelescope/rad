@@ -37,5 +37,4 @@ properties:
     archive_catalog:
       datatype: float
       destination: [WFISpec.visit_exptime]
-required:
-  [segment, visit, observation_id, exptime]
+required: [segment, visit, observation_id, exptime]

@@ -24,5 +24,4 @@ properties:
       datatype: nvarchar(128)
       destination: [WFISpec.g2dp_run_id]
 
-required:
-  [version_g2dp_software, g2dp_run_id]
+required: [version_g2dp_software, g2dp_run_id]
