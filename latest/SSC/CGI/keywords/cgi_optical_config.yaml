@@ -22,29 +22,6 @@ properties:
     archive_catalog:
       datatype: float
       destination: [CGIExposure.spam_v, CGIMosaic.spam_v]
-  SPAMNAME:
-    title: Closest SPAM named position
-    description: Closest SPAM named position
-    type: string
-    maxLength: 128
-    enum:
-      - LAUNCH
-      - LUBENEG
-      - LUBEPOS
-      - CALIB_ENC
-      - CALIB_IDX
-      - MAGROT
-      - FIDUCIAL
-      - OPEN
-      - WFOV
-      - SPEC
-      - SPECROT
-      - MSWC
-      - WFOV_FFT
-      - MSWC_FFT
-    archive_catalog:
-      datatype: nvarchar(128)
-      destination: [CGIExposure.spamname, CGIMosaic.spamname]
   FPAM_H:
     title: FPAM +H position
     description: FPAM +H position (um)
@@ -59,155 +36,6 @@ properties:
     archive_catalog:
       datatype: float
       destination: [CGIExposure.fpam_v, CGIMosaic.fpam_v]
-  FPAMNAME:
-    title: Closest FPAM named position
-    description: Closest FPAM named position
-    type: string
-    maxLength: 128
-    enum:
-      - LAUNCH
-      - LUBENEG
-      - LUBEPOS
-      - CALIB_ENC
-      - CALIB_IDX
-      - HOLE
-      - REFLECTIVE
-      - ND225
-      - ND475
-      - MAGROT
-      - PARITY
-      - SPC12_R1C1
-      - SPC12_R1C2
-      - SPC12_R2C1
-      - SPC12_R2C2
-      - SPC12_R2C3
-      - SPC12_R2C4
-      - SPC12_R3C1
-      - SPC12_R3C2
-      - SPC12_R3C3
-      - SPC12_R4C1
-      - SPC12_R4C2
-      - SPC12_R4C3
-      - SPC12_R4C4
-      - SPC12_R4C5
-      - SPC12_R5C1
-      - SPC12_R5C2
-      - SPC12_R5C3
-      - SPC12_R5C4
-      - SPC34_R1C1
-      - SPC34_R1C2
-      - SPC34_R1C3
-      - SPC34_R1C4
-      - SPC34_R2C1
-      - SPC34_R2C2
-      - SPC34_R2C3
-      - SPC34_R2C4
-      - SPC34_R2C5
-      - SPC34_R3C1
-      - SPC34_R4C1
-      - SPC34_R4C2
-      - SPC34_R4C3
-      - SPC34_R5C1
-      - SPC34_R6C1
-      - SPC34_R6C2
-      - SPC34_R6C3
-      - SPC34_R7C1
-      - SPC34_R7C2
-      - SPC34_R8C1
-      - SPC34_R8C2
-      - SPC34_R8C3
-      - HLC12_C1R1
-      - HLC12_C1R2
-      - HLC12_C1R3
-      - HLC12_C1R4
-      - OPEN_12
-      - HLC12_C2R1
-      - HLC12_C2R2
-      - HLC12_C2R3
-      - HLC12_C2R4
-      - HLC12_C2R5
-      - HLC12_C2R6
-      - HLC12_C2R7
-      - HLC12_C2R8
-      - HLC12_C2R9
-      - HLC12_C3R1
-      - HLC12_C3R2
-      - HLC12_C3R3
-      - HLC12_C3R4
-      - HLC12_C3R5
-      - HLC12_C3R6
-      - HLC12_C3R7
-      - HLC12_C3R8
-      - HLC12_C4R1
-      - HLC12_C4R2
-      - HLC12_C4R3
-      - HLC12_C4R4
-      - HLC12_C4R5
-      - HLC12_C4R6
-      - HLC12_C4R7
-      - HLC12_C4R8
-      - HLC12_C4R9
-      - HLC12_C5R1
-      - HLC12_C5R2
-      - HLC12_C5R3
-      - HLC12_C5R4
-      - HLC12_C5R5
-      - HLC12_C5R6
-      - HLC12_C5R7
-      - HLC12_C5R8
-      - HLC12_C6R1
-      - HLC12_C6R2
-      - HLC12_C6R3
-      - HLC12_C6R4
-      - HLC12_C6R5
-      - HLC12_C6R6
-      - HLC12_C6R7
-      - HLC12_C6R8
-      - HLC12_C6R9
-      - HLC12_C7R1
-      - HLC12_C7R2
-      - HLC12_C7R3
-      - HLC12_C7R4
-      - HLC12_C7R5
-      - HLC12_C7R6
-      - HLC12_C7R7
-      - HLC12_C7R8
-      - HLC12_C7R9
-      - HLC12_C8R1
-      - HLC12_C8R2
-      - HLC12_C8R3
-      - HLC12_C8R4
-      - HLC12_C8R5
-      - HLC12_C8R6
-      - HLC12_C8R7
-      - HLC12_C8R8
-      - HLC12_C8R9
-      - HLC34_R1C1
-      - HLC34_R1C2
-      - HLC34_R1C3
-      - OPEN_34
-      - HLC34_R2C1
-      - HLC34_R2C2
-      - HLC34_R2C3
-      - HLC34_R3C1
-      - HLC34_R3C2
-      - HLC34_R3C3
-      - HLC34_R4C1
-      - HLC34_R4C2
-      - HLC34_R4C3
-      - HLC34_R5C1
-      - HLC34_R5C2
-      - HLC34_R5C3
-      - HLC34_R6C1
-      - HLC34_R6C2
-      - HLC34_R6C3
-      - HLC34_R7C1
-      - HLC34_R7C2
-      - HLC34_R8C1
-      - HLC12_C1R3_FFT
-    archive_catalog:
-      datatype: nvarchar(128)
-      destination: [CGIExposure.fpamname, CGIMosaic.fpamname]
   LSAM_H:
     title: LSAM +H position
     description: LSAM +H position (um)
@@ -222,28 +50,6 @@ properties:
     archive_catalog:
       datatype: float
       destination: [CGIExposure.lsam_v, CGIMosaic.lsam_v]
-  LSAMNAME:
-    title: Closest LSAM named position
-    description: Closest LSAM named position
-    type: string
-    maxLength: 128
-    enum:
-      - LAUNCH
-      - LUBENEG
-      - LUBEPOS
-      - CALIB_ENC
-      - CALIB_IDX
-      - OPEN
-      - PARITY
-      - NFOV
-      - WFOV
-      - SPEC
-      - SPECROT
-      - NFOV_FFT
-      - WFOV_FFT
-    archive_catalog:
-      datatype: nvarchar(128)
-      destination: [CGIExposure.lsamname, CGIMosaic.lsamname]
   FSAM_H:
     title: FSAM +H position
     description: FSAM +H position (um)
@@ -258,62 +64,6 @@ properties:
     archive_catalog:
       datatype: float
       destination: [CGIExposure.fsam_v, CGIMosaic.fsam_v]
-  FSAMNAME:
-    title: Closest FSAM named position
-    description: Closest FSAM named position
-    type: string
-    maxLength: 128
-    enum:
-      - LAUNCH
-      - LUBENEG
-      - LUBEPOS
-      - MAGROT
-      - PARITY
-      - CALIB_ENC
-      - CALIB_IDX
-      - OPEN
-      - ND475
-      - OPEN2
-      - R1C1
-      - R1C2
-      - R1C3
-      - R1C4
-      - R1C5
-      - R2C1
-      - R2C2
-      - R2C3
-      - R2C4
-      - R2C5
-      - R3C1
-      - R3C2
-      - R3C3
-      - R3C4
-      - R3C5
-      - R4C1
-      - R4C2
-      - R4C3
-      - R4C4
-      - R4C5
-      - R4C6
-      - R5C1
-      - R5C2
-      - R5C3
-      - R5C4
-      - DARK
-      - R6C1
-      - R6C2A
-      - R6C2B
-      - R6C2C
-      - R6C2D
-      - R6C3
-      - R6C4
-      - R6C5
-      - R6C6
-      - OPEN_FFT
-      - R3C5_FFT
-    archive_catalog:
-      datatype: nvarchar(128)
-      destination: [CGIExposure.fsamname, CGIMosaic.fsamname]
   CFAM_H:
     title: CFAM +H position
     description: CFAM +H position (um)
@@ -328,42 +78,6 @@ properties:
     archive_catalog:
       datatype: float
       destination: [CGIExposure.cfam_v, CGIMosaic.cfam_v]
-  CFAMNAME:
-    title: Closest CFAM named position
-    description: Closest CFAM named position
-    type: string
-    maxLength: 128
-    enum:
-      - LAUNCH
-      - LUBENEG
-      - LUBEPOS
-      - CALIB_ENC
-      - CALIB_IDX
-      - DARK
-      - 1F
-      - 1A
-      - 1B
-      - 1C
-      - 2F
-      - 2A
-      - 2B
-      - 2C
-      - 3F
-      - 3A
-      - 3B
-      - 3C
-      - 3D
-      - 3E
-      - 3G
-      - 4F
-      - 4A
-      - 4B
-      - 4C
-      - CLEAR
-      - 1A_FFT
-    archive_catalog:
-      datatype: nvarchar(128)
-      destination: [CGIExposure.cfamname, CGIMosaic.cfamname]
   DPAM_H:
     title: DPAM +H position
     description: DPAM +H position (um)
@@ -378,51 +92,19 @@ properties:
     archive_catalog:
       datatype: float
       destination: [CGIExposure.dpam_v, CGIMosaic.dpam_v]
-  DPAMNAME:
-    title: Closest DPAM named position
-    description: Closest DPAM named position or possible positions
-    type: string
-    maxLength: 32
-    enum:
-      - LAUNCH
-      - LUBENEG
-      - LUBEPOS
-      - CALIB_ENC
-      - CALIB_IDX
-      - IMAGING
-      - PUPIL
-      - DEFOCUS1
-      - DEFOCUS2
-      - DEFOCUS3
-      - DEFOCUS4
-      - PRISM3
-      - PRISM2
-      - POL0
-      - POL45
-      - IMAGING_FFT
-      - PUPIL_FFT
-    archive_catalog:
-      datatype: nvarchar(32)
-      destination: [CGIExposure.dpamname, CGIMosaic.dpamname]
 
 required:
   [
     SPAM_H,
     SPAM_V,
-    SPAMNAME,
     FPAM_H,
     FPAM_V,
-    FPAMNAME,
     LSAM_H,
     LSAM_V,
-    LSAMNAME,
     FSAM_H,
     FSAM_V,
-    FSAMNAME,
     CFAM_H,
     CFAM_V,
-    CFAMNAME,
     DPAM_H,
     DPAM_V,
-    DPAMNAME,
   ]
