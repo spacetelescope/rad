@@ -1,0 +1,1 @@
+Drop unused ``err`` array from ``RampModel``.
