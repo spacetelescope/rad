@@ -1,0 +1,60 @@
+%YAML 1.1
+---
+$schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.0.0
+id: asdf://stsci.edu/datamodels/roman/schemas/SSC/GDPS/keywords/wcs_update-1.0.0
+
+title: GDPS WCS update keywords
+extName: SSC
+type: object
+properties:
+  delta_x:
+    title: delta_x
+    description: Shift in the FPA x direction, in units of mm
+    type: number
+    archive_catalog:
+      datatype: float
+      destination: [WFISpec.delta_x]
+  delta_y:
+    title: delta_y
+    description: Shift in the FPA y direction, in units of mm.
+    type: number
+    archive_catalog:
+      datatype: float
+      destination: [WFISpec.delta_y]
+  std_x:
+    title: std_x
+    description: Standard deviation for the x shift solution, in units of mm.
+    type: number
+    archive_catalog:
+      datatype: float
+      destination: [WFISpec.std_x]
+  std_y:
+    title: std_y
+    description: Standard deviation for the y shift solution, in units of mm.
+    type: number
+    archive_catalog:
+      datatype: float
+      destination: [WFISpec.std_y]
+  delta_pa:
+    title: delta_pa
+    description: Shift in rotation, in units of radian.
+    type: number
+    archive_catalog:
+      datatype: float
+      destination: [WFISpec.delta_pa]
+  nsrc_used:
+    title: nsrc_used
+    description: The number of sources used to get the WCSUpdate solution.
+    type: integer
+    archive_catalog:
+      datatype: int
+      destination: [WFISpec.nsrc_used]
+  l2_files:
+    title: l2_files
+    description: L2 files that are used to get the WCSUpdate solution.
+    type: string
+    maxLength: 1024
+    archive_catalog:
+      datatype: nvarchar(1024)
+      destination: [WFISpec.l2_files]
+required: [delta_x, delta_y, std_x, std_y, delta_pa, nsrc_used, l2_files]
