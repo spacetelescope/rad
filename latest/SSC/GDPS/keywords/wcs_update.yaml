@@ -1,6 +1,6 @@
 %YAML 1.1
 ---
-$schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.0.0
+$schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.1.0
 id: asdf://stsci.edu/datamodels/roman/schemas/SSC/GDPS/keywords/wcs_update-1.0.0
 
 title: GDPS WCS update keywords
@@ -49,12 +49,4 @@ properties:
     archive_catalog:
       datatype: int
       destination: [WFISpec.nsrc_used]
-  l2_files:
-    title: l2_files
-    description: L2 files that are used to get the WCSUpdate solution.
-    type: string
-    maxLength: 1024
-    archive_catalog:
-      datatype: nvarchar(1024)
-      destination: [WFISpec.l2_files]
-required: [delta_x, delta_y, std_x, std_y, delta_pa, nsrc_used, l2_files]
+required: [delta_x, delta_y, std_x, std_y, delta_pa, nsrc_used]
