@@ -1,10 +1,9 @@
 %YAML 1.1
 ---
-$schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.0.0
+$schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.1.0
 id: asdf://stsci.edu/datamodels/roman/schemas/SSC/GDPS/wfi_spec_wcs_update_level_4-1.0.0
 
-# https://outerspace.stsci.edu/display/RSEC/Grism-Prism+Data+Products#GrismPrismDataProducts-Level4DataProduct-SpectraLocationTable
-# Initial keyword list is based on Box manifest example 'wfi_spec_location_table_r0000101001001001001_0001_WFI01_ingest.json'
+# https://outerspace.stsci.edu/spaces/RSEC/pages/246972857/Grism-Prism+Data+Products#GrismPrismDataProducts-Level2DataProduct-UpdatedWCSInfo
 
 title: Level 4 Grism/Prism - WCS Update
 archive_meta: Science WFI Level 4 WCS Update
