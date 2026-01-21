@@ -49,18 +49,23 @@ _MANIFEST_ENTRIES = tuple(chain(*[_CURRENT_RESOURCES[uri]["tags"] for uri in _MA
 # Look directly at the latest schemas storage directory to infer latest schemas
 _LATEST_DIR = Path(__file__).parent.parent.absolute() / "latest"
 _LATEST_PATHS = MappingProxyType(
-    {latest_path: yaml.safe_load(latest_path.read_bytes()) for latest_path in _LATEST_DIR.glob("**/*.yaml")}
+    {
+        latest_path.relative_to(_LATEST_DIR): yaml.safe_load(latest_path.read_bytes())
+        for latest_path in _LATEST_DIR.glob("**/*.yaml")
+    }
 )
-_LATEST_TOP_LEVEL_PATHS = tuple(latest_path for latest_path in _LATEST_PATHS if latest_path.parent == _LATEST_DIR)
 _LATEST_URI_PATHS = MappingProxyType({schema["id"]: path for path, schema in _LATEST_PATHS.items()})
-_LATEST_URIS = tuple(_LATEST_URI_PATHS.keys())
-_LATEST_MANIFEST_URIS = tuple(uri for uri in _LATEST_URIS if "manifests" in uri)
+_LATEST_MANIFEST_URIS = MappingProxyType(
+    {schema["id"]: schema for schema in _LATEST_PATHS.values() if "manifests" in schema["id"]}
+)
+_LATEST_TOP_LEVEL_PATHS = tuple(latest_path for latest_path in _LATEST_PATHS if latest_path.parent == Path("."))
+
 _LATEST_MANIFEST_TAGS = MappingProxyType(
-    {uri: tuple(entry["tag_uri"] for entry in _CURRENT_RESOURCES[uri]["tags"]) for uri in _LATEST_MANIFEST_URIS}
+    {uri: tuple(entry["tag_uri"] for entry in schema["tags"]) for uri, schema in _LATEST_MANIFEST_URIS.items()}
 )
 _LATEST_DATAMODELS_URI = next(uri for uri in _LATEST_MANIFEST_URIS if "static" not in uri)
 _LATEST_STATIC_URI = next(uri for uri in _LATEST_MANIFEST_URIS if "static" in uri)
-_LATEST_DATAMODEL_URIS = tuple(uri["schema_uri"] for uri in _CURRENT_RESOURCES[_LATEST_DATAMODELS_URI]["tags"])
+_LATEST_DATAMODEL_URIS = tuple(uri["schema_uri"] for uri in _LATEST_MANIFEST_URIS[_LATEST_DATAMODELS_URI]["tags"])
 _LATEST_ARCHIVE_URIS = tuple(schema["id"] for schema in _LATEST_PATHS.values() if "archive_meta" in schema)
 
 
@@ -121,6 +126,22 @@ def latest_path(request):
     return request.param
 
 
+@pytest.fixture(scope="session")
+def latest_schema(latest_path):
+    """
+    Get the latest schema from a latest path.
+    """
+    return _LATEST_PATHS[latest_path]
+
+
+@pytest.fixture(scope="session")
+def latest_uri(latest_schema):
+    """
+    Get a latest resource URI
+    """
+    return latest_schema["id"]
+
+
 @pytest.fixture(scope="session", params=_LATEST_ARCHIVE_URIS)
 def latest_archive_uri(request):
     """
@@ -138,19 +159,27 @@ def latest_dir():
 
 
 @pytest.fixture(scope="session")
-def latest_reference_files_dir(latest_dir):
+def latest_datamodels_dir():
     """
-    Get the path to the latest reference files directory.
+    Get the path to the latest datamodels directory.
     """
-    return latest_dir / "reference_files"
+    return Path(".")
 
 
 @pytest.fixture(scope="session")
-def latest_ccsp_dir(latest_dir):
+def latest_reference_files_dir(latest_datamodels_dir):
+    """
+    Get the path to the latest reference files directory.
+    """
+    return latest_datamodels_dir / "reference_files"
+
+
+@pytest.fixture(scope="session")
+def latest_ccsp_dir(latest_datamodels_dir):
     """
     Get the path to the latest CCSP schemas directory.
     """
-    return latest_dir / "CCSP"
+    return latest_datamodels_dir / "CCSP"
 
 
 @pytest.fixture(scope="session", params=_LATEST_TOP_LEVEL_PATHS)
@@ -162,27 +191,11 @@ def latest_top_level_path(request):
 
 
 @pytest.fixture(scope="session")
-def latest_uri_paths():
-    """
-    Get the mapping of latest URIs to their paths.
-    """
-    return _LATEST_URI_PATHS
-
-
-@pytest.fixture(scope="session")
 def latest_uris():
     """
     Get the URIs of the latest schemas.
     """
-    return _LATEST_URIS
-
-
-@pytest.fixture(scope="session", params=_LATEST_URIS)
-def latest_uri(request):
-    """
-    Get a latest resource URI
-    """
-    return request.param
+    return _LATEST_URI_PATHS
 
 
 @pytest.fixture(scope="session")
@@ -235,11 +248,14 @@ def latest_static_tag_uri(request):
 
 
 @pytest.fixture(scope="session")
-def latest_schemas(latest_paths, latest_uris):
+def latest_schemas(latest_dir, latest_paths, latest_uris):
     """
     Get the text of the latest schemas.
     """
-    return {latest_uri: latest_path.read_text() for latest_uri, latest_path in zip(latest_uris, latest_paths, strict=True)}
+    return {
+        latest_uri: (latest_dir / latest_path).read_text()
+        for latest_uri, latest_path in zip(latest_uris, latest_paths, strict=True)
+    }
 
 
 @pytest.fixture(scope="session", params=tuple(entry["tag_uri"] for entry in _CURRENT_RESOURCES[_PREVIOUS_DATAMODELS_URI]["tags"]))
@@ -353,7 +369,7 @@ def schema_uris():
     return _SCHEMA_URIS
 
 
-@pytest.fixture(scope="session", params=tuple(uri for uri in _LATEST_URIS if uri in _SCHEMA_URIS))
+@pytest.fixture(scope="session", params=tuple(uri for uri in _LATEST_URI_PATHS if uri in _SCHEMA_URIS))
 def schema_uri(request):
     """
     Get a URI for a RAD schema from the ASDF resource manager.
@@ -366,15 +382,18 @@ def schema_uri(request):
     return request.param
 
 
-@pytest.fixture(scope="session", params=tuple(uri for uri in _LATEST_URIS if "/reference_files" in uri and uri in _SCHEMA_URIS))
+@pytest.fixture(
+    scope="session", params=tuple(uri for uri in _LATEST_URI_PATHS if "/reference_files" in uri and uri in _SCHEMA_URIS)
+)
 def ref_file_uri(request):
     """
-    Get a URI related to the RAD reference files from the ASDF resource manager.
+    Get a URI related to the RAD reference files from the ASDF r
+    esource manager.
     """
     return request.param
 
 
-@pytest.fixture(scope="session", params=tuple(uri for uri in _LATEST_URIS if "/CCSP" in uri and uri in _SCHEMA_URIS))
+@pytest.fixture(scope="session", params=tuple(uri for uri in _LATEST_URI_PATHS if "/CCSP" in uri and uri in _SCHEMA_URIS))
 def ccsp_uri(request):
     """
     Get a URI related to the RAD CCSP schemas.
