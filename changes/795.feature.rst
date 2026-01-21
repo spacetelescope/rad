@@ -1,1 +1,0 @@
-Update L2 schema for B21, adding ``chisq`` and ``dumo`` fields and changing error/variance datatypes to float16.

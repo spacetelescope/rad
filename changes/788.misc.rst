@@ -1,1 +1,0 @@
-Updated schemas for CGI Ancillary Data Products, minor updates to INSTRUME keyword in schemas
