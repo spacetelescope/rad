@@ -10,15 +10,25 @@ from importlib.metadata import Distribution
 
 import asdf.treeutil
 import pytest
-import yaml
 
 from rad import resources
 from rad._parser import archive_schema, super_schema
 
-DIRECT_URL = json.loads(Distribution.from_name("rad").read_text("direct_url.json"))
-# Needs to be a bit complicated because tox still creates a wheel, it just does it a bit differently
-# to preserve editable installs
-IS_EDITABLE = DIRECT_URL["dir_info"].get("editable", False) if "dir_info" in DIRECT_URL else "editable" in DIRECT_URL["url"]
+_DIRECT_URL = Distribution.from_name("rad").read_text("direct_url.json")
+
+# If no text is found, then you maybe running from a directory with a `rad` subdirectory
+# Distribution will then search for `rad` within that subdirectory, so we assume not editable
+if _DIRECT_URL is None:
+    IS_EDITABLE = False
+else:
+    _DIRECT_URL_JSON = json.loads(_DIRECT_URL)
+    # Needs to be a bit complicated because tox still creates a wheel, it just does it a bit differently
+    # to preserve editable installs
+    IS_EDITABLE = (
+        _DIRECT_URL_JSON["dir_info"].get("editable", False)
+        if "dir_info" in _DIRECT_URL_JSON
+        else "editable" in _DIRECT_URL_JSON["url"]
+    )
 
 
 class TestLastestResources:
@@ -28,16 +38,15 @@ class TestLastestResources:
         """
         assert latest_paths
 
-    def test_latest_filename(self, latest_path):
+    def test_latest_filename(self, latest_path, latest_uri):
         """
         Check that the file name of the schema matches the schema ID WITHOUT the version number suffix.
         """
         # Check that the file name does not contain a version number
-        assert len(str(latest_path).split("/latest/")[-1].split("-")) == 1
+        assert len(str(latest_path).split("-")) == 1
 
         # Check that the file name is consistent with the schema ID
-        uri = yaml.safe_load(latest_path.read_bytes())["id"]
-        uri = uri.split("/schemas/")[-1] if "/schemas/" in uri else uri.split("/manifests/")[-1]
+        uri = latest_uri.split("/schemas/")[-1] if "/schemas/" in latest_uri else latest_uri.split("/manifests/")[-1]
 
         # Find the filename without the version number suffix
         filename = str(latest_path.parent / latest_path.stem).split("/latest/")[-1].split("-")[0]
@@ -46,12 +55,12 @@ class TestLastestResources:
         assert uri.split("-")[0] == filename.split("manifests/")[-1] if "manifests/" in filename else filename
 
     @pytest.mark.skipif(not IS_EDITABLE, reason="Symbolic links are resolved in non-editable installs")
-    def test_latest_symlink(self, latest_path):
+    def test_latest_symlink(self, latest_uri, latest_path, latest_dir):
         """
         Check that each "latest" file has a simlink in the `schemas` or `manifests` directory
         that points to that file which includes its version number (e.g. matches its ID).
         """
-        path_suffix = yaml.safe_load(latest_path.read_bytes())["id"].split("/roman/")[-1]
+        path_suffix = latest_uri.split("/roman/")[-1]
         path_prefix = importlib_resources.files(resources)
         symlink_path = path_prefix / f"{path_suffix}.yaml"
 
@@ -64,7 +73,9 @@ class TestLastestResources:
         assert not symlink_path.readlink().is_absolute(), f"Expected {symlink_path} to be a relative symlink, but it is not."
 
         # Check that the symlink points to the correct file
-        assert symlink_path.resolve() == latest_path, f"Expected {symlink_path} to point to {latest_path}, but it does not."
+        assert symlink_path.resolve() == latest_dir / latest_path, (
+            f"Expected {symlink_path} to point to {latest_dir / latest_path}, but it does not."
+        )
 
     def test_latest_datamodels_not_static(self, latest_datamodels_tag_uri, latest_static_tags):
         """
@@ -97,12 +108,12 @@ class TestLastestResources:
             f"{tag_schema_map[latest_datamodels_tag_uri]} is not in latest uris."
         )
 
-    def test_latest_schemas(self, latest_schema_tags, latest_schemas, latest_uri):
+    def test_latest_schemas(self, latest_schema_tags, latest_schemas, latest_schema, latest_uri):
         """
         Check that the latest schemas are using the latest versions of the schema and tag uris.
         """
         # Sanity check that the latest_uri matches the id in the latest_schemas
-        assert yaml.safe_load(latest_schemas[latest_uri])["id"] == latest_uri
+        assert latest_schema["id"] == latest_uri
 
         # Substitute all matching patterns with the latest_uri and check equality
         # If any substitution changes the schema, then we have a URI mismatch
@@ -139,12 +150,12 @@ class TestLastestResources:
         )
 
     def test_tagged_schema_path(
-        self, latest_tagged_schema_uri, latest_dir, latest_reference_files_dir, latest_ccsp_dir, latest_uri_paths
+        self, latest_tagged_schema_uri, latest_datamodels_dir, latest_reference_files_dir, latest_ccsp_dir, latest_uris
     ):
         """
         Check that all datamodels are in the top-level directory and all reference files are in the reference_files directory.
         """
-        path = latest_uri_paths[latest_tagged_schema_uri]
+        path = latest_uris[latest_tagged_schema_uri]
         if "reference_file" in latest_tagged_schema_uri:
             assert path.parent == latest_reference_files_dir, (
                 f"{latest_tagged_schema_uri} is a reference file that is not in the reference_files directory."
@@ -159,7 +170,10 @@ class TestLastestResources:
                 f"{latest_tagged_schema_uri} is not prefixed with '{ccsp_id_dir.lower()}_'"
             )
         else:
-            assert path.parent == latest_dir, f"{latest_tagged_schema_uri} is a datamodel that is not in the top-level directory."
+            print(path.parent)
+            assert path.parent == latest_datamodels_dir, (
+                f"{latest_tagged_schema_uri} is a datamodel that is not in the top-level directory."
+            )
 
     def test_top_level_schema(self, latest_top_level_path, metaschema_uri, latest_paths):
         """
