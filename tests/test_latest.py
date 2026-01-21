@@ -14,10 +14,21 @@ import pytest
 from rad import resources
 from rad._parser import archive_schema, super_schema
 
-DIRECT_URL = json.loads(Distribution.from_name("rad").read_text("direct_url.json"))
-# Needs to be a bit complicated because tox still creates a wheel, it just does it a bit differently
-# to preserve editable installs
-IS_EDITABLE = DIRECT_URL["dir_info"].get("editable", False) if "dir_info" in DIRECT_URL else "editable" in DIRECT_URL["url"]
+_DIRECT_URL = Distribution.from_name("rad").read_text("direct_url.json")
+
+# If no text is found, then you maybe running from a directory with a `rad` subdirectory
+# Distribution will then search for `rad` within that subdirectory, so we assume not editable
+if _DIRECT_URL is None:
+    IS_EDITABLE = False
+else:
+    _DIRECT_URL_JSON = json.loads(_DIRECT_URL)
+    # Needs to be a bit complicated because tox still creates a wheel, it just does it a bit differently
+    # to preserve editable installs
+    IS_EDITABLE = (
+        _DIRECT_URL_JSON["dir_info"].get("editable", False)
+        if "dir_info" in _DIRECT_URL_JSON
+        else "editable" in _DIRECT_URL_JSON["url"]
+    )
 
 
 class TestLastestResources:
