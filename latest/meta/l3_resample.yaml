@@ -19,6 +19,13 @@ properties:
       would only allow pixels with DQ bits equal to 0 in the
       calibrated rate images to be included in the final product.
     type: string
+  order:
+    title: Interpolation order
+    description: >
+      Order of the 2D spline to interpolate the sparse pixel mapping
+      if stepsize>1.  Supported values are: 1 (bilinear) or 3 (bicubic).
+      This parameter is ignored when stepsize <= 1.
+    type: integer
   pixel_scale_ratio:
     title: Pixel Scale Ratio
     description: >
@@ -35,6 +42,18 @@ properties:
     title: Number of Input Images
     description: >
       The number of input images combined with resample into an output product.
+    type: integer
+  stepsize:
+    title: Grid stepsize
+    description: >
+      If ``stepsize>1``, perform the full WCS calculation on a sparser
+      grid and use interpolation to fill in the rest of the pixels.  This
+      option speeds up pixel map computation by reducing the number of WCS
+      calls, though at the cost of reduced pixel map accuracy.  The loss
+      of accuracy is typically negligible if the underlying distortion
+      correction is smooth, but if the distortion is non-smooth,
+      ``stepsize>1`` is not recommended.  Large ``stepsize`` values are
+      automatically reduced to no more than 1/10 of image size.
     type: integer
   members:
     title: Resample Input Filenames
