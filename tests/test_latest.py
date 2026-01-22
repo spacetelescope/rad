@@ -40,23 +40,15 @@ class TestLastestResources:
 
     def test_archive_meta_uniqueness(self, latest_paths):
         """
-        Check that archve_meta is either:
-            - undefined
-            - None
-            - unique
-
-        across all latest schemas.
+        Check that archve_meta is either undefined or unique.
         """
         archive_metas = {}
         for path, schema in latest_paths.items():
             # It's ok for schemas to not contain this
             if "archive_meta" not in schema:
                 continue
-            archive_meta = schema["archive_meta"].strip()
 
-            # Multiple schemas can contain "None" so don't bother checking those
-            if archive_meta == "None":
-                continue
+            archive_meta = schema["archive_meta"].strip()
 
             # Track the possible duplicates
             if archive_meta not in archive_metas:
