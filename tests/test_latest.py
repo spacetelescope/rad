@@ -38,6 +38,35 @@ class TestLastestResources:
         """
         assert latest_paths
 
+    def test_archive_meta_uniqueness(self, latest_paths):
+        """
+        Check that archve_meta is either:
+            - undefined
+            - None
+            - unique
+
+        across all latest schemas.
+        """
+        archive_metas = {}
+        for path, schema in latest_paths.items():
+            # It's ok for schemas to not contain this
+            if "archive_meta" not in schema:
+                continue
+            archive_meta = schema["archive_meta"].strip()
+
+            # Multiple schemas can contain "None" so don't bother checking those
+            if archive_meta == "None":
+                continue
+
+            # Track the possible duplicates
+            if archive_meta not in archive_metas:
+                archive_metas[archive_meta] = []
+            archive_metas[archive_meta].append(path)
+
+        # Check for duplicates
+        for archive_meta, paths in archive_metas.items():
+            assert len(paths) == 1, f"{paths} contain the same archive_meta: {archive_meta}"
+
     def test_latest_filename(self, latest_path, latest_uri):
         """
         Check that the file name of the schema matches the schema ID WITHOUT the version number suffix.
