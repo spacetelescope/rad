@@ -1,1 +1,0 @@
-Give multiband_segmentation_map a unique ``archive_meta`` value.
