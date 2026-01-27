@@ -7,6 +7,7 @@ title: Multiband source catalog generated from a Level 3 file by the Multiband C
 
 datamodel_name: MultibandSourceCatalogModel
 
+archive_meta: Science WFI Level 4 Multiband Source Catalog L3 Product
 type: object
 properties:
   meta:
