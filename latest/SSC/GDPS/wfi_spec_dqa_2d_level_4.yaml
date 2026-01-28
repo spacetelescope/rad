@@ -14,6 +14,6 @@ allOf:
   - $ref: asdf://stsci.edu/datamodels/roman/schemas/SSC/GDPS/keywords/observation-1.0.0
   - $ref: asdf://stsci.edu/datamodels/roman/schemas/SSC/GDPS/keywords/instrument-1.0.0
   - $ref: asdf://stsci.edu/datamodels/roman/schemas/SSC/GDPS/keywords/calibration-1.0.0
-  - $ref: asdf://stsci.edu/datamodels/roman/schemas/SSC/GDPS/keywords/wavelength-1.0.0
   - $ref: asdf://stsci.edu/datamodels/roman/schemas/SSC/GDPS/keywords/pointing-1.0.0
   - $ref: asdf://stsci.edu/datamodels/roman/schemas/SSC/GDPS/keywords/g2dp_common-1.0.0
+  - $ref: asdf://stsci.edu/datamodels/roman/schemas/SSC/GDPS/keywords/meta-l2-1.0.0
