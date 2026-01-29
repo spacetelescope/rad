@@ -79,7 +79,8 @@ properties:
     type: string
     archive_catalog:
       datatype: nvarchar(120)
-      destination: [ScienceRefData.r_darkdecaysignal, GuideWindow.r_darkdecaysignal]
+      destination:
+        [ScienceRefData.r_darkdecaysignal, GuideWindow.r_darkdecaysignal]
   distortion:
     title: Distortion Reference File Information
     description: |
@@ -156,8 +157,11 @@ properties:
     type: string
     archive_catalog:
       datatype: nvarchar(120)
-      destination: [ScienceRefData.r_integralnonlinearity,
-                    GuideWindow.r_integralnonlinearity]
+      destination:
+        [
+          ScienceRefData.r_integralnonlinearity,
+          GuideWindow.r_integralnonlinearity,
+        ]
   photom:
     title: Photometry Reference File Information
     description: |
