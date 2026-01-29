@@ -1,7 +1,7 @@
 %YAML 1.1
 ---
 $schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.1.0
-id: asdf://stsci.edu/datamodels/roman/schemas/meta/l2_catalog_common-1.1.0
+id: asdf://stsci.edu/datamodels/roman/schemas/meta/l2_catalog_common-1.2.0
 
 title: Common Level 2 Catalog Metadata
 
@@ -26,7 +26,7 @@ allOf:
       program:
         $ref: asdf://stsci.edu/datamodels/roman/schemas/meta/program-1.1.0
       ref_file:
-        $ref: asdf://stsci.edu/datamodels/roman/schemas/meta/ref_file-1.1.0
+        $ref: asdf://stsci.edu/datamodels/roman/schemas/meta/ref_file-1.2.0
       visit:
         $ref: asdf://stsci.edu/datamodels/roman/schemas/meta/visit-1.1.0
       wcsinfo:

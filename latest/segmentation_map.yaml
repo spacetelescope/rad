@@ -1,7 +1,7 @@
 %YAML 1.1
 ---
 $schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.1.0
-id: asdf://stsci.edu/datamodels/roman/schemas/segmentation_map-1.5.0
+id: asdf://stsci.edu/datamodels/roman/schemas/segmentation_map-1.6.0
 
 title: Segmentation map generated from a Level 2 file by the Source Catalog Step.
 
@@ -11,7 +11,7 @@ archive_meta: Science WFI Level 4 Segmentation Map L2 Product
 type: object
 properties:
   meta:
-    $ref: asdf://stsci.edu/datamodels/roman/schemas/meta/l2_catalog_common-1.1.0
+    $ref: asdf://stsci.edu/datamodels/roman/schemas/meta/l2_catalog_common-1.2.0
   data:
     title: Segmentation map
     description: |
