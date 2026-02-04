@@ -16,10 +16,10 @@ properties:
           items:
             not:
               allOf:
-                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/tables/source_catalog_columns-1.2.0#/definitions/flagged_spatial_index"
+                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/tables/source_catalog_columns-1.2.0#/definitions/flagged_spatial_id"
                 - properties:
                     name:
-                      pattern: ^flagged_spatial_index$
+                      pattern: ^flagged_spatial_id$
       - not:
           items:
             not:
