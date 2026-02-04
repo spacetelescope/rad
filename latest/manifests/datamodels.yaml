@@ -1,7 +1,7 @@
 %YAML 1.1
 ---
-id: asdf://stsci.edu/datamodels/roman/manifests/datamodels-1.7.0
-extension_uri: asdf://stsci.edu/datamodels/roman/extensions/datamodels-1.7.0
+id: asdf://stsci.edu/datamodels/roman/manifests/datamodels-1.8.0
+extension_uri: asdf://stsci.edu/datamodels/roman/extensions/datamodels-1.8.0
 title: Datamodels extension
 description: |-
   A set of tags for serializing STScI Roman datamodels.
@@ -19,8 +19,8 @@ tags:
     title: Level 1 Detector Guide Star Window Information schema
     description: |-
       Level 1 Detector Guide Star Window Information schema
-  - tag_uri: asdf://stsci.edu/datamodels/roman/tags/ramp-1.6.0
-    schema_uri: asdf://stsci.edu/datamodels/roman/schemas/ramp-1.6.0
+  - tag_uri: asdf://stsci.edu/datamodels/roman/tags/ramp-1.7.0
+    schema_uri: asdf://stsci.edu/datamodels/roman/schemas/ramp-1.7.0
     title: Ramp schema
     description: |-
       Ramp schema
@@ -34,8 +34,8 @@ tags:
     title: Roman WFI Raw Science Data datamodel
     description: |-
       Basic Roman Raw Science
-  - tag_uri: asdf://stsci.edu/datamodels/roman/tags/wfi_image-1.6.0
-    schema_uri: asdf://stsci.edu/datamodels/roman/schemas/wfi_image-1.6.0
+  - tag_uri: asdf://stsci.edu/datamodels/roman/tags/wfi_image-1.7.0
+    schema_uri: asdf://stsci.edu/datamodels/roman/schemas/wfi_image-1.7.0
     title: Wfi level 2 image information
     description: |-
       Wfi level 2 image information
