@@ -46,13 +46,6 @@ properties:
     ndim: 3
     datatype: uint8
     exact_datatype: true
-  err:
-    title: Error Array Containing the Square Root of the Exposure-level Combined Variance (DN, electrons)
-    tag: tag:stsci.edu:asdf/core/ndarray-1.*
-    ndim: 3
-    datatype: float32
-    unit: ["DN", "electron"]
-    exact_datatype: true
   amp33:
     title: Amp 33 Reference Pixel Data (DN)
     description: |
@@ -163,7 +156,6 @@ propertyOrder:
     data,
     pixeldq,
     groupdq,
-    err,
     amp33,
     border_ref_pix_left,
     border_ref_pix_right,
@@ -183,7 +175,6 @@ required:
     data,
     pixeldq,
     groupdq,
-    err,
     amp33,
     border_ref_pix_left,
     border_ref_pix_right,
