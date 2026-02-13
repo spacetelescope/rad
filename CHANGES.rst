@@ -1,3 +1,31 @@
+0.30.0 (2026-02-13)
+===================
+
+New Features
+------------
+
+- Various small schema updates::
+
+      - Add ``dark_decay`` to ``ref_file`` and ``l2_cal_step``.
+      - Add ``integralnonlinearity`` to ``ref_file``.
+      - Update ``inverse_linearity`` to ``inverselinearity`` in ``ref_file``.
+      - Change ``flagged_spatial_index`` to ``flagged_spatial_id`` in source
+  catalog column
+        definitions and all tables that reference it.
+
+  These changes also required schema version bumps throughout RAD to support
+  the new changes. (`#815 <https://github.com/spacetelescope/rad/issues/815>`_)
+
+
+Misc
+----
+
+- Drop unused ``err`` array from ``RampModel``. (`#803
+  <https://github.com/spacetelescope/rad/issues/803>`_)
+- Add correct types for archive_meta. (`#812
+  <https://github.com/spacetelescope/rad/issues/812>`_)
+
+
 0.29.1 (2026-01-21)
 ===================
 
