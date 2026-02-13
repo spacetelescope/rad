@@ -8,7 +8,14 @@ classifiers = [
   "Topic :: Scientific/Engineering :: Astronomy",
   "Programming Language :: Python :: 3",
 ]
-dependencies = ["asdf >=4.1.0", "asdf-astropy >=0.8.0"]
+dependencies = [
+  "asdf>=4.1.0",
+  "asdf-astropy>=0.8.0",
+  "asdf-standard>=1.1.0",
+  "deepdiff>=8.1",
+  "pyyaml>=6.0",
+  "semantic-version>=2.10.0",
+]
 license-files = ["LICENSE"]
 dynamic = ["version"]
 
@@ -18,15 +25,14 @@ content-type = "text/markdown"
 
 [project.optional-dependencies]
 test = [
-  "pytest>=7.0.0",
-  "pytest-doctestplus>=1.2.1",
-  "pytest-asdf-plugin>=0.1.0",
   "crds>=12.0.4",
   "GitPython>=3.1.44",
-  "semantic-version>=2.10.0",
-  "textual>=3.1",
-  "deepdiff>=8.1",
+  "pytest-asdf-plugin>=0.1.0",
+  "pytest-doctestplus>=1.2.1",
+  "pytest>=7.0.0",
+
 ]
+script = ["GitPython>=3.1.44", "astropy>=6.0.0", "textual>=3.1"]
 docs = [
   "sphinx",
   "sphinx-asdf>=0.1.3",
