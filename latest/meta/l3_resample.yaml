@@ -1,7 +1,7 @@
 %YAML 1.1
 ---
 $schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.1.0
-id: asdf://stsci.edu/datamodels/roman/schemas/meta/l3_resample-1.1.0
+id: asdf://stsci.edu/datamodels/roman/schemas/meta/l3_resample-1.2.0
 
 title: Resample Parameters
 type: object
@@ -19,13 +19,6 @@ properties:
       would only allow pixels with DQ bits equal to 0 in the
       calibrated rate images to be included in the final product.
     type: string
-  order:
-    title: Interpolation order
-    description: >
-      Order of the 2D spline to interpolate the sparse pixel mapping
-      if stepsize>1.  Supported values are: 1 (bilinear) or 3 (bicubic).
-      This parameter is ignored when stepsize <= 1.
-    type: integer
   pixel_scale_ratio:
     title: Pixel Scale Ratio
     description: >
@@ -38,12 +31,14 @@ properties:
     title: Pixel Fraction
     description: The fraction of a pixel to use for pixel convolution.
     type: number
-  pointings:
-    title: Number of Input Images
+  pixmap_order:
+    title: Interpolation order
     description: >
-      The number of input images combined with resample into an output product.
+      Order of the 2D spline to interpolate the sparse pixel mapping
+      if stepsize>1.  Supported values are: 1 (bilinear) or 3 (bicubic).
+      This parameter is ignored when stepsize <= 1.
     type: integer
-  stepsize:
+  pixmap_stepsize:
     title: Grid stepsize
     description: >
       If ``stepsize>1``, perform the full WCS calculation on a sparser
@@ -54,6 +49,11 @@ properties:
       correction is smooth, but if the distortion is non-smooth,
       ``stepsize>1`` is not recommended.  Large ``stepsize`` values are
       automatically reduced to no more than 1/10 of image size.
+    type: integer
+  pointings:
+    title: Number of Input Images
+    description: >
+      The number of input images combined with resample into an output product.
     type: integer
   members:
     title: Resample Input Filenames

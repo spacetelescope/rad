@@ -1,0 +1,1 @@
+Rename resample.stepsize and order to resample.pixmap_stepsize and pixmap_order
