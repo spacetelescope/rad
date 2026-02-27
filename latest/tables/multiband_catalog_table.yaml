@@ -437,102 +437,129 @@ properties:
                     name:
                       pattern: ^nn_label$
       # Optional photoz columns - validated if present but not required
-      - items:
-          anyOf:
-            - not:
-                properties:
-                  name:
-                    pattern: ^photoz$
-            - allOf:
-                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/tables/source_catalog_columns-1.2.0#/definitions/photoz"
-                - properties:
-                    name:
-                      pattern: ^photoz$
-      - items:
-          anyOf:
-            - not:
-                properties:
-                  name:
-                    pattern: ^photoz_gof$
-            - allOf:
-                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/tables/source_catalog_columns-1.2.0#/definitions/photoz_gof"
-                - properties:
-                    name:
-                      pattern: ^photoz_gof$
-      - items:
-          anyOf:
-            - not:
-                properties:
-                  name:
-                    pattern: ^photoz_high68$
-            - allOf:
-                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/tables/source_catalog_columns-1.2.0#/definitions/photoz_high68"
-                - properties:
-                    name:
-                      pattern: ^photoz_high68$
-      - items:
-          anyOf:
-            - not:
-                properties:
-                  name:
-                    pattern: ^photoz_high90$
-            - allOf:
-                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/tables/source_catalog_columns-1.2.0#/definitions/photoz_high90"
-                - properties:
-                    name:
-                      pattern: ^photoz_high90$
-      - items:
-          anyOf:
-            - not:
-                properties:
-                  name:
-                    pattern: ^photoz_high99$
-            - allOf:
-                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/tables/source_catalog_columns-1.2.0#/definitions/photoz_high99"
-                - properties:
-                    name:
-                      pattern: ^photoz_high99$
-      - items:
-          anyOf:
-            - not:
-                properties:
-                  name:
-                    pattern: ^photoz_low68$
-            - allOf:
-                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/tables/source_catalog_columns-1.2.0#/definitions/photoz_low68"
-                - properties:
-                    name:
-                      pattern: ^photoz_low68$
-      - items:
-          anyOf:
-            - not:
-                properties:
-                  name:
-                    pattern: ^photoz_low90$
-            - allOf:
-                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/tables/source_catalog_columns-1.2.0#/definitions/photoz_low90"
-                - properties:
-                    name:
-                      pattern: ^photoz_low90$
-      - items:
-          anyOf:
-            - not:
-                properties:
-                  name:
-                    pattern: ^photoz_low99$
-            - allOf:
-                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/tables/source_catalog_columns-1.2.0#/definitions/photoz_low99"
-                - properties:
-                    name:
-                      pattern: ^photoz_low99$
-      - items:
-          anyOf:
-            - not:
-                properties:
-                  name:
-                    pattern: ^photoz_sed$
-            - allOf:
-                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/tables/source_catalog_columns-1.2.0#/definitions/photoz_sed"
-                - properties:
-                    name:
-                      pattern: ^photoz_sed$
+      - not:
+          items:
+            not:
+              anyOf:
+                - not:
+                    required: [name]
+                    properties:
+                      name:
+                        pattern: ^photoz$
+                - allOf:
+                    - $ref: "asdf://stsci.edu/datamodels/roman/schemas/tables/source_catalog_columns-1.2.0#/definitions/photoz"
+                    - properties:
+                        name:
+                          pattern: ^photoz$
+      - not:
+          items:
+            not:
+              anyOf:
+                - not:
+                    required: [name]
+                    properties:
+                      name:
+                        pattern: ^photoz_gof$
+                - allOf:
+                    - $ref: "asdf://stsci.edu/datamodels/roman/schemas/tables/source_catalog_columns-1.2.0#/definitions/photoz_gof"
+                    - properties:
+                        name:
+                          pattern: ^photoz_gof$
+      - not:
+          items:
+            not:
+              anyOf:
+                - not:
+                    required: [name]
+                    properties:
+                      name:
+                        pattern: ^photoz_high68$
+                - allOf:
+                    - $ref: "asdf://stsci.edu/datamodels/roman/schemas/tables/source_catalog_columns-1.2.0#/definitions/photoz_high68"
+                    - properties:
+                        name:
+                          pattern: ^photoz_high68$
+      - not:
+          items:
+            not:
+              anyOf:
+                - not:
+                    required: [name]
+                    properties:
+                      name:
+                        pattern: ^photoz_high90$
+                - allOf:
+                    - $ref: "asdf://stsci.edu/datamodels/roman/schemas/tables/source_catalog_columns-1.2.0#/definitions/photoz_high90"
+                    - properties:
+                        name:
+                          pattern: ^photoz_high90$
+      - not:
+          items:
+            not:
+              anyOf:
+                - not:
+                    required: [name]
+                    properties:
+                      name:
+                        pattern: ^photoz_high99$
+                - allOf:
+                    - $ref: "asdf://stsci.edu/datamodels/roman/schemas/tables/source_catalog_columns-1.2.0#/definitions/photoz_high99"
+                    - properties:
+                        name:
+                          pattern: ^photoz_high99$
+      - not:
+          items:
+            not:
+              anyOf:
+                - not:
+                    required: [name]
+                    properties:
+                      name:
+                        pattern: ^photoz_low68$
+                - allOf:
+                    - $ref: "asdf://stsci.edu/datamodels/roman/schemas/tables/source_catalog_columns-1.2.0#/definitions/photoz_low68"
+                    - properties:
+                        name:
+                          pattern: ^photoz_low68$
+      - not:
+          items:
+            not:
+              anyOf:
+                - not:
+                    required: [name]
+                    properties:
+                      name:
+                        pattern: ^photoz_low90$
+                - allOf:
+                    - $ref: "asdf://stsci.edu/datamodels/roman/schemas/tables/source_catalog_columns-1.2.0#/definitions/photoz_low90"
+                    - properties:
+                        name:
+                          pattern: ^photoz_low90$
+      - not:
+          items:
+            not:
+              anyOf:
+                - not:
+                    required: [name]
+                    properties:
+                      name:
+                        pattern: ^photoz_low99$
+                - allOf:
+                    - $ref: "asdf://stsci.edu/datamodels/roman/schemas/tables/source_catalog_columns-1.2.0#/definitions/photoz_low99"
+                    - properties:
+                        name:
+                          pattern: ^photoz_low99$
+      - not:
+          items:
+            not:
+              anyOf:
+                - not:
+                    required: [name]
+                    properties:
+                      name:
+                        pattern: ^photoz_sed$
+                - allOf:
+                    - $ref: "asdf://stsci.edu/datamodels/roman/schemas/tables/source_catalog_columns-1.2.0#/definitions/photoz_sed"
+                    - properties:
+                        name:
+                          pattern: ^photoz_sed$
