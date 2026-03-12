@@ -52,11 +52,11 @@ properties:
       The quaternion of the observatory orientation at the mid-point of the
       exposure. Determined by querying the engineering database for the
       mnemonics SCF_AC_SDR_QBJ_[1-4].
-      type: array
-      minItems: 4
-      maxItems: 4
-      items:
-        type: number
+    type: array
+    minItems: 4
+    maxItems: 4
+    items:
+      type: number
   ra_v1:
     title: Right Ascension of the Telescope V1 Axis (deg)
     description: |
