@@ -206,6 +206,19 @@ properties:
       datatype: int
       destination:
         [WFIExposure.observation_exposure, GuideWindow.observation_exposure]
+  wfi_parallel:
+    title: WFI Parallel Flag
+    description: A boolean flag that, when true, indicates the WFI was operated
+      in parallel with the Coronagraph as the prime observing instrument.
+      If false, the WFI was operated as the prime observing instrument.
+    type: boolean
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    archive_catalog:
+      datatype: nchar(1)
+      destination: [WFIExposure.wfi_parallel, GuideWindow.wfi_parallel]
 required:
   [
     observation_id,
@@ -220,4 +233,5 @@ required:
     visit_file_sequence,
     visit_file_activity,
     exposure,
+    wfi_parallel,
   ]

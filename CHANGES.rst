@@ -1,3 +1,70 @@
+0.30.0 (2026-02-13)
+===================
+
+New Features
+------------
+
+- Various small schema updates::
+
+      - Add ``dark_decay`` to ``ref_file`` and ``l2_cal_step``.
+      - Add ``integralnonlinearity`` to ``ref_file``.
+      - Update ``inverse_linearity`` to ``inverselinearity`` in ``ref_file``.
+      - Change ``flagged_spatial_index`` to ``flagged_spatial_id`` in source
+  catalog column
+        definitions and all tables that reference it.
+
+  These changes also required schema version bumps throughout RAD to support
+  the new changes. (`#815 <https://github.com/spacetelescope/rad/issues/815>`_)
+
+
+Misc
+----
+
+- Drop unused ``err`` array from ``RampModel``. (`#803
+  <https://github.com/spacetelescope/rad/issues/803>`_)
+- Add correct types for archive_meta. (`#812
+  <https://github.com/spacetelescope/rad/issues/812>`_)
+
+
+0.29.1 (2026-01-21)
+===================
+
+New Features
+------------
+
+- Update L2 schema for B21, adding ``chisq`` and ``dumo`` fields and changing
+  error/variance datatypes to float16. (`#795
+  <https://github.com/spacetelescope/rad/issues/795>`_)
+
+
+Misc
+----
+
+- SSC Update GDPS to match roman-gdps v4.1.0rc2 (`#770
+  <https://github.com/spacetelescope/rad/issues/770>`_)
+- Updated schemas for CGI Ancillary Data Products, minor updates to INSTRUME
+  keyword in schemas (`#788
+  <https://github.com/spacetelescope/rad/issues/788>`_)
+- Updated schemas for CGI L1, L2a, L2b, L3, and L4 Data Products to remove
+  unneeded keywords, added missing enum values for those keywords that have
+  them. (`#789 <https://github.com/spacetelescope/rad/issues/789>`_)
+- Bump the min version of asdf-astropy to 0.8.0 (`#792
+  <https://github.com/spacetelescope/rad/issues/792>`_)
+- Update the base metaschema version from ``asdf-schema-1.0.0`` to
+  ``asdf-schema-1.1.0`` for the RAD
+  metaschema and update the minimum asdf-standard-requirement RAD in order to
+  support this metaschema
+  change. (`#796 <https://github.com/spacetelescope/rad/issues/796>`_)
+- Introduced SSC MSOS periodic and fiducial object catalogs (`#797
+  <https://github.com/spacetelescope/rad/issues/797>`_)
+- Additional tweaks to CGI L3/L4 metadata definitions (`#799
+  <https://github.com/spacetelescope/rad/issues/799>`_)
+- Added wfi_parallel keyword block to the observation schema. (`#800
+  <https://github.com/spacetelescope/rad/issues/800>`_)
+- Add stepsize and order to l3_resample schema (`#806
+  <https://github.com/spacetelescope/rad/issues/806>`_)
+
+
 0.29.0 (2025-12-18)
 ===================
 

@@ -1,1 +1,0 @@
-Bump the min version of asdf-astropy to 0.8.0

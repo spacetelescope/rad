@@ -7,7 +7,7 @@ title: Segmentation map generated from a Level 3 file by the Multiband Catalog S
 
 datamodel_name: MultibandSegmentationMapModel
 
-archive_meta: Science WFI Level 4 Segmentation Map L3 Product
+archive_meta: Science WFI Level 4 Multiband Segmentation Map L3 Product
 type: object
 properties:
   meta:
