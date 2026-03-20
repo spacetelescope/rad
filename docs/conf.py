@@ -200,3 +200,7 @@ asdf_schema_reference_mappings = [
     ("http://stsci.edu/schemas/asdf/", "https://asdf-standard.readthedocs.io/en/latest/generated/stsci.edu/asdf/"),
     ("tag:stsci.edu:gwcs/wcs-*", "https://asdf-wcs-schemas.readthedocs.io/en/latest/generated/gwcs/wcs-1.0.0.html"),
 ]
+
+# Enable nitpicky mode - which ensures that all references in the docs resolve.
+nitpicky = True
+nitpick_ignore = []

@@ -4,7 +4,7 @@ CCSP Schemas
 ============
 
 "Community Contributed Science Product" (CCSP) schemas are located in the
-`resources/schemas/CCSP` directory of this package.
+``resources/schemas/CCSP`` directory of this package.
 
 .. _ccsp-creating:
 
