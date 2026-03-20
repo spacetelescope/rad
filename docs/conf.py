@@ -30,6 +30,7 @@ from pathlib import Path
 
 # Ensure documentation examples are deterministically random.
 import numpy
+import yaml
 from importlib_metadata import distribution
 
 try:
@@ -144,6 +145,95 @@ sys.path.insert(0, os.path.join(os.path.abspath(os.path.dirname("__file__")), "s
 extensions += ["sphinx_asdf"]  # noqa: F405
 
 
+LATEST = Path("../latest")
+SCHEMAS = Path("./_schemas")
+
+SCHEMAS.mkdir(exist_ok=True)
+
+schemas = {}
+archive_schemas = {}
+# We only work with the latest schemas
+for file_path in LATEST.glob("**/*.yaml"):
+    path = file_path.relative_to(LATEST)
+
+    # Currently we do not document the SSC schemas
+    if path.parts[0] == "SSC":
+        continue
+
+    # No need to document the rad_schema
+    if path.stem == "rad_schema":
+        continue
+
+    # This is used to find the version number of the schema
+    #    We need to do this because of the way sphinx-asdf
+    #    generates links between schemas, this requires us
+    #    to have the version number included in the page
+    #    url, which is easiest to accomplish by pointing
+    #    spinx-asdf at src/rad/references instead of latest
+    schema_dict = yaml.safe_load(file_path.read_bytes())
+    version = schema_dict["id"].split("-")[-1]
+    entry = f"{path.stem}-{version}"
+
+    # The archive_meta keyword distinguishes the level of the
+    #    schemas going into the archive which makes it an easy
+    #    way to separate all the different data model types
+    filename = None
+    if "archive_meta" in schema_dict:
+        meta = "_".join(schema_dict["archive_meta"].split(" ")[:4])
+        filename = f"{meta}.rst"
+
+    # Now we generate the prefix for the asdf-autoschemas argument
+    prefix = str(path.parent)
+    if prefix == ".":
+        prefix = ""
+
+    # If we don't have a filename lets build it from the prefix
+    if filename is None:
+        # empty prefix means top-level data model that is not
+        #     archived. We dump these in the remaining file
+        if prefix == "":
+            filename = "datamodels.rst"
+        else:
+            # Otherwise turn the prefix into something nice for a file name
+            filename = f"{prefix.replace('/', '_')}.rst"
+
+    # Now if we aren't a manifest in `src/rad/resources` we need
+    #    to point in the schemas directory
+    if prefix != "manifests":
+        prefix = f"schemas/{prefix}"
+
+    # Create a key that will store this schema
+    key = (prefix, filename)
+
+    # Add a empty list if the key is not found
+    if key not in schemas:
+        schemas[key] = []
+
+    # Add the key to the list in the schemas
+    schemas[key].append(entry)
+
+for (prefix, filename), schema_list in schemas.items():
+    # First line is the directive followed by the prefix
+    #    argument on the next line followed by and empty
+    #    line to create the sphinx directive.
+    lines = [".. asdf-autoschemas::"]
+    lines.append(f"   :standard_prefix: {prefix}")
+    lines.append("")
+
+    # Make the list alphabetical
+    schema_list.sort()
+    for schema in schema_list:
+        # Standard indent of RST is supposed to be three spaces
+        lines.append(f"   {schema}")
+
+    # Add blank line at the end to close the directive properly
+    lines.append("")
+
+    # Write the doc file.
+    with (SCHEMAS / filename).open(mode="w") as file:
+        file.write("\n".join(lines))
+
+
 def setup(app):
     app.add_css_file("custom.css")
 
@@ -151,6 +241,8 @@ def setup(app):
 # -- sphinx_asdf configuration ---------------------------------------------
 
 # Top-level directory containing ASDF schemas (relative to current directory)
+# NOTE: This has to be this and not latest because of how sphinx-asdf will generate
+# links between schemas.
 asdf_schema_path = "../src/rad/resources"
 # This is the prefix common to all schema IDs in this repository
 asdf_schema_standard_prefix = "schemas"
