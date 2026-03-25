@@ -18,7 +18,12 @@ properties:
             type: array
             items:
               $ref: asdf://stsci.edu/datamodels/roman/schemas/meta/l3_common-1.1.0
-        required: [image_metas]
+          psf_match_reference_filter:
+            title: PSF-matched photometric filter
+            description: |
+              Reference band used to compute PSF-matched photometry.
+            type: string
+        required: [image_metas, psf_match_reference_filter]
   source_catalog:
     title: Source Catalog
     description: |
