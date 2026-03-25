@@ -583,14 +583,17 @@ def _get_latest_uri(prefix):
 
     assert len(uris) > 0, "There should be at least one exposure type URI"
 
-    return _find_latest(uris)
+    uri = _find_latest(uris)
+    assert uri in _LATEST_URI_PATHS
+
+    return uri
 
 
 _PHOT_TABLE_KEY_PATTERNS = _CURRENT_RESOURCES[
     _get_latest_uri("asdf://stsci.edu/datamodels/roman/schemas/reference_files/wfi_img_photom")
 ]["properties"]["phot_table"]["patternProperties"]
 _OPTICAL_ELEMENTS = tuple(
-    _CURRENT_RESOURCES[_get_latest_uri("asdf://stsci.edu/datamodels/roman/schemas/wfi_optical_element")]["enum"]
+    _CURRENT_RESOURCES[_get_latest_uri("asdf://stsci.edu/datamodels/roman/schemas/enums/wfi_optical_element")]["enum"]
 )
 _EXPOSURE_TYPE_ELEMENTS = tuple(
     _CURRENT_RESOURCES[_get_latest_uri("asdf://stsci.edu/datamodels/roman/schemas/enums/exposure_type")]["enum"]
