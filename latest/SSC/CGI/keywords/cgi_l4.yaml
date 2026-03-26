@@ -9,7 +9,7 @@ type: object
 properties:
   KLIP_ALG:
     title: KLIP algorithm
-    description: KLIP algorithm used for PSF subtraction.  Only for coronagraphic data.
+    description: KLIP algorithm used for PSF subtraction.
     anyOf:
       - type: string
         maxLength: 8
@@ -18,15 +18,15 @@ properties:
       datatype: nvarchar(8)
       destination: [CGIExposure.klip_alg]
   DRPNFILE:
-    title: Num raw files used in final image combination
-    description: Num raw files used in final image combination
+    title: Number of raw files used in final image combination
+    description: Number of raw files used in final image combination.
     type: number
     archive_catalog:
       datatype: int
       destination: [CGIExposure.drpnfile]
   PSFSUB:
     title: PSF subtraction algorithm
-    description: PSF subtraction algorithm. Only for coronagraphic data.
+    description: PSF subtraction algorithm.
     anyOf:
       - type: string
         maxLength: 16
@@ -36,7 +36,7 @@ properties:
       destination: [CGIExposure.psfsub]
   PYKLIPV:
     title: pyKLIP version that was used
-    description: pyKLIP version that was used. Only for coronagraphic data.
+    description: pyKLIP version that was used.
     anyOf:
       - type: string
         maxLength: 16
@@ -46,7 +46,7 @@ properties:
       destination: [CGIExposure.pyklipv]
   CTCALFN:
     title: Core Throughput File Linked for Calibration
-    description: Core Throughput File Linked for Calibration. For unocculted this will be null.
+    description: Core throughput file linked for calibration, set to null if unocculted.
     anyOf:
       - type: string
         maxLength: 128
@@ -55,8 +55,8 @@ properties:
       datatype: nvarchar(128)
       destination: [CGIExposure.ctcalfn]
   FLXCALFN:
-    title: Abs Flux File Linked for Calibration
-    description: Abs Flux File Linked for Calibration
+    title: Absolute flux file linked for calibration
+    description: Absolute flux file linked for calibration.
     type: string
     maxLength: 128
     archive_catalog:
