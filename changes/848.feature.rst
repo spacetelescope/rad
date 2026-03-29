@@ -1,0 +1,1 @@
+Added NOT_CONFIGURED to the wfi_detector enum schema.
