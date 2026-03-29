@@ -71,4 +71,4 @@ properties:
       time ("exptime") and inverse variance map ("ivm") weighting.
     type: string
 required:
-  [good_bits, members, pixel_scale_ratio, pixfrac, pointings, weight_type]
+  [good_bits, members, pixel_scale_ratio, pixfrac, pixmap_stepsize, pointings, weight_type]
