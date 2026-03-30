@@ -1,7 +1,7 @@
 %YAML 1.1
 ---
 $schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.1.0
-id: asdf://stsci.edu/datamodels/roman/schemas/SSC/GDPS/keywords/meta-l2-1.0.0
+id: asdf://stsci.edu/datamodels/roman/schemas/SSC/GDPS/keywords/meta_l2-1.0.0
 
 title: Meta L2 keywords
 extName: SSC
