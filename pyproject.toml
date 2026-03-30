@@ -8,7 +8,14 @@ classifiers = [
   "Topic :: Scientific/Engineering :: Astronomy",
   "Programming Language :: Python :: 3",
 ]
-dependencies = ["asdf >=4.1.0", "asdf-astropy >=0.8.0"]
+dependencies = [
+  "asdf>=4.1.0",
+  "asdf-astropy>=0.8.0",
+  "asdf-standard>=1.1.0",
+  "deepdiff>=8.1",
+  "pyyaml>=6.0",
+  "semantic-version>=2.10.0",
+]
 license-files = ["LICENSE"]
 dynamic = ["version"]
 
@@ -18,15 +25,14 @@ content-type = "text/markdown"
 
 [project.optional-dependencies]
 test = [
-  "pytest>=7.0.0",
-  "pytest-doctestplus>=1.2.1",
-  "pytest-asdf-plugin>=0.1.0",
   "crds>=12.0.4",
   "GitPython>=3.1.44",
-  "semantic-version>=2.10.0",
-  "textual>=3.1",
-  "deepdiff>=8.1",
+  "pytest-asdf-plugin>=0.1.0",
+  "pytest-doctestplus>=1.2.1",
+  "pytest>=7.0.0",
+
 ]
+script = ["GitPython>=3.1.44", "astropy>=6.0.0", "textual>=3.1"]
 docs = [
   "sphinx",
   "sphinx-asdf>=0.1.3",
@@ -75,32 +81,32 @@ addopts = [
   "--strict-markers", # fail on unknown markers
   "-ra",              # Show summary of all failures/errors
 ]
-testpaths = ["tests", "src/rad/resources/schemas"]
+testpaths = ["tests", "latest"]
 filterwarnings = ["error"]
 asdf_schema_tests_enabled = "true"
 # All the SSC schemas with a $ref have to be xfailed due to asdf-format/pytest-asdf-plugin#9
 asdf_schema_xfail_tests = [
-  "src/rad/resources/schemas/SSC/CGI/cgi_ancillary-1.0.0.yaml",
-  "src/rad/resources/schemas/SSC/CGI/cgi_level_1-1.0.0.yaml",
-  "src/rad/resources/schemas/SSC/CGI/cgi_level_2a-1.0.0.yaml",
-  "src/rad/resources/schemas/SSC/CGI/cgi_level_2b-1.0.0.yaml",
-  "src/rad/resources/schemas/SSC/CGI/cgi_level_3-1.0.0.yaml",
-  "src/rad/resources/schemas/SSC/CGI/cgi_level_4-1.0.0.yaml",
-  "src/rad/resources/schemas/SSC/GDPS/wfi_spec_catalog_level_4-1.0.0.yaml",
-  "src/rad/resources/schemas/SSC/GDPS/wfi_spec_combined_1d_level_4-1.0.0.yaml",
-  "src/rad/resources/schemas/SSC/GDPS/wfi_spec_decontam_2d_level_4-1.0.0.yaml",
-  "src/rad/resources/schemas/SSC/GDPS/wfi_spec_individual_1d_level_4-1.0.0.yaml",
-  "src/rad/resources/schemas/SSC/GDPS/wfi_spec_location_table_level_4-1.0.0.yaml",
-  "src/rad/resources/schemas/SSC/GDPS/wfi_spec_dqa_2d_level_4-1.0.0.yaml",
-  "src/rad/resources/schemas/SSC/GDPS/wfi_spec_catalog_dqa_level_4-1.0.0.yaml",
-  "src/rad/resources/schemas/SSC/MSOS/wfi_microlensing_event_catalog_level_4-1.0.0.yaml",
-  "src/rad/resources/schemas/SSC/MSOS/wfi_microlensing_light_curve_catalog_level_4-1.0.0.yaml",
-  "src/rad/resources/schemas/SSC/MSOS/wfi_microlensing_object_periodic_catalog_level_4-1.0.0.yaml",
-  "src/rad/resources/schemas/SSC/MSOS/wfi_microlensing_object_fiducial_catalog_level_4-1.0.0.yaml",
-  "src/rad/resources/schemas/SSC/MSOS/wfi_microlensing_reference_frame_level_3-1.0.0.yaml",
-  "src/rad/resources/schemas/SSC/MSOS/wfi_microlensing_variability_catalog_level_4-1.0.0.yaml",
+  "latest/SSC/CGI/cgi_ancillary.yaml",
+  "latest/SSC/CGI/cgi_level_1.yaml",
+  "latest/SSC/CGI/cgi_level_2a.yaml",
+  "latest/SSC/CGI/cgi_level_2b.yaml",
+  "latest/SSC/CGI/cgi_level_3.yaml",
+  "latest/SSC/CGI/cgi_level_4.yaml",
+  "latest/SSC/GDPS/wfi_spec_catalog_level_4.yaml",
+  "latest/SSC/GDPS/wfi_spec_combined_1d_level_4.yaml",
+  "latest/SSC/GDPS/wfi_spec_decontam_2d_level_4.yaml",
+  "latest/SSC/GDPS/wfi_spec_individual_1d_level_4.yaml",
+  "latest/SSC/GDPS/wfi_spec_location_table_level_4.yaml",
+  "latest/SSC/GDPS/wfi_spec_dqa_2d_level_4.yaml",
+  "latest/SSC/GDPS/wfi_spec_catalog_dqa_level_4.yaml",
+  "latest/SSC/MSOS/wfi_microlensing_event_catalog_level_4.yaml",
+  "latest/SSC/MSOS/wfi_microlensing_light_curve_catalog_level_4.yaml",
+  "latest/SSC/MSOS/wfi_microlensing_object_periodic_catalog_level_4.yaml",
+  "latest/SSC/MSOS/wfi_microlensing_object_fiducial_catalog_level_4.yaml",
+  "latest/SSC/MSOS/wfi_microlensing_reference_frame_level_3.yaml",
+  "latest/SSC/MSOS/wfi_microlensing_variability_catalog_level_4.yaml",
 ]
-asdf_schema_root = "src/rad/resources/schemas"
+asdf_schema_root = "latest"
 
 [tool.ruff]
 line-length = 130
