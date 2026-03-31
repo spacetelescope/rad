@@ -9,7 +9,7 @@ type: object
 properties:
   KLIP_ALG:
     title: KLIP algorithm
-    description: KLIP algorithm used for PSF subtraction.
+    description: KLIP algorithm used for PSF subtraction (only if coronagraphic mask is used).
     anyOf:
       - type: string
         maxLength: 8
@@ -26,7 +26,7 @@ properties:
       destination: [CGIExposure.drpnfile]
   PSFSUB:
     title: PSF subtraction algorithm
-    description: PSF subtraction algorithm.
+    description: PSF subtraction algorithm (only if coronagraphic mask is used).
     anyOf:
       - type: string
         maxLength: 16
@@ -36,7 +36,7 @@ properties:
       destination: [CGIExposure.psfsub]
   PYKLIPV:
     title: pyKLIP version that was used
-    description: pyKLIP version that was used.
+    description: pyKLIP version that was used (only if coronagraphic mask is used).
     anyOf:
       - type: string
         maxLength: 16
