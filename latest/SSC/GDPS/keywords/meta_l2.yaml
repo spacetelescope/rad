@@ -7,7 +7,6 @@ title: Meta L2 keywords
 extName: SSC
 type: object
 properties:
-  # NOTE: Including segment and visit will permit better checking that the SSC spectral catalogs match the FILESET_ID it gets associated with
   segment:
     title: Segment number
     description: The sequence of activities produced by each iteration of a Segment Plan (Observation Sequence) in a Pass
