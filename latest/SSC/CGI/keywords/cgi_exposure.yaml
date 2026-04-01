@@ -14,7 +14,7 @@ properties:
     type: number
     archive_catalog:
       datatype: float
-      destination: [CGIExposure.exposure_time, CGIMosaic.exposure_time]
+      destination: [CGIExposure.exposure_time]
   EMGAIN_C:
     title: Commanded EM gain
     description: Commanded EM gain
@@ -68,7 +68,7 @@ properties:
       - ENG
     archive_catalog:
       datatype: nvarchar(4)
-      destination: [CGIExposure.arrtype, CGIMosaic.arrtype]
+      destination: [CGIExposure.arrtype]
   HVCBIAS:
     title: HV Clock Bias Voltage
     description: HV Clock Bias Voltage (V)
