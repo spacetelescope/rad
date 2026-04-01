@@ -16,14 +16,14 @@ properties:
       - type: "null"
     archive_catalog:
       datatype: nvarchar(8)
-      destination: [CGIExposure.klip_alg]
+      destination: [CGIMosaic.klip_alg]
   DRPNFILE:
     title: Number of raw files used in final image combination
     description: Number of raw files used in final image combination.
     type: number
     archive_catalog:
       datatype: int
-      destination: [CGIExposure.drpnfile]
+      destination: [CGIMosaic.drpnfile]
   PSFSUB:
     title: PSF subtraction algorithm
     description: PSF subtraction algorithm (only if coronagraphic mask is used).
@@ -33,7 +33,7 @@ properties:
       - type: "null"
     archive_catalog:
       datatype: nvarchar(16)
-      destination: [CGIExposure.psfsub]
+      destination: [CGIMosaic.psfsub]
   PYKLIPV:
     title: pyKLIP version that was used
     description: pyKLIP version that was used (only if coronagraphic mask is used).
@@ -43,7 +43,7 @@ properties:
       - type: "null"
     archive_catalog:
       datatype: nvarchar(16)
-      destination: [CGIExposure.pyklipv]
+      destination: [CGIMosaic.pyklipv]
   CTCALFN:
     title: Core Throughput File Linked for Calibration
     description: Core throughput file linked for calibration, set to null if unocculted.
@@ -53,7 +53,7 @@ properties:
       - type: "null"
     archive_catalog:
       datatype: nvarchar(128)
-      destination: [CGIExposure.ctcalfn]
+      destination: [CGIMosaic.ctcalfn]
   FLXCALFN:
     title: Absolute flux file linked for calibration
     description: Absolute flux file linked for calibration.
@@ -61,6 +61,6 @@ properties:
     maxLength: 128
     archive_catalog:
       datatype: nvarchar(128)
-      destination: [CGIExposure.flxcalfn]
+      destination: [CGIMosaic.flxcalfn]
 
 required: [KLIP_ALG, DRPNFILE, PSFSUB, PYKLIPV, CTCALFN, FLXCALFN]
