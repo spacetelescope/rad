@@ -1,0 +1,1 @@
+Added HGA metadata to the exposure schema.
