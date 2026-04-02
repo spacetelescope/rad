@@ -41,6 +41,7 @@ Developer Resources
   versioning.rst
   contributing.rst
   changes.rst
+  legacy.rst
 
 Index
 =====
