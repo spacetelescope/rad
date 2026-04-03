@@ -63,7 +63,7 @@ properties:
         origin: TBD
     archive_catalog:
       datatype: nvarchar(20)
-      destination: [WFIExposure.aperture_name, GuideWindow.aperture_name]
+      destination: [WFIExposure.aperture_name]
 
   v2_ref:
     title: V2 Reference Position (arcsec)
@@ -85,7 +85,7 @@ properties:
         origin: TBD
     archive_catalog:
       datatype: float
-      destination: [WFIExposure.v2_ref, GuideWindow.v2_ref]
+      destination: [WFIExposure.v2_ref]
   v3_ref:
     title: V3 Reference Position (arcsec)
     description: |
@@ -104,7 +104,7 @@ properties:
         origin: TBD
     archive_catalog:
       datatype: float
-      destination: [WFIExposure.v3_ref, GuideWindow.v3_ref]
+      destination: [WFIExposure.v3_ref]
   vparity:
     title: Relative Rotation Between the Ideal and Telescope Axes
     description: |
@@ -122,7 +122,7 @@ properties:
         origin: TBD
     archive_catalog:
       datatype: smallint
-      destination: [WFIExposure.vparity, GuideWindow.vparity]
+      destination: [WFIExposure.vparity]
   v3yangle:
     title: Angle Between the V3 and Ideal Y Axes (deg)
     description: |
@@ -143,7 +143,7 @@ properties:
         origin: TBD
     archive_catalog:
       datatype: float
-      destination: [WFIExposure.v3yangle, GuideWindow.v3yangle]
+      destination: [WFIExposure.v3yangle]
   ra_ref:
     title: Right Ascension of the Reference Position (deg)
     description: |
@@ -156,7 +156,7 @@ properties:
         origin: TBD
     archive_catalog:
       datatype: float
-      destination: [WFIExposure.ra_ref, GuideWindow.ra_ref]
+      destination: [WFIExposure.ra_ref]
   dec_ref:
     title: Declination of the Reference Position (deg)
     description: |
@@ -169,7 +169,7 @@ properties:
         origin: TBD
     archive_catalog:
       datatype: float
-      destination: [WFIExposure.dec_ref, GuideWindow.dec_ref]
+      destination: [WFIExposure.dec_ref]
   roll_ref:
     title: V3 Position Angle at the Reference Position
     description: |
@@ -186,7 +186,7 @@ properties:
         origin: TBD
     archive_catalog:
       datatype: float
-      destination: [WFIExposure.roll_ref, GuideWindow.roll_ref]
+      destination: [WFIExposure.roll_ref]
   s_region:
     title: Spatial Extent of the Exposure
     description: |
@@ -201,7 +201,7 @@ properties:
         origin: TBD
     archive_catalog:
       datatype: nvarchar(max)
-      destination: [WFIExposure.s_region, GuideWindow.s_region]
+      destination: [WFIExposure.s_region]
 required:
   [
     aperture_name,

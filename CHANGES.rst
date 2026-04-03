@@ -10,8 +10,7 @@ New Features
       - Add ``integralnonlinearity`` to ``ref_file``.
       - Update ``inverse_linearity`` to ``inverselinearity`` in ``ref_file``.
       - Change ``flagged_spatial_index`` to ``flagged_spatial_id`` in source
-  catalog column
-        definitions and all tables that reference it.
+        catalog column definitions and all tables that reference it.
 
   These changes also required schema version bumps throughout RAD to support
   the new changes. (`#815 <https://github.com/spacetelescope/rad/issues/815>`_)
@@ -168,7 +167,7 @@ New Features
   <https://github.com/spacetelescope/rad/issues/721>`_)
 - Update L4 (catalog) metadata to better match input/image file metadata.
   (`#724 <https://github.com/spacetelescope/rad/issues/724>`_)
-- Added "null" as a possible value for `acq_centroid_quality` in the L1
+- Added "null" as a possible value for ``acq_centroid_quality`` in the L1
   Detector Guide Window schema. (`#737
   <https://github.com/spacetelescope/rad/issues/737>`_)
 
@@ -192,12 +191,12 @@ Misc
   <https://github.com/spacetelescope/rad/issues/718>`_)
 - SSC ROMAN-3912 Update G2DP keywords in ``/latest/SSC`` directory (`#722
   <https://github.com/spacetelescope/rad/issues/722>`_)
-- Made the `product_type` keyword required. (`#733
+- Made the ``product_type`` keyword required. (`#733
   <https://github.com/spacetelescope/rad/issues/733>`_)
-- Removed the enum list for `pedigree` in `ref_common`. (`#734
+- Removed the enum list for ``pedigree`` in ``ref_common``. (`#734
   <https://github.com/spacetelescope/rad/issues/734>`_)
-- Renamed the reset read variables to reference read in `wfi_science_raw` and
-  removed them from `wfi_image`. (`#735
+- Renamed the reset read variables to reference read in ``wfi_science_raw`` and
+  removed them from ``wfi_image``. (`#735
   <https://github.com/spacetelescope/rad/issues/735>`_)
 
 
@@ -259,17 +258,19 @@ New Features
   RAD resources.
   Features include:
   - Listing the latest versions of all the RAD resources.
-    - includes indications of which resources are "frozen" (not changeable
-  without
-      a new version) at the time of script execution.
+
+    - Includes indications of which resources are "frozen"
+      (not changeable without a new version) at the time of script execution.
+
   - Creating (and integrating) a new RAD resource.
     - Includes bumping the manifest version if necessary
   - Bumping existing RAD resource versions.
     - Includes solving the cascade of version bumps that maybe required.
   - Editing existing RAD resources.
+
     - Includes bumping the resource (and the cascade of other resources) if the
-      edits necessitate a version bump. (`#593
-  <https://github.com/spacetelescope/rad/issues/593>`_)
+      edits necessitate a version bump. (`#593 <https://github.com/spacetelescope/rad/issues/593>`_)
+
 - Refactor the ``cal_step`` schemas to use a common schema for the step flags.
   (`#598 <https://github.com/spacetelescope/rad/issues/598>`_)
 - Move ``wfi_mosaic.cal_logs`` to ``wfi_mosaic.meta.cal_logs`` for consistency
@@ -427,7 +428,7 @@ New Features
 Misc
 ----
 
-- Changed the db type of `vparity`. (`#508
+- Changed the db type of ``vparity``. (`#508
   <https://github.com/spacetelescope/rad/issues/508>`_)
 - Remove upper pin for asdf. (`#510
   <https://github.com/spacetelescope/rad/issues/510>`_)
@@ -504,7 +505,7 @@ Misc
   <https://github.com/spacetelescope/rad/issues/506>`_)
 - Updated the ePSF schema. (`#507
   <https://github.com/spacetelescope/rad/issues/507>`_)
-- pin `asdf<4.0` (`#509 <https://github.com/spacetelescope/rad/issues/509>`_)
+- pin ``asdf<4.0`` (`#509 <https://github.com/spacetelescope/rad/issues/509>`_)
 
 
 Deprecations and Removals

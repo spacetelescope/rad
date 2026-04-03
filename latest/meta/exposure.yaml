@@ -16,7 +16,7 @@ properties:
         origin: PSS:dms_visit.template
     archive_catalog:
       datatype: nvarchar(25)
-      destination: [WFIExposure.exposure_type, GuideWindow.exposure_type]
+      destination: [WFIExposure.exposure_type]
   start_time:
     title: Exposure Start Time (UTC)
     description: |
@@ -34,8 +34,7 @@ properties:
         origin: TBD
     archive_catalog:
       datatype: datetime2
-      destination:
-        [WFIExposure.exposure_start_time, GuideWindow.exposure_start_time]
+      destination: [WFIExposure.exposure_start_time]
   end_time:
     title: Exposure End Time (UTC)
     description: |
@@ -54,11 +53,7 @@ properties:
     archive_catalog:
       datatype: datetime2
       destination:
-        [
-          WFIExposure.exposure_end_time,
-          GuideWindow.exposure_end_time,
-          SourceCatalog.exposure_end_time,
-        ]
+        [WFIExposure.exposure_end_time, SourceCatalog.exposure_end_time]
   engineering_quality:
     title: Engineering Data Quality
     description: |
@@ -77,11 +72,7 @@ properties:
     archive_catalog:
       datatype: nvarchar(10)
       destination:
-        [
-          WFIExposure.engineering_quality,
-          GuideWindow.engineering_quality,
-          SourceCatalog.engineering_quality,
-        ]
+        [WFIExposure.engineering_quality, SourceCatalog.engineering_quality]
   ma_table_id:
     title: Multi-Accumulation Table Identifier
     description: |
@@ -96,12 +87,7 @@ properties:
     maxLength: 10
     archive_catalog:
       datatype: nvarchar(10)
-      destination:
-        [
-          WFIExposure.ma_table_id,
-          GuideWindow.ma_table_id,
-          SourceCatalog.ma_table_id,
-        ]
+      destination: [WFIExposure.ma_table_id, SourceCatalog.ma_table_id]
   nresultants:
     title: Number of Resultants
     description: |
@@ -114,8 +100,7 @@ properties:
         origin: PSS:dms_visit.multi_accum_resultant
     archive_catalog:
       datatype: int
-      destination:
-        [WFIExposure.exposure_nresultants, GuideWindow.exposure_nresultants]
+      destination: [WFIExposure.exposure_nresultants]
   data_problem:
     title: Data Problem
     description: |
@@ -131,8 +116,7 @@ properties:
         origin: TBD
     archive_catalog:
       datatype: nvarchar(max)
-      destination:
-        [WFIExposure.exposure_data_problem, GuideWindow.exposure_data_problem]
+      destination: [WFIExposure.exposure_data_problem]
   frame_time:
     title: Detector Readout Time (s)
     description: |
@@ -146,8 +130,7 @@ properties:
         origin: TBD
     archive_catalog:
       datatype: float
-      destination:
-        [WFIExposure.exposure_frame_time, GuideWindow.exposure_frame_time]
+      destination: [WFIExposure.exposure_frame_time]
   exposure_time:
     title: Exposure Time (s)
     description: |
@@ -161,7 +144,7 @@ properties:
         origin: TBD
     archive_catalog:
       datatype: float
-      destination: [WFIExposure.exposure_time, GuideWindow.exposure_time]
+      destination: [WFIExposure.exposure_time]
   effective_exposure_time:
     title: Effective Exposure Time (s)
     description: |
@@ -179,7 +162,6 @@ properties:
       destination:
         [
           WFIExposure.effective_exposure_time,
-          GuideWindow.effective_exposure_time,
           SourceCatalog.effective_exposure_time,
         ]
   ma_table_name:
@@ -196,7 +178,7 @@ properties:
     maxLength: 50
     archive_catalog:
       datatype: nvarchar(50)
-      destination: [WFIExposure.ma_table_name, GuideWindow.ma_table_name]
+      destination: [WFIExposure.ma_table_name]
   ma_table_number:
     title: Multi-Accumulation Table Identification Number
     description: |
@@ -211,7 +193,7 @@ properties:
         origin: PSS:dms_visit.multi_accum_table_number
     archive_catalog:
       datatype: smallint
-      destination: [WFIExposure.ma_table_number, GuideWindow.ma_table_number]
+      destination: [WFIExposure.ma_table_number]
   read_pattern:
     title: Read Pattern
     description: |
@@ -232,7 +214,7 @@ properties:
         origin: TBD
     archive_catalog:
       datatype: nvarchar(3500)
-      destination: [WFIExposure.read_pattern, GuideWindow.read_pattern]
+      destination: [WFIExposure.read_pattern]
   truncated:
     title: Truncated MA Table
     description: |
