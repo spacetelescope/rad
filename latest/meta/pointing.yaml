@@ -1,7 +1,7 @@
 %YAML 1.1
 ---
 $schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.1.0
-id: asdf://stsci.edu/datamodels/roman/schemas/meta/pointing-1.1.0
+id: asdf://stsci.edu/datamodels/roman/schemas/meta/pointing-1.2.0
 
 title: Spacecraft Pointing Information
 type: object
@@ -42,6 +42,17 @@ properties:
     archive_catalog:
       datatype: nvarchar(10)
       destination: [WFIExposure.pointing_engineering_source]
+  quaternion:
+    title: Observatory orientation quaternion
+    description: |
+      The quaternion of the observatory orientation at the mid-point of the
+      exposure. Determined by querying the engineering database for the
+      mnemonics SCF_AC_SDR_QBJ_[1-4].
+    type: array
+    minItems: 4
+    maxItems: 4
+    items:
+      type: number
   ra_v1:
     title: Right Ascension of the Telescope V1 Axis (deg)
     description: |
