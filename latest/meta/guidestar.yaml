@@ -18,7 +18,7 @@ properties:
         origin: TBD
     archive_catalog:
       datatype: nvarchar(18)
-      destination: [WFIExposure.guide_mode, GuideWindow.guide_mode]
+      destination: [WFIExposure.guide_mode]
   window_xstart:
     title: Guide Window X Start Position (pixels)
     description: |
@@ -85,7 +85,7 @@ properties:
     maxLength: 20
     archive_catalog:
       datatype: nvarchar(20)
-      destination: [WFIExposure.guide_star_id, GuideWindow.guide_star_id]
+      destination: [WFIExposure.guide_star_id]
   epoch:
     title: Guide Star Coordinates Epoch
     description: |
@@ -99,7 +99,7 @@ properties:
     maxLength: 10
     archive_catalog:
       datatype: nvarchar(10)
-      destination: [WFIExposure.epoch, GuideWindow.epoch]
+      destination: [WFIExposure.epoch]
   jitter_major:
     title: Major Axis Jitter (milliarcseconds)
     description: Estimate of the guidestar jitter kernel width (in
