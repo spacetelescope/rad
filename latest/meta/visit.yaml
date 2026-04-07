@@ -115,7 +115,6 @@ properties:
       destination:
         [
           WFIExposure.visit_type,
-          GuideWindow.visit_type,
           SourceCatalog.visit_type,
           SegmentationMap.visit_type,
         ]
@@ -139,7 +138,6 @@ properties:
       destination:
         [
           WFIExposure.visit_start_time,
-          GuideWindow.visit_start_time,
           SourceCatalog.visit_start_time,
           SegmentationMap.visit_start_time,
         ]
@@ -159,7 +157,6 @@ properties:
       destination:
         [
           WFIExposure.visit_nexposures,
-          GuideWindow.visit_nexposures,
           SourceCatalog.visit_nexposures,
           SegmentationMap.visit_nexposures,
         ]
@@ -178,7 +175,6 @@ properties:
       destination:
         [
           WFIExposure.visit_internal_target,
-          GuideWindow.visit_internal_target,
           SourceCatalog.visit_internal_target,
           SegmentationMap.visit_internal_target,
         ]

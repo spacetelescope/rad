@@ -10,6 +10,7 @@ type: object
 allOf:
   - $ref: asdf://stsci.edu/datamodels/roman/schemas/SSC/ssc_basic-1.0.0
   - $ref: asdf://stsci.edu/datamodels/roman/schemas/SSC/CGI/keywords/cgi_common-1.0.0
+  - $ref: asdf://stsci.edu/datamodels/roman/schemas/SSC/CGI/keywords/cgi_l4-1.0.0
   - $ref: asdf://stsci.edu/datamodels/roman/schemas/SSC/CGI/keywords/cgi_hldp-1.0.0
   - $ref: asdf://stsci.edu/datamodels/roman/schemas/SSC/CGI/keywords/cgi_optical_config_named_positions-1.0.0
   - $ref: asdf://stsci.edu/datamodels/roman/schemas/SSC/CGI/keywords/cgi_pointing-1.0.0
