@@ -11,7 +11,7 @@ archive_meta: Science WFI Level 4 Source Catalog L2 Product
 type: object
 properties:
   meta:
-    $ref: asdf://stsci.edu/datamodels/roman/schemas/meta/l2_catalog_common-1.2.0
+    $ref: asdf://stsci.edu/datamodels/roman/schemas/meta/l2_catalog_common-1.3.0
   source_catalog:
     title: Source Catalog
     description: |
