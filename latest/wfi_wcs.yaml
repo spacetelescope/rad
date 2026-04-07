@@ -25,7 +25,7 @@ properties:
           observation:
             $ref: asdf://stsci.edu/datamodels/roman/schemas/meta/observation-1.1.0
           pointing:
-            $ref: asdf://stsci.edu/datamodels/roman/schemas/meta/pointing-1.1.0
+            $ref: asdf://stsci.edu/datamodels/roman/schemas/meta/pointing-1.2.0
           program:
             $ref: asdf://stsci.edu/datamodels/roman/schemas/meta/program-1.1.0
           velocity_aberration:

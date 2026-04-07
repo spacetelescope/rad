@@ -38,9 +38,9 @@ properties:
     title: Unit of flux
     description: Example value 'W m**(-2) nm**(-1)'
     type: string
-    maxLength: 16
+    maxLength: 32
     archive_catalog:
-      datatype: nvarchar(16)
+      datatype: nvarchar(32)
       destination: [WFISpec.unit_flux]
   unit_wl:
     title: Unit of wavelength
