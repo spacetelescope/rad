@@ -22,7 +22,7 @@ properties:
       destination: [WFIExposure.instrument_name, GuideWindow.instrument_name]
   detector:
     allOf:
-      - $ref: asdf://stsci.edu/datamodels/roman/schemas/enums/wfi_detector-1.1.0
+      - $ref: asdf://stsci.edu/datamodels/roman/schemas/enums/wfi_detector-1.2.0
     title: Wide Field Instrument (WFI) Detector Identifier
     description: |
       Name of the Wide Field Instrument (WFI) detector used
@@ -32,7 +32,7 @@ properties:
       source:
         origin: TBD
     archive_catalog:
-      datatype: nvarchar(10)
+      datatype: nvarchar(16)
       destination: [WFIExposure.detector, GuideWindow.detector]
   optical_element:
     allOf:
