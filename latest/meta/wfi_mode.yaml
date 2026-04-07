@@ -48,4 +48,10 @@ properties:
     archive_catalog:
       datatype: nvarchar(20)
       destination: [WFIExposure.optical_element, GuideWindow.optical_element]
+  data_encoding_offset:
+    title: Data Encoding Offset
+    description: |
+      Offset added to science resultants in L1 data to avoid
+      clipping the noise at zero DN.
+    type: integer
 required: [detector, optical_element, name]
