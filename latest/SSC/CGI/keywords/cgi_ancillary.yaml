@@ -33,13 +33,4 @@ properties:
       datatype: float
       destination: [CGIAncillary.end_time_mjd]
 
-  INSTRUME:
-    title: Instrument
-    description: Instrument shorthand.
-    type: string
-    maxLength: 3
-    archive_catalog:
-      datatype: nvarchar(3)
-      destination: [CGIAncillary.instrument_name]
-
-required: [ANCTYPE, MJDSTART, MJDEND, INSTRUME]
+required: [ANCTYPE, MJDSTART, MJDEND]
