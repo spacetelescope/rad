@@ -32,7 +32,7 @@ properties:
       source:
         origin: TBD
     archive_catalog:
-      datatype: nvarchar(10)
+      datatype: nvarchar(16)
       destination: [WFIExposure.detector, GuideWindow.detector]
   optical_element:
     allOf:
