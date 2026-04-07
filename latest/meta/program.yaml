@@ -21,7 +21,6 @@ properties:
       destination:
         [
           WFIExposure.program_title,
-          GuideWindow.program_title,
           SourceCatalog.program_title,
           SegmentationMap.program_title,
         ]
@@ -41,7 +40,6 @@ properties:
       destination:
         [
           WFIExposure.investigator_name,
-          GuideWindow.investigator_name,
           SourceCatalog.investigator_name,
           SegmentationMap.investigator_name,
         ]
@@ -66,7 +64,6 @@ properties:
       destination:
         [
           WFIExposure.program_category,
-          GuideWindow.program_category,
           SourceCatalog.program_category,
           SegmentationMap.program_category,
         ]
@@ -106,7 +103,6 @@ properties:
       destination:
         [
           WFIExposure.program_subcategory,
-          GuideWindow.program_subcategory,
           SourceCatalog.program_subcategory,
           SegmentationMap.program_subcategory,
         ]
@@ -126,7 +122,6 @@ properties:
       destination:
         [
           WFIExposure.science_category,
-          GuideWindow.science_category,
           SourceCatalog.science_category,
           SegmentationMap.science_category,
         ]
