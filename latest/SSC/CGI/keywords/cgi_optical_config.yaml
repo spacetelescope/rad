@@ -14,84 +14,84 @@ properties:
     type: number
     archive_catalog:
       datatype: float
-      destination: [CGIExposure.spam_h, CGIMosaic.spam_h]
+      destination: [CGIExposure.spam_h]
   SPAM_V:
     title: SPAM +V Position
     description: SPAM +V Position (um)
     type: number
     archive_catalog:
       datatype: float
-      destination: [CGIExposure.spam_v, CGIMosaic.spam_v]
+      destination: [CGIExposure.spam_v]
   FPAM_H:
     title: FPAM +H position
     description: FPAM +H position (um)
     type: number
     archive_catalog:
       datatype: float
-      destination: [CGIExposure.fpam_h, CGIMosaic.fpam_h]
+      destination: [CGIExposure.fpam_h]
   FPAM_V:
     title: FPAM +V Position
     description: FPAM +V Position (um)
     type: number
     archive_catalog:
       datatype: float
-      destination: [CGIExposure.fpam_v, CGIMosaic.fpam_v]
+      destination: [CGIExposure.fpam_v]
   LSAM_H:
     title: LSAM +H position
     description: LSAM +H position (um)
     type: number
     archive_catalog:
       datatype: float
-      destination: [CGIExposure.lsam_h, CGIMosaic.lsam_h]
+      destination: [CGIExposure.lsam_h]
   LSAM_V:
     title: LSAM +V Position
     description: LSAM +V Position (um)
     type: number
     archive_catalog:
       datatype: float
-      destination: [CGIExposure.lsam_v, CGIMosaic.lsam_v]
+      destination: [CGIExposure.lsam_v]
   FSAM_H:
     title: FSAM +H position
     description: FSAM +H position (um)
     type: number
     archive_catalog:
       datatype: float
-      destination: [CGIExposure.fsam_h, CGIMosaic.fsam_h]
+      destination: [CGIExposure.fsam_h]
   FSAM_V:
     title: FSAM +V Position
     description: FSAM +V Position (um)
     type: number
     archive_catalog:
       datatype: float
-      destination: [CGIExposure.fsam_v, CGIMosaic.fsam_v]
+      destination: [CGIExposure.fsam_v]
   CFAM_H:
     title: CFAM +H position
     description: CFAM +H position (um)
     type: number
     archive_catalog:
       datatype: float
-      destination: [CGIExposure.cfam_h, CGIMosaic.cfam_h]
+      destination: [CGIExposure.cfam_h]
   CFAM_V:
     title: CFAM +V Position
     description: CFAM +V Position (um)
     type: number
     archive_catalog:
       datatype: float
-      destination: [CGIExposure.cfam_v, CGIMosaic.cfam_v]
+      destination: [CGIExposure.cfam_v]
   DPAM_H:
     title: DPAM +H position
     description: DPAM +H position (um)
     type: number
     archive_catalog:
       datatype: float
-      destination: [CGIExposure.dpam_h, CGIMosaic.dpam_h]
+      destination: [CGIExposure.dpam_h]
   DPAM_V:
     title: DPAM +V Position
     description: DPAM +V Position (um)
     type: number
     archive_catalog:
       datatype: float
-      destination: [CGIExposure.dpam_v, CGIMosaic.dpam_v]
+      destination: [CGIExposure.dpam_v]
 
 required:
   [
