@@ -12,7 +12,8 @@ allOf:
   - $ref: asdf://stsci.edu/datamodels/roman/schemas/SSC/ssc_basic-1.0.0
   - $ref: asdf://stsci.edu/datamodels/roman/schemas/SSC/MSOS/keywords/msos_basic-1.0.0
   - $ref: asdf://stsci.edu/datamodels/roman/schemas/SSC/MSOS/keywords/msos_common-1.0.0
+  - $ref: asdf://stsci.edu/datamodels/roman/schemas/SSC/MSOS/keywords/msos_pointing-1.0.0
   - $ref: asdf://stsci.edu/datamodels/roman/schemas/SSC/MSOS/keywords/msos_observation-1.0.0
-  - $ref: asdf://stsci.edu/datamodels/roman/schemas/SSC/MSOS/keywords/msos_program-1.0.0
-  - $ref: asdf://stsci.edu/datamodels/roman/schemas/SSC/MSOS/keywords/msos_settings-1.0.0
-  - $ref: asdf://stsci.edu/datamodels/roman/schemas/SSC/MSOS/keywords/msos_weekly-1.0.0
+  - $ref: asdf://stsci.edu/datamodels/roman/schemas/SSC/MSOS/keywords/msos_exposure-1.0.0
+  - $ref: asdf://stsci.edu/datamodels/roman/schemas/SSC/MSOS/keywords/msos_region-1.0.0
+
