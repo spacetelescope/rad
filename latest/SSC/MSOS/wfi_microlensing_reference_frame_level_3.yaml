@@ -16,4 +16,3 @@ allOf:
   - $ref: asdf://stsci.edu/datamodels/roman/schemas/SSC/MSOS/keywords/msos_observation-1.0.0
   - $ref: asdf://stsci.edu/datamodels/roman/schemas/SSC/MSOS/keywords/msos_exposure-1.0.0
   - $ref: asdf://stsci.edu/datamodels/roman/schemas/SSC/MSOS/keywords/msos_region-1.0.0
-

@@ -15,7 +15,7 @@ properties:
     archive_catalog:
       datatype: float
       destination: [WFIMSOSReferenceFrame.exptime, WFIMSOSCatalog.exptime]
-  expstart: 
+  expstart:
     title: Start Time
     description: Start time of first observation/light curve (UTC)
     allOf:
@@ -37,7 +37,8 @@ properties:
     type: number
     archive_catalog:
       datatype: float
-      destination: [WFIMSOSReferenceFrame.expstart_mjd, WFIMSOSCatalog.expstart_mjd]
+      destination:
+        [WFIMSOSReferenceFrame.expstart_mjd, WFIMSOSCatalog.expstart_mjd]
   expend_mjd:
     title: End Time MJD
     description: End time of last observation/light curve (MJD)

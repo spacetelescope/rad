@@ -16,13 +16,13 @@ properties:
       datatype: float
       destination: [WFIMSOSReferenceFrame.ra_ref]
   dec_field_cen:
-    title: GBTDS Field Center Dec 
+    title: GBTDS Field Center Dec
     description: Declination (J2000), from -90 to +90, in degrees of the GBTDS Field Center
     type: number
     archive_catalog:
       datatype: float
       destination: [WFIMSOSReferenceFrame.dec_ref]
-  ref_frame: 
+  ref_frame:
     title: Reference Frame
     description: The coordinate system used to define the reference frame
     type: string

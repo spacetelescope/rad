@@ -8,7 +8,7 @@ extName: SSC
 type: object
 properties:
   program:
-    title: Program 
+    title: Program
     description: ID number (integer) assigned to the proposal. Example value 'r00992'.
     type: integer
     archive_catalog:
@@ -49,7 +49,7 @@ properties:
         [
           WFIMSOSReferenceFrame.program_subcategory,
           WFIMSOSCatalog.program_subcategory,
-        ]      
+        ]
   msos_photometry_version:
     title: Msos Photometry Software Version
     description: Version of the MSOS Photometry Software (roman-msos-photometry repo).  Example value '3.3.0'.
@@ -73,11 +73,11 @@ properties:
     maxLength: 128
     archive_catalog:
       datatype: nvarchar(128)
-      destination: 
+      destination:
         [
           WFIMSOSReferenceFrame.msos_detection_efficiency_version,
           WFIMSOSCatalog.msos_detection_efficiency_version,
-        ]       
+        ]
   msos_processing_id:
     title:  ID
     description: Processing release ID (for prompt or data release type processing). Example value 'r03'.
@@ -85,7 +85,7 @@ properties:
     maxLength: 3
     archive_catalog:
       datatype: nvarchar(3)
-      destination: [WFIMSOSReferenceFrame.msos_processing_id, WFIMSOSCatalog.msos_processing_id]   
+      destination: [WFIMSOSReferenceFrame.msos_processing_id, WFIMSOSCatalog.msos_processing_id]
   season:
     title: Season
     description: Season Number of the GBTDS.  Example value 's01'.
@@ -95,7 +95,7 @@ properties:
       datatype: nvarchar(8)
       destination: [WFIMSOSReferenceFrame.season, WFIMSOSCatalog.season]
   flip:
-    title: GBTDS Seasonal Flip Indicator. Example value '90'. 
+    title: GBTDS Seasonal Flip Indicator. Example value '90'.
     description: Placeholder
     type: integer
     archive_catalog:
@@ -103,7 +103,7 @@ properties:
       destination: [[WFIMSOSReferenceFrame.flip, WFIMSOSCatalog.flip]
   gal_cen_flag:
     title: Galactic Center Flag
-    description: Indicates if data from the Galactic Center are present. 
+    description: Indicates if data from the Galactic Center are present.
     type: boolean
     archive_catalog:
       datatype: nchar(1)
@@ -117,7 +117,7 @@ required:
     msos_photometry_version,
     msos_events_version,
     msos_detection_efficiency_version,
-    msos_processing_id, 
+    msos_processing_id,
     season,
     flip,
     galactic_center_flag,
