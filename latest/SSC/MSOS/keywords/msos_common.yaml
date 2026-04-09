@@ -57,7 +57,11 @@ properties:
     maxLength: 128
     archive_catalog:
       datatype: nvarchar(128)
-      destination: [WFIMSOSReferenceFrame.msos_photometry_version, WFIMSOSCatalog.msos_photometry_version]
+      destination:
+        [
+          WFIMSOSReferenceFrame.msos_photometry_version,
+          WFIMSOSCatalog.msos_photometry_version,
+        ]
   msos_events_version:
     title: Msos Events Software Version
     description: Version of the MSOS Events Software (roman-msos-events repo).  Example value '3.3.0'.
@@ -65,7 +69,11 @@ properties:
     maxLength: 128
     archive_catalog:
       datatype: nvarchar(128)
-      destination: [WFIMSOSReferenceFrame.msos_events_version, WFIMSOSCatalog.msos_events_version]
+      destination:
+        [
+          WFIMSOSReferenceFrame.msos_events_version,
+          WFIMSOSCatalog.msos_events_version,
+        ]
   msos_detection_efficiency_version:
     title: Msos Detection Efficiency Software Version
     description: Version of the MSOS Detection Efficiency Software (roman-msos-efficiency repo). Example value '3.3.0'.
@@ -79,13 +87,17 @@ properties:
           WFIMSOSCatalog.msos_detection_efficiency_version,
         ]
   msos_processing_id:
-    title:  ID
+    title: ID
     description: Processing release ID (for prompt or data release type processing). Example value 'r03'.
     type: string
     maxLength: 3
     archive_catalog:
       datatype: nvarchar(3)
-      destination: [WFIMSOSReferenceFrame.msos_processing_id, WFIMSOSCatalog.msos_processing_id]
+      destination:
+        [
+          WFIMSOSReferenceFrame.msos_processing_id,
+          WFIMSOSCatalog.msos_processing_id,
+        ]
   season:
     title: Season
     description: Season Number of the GBTDS.  Example value 's01'.
@@ -107,7 +119,8 @@ properties:
     type: boolean
     archive_catalog:
       datatype: nchar(1)
-      destination: [WFIMSOSReferenceFrame.gal_cen_flag, WFIMSOSCatalog.gal_cen_flag]
+      destination:
+        [WFIMSOSReferenceFrame.gal_cen_flag, WFIMSOSCatalog.gal_cen_flag]
 
 required:
   [
