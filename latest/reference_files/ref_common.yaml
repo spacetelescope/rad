@@ -51,7 +51,7 @@ properties:
         type: string
         enum: [WFI]
       detector:
-        oneOf:
+        anyOf:
           - $ref: asdf://stsci.edu/datamodels/roman/schemas/enums/wfi_detector-1.2.0
           - type: string
             enum:
