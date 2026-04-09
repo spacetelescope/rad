@@ -1,0 +1,1 @@
+Allow ``NOT_CONFIGURED`` value for ``meta.instrument.detector`` in reference files.
