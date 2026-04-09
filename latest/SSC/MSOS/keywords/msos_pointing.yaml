@@ -38,4 +38,4 @@ properties:
       datatype: float
       destination: [WFIMSOSReferenceFrame.equinox]
 
-required: [ra, dec, target, refframe, equinox]
+required: [ra_field_cen, dec_field_cen, ref_frame, equinox]

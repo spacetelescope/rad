@@ -133,5 +133,5 @@ required:
     msos_processing_id,
     season,
     flip,
-    galactic_center_flag,
+    gal_cen_flag,
   ]
