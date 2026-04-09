@@ -64,7 +64,7 @@ TRUTH = {
     },
     "meta.instrument.detector": {
         "type": "string",
-        "enum": set([f"WFI{i:02}" for i in range(1, 19)] + ["NOT_CONFIGURED"]),
+        "enum": set([f"WFI{i:02}" for i in range(1, 19)]),
     },
     "meta.instrument.optical_element": {
         "type": "string",
