@@ -1,0 +1,66 @@
+%YAML 1.1
+---
+$schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.1.0
+id: asdf://stsci.edu/datamodels/roman/schemas/SSC/CGI/keywords/cgi_l4-1.0.0
+
+title: CGI L4 specific keywords
+extName: SSC
+type: object
+properties:
+  KLIP_ALG:
+    title: KLIP algorithm
+    description: KLIP algorithm used for PSF subtraction (only if coronagraphic mask is used).
+    anyOf:
+      - type: string
+        maxLength: 8
+      - type: "null"
+    archive_catalog:
+      datatype: nvarchar(8)
+      destination: [CGIMosaic.klip_alg]
+  DRPNFILE:
+    title: Number of raw files used in final image combination
+    description: Number of raw files used in final image combination.
+    type: integer
+    archive_catalog:
+      datatype: int
+      destination: [CGIMosaic.drpnfile]
+  PSFSUB:
+    title: PSF subtraction algorithm
+    description: PSF subtraction algorithm (only if coronagraphic mask is used).
+    anyOf:
+      - type: string
+        maxLength: 16
+      - type: "null"
+    archive_catalog:
+      datatype: nvarchar(16)
+      destination: [CGIMosaic.psfsub]
+  PYKLIPV:
+    title: pyKLIP version that was used
+    description: pyKLIP version that was used (only if coronagraphic mask is used).
+    anyOf:
+      - type: string
+        maxLength: 16
+      - type: "null"
+    archive_catalog:
+      datatype: nvarchar(16)
+      destination: [CGIMosaic.pyklipv]
+  CTCALFN:
+    title: Core Throughput File Linked for Calibration
+    description: Core throughput file linked for calibration, set to null if unocculted.
+    anyOf:
+      - type: string
+        maxLength: 128
+      - type: "null"
+    archive_catalog:
+      datatype: nvarchar(128)
+      destination: [CGIMosaic.ctcalfn]
+  FLXCALFN:
+    title: Absolute flux file linked for calibration
+    description: Absolute flux file linked for calibration.
+    type: string
+    maxLength: 128
+    archive_catalog:
+      datatype: nvarchar(128)
+      destination: [CGIMosaic.flxcalfn]
+
+required: [KLIP_ALG, DRPNFILE, PSFSUB, PYKLIPV, CTCALFN, FLXCALFN]
