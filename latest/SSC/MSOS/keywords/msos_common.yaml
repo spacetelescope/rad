@@ -104,7 +104,7 @@ properties:
     type: string
     maxLength: 3
     archive_catalog:
-      datatype: nvarchar(8)
+      datatype: nvarchar(3)
       destination: [WFIMSOSReferenceFrame.season, WFIMSOSCatalog.season]
   flip:
     title: GBTDS Seasonal Flip Indicator. Example value '90'.
