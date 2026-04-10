@@ -12,11 +12,11 @@ allOf:
       coordinates:
         $ref: asdf://stsci.edu/datamodels/roman/schemas/meta/coordinates-1.1.0
       exposure:
-        $ref: asdf://stsci.edu/datamodels/roman/schemas/meta/exposure-1.1.0
+        $ref: asdf://stsci.edu/datamodels/roman/schemas/meta/exposure-1.2.0
       image:
         $ref: asdf://stsci.edu/datamodels/roman/schemas/meta/catalog_image-1.1.0
       instrument:
-        $ref: asdf://stsci.edu/datamodels/roman/schemas/meta/wfi_mode-1.1.0
+        $ref: asdf://stsci.edu/datamodels/roman/schemas/meta/wfi_mode-1.2.0
       observation:
         $ref: asdf://stsci.edu/datamodels/roman/schemas/meta/observation-1.1.0
       photometry:

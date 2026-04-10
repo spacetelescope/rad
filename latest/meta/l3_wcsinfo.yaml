@@ -57,9 +57,9 @@ properties:
       datatype: float
       destination: [WFIMosaic.y_ref]
   pixel_scale_ref:
-    title: Pixel Scale at Projection Region Center (arcseconds per pixel)
+    title: Pixel Scale at Projection Region Center (degrees per pixel)
     description: >
-      Pixel scale in units of arcseconds per pixel at the
+      Pixel scale in units of degrees per pixel at the
       center of the projection region. If this product does not use
       the Roman sky tessellation, then this keyword will be equal to
       meta.wcsinfo.pixel_scale.
@@ -68,9 +68,9 @@ properties:
       datatype: float
       destination: [WFIMosaic.pixel_scale_ref]
   pixel_scale:
-    title: Pixel Scale at Image Center (arcseconds per pixel)
+    title: Pixel Scale at Image Center (degrees per pixel)
     description: >
-      Pixel scale in units of arcseconds per pixel at the center of the image in this file.
+      Pixel scale in units of degrees per pixel at the center of the image in this file.
     type: number
     archive_catalog:
       datatype: float

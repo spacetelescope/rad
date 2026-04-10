@@ -382,17 +382,17 @@ definitions:
         properties:
           datatype:
             enum: [float32]
-  kron_~band~m~band~_abmag:
+  kron_~band~m~band~_flux:
     description: PSF-matched flux within the elliptical Kron aperture
-    unit: abmag
+    unit: nJy
     properties:
       data:
         properties:
           datatype:
             enum: [float32]
-  kron_~band~m~band~_abmag_err:
+  kron_~band~m~band~_flux_err:
     description: Uncertainty in kron_<band>m<band>_abmag_err
-    unit: abmag
+    unit: nJy
     properties:
       data:
         properties:
