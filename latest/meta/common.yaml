@@ -20,7 +20,7 @@ allOf:
       guide_star:
         $ref: asdf://stsci.edu/datamodels/roman/schemas/meta/guidestar-1.3.0
       instrument:
-        $ref: asdf://stsci.edu/datamodels/roman/schemas/meta/wfi_mode-1.1.0
+        $ref: asdf://stsci.edu/datamodels/roman/schemas/meta/wfi_mode-1.2.0
       observation:
         $ref: asdf://stsci.edu/datamodels/roman/schemas/meta/observation-1.1.0
       pointing:
