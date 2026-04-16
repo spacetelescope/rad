@@ -27,16 +27,14 @@ jobs:
         run: |
           git remote add upstream https://github.com/spacetelescope/rad.git
 
-      - name: Install uv and setup Python
-        uses: astral-sh/setup-uv@v7
+      - name: Setup Python
+        uses: actions/setup-python@a309ff8b426b58ec0e2a45f0f869d46889d02405 # v6.2.0
         with:
-          enable-cache: true
           python-version: "3.13"
-          activate-environment: true
 
       - name: Install RAD
         run: |
-          uv pip install -e ".[test]"
+          pip install -e ".[test]"
 
       - name: Generate archive information
         run: |
