@@ -76,4 +76,5 @@ allOf:
           destination: [GuideWindow.t_end]
       guide_window_id:
         $ref: asdf://stsci.edu/datamodels/roman/schemas/meta/guide_window_id-1.1.0
-    required: [fgs_modes_used, guide_star_acq_num, guide_window_id, t_start, t_end]
+    required:
+      [fgs_modes_used, guide_star_acq_num, guide_window_id, t_start, t_end]
