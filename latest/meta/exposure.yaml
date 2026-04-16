@@ -228,6 +228,21 @@ properties:
       datatype: nchar(1)
       destination:
         [WFIExposure.exposure_truncated, SourceCatalog.exposure_truncated]
+  hga_move:
+    title: High Gain Antenna (HGA) Movement
+    description: |
+      If True, this field indicates that the spacecraft High Gain Antenna (HGA)
+      was moved during the exposure, which may cause excess jitter above what
+      would be otherwise expected. If False, the HGA was not moved during the
+      exposure.
+    type: boolean
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    archive_catalog:
+      datatype: nchar(1)
+      destination: [WFIExposure.hga_move]
   sdf_log_file:
     title: SDF Log File Name
     description: |
@@ -250,4 +265,5 @@ required:
     ma_table_id,
     read_pattern,
     truncated,
+    hga_move,
   ]
