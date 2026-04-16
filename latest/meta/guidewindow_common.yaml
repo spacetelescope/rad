@@ -1,7 +1,7 @@
 %YAML 1.1
 ---
 $schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.1.0
-id: asdf://stsci.edu/datamodels/roman/schemas/meta/guidewindow_common-1.1.0
+id: asdf://stsci.edu/datamodels/roman/schemas/meta/guidewindow_common-1.2.0
 
 title: Guide Window Common Metadata
 
@@ -48,6 +48,32 @@ allOf:
         archive_catalog:
           datatype: int
           destination: [GuideWindow.guide_star_acq_num]
+      t_start:
+        title: Guide Window Acquisition Start Time
+        description: |
+          The UTC time for the start of attempted acquisition of guiding
+          for the guide star acquisition cycle contained in this file.
+        tag: tag:stsci.edu:asdf/time/time-1.*
+        sdf:
+          special_processing: VALUE_REQUIRED
+          source:
+            origin: TBD
+        archive_catalog:
+          datatype: datetime2
+          destination: [GuideWindow.t_start]
+      t_end:
+        title: Guide Window Acquisition End Time
+        description: |
+          The UTC time for the end of the guide star acquisition cycle
+          contained in this file.
+        tag: tag:stsci.edu:asdf/time/time-1.*
+        sdf:
+          special_processing: VALUE_REQUIRED
+          source:
+            origin: TBD
+        archive_catalog:
+          datatype: datetime2
+          destination: [GuideWindow.t_end]
       guide_window_id:
         $ref: asdf://stsci.edu/datamodels/roman/schemas/meta/guide_window_id-1.1.0
-    required: [fgs_modes_used, guide_star_acq_num, guide_window_id]
+    required: [fgs_modes_used, guide_star_acq_num, guide_window_id, t_start, t_end]
