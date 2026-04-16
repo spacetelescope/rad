@@ -61,7 +61,7 @@ allOf:
         archive_catalog:
           datatype: datetime2
           destination: [GuideWindow.t_start]
-      t_end:
+      t_stop:
         title: Guide Window Acquisition End Time
         description: |
           The UTC time for the end of the guide star acquisition cycle
@@ -73,8 +73,8 @@ allOf:
             origin: TBD
         archive_catalog:
           datatype: datetime2
-          destination: [GuideWindow.t_end]
+          destination: [GuideWindow.t_stop]
       guide_window_id:
         $ref: asdf://stsci.edu/datamodels/roman/schemas/meta/guide_window_id-1.1.0
     required:
-      [fgs_modes_used, guide_star_acq_num, guide_window_id, t_start, t_end]
+      [fgs_modes_used, guide_star_acq_num, guide_window_id, t_start, t_stop]
