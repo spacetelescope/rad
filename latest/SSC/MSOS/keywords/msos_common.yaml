@@ -8,8 +8,8 @@ extName: SSC
 type: object
 properties:
   program:
-    title: Program
-    description: ID number (integer) assigned to the proposal. Example value 'r00992'.
+    title: Program ID
+    description: ID number (integer) assigned to the RST Program. Example value '00992'.
     type: integer
     archive_catalog:
       datatype: int
@@ -107,8 +107,8 @@ properties:
       datatype: nvarchar(3)
       destination: [WFIMSOSReferenceFrame.season, WFIMSOSCatalog.season]
   flip:
-    title: GBTDS Seasonal Flip Indicator. Example value '90'.
-    description: Placeholder
+    title: GBTDS Seasonal Flip Indicator
+    description: Indicates the Roman footprint orientation. Example value '90'.
     type: integer
     archive_catalog:
       datatype: int
