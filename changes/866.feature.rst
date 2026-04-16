@@ -1,0 +1,1 @@
+Added start and end times to GuideWindow schemas.
