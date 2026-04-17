@@ -1,1 +1,0 @@
-Add quaternion and H/V guide star meta

@@ -1,2 +1,0 @@
-Add a collection of tags which were removed from the ``datamodels-*`` manifests
-but where not added to the ``static-*`` manifests.

@@ -1,3 +1,64 @@
+0.31.0 (2026-04-17)
+===================
+
+Bug Fixes
+---------
+
+- Fix units and description of local background aperture columns. (`#834
+  <https://github.com/spacetelescope/rad/issues/834>`_)
+- Add a collection of tags which were removed from the ``datamodels-*``
+  manifests
+  but where not added to the ``static-*`` manifests. (`#845
+  <https://github.com/spacetelescope/rad/issues/845>`_)
+- Removed extraneous comments in the program schema. (`#847
+  <https://github.com/spacetelescope/rad/issues/847>`_)
+- Changed the matched kron ab mags keywords in the source_catalog_columns
+  schema to fluxes. (`#850
+  <https://github.com/spacetelescope/rad/issues/850>`_)
+
+
+New Features
+------------
+
+- Rename resample.stepsize and order to resample.pixmap_stepsize and
+  pixmap_order (`#824 <https://github.com/spacetelescope/rad/issues/824>`_)
+- Add quaternion and H/V guide star meta (`#837
+  <https://github.com/spacetelescope/rad/issues/837>`_)
+- Update the sphinx docs so they generate their own schema documentation.
+  (`#839 <https://github.com/spacetelescope/rad/issues/839>`_)
+- Make the ``ramp_fit_output`` schema static. (`#840
+  <https://github.com/spacetelescope/rad/issues/840>`_)
+- This PR adds psf_match_reference_filter to multiband catalog and segment
+  schemas. (`#843 <https://github.com/spacetelescope/rad/issues/843>`_)
+- Removes WFI_DARK, WFI_GRISM, and WFI_PRISM from the exposure enum and
+  ref_exposure schema. (`#844
+  <https://github.com/spacetelescope/rad/issues/844>`_)
+- Added new data_encoding_offset field to the wfi_mode schema. (`#852
+  <https://github.com/spacetelescope/rad/issues/852>`_)
+- Added HGA metadata to the exposure schema. (`#856
+  <https://github.com/spacetelescope/rad/issues/856>`_)
+- Added support for Exposure Time Calculator reference files. (`#857
+  <https://github.com/spacetelescope/rad/issues/857>`_)
+- Allow ``NOT_CONFIGURED`` value for ``meta.instrument.detector`` in reference
+  files. (`#862 <https://github.com/spacetelescope/rad/issues/862>`_)
+- Added start and end times to GuideWindow schemas. (`#866
+  <https://github.com/spacetelescope/rad/issues/866>`_)
+
+
+Misc
+----
+
+- Restructured GDPS keywords to prepare for future introduction of WCS update
+  (`#804 <https://github.com/spacetelescope/rad/issues/804>`_)
+- CGI L4 specific keywords
+  CGI CYCLES stored as bigint in the archive
+  WFISpec.unit_flux archive field size increase (`#842
+  <https://github.com/spacetelescope/rad/issues/842>`_)
+- `#855 <https://github.com/spacetelescope/rad/issues/855>`_
+- Restructuring of some SSC MSOS ingest keywords for R4 (`#861
+  <https://github.com/spacetelescope/rad/issues/861>`_)
+
+
 0.30.0 (2026-02-13)
 ===================
 

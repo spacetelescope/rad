@@ -1,1 +1,0 @@
-Added new data_encoding_offset field to the wfi_mode schema.

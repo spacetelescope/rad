@@ -1,1 +1,0 @@
-Added support for Exposure Time Calculator reference files.

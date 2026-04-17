@@ -1,1 +1,0 @@
-Removes WFI_DARK, WFI_GRISM, and WFI_PRISM from the exposure enum and ref_exposure schema.

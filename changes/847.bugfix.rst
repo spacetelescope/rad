@@ -1,1 +1,0 @@
-Removed extraneous comments in the program schema.
