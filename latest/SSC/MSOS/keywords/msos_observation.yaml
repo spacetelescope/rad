@@ -19,7 +19,8 @@ properties:
   detector:
     title: Detector
     description: WFI Detector during data acquisition. Example value 'wfi05'.
-    type: string
+    allOf:
+      - $ref: asdf://stsci.edu/datamodels/roman/schemas/enums/wfi_detector-1.2.0
     maxLength: 5
     archive_catalog:
       datatype: nvarchar(5)
