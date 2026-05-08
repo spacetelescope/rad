@@ -1,7 +1,7 @@
 %YAML 1.1
 ---
 $schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.1.0
-id: asdf://stsci.edu/datamodels/roman/schemas/meta/photometry-1.1.0
+id: asdf://stsci.edu/datamodels/roman/schemas/meta/photometry-1.2.0
 
 title: Photometry Information
 type: object
@@ -55,7 +55,7 @@ properties:
     anyOf:
       - type: number
       - type: "null"
-    unit: "uJy.arcsec**-2"
+    unit: "sr"
     archive_catalog:
       datatype: float
       destination: [WFIExposure.pixel_area, SourceCatalog.pixel_area]
