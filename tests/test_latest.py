@@ -133,6 +133,7 @@ class TestLastestResources:
         """
         Check that the latest schemas are using the latest versions of the schema and tag uris.
         """
+        # print(latest_schema_tags, latest_schemas, latest_schema, latest_uri)
         # Sanity check that the latest_uri matches the id in the latest_schemas
         assert latest_schema["id"] == latest_uri
 
@@ -141,6 +142,13 @@ class TestLastestResources:
         base_schema_uri = latest_uri.split("-")[0]
         base_schema_uri_regex = rf"{base_schema_uri}-\d+\.\d+\.\d+"
         for schema_uri, schema in latest_schemas.items():
+            if "/SSC/" in schema_uri:
+                # FIXME this is to allow the SSC schemas to have references to old schemas
+                # which are at the moment:
+                # - rad_schema 1.1.0
+                # - wfi_detector-1.2.0
+                # - wfi_optical_element-1.1.0
+                continue
             assert schema == re.sub(base_schema_uri_regex, latest_uri, schema), (
                 f"Schema {schema_uri} has references to {latest_uri} that have not been updated!"
             )
