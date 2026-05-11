@@ -1,6 +1,6 @@
 %YAML 1.1
 ---
-$schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.1.0
+$schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-2.0.0
 id: asdf://stsci.edu/datamodels/roman/schemas/SSC/MSOS/keywords/msos_observation-1.0.0
 
 title: MSOS Observation Keywords
@@ -20,14 +20,14 @@ properties:
     title: Detector
     description: WFI Detector during data acquisition. Example value 'wfi05'.
     allOf:
-      - $ref: asdf://stsci.edu/datamodels/roman/schemas/enums/wfi_detector-1.2.0
+      - $ref: asdf://stsci.edu/datamodels/roman/schemas/enums/wfi_detector-2.0.0
     maxLength: 5
     archive_catalog:
       datatype: nvarchar(5)
       destination: [WFIMSOSReferenceFrame.detector, WFIMSOSCatalog.detector]
   optical_element:
     allOf:
-      - $ref: asdf://stsci.edu/datamodels/roman/schemas/enums/wfi_optical_element-1.1.0
+      - $ref: asdf://stsci.edu/datamodels/roman/schemas/enums/wfi_optical_element-2.0.0
     title: Optical Element
     description:
       WFI Optical Element during data acquisition. Example value 'f087'.
