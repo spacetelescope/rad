@@ -318,18 +318,6 @@ class TestSchemaContent:
         """
         assert uri in latest_uris, f"{uri} is not in the list of schemas to be tested."
 
-    def test_no_static_tags(self, schema, latest_static_tags):
-        """
-        Check that the schema does not contain any static tags
-        """
-
-        def callback(node):
-            """Callback to check for static tags"""
-            if isinstance(node, Mapping) and "tag" in node:
-                assert node["tag"] not in latest_static_tags
-
-        asdf.treeutil.walk(schema, callback)
-
     def test_latest_refs(self, schema, latest_uris, current_resources):
         """
         Check that all $ref in the schema point to the latest version of the referenced schema

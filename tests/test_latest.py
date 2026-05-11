@@ -98,29 +98,6 @@ class TestLastestResources:
             f"Expected {symlink_path} to point to {latest_dir / latest_path}, but it does not."
         )
 
-    def test_latest_datamodels_not_static(self, latest_datamodels_tag_uri, latest_static_tags):
-        """
-        Check that the latest datamodels entry is not static.
-        """
-        assert latest_datamodels_tag_uri not in latest_static_tags, (
-            f"Tag: {latest_datamodels_tag_uri} is listed as static, so it should not be the latest datamodels manifest."
-        )
-
-    def test_latest_static_tags_previous_existence(self, latest_static_tag_uri, datamodel_tag_uris):
-        """
-        Check that if a static tag exists in latest then, it must have existed in some previous version's
-        datamodels.
-
-        Note
-        ----
-        The previous test shows that the latest datamodel manifest does not have the static tag and
-        datamodel_tag_uris only sources tags from the datamodels manifest, so this is testing that the static
-        tag must have existed in some datamodels manifest.
-        """
-        assert latest_static_tag_uri in datamodel_tag_uris, (
-            f"Tag: {latest_static_tag_uri} does not exist in any previous version's datamodels."
-        )
-
     def test_latest_datamodels_only_reference_latest(self, latest_datamodels_tag_uri, latest_uris, tag_schema_map):
         """
         Check that the latest datamodels manifest only references schemas within latest.
