@@ -1,0 +1,1 @@
+Dropped the static schema manifest from latest.
