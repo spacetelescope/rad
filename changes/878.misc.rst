@@ -1,0 +1,1 @@
+Corrected the unit for photometry.pixel_area to sr.
