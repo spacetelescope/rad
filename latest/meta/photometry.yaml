@@ -55,7 +55,7 @@ properties:
     anyOf:
       - type: number
       - type: "null"
-    unit: "uJy.arcsec**-2"
+    unit: "sr"
     archive_catalog:
       datatype: float
       destination: [WFIExposure.pixel_area, SourceCatalog.pixel_area]
