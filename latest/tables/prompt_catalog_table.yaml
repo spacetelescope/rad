@@ -436,3 +436,11 @@ properties:
                 - properties:
                     name:
                       pattern: ^nn_label$
+      - not:
+          items:
+            not:
+              allOf:
+                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/tables/source_catalog_columns-2.0.0#/definitions/dust_ebv"
+                - properties:
+                    name:
+                      pattern: ^dust_ebv$
