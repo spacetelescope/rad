@@ -590,6 +590,14 @@ definitions:
         properties:
           datatype:
             enum: [int32]
+  dust_ebv:
+    description: Estimated dust extinction in B-V, taken by default from the map of Schlegel, Finkbeiner, and Davis (1998)
+    unit: mag
+    properties:
+      data:
+        properties:
+          datatype:
+            enum: [float32]
   photoz:
     description: Recommended point estimate of photometric redshift
     unit: none
