@@ -1,3 +1,30 @@
+1.0.0 (2026-05-15)
+==================
+
+Deprecations and Removals
+-------------------------
+
+- Dropped the static schema manifest from latest. (`#868
+  <https://github.com/spacetelescope/rad/issues/868>`_)
+
+
+New Features
+------------
+
+- Bump all SOC schemas to version 2.0.0. 2.0.0 schemas are functionally
+  identical to the latest 1.x.x schema. (`#876
+  <https://github.com/spacetelescope/rad/issues/876>`_)
+- Added new dust_map column to source catalog table. (`#877
+  <https://github.com/spacetelescope/rad/issues/877>`_)
+
+
+Misc
+----
+
+- Corrected the unit for photometry.pixel_area to sr. (`#878
+  <https://github.com/spacetelescope/rad/issues/878>`_)
+
+
 0.31.0 (2026-04-17)
 ===================
 
