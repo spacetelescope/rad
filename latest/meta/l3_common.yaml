@@ -20,7 +20,12 @@ properties:
     maxLength: 120
     archive_catalog:
       datatype: nvarchar(120)
-      destination: [WFIMosaic.data_release_id]
+      destination:
+        [
+          WFIMosaic.data_release_id,
+          SegmentationMap.data_release_id,
+          SourceCatalog.data_release_id,
+        ]
   filename:
     $ref: asdf://stsci.edu/datamodels/roman/schemas/meta/filename-2.0.0
   file_date:
@@ -48,7 +53,12 @@ properties:
         type: string
         archive_catalog:
           datatype: nvarchar(10)
-          destination: [WFIMosaic.reference_frame]
+          destination:
+            [
+              WFIMosaic.reference_frame,
+              SegmentationMap.reference_frame,
+              SourceCatalog.reference_frame,
+            ]
         enum: [ICRS]
     required: [reference_frame]
 
@@ -70,7 +80,12 @@ properties:
         tag: tag:stsci.edu:asdf/time/time-1.*
         archive_catalog:
           datatype: datetime2
-          destination: [WFIMosaic.time_first]
+          destination:
+            [
+              WFIMosaic.time_first,
+              SegmentationMap.time_first,
+              SourceCatalog.time_first,
+            ]
       time_last:
         title: End Time of the Last Exposure
         description: >
@@ -86,7 +101,12 @@ properties:
         tag: tag:stsci.edu:asdf/time/time-1.*
         archive_catalog:
           datatype: datetime2
-          destination: [WFIMosaic.time_last]
+          destination:
+            [
+              WFIMosaic.time_last,
+              SegmentationMap.time_last,
+              SourceCatalog.time_last,
+            ]
       time_mean:
         title: Mean Time of the Co-Added Data Product
         description: >
@@ -102,7 +122,12 @@ properties:
         tag: tag:stsci.edu:asdf/time/time-1.*
         archive_catalog:
           datatype: datetime2
-          destination: [WFIMosaic.time_mean]
+          destination:
+            [
+              WFIMosaic.time_mean,
+              SegmentationMap.time_mean,
+              SourceCatalog.time_mean,
+            ]
       max_exposure_time:
         title: Maximum Exposure Time (s)
         description: >
@@ -114,7 +139,12 @@ properties:
         type: number
         archive_catalog:
           datatype: float
-          destination: [WFIMosaic.max_exposure_time]
+          destination:
+            [
+              WFIMosaic.max_exposure_time,
+              SegmentationMap.max_exposure_time,
+              SourceCatalog.max_exposure_time,
+            ]
       exposure_time:
         title: Exposure Time (s)
         description: >
@@ -128,7 +158,12 @@ properties:
         type: number
         archive_catalog:
           datatype: float
-          destination: [WFIMosaic.exposure_time]
+          destination:
+            [
+              WFIMosaic.exposure_time,
+              SegmentationMap.exposure_time,
+              SourceCatalog.exposure_time,
+            ]
     required: [time_first, time_last, time_mean, exposure_time]
 
   individual_image_meta:
@@ -145,7 +180,12 @@ properties:
         enum: [WFI]
         archive_catalog:
           datatype: nvarchar(5)
-          destination: [WFIMosaic.instrument_name]
+          destination:
+            [
+              WFIMosaic.instrument_name,
+              SegmentationMap.instrument_name,
+              SourceCatalog.instrument_name,
+            ]
       optical_element:
         title: Wide Field Instrument (WFI) Optical Element
         description: >
@@ -157,7 +197,12 @@ properties:
           - type: "null"
         archive_catalog:
           datatype: nvarchar(20)
-          destination: [WFIMosaic.optical_element]
+          destination:
+            [
+              WFIMosaic.optical_element,
+              SegmentationMap.optical_element,
+              SourceCatalog.optical_element,
+            ]
     required: [name, optical_element]
 
   observation:
@@ -177,7 +222,12 @@ properties:
           - type: "null"
         archive_catalog:
           datatype: smallint
-          destination: [WFIMosaic.execution_plan]
+          destination:
+            [
+              WFIMosaic.execution_plan,
+              SegmentationMap.execution_plan,
+              SourceCatalog.execution_plan,
+            ]
       exposure:
         title: Exposure Number
         description: |
@@ -190,7 +240,12 @@ properties:
           - type: "null"
         archive_catalog:
           datatype: smallint
-          destination: [WFIMosaic.exposure]
+          destination:
+            [
+              WFIMosaic.exposure,
+              SegmentationMap.exposure,
+              SourceCatalog.exposure,
+            ]
       exposure_grouping:
         title: Exposure Grouping
         description: >
@@ -201,7 +256,12 @@ properties:
           - type: "null"
         archive_catalog:
           datatype: nvarchar(120)
-          destination: [WFIMosaic.exposure_grouping]
+          destination:
+            [
+              WFIMosaic.exposure_grouping,
+              SegmentationMap.exposure_grouping,
+              SourceCatalog.exposure_grouping,
+            ]
       observation:
         title: Observation Number
         description: |
@@ -215,7 +275,12 @@ properties:
           - type: "null"
         archive_catalog:
           datatype: smallint
-          destination: [WFIMosaic.observation]
+          destination:
+            [
+              WFIMosaic.observation,
+              SegmentationMap.observation,
+              SourceCatalog.observation,
+            ]
       pass:
         title: Pass Number
         description: >
@@ -230,7 +295,8 @@ properties:
           - type: "null"
         archive_catalog:
           datatype: smallint
-          destination: [WFIMosaic.pass]
+          destination:
+            [WFIMosaic.pass, SegmentationMap.pass, SourceCatalog.pass]
       program:
         title: Program Number
         description: >
@@ -244,7 +310,8 @@ properties:
           - type: "null"
         archive_catalog:
           datatype: int
-          destination: [WFIMosaic.program]
+          destination:
+            [WFIMosaic.program, SegmentationMap.program, SourceCatalog.program]
       segment:
         title: Segment Number
         description: >
@@ -259,7 +326,8 @@ properties:
           - type: "null"
         archive_catalog:
           datatype: smallint
-          destination: [WFIMosaic.segment]
+          destination:
+            [WFIMosaic.segment, SegmentationMap.segment, SourceCatalog.segment]
       visit:
         title: Visit Number
         description: >
@@ -273,7 +341,8 @@ properties:
           - type: "null"
         archive_catalog:
           datatype: smallint
-          destination: [WFIMosaic.visit]
+          destination:
+            [WFIMosaic.visit, SegmentationMap.visit, SourceCatalog.visit]
     required:
       [
         execution_plan,
@@ -298,7 +367,12 @@ properties:
           - type: "null"
         archive_catalog:
           datatype: nvarchar(200)
-          destination: [WFIMosaic.program_title]
+          destination:
+            [
+              WFIMosaic.program_title,
+              SegmentationMap.program_title,
+              SourceCatalog.program_title,
+            ]
       investigator_name:
         title: Principle Investigator Name
         description: The name of the principle investigator (PI) of the program.
@@ -308,7 +382,12 @@ properties:
           - type: "null"
         archive_catalog:
           datatype: nvarchar(100)
-          destination: [WFIMosaic.investigator_name]
+          destination:
+            [
+              WFIMosaic.investigator_name,
+              SegmentationMap.investigator_name,
+              SourceCatalog.investigator_name,
+            ]
       category:
         title: Program Category
         description: >
@@ -325,7 +404,12 @@ properties:
           - type: "null"
         archive_catalog:
           datatype: nvarchar(6)
-          destination: [WFIMosaic.program_category]
+          destination:
+            [
+              WFIMosaic.program_category,
+              SegmentationMap.program_category,
+              SourceCatalog.program_category,
+            ]
       subcategory:
         title: Program Subcategory
         description: >
@@ -357,7 +441,12 @@ properties:
           - type: "null"
         archive_catalog:
           datatype: nvarchar(15)
-          destination: [WFIMosaic.program_subcategory]
+          destination:
+            [
+              WFIMosaic.program_subcategory,
+              SegmentationMap.program_subcategory,
+              SourceCatalog.program_subcategory,
+            ]
       science_category:
         title: Science Category
         description: >
@@ -368,7 +457,12 @@ properties:
           - type: "null"
         archive_catalog:
           datatype: nvarchar(50)
-          destination: [WFIMosaic.science_category]
+          destination:
+            [
+              WFIMosaic.science_category,
+              SegmentationMap.science_category,
+              SourceCatalog.science_category,
+            ]
     required:
       [title, investigator_name, category, subcategory, science_category]
 

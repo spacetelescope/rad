@@ -17,7 +17,8 @@ properties:
     type: number
     archive_catalog:
       datatype: float
-      destination: [WFIMosaic.ra_ref]
+      destination:
+        [WFIMosaic.ra_ref, SegmentationMap.ra_ref, SourceCatalog.ra_ref]
   dec_ref:
     title: Declination of Projection Region Center (deg)
     description: >
@@ -29,7 +30,8 @@ properties:
     type: number
     archive_catalog:
       datatype: float
-      destination: [WFIMosaic.dec_ref]
+      destination:
+        [WFIMosaic.dec_ref, SegmentationMap.dec_ref, SourceCatalog.dec_ref]
   x_ref:
     title: X Coordinate of Projection Region Center
     description: >
@@ -42,7 +44,8 @@ properties:
     type: number
     archive_catalog:
       datatype: float
-      destination: [WFIMosaic.x_ref]
+      destination:
+        [WFIMosaic.x_ref, SegmentationMap.x_ref, SourceCatalog.dec_ref]
   y_ref:
     title: Y Coordinate of Projection Region Center
     description: >
@@ -55,7 +58,7 @@ properties:
     type: number
     archive_catalog:
       datatype: float
-      destination: [WFIMosaic.y_ref]
+      destination: [WFIMosaic.y_ref, SegmentationMap.y_ref, SourceCatalog.y_ref]
   pixel_scale_ref:
     title: Pixel Scale at Projection Region Center (degrees per pixel)
     description: >
@@ -66,7 +69,12 @@ properties:
     type: number
     archive_catalog:
       datatype: float
-      destination: [WFIMosaic.pixel_scale_ref]
+      destination:
+        [
+          WFIMosaic.pixel_scale_ref,
+          SegmentationMap.pixel_scale_ref,
+          SourceCatalog.pixel_scale_ref,
+        ]
   pixel_scale:
     title: Pixel Scale at Image Center (degrees per pixel)
     description: >
@@ -74,7 +82,12 @@ properties:
     type: number
     archive_catalog:
       datatype: float
-      destination: [WFIMosaic.pixel_scale]
+      destination:
+        [
+          WFIMosaic.pixel_scale,
+          SegmentationMap.pixel_scale,
+          SourceCatalog.pixel_scale,
+        ]
   projection:
     title: Projection Type
     description: >
@@ -84,7 +97,12 @@ properties:
     enum: ["TAN"]
     archive_catalog:
       datatype: nvarchar(50)
-      destination: [WFIMosaic.projection]
+      destination:
+        [
+          WFIMosaic.projection,
+          SegmentationMap.projection,
+          SourceCatalog.projection,
+        ]
   s_region:
     title: Spatial Extent of the Image
     description: >
@@ -95,7 +113,8 @@ properties:
     type: string
     archive_catalog:
       datatype: nvarchar(max)
-      destination: [WFIMosaic.s_region]
+      destination:
+        [WFIMosaic.s_region, SegmentationMap.s_region, SourceCatalog.s_region]
   image_shape:
     title: Shape of Image (pixels)
     description: Shape of the image (nx, ny) in units of pixels.
@@ -106,21 +125,26 @@ properties:
       type: integer
     archive_catalog:
       datatype: nvarchar(50)
-      destination: [WFIMosaic.image_shape]
+      destination:
+        [
+          WFIMosaic.image_shape,
+          SegmentationMap.image_shape,
+          SourceCatalog.image_shape,
+        ]
   ra:
     title: Right Ascension of Image Center (deg)
     description: Right ascension in units of degrees at the center of the image.
     type: number
     archive_catalog:
       datatype: float
-      destination: [WFIMosaic.ra]
+      destination: [WFIMosaic.ra, SegmentationMap.ra, SourceCatalog.ra]
   dec:
     title: Declination of Image Center (deg)
     description: Declination in units of degrees at the center of the image.
     type: number
     archive_catalog:
       datatype: float
-      destination: [WFIMosaic.dec]
+      destination: [WFIMosaic.dec, SegmentationMap.dec, SourceCatalog.dec]
   orientation:
     title: Image Orientation (deg)
     description: >
@@ -130,7 +154,12 @@ properties:
     type: number
     archive_catalog:
       datatype: float
-      destination: [WFIMosaic.orientation]
+      destination:
+        [
+          WFIMosaic.orientation,
+          SegmentationMap.orientation,
+          SourceCatalog.orientation,
+        ]
   orientation_ref:
     title: Projection Region Orientation (deg)
     description: >
@@ -142,7 +171,12 @@ properties:
     type: number
     archive_catalog:
       datatype: float
-      destination: [WFIMosaic.orientation_ref]
+      destination:
+        [
+          WFIMosaic.orientation_ref,
+          SegmentationMap.orientation_ref,
+          SourceCatalog.orientation_ref,
+        ]
   skycell_name:
     title: Skycell Name
     description: >
@@ -155,7 +189,12 @@ properties:
       - type: "null"
     archive_catalog:
       datatype: nvarchar(30)
-      destination: [WFIMosaic.skycell_name]
+      destination:
+        [
+          WFIMosaic.skycell_name,
+          SegmentationMap.skycell_name,
+          SourceCatalog.skycell_name,
+        ]
   rotation_matrix:
     title: 2x2 rotation matrix
     type: array
@@ -169,7 +208,12 @@ properties:
         origin: TBD
     archive_catalog:
       datatype: nvarchar(3500)
-      destination: [WFIMosaic.rotation_matrix]
+      destination:
+        [
+          WFIMosaic.rotation_matrix,
+          SegmentationMap.rotation_matrix,
+          SourceCatalog.rotation_matrix,
+        ]
 required:
   [
     ra_ref,
