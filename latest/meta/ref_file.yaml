@@ -31,7 +31,6 @@ properties:
               WFIExposure.crds_version,
               SegmentationMap.crds_version,
               SourceCatalog.crds_version,
-              WFIMosaic.crds_version,
             ]
       context:
         title: CRDS Context
@@ -52,7 +51,6 @@ properties:
               WFIExposure.crds_context,
               SegmentationMap.crds_context,
               SourceCatalog.crds_context,
-              WFIMosaic.crds_context,
             ]
     required: [version, context]
   apcorr:
