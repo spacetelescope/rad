@@ -25,6 +25,7 @@ properties:
         [
           WFIExposure.conversion_megajanskys,
           SourceCatalog.conversion_megajanskys,
+          SegmentationMap.conversion_megajanskys,
         ]
   conversion_megajanskys_uncertainty:
     title: Zeropoint Flux Uncertainty (MJy/sr)
@@ -45,6 +46,7 @@ properties:
         [
           WFIExposure.conversion_megajanskys_uncertainty,
           SourceCatalog.conversion_megajanskys_uncertainty,
+          SegmentationMap.conversion_megajanskys_uncertainty,
         ]
   pixel_area:
     title: Nominal Pixel Area (sr)
@@ -58,6 +60,11 @@ properties:
     unit: "sr"
     archive_catalog:
       datatype: float
-      destination: [WFIExposure.pixel_area, SourceCatalog.pixel_area]
+      destination:
+        [
+          WFIExposure.pixel_area,
+          SourceCatalog.pixel_area,
+          SegmentationMap.pixel_area,
+        ]
 required:
   [conversion_megajanskys, conversion_megajanskys_uncertainty, pixel_area]

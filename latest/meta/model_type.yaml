@@ -21,4 +21,5 @@ archive_catalog:
       WFIMosaic.model_type,
       SourceCatalog.model_type,
       SegmentationMap.model_type,
+      WFIMSOSReferenceFrame.model_type,
     ]

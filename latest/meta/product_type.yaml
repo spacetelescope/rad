@@ -27,4 +27,5 @@ archive_catalog:
       WFIMosaic.product_type,
       SourceCatalog.product_type,
       SegmentationMap.product_type,
+      WFIMSOSReferenceFrame.product_type,
     ]

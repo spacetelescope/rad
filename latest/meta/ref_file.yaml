@@ -26,7 +26,13 @@ properties:
         maxLength: 120
         archive_catalog:
           datatype: nvarchar(120)
-          destination: [WFIExposure.crds_version]
+          destination:
+            [
+              WFIExposure.crds_version,
+              SegmentationMap.crds_version,
+              SourceCatalog.crds_version,
+              WFIMosaic.crds_version,
+            ]
       context:
         title: CRDS Context
         description: |
@@ -41,7 +47,13 @@ properties:
         maxLength: 120
         archive_catalog:
           datatype: nvarchar(120)
-          destination: [WFIExposure.crds_context]
+          destination:
+            [
+              WFIExposure.crds_context,
+              SegmentationMap.crds_context,
+              SourceCatalog.crds_context,
+              WFIMosaic.crds_context,
+            ]
     required: [version, context]
   apcorr:
     title: Aperture Correction Reference File Schema
