@@ -15,5 +15,10 @@ properties:
     enum: [ICRS]
     archive_catalog:
       datatype: nvarchar(10)
-      destination: [WFIExposure.reference_frame]
+      destination:
+        [
+          WFIExposure.reference_frame,
+          SegmentationMap.reference_frame,
+          SourceCatalog.reference_frame,
+        ]
 required: [reference_frame]
