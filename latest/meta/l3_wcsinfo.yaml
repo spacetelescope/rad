@@ -44,8 +44,7 @@ properties:
     type: number
     archive_catalog:
       datatype: float
-      destination:
-        [WFIMosaic.x_ref, SegmentationMap.x_ref, SourceCatalog.dec_ref]
+      destination: [WFIMosaic.x_ref, SegmentationMap.x_ref, SourceCatalog.x_ref]
   y_ref:
     title: Y Coordinate of Projection Region Center
     description: >
