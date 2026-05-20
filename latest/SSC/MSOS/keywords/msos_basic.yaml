@@ -14,7 +14,7 @@ properties:
     maxLength: 50
     archive_catalog:
       datatype: nvarchar(50)
-      destination: [WFIMSOSCatalog.model_type]
+      destination: [WFIMSOSCatalog.model_type, WFIMSOSReferenceFrame.model_type]
   product_type:
     title: Product Type Descriptor
     description: |
@@ -26,6 +26,7 @@ properties:
     maxLength: 120
     archive_catalog:
       datatype: nvarchar(120)
-      destination: [WFIMSOSCatalog.product_type]
+      destination:
+        [WFIMSOSCatalog.product_type, WFIMSOSReferenceFrame.product_type]
 
 required: [model_type, product_type]

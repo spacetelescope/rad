@@ -14,14 +14,14 @@ properties:
     type: number
     archive_catalog:
       datatype: float
-      destination: [WFIMSOSReferenceFrame.ra_ref]
+      destination: [WFIMSOSReferenceFrame.ra_ref, WFIMSOSCatalog.ra_ref]
   dec_field_cen:
     title: GBTDS Field Center Dec
     description: Declination (J2000) of the GBTDS Field Center in decimal degrees.
     type: number
     archive_catalog:
       datatype: float
-      destination: [WFIMSOSReferenceFrame.dec_ref]
+      destination: [WFIMSOSReferenceFrame.dec_ref, WFIMSOSCatalog.dec_ref]
   ref_frame:
     title: Reference Frame
     description: The coordinate system used to define the reference frame
@@ -29,13 +29,14 @@ properties:
     maxLength: 16
     archive_catalog:
       datatype: nvarchar(16)
-      destination: [WFIMSOSReferenceFrame.reference_frame]
+      destination:
+        [WFIMSOSReferenceFrame.reference_frame, WFIMSOSCatalog.reference_frame]
   equinox:
     title: Equinox
     description: The equinox of the coordinates
     type: number
     archive_catalog:
       datatype: float
-      destination: [WFIMSOSReferenceFrame.equinox]
+      destination: [WFIMSOSReferenceFrame.equinox, WFIMSOSCatalog.equinox]
 
 required: [ra_field_cen, dec_field_cen, ref_frame, equinox]

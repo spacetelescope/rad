@@ -19,7 +19,13 @@ properties:
         origin: TBD
     archive_catalog:
       datatype: nvarchar(5)
-      destination: [WFIExposure.instrument_name, GuideWindow.instrument_name]
+      destination:
+        [
+          WFIExposure.instrument_name,
+          GuideWindow.instrument_name,
+          SegmentationMap.instrument_name,
+          SourceCatalog.instrument_name,
+        ]
   detector:
     allOf:
       - $ref: asdf://stsci.edu/datamodels/roman/schemas/enums/wfi_detector-2.0.0
@@ -33,7 +39,13 @@ properties:
         origin: TBD
     archive_catalog:
       datatype: nvarchar(16)
-      destination: [WFIExposure.detector, GuideWindow.detector]
+      destination:
+        [
+          WFIExposure.detector,
+          GuideWindow.detector,
+          SegmentationMap.detector,
+          SourceCatalog.detector,
+        ]
   optical_element:
     allOf:
       - $ref: asdf://stsci.edu/datamodels/roman/schemas/enums/wfi_optical_element-2.0.0
@@ -47,7 +59,13 @@ properties:
         origin: TBD
     archive_catalog:
       datatype: nvarchar(20)
-      destination: [WFIExposure.optical_element, GuideWindow.optical_element]
+      destination:
+        [
+          WFIExposure.optical_element,
+          GuideWindow.optical_element,
+          SegmentationMap.optical_element,
+          SourceCatalog.optical_element,
+        ]
   data_encoding_offset:
     title: Data Encoding Offset
     description: |
