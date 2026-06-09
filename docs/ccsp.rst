@@ -4,7 +4,7 @@ CCSP Schemas
 ============
 
 "Community Contributed Science Product" (CCSP) schemas are located in the
-`resources/schemas/CCSP` directory of this package.
+``resources/schemas/CCSP`` directory of this package.
 
 .. _ccsp-creating:
 
@@ -32,10 +32,7 @@ products. As a result, CCSP teams should entirely ignore the  :ref:`external-met
 
 Instead CCSP schemas must contain a reference to either:
 
-.. asdf-autoschemas::
-
-   CCSP/ccsp_minimal-1.0.0
-   CCSP/ccsp_custom_product-1.0.0
+.. include:: _schemas/CCSP.rst
 
 Which schema to use will depend on the details of the product, as described
 below. In both cases, these schemas will require the addition of a new

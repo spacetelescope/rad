@@ -1,7 +1,7 @@
 %YAML 1.1
 ---
-$schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.1.0
-id: asdf://stsci.edu/datamodels/roman/schemas/meta/sdf_software_version-1.1.0
+$schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-2.0.0
+id: asdf://stsci.edu/datamodels/roman/schemas/meta/sdf_software_version-2.0.0
 
 title: SDF Version Number
 description: |
@@ -20,7 +20,6 @@ archive_catalog:
     [
       WFIExposure.sdf_software_version,
       GuideWindow.sdf_software_version,
-      WFIMosaic.sdf_software_version,
       SourceCatalog.sdf_software_version,
       SegmentationMap.sdf_software_version,
     ]

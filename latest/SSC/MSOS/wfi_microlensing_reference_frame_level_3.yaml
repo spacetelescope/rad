@@ -1,6 +1,6 @@
 %YAML 1.1
 ---
-$schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.1.0
+$schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-2.0.0
 id: asdf://stsci.edu/datamodels/roman/schemas/SSC/MSOS/wfi_microlensing_reference_frame_level_3-1.0.0
 
 # https://outerspace.stsci.edu/display/RSEC/Level+3+Microlensing+Data+Products#Level3MicrolensingDataProducts-Level3ReferenceFrame
@@ -10,10 +10,9 @@ archive_meta: Science WFI Level 3 MSOS Reference Frame
 type: object
 allOf:
   - $ref: asdf://stsci.edu/datamodels/roman/schemas/SSC/ssc_basic-1.0.0
+  - $ref: asdf://stsci.edu/datamodels/roman/schemas/SSC/MSOS/keywords/msos_basic-1.0.0
   - $ref: asdf://stsci.edu/datamodels/roman/schemas/SSC/MSOS/keywords/msos_common-1.0.0
-  - $ref: asdf://stsci.edu/datamodels/roman/schemas/SSC/MSOS/keywords/msos_exposure-1.0.0
   - $ref: asdf://stsci.edu/datamodels/roman/schemas/SSC/MSOS/keywords/msos_pointing-1.0.0
-  - $ref: asdf://stsci.edu/datamodels/roman/schemas/SSC/MSOS/keywords/msos_program-1.0.0
-  - $ref: asdf://stsci.edu/datamodels/roman/schemas/SSC/MSOS/keywords/msos_reference_frame-1.0.0
+  - $ref: asdf://stsci.edu/datamodels/roman/schemas/SSC/MSOS/keywords/msos_observation-1.0.0
+  - $ref: asdf://stsci.edu/datamodels/roman/schemas/SSC/MSOS/keywords/msos_exposure-1.0.0
   - $ref: asdf://stsci.edu/datamodels/roman/schemas/SSC/MSOS/keywords/msos_region-1.0.0
-  - $ref: asdf://stsci.edu/datamodels/roman/schemas/SSC/MSOS/keywords/msos_weekly-1.0.0

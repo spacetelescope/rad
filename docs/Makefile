@@ -40,6 +40,7 @@ clean:
 	-rm -rf $(BUILDDIR)
 	-rm -rf api
 	-rm -rf generated
+	-rm -rf _schemas
 
 html:
 	$(SPHINXBUILD) -b html $(ALLSPHINXOPTS) $(BUILDDIR)/html

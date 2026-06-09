@@ -1,6 +1,6 @@
 %YAML 1.1
 ---
-$schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-1.1.0
+$schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-2.0.0
 id: asdf://stsci.edu/datamodels/roman/schemas/SSC/CGI/keywords/cgi_exposure-1.0.0
 
 title: Exposure Information
@@ -14,7 +14,7 @@ properties:
     type: number
     archive_catalog:
       datatype: float
-      destination: [CGIExposure.exposure_time, CGIMosaic.exposure_time]
+      destination: [CGIExposure.exposure_time]
   EMGAIN_C:
     title: Commanded EM gain
     description: Commanded EM gain
@@ -41,7 +41,7 @@ properties:
     description: EXCAM clock cycles since boot (clock cycles)
     type: integer
     archive_catalog:
-      datatype: int
+      datatype: bigint
       destination: [CGIExposure.cycles]
   ISPC:
     title: Photon counting flag
@@ -68,7 +68,7 @@ properties:
       - ENG
     archive_catalog:
       datatype: nvarchar(4)
-      destination: [CGIExposure.arrtype, CGIMosaic.arrtype]
+      destination: [CGIExposure.arrtype]
   HVCBIAS:
     title: HV Clock Bias Voltage
     description: HV Clock Bias Voltage (V)

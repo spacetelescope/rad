@@ -19,10 +19,10 @@ METADATA_FORCE_XFAILS = (
 
 VARCHAR_XFAILS = (
     # <resource uri>
-    "asdf://stsci.edu/datamodels/roman/schemas/meta/ref_file-1.2.0",
+    "asdf://stsci.edu/datamodels/roman/schemas/meta/ref_file-2.0.0",
 )
 
-REF_COMMON_XFAILS = ("asdf://stsci.edu/datamodels/roman/schemas/reference_files/skycells-1.2.0",)
+REF_COMMON_XFAILS = ("asdf://stsci.edu/datamodels/roman/schemas/reference_files/skycells-2.0.0",)
 
 ARRAY_TAG_XFAILS = (
     # <resource uri>
@@ -30,14 +30,20 @@ ARRAY_TAG_XFAILS = (
 
 REQUIRED_SKIPS = (
     "asdf://stsci.edu/datamodels/roman/schemas/wfi_mosaic-1.7.0",
+    "asdf://stsci.edu/datamodels/roman/schemas/wfi_mosaic-2.0.0",
     "asdf://stsci.edu/datamodels/roman/schemas/meta/l3_catalog_common-1.1.0",
+    "asdf://stsci.edu/datamodels/roman/schemas/meta/l3_catalog_common-2.0.0",
     "asdf://stsci.edu/datamodels/roman/schemas/multiband_source_catalog-1.2.0",
+    "asdf://stsci.edu/datamodels/roman/schemas/multiband_source_catalog-2.0.0",
     "asdf://stsci.edu/datamodels/roman/schemas/CCSP/EXAMPLE/example_custom_product-1.1.0",
+    "asdf://stsci.edu/datamodels/roman/schemas/CCSP/EXAMPLE/example_custom_product-2.0.0",
 )
 
 NESTED_REQUIRED_SKIPS = (
     "asdf://stsci.edu/datamodels/roman/schemas/meta/l3_common-1.1.0",
+    "asdf://stsci.edu/datamodels/roman/schemas/meta/l3_common-2.0.0",
     "asdf://stsci.edu/datamodels/roman/schemas/CCSP/ccsp_custom_product-1.1.0",
+    "asdf://stsci.edu/datamodels/roman/schemas/CCSP/ccsp_custom_product-2.0.0",
 )
 
 
@@ -317,18 +323,6 @@ class TestSchemaContent:
         -> Smokes out when VARCHAR_XFAILS is not relevant anymore.
         """
         assert uri in latest_uris, f"{uri} is not in the list of schemas to be tested."
-
-    def test_no_static_tags(self, schema, latest_static_tags):
-        """
-        Check that the schema does not contain any static tags
-        """
-
-        def callback(node):
-            """Callback to check for static tags"""
-            if isinstance(node, Mapping) and "tag" in node:
-                assert node["tag"] not in latest_static_tags
-
-        asdf.treeutil.walk(schema, callback)
 
     def test_latest_refs(self, schema, latest_uris, current_resources):
         """
