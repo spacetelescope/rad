@@ -10,5 +10,5 @@ allOf:
   - $ref: asdf://stsci.edu/datamodels/roman/schemas/SSC/ssc_basic-1.0.0
   - $ref: asdf://stsci.edu/datamodels/roman/schemas/SSC/MSOS/keywords/msos_basic-1.0.0
   - $ref: asdf://stsci.edu/datamodels/roman/schemas/SSC/MSOS/keywords/msos_program-1.0.0
-  - $ref: asdf://stsci.edu/datamodels/roman/schemas/SSC/MSOS/keywords/msos_region-1.0.0
   - $ref: asdf://stsci.edu/datamodels/roman/schemas/SSC/MSOS/keywords/msos_settings-1.0.0
+  - $ref: asdf://stsci.edu/datamodels/roman/schemas/SSC/MSOS/keywords/msos_detection_efficiency-1.0.0
