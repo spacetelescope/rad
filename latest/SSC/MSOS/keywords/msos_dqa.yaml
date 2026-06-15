@@ -58,9 +58,9 @@ properties:
     title: Sequence
     description: Processing sequence covered by the DQA artifact, when applicable. Example value 's1'.
     type: string
-    maxLength: 16
+    maxLength: 3
     archive_catalog:
-      datatype: nvarchar(16)
+      datatype: nvarchar(3)
       destination: [WFIMSOSCatalog.sequence]
   field:
     title: GBTDS Field
