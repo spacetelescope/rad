@@ -18,7 +18,7 @@ properties:
       destination: [WFIMSOSReferenceFrame.field, WFIMSOSCatalog.field]
   detector:
     title: Detector
-    description: WFI Detector during data acquisition. Example value 'wfi05'.
+    description: Name of the Wide Field Instrument (WFI) detector used.
     allOf:
       - $ref: asdf://stsci.edu/datamodels/roman/schemas/enums/wfi_detector-2.0.0
     maxLength: 5
@@ -30,8 +30,8 @@ properties:
       - $ref: asdf://stsci.edu/datamodels/roman/schemas/enums/wfi_optical_element-2.0.0
     title: Optical Element
     description:
-      WFI Optical Element during data acquisition. Example value 'f087'.
-      WFI Optical Elemnent for Data Acquisition
+      Name of the optical element used to take the science
+      data.
     archive_catalog:
       datatype: nvarchar(4)
       destination:

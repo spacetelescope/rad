@@ -16,7 +16,7 @@ properties:
       destination: [WFISpec.dither]
   detector:
     title: Detector
-    description: Detector name (e.g., 'wfi01')
+    description: Name of the Wide Field Instrument (WFI) detector used.
     type: string
     maxLength: 5
     archive_catalog:

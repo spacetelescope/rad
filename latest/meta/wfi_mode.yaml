@@ -31,8 +31,7 @@ properties:
       - $ref: asdf://stsci.edu/datamodels/roman/schemas/enums/wfi_detector-2.0.0
     title: Wide Field Instrument (WFI) Detector Identifier
     description: |
-      Name of the Wide Field Instrument (WFI) detector used
-      to take the science data in this file.
+      Name of the Wide Field Instrument (WFI) detector used.
     sdf:
       special_processing: VALUE_REQUIRED
       source:
