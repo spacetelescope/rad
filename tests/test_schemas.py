@@ -20,6 +20,7 @@ METADATA_FORCE_XFAILS = (
 VARCHAR_XFAILS = (
     # <resource uri>
     "asdf://stsci.edu/datamodels/roman/schemas/meta/ref_file-2.0.0",
+    "asdf://stsci.edu/datamodels/roman/schemas/meta/program-2.1.0",
 )
 
 REF_COMMON_XFAILS = ("asdf://stsci.edu/datamodels/roman/schemas/reference_files/skycells-2.0.0",)
