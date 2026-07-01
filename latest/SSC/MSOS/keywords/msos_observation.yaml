@@ -29,8 +29,7 @@ properties:
     allOf:
       - $ref: asdf://stsci.edu/datamodels/roman/schemas/enums/wfi_optical_element-2.0.0
     title: Optical Element
-    description:
-      Name of the optical element used to take the science
+    description: Name of the optical element used to take the science
       data.
     archive_catalog:
       datatype: nvarchar(4)
