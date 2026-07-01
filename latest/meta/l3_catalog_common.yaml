@@ -1,12 +1,12 @@
 %YAML 1.1
 ---
 $schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-2.0.0
-id: asdf://stsci.edu/datamodels/roman/schemas/meta/l3_catalog_common-2.0.0
+id: asdf://stsci.edu/datamodels/roman/schemas/meta/l3_catalog_common-2.1.0
 
 title: Common Level 3 Catalog Metadata
 
 allOf:
-  - $ref: asdf://stsci.edu/datamodels/roman/schemas/meta/l3_common-2.0.0
+  - $ref: asdf://stsci.edu/datamodels/roman/schemas/meta/l3_common-2.1.0
   - properties:
       image:
         $ref: asdf://stsci.edu/datamodels/roman/schemas/meta/catalog_image-2.0.0

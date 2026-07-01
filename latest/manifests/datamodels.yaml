@@ -34,8 +34,8 @@ tags:
     title: Wfi level 2 image information
     description: |-
       Wfi level 2 image information
-  - tag_uri: asdf://stsci.edu/datamodels/roman/tags/wfi_mosaic-2.0.0
-    schema_uri: asdf://stsci.edu/datamodels/roman/schemas/wfi_mosaic-2.0.0
+  - tag_uri: asdf://stsci.edu/datamodels/roman/tags/wfi_mosaic-2.1.0
+    schema_uri: asdf://stsci.edu/datamodels/roman/schemas/wfi_mosaic-2.1.0
     title: Wfi level 3 mosaic information
     description: |-
       Wfi level 3 mosaic information
@@ -173,23 +173,23 @@ tags:
     title: Segmentation map
     description: |-
       Segmentation map computed by the Source Catalog Step
-  - tag_uri: asdf://stsci.edu/datamodels/roman/tags/mosaic_source_catalog-2.0.0
-    schema_uri: asdf://stsci.edu/datamodels/roman/schemas/mosaic_source_catalog-2.0.0
+  - tag_uri: asdf://stsci.edu/datamodels/roman/tags/mosaic_source_catalog-2.1.0
+    schema_uri: asdf://stsci.edu/datamodels/roman/schemas/mosaic_source_catalog-2.1.0
     title: Mosaic source catalog
     description: |-
       Photometry and astrometry computed by the Source Catalog Step
-  - tag_uri: asdf://stsci.edu/datamodels/roman/tags/multiband_source_catalog-2.0.0
-    schema_uri: asdf://stsci.edu/datamodels/roman/schemas/multiband_source_catalog-2.0.0
+  - tag_uri: asdf://stsci.edu/datamodels/roman/tags/multiband_source_catalog-2.1.0
+    schema_uri: asdf://stsci.edu/datamodels/roman/schemas/multiband_source_catalog-2.1.0
     title: Multiband source catalog
     description: |-
       Photometry and astrometry computed by the Multiband Catalog Step
-  - tag_uri: asdf://stsci.edu/datamodels/roman/tags/mosaic_segmentation_map-2.0.0
-    schema_uri: asdf://stsci.edu/datamodels/roman/schemas/mosaic_segmentation_map-2.0.0
+  - tag_uri: asdf://stsci.edu/datamodels/roman/tags/mosaic_segmentation_map-2.1.0
+    schema_uri: asdf://stsci.edu/datamodels/roman/schemas/mosaic_segmentation_map-2.1.0
     title: Mosaic segmentation map
     description: |-
       Segmentation map computed by the Source Catalog Step
-  - tag_uri: asdf://stsci.edu/datamodels/roman/tags/multiband_segmentation_map-2.0.0
-    schema_uri: asdf://stsci.edu/datamodels/roman/schemas/multiband_segmentation_map-2.0.0
+  - tag_uri: asdf://stsci.edu/datamodels/roman/tags/multiband_segmentation_map-2.1.0
+    schema_uri: asdf://stsci.edu/datamodels/roman/schemas/multiband_segmentation_map-2.1.0
     title: Multiband segmentation map
     description: |-
       Segmentation map computed by the Multiband Catalog Step
@@ -198,8 +198,8 @@ tags:
     title: Forced image source catalog
     description: |-
       Photometry and astrometry computed by the Source Catalog Step
-  - tag_uri: asdf://stsci.edu/datamodels/roman/tags/forced_mosaic_source_catalog-2.0.0
-    schema_uri: asdf://stsci.edu/datamodels/roman/schemas/forced_mosaic_source_catalog-2.0.0
+  - tag_uri: asdf://stsci.edu/datamodels/roman/tags/forced_mosaic_source_catalog-2.1.0
+    schema_uri: asdf://stsci.edu/datamodels/roman/schemas/forced_mosaic_source_catalog-2.1.0
     title: Forced mosaic source catalog
     description: |-
       Photometry and astrometry computed by the Source Catalog Step
