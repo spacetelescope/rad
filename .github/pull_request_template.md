@@ -31,4 +31,5 @@ This PR addresses ...
 - `changes/<PR#>.doc.rst`: documentation change
 - `changes/<PR#>.removal.rst`: deprecation or removal of public API
 - `changes/<PR#>.misc.rst`: infrastructure or miscellaneous change
+
 </details
