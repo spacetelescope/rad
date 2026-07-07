@@ -1,0 +1,143 @@
+%YAML 1.1
+---
+$schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-2.0.0
+id: asdf://stsci.edu/datamodels/roman/schemas/SSC/MSOS/keywords/msos_dqa-1.0.0
+
+title: MSOS DQA keywords
+extName: SSC
+type: object
+properties:
+  program:
+    title: Program ID
+    description: ID number assigned to the Roman Space Telescope program. Example value '00992'.
+    type: integer
+    archive_catalog:
+      datatype: int
+      destination: [WFIMSOSCatalog.program]
+  msos_dqa_version:
+    title: Msos DQA Software Version
+    description: Version of the MSOS DQA software (roman-msos-dqa repo). Example value '4.1.6'.
+    type: string
+    maxLength: 128
+    archive_catalog:
+      datatype: nvarchar(128)
+      destination: [WFIMSOSCatalog.msos_dqa_version]
+  dqa_workflow:
+    title: DQA Workflow
+    description: DQA workflow that produced the artifact. Example values include 'periodic', 'longterm', and 'events'.
+    type: string
+    maxLength: 32
+    archive_catalog:
+      datatype: nvarchar(32)
+      destination: [WFIMSOSCatalog.dqa_workflow]
+  dqa_artifact_type:
+    title: DQA Artifact Type
+    description: DQA artifact type. Example values include 'report' and 'catalog'.
+    type: string
+    maxLength: 16
+    archive_catalog:
+      datatype: nvarchar(16)
+      destination: [WFIMSOSCatalog.dqa_artifact_type]
+  season:
+    title: Season
+    description: GBTDS season covered by the DQA artifact, when the artifact is season-specific. Example value 's01'.
+    type: string
+    maxLength: 3
+    archive_catalog:
+      datatype: nvarchar(3)
+      destination: [WFIMSOSCatalog.season]
+  period:
+    title: GBTDS Period
+    description: GBTDS period covered by the DQA artifact, when the artifact is period-specific. Example value 'p01'.
+    type: string
+    maxLength: 3
+    archive_catalog:
+      datatype: nvarchar(3)
+      destination: [WFIMSOSCatalog.period]
+  sequence:
+    title: Sequence
+    description: Processing sequence covered by the DQA artifact, when applicable. Example value 's1'.
+    type: string
+    maxLength: 3
+    archive_catalog:
+      datatype: nvarchar(3)
+      destination: [WFIMSOSCatalog.sequence]
+  field:
+    title: GBTDS Field
+    description: GBTDS field covered by the DQA artifact, when field-specific. Example value 'f03'.
+    type: string
+    maxLength: 3
+    archive_catalog:
+      datatype: nvarchar(3)
+      destination: [WFIMSOSCatalog.field]
+  detector:
+    title: Detector
+    description: WFI detector covered by the DQA artifact, when detector-specific. Example value 'wfi05'.
+    type: string
+    maxLength: 5
+    archive_catalog:
+      datatype: nvarchar(5)
+      destination: [WFIMSOSCatalog.detector]
+  optical_element:
+    title: Optical Element
+    description: WFI optical element covered by the DQA artifact, when applicable. Example value 'f146'.
+    type: string
+    maxLength: 4
+    archive_catalog:
+      datatype: nvarchar(4)
+      destination: [WFIMSOSCatalog.optical_element]
+  counter:
+    title: Counter
+    description: Product counter from the DQA artifact filename when applicable. Example value '0100.2000'.
+    type: string
+    maxLength: 16
+    archive_catalog:
+      datatype: nvarchar(16)
+      destination: [WFIMSOSCatalog.counter]
+  object_id:
+    title: Object ID
+    description: Microlensing object identifier for event-specific DQA artifacts.
+    type: string
+    maxLength: 64
+    archive_catalog:
+      datatype: nvarchar(64)
+      destination: [WFIMSOSCatalog.object_id]
+  roman_name:
+    title: Roman Name
+    description: Roman object name for event-specific DQA artifacts.
+    type: string
+    maxLength: 128
+    archive_catalog:
+      datatype: nvarchar(128)
+      destination: [WFIMSOSCatalog.roman_name]
+  classification:
+    title: Event Classification
+    description: Event classification for event-specific DQA artifacts. Example value 'microlensing'.
+    type: string
+    maxLength: 64
+    archive_catalog:
+      datatype: nvarchar(64)
+      destination: [WFIMSOSCatalog.classification]
+  ra:
+    title: Right Ascension
+    description: Right ascension of the DQA target in decimal degrees, when applicable.
+    type: number
+    archive_catalog:
+      datatype: float
+      destination: [WFIMSOSCatalog.ra]
+  dec:
+    title: Declination
+    description: Declination of the DQA target in decimal degrees, when applicable.
+    type: number
+    archive_catalog:
+      datatype: float
+      destination: [WFIMSOSCatalog.dec]
+  dqa_flag:
+    title: DQA Flag
+    description: Integer DQA quality flag summarized for the artifact when applicable.
+    type: integer
+    archive_catalog:
+      datatype: int
+      destination: [WFIMSOSCatalog.dqa_flag]
+
+required: [msos_dqa_version, dqa_workflow, dqa_artifact_type]
