@@ -1,0 +1,1 @@
+Add the SSC MSOS Level 4 detection efficiency catalog schema.

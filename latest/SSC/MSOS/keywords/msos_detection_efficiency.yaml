@@ -1,0 +1,55 @@
+%YAML 1.1
+---
+$schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-2.0.0
+id: asdf://stsci.edu/datamodels/roman/schemas/SSC/MSOS/keywords/msos_detection_efficiency-1.0.0
+
+title: MSOS detection efficiency keywords
+extName: SSC
+type: object
+properties:
+  inject_medium:
+    title: Injection Medium
+    description: Detection efficiency injection medium represented by the rows in this file.
+    type: string
+    maxLength: 16
+    enum:
+      - images
+      - lightcurve
+      - rhie
+    archive_catalog:
+      datatype: nvarchar(16)
+      destination: [WFIMSOSCatalog.inject_medium]
+  tp_count:
+    title: True Positive Count
+    description: Number of rows in this file with BinaryClass equal to TP.
+    type: integer
+    minimum: 0
+    archive_catalog:
+      datatype: int
+      destination: [WFIMSOSCatalog.tp_count]
+  fp_count:
+    title: False Positive Count
+    description: Number of rows in this file with BinaryClass equal to FP.
+    type: integer
+    minimum: 0
+    archive_catalog:
+      datatype: int
+      destination: [WFIMSOSCatalog.fp_count]
+  tn_count:
+    title: True Negative Count
+    description: Number of rows in this file with BinaryClass equal to TN.
+    type: integer
+    minimum: 0
+    archive_catalog:
+      datatype: int
+      destination: [WFIMSOSCatalog.tn_count]
+  fn_count:
+    title: False Negative Count
+    description: Number of rows in this file with BinaryClass equal to FN.
+    type: integer
+    minimum: 0
+    archive_catalog:
+      datatype: int
+      destination: [WFIMSOSCatalog.fn_count]
+
+required: [inject_medium, tp_count, fp_count, tn_count, fn_count]
