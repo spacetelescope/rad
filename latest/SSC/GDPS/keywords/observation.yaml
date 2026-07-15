@@ -9,7 +9,11 @@ type: object
 properties:
   program:
     title: Program
-    description: ID number assigned to the proposal
+    description: |
+      Identifier for the observing program. A program is an approved
+      specification for a science, calibration, or engineering
+      investigation to be pursued using Roman Space Telescope mission
+      resources. The allowed range of program numbers is 00001 to 18445 inclusive.
     type: integer
     archive_catalog:
       datatype: int
@@ -23,7 +27,7 @@ properties:
       destination: [WFISpec.program_complete]
   data_release_id:
     title: Data Release ID
-    description: Data release ID. Equal to 'p' for prompt files and 'r##' (e.g., 'r05') for Data Releases.
+    description: A label for the data release (if applicable). This keyword is optional and only populated for data release products.
     type: string
     maxLength: 3
     archive_catalog:
