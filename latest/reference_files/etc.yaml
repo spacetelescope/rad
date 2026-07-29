@@ -131,7 +131,7 @@ properties:
           When set to 'True', the ETC engine reports outputs in counts/s instead of electrons/s.
         type: boolean
       saturation_fullwell:
-        title: Saturation Fullwell Depth 
+        title: Saturation Fullwell Depth
         description: |
           Typical fullwell depth. Used to determine the saturation by the ETC
         type: integer
