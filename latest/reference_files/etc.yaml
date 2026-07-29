@@ -16,9 +16,87 @@ properties:
         properties:
           reftype:
             type: string
-            enum: [ETC]
+            enum: [ETC]  
   form:
     type: object
+    properties:
+      cosmic_rays_on:
+        type: boolean
+        description: When set to 'True', cosmic rays are considered in the ETC engine in the noise calculation by default.
+      dark_current:
+        tyle: float
+        description: Median dark value in electrons/s.
+      dark_current_on:
+        type: boolean
+        description: When set to 'True', the ETC engine will consider dark current in the noise calculation by default.
+      det_type:
+        type: string
+        description: Detector type of the WFI. The value is h4rg-10 for Roman. 
+      flat_field_electrons:
+        type: integer
+        description: Total number of electrons in the superflat. Used to determine the flat fielding error by the ETC. 
+      flat_field_noise_on:
+        type: boolean
+        description: When set to 'True', flat field noise is considered in the ETC engine in the noise calculation by default.
+      inter_pixel_correlation_on:
+        type: boolean
+        description: When set to 'True', IPC convolution is considered in the ETC engine in the noise calculation by default.
+      ktc_noise:
+        type: float
+        description: special additive noise in electrons for the nresultants = 1 for Roman.   
+      minresultants:
+        type: integer
+        description: Minimum number of unsaturated resultants below which a pixel is said to be fully saturated.
+      pix_size_x:
+        type: integer
+        description: Pixel size in microns. Used in cosmic ray calculation by the ETC engine. The value is 10 for Roman. 
+      pix_size_y:
+        type: integer
+        description: Pixel size in microns. Used in cosmic ray calculation by the ETC engine. The value is 10 for Roman.
+      pixels_x:
+        type: integer
+        description: Number of pixels in the detector. The value is 4088 for Roman.
+      pixels_y:
+        type: integer
+        description: Number of pixels in the detector. The value is 4088 for Roman.
+      qyield_noise_excess_scaling:
+        type: float
+        description: A scaling factor for the quantum yield. 
+      readnoise:
+        type: float
+        description: Median single read noise value in electrons.
+      readnoise_correlation_on:
+        type: boolean
+        description: When set to 'True', the readnoise is considered as correlated in the ETC engine in the noise calculation by default. In this case, the engine requires a correlation matrix in place.
+      readnoise_excess_additive_on:
+        type: boolean
+        description: When set to 'True', excess noise is considered in the ETC engine in the noise calculation by default.
+      readnoise_excess_additive_p1:
+        type: float
+        description: An additional parameter used as a quadratic correction to the noise term. This is the second-order term.
+      readnoise_excess_additive_p2:
+        type: float
+        description: An additional parameter used as a quadratic correction to the noise term. This is the first-order term.
+      readnoise_excess_scaling:
+        type: float
+        description: Readnoise fudge factor. Multiplies by readnoise. 
+      readnoise_on:
+        type: boolean
+        description: When set to 'True', readnoise is considered in the ETC engine in the noise calculation by default.
+      report_counts:
+        type: boolean
+        description: When set to 'True', the ETC engine reports outputs in counts/s instead of electrons/s.
+      saturation_fullwell:
+        type: integer
+        description: Typical fullwell depth. Used to determine the saturation by the ETC
+      saturation_on: 
+        type: boolean
+        description: When set to 'True', the ETC engine computes pixel saturation by default.
+      scattering_on: 
+        type: boolean
+        description: When set to 'True', detector scattering is considered in the ETC engine in the noise calculation by default.
+
+
 required: [meta, form]
 flowStyle: block
 propertyOrder: [meta, form]
