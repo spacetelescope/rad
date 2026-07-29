@@ -16,7 +16,7 @@ properties:
         properties:
           reftype:
             type: string
-            enum: [ETC]  
+            enum: [ETC]
   form:
     type: object
     properties:
