@@ -1,7 +1,7 @@
 %YAML 1.1
 ---
 $schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-2.0.0
-id: asdf://stsci.edu/datamodels/roman/schemas/meta/ephemeris-2.0.0
+id: asdf://stsci.edu/datamodels/roman/schemas/meta/ephemeris-2.1.0
 
 title: Ephemeris Data Information
 type: object
@@ -22,9 +22,9 @@ properties:
   type:
     title: Ephemeris Type
     description: |
-      Type of ephemeris (either DEFINITIVE or PREDICTED).
+      Type of ephemeris (DEFINITIVE, PREDICTED, or DEFAULT).
     type: string
-    enum: [DEFINITIVE, PREDICTED]
+    enum: [DEFINITIVE, PREDICTED, DEFAULT]
     sdf:
       special_processing: VALUE_REQUIRED
       source:
