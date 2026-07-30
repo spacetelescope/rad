@@ -1,0 +1,1 @@
+Add DEFAULT as an allowed value of the ephemeris type.
