@@ -1,7 +1,7 @@
 %YAML 1.1
 ---
 $schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-2.0.0
-id: asdf://stsci.edu/datamodels/roman/schemas/meta/common-2.0.0
+id: asdf://stsci.edu/datamodels/roman/schemas/meta/common-2.0.1
 
 title: Common metadata properties
 
@@ -14,7 +14,7 @@ allOf:
       coordinates:
         $ref: asdf://stsci.edu/datamodels/roman/schemas/meta/coordinates-2.0.0
       ephemeris:
-        $ref: asdf://stsci.edu/datamodels/roman/schemas/meta/ephemeris-2.0.0
+        $ref: asdf://stsci.edu/datamodels/roman/schemas/meta/ephemeris-2.0.1
       exposure:
         $ref: asdf://stsci.edu/datamodels/roman/schemas/meta/exposure-2.0.0
       guide_star:
