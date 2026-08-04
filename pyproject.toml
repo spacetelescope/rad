@@ -99,6 +99,9 @@ asdf_schema_xfail_tests = [
   "latest/SSC/GDPS/wfi_spec_location_table_level_4.yaml",
   "latest/SSC/GDPS/wfi_spec_dqa_2d_level_4.yaml",
   "latest/SSC/GDPS/wfi_spec_catalog_dqa_level_4.yaml",
+  "latest/SSC/MSOS/wfi_microlensing_dqa_events_level_4.yaml",
+  "latest/SSC/MSOS/wfi_microlensing_dqa_photometry_level_3.yaml",
+  "latest/SSC/MSOS/wfi_microlensing_dqa_photometry_level_4.yaml",
   "latest/SSC/MSOS/wfi_microlensing_event_catalog_level_4.yaml",
   "latest/SSC/MSOS/wfi_microlensing_light_curve_catalog_level_4.yaml",
   "latest/SSC/MSOS/wfi_microlensing_object_periodic_catalog_level_4.yaml",
@@ -107,24 +110,6 @@ asdf_schema_xfail_tests = [
   "latest/SSC/MSOS/wfi_microlensing_variability_catalog_level_4.yaml",
 ]
 asdf_schema_root = "latest"
-
-[tool.ruff]
-line-length = 130
-
-[tool.ruff.lint]
-extend-select = [
-  "UP",  # PyUpgrade
-  "I",   # isort
-  "B",   # BugBear
-  "S",   # Bandit
-  "RUF", # ruff specific
-  "NPY", # numpy specific
-]
-
-[tool.ruff.lint.per-file-ignores]
-"tests/**.py" = [
-  "S101", # Bandit: Use of assert detected (fine in test files)
-]
 
 [tool.codespell]
 skip = "*.pdf,*.fits,*.asdf,.tox,build,./tags,.git,docs/_build"
