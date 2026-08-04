@@ -1,0 +1,1 @@
+Remove unnecessary subcategory enum from program and l3_common schemas.

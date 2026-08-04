@@ -20,6 +20,8 @@ METADATA_FORCE_XFAILS = (
 VARCHAR_XFAILS = (
     # <resource uri>
     "asdf://stsci.edu/datamodels/roman/schemas/meta/ref_file-2.0.0",
+    "asdf://stsci.edu/datamodels/roman/schemas/meta/program-2.1.0",
+    "asdf://stsci.edu/datamodels/roman/schemas/meta/l3_common-2.1.0",
 )
 
 REF_COMMON_XFAILS = ("asdf://stsci.edu/datamodels/roman/schemas/reference_files/skycells-2.0.0",)
@@ -31,10 +33,13 @@ ARRAY_TAG_XFAILS = (
 REQUIRED_SKIPS = (
     "asdf://stsci.edu/datamodels/roman/schemas/wfi_mosaic-1.7.0",
     "asdf://stsci.edu/datamodels/roman/schemas/wfi_mosaic-2.0.0",
+    "asdf://stsci.edu/datamodels/roman/schemas/wfi_mosaic-2.1.0",
     "asdf://stsci.edu/datamodels/roman/schemas/meta/l3_catalog_common-1.1.0",
     "asdf://stsci.edu/datamodels/roman/schemas/meta/l3_catalog_common-2.0.0",
+    "asdf://stsci.edu/datamodels/roman/schemas/meta/l3_catalog_common-2.1.0",
     "asdf://stsci.edu/datamodels/roman/schemas/multiband_source_catalog-1.2.0",
     "asdf://stsci.edu/datamodels/roman/schemas/multiband_source_catalog-2.0.0",
+    "asdf://stsci.edu/datamodels/roman/schemas/multiband_source_catalog-2.1.0",
     "asdf://stsci.edu/datamodels/roman/schemas/CCSP/EXAMPLE/example_custom_product-1.1.0",
     "asdf://stsci.edu/datamodels/roman/schemas/CCSP/EXAMPLE/example_custom_product-2.0.0",
 )
@@ -42,6 +47,7 @@ REQUIRED_SKIPS = (
 NESTED_REQUIRED_SKIPS = (
     "asdf://stsci.edu/datamodels/roman/schemas/meta/l3_common-1.1.0",
     "asdf://stsci.edu/datamodels/roman/schemas/meta/l3_common-2.0.0",
+    "asdf://stsci.edu/datamodels/roman/schemas/meta/l3_common-2.1.0",
     "asdf://stsci.edu/datamodels/roman/schemas/CCSP/ccsp_custom_product-1.1.0",
     "asdf://stsci.edu/datamodels/roman/schemas/CCSP/ccsp_custom_product-2.0.0",
 )

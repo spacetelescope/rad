@@ -1,7 +1,7 @@
 %YAML 1.1
 ---
 $schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-2.0.0
-id: asdf://stsci.edu/datamodels/roman/schemas/meta/l3_common-2.0.0
+id: asdf://stsci.edu/datamodels/roman/schemas/meta/l3_common-2.1.0
 
 title: Common Level 3 Metadata
 
@@ -424,20 +424,6 @@ properties:
           the meta.program.category values.
         anyOf:
           - type: string
-            enum:
-              [
-                "CAL",
-                "CGI",
-                "CR",
-                "DR",
-                "GBTD",
-                "HLTD",
-                "HLWA",
-                "OR",
-                "WFI",
-                "WFSC",
-                "None",
-              ]
           - type: "null"
         archive_catalog:
           datatype: nvarchar(15)
