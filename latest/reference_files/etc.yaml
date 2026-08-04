@@ -118,7 +118,7 @@ properties:
       readnoise_excess_scaling:
         title: Readnoise Scaling Factor
         description: |
-          Readnoise fudge factor. Multiplies by readnoise.
+          Readnoise correction factor. Multiplies by readnoise.
         type: number
       readnoise_on:
         title: Readnoise Flag
