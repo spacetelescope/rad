@@ -22,15 +22,15 @@ properties:
   type:
     title: Ephemeris Type
     description: |
-      Type of ephemeris (DEFINITIVE, PREDICTED, or DEFAULT).
+      Type of ephemeris, for example DEFINITIVE, PREDICTED, or DEFAULT.
     type: string
-    enum: [DEFINITIVE, PREDICTED, DEFAULT]
+    maxLength: 30
     sdf:
       special_processing: VALUE_REQUIRED
       source:
         origin: TBD
     archive_catalog:
-      datatype: nvarchar(10)
+      datatype: nvarchar(30)
       destination: [WFIExposure.ephemeris_type]
   time:
     title: UTC Time of Ephemeris Information (MJD)

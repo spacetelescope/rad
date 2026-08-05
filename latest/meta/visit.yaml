@@ -1,7 +1,7 @@
 %YAML 1.1
 ---
 $schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-2.0.0
-id: asdf://stsci.edu/datamodels/roman/schemas/meta/visit-2.0.0
+id: asdf://stsci.edu/datamodels/roman/schemas/meta/visit-2.1.0
 
 title: Visit Information
 type: object
@@ -98,14 +98,7 @@ properties:
     description: |
       The type of visit from observation planning.
     type: string
-    enum:
-      [
-        "GENERAL_ENGINEERING",
-        "GENERIC",
-        "PARALLEL",
-        "PRIME_TARGETED_FIXED",
-        "PRIME_UNTARGETED",
-      ]
+    maxLength: 30
     sdf:
       special_processing: VALUE_REQUIRED
       source:

@@ -12,7 +12,7 @@ allOf:
       coordinates:
         $ref: asdf://stsci.edu/datamodels/roman/schemas/meta/coordinates-2.0.0
       exposure:
-        $ref: asdf://stsci.edu/datamodels/roman/schemas/meta/exposure-2.0.0
+        $ref: asdf://stsci.edu/datamodels/roman/schemas/meta/exposure-2.1.0
       image:
         $ref: asdf://stsci.edu/datamodels/roman/schemas/meta/catalog_image-2.0.0
       instrument:
@@ -28,7 +28,7 @@ allOf:
       ref_file:
         $ref: asdf://stsci.edu/datamodels/roman/schemas/meta/ref_file-2.0.0
       visit:
-        $ref: asdf://stsci.edu/datamodels/roman/schemas/meta/visit-2.0.0
+        $ref: asdf://stsci.edu/datamodels/roman/schemas/meta/visit-2.1.0
       wcsinfo:
         $ref: asdf://stsci.edu/datamodels/roman/schemas/meta/wcsinfo-2.0.0
     required:
