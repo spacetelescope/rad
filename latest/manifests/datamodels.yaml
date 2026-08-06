@@ -9,13 +9,13 @@ asdf_standard_requirement:
   gte: 1.6.0
 tags:
   # Object Modules
-  - tag_uri: asdf://stsci.edu/datamodels/roman/tags/l1_face_guidewindow-2.0.0
-    schema_uri: asdf://stsci.edu/datamodels/roman/schemas/l1_face_guidewindow-2.0.0
+  - tag_uri: asdf://stsci.edu/datamodels/roman/tags/l1_face_guidewindow-2.1.0
+    schema_uri: asdf://stsci.edu/datamodels/roman/schemas/l1_face_guidewindow-2.1.0
     title: Level 1 FACE Guide Star Window Information schema
     description: |-
       Level 1 FACE Guide Star Window Information schema
-  - tag_uri: asdf://stsci.edu/datamodels/roman/tags/l1_detector_guidewindow-2.0.0
-    schema_uri: asdf://stsci.edu/datamodels/roman/schemas/l1_detector_guidewindow-2.0.0
+  - tag_uri: asdf://stsci.edu/datamodels/roman/tags/l1_detector_guidewindow-2.1.0
+    schema_uri: asdf://stsci.edu/datamodels/roman/schemas/l1_detector_guidewindow-2.1.0
     title: Level 1 Detector Guide Star Window Information schema
     description: |-
       Level 1 Detector Guide Star Window Information schema
@@ -82,8 +82,8 @@ tags:
     title: ePSF reference schema
     description: |-
       ePSF reference schema
-  - tag_uri: asdf://stsci.edu/datamodels/roman/tags/reference_files/etc-2.0.0
-    schema_uri: asdf://stsci.edu/datamodels/roman/schemas/reference_files/etc-2.0.0
+  - tag_uri: asdf://stsci.edu/datamodels/roman/tags/reference_files/etc-2.1.0
+    schema_uri: asdf://stsci.edu/datamodels/roman/schemas/reference_files/etc-2.1.0
     title: Exposure Time Calculator Reference File Schema
     description: |-
       Exposure Time Calculator Reference File Schema
