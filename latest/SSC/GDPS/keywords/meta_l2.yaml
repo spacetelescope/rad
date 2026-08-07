@@ -9,14 +9,25 @@ type: object
 properties:
   segment:
     title: Segment number
-    description: The sequence of activities produced by each iteration of a Segment Plan (Observation Sequence) in a Pass
+    description: |
+      Identifier for the segment. A segment is the sequence
+      of activities produced by each iteration of an Astronomer's
+      Proposal Tool (APT) segment plan in a pass. A segment may include
+      multiple traversals of mosaic pattern(s), with element wheel moves
+      occurring between observations. The allowed range of segment
+      numbers is 001 to 999 inclusive.
     type: integer
     archive_catalog:
       datatype: smallint
       destination: [WFISpec.segment]
   visit:
     title: Visit number
-    description: Visit number within a program
+    description: |
+      A visit is the smallest scheduling unit for Roman,
+      which is a sequence of exposures executed without interruption,
+      including dither patterns. A visit corresponds to one tile of the
+      selected mosaic pattern. The allowed range of visit numbers is 001
+      to 999 inclusive.
     type: integer
     archive_catalog:
       datatype: smallint

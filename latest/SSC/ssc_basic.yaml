@@ -17,9 +17,7 @@ properties:
   filename:
     title: File Name
     description: |
-      The filename as taken from the 'filename' property of the
-      data availability notification (https://github.com/spacetelescope/roman-soc-ssc-common/blob/main/schemas/data_availability.json#L7)
-      SSC does not need to include this in the 'metadata' object of the data availability notification.
+      The filename as taken from the 'filename' property of the data availability notification.
     type: string
     maxLength: 1024
     archive_catalog:
@@ -36,9 +34,8 @@ properties:
   file_date:
     title: File Creation Date (UTC)
     description: |
-      The file creation date as taken from the 'fileCreationTimestamp' property of the
-      data availability notification (https://github.com/spacetelescope/roman-soc-ssc-common/blob/main/schemas/data_availability.json#L76)
-      SSC does not need to include this in the 'metadata' object of the data availability notification.
+      The file creation date as taken from the 'fileCreationTimestamp'
+      property of the data availability notification.
     allOf:
       - $ref: http://stsci.edu/schemas/asdf/time/time-1.3.0#/definitions/iso_time
     archive_catalog:
@@ -54,7 +51,7 @@ properties:
         ]
   instrument:
     title: Instrument
-    description: Instrument shorthand
+    description: Instrument shorthand.
     type: string
     maxLength: 8
     archive_catalog:
@@ -71,9 +68,7 @@ properties:
   origin:
     title: Institution / Organization Name
     description: |
-      Organization responsible for creating file ("IPAC/SSC"), the Science Support Center at Caltech/IPAC.
-      SSC does not need to include this in the 'metadata' object of the data availability notification.
-      This will be added automatically by SOC ingest manifest software
+      The name of the institution or organization responsible for creating this file.
     type: string
     maxLength: 15
     archive_catalog:
