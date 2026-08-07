@@ -53,11 +53,10 @@ properties:
   program:
     title: Program Number
     description: |
-      Identifier for the observing program. A program is an
-      approved specification for a science, calibration, or
-      engineering investigation to be pursued using Roman Space
-      Telescope mission resources. The allowed range of program
-      numbers is 00001 to 18445 inclusive.
+      Identifier for the observing program. A program is an approved
+      specification for a science, calibration, or engineering
+      investigation to be pursued using Roman Space Telescope mission
+      resources. The allowed range of program numbers is 00001 to 18445 inclusive.
     type: integer
     sdf:
       special_processing: VALUE_REQUIRED
