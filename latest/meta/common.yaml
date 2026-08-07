@@ -16,9 +16,9 @@ allOf:
       ephemeris:
         $ref: asdf://stsci.edu/datamodels/roman/schemas/meta/ephemeris-2.1.0
       exposure:
-        $ref: asdf://stsci.edu/datamodels/roman/schemas/meta/exposure-2.0.0
+        $ref: asdf://stsci.edu/datamodels/roman/schemas/meta/exposure-2.1.0
       guide_star:
-        $ref: asdf://stsci.edu/datamodels/roman/schemas/meta/guidestar-2.0.0
+        $ref: asdf://stsci.edu/datamodels/roman/schemas/meta/guidestar-2.1.0
       instrument:
         $ref: asdf://stsci.edu/datamodels/roman/schemas/meta/wfi_mode-2.0.0
       observation:
@@ -30,11 +30,11 @@ allOf:
       ref_file:
         $ref: asdf://stsci.edu/datamodels/roman/schemas/meta/ref_file-2.0.0
       rcs:
-        $ref: asdf://stsci.edu/datamodels/roman/schemas/meta/rcs-2.0.0
+        $ref: asdf://stsci.edu/datamodels/roman/schemas/meta/rcs-2.1.0
       velocity_aberration:
         $ref: asdf://stsci.edu/datamodels/roman/schemas/meta/velocity_aberration-2.0.0
       visit:
-        $ref: asdf://stsci.edu/datamodels/roman/schemas/meta/visit-2.0.0
+        $ref: asdf://stsci.edu/datamodels/roman/schemas/meta/visit-2.1.0
       wcsinfo:
         $ref: asdf://stsci.edu/datamodels/roman/schemas/meta/wcsinfo-2.0.0
     required:

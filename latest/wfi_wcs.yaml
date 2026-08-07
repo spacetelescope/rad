@@ -19,7 +19,7 @@ properties:
           ephemeris:
             $ref: asdf://stsci.edu/datamodels/roman/schemas/meta/ephemeris-2.1.0
           exposure:
-            $ref: asdf://stsci.edu/datamodels/roman/schemas/meta/exposure-2.0.0
+            $ref: asdf://stsci.edu/datamodels/roman/schemas/meta/exposure-2.1.0
           instrument:
             $ref: asdf://stsci.edu/datamodels/roman/schemas/meta/wfi_mode-2.0.0
           observation:
@@ -31,7 +31,7 @@ properties:
           velocity_aberration:
             $ref: asdf://stsci.edu/datamodels/roman/schemas/meta/velocity_aberration-2.0.0
           visit:
-            $ref: asdf://stsci.edu/datamodels/roman/schemas/meta/visit-2.0.0
+            $ref: asdf://stsci.edu/datamodels/roman/schemas/meta/visit-2.1.0
           wcsinfo:
             $ref: asdf://stsci.edu/datamodels/roman/schemas/meta/wcsinfo-2.0.0
           wcs_fit_results:

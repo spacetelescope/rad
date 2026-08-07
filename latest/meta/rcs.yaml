@@ -1,7 +1,7 @@
 %YAML 1.1
 ---
 $schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-2.0.0
-id: asdf://stsci.edu/datamodels/roman/schemas/meta/rcs-2.0.0
+id: asdf://stsci.edu/datamodels/roman/schemas/meta/rcs-2.1.0
 
 title: Relative Calibration System Information
 type: object
@@ -55,10 +55,10 @@ properties:
       when the RCS is on, and "N/A" when the RCS is off.
     anyOf:
       - type: string
-        enum: ["1", "2", "3", "4", "5", "6", None]
+        maxLength: 30
       - type: "null"
     archive_catalog:
-      datatype: nvarchar(5)
+      datatype: nvarchar(30)
       destination: [WFIExposure.led]
   counts:
     title: Light Emitting Diode (LED) Flux (DN)

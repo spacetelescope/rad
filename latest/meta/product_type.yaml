@@ -8,10 +8,7 @@ description: |
   A descriptor for the type of data contained within the
   file. This corresponds to the standard file suffixes for
   archival data products. Consult the documentation for the list
-  of options. A string beginning with "p" indicates a prompt data
-  product, while a string beginning with "r" indicates a data release
-  product.  For example, "p_visit_coadd" indicates a prompt data
-  product containing a co-addition of exposures within a visit.
+  of options.
 type: string
 maxLength: 120
 sdf:

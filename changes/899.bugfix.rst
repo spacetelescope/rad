@@ -1,0 +1,3 @@
+Remove enums from guide window mode, visit type, exposure engineering quality,
+ephemeris type, RCS LED, and WSM edge used. The ``enums/guidewindow_modes``
+helper schema is no longer needed and is not carried forward past 2.0.0.

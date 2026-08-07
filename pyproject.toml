@@ -103,6 +103,7 @@ asdf_schema_xfail_tests = [
   "latest/SSC/MSOS/wfi_microlensing_dqa_photometry_level_3.yaml",
   "latest/SSC/MSOS/wfi_microlensing_dqa_photometry_level_4.yaml",
   "latest/SSC/MSOS/wfi_microlensing_event_catalog_level_4.yaml",
+  "latest/SSC/MSOS/wfi_microlensing_detection_efficiency_catalog_level_4.yaml",
   "latest/SSC/MSOS/wfi_microlensing_light_curve_catalog_level_4.yaml",
   "latest/SSC/MSOS/wfi_microlensing_object_periodic_catalog_level_4.yaml",
   "latest/SSC/MSOS/wfi_microlensing_object_fiducial_catalog_level_4.yaml",
