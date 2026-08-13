@@ -1,1 +1,47 @@
-../../../../../../../latest/SSC/GDPS/keywords/location_table.yaml
+%YAML 1.1
+---
+$schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-2.0.0
+id: asdf://stsci.edu/datamodels/roman/schemas/SSC/GDPS/keywords/location_table-1.0.0
+
+title: GDPS location_table keywords
+extName: SSC
+type: object
+properties:
+  dither:
+    title: Dither
+    description: Dither position id.  Example value '1'
+    type: number
+    archive_catalog:
+      datatype: float
+      destination: [WFISpec.dither]
+  detector:
+    title: Detector
+    description: Name of the Wide Field Instrument (WFI) detector used.
+    type: string
+    maxLength: 5
+    archive_catalog:
+      datatype: nvarchar(5)
+      destination: [WFISpec.detector]
+  num_src:
+    title: Nsrc
+    description: The number of sources in the Spectra Location Table file.  Example value '500'
+    type: integer
+    archive_catalog:
+      datatype: int
+      destination: [WFISpec.num_src]
+  optical_model:
+    title: Optical Model
+    description: The name of the optical model file used for the SLT calculation.  Example value 'roman_gdps_grism_optmodel_ctx00002.yaml'
+    type: string
+    maxLength: 1024
+    archive_catalog:
+      datatype: nvarchar(1024)
+      destination: [WFISpec.optical_model]
+  v3yangle:
+    title: V3Yangle
+    description: v3yangle, copied from the input L2 file.  Example value '-60.0'
+    type: number
+    archive_catalog:
+      datatype: float
+      destination: [WFISpec.v3yangle]
+required: [dither, detector, num_src, optical_model, v3yangle]
