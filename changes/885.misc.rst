@@ -1,0 +1,1 @@
+Allow CGI pointing fields to accept null values for dark/calibration data.
