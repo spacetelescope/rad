@@ -1,3 +1,41 @@
+1.1.0 (2026-08-13)
+==================
+
+Bug Fixes
+---------
+
+- Remove unnecessary subcategory enum from program and l3_common schemas.
+  (`#893 <https://github.com/spacetelescope/rad/issues/893>`_)
+- Remove enums from guide window mode, visit type, exposure engineering
+  quality,
+  ephemeris type, RCS LED, and WSM edge used. The ``enums/guidewindow_modes``
+  helper schema is no longer needed and is not carried forward past 2.0.0.
+  (`#899 <https://github.com/spacetelescope/rad/issues/899>`_)
+
+
+New Features
+------------
+
+- Add the SSC MSOS Level 4 detection efficiency catalog schema. (`#838
+  <https://github.com/spacetelescope/rad/issues/838>`_)
+- Add metadata schemas for MSOS DQA archive products. (`#886
+  <https://github.com/spacetelescope/rad/issues/886>`_)
+- Added properties and their title, description, and types to the ETC reference
+  file's form keyword (`#898
+  <https://github.com/spacetelescope/rad/issues/898>`_)
+- Add DEFAULT as an allowed value of the ephemeris type. (`#900
+  <https://github.com/spacetelescope/rad/issues/900>`_)
+
+
+Misc
+----
+
+- This PR addresses missing archive destinations in B22 (`#882
+  <https://github.com/spacetelescope/rad/issues/882>`_)
+- Allow CGI pointing fields to accept null values for dark/calibration data.
+  (`#885 <https://github.com/spacetelescope/rad/issues/885>`_)
+
+
 1.0.0 (2026-05-15)
 ==================
 
