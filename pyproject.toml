@@ -114,26 +114,3 @@ asdf_schema_root = "latest"
 
 [tool.codespell]
 skip = "*.pdf,*.fits,*.asdf,.tox,build,./tags,.git,docs/_build"
-
-[tool.towncrier]
-filename = "CHANGES.rst"
-directory = "changes"
-package = "rad"
-title_format = "{version} ({project_date})"
-ignore = [".gitkeep"]
-wrap = true
-issue_format = "`#{issue} <https://github.com/spacetelescope/rad/issues/{issue}>`_"
-
-[tool.towncrier.fragment.feature]
-name = "New Features"
-
-[tool.towncrier.fragment.bugfix]
-name = "Bug Fixes"
-
-[tool.towncrier.fragment.doc]
-name = "Documentation"
-
-[tool.towncrier.fragment.removal]
-name = "Deprecations and Removals"
-
-[tool.towncrier.fragment.misc]

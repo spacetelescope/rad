@@ -1,0 +1,28 @@
+[tool.towncrier]
+filename = "CHANGES.rst"
+directory = "changes"
+package = "rad"
+title_format = "{version} ({project_date})"
+ignore = ["README.md"]
+wrap = true
+issue_format = "`#{issue} <https://github.com/spacetelescope/rad/issues/{issue}>`_"
+
+[[tool.towncrier.type]]
+directory = "removal"
+name = "Deprecations and Removals"
+
+[[tool.towncrier.type]]
+directory = "feature"
+name = "New Features"
+
+[[tool.towncrier.type]]
+directory = "bugfix"
+name = "Bug Fixes"
+
+[[tool.towncrier.type]]
+directory = "doc"
+name = "Documentation"
+
+[[tool.towncrier.type]]
+directory = "misc"
+name = "Other Changes"
