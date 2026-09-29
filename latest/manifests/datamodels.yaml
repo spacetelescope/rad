@@ -197,6 +197,11 @@ tags:
     schema_uri: asdf://stsci.edu/datamodels/roman/schemas/forced_image_source_catalog-2.1.0
     title: Forced image source catalog
     description: |-
+      Photometry and astrometry computed by the TD Source Catalog Step
+  - tag_uri: asdf://stsci.edu/datamodels/roman/tags/time_domain_source_catalog-2.0.0
+    schema_uri: asdf://stsci.edu/datamodels/roman/schemas/time_domain_source_catalog-2.0.0
+    title: Time Domain image source catalog
+    description: |-
       Photometry and astrometry computed by the Source Catalog Step
   - tag_uri: asdf://stsci.edu/datamodels/roman/tags/forced_mosaic_source_catalog-2.1.0
     schema_uri: asdf://stsci.edu/datamodels/roman/schemas/forced_mosaic_source_catalog-2.1.0
