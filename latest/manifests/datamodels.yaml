@@ -1,7 +1,7 @@
 %YAML 1.1
 ---
-id: asdf://stsci.edu/datamodels/roman/manifests/datamodels-2.1.0
-extension_uri: asdf://stsci.edu/datamodels/roman/extensions/datamodels-2.1.0
+id: asdf://stsci.edu/datamodels/roman/manifests/datamodels-2.2.0
+extension_uri: asdf://stsci.edu/datamodels/roman/extensions/datamodels-2.2.0
 title: Datamodels extension
 description: |-
   A set of tags for serializing STScI Roman datamodels.
@@ -197,12 +197,13 @@ tags:
     schema_uri: asdf://stsci.edu/datamodels/roman/schemas/forced_image_source_catalog-2.1.0
     title: Forced image source catalog
     description: |-
-      Photometry and astrometry computed by the TD Source Catalog Step
+      Photometry and astrometry computed by the Source Catalog Step
   - tag_uri: asdf://stsci.edu/datamodels/roman/tags/time_domain_source_catalog-2.0.0
     schema_uri: asdf://stsci.edu/datamodels/roman/schemas/time_domain_source_catalog-2.0.0
-    title: Time Domain image source catalog
+    title: Time domain image source catalog
     description: |-
-      Photometry and astrometry computed by the Source Catalog Step
+      PSF and aperture photometry computed at input catalog positions on a
+      Level 2 image
   - tag_uri: asdf://stsci.edu/datamodels/roman/tags/forced_mosaic_source_catalog-2.1.0
     schema_uri: asdf://stsci.edu/datamodels/roman/schemas/forced_mosaic_source_catalog-2.1.0
     title: Forced mosaic source catalog

@@ -3,19 +3,42 @@
 $schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-2.0.0
 id: asdf://stsci.edu/datamodels/roman/schemas/time_domain_source_catalog-2.0.0
 
-title: Time Domain source catalog generated from a Level 2 file by the Source Catalog Step.
+title: Time domain source catalog generated from a Level 2 file at input catalog positions.
 
 datamodel_name: TimeDomainSourceCatalogModel
 
 type: object
 properties:
-properties:
   meta:
-    $ref: asdf://stsci.edu/datamodels/roman/schemas/meta/l2_catalog_common-2.1.0
+    allOf:
+      - $ref: asdf://stsci.edu/datamodels/roman/schemas/meta/l2_catalog_common-2.1.0
+      - type: object
+        properties:
+          image:
+            $ref: asdf://stsci.edu/datamodels/roman/schemas/meta/catalog_image-2.0.0
+          forced_psf_catalogs:
+            title: Input catalogs for forced photometry
+            description: |
+              Filenames of the catalogs supplying the positions at which
+              photometry was measured. The source_catalog_index column of the
+              source catalog indexes into this list.
+            type: array
+            items:
+              type: string
+          id_columns:
+            title: Input catalog ID columns
+            description: |
+              Name of the column in each input catalog that supplied the id
+              column of the source catalog, in the same order as
+              forced_psf_catalogs.
+            type: array
+            items:
+              type: string
+        required: [image, forced_psf_catalogs, id_columns]
   source_catalog:
     title: Source Catalog
     description: |
-      Photometry and astrometry computed in the Source Catalog Step.
+      PSF and aperture photometry computed at input catalog positions.
     allOf:
       - tag: tag:astropy.org:astropy/table/table-1.*
       - $ref: asdf://stsci.edu/datamodels/roman/schemas/tables/time_domain_source_catalog_table-2.0.0
