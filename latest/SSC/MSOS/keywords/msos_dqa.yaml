@@ -23,11 +23,7 @@ properties:
     archive_catalog:
       datatype: nvarchar(128)
       destination:
-        [
-          WFIMSOSCatalog.msos_dqa_version,
-          WFIMSOSDQA.msos_dqa_version,
-          WFIMSOSEventsDQA.msos_dqa_version,
-        ]
+        [WFIMSOSDQA.msos_dqa_version, WFIMSOSEventsDQA.msos_dqa_version]
   dqa_workflow:
     title: DQA Workflow
     description: DQA workflow that produced the artifact. Example values include 'periodic', 'longterm', and 'events'.
@@ -35,12 +31,7 @@ properties:
     maxLength: 32
     archive_catalog:
       datatype: nvarchar(32)
-      destination:
-        [
-          WFIMSOSCatalog.dqa_workflow,
-          WFIMSOSDQA.dqa_workflow,
-          WFIMSOSEventsDQA.dqa_workflow,
-        ]
+      destination: [WFIMSOSDQA.dqa_workflow, WFIMSOSEventsDQA.dqa_workflow]
   dqa_artifact_type:
     title: DQA Artifact Type
     description: DQA artifact type. Example values include 'report' and 'catalog'.
@@ -49,11 +40,7 @@ properties:
     archive_catalog:
       datatype: nvarchar(16)
       destination:
-        [
-          WFIMSOSCatalog.dqa_artifact_type,
-          WFIMSOSDQA.dqa_artifact_type,
-          WFIMSOSEventsDQA.dqa_artifact_type,
-        ]
+        [WFIMSOSDQA.dqa_artifact_type, WFIMSOSEventsDQA.dqa_artifact_type]
   season:
     title: Season
     description: GBTDS season covered by the DQA artifact, when the artifact is season-specific. Example value 's01'.
@@ -70,8 +57,7 @@ properties:
     maxLength: 3
     archive_catalog:
       datatype: nvarchar(3)
-      destination:
-        [WFIMSOSCatalog.period, WFIMSOSDQA.period, WFIMSOSEventsDQA.period]
+      destination: [WFIMSOSDQA.period, WFIMSOSEventsDQA.period]
   sequence:
     title: Sequence
     description: Processing sequence covered by the DQA artifact, when applicable. Example value 's1'.
@@ -127,8 +113,7 @@ properties:
     maxLength: 16
     archive_catalog:
       datatype: nvarchar(16)
-      destination:
-        [WFIMSOSCatalog.counter, WFIMSOSDQA.counter, WFIMSOSEventsDQA.counter]
+      destination: [WFIMSOSDQA.counter, WFIMSOSEventsDQA.counter]
   object_id:
     title: Object ID
     description: Microlensing object identifier for event-specific DQA artifacts.
@@ -136,12 +121,7 @@ properties:
     maxLength: 64
     archive_catalog:
       datatype: nvarchar(64)
-      destination:
-        [
-          WFIMSOSCatalog.object_id,
-          WFIMSOSDQA.object_id,
-          WFIMSOSEventsDQA.object_id,
-        ]
+      destination: [WFIMSOSDQA.object_id, WFIMSOSEventsDQA.object_id]
   roman_name:
     title: Roman Name
     description: Roman object name for event-specific DQA artifacts.
@@ -149,12 +129,7 @@ properties:
     maxLength: 128
     archive_catalog:
       datatype: nvarchar(128)
-      destination:
-        [
-          WFIMSOSCatalog.roman_name,
-          WFIMSOSDQA.roman_name,
-          WFIMSOSEventsDQA.roman_name,
-        ]
+      destination: [WFIMSOSDQA.roman_name, WFIMSOSEventsDQA.roman_name]
   classification:
     title: Event Classification
     description: Event classification for event-specific DQA artifacts. Example value 'microlensing'.
@@ -162,37 +137,27 @@ properties:
     maxLength: 64
     archive_catalog:
       datatype: nvarchar(64)
-      destination:
-        [
-          WFIMSOSCatalog.classification,
-          WFIMSOSDQA.classification,
-          WFIMSOSEventsDQA.classification,
-        ]
+      destination: [WFIMSOSDQA.classification, WFIMSOSEventsDQA.classification]
   ra:
     title: Right Ascension
     description: Right ascension of the DQA target in decimal degrees, when applicable.
     type: number
     archive_catalog:
       datatype: float
-      destination: [WFIMSOSCatalog.ra, WFIMSOSDQA.ra, WFIMSOSEventsDQA.ra]
+      destination: [WFIMSOSDQA.ra, WFIMSOSEventsDQA.ra]
   dec:
     title: Declination
     description: Declination of the DQA target in decimal degrees, when applicable.
     type: number
     archive_catalog:
       datatype: float
-      destination: [WFIMSOSCatalog.dec, WFIMSOSDQA.dec, WFIMSOSEventsDQA.dec]
+      destination: [WFIMSOSDQA.dec, WFIMSOSEventsDQA.dec]
   dqa_flag:
     title: DQA Flag
     description: Integer DQA quality flag summarized for the artifact when applicable.
     type: integer
     archive_catalog:
       datatype: int
-      destination:
-        [
-          WFIMSOSCatalog.dqa_flag,
-          WFIMSOSDQA.dqa_flag,
-          WFIMSOSEventsDQA.dqa_flag,
-        ]
+      destination: [WFIMSOSDQA.dqa_flag, WFIMSOSEventsDQA.dqa_flag]
 
 required: [msos_dqa_version, dqa_workflow, dqa_artifact_type]

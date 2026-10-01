@@ -13,12 +13,12 @@ properties:
     type: integer
     archive_catalog:
       datatype: int
-      destination: [WFISpec.catalog_id, WFISpecCatalog.catalog_id]
+      destination: [WFISpecCatalog.catalog_id]
   file_number:
     title: File Number
     description: File number for this catalog file (e.g., 1)
     type: integer
     archive_catalog:
       datatype: int
-      destination: [WFISpec.file_number, WFISpecCatalog.file_number]
+      destination: [WFISpecCatalog.file_number]
 required: [catalog_id, file_number]

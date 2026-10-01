@@ -18,11 +18,7 @@ properties:
       - rhie
     archive_catalog:
       datatype: nvarchar(16)
-      destination:
-        [
-          WFIMSOSCatalog.inject_medium,
-          WFIMSOSDetectionEfficiencyCatalog.inject_medium,
-        ]
+      destination: [WFIMSOSDetectionEfficiencyCatalog.inject_medium]
   tp_count:
     title: True Positive Count
     description: Number of rows in this file with BinaryClass equal to TP.
@@ -30,8 +26,7 @@ properties:
     minimum: 0
     archive_catalog:
       datatype: int
-      destination:
-        [WFIMSOSCatalog.tp_count, WFIMSOSDetectionEfficiencyCatalog.tp_count]
+      destination: [WFIMSOSDetectionEfficiencyCatalog.tp_count]
   fp_count:
     title: False Positive Count
     description: Number of rows in this file with BinaryClass equal to FP.
@@ -39,8 +34,7 @@ properties:
     minimum: 0
     archive_catalog:
       datatype: int
-      destination:
-        [WFIMSOSCatalog.fp_count, WFIMSOSDetectionEfficiencyCatalog.fp_count]
+      destination: [WFIMSOSDetectionEfficiencyCatalog.fp_count]
   tn_count:
     title: True Negative Count
     description: Number of rows in this file with BinaryClass equal to TN.
@@ -48,8 +42,7 @@ properties:
     minimum: 0
     archive_catalog:
       datatype: int
-      destination:
-        [WFIMSOSCatalog.tn_count, WFIMSOSDetectionEfficiencyCatalog.tn_count]
+      destination: [WFIMSOSDetectionEfficiencyCatalog.tn_count]
   fn_count:
     title: False Negative Count
     description: Number of rows in this file with BinaryClass equal to FN.
@@ -57,7 +50,6 @@ properties:
     minimum: 0
     archive_catalog:
       datatype: int
-      destination:
-        [WFIMSOSCatalog.fn_count, WFIMSOSDetectionEfficiencyCatalog.fn_count]
+      destination: [WFIMSOSDetectionEfficiencyCatalog.fn_count]
 
 required: [inject_medium, tp_count, fp_count, tn_count, fn_count]
