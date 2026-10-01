@@ -23,6 +23,7 @@ jobs:
         - linux: py313-xdist
         - linux: py314-cov-xdist
           coverage: codecov
+        - linux: py315-xdist
         - macos: py314-xdist
     secrets:
       CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
