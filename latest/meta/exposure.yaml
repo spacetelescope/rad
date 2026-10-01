@@ -13,7 +13,7 @@ properties:
     sdf:
       special_processing: VALUE_REQUIRED
       source:
-        origin: PSS:dms_visit.template
+        origin: TBD
     archive_catalog:
       datatype: nvarchar(25)
       destination:
