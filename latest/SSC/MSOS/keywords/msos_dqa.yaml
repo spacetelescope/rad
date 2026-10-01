@@ -13,7 +13,7 @@ properties:
     type: integer
     archive_catalog:
       datatype: int
-      destination: [WFIMSOSCatalog.program]
+      destination: [WFIMSOSCatalog.program, WFIMSOSDQA.program]
   msos_dqa_version:
     title: Msos DQA Software Version
     description: Version of the MSOS DQA software (roman-msos-dqa repo). Example value '4.1.6'.
@@ -21,7 +21,7 @@ properties:
     maxLength: 128
     archive_catalog:
       datatype: nvarchar(128)
-      destination: [WFIMSOSCatalog.msos_dqa_version]
+      destination: [WFIMSOSDQA.msos_dqa_version]
   dqa_workflow:
     title: DQA Workflow
     description: DQA workflow that produced the artifact. Example values include 'periodic', 'longterm', and 'events'.
@@ -29,7 +29,7 @@ properties:
     maxLength: 32
     archive_catalog:
       datatype: nvarchar(32)
-      destination: [WFIMSOSCatalog.dqa_workflow]
+      destination: [WFIMSOSDQA.dqa_workflow]
   dqa_artifact_type:
     title: DQA Artifact Type
     description: DQA artifact type. Example values include 'report' and 'catalog'.
@@ -37,7 +37,7 @@ properties:
     maxLength: 16
     archive_catalog:
       datatype: nvarchar(16)
-      destination: [WFIMSOSCatalog.dqa_artifact_type]
+      destination: [WFIMSOSDQA.dqa_artifact_type]
   season:
     title: Season
     description: GBTDS season covered by the DQA artifact, when the artifact is season-specific. Example value 's01'.
@@ -45,7 +45,7 @@ properties:
     maxLength: 3
     archive_catalog:
       datatype: nvarchar(3)
-      destination: [WFIMSOSCatalog.season]
+      destination: [WFIMSOSCatalog.season, WFIMSOSDQA.season]
   period:
     title: GBTDS Period
     description: GBTDS period covered by the DQA artifact, when the artifact is period-specific. Example value 'p01'.
@@ -53,7 +53,7 @@ properties:
     maxLength: 3
     archive_catalog:
       datatype: nvarchar(3)
-      destination: [WFIMSOSCatalog.period]
+      destination: [WFIMSOSDQA.period]
   sequence:
     title: Sequence
     description: Processing sequence covered by the DQA artifact, when applicable. Example value 's1'.
@@ -61,7 +61,7 @@ properties:
     maxLength: 3
     archive_catalog:
       datatype: nvarchar(3)
-      destination: [WFIMSOSCatalog.sequence]
+      destination: [WFIMSOSCatalog.sequence, WFIMSOSDQA.sequence]
   field:
     title: GBTDS Field
     description: GBTDS field covered by the DQA artifact, when field-specific. Example value 'f03'.
@@ -69,7 +69,7 @@ properties:
     maxLength: 3
     archive_catalog:
       datatype: nvarchar(3)
-      destination: [WFIMSOSCatalog.field]
+      destination: [WFIMSOSCatalog.field, WFIMSOSDQA.field]
   detector:
     title: Detector
     description: WFI detector covered by the DQA artifact, when detector-specific. Example value 'wfi05'.
@@ -77,7 +77,7 @@ properties:
     maxLength: 5
     archive_catalog:
       datatype: nvarchar(5)
-      destination: [WFIMSOSCatalog.detector]
+      destination: [WFIMSOSCatalog.detector, WFIMSOSDQA.detector]
   optical_element:
     title: Optical Element
     description: WFI optical element covered by the DQA artifact, when applicable. Example value 'f146'.
@@ -85,7 +85,7 @@ properties:
     maxLength: 4
     archive_catalog:
       datatype: nvarchar(4)
-      destination: [WFIMSOSCatalog.optical_element]
+      destination: [WFIMSOSCatalog.optical_element, WFIMSOSDQA.optical_element]
   counter:
     title: Counter
     description: Product counter from the DQA artifact filename when applicable. Example value '0100.2000'.
@@ -93,7 +93,7 @@ properties:
     maxLength: 16
     archive_catalog:
       datatype: nvarchar(16)
-      destination: [WFIMSOSCatalog.counter]
+      destination: [WFIMSOSDQA.counter]
   object_id:
     title: Object ID
     description: Microlensing object identifier for event-specific DQA artifacts.
@@ -101,7 +101,7 @@ properties:
     maxLength: 64
     archive_catalog:
       datatype: nvarchar(64)
-      destination: [WFIMSOSCatalog.object_id]
+      destination: [WFIMSOSDQA.object_id]
   roman_name:
     title: Roman Name
     description: Roman object name for event-specific DQA artifacts.
@@ -109,7 +109,7 @@ properties:
     maxLength: 128
     archive_catalog:
       datatype: nvarchar(128)
-      destination: [WFIMSOSCatalog.roman_name]
+      destination: [WFIMSOSDQA.roman_name]
   classification:
     title: Event Classification
     description: Event classification for event-specific DQA artifacts. Example value 'microlensing'.
@@ -117,27 +117,27 @@ properties:
     maxLength: 64
     archive_catalog:
       datatype: nvarchar(64)
-      destination: [WFIMSOSCatalog.classification]
+      destination: [WFIMSOSDQA.classification]
   ra:
     title: Right Ascension
     description: Right ascension of the DQA target in decimal degrees, when applicable.
     type: number
     archive_catalog:
       datatype: float
-      destination: [WFIMSOSCatalog.ra]
+      destination: [WFIMSOSDQA.ra]
   dec:
     title: Declination
     description: Declination of the DQA target in decimal degrees, when applicable.
     type: number
     archive_catalog:
       datatype: float
-      destination: [WFIMSOSCatalog.dec]
+      destination: [WFIMSOSDQA.dec]
   dqa_flag:
     title: DQA Flag
     description: Integer DQA quality flag summarized for the artifact when applicable.
     type: integer
     archive_catalog:
       datatype: int
-      destination: [WFIMSOSCatalog.dqa_flag]
+      destination: [WFIMSOSDQA.dqa_flag]
 
 required: [msos_dqa_version, dqa_workflow, dqa_artifact_type]

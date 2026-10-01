@@ -17,14 +17,20 @@ properties:
     type: integer
     archive_catalog:
       datatype: int
-      destination: [WFISpec.program]
+      destination:
+        [WFISpec.program, WFISpecCatalog.program, WFISpecLocation.program]
   program_complete:
     title: Program Complete
     description: Identifies if this observation program is finished.  Example value 'False'
     type: boolean
     archive_catalog:
       datatype: nchar(1)
-      destination: [WFISpec.program_complete]
+      destination:
+        [
+          WFISpec.program_complete,
+          WFISpecCatalog.program_complete,
+          WFISpecLocation.program_complete,
+        ]
   data_release_id:
     title: Data Release ID
     description: A label for the data release (if applicable). This keyword is optional and only populated for data release products.
@@ -32,28 +38,44 @@ properties:
     maxLength: 3
     archive_catalog:
       datatype: nvarchar(3)
-      destination: [WFISpec.data_release_id]
+      destination:
+        [
+          WFISpec.data_release_id,
+          WFISpecCatalog.data_release_id,
+          WFISpecLocation.data_release_id,
+        ]
   s_region:
     title: Spatial Region
     description: Spatial region of the file
     type: string
     archive_catalog:
       datatype: nvarchar(max)
-      destination: [WFISpec.s_region]
+      destination:
+        [WFISpec.s_region, WFISpecCatalog.s_region, WFISpecLocation.s_region]
   visit_start_time_mjd:
     title: Start Time MJD
     description: Observation start time in MJD
     type: number
     archive_catalog:
       datatype: float
-      destination: [WFISpec.visit_start_time_mjd]
+      destination:
+        [
+          WFISpec.visit_start_time_mjd,
+          WFISpecCatalog.visit_start_time_mjd,
+          WFISpecLocation.visit_start_time_mjd,
+        ]
   visit_end_time_mjd:
     title: End Time MJD
     description: Observation end time in MJD
     type: number
     archive_catalog:
       datatype: float
-      destination: [WFISpec.visit_end_time_mjd]
+      destination:
+        [
+          WFISpec.visit_end_time_mjd,
+          WFISpecCatalog.visit_end_time_mjd,
+          WFISpecLocation.visit_end_time_mjd,
+        ]
 required:
   [
     program,
