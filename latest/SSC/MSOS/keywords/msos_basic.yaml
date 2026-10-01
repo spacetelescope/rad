@@ -19,7 +19,6 @@ properties:
           WFIMSOSCatalog.model_type,
           WFIMSOSReferenceFrame.model_type,
           WFIMSOSDQA.model_type,
-          WFIMSOSEventsDQA.model_type,
           WFIMSOSDetectionEfficiencyCatalog.model_type,
         ]
   product_type:
@@ -38,7 +37,6 @@ properties:
           WFIMSOSCatalog.product_type,
           WFIMSOSReferenceFrame.product_type,
           WFIMSOSDQA.product_type,
-          WFIMSOSEventsDQA.product_type,
           WFIMSOSDetectionEfficiencyCatalog.product_type,
         ]
 
