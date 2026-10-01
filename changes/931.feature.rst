@@ -1,0 +1,1 @@
+Add required dq2 to wfi_image and pixeldq2 to ramp.

@@ -1,7 +1,7 @@
 %YAML 1.1
 ---
 $schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-2.0.0
-id: asdf://stsci.edu/datamodels/roman/schemas/wfi_image-2.1.0
+id: asdf://stsci.edu/datamodels/roman/schemas/wfi_image-2.2.0
 
 title: Level 2 (L2) Calibrated Roman Wide Field Instrument (WFI) Rate Image.
 
@@ -50,6 +50,15 @@ properties:
     title: Data Quality
     description: |
       Bitwise sum of data quality flags.
+    tag: tag:stsci.edu:asdf/core/ndarray-1.*
+    datatype: uint32
+    exact_datatype: true
+    ndim: 2
+  dq2:
+    title: Data Quality 2
+    description: |
+      Bitwise sum of data quality 2 flags. These flags are propagated
+      from the dq2 arrays of reference files.
     tag: tag:stsci.edu:asdf/core/ndarray-1.*
     datatype: uint32
     exact_datatype: true
@@ -227,6 +236,7 @@ propertyOrder:
     meta,
     data,
     dq,
+    dq2,
     err,
     var_poisson,
     var_rnoise,
@@ -249,6 +259,7 @@ required:
     meta,
     data,
     dq,
+    dq2,
     err,
     var_poisson,
     chisq,
