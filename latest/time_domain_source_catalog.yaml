@@ -14,8 +14,6 @@ properties:
       - $ref: asdf://stsci.edu/datamodels/roman/schemas/meta/l2_catalog_common-2.1.0
       - type: object
         properties:
-          image:
-            $ref: asdf://stsci.edu/datamodels/roman/schemas/meta/catalog_image-2.0.0
           forced_psf_catalogs:
             title: Input catalogs for forced photometry
             description: |
