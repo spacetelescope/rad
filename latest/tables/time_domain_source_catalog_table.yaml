@@ -1,0 +1,230 @@
+%YAML 1.1
+---
+$schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-2.0.0
+id: asdf://stsci.edu/datamodels/roman/schemas/tables/time_domain_source_catalog_table-2.0.0
+
+title: Time domain source catalog table schema
+
+definitions:
+  $ref: "asdf://stsci.edu/datamodels/roman/schemas/tables/source_catalog_columns-2.2.0#/definitions"
+
+type: object
+properties:
+  columns:
+    allOf:
+      - not:
+          items:
+            not:
+              allOf:
+                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/tables/source_catalog_columns-2.2.0#/definitions/id"
+                - properties:
+                    name:
+                      pattern: ^id$
+      - not:
+          items:
+            not:
+              allOf:
+                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/tables/source_catalog_columns-2.2.0#/definitions/source_catalog_index"
+                - properties:
+                    name:
+                      pattern: ^source_catalog_index$
+      - not:
+          items:
+            not:
+              allOf:
+                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/tables/source_catalog_columns-2.2.0#/definitions/ra"
+                - properties:
+                    name:
+                      pattern: ^ra$
+      - not:
+          items:
+            not:
+              allOf:
+                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/tables/source_catalog_columns-2.2.0#/definitions/dec"
+                - properties:
+                    name:
+                      pattern: ^dec$
+      - not:
+          items:
+            not:
+              allOf:
+                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/tables/source_catalog_columns-2.2.0#/definitions/x"
+                - properties:
+                    name:
+                      pattern: ^x$
+      - not:
+          items:
+            not:
+              allOf:
+                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/tables/source_catalog_columns-2.2.0#/definitions/y"
+                - properties:
+                    name:
+                      pattern: ^y$
+      - not:
+          items:
+            not:
+              allOf:
+                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/tables/source_catalog_columns-2.2.0#/definitions/image_flags"
+                - properties:
+                    name:
+                      pattern: ^image_flags$
+      - not:
+          items:
+            not:
+              allOf:
+                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/tables/source_catalog_columns-2.2.0#/definitions/ra_psf_~band~"
+                - properties:
+                    name:
+                      pattern: ^ra_psf$
+      - not:
+          items:
+            not:
+              allOf:
+                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/tables/source_catalog_columns-2.2.0#/definitions/ra_psf_~band~_err"
+                - properties:
+                    name:
+                      pattern: ^ra_psf_err$
+      - not:
+          items:
+            not:
+              allOf:
+                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/tables/source_catalog_columns-2.2.0#/definitions/dec_psf_~band~"
+                - properties:
+                    name:
+                      pattern: ^dec_psf$
+      - not:
+          items:
+            not:
+              allOf:
+                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/tables/source_catalog_columns-2.2.0#/definitions/dec_psf_~band~_err"
+                - properties:
+                    name:
+                      pattern: ^dec_psf_err$
+      - not:
+          items:
+            not:
+              allOf:
+                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/tables/source_catalog_columns-2.2.0#/definitions/x_psf_~band~"
+                - properties:
+                    name:
+                      pattern: ^x_psf$
+      - not:
+          items:
+            not:
+              allOf:
+                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/tables/source_catalog_columns-2.2.0#/definitions/x_psf_~band~_err"
+                - properties:
+                    name:
+                      pattern: ^x_psf_err$
+      - not:
+          items:
+            not:
+              allOf:
+                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/tables/source_catalog_columns-2.2.0#/definitions/y_psf_~band~"
+                - properties:
+                    name:
+                      pattern: ^y_psf$
+      - not:
+          items:
+            not:
+              allOf:
+                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/tables/source_catalog_columns-2.2.0#/definitions/y_psf_~band~_err"
+                - properties:
+                    name:
+                      pattern: ^y_psf_err$
+      - not:
+          items:
+            not:
+              allOf:
+                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/tables/source_catalog_columns-2.2.0#/definitions/psf_~band~_flux"
+                - properties:
+                    name:
+                      pattern: ^psf_flux$
+      - not:
+          items:
+            not:
+              allOf:
+                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/tables/source_catalog_columns-2.2.0#/definitions/psf_~band~_flux_err"
+                - properties:
+                    name:
+                      pattern: ^psf_flux_err$
+      - not:
+          items:
+            not:
+              allOf:
+                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/tables/source_catalog_columns-2.2.0#/definitions/psf_flags_~band~"
+                - properties:
+                    name:
+                      pattern: ^psf_flags$
+      - not:
+          items:
+            not:
+              allOf:
+                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/tables/source_catalog_columns-2.2.0#/definitions/psf_gof_~band~"
+                - properties:
+                    name:
+                      pattern: ^psf_gof$
+      - not:
+          items:
+            not:
+              allOf:
+                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/tables/source_catalog_columns-2.2.0#/definitions/psf_~band~_flux"
+                - properties:
+                    name:
+                      pattern: ^forced_psf_flux$
+      - not:
+          items:
+            not:
+              allOf:
+                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/tables/source_catalog_columns-2.2.0#/definitions/psf_~band~_flux_err"
+                - properties:
+                    name:
+                      pattern: ^forced_psf_flux_err$
+      - not:
+          items:
+            not:
+              allOf:
+                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/tables/source_catalog_columns-2.2.0#/definitions/psf_flags_~band~"
+                - properties:
+                    name:
+                      pattern: ^forced_psf_flags$
+      - not:
+          items:
+            not:
+              allOf:
+                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/tables/source_catalog_columns-2.2.0#/definitions/psf_gof_~band~"
+                - properties:
+                    name:
+                      pattern: ^forced_psf_gof$
+      - not:
+          items:
+            not:
+              allOf:
+                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/tables/source_catalog_columns-2.2.0#/definitions/aper~radius~_~band~_flux"
+                - properties:
+                    name:
+                      pattern: ^forced_aper[0-9]{2}_flux$
+      - not:
+          items:
+            not:
+              allOf:
+                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/tables/source_catalog_columns-2.2.0#/definitions/aper~radius~_~band~_flux_err"
+                - properties:
+                    name:
+                      pattern: ^forced_aper[0-9]{2}_flux_err$
+      - not:
+          items:
+            not:
+              allOf:
+                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/tables/source_catalog_columns-2.2.0#/definitions/aper_bkg_~band~_flux"
+                - properties:
+                    name:
+                      pattern: ^forced_aper_bkg_flux$
+      - not:
+          items:
+            not:
+              allOf:
+                - $ref: "asdf://stsci.edu/datamodels/roman/schemas/tables/source_catalog_columns-2.2.0#/definitions/aper_bkg_~band~_flux_err"
+                - properties:
+                    name:
+                      pattern: ^forced_aper_bkg_flux_err$
