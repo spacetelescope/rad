@@ -178,4 +178,14 @@ properties:
     anyOf:
       - type: number
       - type: "null"
-required: [dither, type, start_time, nexposures, internal_target]
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: TBD
+    archive_catalog:
+      datatype: float
+      destination:
+        [
+          WFIExposure.wfi_acm_z_defocus_size,
+        ]
+required: [dither, type, start_time, nexposures, internal_target, wfi_acm_z_defocus_size]
