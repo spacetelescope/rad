@@ -203,6 +203,15 @@ properties:
     archive_catalog:
       datatype: nvarchar(120)
       destination: [ScienceRefData.r_saturation]
+  bam:
+    title: Boresight Alignment Matrix Reference File Schema
+    description: |
+      Information about the bam reference file used with the science
+      data.
+    type: string
+    archive_catalog:
+      datatype: nvarchar(120)
+      destination: [ScienceRefData.r_bam]
 required:
   [
     apcorr,
@@ -222,4 +231,5 @@ required:
     area,
     saturation,
     refpix,
+    bam,
   ]
