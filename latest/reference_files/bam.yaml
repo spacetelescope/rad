@@ -17,7 +17,6 @@ properties:
           reftype:
             type: string
             enum: [BAM]
-      - $ref: asdf://stsci.edu/datamodels/roman/schemas/reference_files/ref_optical_element-2.0.0
   bam_quaternion:
     title: Boresight Alignment Matrix Quaternion
     description: |
