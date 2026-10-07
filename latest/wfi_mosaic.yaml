@@ -67,7 +67,7 @@ properties:
     exact_datatype: true
     ndim: 2
   var_poisson:
-    title: Poisson Variability (MJy^2 / steradian^2)
+    title: Poisson Variance (MJy^2 / steradian^2)
     tag: tag:stsci.edu:asdf/core/ndarray-1.*
     datatype: float32
     exact_datatype: true
