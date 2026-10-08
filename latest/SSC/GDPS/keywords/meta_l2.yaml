@@ -19,7 +19,7 @@ properties:
     type: integer
     archive_catalog:
       datatype: smallint
-      destination: [WFISpec.segment]
+      destination: [WFISpec.segment, WFISpecLocation.segment]
   visit:
     title: Visit number
     description: |
@@ -31,7 +31,7 @@ properties:
     type: integer
     archive_catalog:
       datatype: smallint
-      destination: [WFISpec.visit]
+      destination: [WFISpec.visit, WFISpecLocation.visit]
   observation_id:
     title: Programmatic Observation Identifier
     description: Observation ID of the last SOC-provided L2 spectral image used to create the file. Example value '0000101001001001001'
@@ -39,12 +39,12 @@ properties:
     maxLength: 28
     archive_catalog:
       datatype: nvarchar(28)
-      destination: [WFISpec.observation_id]
+      destination: [WFISpec.observation_id, WFISpecLocation.observation_id]
   exptime:
     title: Exposure time
     description: Exposure time in seconds
     type: number
     archive_catalog:
       datatype: float
-      destination: [WFISpec.visit_exptime]
+      destination: [WFISpec.visit_exptime, WFISpecLocation.visit_exptime]
 required: [segment, visit, observation_id, exptime]

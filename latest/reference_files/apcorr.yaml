@@ -45,7 +45,7 @@ properties:
                 ndim: 1
           ee_radii:
             title: Enclosed Energy Radii
-            description: Radius, in pixels, within which the enclosed energy
+            description: Radius, in arcseconds, within which the enclosed energy
               fractions are met. The indexing matches that of
               "ee_fractions".
             anyOf:
@@ -56,7 +56,7 @@ properties:
                 ndim: 1
           sky_background_rin:
             title: Inner Radius for the Sky Background
-            description: Inner radius, in pixels, to use when estimating the
+            description: Inner radius, in arcseconds, to use when estimating the
               local sky background within an annulus between this
               radius and "sky_background_rout".
             anyOf:
@@ -64,7 +64,7 @@ properties:
               - type: "null"
           sky_background_rout:
             title: Outer Radius for the Sky Background
-            description: Outer radius, in pixels, to use when estimating the
+            description: Outer radius, in arcseconds, to use when estimating the
               local sky background within an annulus between this
               radius and "sky_background_rin".
             anyOf:
