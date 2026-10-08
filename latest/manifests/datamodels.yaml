@@ -162,6 +162,11 @@ tags:
     title: Multiple Accumulation Table Reference File Schema
     description: |-
       Multiple Accumulation Table Reference File Schema
+  - tag_uri: asdf://stsci.edu/datamodels/roman/tags/reference_files/bam-2.0.0
+    schema_uri: asdf://stsci.edu/datamodels/roman/schemas/reference_files/bam-2.0.0
+    title: Boresight Alignment Matrix  Reference File Schema
+    description: |-
+      Boresight Alignment Matrix  Reference File Schema
   # Misc
   - tag_uri: asdf://stsci.edu/datamodels/roman/tags/image_source_catalog-2.2.0
     schema_uri: asdf://stsci.edu/datamodels/roman/schemas/image_source_catalog-2.2.0

@@ -28,7 +28,7 @@ allOf:
       program:
         $ref: asdf://stsci.edu/datamodels/roman/schemas/meta/program-2.1.0
       ref_file:
-        $ref: asdf://stsci.edu/datamodels/roman/schemas/meta/ref_file-2.0.0
+        $ref: asdf://stsci.edu/datamodels/roman/schemas/meta/ref_file-2.1.0
       rcs:
         $ref: asdf://stsci.edu/datamodels/roman/schemas/meta/rcs-2.1.0
       velocity_aberration:
