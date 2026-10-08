@@ -181,7 +181,7 @@ properties:
     sdf:
       special_processing: VALUE_REQUIRED
       source:
-        origin: PPS:dms_visit.wfi_acm_z_defocus_size
+        origin: PSS:dms_visit.wfi_acm_z_defocus_size
     archive_catalog:
       datatype: float
       destination:
