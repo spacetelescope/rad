@@ -1,0 +1,1 @@
+Added the Alignment Compensation Mechanism (ACM) move keyword to the visit schema.
