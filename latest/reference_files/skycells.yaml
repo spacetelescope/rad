@@ -1,7 +1,7 @@
 %YAML 1.1
 ---
-$schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-2.0.0
-id: asdf://stsci.edu/datamodels/roman/schemas/reference_files/skycells-2.0.0
+$schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-2.1.0
+id: asdf://stsci.edu/datamodels/roman/schemas/reference_files/skycells-2.1.0
 
 title: Skycells Reference File Schema
 

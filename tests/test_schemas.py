@@ -24,7 +24,7 @@ VARCHAR_XFAILS = (
     "asdf://stsci.edu/datamodels/roman/schemas/meta/l3_common-2.1.0",
 )
 
-REF_COMMON_XFAILS = ("asdf://stsci.edu/datamodels/roman/schemas/reference_files/skycells-2.0.0",)
+REF_COMMON_XFAILS = ("asdf://stsci.edu/datamodels/roman/schemas/reference_files/skycells-2.1.0",)
 
 ARRAY_TAG_XFAILS = (
     # <resource uri>
