@@ -206,8 +206,8 @@ properties:
   bam:
     title: Boresight Alignment Matrix Reference File Schema
     description: |
-      Information about the bam reference file used with the science
-      data.
+      Quaternion values for the alignment matrix between the Roman
+      observatory boresight and fine guidance system (FGS).
     type: string
     archive_catalog:
       datatype: nvarchar(120)
