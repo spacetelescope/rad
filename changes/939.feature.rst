@@ -1,0 +1,1 @@
+Added a Boresight Alignment Matrix Reference File Schema.

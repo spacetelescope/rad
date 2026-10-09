@@ -1,0 +1,31 @@
+%YAML 1.1
+---
+$schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-2.0.0
+id: asdf://stsci.edu/datamodels/roman/schemas/reference_files/bam-2.0.0
+
+title: Boresight Alignment Matrix Reference File Schema
+
+datamodel_name: BamRefModel
+
+type: object
+properties:
+  meta:
+    allOf:
+      - $ref: asdf://stsci.edu/datamodels/roman/schemas/reference_files/ref_common-2.0.0
+      - type: object
+        properties:
+          reftype:
+            type: string
+            enum: [BAM]
+  bam_quaternion:
+    title: Boresight Alignment Matrix Quaternion
+    description: |
+      Quaternion values for the alignment matrix between the Roman observatory
+      boresight and fine guidance system (FGS). This file updates the BAM using
+      on-orbit values from Roman commissioning.
+    type: array
+    items:
+      type: number
+required: [meta, bam_quaternion]
+flowStyle: block
+propertyOrder: [meta, bam_quaternion]
