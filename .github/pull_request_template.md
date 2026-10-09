@@ -1,5 +1,5 @@
 <!-- If this PR addresses a JIRA ticket: -->
-<!-- Resolves [RCAL-nnnn](https://jira.stsci.edu/browse/RCAL-nnnn) -->
+<!-- Resolves [RAD-nnnn](https://jira.stsci.edu/browse/RAD-nnnn) -->
 
 <!-- If this PR will close an existing GitHub issue (that is not already attached to a JIRA ticket): -->
 <!-- Closes # -->
