@@ -8,7 +8,7 @@ from typing import TYPE_CHECKING
 
 from git import Remote, Repo
 
-from rad._parser import diff, dump
+from parser import diff, dump
 
 if TYPE_CHECKING:
     from collections.abc import Generator
