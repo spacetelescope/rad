@@ -37,6 +37,16 @@ properties:
     ndim: 2
     datatype: uint32
     exact_datatype: true
+  pixeldq2:
+    title: Two Dimensional Data Quality 2 Flags Array for Each Pixel
+    description: |
+      Two dimensional data quality 2 flags array applying to all resultants
+      in a given pixel. These flags are propagated from the dq2 arrays of
+      reference files.
+    tag: tag:stsci.edu:asdf/core/ndarray-1.*
+    ndim: 2
+    datatype: uint32
+    exact_datatype: true
   groupdq:
     title: Three-dimensional Data Quality Array For Each Resultant in Each Pixel
     description: |
@@ -155,6 +165,7 @@ propertyOrder:
     meta,
     data,
     pixeldq,
+    pixeldq2,
     groupdq,
     amp33,
     border_ref_pix_left,
@@ -174,6 +185,7 @@ required:
     meta,
     data,
     pixeldq,
+    pixeldq2,
     groupdq,
     amp33,
     border_ref_pix_left,
