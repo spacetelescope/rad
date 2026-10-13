@@ -648,7 +648,7 @@ def asdf_ssc_config():
     """
     Fixture to load the SSC schemas into asdf for testing
     """
-    from rad._parser._ssc import asdf_ssc_config
+    from scripts.parser._ssc import asdf_ssc_config
 
     with asdf_ssc_config():
         yield
