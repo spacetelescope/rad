@@ -184,8 +184,13 @@ properties:
         origin: PSS:dms_visit.wfi_acm_z_defocus_size
     archive_catalog:
       datatype: float
-      destination:
-        [
-          WFIExposure.wfi_acm_z_defocus_size,
-        ]
-required: [dither, type, start_time, nexposures, internal_target, wfi_acm_z_defocus_size]
+      destination: [WFIExposure.wfi_acm_z_defocus_size]
+required:
+  [
+    dither,
+    type,
+    start_time,
+    nexposures,
+    internal_target,
+    wfi_acm_z_defocus_size,
+  ]
