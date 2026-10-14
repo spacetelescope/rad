@@ -68,7 +68,7 @@ properties:
   data_encoding_offset:
     title: Data Encoding Offset
     description: |
-      Offset added to science resultants in L1 data to avoid
+      Offset added to science resultants in downlinked data to avoid
       clipping the noise at zero DN.
     type: integer
 required: [detector, optical_element, name]
