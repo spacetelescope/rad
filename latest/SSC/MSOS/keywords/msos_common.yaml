@@ -17,7 +17,12 @@ properties:
     type: integer
     archive_catalog:
       datatype: int
-      destination: [WFIMSOSReferenceFrame.program, WFIMSOSCatalog.program]
+      destination:
+        [
+          WFIMSOSReferenceFrame.program,
+          WFIMSOSCatalog.program,
+          WFIMSOSDetectionEfficiencyCatalog.program,
+        ]
   category:
     title: Program Category
     description: |
@@ -32,7 +37,12 @@ properties:
     maxLength: 6
     archive_catalog:
       datatype: nvarchar(6)
-      destination: [WFIMSOSReferenceFrame.category, WFIMSOSCatalog.category]
+      destination:
+        [
+          WFIMSOSReferenceFrame.category,
+          WFIMSOSCatalog.category,
+          WFIMSOSDetectionEfficiencyCatalog.category,
+        ]
   subcategory:
     title: Program Subcategory
     description: |
@@ -53,6 +63,7 @@ properties:
         [
           WFIMSOSReferenceFrame.program_subcategory,
           WFIMSOSCatalog.program_subcategory,
+          WFIMSOSDetectionEfficiencyCatalog.program_subcategory,
         ]
   msos_photometry_version:
     title: Msos Photometry Software Version
@@ -65,6 +76,7 @@ properties:
         [
           WFIMSOSReferenceFrame.msos_photometry_version,
           WFIMSOSCatalog.msos_photometry_version,
+          WFIMSOSDetectionEfficiencyCatalog.msos_photometry_version,
         ]
   msos_events_version:
     title: Msos Events Software Version
@@ -77,6 +89,7 @@ properties:
         [
           WFIMSOSReferenceFrame.msos_events_version,
           WFIMSOSCatalog.msos_events_version,
+          WFIMSOSDetectionEfficiencyCatalog.msos_events_version,
         ]
   msos_detection_efficiency_version:
     title: Msos Detection Efficiency Software Version
@@ -89,6 +102,7 @@ properties:
         [
           WFIMSOSReferenceFrame.msos_detection_efficiency_version,
           WFIMSOSCatalog.msos_detection_efficiency_version,
+          WFIMSOSDetectionEfficiencyCatalog.msos_detection_efficiency_version,
         ]
   msos_processing_id:
     title: ID
@@ -101,6 +115,7 @@ properties:
         [
           WFIMSOSReferenceFrame.msos_processing_id,
           WFIMSOSCatalog.msos_processing_id,
+          WFIMSOSDetectionEfficiencyCatalog.msos_processing_id,
         ]
   season:
     title: Season
@@ -109,14 +124,24 @@ properties:
     maxLength: 3
     archive_catalog:
       datatype: nvarchar(3)
-      destination: [WFIMSOSReferenceFrame.season, WFIMSOSCatalog.season]
+      destination:
+        [
+          WFIMSOSReferenceFrame.season,
+          WFIMSOSCatalog.season,
+          WFIMSOSDetectionEfficiencyCatalog.season,
+        ]
   flip:
     title: GBTDS Seasonal Flip Indicator
     description: Indicates the Roman footprint orientation. Example value '90'.
     type: integer
     archive_catalog:
       datatype: int
-      destination: [WFIMSOSReferenceFrame.flip, WFIMSOSCatalog.flip]
+      destination:
+        [
+          WFIMSOSReferenceFrame.flip,
+          WFIMSOSCatalog.flip,
+          WFIMSOSDetectionEfficiencyCatalog.flip,
+        ]
   gal_cen_flag:
     title: Galactic Center Flag
     description: Indicates if data from the Galactic Center are present.
@@ -124,7 +149,11 @@ properties:
     archive_catalog:
       datatype: nchar(1)
       destination:
-        [WFIMSOSReferenceFrame.gal_cen_flag, WFIMSOSCatalog.gal_cen_flag]
+        [
+          WFIMSOSReferenceFrame.gal_cen_flag,
+          WFIMSOSCatalog.gal_cen_flag,
+          WFIMSOSDetectionEfficiencyCatalog.gal_cen_flag,
+        ]
 
 required:
   [

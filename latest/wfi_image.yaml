@@ -54,6 +54,15 @@ properties:
     datatype: uint32
     exact_datatype: true
     ndim: 2
+  dq2:
+    title: Data Quality 2
+    description: |
+      Bitwise sum of data quality 2 flags. These flags are propagated
+      from the dq2 arrays of reference files.
+    tag: tag:stsci.edu:asdf/core/ndarray-1.*
+    datatype: uint32
+    exact_datatype: true
+    ndim: 2
   err:
     title: Error (DN / s) or (MJy / sr)
     description: |
@@ -227,6 +236,7 @@ propertyOrder:
     meta,
     data,
     dq,
+    dq2,
     err,
     var_poisson,
     var_rnoise,
@@ -249,6 +259,7 @@ required:
     meta,
     data,
     dq,
+    dq2,
     err,
     var_poisson,
     chisq,

@@ -14,7 +14,8 @@ properties:
     maxLength: 128
     archive_catalog:
       datatype: nvarchar(128)
-      destination: [WFISpec.version_g2dp_software]
+      destination:
+        [WFISpec.version_g2dp_software, WFISpecLocation.version_g2dp_software]
   g2dp_run_id:
     title: G2DP Run ID
     description: ID of the G2DP run that created the G2DP file(s).  Example value '42'
@@ -22,6 +23,6 @@ properties:
     maxLength: 128
     archive_catalog:
       datatype: nvarchar(128)
-      destination: [WFISpec.g2dp_run_id]
+      destination: [WFISpec.g2dp_run_id, WFISpecLocation.g2dp_run_id]
 
 required: [version_g2dp_software, g2dp_run_id]

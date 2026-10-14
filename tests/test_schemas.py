@@ -42,6 +42,7 @@ REQUIRED_SKIPS = (
     "asdf://stsci.edu/datamodels/roman/schemas/multiband_source_catalog-2.1.0",
     "asdf://stsci.edu/datamodels/roman/schemas/CCSP/EXAMPLE/example_custom_product-1.1.0",
     "asdf://stsci.edu/datamodels/roman/schemas/CCSP/EXAMPLE/example_custom_product-2.0.0",
+    "asdf://stsci.edu/datamodels/roman/schemas/time_domain_source_catalog-2.0.0",
 )
 
 NESTED_REQUIRED_SKIPS = (

@@ -29,7 +29,11 @@ properties:
           CGIAncillary.filename,
           WFIMSOSReferenceFrame.filename,
           WFIMSOSCatalog.filename,
+          WFIMSOSDetectionEfficiencyCatalog.filename,
+          WFIMSOSDQA.filename,
           WFISpec.filename,
+          WFISpecCatalog.filename,
+          WFISpecLocation.filename,
         ]
   file_date:
     title: File Creation Date (UTC)
@@ -47,7 +51,11 @@ properties:
           CGIAncillary.filedate,
           WFIMSOSReferenceFrame.filedate,
           WFIMSOSCatalog.filedate,
+          WFIMSOSDQA.filedate,
+          WFIMSOSDetectionEfficiencyCatalog.filedate,
           WFISpec.filedate,
+          WFISpecCatalog.filedate,
+          WFISpecLocation.filedate,
         ]
   instrument:
     title: Instrument
@@ -63,7 +71,11 @@ properties:
           CGIAncillary.instrument_name,
           WFIMSOSReferenceFrame.instrument_name,
           WFIMSOSCatalog.instrument_name,
+          WFIMSOSDQA.instrument_name,
+          WFIMSOSDetectionEfficiencyCatalog.instrument_name,
           WFISpec.instrument_name,
+          WFISpecCatalog.instrument_name,
+          WFISpecLocation.instrument_name,
         ]
   origin:
     title: Institution / Organization Name
@@ -80,7 +92,11 @@ properties:
           CGIAncillary.origin,
           WFIMSOSReferenceFrame.origin,
           WFIMSOSCatalog.origin,
+          WFIMSOSDQA.origin,
+          WFIMSOSDetectionEfficiencyCatalog.origin,
           WFISpec.origin,
+          WFISpecCatalog.origin,
+          WFISpecLocation.origin,
         ]
 
 required: [filename, file_date, instrument, origin]
