@@ -203,8 +203,8 @@ tags:
     title: Forced image source catalog
     description: |-
       Photometry and astrometry computed by the Source Catalog Step
-  - tag_uri: asdf://stsci.edu/datamodels/roman/tags/time_domain_source_catalog-2.0.0
-    schema_uri: asdf://stsci.edu/datamodels/roman/schemas/time_domain_source_catalog-2.0.0
+  - tag_uri: asdf://stsci.edu/datamodels/roman/tags/time_domain_source_catalog-2.1.0
+    schema_uri: asdf://stsci.edu/datamodels/roman/schemas/time_domain_source_catalog-2.1.0
     title: Time domain image source catalog
     description: |-
       PSF and aperture photometry computed at input catalog positions on a
