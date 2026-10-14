@@ -1,7 +1,7 @@
 %YAML 1.1
 ---
 $schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-2.0.0
-id: asdf://stsci.edu/datamodels/roman/schemas/meta/visit-2.1.0
+id: asdf://stsci.edu/datamodels/roman/schemas/meta/visit-2.2.0
 
 title: Visit Information
 type: object
@@ -171,4 +171,26 @@ properties:
           SourceCatalog.visit_internal_target,
           SegmentationMap.visit_internal_target,
         ]
-required: [dither, type, start_time, nexposures, internal_target]
+  wfi_acm_z_defocus_size:
+    title: WFI Alignment Compensation Mechanism Z defocus size
+    description: |
+      Size of the WFI ACM Z-defocus in millimeters.
+    anyOf:
+      - type: number
+      - type: "null"
+    sdf:
+      special_processing: VALUE_REQUIRED
+      source:
+        origin: PSS:dms_visit.wfi_acm_z_defocus_size
+    archive_catalog:
+      datatype: float
+      destination: [WFIExposure.wfi_acm_z_defocus_size]
+required:
+  [
+    dither,
+    type,
+    start_time,
+    nexposures,
+    internal_target,
+    wfi_acm_z_defocus_size,
+  ]

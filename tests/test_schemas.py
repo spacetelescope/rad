@@ -19,7 +19,7 @@ METADATA_FORCE_XFAILS = (
 
 VARCHAR_XFAILS = (
     # <resource uri>
-    "asdf://stsci.edu/datamodels/roman/schemas/meta/ref_file-2.0.0",
+    "asdf://stsci.edu/datamodels/roman/schemas/meta/ref_file-2.1.0",
     "asdf://stsci.edu/datamodels/roman/schemas/meta/program-2.1.0",
     "asdf://stsci.edu/datamodels/roman/schemas/meta/l3_common-2.1.0",
 )
