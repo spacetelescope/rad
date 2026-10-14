@@ -204,10 +204,9 @@ properties:
       datatype: nvarchar(120)
       destination: [ScienceRefData.r_saturation]
   bam:
-    title: Boresight Alignment Matrix Reference File Schema
+    title: Boresight Alignment Matrix Reference File Information
     description: |
-      Quaternion values for the alignment matrix between the Roman
-      observatory boresight and fine guidance system (FGS).
+      Information about the Boresight Alignment Matrix reference file.
     type: string
     archive_catalog:
       datatype: nvarchar(120)
