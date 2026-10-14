@@ -10,6 +10,7 @@ import yaml
 from semantic_version import Version
 
 from rad import resources
+from rad._helpers._ssc import asdf_ssc_config as asdf_ssc_config_context
 
 
 def _find_latest(uris):
@@ -648,7 +649,5 @@ def asdf_ssc_config():
     """
     Fixture to load the SSC schemas into asdf for testing
     """
-    from scripts.parser._ssc import asdf_ssc_config
-
-    with asdf_ssc_config():
+    with asdf_ssc_config_context():
         yield

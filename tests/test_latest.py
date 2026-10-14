@@ -12,7 +12,8 @@ import asdf.treeutil
 import pytest
 
 from rad import resources
-from scripts.parser import archive_schema, super_schema
+from rad._helpers._archive import archive_schema
+from rad._helpers._super_schema import super_schema
 
 _DIRECT_URL = Distribution.from_name("rad").read_text("direct_url.json")
 
