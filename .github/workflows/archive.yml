@@ -34,7 +34,7 @@ jobs:
 
       - name: Install RAD
         run: |
-          pip install -e ".[test]"
+          pip install -e ".[script]"
 
       - name: Generate archive information
         run: |
