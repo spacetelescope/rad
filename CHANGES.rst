@@ -1,3 +1,29 @@
+1.2.0 (2026-10-15)
+==================
+
+New Features
+------------
+
+- Add schema for the time domain source catalog, containing PSF and aperture
+  photometry measured at input catalog positions on Level 2 images. (`#925
+  <https://github.com/spacetelescope/rad/issues/925>`_)
+- Add required dq2 to wfi_image and pixeldq2 to ramp. (`#931
+  <https://github.com/spacetelescope/rad/issues/931>`_)
+- Added the Alignment Compensation Mechanism (ACM) move keyword to the visit
+  schema.
+  Added a Boresight Alignment Matrix Reference File Schema. (`#940
+  <https://github.com/spacetelescope/rad/issues/940>`_)
+
+
+Other Changes
+-------------
+
+- Updates to 'sdf' 'origin' tags for HLPP. (`#921
+  <https://github.com/spacetelescope/rad/issues/921>`_)
+- Adding new archive destinations. (`#928
+  <https://github.com/spacetelescope/rad/issues/928>`_)
+
+
 1.1.0 (2026-08-13)
 ==================
 

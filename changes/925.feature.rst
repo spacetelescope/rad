@@ -1,1 +1,0 @@
-Add schema for the time domain source catalog, containing PSF and aperture photometry measured at input catalog positions on Level 2 images.
