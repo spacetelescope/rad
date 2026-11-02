@@ -83,7 +83,7 @@ addopts = [
 ]
 testpaths = ["tests", "latest"]
 filterwarnings = ["error"]
-asdf_schema_tests_enabled = "true"
+asdf_schema_tests_enabled = true
 # All the SSC schemas with a $ref have to be xfailed due to asdf-format/pytest-asdf-plugin#9
 asdf_schema_xfail_tests = [
   "latest/SSC/CGI/cgi_ancillary.yaml",
