@@ -111,8 +111,10 @@ html_static_path = ["_static"]
 # The name of an image file (within the static path) to use as favicon of the
 # docs.  This file should be a Windows icon file (.ico) being 16x16 or 32x32
 # pixels large.
-html_favicon = "_static/stsci_logo.png"
-html_logo = "_static/stsci_logo.png"
+html_favicon = (
+    "https://github.com/spacetelescope/romancal/blob/dc903a0164c3ce349caeb4f9f3a8bdc215cf05d3/docs/_static/favicon.ico?raw=true"
+)
+html_logo = "https://github.com/spacetelescope/romancal/blob/dc903a0164c3ce349caeb4f9f3a8bdc215cf05d3/docs/_static/A_Rst_1020_Logo_Box_Color_Seafoamondarkblue_Logo_Full_Color_RGB_850px%4072ppi.png?raw=true"
 
 # If not '', a 'Last updated on:' timestamp is inserted at every page bottom,
 # using the given strftime format.
