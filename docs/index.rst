@@ -1,3 +1,11 @@
+.. image:: _static/stsci_pri_combo_mark_horizonal_white_bkgd.png
+   :width: 83%
+   :target: https://stsci.edu
+
+.. image:: _static/A_Rst_1020_Logo_Box_Color_Seafoamondarkblue_Logo_Full_Color_RGB_850px@72ppi.png
+   :width: 15%
+   :target: https://science.nasa.gov/mission/roman-space-telescope/
+
 .. _rad:
 
 **************************
