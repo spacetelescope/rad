@@ -98,6 +98,7 @@ asdf_schema_xfail_tests = """
   latest/SSC/GDPS/wfi_spec_decontam_2d_level_4.yaml
   latest/SSC/GDPS/wfi_spec_individual_1d_level_4.yaml
   latest/SSC/GDPS/wfi_spec_location_table_level_4.yaml
+  latest/SSC/GDPS/wfi_spec_wcs_update_level_2.yaml
   latest/SSC/GDPS/wfi_spec_dqa_2d_level_4.yaml
   latest/SSC/GDPS/wfi_spec_catalog_dqa_level_4.yaml
   latest/SSC/MSOS/wfi_microlensing_dqa_events_level_4.yaml

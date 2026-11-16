@@ -1,0 +1,1 @@
+Added the SSC GDPS ``wfi_spec_wcs_update_level_2`` and ``wcs_update`` keywords schemas.
