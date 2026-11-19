@@ -11,6 +11,5 @@ archive_meta: Science WFI Level 4 Spec Catalog Data Quality
 type: object
 allOf:
   - $ref: asdf://stsci.edu/datamodels/roman/schemas/SSC/ssc_basic-1.0.0
-  - $ref: asdf://stsci.edu/datamodels/roman/schemas/SSC/GDPS/keywords/observation-1.0.0
-  - $ref: asdf://stsci.edu/datamodels/roman/schemas/SSC/GDPS/keywords/instrument-1.0.0
+  - $ref: asdf://stsci.edu/datamodels/roman/schemas/SSC/GDPS/keywords/gdps_common-1.0.0
   - $ref: asdf://stsci.edu/datamodels/roman/schemas/SSC/GDPS/keywords/catalog-1.0.0

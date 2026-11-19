@@ -1,17 +1,15 @@
 %YAML 1.1
 ---
 $schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-2.0.0
-id: asdf://stsci.edu/datamodels/roman/schemas/SSC/GDPS/keywords/wavelength-1.0.0
+id: asdf://stsci.edu/datamodels/roman/schemas/SSC/GDPS/keywords/g2dp_spectra-1.0.0
 
-title: GDPS wavelength keywords
+title: G2DP spectra keywords
 extName: SSC
 type: object
 properties:
   wl_contamination_range:
     title: Wl Contamination Range
-    description:
-      Observed wavelength range that the contamination is estimated from
-      overlapping spectra.  Example value '[14000.0, 16000.0]'
+    description: Observed wavelength range (in unit_wl) of overlapping spectra over which the contamination is estimated.  Example value '[1400.0, 1600.0]'
     type: string
     maxLength: 128
     archive_catalog:
@@ -19,16 +17,14 @@ properties:
       destination: [WFISpec.wl_contamination_range]
   wl_reference:
     title: Wl Reference
-    description:
-      Reference wavelength that the optical model adopts for its calculation
-      Used to define a single pixel location of each spectrum coadded.  Example value '1.55'
+    description: Reference wavelength (in unit_wl) of the Calibration Data Pipeline optical model. Coefficients in the spectral location table are evaluated using the trace position corresponding to this reference wavelength.  Example value '1550.0'
     type: number
     archive_catalog:
       datatype: float
       destination: [WFISpec.wl_reference]
   wl_snr_global_range:
     title: Wl Snr Global Range
-    description: The wavelength range that the global SNR measurement.  Example value '[0.0]'
+    description: Wavelength range (in unit_wl) over which the global SNR is measured.  Example value '[750.0, 1930.0]'
     type: string
     maxLength: 128
     archive_catalog:
@@ -36,7 +32,7 @@ properties:
       destination: [WFISpec.wl_snr_global_range]
   unit_flux:
     title: Unit of flux
-    description: Example value 'W m**(-2) nm**(-1)'
+    description: Unit of the flux density. SI units are used.  Example value 'W m-2 nm-1'
     type: string
     maxLength: 32
     archive_catalog:
@@ -44,7 +40,7 @@ properties:
       destination: [WFISpec.unit_flux]
   unit_wl:
     title: Unit of wavelength
-    description: Example value 'nm'
+    description: Unit of the wavelength. SI units are used.  Example value 'nm'
     type: string
     maxLength: 16
     archive_catalog:

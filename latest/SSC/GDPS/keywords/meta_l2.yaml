@@ -8,7 +8,7 @@ extName: SSC
 type: object
 properties:
   segment:
-    title: Segment number
+    title: Segment Number
     description: |
       Identifier for the segment. A segment is the sequence
       of activities produced by each iteration of an Astronomer's
@@ -21,7 +21,7 @@ properties:
       datatype: smallint
       destination: [WFISpec.segment, WFISpecLocation.segment]
   visit:
-    title: Visit number
+    title: Visit Number
     description: |
       A visit is the smallest scheduling unit for Roman,
       which is a sequence of exposures executed without interruption,
@@ -34,7 +34,18 @@ properties:
       destination: [WFISpec.visit, WFISpecLocation.visit]
   observation_id:
     title: Programmatic Observation Identifier
-    description: Observation ID of the last SOC-provided L2 spectral image used to create the file. Example value '0000101001001001001'
+    description: |
+      Observation ID of the last SOC-provided L2 spectral image
+      used to create the file. The format of the programmatic observation
+      identifier is "PPPPPCCAAASSSOOOVVVggsaaeee" where "PPPPP" is the
+      program number, "CC" is the execution plan number, "AAA" is the pass
+      number, "SSS" is the segment number, "OOO" is the observation
+      number, "VVV" is the visit number, "gg" is the visit file group,
+      "s" is the visit file sequence, "aa" is the visit file activity,
+      and "eeee" is the exposure number. The observation identifier is
+      the complete concatenation of the visit_id +
+      visit_file_statement (visit_file_group + visit_file_sequence +
+      visit_file_activity) + exposure.
     type: string
     maxLength: 28
     archive_catalog:
@@ -42,9 +53,21 @@ properties:
       destination: [WFISpec.observation_id, WFISpecLocation.observation_id]
   exptime:
     title: Exposure time
-    description: Exposure time in seconds
+    description: Effective exposure time (s) of the L2 spectral image the product was made from (exposure.effective_exposure_time).  Example value '190.22'
     type: number
     archive_catalog:
       datatype: float
       destination: [WFISpec.visit_exptime, WFISpecLocation.visit_exptime]
-required: [segment, visit, observation_id, exptime]
+  pa_aperture:
+    title: Aperture Position Angle (deg)
+    description: |
+      Position angle in degrees of the aperture ideal Y axis
+      relative to the V3 axis of the spacecraft. This information
+      comes from the Science Instrument Aperture File (SIAF) in the
+      Science Operations Center (SOC) Project Reference Database
+      (PRD). Copied from meta.pointing.pa_aperture in the input L2 file.
+    type: number
+    archive_catalog:
+      datatype: float
+      destination: [WFISpec.pa_aperture, WFISpecLocation.pa_aperture]
+required: [segment, visit, observation_id, exptime, pa_aperture]
