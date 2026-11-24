@@ -1,0 +1,1 @@
+Remove the SSC GDPS spectra location table ``dither`` keyword (the same value as ``segment``), replace ``v3yangle`` with ``pa_aperture`` in ``meta_l2`` and ``optical_model`` with ``cdp_ctx``, merge the GDPS ``observation``, ``instrument``, ``calibration`` and ``pointing`` keyword schemas into ``gdps_common`` and ``g2dp_common``, and rename ``wavelength`` to ``g2dp_spectra``.

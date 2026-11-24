@@ -1,0 +1,1 @@
+Update the SSC GDPS keywords: add a ``detector`` keyword for per-detector products and the field center to the spectra location table; make ``g2dp_run_id`` an integer and ``data_release_id`` optional; and align descriptions with roman-gdps and the core rad schemas.

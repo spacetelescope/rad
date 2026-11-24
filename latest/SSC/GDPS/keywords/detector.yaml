@@ -1,0 +1,18 @@
+%YAML 1.1
+---
+$schema: asdf://stsci.edu/datamodels/roman/schemas/rad_schema-2.0.0
+id: asdf://stsci.edu/datamodels/roman/schemas/SSC/GDPS/keywords/detector-1.0.0
+
+title: GDPS detector keywords
+extName: SSC
+type: object
+properties:
+  detector:
+    title: Wide Field Instrument (WFI) Detector Identifier
+    description: Name of the Wide Field Instrument (WFI) detector used.
+    type: string
+    maxLength: 5
+    archive_catalog:
+      datatype: nvarchar(5)
+      destination: [WFISpec.detector, WFISpecLocation.detector]
+required: [detector]
