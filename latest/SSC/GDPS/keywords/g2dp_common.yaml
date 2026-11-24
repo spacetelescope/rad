@@ -36,14 +36,16 @@ properties:
     type: number
     archive_catalog:
       datatype: float
-      destination: [WFISpec.wcs_field_center_ra, WFISpecLocation.wcs_field_center_ra]
+      destination:
+        [WFISpec.wcs_field_center_ra, WFISpecLocation.wcs_field_center_ra]
   wcs_field_center_dec:
     title: Field Center Dec
     description: Declination (deg) of the exposure's target position (pointing.target_dec), corrected by the G2DP WCS update. The same for all detectors in the exposure. The J2000 Earth Centered Inertial (ECI) frame is used.  Example value '66.0'
     type: number
     archive_catalog:
       datatype: float
-      destination: [WFISpec.wcs_field_center_dec, WFISpecLocation.wcs_field_center_dec]
+      destination:
+        [WFISpec.wcs_field_center_dec, WFISpecLocation.wcs_field_center_dec]
 required:
   [
     version_g2dp_software,
