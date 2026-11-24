@@ -9,7 +9,7 @@ type: object
 properties:
   version_g2dp_software:
     title: G2DP Software Version
-    description: Version of the G2DP software (roman-gdps-g2dp repo).  Example value 'v3.3.0'
+    description: Version of the G2DP software (roman-gdps-g2dp repo).  Example value '4.1.0'
     type: string
     maxLength: 128
     archive_catalog:

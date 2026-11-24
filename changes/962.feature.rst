@@ -1,0 +1,1 @@
+Add the SSC GDPS ``wfi_spec_wcs_update_level_2`` schema and its ``wcs_update`` keywords, using the restructured GDPS keyword schemas.
